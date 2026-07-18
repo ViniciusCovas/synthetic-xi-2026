@@ -6,6 +6,7 @@ on:
     paths:
       - "scripts/build_partial_window_artifacts.py"
       - ".github/workflows/annual-model-readiness.yml"
+      - "data/lake/**"
   schedule:
     - cron: "47 * * * *"
   workflow_dispatch:
@@ -52,5 +53,7 @@ jobs:
             echo "No readiness changes to publish"
           else
             git commit -m "data: update annual model readiness"
+            git fetch origin main
+            git rebase origin/main
             git push origin HEAD:main
           fi
