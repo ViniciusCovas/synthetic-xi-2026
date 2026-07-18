@@ -1,0 +1,50 @@
+{
+  "status": "pilot_requires_targeted_schema_repairs",
+  "interpretation": "Los campos deben evaluarse entre jugadores que actuaron; los suplentes no utilizados no constituyen datos faltantes.",
+  "metrics": {
+    "sampled_fixtures": 225,
+    "fixture_player_endpoint_nonempty_rate": 0.8444444444444444,
+    "latest_sample_player_endpoint_nonempty_rate": 0.8620689655172413,
+    "fixture_lineup_endpoint_nonempty_rate": 0.9733333333333334,
+    "latest_sample_lineup_endpoint_nonempty_rate": 1.0,
+    "player_rows": 7976,
+    "active_player_rows": 5909,
+    "unused_substitute_rows": 1921,
+    "active_minutes_nonnull_rate": 1.0,
+    "starter_minutes_nonnull_rate": 1.0,
+    "active_provider_position_nonnull_rate": 0.994415298696903,
+    "active_passes_total_nonnull_rate": 0.9798612286342867,
+    "active_rating_nonnull_rate": 0.9715687933660517,
+    "active_role_resolvable_rate": 0.994415298696903,
+    "starter_role_resolvable_rate": 0.9952665670154459,
+    "starter_grid_nonnull_rate": 0.965869456900847,
+    "league_season_pairs_sampled": 116,
+    "league_season_pairs_with_zero_player_detail": 5,
+    "league_season_pairs_with_partial_player_detail": 25,
+    "league_season_pairs_with_full_player_detail": 86
+  },
+  "thresholds": {
+    "latest_sample_player_endpoint_nonempty_rate": 0.9,
+    "fixture_lineup_endpoint_nonempty_rate": 0.95,
+    "active_minutes_nonnull_rate": 0.95,
+    "active_provider_position_nonnull_rate": 0.95,
+    "active_passes_total_nonnull_rate": 0.9,
+    "active_role_resolvable_rate": 0.98,
+    "starter_role_resolvable_rate": 0.98
+  },
+  "checks": {
+    "latest_sample_player_endpoint_nonempty_rate": false,
+    "fixture_lineup_endpoint_nonempty_rate": true,
+    "active_minutes_nonnull_rate": true,
+    "active_provider_position_nonnull_rate": true,
+    "active_passes_total_nonnull_rate": true,
+    "active_role_resolvable_rate": true,
+    "starter_role_resolvable_rate": true
+  },
+  "methodological_gate": {
+    "adaptive_full_extraction_allowed": false,
+    "rankings_allowed": false,
+    "player_ranking_future_requirement": "Al menos 80% de sus minutos anuales cubiertos por estadísticas detalladas y función estable.",
+    "next_step": "Reparar la definición de aparición y función posicional antes de la extracción masiva."
+  }
+}

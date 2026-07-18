@@ -1,0 +1,117 @@
+league_id,league_name,season,sampled_fixtures,player_endpoint_available,lineup_endpoint_available,player_endpoint_rate,lineup_endpoint_rate
+318,1. Division,2025,2,0,2,0.0,1.0
+18,AFC Champions League Two,2025,2,0,2,0.0,1.0
+301,Pro League,2025,2,0,2,0.0,1.0
+296,Thai League 1,2025,2,0,2,0.0,1.0
+206,Türkiye Kupası,2025,2,0,1,0.0,0.5
+80,3. Liga,2025,2,1,2,0.5,1.0
+12,CAF Champions League,2025,2,1,1,0.5,0.5
+20,CAF Confederation Cup,2025,2,1,1,0.5,0.5
+145,Challenger Pro League,2025,2,1,2,0.5,1.0
+143,Copa del Rey,2025,2,1,2,0.5,1.0
+66,Coupe de France,2025,2,1,1,0.5,0.5
+46,EFL Trophy,2025,2,1,2,0.5,1.0
+89,Eerste Divisie,2025,2,1,2,0.5,1.0
+45,FA Cup,2025,2,1,1,0.5,0.5
+172,First League,2025,2,1,2,0.5,1.0
+292,K League 1,2025,2,1,2,0.5,1.0
+292,K League 1,2026,2,1,2,0.5,1.0
+242,Liga Pro,2026,2,1,2,0.5,1.0
+383,Ligat Ha'al,2025,2,1,2,0.5,1.0
+265,Primera División,2026,2,1,2,0.5,1.0
+95,Segunda Liga,2025,2,1,2,0.5,1.0
+305,Stars League,2025,2,1,2,0.5,1.0
+207,Super League,2025,2,1,2,0.5,1.0
+332,Super Liga,2025,2,1,2,0.5,1.0
+114,Superettan,2026,2,1,2,0.5,1.0
+96,Taça de Portugal,2025,2,1,1,0.5,0.5
+2,UEFA Champions League,2025,2,1,2,0.5,1.0
+2,UEFA Champions League,2026,2,1,2,0.5,1.0
+848,UEFA Europa Conference League,2025,2,1,2,0.5,1.0
+3,UEFA Europa League,2025,2,1,2,0.5,1.0
+204,1. Lig,2025,2,2,2,1.0,1.0
+79,2. Bundesliga,2025,2,2,2,1.0,1.0
+188,A-League,2025,2,2,2,1.0,1.0
+17,AFC Champions League Elite,2025,2,2,2,1.0,1.0
+6,Africa Cup of Nations,2025,2,2,2,1.0,1.0
+113,Allsvenskan,2025,2,2,2,1.0,1.0
+113,Allsvenskan,2026,2,2,2,1.0,1.0
+78,Bundesliga,2025,2,2,2,1.0,1.0
+218,Bundesliga,2025,2,2,2,1.0,1.0
+533,CAF Super Cup,2025,1,1,1,1.0,1.0
+16,CONCACAF Champions League,2026,2,2,2,1.0,1.0
+22,CONCACAF Gold Cup,2025,2,2,2,1.0,1.0
+13,CONMEBOL Libertadores,2025,2,2,2,1.0,1.0
+13,CONMEBOL Libertadores,2026,2,2,2,1.0,1.0
+11,CONMEBOL Sudamericana,2025,2,2,2,1.0,1.0
+11,CONMEBOL Sudamericana,2026,2,2,2,1.0,1.0
+624,Carioca - 1,2026,2,2,2,1.0,1.0
+40,Championship,2025,2,2,2,1.0,1.0
+528,Community Shield,2025,1,1,1,1.0,1.0
+73,Copa Do Brasil,2025,2,2,2,1.0,1.0
+73,Copa Do Brasil,2026,2,2,2,1.0,1.0
+137,Coppa Italia,2025,2,2,2,1.0,1.0
+345,Czech Liga,2025,2,2,2,1.0,1.0
+81,DFB Pokal,2025,2,2,2,1.0,1.0
+106,Ekstraklasa,2025,2,2,2,1.0,1.0
+103,Eliteserien,2025,2,2,2,1.0,1.0
+103,Eliteserien,2026,2,2,2,1.0,1.0
+88,Eredivisie,2025,2,2,2,1.0,1.0
+15,FIFA Club World Cup,2025,2,2,2,1.0,1.0
+1168,FIFA Intercontinental Cup,2025,2,2,2,1.0,1.0
+210,HNL,2025,2,2,2,1.0,1.0
+98,J1 League,2025,2,2,2,1.0,1.0
+98,J1 League,2026,2,2,2,1.0,1.0
+144,Jupiler Pro League,2025,2,2,2,1.0,1.0
+90,KNVB Beker,2025,2,2,2,1.0,1.0
+140,La Liga,2025,2,2,2,1.0,1.0
+48,League Cup,2025,2,2,2,1.0,1.0
+41,League One,2025,2,2,2,1.0,1.0
+772,Leagues Cup,2025,2,2,2,1.0,1.0
+283,Liga I,2025,2,2,2,1.0,1.0
+262,Liga MX,2025,2,2,2,1.0,1.0
+262,Liga MX,2026,1,1,1,1.0,1.0
+242,Liga Pro,2025,2,2,2,1.0,1.0
+128,Liga Profesional Argentina,2025,2,2,2,1.0,1.0
+128,Liga Profesional Argentina,2026,2,2,2,1.0,1.0
+61,Ligue 1,2025,2,2,2,1.0,1.0
+62,Ligue 2,2025,2,2,2,1.0,1.0
+253,Major League Soccer,2025,2,2,2,1.0,1.0
+253,Major League Soccer,2026,2,2,2,1.0,1.0
+271,NB I,2025,2,2,2,1.0,1.0
+475,Paulista - A1,2026,2,2,2,1.0,1.0
+357,Premier Division,2025,2,2,2,1.0,1.0
+357,Premier Division,2026,2,2,2,1.0,1.0
+39,Premier League,2025,2,2,2,1.0,1.0
+233,Premier League,2025,2,2,2,1.0,1.0
+235,Premier League,2025,2,2,2,1.0,1.0
+288,Premier Soccer League,2025,2,2,2,1.0,1.0
+179,Premiership,2025,2,2,2,1.0,1.0
+94,Primeira Liga,2025,2,2,2,1.0,1.0
+239,Primera A,2025,2,2,2,1.0,1.0
+239,Primera A,2026,2,2,2,1.0,1.0
+265,Primera División,2025,2,2,2,1.0,1.0
+307,Pro League,2025,2,2,2,1.0,1.0
+141,Segunda División,2025,2,2,2,1.0,1.0
+71,Serie A,2025,2,2,2,1.0,1.0
+71,Serie A,2026,2,2,2,1.0,1.0
+135,Serie A,2025,2,2,2,1.0,1.0
+136,Serie B,2025,2,2,2,1.0,1.0
+529,Super Cup,2025,1,1,1,1.0,1.0
+547,Super Cup,2025,2,2,2,1.0,1.0
+551,Super Cup,2025,2,2,2,1.0,1.0
+556,Super Cup,2025,2,2,2,1.0,1.0
+169,Super League,2026,2,2,2,1.0,1.0
+197,Super League 1,2025,2,2,2,1.0,1.0
+286,Super Liga,2025,2,2,2,1.0,1.0
+119,Superliga,2025,2,2,2,1.0,1.0
+203,Süper Lig,2025,2,2,2,1.0,1.0
+526,Trophée des Champions,2025,1,1,1,1.0,1.0
+531,UEFA Super Cup,2025,1,1,1,1.0,1.0
+244,Veikkausliiga,2025,2,2,2,1.0,1.0
+244,Veikkausliiga,2026,2,2,2,1.0,1.0
+1,World Cup,2026,2,2,2,1.0,1.0
+30,World Cup - Qualification Asia,2026,2,2,2,1.0,1.0
+31,World Cup - Qualification CONCACAF,2026,2,2,2,1.0,1.0
+37,World Cup - Qualification Intercontinental Play-offs,2026,1,1,1,1.0,1.0
+34,World Cup - Qualification South America,2026,2,2,2,1.0,1.0
