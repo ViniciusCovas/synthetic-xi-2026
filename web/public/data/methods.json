@@ -1,0 +1,8 @@
+{
+  "status": "preregistered_before_first_live_snapshot",
+  "positions": ["GK", "CB", "FB", "DM", "CM", "AM", "W", "ST"],
+  "ranking": "Observable metrics only, reliability-adjusted by minutes, standardized within position and equally weighted.",
+  "provider_rating": "External validation only; excluded from ranking.",
+  "time_design": "Every artifact is a frozen, timestamped snapshot of the ongoing 2026 tournament.",
+  "no_fabrication_rule": "If fewer than 100 eligible players exist, actual_n is reported and no player is duplicated."
+}

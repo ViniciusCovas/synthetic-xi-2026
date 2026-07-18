@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synthetic-xi-2026"
+version = "0.2.0"
+description = "Reproducible position-specific synthetic football avatars for the 2026 World Cup"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

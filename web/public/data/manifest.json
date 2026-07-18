@@ -1,0 +1,10 @@
+{
+  "status": "awaiting_api_key",
+  "project_version": "0.2.0",
+  "competition": "FIFA World Cup 2026",
+  "season": 2026,
+  "data_cutoff_utc": "2026-07-18T15:00:00Z",
+  "completed_matches_included": 0,
+  "source": "API-FOOTBALL / API-SPORTS",
+  "scope_claim": "No player-performance result is displayed before a real provider snapshot is collected."
+}
