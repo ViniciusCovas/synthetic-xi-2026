@@ -64,10 +64,10 @@ jobs:
           print("Daily requests remaining:", response.headers.get("x-ratelimit-requests-remaining", "not reported"))
           PY
 
-      - name: Generate live World Cup 2026 snapshot
+      - name: Generate audited live World Cup 2026 snapshot
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-        run: python scripts/refresh_2026.py
+        run: python scripts/refresh_2026_v04.py
 
       - name: Run scientific tests
         run: pytest -q
@@ -91,7 +91,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No generated-data changes to publish"
           else
-            git commit -m "data: update World Cup 2026 live snapshot"
+            git commit -m "data: update audited World Cup 2026 snapshot"
             git push origin HEAD:main
           fi
 
