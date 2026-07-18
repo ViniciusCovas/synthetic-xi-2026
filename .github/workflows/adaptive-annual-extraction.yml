@@ -1,12 +1,6 @@
 name: Adaptive Annual Player Extraction
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "scripts/run_adaptive_annual_extraction.py"
-      - "scripts/analyze_adaptive_extraction.py"
-      - ".github/workflows/adaptive-annual-extraction.yml"
   schedule:
     - cron: "17 */6 * * *"
   workflow_dispatch:
