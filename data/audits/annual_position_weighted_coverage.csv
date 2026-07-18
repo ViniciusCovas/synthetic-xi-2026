@@ -1,0 +1,5 @@
+squad_position,players,players_with_any_statistics,players_with_both_seasons,player_any_statistics_rate,player_both_seasons_rate,reported_minutes,detailed_match_minutes,detailed_minutes_share
+Attacker,266,266,264,1.0,0.9924812030075187,717481.0,691087.0,0.963212963130731
+Defender,386,386,376,1.0,0.9740932642487047,1203480.0,1159059.0,0.9630895403330342
+Goalkeeper,144,144,139,1.0,0.9652777777777778,437374.0,416302.0,0.9518215531787441
+Midfielder,441,441,438,1.0,0.9931972789115646,1392407.0,1348966.0,0.9688015070306312

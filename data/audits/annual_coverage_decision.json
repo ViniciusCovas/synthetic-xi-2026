@@ -1,0 +1,40 @@
+{
+  "status": "approved_for_exact_fixture_extraction",
+  "scope": "Jugadores de las 48 selecciones del Mundial 2026; auditoría 2025-2026",
+  "methodological_warning": "Esta decisión autoriza únicamente la extracción exacta por partido. No autoriza publicar rankings construidos con agregados de temporada.",
+  "players": {
+    "total": 1248,
+    "with_any_statistics": 1237,
+    "with_both_seasons": 1217,
+    "without_statistics": 11
+  },
+  "minutes": {
+    "reported_total": 3750742.0,
+    "usable_detailed": 3615414.0
+  },
+  "metrics": {
+    "player_any_statistics_rate": 0.9911858974358975,
+    "player_both_seasons_rate": 0.9751602564102564,
+    "weighted_detailed_minutes_share": 0.9639196724274823,
+    "minimum_team_any_statistics_rate": 1.0,
+    "minimum_team_detailed_minutes_share": 0.689804369176864,
+    "minimum_position_any_statistics_rate": 1.0,
+    "players_rank_entry_precheck": 1062,
+    "players_benchmark_precheck": 929
+  },
+  "thresholds": {
+    "player_any_statistics_rate": 0.98,
+    "player_both_seasons_rate": 0.95,
+    "weighted_detailed_minutes_share": 0.85,
+    "minimum_team_any_statistics_rate": 0.85,
+    "minimum_position_any_statistics_rate": 0.95
+  },
+  "checks": {
+    "player_any_statistics_rate": true,
+    "player_both_seasons_rate": true,
+    "weighted_detailed_minutes_share": true,
+    "minimum_team_any_statistics_rate": true,
+    "minimum_position_any_statistics_rate": true
+  },
+  "next_step": "Construir inventario de fixtures oficiales dentro de las dos ventanas exactas, excluir amistosos y deduplicar partidos."
+}

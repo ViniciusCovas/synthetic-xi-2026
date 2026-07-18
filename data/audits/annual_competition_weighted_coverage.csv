@@ -1,0 +1,229 @@
+league_id,season,league_name,league_type,country,usable_detailed,players,reported_minutes
+39,2025,Premier League,League,England,True,174,323432.0
+1,2026,World Cup,Cup,World,True,1234,207462.0
+78,2025,Bundesliga,League,Germany,True,108,185277.0
+2,2025,UEFA Champions League,Cup,World,True,328,178074.0
+140,2025,La Liga,League,Spain,True,85,142443.0
+10,2025,Friendlies,Cup,World,True,752,136772.0
+135,2025,Serie A,League,Italy,True,76,134989.0
+61,2025,Ligue 1,League,France,True,90,134521.0
+10,2026,Friendlies,Cup,World,True,1102,114269.0
+253,2025,Major League Soccer,League,USA,True,49,91491.0
+307,2025,Pro League,League,Saudi-Arabia,True,51,90215.0
+30,2026,World Cup - Qualification Asia,Cup,World,True,196,88335.0
+34,2026,World Cup - Qualification South America,Cup,World,True,143,87072.0
+40,2025,Championship,League,England,True,41,79979.0
+3,2025,UEFA Europa League,Cup,World,True,144,78238.0
+203,2025,Süper Lig,League,Turkey,True,49,70377.0
+262,2025,Liga MX,League,Mexico,True,30,67580.0
+667,2025,Friendlies Clubs,Cup,World,True,249,66473.0
+144,2025,Jupiler Pro League,League,Belgium,True,37,61009.0
+88,2025,Eredivisie,League,Netherlands,True,42,58146.0
+94,2025,Primeira Liga,League,Portugal,True,31,52834.0
+71,2025,Serie A,League,Brazil,True,34,51409.0
+345,2025,Czech Liga,League,Czech-Republic,True,25,41740.0
+253,2026,Major League Soccer,League,USA,True,45,40295.0
+6,2025,Africa Cup of Nations,Cup,World,True,151,38922.0
+848,2025,UEFA Europa Conference League,Cup,World,True,78,37338.0
+15,2025,FIFA Club World Cup,Cup,World,True,149,37010.0
+179,2025,Premiership,League,Scotland,True,22,36515.0
+288,2025,Premier Soccer League,League,South-Africa,True,21,35718.0
+17,2025,AFC Champions League Elite,Cup,World,True,70,34897.0
+71,2026,Serie A,League,Brazil,True,33,28024.0
+119,2025,Superliga,League,Denmark,True,17,27988.0
+188,2025,A-League,League,Australia,True,18,27978.0
+31,2026,World Cup - Qualification CONCACAF,Cup,World,True,73,26714.0
+233,2025,Premier League,League,Egypt,True,20,25717.0
+45,2025,FA Cup,Cup,England,True,169,23869.0
+128,2025,Liga Profesional Argentina,League,Argentina,True,16,22573.0
+48,2025,League Cup,Cup,England,True,159,22051.0
+81,2025,DFB Pokal,Cup,Germany,True,103,21294.0
+22,2025,CONCACAF Gold Cup,Cup,World,True,124,20499.0
+207,2025,Super League,League,Switzerland,True,16,20439.0
+197,2025,Super League 1,League,Greece,True,14,20343.0
+103,2025,Eliteserien,League,Norway,True,13,20096.0
+13,2025,CONMEBOL Libertadores,Cup,World,True,42,19974.0
+850,2025,UEFA U21 Championship - Qualification,Cup,World,False,118,19916.0
+235,2025,Premier League,League,Russia,True,14,17250.0
+128,2026,Liga Profesional Argentina,League,Argentina,True,19,17056.0
+113,2025,Allsvenskan,League,Sweden,True,10,16385.0
+305,2025,Stars League,League,Qatar,True,29,16304.0
+218,2025,Bundesliga,League,Austria,True,8,16236.0
+185,2025,League Cup,Cup,Scotland,False,15,15610.0
+98,2025,J1 League,League,Japan,True,7,15355.0
+12,2025,CAF Champions League,Cup,World,True,29,14648.0
+210,2025,HNL,League,Croatia,True,7,14102.0
+62,2025,Ligue 2,League,France,True,10,13250.0
+79,2025,2. Bundesliga,League,Germany,True,9,12695.0
+143,2025,Copa del Rey,Cup,Spain,True,73,12680.0
+242,2025,Liga Pro,League,Ecuador,True,9,11708.0
+66,2025,Coupe de France,Cup,France,True,71,11619.0
+301,2025,Pro League,League,United-Arab-Emirates,True,18,11527.0
+632,2025,Supercopa do Brasil,Cup,Brazil,False,6,11329.0
+141,2025,Segunda División,League,Spain,True,8,10967.0
+292,2025,K League 1,League,South-Korea,True,9,10511.0
+16,2025,CONCACAF Champions League,Cup,World,True,30,10464.0
+136,2025,Serie B,League,Italy,True,5,10410.0
+13,2026,CONMEBOL Libertadores,Cup,World,True,32,10319.0
+18,2025,AFC Champions League Two,Cup,World,True,33,9892.0
+89,2025,Eerste Divisie,League,Netherlands,True,9,9357.0
+257,2025,US Open Cup,Cup,USA,False,20,9183.0
+137,2025,Coppa Italia,Cup,Italy,True,70,9130.0
+369,2025,Super League,League,Uzbekistan,False,16,9012.0
+11,2025,CONMEBOL Sudamericana,Cup,World,True,20,8990.0
+16,2026,CONCACAF Champions League,Cup,World,True,30,8480.0
+106,2025,Ekstraklasa,League,Poland,True,5,7915.0
+1038,2025,King's Cup,Cup,World,False,11,7744.0
+239,2025,Primera A,League,Colombia,True,4,7598.0
+98,2026,J1 League,League,Japan,True,6,7239.0
+41,2025,League One,League,England,True,5,7027.0
+318,2025,1. Division,League,Cyprus,True,10,6896.0
+509,2025,8 Cup,Cup,South-Africa,False,15,6895.0
+73,2025,Copa Do Brasil,Cup,Brazil,True,33,6802.0
+130,2025,Copa Argentina,Cup,Argentina,False,10,6791.0
+204,2025,1. Lig,League,Turkey,True,4,6591.0
+475,2025,Paulista - A1,League,Brazil,True,12,6427.0
+772,2025,Leagues Cup,Cup,World,True,50,6176.0
+357,2025,Premier Division,League,Ireland,True,2,5841.0
+11,2026,CONMEBOL Sudamericana,Cup,World,True,21,5757.0
+286,2025,Super Liga,League,Serbia,True,5,5717.0
+90,2025,KNVB Beker,Cup,Netherlands,True,36,5515.0
+283,2025,Liga I,League,Romania,True,2,5309.0
+103,2026,Eliteserien,League,Norway,True,7,5292.0
+475,2026,Paulista - A1,League,Brazil,True,14,5252.0
+250,2025,Division Profesional - Apertura,League,Paraguay,False,4,4694.0
+209,2025,Schweizer Cup,Cup,Switzerland,False,5,4538.0
+33,2026,World Cup - Qualification Oceania,Cup,World,False,22,4351.0
+292,2026,K League 1,League,South-Korea,True,8,4309.0
+1168,2025,FIFA Intercontinental Cup,Cup,World,True,39,4140.0
+624,2025,Carioca - 1,League,Brazil,True,13,4125.0
+242,2026,Liga Pro,League,Ecuador,True,6,4089.0
+383,2025,Ligat Ha'al,League,Israel,True,3,4083.0
+96,2025,Taça de Portugal,Cup,Portugal,True,22,4047.0
+271,2025,NB I,League,Hungary,True,3,3906.0
+624,2026,Carioca - 1,League,Brazil,True,13,3775.0
+265,2025,Primera División,League,Chile,True,2,3566.0
+20,2025,CAF Confederation Cup,Cup,World,True,6,3370.0
+1022,2025,Premier League - Summer Series,League,England,False,21,3267.0
+556,2025,Super Cup,Cup,Spain,True,36,3134.0
+38,2025,UEFA U21 Championship,Cup,World,True,13,2955.0
+252,2026,Division Profesional - Clausura,League,Paraguay,False,3,2921.0
+357,2026,Premier Division,League,Ireland,True,2,2911.0
+548,2025,Super Cup,Cup,Japan,False,1,2873.0
+531,2025,UEFA Super Cup,Cup,World,True,24,2857.0
+172,2025,First League,League,Bulgaria,True,2,2811.0
+73,2026,Copa Do Brasil,Cup,Brazil,True,29,2771.0
+965,2025,AFC U20 Asian Cup,Cup,World,False,6,2329.0
+267,2025,Copa Chile,Cup,Chile,False,2,2293.0
+206,2025,Türkiye Kupası,Cup,Turkey,True,37,2197.0
+95,2025,Segunda Liga,League,Portugal,True,4,2102.0
+113,2026,Allsvenskan,League,Sweden,True,3,2071.0
+332,2025,Super Liga,League,Slovakia,True,2,1984.0
+290,2025,Persian Gulf Pro League,League,Iran,False,14,1898.0
+490,2025,World Cup - U20,Cup,World,True,6,1881.0
+802,2025,Cup,Cup,Uzbekistan,False,15,1880.0
+265,2026,Primera División,League,Chile,True,2,1708.0
+255,2025,USL Championship,League,USA,False,3,1633.0
+547,2025,Super Cup,Cup,Italy,True,22,1628.0
+145,2025,Challenger Pro League,League,Belgium,True,1,1604.0
+629,2025,Mineiro - 1,League,Brazil,False,2,1576.0
+304,2025,Liga Panameña de Fútbol,League,Panama,False,2,1547.0
+528,2025,Community Shield,Cup,England,True,19,1407.0
+299,2025,Primera División,League,Venezuela,False,3,1350.0
+23,2025,EAFF E-1 Football Championship,Cup,World,False,10,1338.0
+529,2025,Super Cup,Cup,Germany,True,17,1337.0
+37,2026,World Cup - Qualification Intercontinental Play-offs,Cup,World,True,22,1320.0
+169,2026,Super League,League,China,True,1,1304.0
+526,2025,Trophée des Champions,Cup,France,True,17,1248.0
+270,2025,Primera División - Clausura,League,Uruguay,False,1,1247.0
+105,2025,NM Cupen,Cup,Norway,False,9,1107.0
+239,2026,Primera A,League,Colombia,True,1,1086.0
+937,2025,Emirates Cup,Cup,World,False,14,1081.0
+296,2025,Thai League 1,League,Thailand,True,1,1003.0
+80,2025,3. Liga,League,Germany,True,3,999.0
+773,2025,Sudamericano U20,Cup,World,False,3,939.0
+46,2025,EFL Trophy,Cup,England,True,6,791.0
+244,2025,Veikkausliiga,League,Finland,True,1,727.0
+857,2025,Campeón de Campeones,Cup,Mexico,False,8,684.0
+1186,2025,FIFA Club World Cup - Play-In,Cup,World,False,6,577.0
+602,2025,Baiano - 1,League,Brazil,False,1,478.0
+886,2025,UEFA U17 Championship - Qualification,Cup,World,False,3,470.0
+259,2025,Canadian Championship,Cup,Canada,False,12,441.0
+101,2025,J-League Cup,Cup,Japan,False,6,437.0
+893,2025,UEFA U19 Championship - Qualification,Cup,World,False,4,370.0
+262,2026,Liga MX,League,Mexico,True,6,368.0
+294,2025,FA Cup,Cup,South-Korea,False,12,315.0
+874,2025,Australia Cup,Cup,Australia,False,15,270.0
+114,2026,Superettan,League,Sweden,True,1,254.0
+533,2025,CAF Super Cup,Cup,World,True,4,196.0
+1089,2025,UAE-Qatar - Super Shield,Cup,World,False,4,195.0
+899,2025,League Cup,Cup,Finland,False,1,180.0
+244,2026,Veikkausliiga,League,Finland,True,1,180.0
+237,2025,Cup,Cup,Russia,False,4,180.0
+909,2025,MLS Next Pro,League,USA,False,1,114.0
+663,2025,Super Cup,Cup,Russia,False,3,114.0
+220,2025,Cup,Cup,Austria,False,2,106.0
+359,2025,FAI Cup,Cup,Ireland,False,1,90.0
+385,2025,Toto Cup Ligat Al,Cup,Israel,False,1,90.0
+1178,2025,Super Copa International,Cup,Argentina,False,1,90.0
+162,2025,Primera División,League,Costa-Rica,False,1,90.0
+2,2026,UEFA Champions League,Cup,World,True,1,90.0
+234,2025,Liga Nacional,League,Honduras,False,1,90.0
+550,2025,Super Cup,Cup,Portugal,False,2,90.0
+539,2025,Super Cup,Cup,Egypt,False,3,90.0
+389,2025,Premier League,League,Kazakhstan,False,1,89.0
+182,2025,Challenge Cup,Cup,Scotland,False,1,86.0
+1087,2025,Ykkösliiga,League,Finland,False,1,83.0
+1028,2025,CONCACAF Central American Cup,Cup,World,False,1,62.0
+346,2025,FNL,League,Czech-Republic,False,1,38.0
+1095,2025,USL League One Cup,League,USA,False,1,23.0
+493,2025,UEFA U19 Championship,Cup,World,False,1,23.0
+713,2025,Superliga,Cup,Colombia,False,1,21.0
+200,2025,Botola Pro,League,Morocco,False,1,0.0
+199,2025,Cup,Cup,Greece,False,3,0.0
+202,2025,Ligue 1,League,Tunisia,False,2,0.0
+186,2025,Ligue 1,League,Algeria,False,3,0.0
+147,2025,Cup,Cup,Belgium,False,1,0.0
+104,2025,1. Division,League,Norway,False,1,0.0
+99,2025,J2 League,League,Japan,False,2,0.0
+102,2025,Emperor Cup,Cup,Japan,False,1,0.0
+67,2025,National 2 - Group A,League,France,False,1,0.0
+63,2025,National 1,League,France,False,1,0.0
+321,2025,Cup,Cup,Cyprus,False,1,0.0
+302,2025,League Cup,Cup,United-Arab-Emirates,False,1,0.0
+257,2026,US Open Cup,Cup,USA,False,1,0.0
+251,2025,Division Intermedia,League,Paraguay,False,1,0.0
+373,2025,1. SNL,League,Slovenia,False,1,0.0
+273,2025,Magyar Kupa,Cup,Hungary,False,1,0.0
+516,2025,Super Cup,Cup,Algeria,False,1,0.0
+508,2025,League Cup,Cup,South-Africa,False,1,0.0
+504,2025,King's Cup,Cup,Saudi-Arabia,True,3,0.0
+495,2025,Hazfi Cup,Cup,Iran,False,1,0.0
+477,2026,Gaúcho - 1,League,Brazil,False,1,0.0
+379,2025,Ligue Haïtienne,League,Haiti,False,1,0.0
+387,2025,League,League,Jordan,False,1,0.0
+477,2025,Gaúcho - 1,League,Brazil,False,2,0.0
+551,2025,Super Cup,Cup,Turkey,True,16,0.0
+560,2025,Presidents Cup,Cup,United-Arab-Emirates,False,2,0.0
+517,2025,Trofeo de Campeones de la Superliga,Cup,Argentina,False,1,0.0
+727,2025,Super Cup,Cup,Poland,False,1,0.0
+628,2025,Goiano - 1,League,Brazil,False,1,0.0
+630,2025,Matogrossense,League,Brazil,False,1,0.0
+606,2025,Paranaense - 1,League,Brazil,False,1,0.0
+612,2025,Copa do Nordeste,Cup,Brazil,False,1,0.0
+824,2025,Emir Cup,Cup,Qatar,False,1,0.0
+816,2025,Shield Cup,Cup,Jordan,False,1,0.0
+714,2025,Cup,Cup,Egypt,False,1,0.0
+852,2025,Super Cup,Cup,Cyprus,False,1,0.0
+824,2026,Emir Cup,Cup,Qatar,False,1,0.0
+851,2026,Carioca A2,League,Brazil,False,1,0.0
+860,2025,Arab Cup,Cup,World,False,7,0.0
+826,2025,Super Cup,Cup,Saudi-Arabia,False,2,0.0
+914,2025,Tournoi Maurice Revello,Cup,World,False,2,0.0
+905,2025,Super Cup,Cup,Iran,False,2,0.0
+1008,2025,CAFA Nations Cup,Cup,World,False,5,0.0
+1123,2026,UAE-Qatar - Super Cup,Cup,World,False,1,0.0
+1123,2025,UAE-Qatar - Super Cup,Cup,World,False,1,0.0
+1179,2025,Copa do Brasil U17,Cup,Brazil,False,16,0.0
+1194,2025,Super Cup,Cup,Tunisia,False,2,0.0
+1210,2026,Super Cup,Cup,Greece,False,1,0.0
