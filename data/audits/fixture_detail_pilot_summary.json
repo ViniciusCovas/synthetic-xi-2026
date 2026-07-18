@@ -1,0 +1,47 @@
+{
+  "status": "pilot_requires_methodological_repairs",
+  "generated_at_utc": "2026-07-18T19:50:14.053622+00:00",
+  "selection_rule": "Hasta dos fixtures por combinación liga-temporada: primero y último cronológicamente.",
+  "metrics": {
+    "sampled_fixtures": 225,
+    "successful_fixtures": 225,
+    "failed_fixtures": 0,
+    "player_stat_rows": 7976,
+    "lineup_rows": 9306,
+    "players_response_nonempty_rate": 0.8444444444444444,
+    "lineups_response_nonempty_rate": 0.9733333333333334,
+    "minutes_nonnull_rate": 0.741098294884654,
+    "position_nonnull_rate": 0.9958625877632898,
+    "rating_nonnull_rate": 0.7197843530591775,
+    "passes_total_nonnull_rate": 0.7259277833500501,
+    "starter_grid_nonnull_rate": 0.8858447488584474,
+    "starter_position_nonnull_rate": 0.8802407638024077,
+    "positive_minute_rows": 5857,
+    "network_calls_this_run": 450,
+    "daily_requests_remaining_reported": "3861"
+  },
+  "thresholds": {
+    "players_response_nonempty_rate": 0.95,
+    "lineups_response_nonempty_rate": 0.9,
+    "minutes_nonnull_rate": 0.95,
+    "position_nonnull_rate": 0.95,
+    "passes_total_nonnull_rate": 0.9,
+    "starter_grid_nonnull_rate": 0.85,
+    "starter_position_nonnull_rate": 0.95
+  },
+  "checks": {
+    "players_response_nonempty_rate": false,
+    "lineups_response_nonempty_rate": true,
+    "minutes_nonnull_rate": false,
+    "position_nonnull_rate": true,
+    "passes_total_nonnull_rate": false,
+    "starter_grid_nonnull_rate": true,
+    "starter_position_nonnull_rate": false
+  },
+  "methodological_gate": {
+    "full_extraction_allowed": false,
+    "rankings_allowed": false,
+    "next_step": "Revisar campos y competiciones que no superaron los umbrales."
+  },
+  "raw_responses_sha256": "66f1e66393b4382838e07a07fae949d6b2da25ca97b070352a355981647581a7"
+}

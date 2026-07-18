@@ -1,0 +1,226 @@
+fixture_id,date_utc,league_id,league_name,league_type,country,season,home_team_id,home_team,away_team_id,away_team,status,is_friendly,is_youth,official_senior_main,in_current_window,in_pre_world_cup_window
+1489369,2026-06-11 19:00:00+00:00,1,World Cup,Cup,World,2026,16,Mexico,1531,South Africa,FT,False,False,True,True,False
+1586077,2026-07-15 19:00:00+00:00,1,World Cup,Cup,World,2026,10,England,26,Argentina,FT,False,False,True,True,False
+1383423,2025-07-08 16:00:00+00:00,2,UEFA Champions League,Cup,World,2025,3502,Saburtalo,375,Malmo FF,FT,False,False,True,False,True
+1544371,2026-05-30 16:00:00+00:00,2,UEFA Champions League,Cup,World,2025,85,Paris Saint Germain,42,Arsenal,PEN,False,False,True,True,True
+1554364,2026-07-07 17:30:00+00:00,2,UEFA Champions League,Cup,World,2026,4625,Floriana,652,Shamrock Rovers,FT,False,False,True,True,False
+1554385,2026-07-14 19:00:00+00:00,2,UEFA Champions League,Cup,World,2026,652,Shamrock Rovers,4625,Floriana,FT,False,False,True,True,False
+1410068,2025-07-24 17:00:00+00:00,3,UEFA Europa League,Cup,World,2025,568,Sheriff Tiraspol,207,Utrecht,FT,False,False,True,True,True
+1544596,2026-05-20 19:00:00+00:00,3,UEFA Europa League,Cup,World,2025,160,SC Freiburg,66,Aston Villa,FT,False,False,True,True,True
+1347239,2025-12-21 19:00:00+00:00,6,Africa Cup of Nations,Cup,World,2025,31,Morocco,1524,Comoros,FT,False,False,True,True,True
+1508003,2026-01-18 19:00:00+00:00,6,Africa Cup of Nations,Cup,World,2025,13,Senegal,31,Morocco,AET,False,False,True,True,True
+1377225,2025-07-16 00:30:00+00:00,11,CONMEBOL Sudamericana,Cup,World,2025,118,Bahia,1138,America de Cali,FT,False,False,True,False,True
+1485071,2025-11-22 20:00:00+00:00,11,CONMEBOL Sudamericana,Cup,World,2025,446,Lanus,1062,Atletico-MG,PEN,False,False,True,True,True
+1501201,2026-03-04 00:30:00+00:00,11,CONMEBOL Sudamericana,Cup,World,2026,2331,Cobresal,2329,A. Italiano,PEN,False,False,True,True,True
+1535228,2026-05-28 00:30:00+00:00,11,CONMEBOL Sudamericana,Cup,World,2026,435,River Plate,3701,Blooming,FT,False,False,True,True,True
+1469724,2025-09-20 15:00:00+00:00,12,CAF Champions League,Cup,World,2025,17993,Bibiani Gold Stars,918,JS Kabylie,FT,False,False,True,True,True
+1541796,2026-05-24 19:00:00+00:00,12,CAF Champions League,Cup,World,2025,969,FAR Rabat,2699,Mamelodi Sundowns,FT,False,False,True,True,True
+1377443,2025-08-12 22:00:00+00:00,13,CONMEBOL Libertadores,Cup,World,2025,154,Fortaleza EC,438,Velez Sarsfield,FT,False,False,True,True,True
+1485040,2025-11-29 21:00:00+00:00,13,CONMEBOL Libertadores,Cup,World,2025,121,Palmeiras,127,Flamengo,FT,False,False,True,True,True
+1494504,2026-02-06 00:30:00+00:00,13,CONMEBOL Libertadores,Cup,World,2026,2353,Juventud,1157,Universidad Catolica,FT,False,False,True,True,True
+1535314,2026-05-29 00:30:00+00:00,13,CONMEBOL Libertadores,Cup,World,2026,451,Boca Juniors,2994,U. Catolica,FT,False,False,True,True,True
+1321680,2025-06-15 00:00:00+00:00,15,FIFA Club World Cup,Cup,World,2025,1577,Al Ahly,9568,Inter Miami,FT,False,False,True,False,True
+1399365,2025-07-13 19:00:00+00:00,15,FIFA Club World Cup,Cup,World,2025,49,Chelsea,85,Paris Saint Germain,FT,False,False,True,False,True
+1514127,2026-02-04 00:00:00+00:00,16,CONCACAF Champions League,Cup,World,2026,3830,Forge,2279,Tigres UANL,FT,False,False,True,True,True
+1544369,2026-05-31 00:00:00+00:00,16,CONCACAF Champions League,Cup,World,2026,2281,Toluca,2279,Tigres UANL,PEN,False,False,True,True,True
+1431101,2025-08-12 16:00:00+00:00,17,AFC Champions League Elite,Cup,World,2025,2904,Al-Duhail SC,2744,Sepahan FC,FT,False,False,True,True,True
+1542238,2026-04-25 16:15:00+00:00,17,AFC Champions League Elite,Cup,World,2025,2929,Al-Ahli Jeddah,303,Machida Zelvia,AET,False,False,True,True,True
+1431049,2025-08-13 12:00:00+00:00,18,AFC Champions League Two,Cup,World,2025,2445,Persib Bandung,21576,Manila Digger,FT,False,False,True,True,True
+1542549,2026-05-16 17:45:00+00:00,18,AFC Champions League Two,Cup,World,2025,2939,Al-Nassr,293,Gamba Osaka,FT,False,False,True,True,True
+1469820,2025-09-20 15:00:00+00:00,20,CAF Confederation Cup,Cup,World,2025,4929,Kabuscorp,2691,Kaizer Chiefs,FT,False,False,True,True,True
+1541943,2026-05-16 18:00:00+00:00,20,CAF Confederation Cup,Cup,World,2025,1040,Zamalek SC,910,USM Alger,PEN,False,False,True,True,True
+1371356,2025-06-15 02:15:00+00:00,22,CONCACAF Gold Cup,Cup,World,2025,16,Mexico,5532,Dominican Republic,FT,False,False,True,False,True
+1391246,2025-07-06 23:00:00+00:00,22,CONCACAF Gold Cup,Cup,World,2025,2384,USA,16,Mexico,FT,False,False,True,False,True
+1479250,2025-10-08 15:00:00+00:00,30,World Cup - Qualification Asia,Cup,World,2026,1552,Oman,1569,Qatar,FT,False,False,True,True,True
+1481800,2025-11-18 16:00:00+00:00,30,World Cup - Qualification Asia,Cup,World,2026,1567,Iraq,1563,United Arab Emirates,FT,False,False,True,True,True
+1169556,2025-06-11 00:00:00+00:00,31,World Cup - Qualification CONCACAF,Cup,World,2026,11,Panama,5164,Nicaragua,FT,False,False,True,False,True
+1453336,2025-11-19 01:00:00+00:00,31,World Cup - Qualification CONCACAF,Cup,World,2026,2385,Jamaica,5530,Curaçao,FT,False,False,True,True,True
+1100310,2025-06-11 00:00:00+00:00,34,World Cup - Qualification South America,Cup,World,2026,26,Argentina,8,Colombia,FT,False,False,True,False,True
+1100322,2025-09-09 23:30:00+00:00,34,World Cup - Qualification South America,Cup,World,2026,30,Peru,2380,Paraguay,FT,False,False,True,True,True
+1537582,2026-03-31 21:00:00+00:00,37,World Cup - Qualification Intercontinental Play-offs,Cup,World,2026,1508,Congo DR,2385,Jamaica,AET,False,False,True,True,True
+1378969,2025-08-15 19:00:00+00:00,39,Premier League,League,England,2025,40,Liverpool,35,Bournemouth,FT,False,False,True,True,True
+1379348,2026-05-24 15:00:00+00:00,39,Premier League,League,England,2025,48,West Ham,63,Leeds,FT,False,False,True,True,True
+1386551,2025-08-08 19:00:00+00:00,40,Championship,League,England,2025,54,Birmingham,57,Ipswich,FT,False,False,True,True,True
+1545715,2026-05-23 14:30:00+00:00,40,Championship,League,England,2025,64,Hull City,70,Middlesbrough,FT,False,False,True,True,True
+1387103,2025-08-01 19:00:00+00:00,41,League One,League,England,2025,1359,Luton,1333,AFC Wimbledon,FT,False,False,True,True,True
+1387653,2026-05-02 14:00:00+00:00,41,League One,League,England,2025,1358,Wycombe,73,Rotherham,FT,False,False,True,True,True
+1478183,2025-10-11 14:00:00+00:00,45,FA Cup,Cup,England,2025,1831,Braintree,7715,Farnborough,FT,False,False,True,True,True
+1542889,2026-05-16 14:00:00+00:00,45,FA Cup,Cup,England,2025,49,Chelsea,50,Manchester City,FT,False,False,True,True,True
+1444527,2025-09-02 18:00:00+00:00,46,EFL Trophy,Cup,England,2025,1354,Doncaster,7193,Everton U21,FT,False,False,True,True,True
+1529693,2026-04-12 14:00:00+00:00,46,EFL Trophy,Cup,England,2025,1359,Luton,4686,Stockport County,FT,False,False,True,True,True
+1393285,2025-08-12 18:00:00+00:00,48,League Cup,Cup,England,2025,76,Swansea,1362,Crawley Town,FT,False,False,True,True,True
+1518728,2026-03-22 16:30:00+00:00,48,League Cup,Cup,England,2025,42,Arsenal,50,Manchester City,FT,False,False,True,True,True
+1387706,2025-08-15 18:45:00+00:00,61,Ligue 1,League,France,2025,94,Rennes,81,Marseille,FT,False,False,True,True,True
+1545409,2026-05-29 18:45:00+00:00,61,Ligue 1,League,France,2025,84,Nice,1063,Saint Etienne,FT,False,False,True,True,True
+1389126,2025-08-09 18:00:00+00:00,62,Ligue 2,League,France,2025,82,Montpellier,104,RED Star FC 93,FT,False,False,True,True,True
+1390013,2026-05-09 18:00:00+00:00,62,Ligue 2,League,France,2025,1305,Bastia,1298,Le Mans,FT,False,False,True,True,True
+1485814,2025-11-15 13:00:00+00:00,66,Coupe de France,Cup,France,2025,24546,OCPAM,93,Reims,FT,False,False,True,True,True
+1542551,2026-05-22 19:00:00+00:00,66,Coupe de France,Cup,France,2025,116,Lens,84,Nice,FT,False,False,True,True,True
+1351157,2025-06-12 22:00:00+00:00,71,Serie A,League,Brazil,2025,794,RB Bragantino,118,Bahia,FT,False,False,True,False,True
+1478056,2025-12-07 19:00:00+00:00,71,Serie A,League,Brazil,2025,136,Vitoria,126,Sao Paulo,FT,False,False,True,True,True
+1492110,2026-01-28 22:00:00+00:00,71,Serie A,League,Brazil,2026,1062,Atletico-MG,121,Palmeiras,FT,False,False,True,True,True
+1492297,2026-07-17 23:00:00+00:00,71,Serie A,League,Brazil,2026,7848,Mirassol,130,Gremio,FT,False,False,True,True,False
+1377538,2025-07-29 22:00:00+00:00,73,Copa Do Brasil,Cup,Brazil,2025,120,Botafogo,794,RB Bragantino,FT,False,False,True,True,True
+1491727,2025-12-21 21:00:00+00:00,73,Copa Do Brasil,Cup,Brazil,2025,133,Vasco DA Gama,131,Corinthians,FT,False,False,True,True,True
+1537034,2026-04-21 20:00:00+00:00,73,Copa Do Brasil,Cup,Brazil,2026,120,Botafogo,132,Chapecoense-sc,FT,False,False,True,True,True
+1537008,2026-05-15 00:30:00+00:00,73,Copa Do Brasil,Cup,Brazil,2026,136,Vitoria,127,Flamengo,FT,False,False,True,True,True
+1388308,2025-08-22 18:30:00+00:00,78,Bundesliga,League,Germany,2025,157,Bayern München,173,RB Leipzig,FT,False,False,True,True,True
+1545418,2026-05-25 18:30:00+00:00,78,Bundesliga,League,Germany,2025,185,SC Paderborn 07,161,VfL Wolfsburg,AET,False,False,True,True,True
+1388614,2025-08-01 18:30:00+00:00,79,2. Bundesliga,League,Germany,2025,174,FC Schalke 04,159,Hertha BSC,FT,False,False,True,True,True
+1388919,2026-05-17 13:30:00+00:00,79,2. Bundesliga,League,Germany,2025,183,Dynamo Dresden,191,Holstein Kiel,FT,False,False,True,True,True
+1394057,2025-08-02 12:00:00+00:00,80,3. Liga,League,Germany,2025,9364,Hoffenheim II,9342,Havelse,FT,False,False,True,True,True
+1394432,2026-05-16 11:30:00+00:00,80,3. Liga,League,Germany,2025,1319,SV Wehen,9364,Hoffenheim II,FT,False,False,True,True,True
+1378937,2025-08-15 16:00:00+00:00,81,DFB Pokal,Cup,Germany,2025,14485,FC Gutersloh,182,Union Berlin,FT,False,False,True,True,True
+1542721,2026-05-23 18:00:00+00:00,81,DFB Pokal,Cup,Germany,2025,157,Bayern München,172,VfB Stuttgart,FT,False,False,True,True,True
+1380868,2025-08-09 14:30:00+00:00,88,Eredivisie,League,Netherlands,2025,413,NEC Nijmegen,196,Excelsior,FT,False,False,True,True,True
+1546052,2026-05-24 10:15:00+00:00,88,Eredivisie,League,Netherlands,2025,194,Ajax,207,Utrecht,PEN,False,False,True,True,True
+1381914,2025-08-08 18:00:00+00:00,89,Eerste Divisie,League,Netherlands,2025,199,De Graafschap,204,VVV Venlo,FT,False,False,True,True,True
+1544691,2026-05-16 18:00:00+00:00,89,Eerste Divisie,League,Netherlands,2025,195,Willem II,419,Almere City FC,FT,False,False,True,True,True
+1477433,2025-10-28 17:45:00+00:00,90,KNVB Beker,Cup,Netherlands,2025,421,Den Bosch,198,ADO Den Haag,PEN,False,False,True,True,True
+1529695,2026-04-19 16:00:00+00:00,90,KNVB Beker,Cup,Netherlands,2025,201,AZ Alkmaar,413,NEC Nijmegen,FT,False,False,True,True,True
+1396240,2025-08-08 19:15:00+00:00,94,Primeira Liga,League,Portugal,2025,4716,Casa Pia,228,Sporting CP,FT,False,False,True,True,True
+1545404,2026-05-28 19:00:00+00:00,94,Primeira Liga,League,Portugal,2025,4716,Casa Pia,4799,Torreense,FT,False,False,True,True,True
+1397975,2025-08-09 10:00:00+00:00,95,Segunda Liga,League,Portugal,2025,234,Pacos Ferreira,810,Vizela,FT,False,False,True,True,True
+1545427,2026-05-30 19:30:00+00:00,95,Segunda Liga,League,Portugal,2025,17692,CF Os Belenenses,231,Farense,FT,False,False,True,True,True
+1469281,2025-09-20 15:00:00+00:00,96,Taça de Portugal,Cup,Portugal,2025,15125,Vidago,231,Farense,FT,False,False,True,True,True
+1542722,2026-05-24 16:15:00+00:00,96,Taça de Portugal,Cup,Portugal,2025,228,Sporting CP,4799,Torreense,AET,False,False,True,True,True
+1324146,2025-06-14 08:30:00+00:00,98,J1 League,League,Japan,2025,284,Shonan Bellmare,303,Machida Zelvia,FT,False,False,True,False,True
+1324331,2025-12-06 05:00:00+00:00,98,J1 League,League,Japan,2025,282,Sanfrecce Hiroshima,284,Shonan Bellmare,FT,False,False,True,True,True
+1501295,2026-02-06 10:00:00+00:00,98,J1 League,League,Japan,2026,285,V-varen Nagasaki,282,Sanfrecce Hiroshima,FT,False,False,True,True,True
+1546407,2026-06-06 10:00:00+00:00,98,J1 League,League,Japan,2026,294,Kawasaki Frontale,282,Sanfrecce Hiroshima,FT,False,False,True,True,True
+1342258,2025-06-21 16:00:00+00:00,103,Eliteserien,League,Norway,2025,327,Bodo/Glimt,319,Brann,FT,False,False,True,False,True
+1342425,2025-11-30 16:00:00+00:00,103,Eliteserien,League,Norway,2025,759,Viking,326,Valerenga,FT,False,False,True,True,True
+1494596,2026-03-14 15:00:00+00:00,103,Eliteserien,League,Norway,2026,2159,Ham-Kam,759,Viking,FT,False,False,True,True,True
+1494700,2026-07-17 17:15:00+00:00,103,Eliteserien,League,Norway,2026,327,Bodo/Glimt,2149,Fredrikstad,FT,False,False,True,True,False
+1380386,2025-07-18 16:00:00+00:00,106,Ekstraklasa,League,Poland,2025,336,Jagiellonia,3487,Nieciecza,FT,False,False,True,True,True
+1380689,2026-05-23 15:30:00+00:00,106,Ekstraklasa,League,Poland,2025,6962,Widzew Łódź,349,Piast Gliwice,FT,False,False,True,True,True
+1342044,2025-06-28 13:00:00+00:00,113,Allsvenskan,League,Sweden,2025,363,Hammarby FF,766,Halmstad,FT,False,False,True,False,True
+1485785,2025-11-29 14:00:00+00:00,113,Allsvenskan,League,Sweden,2025,378,IFK Norrkoping,2166,Orgryte IS,FT,False,False,True,True,True
+1494118,2026-04-04 13:00:00+00:00,113,Allsvenskan,League,Sweden,2026,363,Hammarby FF,2240,Mjallby AIF,FT,False,False,True,True,True
+1494215,2026-07-17 17:00:00+00:00,113,Allsvenskan,League,Sweden,2026,2240,Mjallby AIF,2241,Vasteras SK FK,FT,False,False,True,True,False
+1497516,2026-04-04 10:30:00+00:00,114,Superettan,League,Sweden,2026,378,IFK Norrkoping,2163,IFK Varnamo,FT,False,False,True,True,True
+1497621,2026-06-28 13:00:00+00:00,114,Superettan,League,Sweden,2026,378,IFK Norrkoping,2173,Norrby IF,FT,False,False,True,True,False
+1379349,2025-07-18 17:00:00+00:00,119,Superliga,League,Denmark,2025,2070,Viborg,400,FC Copenhagen,FT,False,False,True,True,True
+1545410,2026-05-21 16:30:00+00:00,119,Superliga,League,Denmark,2025,407,Brondby,400,FC Copenhagen,AET,False,False,True,True,True
+1374073,2025-07-11 23:00:00+00:00,128,Liga Profesional Argentina,League,Argentina,2025,456,Talleres Cordoba,460,San Lorenzo,FT,False,False,True,False,True
+1490750,2025-12-14 00:00:00+00:00,128,Liga Profesional Argentina,League,Argentina,2025,436,Racing Club,450,Estudiantes L.P.,PEN,False,False,True,True,True
+1491818,2026-01-22 20:00:00+00:00,128,Liga Profesional Argentina,League,Argentina,2026,463,Aldosivi,442,Defensa Y Justicia,FT,False,False,True,True,True
+1545443,2026-05-24 18:30:00+00:00,128,Liga Profesional Argentina,League,Argentina,2026,435,River Plate,440,Belgrano Cordoba,FT,False,False,True,True,True
+1377867,2025-08-23 16:30:00+00:00,135,Serie A,League,Italy,2025,495,Genoa,867,Lecce,FT,False,False,True,True,True
+1378243,2026-05-24 18:45:00+00:00,135,Serie A,League,Italy,2025,504,Hellas Verona,497,AS Roma,FT,False,False,True,True,True
+1419601,2025-08-24 17:00:00+00:00,136,Serie B,League,Italy,2025,517,Venezia,508,Bari,FT,False,False,True,True,True
+1419969,2026-05-08 18:30:00+00:00,136,Serie B,League,Italy,2025,512,Frosinone,1693,Mantova,FT,False,False,True,True,True
+1393800,2025-08-15 16:30:00+00:00,137,Coppa Italia,Cup,Italy,2025,488,Sassuolo,1687,Catanzaro,FT,False,False,True,True,True
+1542548,2026-05-13 19:00:00+00:00,137,Coppa Italia,Cup,Italy,2025,487,Lazio,505,Inter,FT,False,False,True,True,True
+1390824,2025-08-15 17:00:00+00:00,140,La Liga,League,Spain,2025,547,Girona,728,Rayo Vallecano,FT,False,False,True,True,True
+1391198,2026-05-24 19:00:00+00:00,140,La Liga,League,Spain,2025,533,Villarreal,530,Atletico Madrid,FT,False,False,True,True,True
+1391254,2025-08-15 19:30:00+00:00,141,Segunda División,League,Spain,2025,9580,Burgos,725,Cultural Leonesa,FT,False,False,True,True,True
+1548054,2026-06-09 19:00:00+00:00,141,Segunda División,League,Spain,2025,723,Almeria,5254,Castellón,FT,False,False,True,True,True
+1480734,2025-10-28 18:00:00+00:00,143,Copa del Rey,Cup,Spain,2025,9776,Constància,547,Girona,AET,False,False,True,True,True
+1529694,2026-04-18 19:00:00+00:00,143,Copa del Rey,Cup,Spain,2025,530,Atletico Madrid,548,Real Sociedad,PEN,False,False,True,True,True
+1382426,2025-07-25 18:45:00+00:00,144,Jupiler Pro League,League,Belgium,2025,740,Antwerp,1393,Union St. Gilloise,FT,False,False,True,True,True
+1546340,2026-05-31 16:30:00+00:00,144,Jupiler Pro League,League,Belgium,2025,631,Gent,742,Genk,PEN,False,False,True,True,True
+1392552,2025-08-09 18:00:00+00:00,145,Challenger Pro League,League,Belgium,2025,6219,K. Lierse S.K.,738,SK Beveren,FT,False,False,True,True,True
+1392807,2026-04-17 18:00:00+00:00,145,Challenger Pro League,League,Belgium,2025,10244,Seraing United,738,SK Beveren,FT,False,False,True,True,True
+1523065,2026-03-08 07:30:00+00:00,169,Super League,League,China,2026,848,Hangzhou Greentown,17265,Qingdao Youth Island,FT,False,False,True,True,True
+1523197,2026-07-14 11:35:00+00:00,169,Super League,League,China,2026,848,Hangzhou Greentown,1431,Qingdao Jonoon,FT,False,False,True,True,False
+1388009,2025-07-19 17:00:00+00:00,172,First League,League,Bulgaria,2025,566,Ludogorets,856,Septemvri Sofia,FT,False,False,True,True,True
+1546530,2026-05-29 16:00:00+00:00,172,First League,League,Bulgaria,2025,566,Ludogorets,858,Lokomotiv Plovdiv,PEN,False,False,True,True,True
+1382666,2025-08-02 14:00:00+00:00,179,Premiership,League,Scotland,2025,250,Kilmarnock,255,Livingston,FT,False,False,True,True,True
+1540018,2026-05-17 13:00:00+00:00,179,Premiership,League,Scotland,2025,255,Livingston,250,Kilmarnock,FT,False,False,True,True,True
+1469558,2025-10-17 08:00:00+00:00,188,A-League,League,Australia,2025,948,Adelaide United,943,Sydney,FT,False,False,True,True,True
+1545369,2026-05-23 08:10:00+00:00,188,A-League,League,Australia,2025,24608,Auckland,943,Sydney,FT,False,False,True,True,True
+1400742,2025-08-23 17:00:00+00:00,197,Super League 1,League,Greece,2025,553,Olympiakos Piraeus,955,Asteras Tripolis,FT,False,False,True,True,True
+1537107,2026-05-21 16:00:00+00:00,197,Super League 1,League,Greece,2025,5050,Kifisia,953,Larisa,FT,False,False,True,True,True
+1394436,2025-08-08 18:30:00+00:00,203,Süper Lig,League,Turkey,2025,3573,Gaziantep FK,645,Galatasaray,FT,False,False,True,True,True
+1394738,2026-05-17 17:00:00+00:00,203,Süper Lig,League,Turkey,2025,998,Trabzonspor,997,Gençlerbirliği S.K.,FT,False,False,True,True,True
+1398320,2025-08-09 16:00:00+00:00,204,1. Lig,League,Turkey,2025,1009,Erzurumspor FK,1002,Sivasspor,FT,False,False,True,True,True
+1398691,2026-05-02 13:00:00+00:00,204,1. Lig,League,Turkey,2025,17259,Iğdır FK,3579,Amed,FT,False,False,True,True,True
+1484203,2025-10-29 12:00:00+00:00,206,Türkiye Kupası,Cup,Turkey,2025,6517,Bursa Yıldırımspor,996,Alanyaspor,FT,False,False,True,True,True
+1545069,2026-05-22 17:45:00+00:00,206,Türkiye Kupası,Cup,Turkey,2025,998,Trabzonspor,607,Konyaspor,FT,False,False,True,True,True
+1382294,2025-07-25 18:30:00+00:00,207,Super League,League,Switzerland,2025,783,FC Zurich,630,FC Sion,FT,False,False,True,True,True
+1545231,2026-05-21 18:15:00+00:00,207,Super League,League,Switzerland,2025,1013,Grasshoppers,2177,FC Aarau,AET,False,False,True,True,True
+1383921,2025-08-02 19:00:00+00:00,210,HNL,League,Croatia,2025,616,NK Osijek,620,Dinamo Zagreb,FT,False,False,True,True,True
+1384094,2026-05-23 16:45:00+00:00,210,HNL,League,Croatia,2025,620,Dinamo Zagreb,1017,NK Lokomotiva Zagreb,FT,False,False,True,True,True
+1390027,2025-08-01 18:30:00+00:00,218,Bundesliga,League,Austria,2025,1026,Lask Linz,637,Sturm Graz,FT,False,False,True,True,True
+1545407,2026-05-19 16:30:00+00:00,218,Bundesliga,League,Austria,2025,1028,Ried,1025,Wolfsberger AC,FT,False,False,True,True,True
+1418747,2025-08-08 15:00:00+00:00,233,Premier League,League,Egypt,2025,1046,Wadi Degla,1036,Pyramids FC,FT,False,False,True,True,True
+1533659,2026-05-29 14:00:00+00:00,233,Premier League,League,Egypt,2025,7520,Masr,20458,Kahraba Ismailia,FT,False,False,True,True,True
+1400031,2025-07-18 17:30:00+00:00,235,Premier League,League,Russia,2025,1088,Dynamo,2006,Baltika,FT,False,False,True,True,True
+1545415,2026-05-23 15:30:00+00:00,235,Premier League,League,Russia,2025,6786,Akron,2010,Rotor Volgograd,FT,False,False,True,True,True
+1377764,2025-06-11 23:15:00+00:00,239,Primera A,League,Colombia,2025,1128,Independiente Medellin,1135,Junior,FT,False,False,True,False,True
+1490830,2025-12-17 00:30:00+00:00,239,Primera A,League,Colombia,2025,1142,Deportes Tolima,1135,Junior,FT,False,False,True,True,True
+1498262,2026-01-17 23:20:00+00:00,239,Primera A,League,Colombia,2026,1137,Atletico Nacional,1132,Chico,FT,False,False,True,True,True
+1546413,2026-06-08 22:00:00+00:00,239,Primera A,League,Colombia,2026,1137,Atletico Nacional,1135,Junior,FT,False,False,True,True,True
+1338424,2025-06-14 19:00:00+00:00,242,Liga Pro,League,Ecuador,2025,1153,Independiente del Valle,18762,Libertad,FT,False,False,True,False,True
+1479593,2025-12-21 21:30:00+00:00,242,Liga Pro,League,Ecuador,2025,1158,LDU de Quito,1157,Universidad Catolica,FT,False,False,True,True,True
+1519262,2026-02-21 00:00:00+00:00,242,Liga Pro,League,Ecuador,2026,1992,Orense SC,1158,LDU de Quito,FT,False,False,True,True,True
+1519400,2026-07-16 21:30:00+00:00,242,Liga Pro,League,Ecuador,2026,1156,Aucas,1153,Independiente del Valle,FT,False,False,True,True,False
+1342725,2025-06-14 16:00:00+00:00,244,Veikkausliiga,League,Finland,2025,689,SJK,2075,FF Jaro,FT,False,False,True,False,True
+1457319,2025-11-09 13:00:00+00:00,244,Veikkausliiga,League,Finland,2025,689,SJK,2082,Gnistan,FT,False,False,True,True,True
+1495644,2026-04-04 12:00:00+00:00,244,Veikkausliiga,League,Finland,2026,649,HJK Helsinki,689,SJK,FT,False,False,True,True,True
+1495729,2026-07-10 16:00:00+00:00,244,Veikkausliiga,League,Finland,2026,650,VPS,689,SJK,FT,False,False,True,True,False
+1326471,2025-06-12 23:30:00+00:00,253,Major League Soccer,League,USA,2025,1604,New York City FC,1608,Atlanta United FC,FT,False,False,True,False,True
+1488536,2025-12-06 19:30:00+00:00,253,Major League Soccer,League,USA,2025,9568,Inter Miami,1603,Vancouver Whitecaps,FT,False,False,True,True,True
+1490775,2026-02-21 19:30:00+00:00,253,Major League Soccer,League,USA,2026,20787,St. Louis City,18310,Charlotte,FT,False,False,True,True,True
+1490328,2026-07-17 02:30:00+00:00,253,Major League Soccer,League,USA,2026,1595,Seattle Sounders,1617,Portland Timbers,FT,False,False,True,True,False
+1379481,2025-07-12 01:00:00+00:00,262,Liga MX,League,Mexico,2025,2291,Puebla,2283,Atlas,FT,False,False,True,False,True
+1545451,2026-05-25 01:00:00+00:00,262,Liga MX,League,Mexico,2025,2286,U.N.A.M. - Pumas,2295,Cruz Azul,FT,False,False,True,True,True
+1550895,2026-07-17 03:10:00+00:00,262,Liga MX,League,Mexico,2026,2280,Club Tijuana,2279,Tigres UANL,FT,False,False,True,True,False
+1339110,2025-06-15 19:00:00+00:00,265,Primera División,League,Chile,2025,2330,Coquimbo Unido,2323,Universidad de Chile,FT,False,False,True,False,True
+1339245,2025-12-07 21:00:00+00:00,265,Primera División,League,Chile,2025,2337,Nublense,2331,Cobresal,FT,False,False,True,True,True
+1505354,2026-01-31 18:30:00+00:00,265,Primera División,League,Chile,2026,2324,Universidad de Concepcion,2330,Coquimbo Unido,FT,False,False,True,True,True
+1505465,2026-06-14 21:30:00+00:00,265,Primera División,League,Chile,2026,2994,U. Catolica,2324,Universidad de Concepcion,FT,False,False,True,True,False
+1380175,2025-07-26 18:15:00+00:00,271,NB I,League,Hungary,2025,2396,MTK Budapest,651,Ferencvarosi TC,FT,False,False,True,True,True
+1380369,2026-05-16 15:15:00+00:00,271,NB I,League,Hungary,2025,2394,Kisvarda FC,2402,Gyori ETO FC,FT,False,False,True,True,True
+1385757,2025-07-11 16:00:00+00:00,283,Liga I,League,Romania,2025,2604,Metaloglobus,2599,Universitatea Cluj,FT,False,False,True,False,True
+1546371,2026-05-29 17:30:00+00:00,283,Liga I,League,Romania,2025,635,Dinamo Bucuresti,559,FCSB,AET,False,False,True,True,True
+1384891,2025-07-19 18:00:00+00:00,286,Super Liga,League,Serbia,2025,598,FK Crvena Zvezda,2653,Javor,FT,False,False,True,True,True
+1540321,2026-05-24 17:30:00+00:00,286,Super Liga,League,Serbia,2025,12316,IMT Novi Beograd,2646,TSC Backa Topola,FT,False,False,True,True,True
+1424021,2025-08-09 13:00:00+00:00,288,Premier Soccer League,League,South-Africa,2025,2698,Chippa United,2699,Mamelodi Sundowns,FT,False,False,True,True,True
+1429711,2026-05-23 13:00:00+00:00,288,Premier Soccer League,League,South-Africa,2025,2690,Golden Arrows,8074,TS Galaxy,FT,False,False,True,True,True
+1340803,2025-06-13 10:30:00+00:00,292,K League 1,League,South-Korea,2025,2746,Gangwon FC,2762,Jeonbuk Motors,FT,False,False,True,False,True
+1482497,2025-11-30 07:30:00+00:00,292,K League 1,League,South-Korea,2025,2762,Jeonbuk Motors,2766,FC Seoul,FT,False,False,True,True,True
+1506896,2026-02-28 05:00:00+00:00,292,K League 1,League,South-Korea,2026,2763,Incheon United,2766,FC Seoul,FT,False,False,True,True,True
+1506997,2026-07-12 10:30:00+00:00,292,K League 1,League,South-Korea,2026,2766,FC Seoul,2746,Gangwon FC,FT,False,False,True,True,False
+1404268,2025-08-17 11:30:00+00:00,296,Thai League 1,League,Thailand,2025,2789,Port FC,2803,Ayutthaya FC,FT,False,False,True,True,True
+1491304,2026-05-10 11:00:00+00:00,296,Thai League 1,League,Thailand,2025,2803,Ayutthaya FC,2789,Port FC,FT,False,False,True,True,True
+1415916,2025-08-16 14:05:00+00:00,301,Pro League,League,United-Arab-Emirates,2025,2870,Shabab Al Ahli Dubai,2873,Al-Dhafra,FT,False,False,True,True,True
+1544969,2026-05-16 15:30:00+00:00,301,Pro League,League,United-Arab-Emirates,2025,2870,Shabab Al Ahli Dubai,9136,Al Bataeh,FT,False,False,True,True,True
+1393729,2025-08-14 15:30:00+00:00,305,Stars League,League,Qatar,2025,2897,Al-Rayyan SC,2898,Al-Sailiya,FT,False,False,True,True,True
+1497478,2026-04-27 16:30:00+00:00,305,Stars League,League,Qatar,2025,2895,Al Sadd,2916,Al Shamal,FT,False,False,True,True,True
+1435914,2025-08-28 18:00:00+00:00,307,Pro League,League,Saudi-Arabia,2025,2934,Al-Ettifaq,10509,Al Kholood,FT,False,False,True,True,True
+1438977,2026-05-21 18:00:00+00:00,307,Pro League,League,Saudi-Arabia,2025,2944,Al-Fayha,2932,Al-Hilal Saudi FC,FT,False,False,True,True,True
+1415589,2025-08-22 17:00:00+00:00,318,1. Division,League,Cyprus,2025,3396,AEL,3415,Olympiakos,FT,False,False,True,True,True
+1543784,2026-05-22 14:30:00+00:00,318,1. Division,League,Cyprus,2025,3403,Pafos,2247,Apoel Nicosia,FT,False,False,True,True,True
+1384101,2025-07-26 18:30:00+00:00,332,Super Liga,League,Slovakia,2025,10550,Tatran Prešov,656,Slovan Bratislava,FT,False,False,True,True,True
+1528532,2026-05-16 15:00:00+00:00,332,Super Liga,League,Slovakia,2025,656,Slovan Bratislava,3552,Zemplín Michalovce,FT,False,False,True,True,True
+1384652,2025-07-18 17:00:00+00:00,345,Czech Liga,League,Czech-Republic,2025,3724,Pardubice,567,Plzen,FT,False,False,True,True,True
+1542836,2026-05-24 12:00:00+00:00,345,Czech Liga,League,Czech-Republic,2025,628,Sparta Praha,3723,Hradec Králové,FT,False,False,True,True,True
+1340613,2025-06-13 18:45:00+00:00,357,Premier Division,League,Ireland,2025,3854,Shelbourne,652,Shamrock Rovers,FT,False,False,True,False,True
+1340699,2025-11-01 16:30:00+00:00,357,Premier Division,League,Ireland,2025,3854,Shelbourne,3843,St Patrick's Athl.,FT,False,False,True,True,True
+1492620,2026-02-08 14:00:00+00:00,357,Premier Division,League,Ireland,2026,3840,Bohemians,3843,St Patrick's Athl.,FT,False,False,True,True,True
+1492735,2026-07-10 19:00:00+00:00,357,Premier Division,League,Ireland,2026,3845,Waterford,3843,St Patrick's Athl.,FT,False,False,True,True,False
+1389594,2025-08-23 17:30:00+00:00,383,Ligat Ha'al,League,Israel,2025,4195,Maccabi Haifa,6186,Maccabi Bnei Raina,FT,False,False,True,True,True
+1540731,2026-05-23 18:00:00+00:00,383,Ligat Ha'al,League,Israel,2025,563,Hapoel Beer Sheva,4195,Maccabi Haifa,FT,False,False,True,True,True
+1500511,2026-01-10 19:00:00+00:00,475,Paulista - A1,League,Brazil,2026,128,Santos,7834,Novorizontino,FT,False,False,True,True,True
+1528825,2026-03-08 23:30:00+00:00,475,Paulista - A1,League,Brazil,2026,7834,Novorizontino,121,Palmeiras,FT,False,False,True,True,True
+1501283,2026-01-08 18:00:00+00:00,526,Trophée des Champions,Cup,France,2025,85,Paris Saint Germain,81,Marseille,PEN,False,False,True,True,True
+1381189,2025-08-10 14:00:00+00:00,528,Community Shield,Cup,England,2025,52,Crystal Palace,40,Liverpool,PEN,False,False,True,True,True
+1377540,2025-08-16 18:30:00+00:00,529,Super Cup,Cup,Germany,2025,172,VfB Stuttgart,157,Bayern München,FT,False,False,True,True,True
+1377400,2025-08-13 19:00:00+00:00,531,UEFA Super Cup,Cup,World,2025,85,Paris Saint Germain,47,Tottenham,PEN,False,False,True,True,True
+1482100,2025-10-18 17:00:00+00:00,533,CAF Super Cup,Cup,World,2025,1036,Pyramids FC,962,Renaissance Berkane,FT,False,False,True,True,True
+1491502,2025-12-18 19:00:00+00:00,547,Super Cup,Cup,Italy,2025,492,Napoli,489,AC Milan,FT,False,False,True,True,True
+1495114,2025-12-22 19:00:00+00:00,547,Super Cup,Cup,Italy,2025,492,Napoli,500,Bologna,FT,False,False,True,True,True
+1502168,2026-01-05 17:30:00+00:00,551,Super Cup,Cup,Turkey,2025,645,Galatasaray,998,Trabzonspor,FT,False,False,True,True,True
+1503186,2026-01-10 15:45:00+00:00,551,Super Cup,Cup,Turkey,2025,645,Galatasaray,611,Fenerbahçe,FT,False,False,True,True,True
+1405523,2026-01-07 19:00:00+00:00,556,Super Cup,Cup,Spain,2025,529,Barcelona,531,Athletic Club,FT,False,False,True,True,True
+1503770,2026-01-11 19:00:00+00:00,556,Super Cup,Cup,Spain,2025,529,Barcelona,541,Real Madrid,FT,False,False,True,True,True
+1500877,2026-01-11 21:00:00+00:00,624,Carioca - 1,League,Brazil,2026,127,Flamengo,7835,Portuguesa RJ,FT,False,False,True,True,True
+1528849,2026-03-08 21:00:00+00:00,624,Carioca - 1,League,Brazil,2026,124,Fluminense,127,Flamengo,PEN,False,False,True,True,True
+1351423,2025-07-29 23:00:00+00:00,772,Leagues Cup,Cup,World,2025,1614,CF Montreal,2289,Leon,PEN,False,False,True,True,True
+1449981,2025-09-01 00:00:00+00:00,772,Leagues Cup,Cup,World,2025,1595,Seattle Sounders,9568,Inter Miami,FT,False,False,True,True,True
+1383477,2025-07-10 18:45:00+00:00,848,UEFA Europa Conference League,Cup,World,2025,3843,St Patrick's Athl.,3861,Hegelmann Litauen,FT,False,False,True,False,True
+1544608,2026-05-27 19:00:00+00:00,848,UEFA Europa Conference League,Cup,World,2025,52,Crystal Palace,728,Rayo Vallecano,FT,False,False,True,True,True
+1467392,2025-09-14 18:00:00+00:00,1168,FIFA Intercontinental Cup,Cup,World,2025,1036,Pyramids FC,2537,Auckland City,FT,False,False,True,True,True
+1491683,2025-12-17 17:00:00+00:00,1168,FIFA Intercontinental Cup,Cup,World,2025,85,Paris Saint Germain,127,Flamengo,PEN,False,False,True,True,True
