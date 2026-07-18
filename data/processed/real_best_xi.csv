@@ -1,12 +1,12 @@
 slot,position_group,source_ordinal,entity_type,entity_id,entity_name,team_name,rank_score,minutes,available
-GK,GK,1,jugador_real,25282,Gregor Kobel,Switzerland,1.1481177376399188,600.0,True
-RB,FB,1,jugador_real,9,Achraf Hakimi,Morocco,0.9507728505943213,570.0,True
-RCB,CB,1,jugador_real,2194,Ramy Bensebaini,Algeria,1.0899313598689493,360.0,True
-LCB,CB,2,jugador_real,38695,Jan Paul van Hecke,Netherlands,0.883384802438268,390.0,True
-LB,FB,2,jugador_real,21138,Rayan Aït-Nouri,Algeria,0.9084012677752951,265.0,True
-DM,DM,1,jugador_real,44,Rodri,Spain,0.9110785879374969,450.0,True
-CM,CM,1,jugador_real,3287,Teboho Mokoena,South Africa,0.6974474240789688,180.0,True
-AM,AM,1,jugador_real,129678,Azzedine Ounahi,Morocco,0.7507687018642147,331.0,True
-RW,W,1,jugador_real,1946,Leandro Trossard,Belgium,0.8263260900752452,510.0,True
-LW,W,2,jugador_real,51776,Maximiliano Araújo,Uruguay,0.8010729896778174,252.0,True
-ST,ST,1,jugador_real,154,Lionel Messi,Argentina,1.7334416605189629,590.0,True
+GK,GK,1,jugador_real,25282,Gregor Kobel,Switzerland,0.7789822617566281,600.0,True
+RB,FB,1,jugador_real,9,Achraf Hakimi,Morocco,0.8053319665598292,570.0,True
+RCB,CB,1,jugador_real,2194,Ramy Bensebaini,Algeria,0.9068160723830837,360.0,True
+LCB,CB,2,jugador_real,355994,Alexander Freeman,USA,0.8127676265574105,373.0,True
+LB,FB,2,jugador_real,753,Marcos Llorente,Spain,0.7735808213275979,193.0,True
+DM,DM,1,jugador_real,44,Rodri,Spain,0.8358267007094787,627.0,True
+CM,CM,1,jugador_real,1646,Lucas Paquetá,Brazil,1.230536281079036,236.0,True
+AM,AM,1,jugador_real,19617,Michael Olise,France,0.9579278471513379,560.0,True
+RW,W,1,jugador_real,762,Vinícius Júnior,Brazil,0.8890043143050322,441.0,True
+LW,W,2,jugador_real,48471,Rubén Vargas,Switzerland,0.8714280122779309,289.0,True
+ST,ST,1,jugador_real,154,Lionel Messi,Argentina,1.6991986575831497,620.0,True

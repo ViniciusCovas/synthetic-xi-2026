@@ -1,5 +1,5 @@
 {
-  "idioma": "español",
+  "idioma": "espanol",
   "especificacion": {
     "league_id": 1,
     "season": 2026,
@@ -81,16 +81,17 @@
       "fouls_drawn_p90": 1
     }
   },
-  "inferencia_de_rol": "Solo titulares; rol inferido con posición del proveedor, formación y coordenada de la alineación.",
-  "ranking": "Media de z-scores winsorizados, con dirección corregida y retracción por minutos hacia la media de la posición.",
-  "mejor_jugador_real": "Número 1 del índice posicional después del ajuste por confiabilidad.",
-  "avatar": "Media recortada al 10% de los Top-20 elegibles de cada posición; Top-10 y Top-30 quedan como análisis de sensibilidad.",
-  "incertidumbre": "Intervalo bootstrap no paramétrico de 95% con semilla determinista.",
+  "inferencia_de_rol": "Rol primario unico por jugador a partir de minutos de titular con rol preciso. Se exige al menos 60% en la misma funcion; despues se incorporan sus apariciones como suplente bajo ese rol estable.",
+  "precision_de_pase": "passes.accuracy se normaliza como numero de pases acertados y la tasa se calcula como 100 por pases acertados dividido entre pases totales.",
+  "ranking": "Media de z-scores winsorizados, con direccion corregida y retraccion por minutos hacia la media de la posicion.",
+  "mejor_jugador_real": "Numero 1 del indice posicional despues del ajuste por confiabilidad.",
+  "avatar": "Media recortada al 10% de los Top-20 elegibles de cada posicion; Top-10 y Top-30 quedan como analisis de sensibilidad.",
+  "incertidumbre": "Intervalo bootstrap no parametrico de 95% con semilla determinista.",
   "once_experimental": "4-3-3 funcional: 1 GK, 2 CB, 2 FB, 1 DM, 1 CM, 1 AM, 2 W y 1 ST.",
   "limitaciones": [
-    "El torneo está en curso; todo resultado corresponde a un corte fechado.",
-    "En v0.3 se excluyen suplentes cuyo rol detallado no puede inferirse con seguridad.",
-    "Las estadísticas agregadas no observan por completo la inteligencia sin balón.",
-    "El Estudio 2 no afirmará causalidad física hasta completar y validar el motor de simulación."
+    "El torneo esta en curso; todo resultado corresponde a un corte fechado.",
+    "Jugadores sin rol primario estable o sin titularidad clasificable se excluyen.",
+    "Las estadisticas agregadas no observan por completo la inteligencia sin balon.",
+    "El Estudio 2 no afirmara causalidad fisica hasta validar el motor de simulacion."
   ]
 }

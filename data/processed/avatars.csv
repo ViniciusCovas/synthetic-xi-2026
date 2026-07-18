@@ -1,9 +1,9 @@
 avatar_id,position_group,requested_top_n,actual_n,eligible_pool_n,sample_complete,mean_rank_score,median_minutes,interpretation_label
-SYN-GK20,GK,20,20,42,True,0.4280069664355447,363.5,centroide robusto de los 20 mejores GK elegibles en el corte acumulado de la Copa 2026
-SYN-CB20,CB,20,20,91,True,0.5514025855336182,360.0,centroide robusto de los 20 mejores CB elegibles en el corte acumulado de la Copa 2026
-SYN-FB20,FB,20,20,75,True,0.5392440559790974,312.0,centroide robusto de los 20 mejores FB elegibles en el corte acumulado de la Copa 2026
-SYN-DM20,DM,20,20,29,True,0.20650469950747669,270.0,centroide robusto de los 20 mejores DM elegibles en el corte acumulado de la Copa 2026
-SYN-CM20,CM,20,20,52,True,0.39941821147165607,300.0,centroide robusto de los 20 mejores CM elegibles en el corte acumulado de la Copa 2026
-SYN-AM20,AM,20,17,17,False,-1.5673736818237505e-16,230.0,centroide robusto de los 17 mejores AM elegibles en el corte acumulado de la Copa 2026
-SYN-W20,W,20,20,39,True,0.3951969110063379,304.0,centroide robusto de los 20 mejores W elegibles en el corte acumulado de la Copa 2026
-SYN-ST20,ST,20,20,39,True,0.44355839334466374,354.0,centroide robusto de los 20 mejores ST elegibles en el corte acumulado de la Copa 2026
+SYN-GK20,GK,20,20,42,True,0.35159977148876576,420.0,centroide robusto de los 20 mejores GK elegibles en el corte acumulado de la Copa 2026
+SYN-CB20,CB,20,20,95,True,0.5200187422057896,360.0,centroide robusto de los 20 mejores CB elegibles en el corte acumulado de la Copa 2026
+SYN-FB20,FB,20,20,80,True,0.49618016945790144,312.0,centroide robusto de los 20 mejores FB elegibles en el corte acumulado de la Copa 2026
+SYN-DM20,DM,20,20,32,True,0.2544248611752494,319.5,centroide robusto de los 20 mejores DM elegibles en el corte acumulado de la Copa 2026
+SYN-CM20,CM,20,20,64,True,0.5186296453173359,336.5,centroide robusto de los 20 mejores CM elegibles en el corte acumulado de la Copa 2026
+SYN-AM20,AM,20,19,19,False,4.499324889270371e-16,283.0,centroide robusto de los 19 mejores AM elegibles en el corte acumulado de la Copa 2026
+SYN-W20,W,20,20,50,True,0.5914735239995698,335.0,centroide robusto de los 20 mejores W elegibles en el corte acumulado de la Copa 2026
+SYN-ST20,ST,20,20,49,True,0.45433267575640024,354.0,centroide robusto de los 20 mejores ST elegibles en el corte acumulado de la Copa 2026

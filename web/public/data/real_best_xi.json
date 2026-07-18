@@ -7,7 +7,7 @@
     "entity_id": 25282,
     "entity_name": "Gregor Kobel",
     "team_name": "Switzerland",
-    "rank_score": 1.1481177376,
+    "rank_score": 0.7789822618,
     "minutes": 600.0,
     "available": true
   },
@@ -19,7 +19,7 @@
     "entity_id": 9,
     "entity_name": "Achraf Hakimi",
     "team_name": "Morocco",
-    "rank_score": 0.9507728506,
+    "rank_score": 0.8053319666,
     "minutes": 570.0,
     "available": true
   },
@@ -31,7 +31,7 @@
     "entity_id": 2194,
     "entity_name": "Ramy Bensebaini",
     "team_name": "Algeria",
-    "rank_score": 1.0899313599,
+    "rank_score": 0.9068160724,
     "minutes": 360.0,
     "available": true
   },
@@ -40,11 +40,11 @@
     "position_group": "CB",
     "source_ordinal": 2,
     "entity_type": "jugador_real",
-    "entity_id": 38695,
-    "entity_name": "Jan Paul van Hecke",
-    "team_name": "Netherlands",
-    "rank_score": 0.8833848024,
-    "minutes": 390.0,
+    "entity_id": 355994,
+    "entity_name": "Alexander Freeman",
+    "team_name": "USA",
+    "rank_score": 0.8127676266,
+    "minutes": 373.0,
     "available": true
   },
   {
@@ -52,11 +52,11 @@
     "position_group": "FB",
     "source_ordinal": 2,
     "entity_type": "jugador_real",
-    "entity_id": 21138,
-    "entity_name": "Rayan Aït-Nouri",
-    "team_name": "Algeria",
-    "rank_score": 0.9084012678,
-    "minutes": 265.0,
+    "entity_id": 753,
+    "entity_name": "Marcos Llorente",
+    "team_name": "Spain",
+    "rank_score": 0.7735808213,
+    "minutes": 193.0,
     "available": true
   },
   {
@@ -67,8 +67,8 @@
     "entity_id": 44,
     "entity_name": "Rodri",
     "team_name": "Spain",
-    "rank_score": 0.9110785879,
-    "minutes": 450.0,
+    "rank_score": 0.8358267007,
+    "minutes": 627.0,
     "available": true
   },
   {
@@ -76,11 +76,11 @@
     "position_group": "CM",
     "source_ordinal": 1,
     "entity_type": "jugador_real",
-    "entity_id": 3287,
-    "entity_name": "Teboho Mokoena",
-    "team_name": "South Africa",
-    "rank_score": 0.6974474241,
-    "minutes": 180.0,
+    "entity_id": 1646,
+    "entity_name": "Lucas Paquetá",
+    "team_name": "Brazil",
+    "rank_score": 1.2305362811,
+    "minutes": 236.0,
     "available": true
   },
   {
@@ -88,11 +88,11 @@
     "position_group": "AM",
     "source_ordinal": 1,
     "entity_type": "jugador_real",
-    "entity_id": 129678,
-    "entity_name": "Azzedine Ounahi",
-    "team_name": "Morocco",
-    "rank_score": 0.7507687019,
-    "minutes": 331.0,
+    "entity_id": 19617,
+    "entity_name": "Michael Olise",
+    "team_name": "France",
+    "rank_score": 0.9579278472,
+    "minutes": 560.0,
     "available": true
   },
   {
@@ -100,11 +100,11 @@
     "position_group": "W",
     "source_ordinal": 1,
     "entity_type": "jugador_real",
-    "entity_id": 1946,
-    "entity_name": "Leandro Trossard",
-    "team_name": "Belgium",
-    "rank_score": 0.8263260901,
-    "minutes": 510.0,
+    "entity_id": 762,
+    "entity_name": "Vinícius Júnior",
+    "team_name": "Brazil",
+    "rank_score": 0.8890043143,
+    "minutes": 441.0,
     "available": true
   },
   {
@@ -112,11 +112,11 @@
     "position_group": "W",
     "source_ordinal": 2,
     "entity_type": "jugador_real",
-    "entity_id": 51776,
-    "entity_name": "Maximiliano Araújo",
-    "team_name": "Uruguay",
-    "rank_score": 0.8010729897,
-    "minutes": 252.0,
+    "entity_id": 48471,
+    "entity_name": "Rubén Vargas",
+    "team_name": "Switzerland",
+    "rank_score": 0.8714280123,
+    "minutes": 289.0,
     "available": true
   },
   {
@@ -127,8 +127,8 @@
     "entity_id": 154,
     "entity_name": "Lionel Messi",
     "team_name": "Argentina",
-    "rank_score": 1.7334416605,
-    "minutes": 590.0,
+    "rank_score": 1.6991986576,
+    "minutes": 620.0,
     "available": true
   }
 ]
