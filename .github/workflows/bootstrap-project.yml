@@ -1,10 +1,6 @@
 name: Bootstrap Synthetic XI 2026
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/bootstrap-project.yml"
   workflow_dispatch:
 
 permissions:
@@ -16,21 +12,40 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Extract validated project source
+      - name: Reconstruct validated project package
         shell: bash
         run: |
+          set -euo pipefail
           cat .bootstrap/part* > /tmp/synthetic-xi-project.b64
           base64 --decode /tmp/synthetic-xi-project.b64 > /tmp/synthetic-xi-project.tar.gz
-          tar -xzf /tmp/synthetic-xi-project.tar.gz -C "$GITHUB_WORKSPACE"
-          rm -rf .bootstrap
-          rm -f .github/workflows/bootstrap-project.yml
+          gzip -t /tmp/synthetic-xi-project.tar.gz
+          mkdir -p /tmp/synthetic-xi-source
+          tar -xzf /tmp/synthetic-xi-project.tar.gz -C /tmp/synthetic-xi-source
 
-      - name: Publish source code
+          PROJECT_FILE="$(find /tmp/synthetic-xi-source -maxdepth 3 -type f -name pyproject.toml | head -n 1)"
+          test -n "$PROJECT_FILE"
+          PROJECT_ROOT="$(dirname "$PROJECT_FILE")"
+          echo "Project root: $PROJECT_ROOT"
+
+          rsync -a \
+            --exclude='.git/' \
+            --exclude='.pytest_cache/' \
+            --exclude='__pycache__/' \
+            --exclude='node_modules/' \
+            --exclude='dist/' \
+            "$PROJECT_ROOT/" "$GITHUB_WORKSPACE/"
+
+          rm -rf "$GITHUB_WORKSPACE/.bootstrap"
+          rm -f "$GITHUB_WORKSPACE/.github/workflows/bootstrap-project.yml"
+
+      - name: Publish clean source code
         shell: bash
         run: |
+          set -euo pipefail
           git config user.name "synthetic-xi-bot"
           git config user.email "actions@users.noreply.github.com"
           git add -A
+          git diff --cached --quiet && { echo "No source changes found"; exit 1; }
           git commit -m "feat: bootstrap Synthetic XI 2026 v0.3"
           git push
 
@@ -73,6 +88,7 @@ jobs:
       - name: Publish generated scientific data
         shell: bash
         run: |
+          set -euo pipefail
           git add data/processed web/public/data
           git diff --cached --quiet || git commit -m "data: first World Cup 2026 snapshot"
           git push
