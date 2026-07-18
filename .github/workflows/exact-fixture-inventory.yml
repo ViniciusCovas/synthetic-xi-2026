@@ -1,0 +1,73 @@
+name: Build Exact Annual Fixture Inventory
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/build_exact_fixture_inventory.py"
+      - ".github/workflows/exact-fixture-inventory.yml"
+      - "data/audits/annual_player_competitions.csv"
+      - "data/audits/annual_competition_coverage.csv"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restore fixture API cache
+        uses: actions/cache@v4
+        with:
+          path: data/raw/fixture_inventory
+          key: fixture-inventory-${{ runner.os }}-${{ hashFiles('scripts/build_exact_fixture_inventory.py') }}
+          restore-keys: |
+            fixture-inventory-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: pip install pandas requests
+
+      - name: Build exact fixture inventory
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_MAX_REQUESTS_PER_MINUTE: "220"
+        run: python scripts/build_exact_fixture_inventory.py
+
+      - name: Archive raw fixture indexes
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: exact-fixture-inventory-raw-${{ github.run_id }}
+          path: data/raw/fixture_inventory
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Publish compact fixture inventory
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/audits
+          if git diff --cached --quiet; then
+            echo "No fixture inventory changes to publish"
+          else
+            git commit -m "data: publish exact annual fixture inventory"
+            git push origin HEAD:main
+          fi
