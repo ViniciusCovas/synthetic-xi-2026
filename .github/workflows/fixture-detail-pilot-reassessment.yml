@@ -1,0 +1,54 @@
+name: Reassess Fixture Detail Pilot
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/reassess_fixture_detail_pilot.py"
+      - ".github/workflows/fixture-detail-pilot-reassessment.yml"
+      - "data/audits/fixture_detail_pilot_players.csv"
+      - "data/audits/fixture_detail_pilot_lineups.csv"
+      - "data/audits/fixture_detail_pilot_quality.csv"
+      - "data/audits/exact_fixture_inventory.csv"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  reassess:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas
+
+      - name: Reassess active-player completeness
+        run: python scripts/reassess_fixture_detail_pilot.py
+
+      - name: Publish reassessment
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/audits
+          if git diff --cached --quiet; then
+            echo "No reassessment changes to publish"
+          else
+            git commit -m "data: publish fixture detail pilot reassessment"
+            git push origin HEAD:main
+          fi
