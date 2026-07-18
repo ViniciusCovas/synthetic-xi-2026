@@ -72,20 +72,8 @@ jobs:
       - name: Run scientific tests
         run: pytest -q
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: npm
-          cache-dependency-path: web/package-lock.json
-
-      - name: Validate production interface
-        working-directory: web
-        run: |
-          npm ci
-          npm run build
-
       - name: Archive raw provider responses
+        if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: api-football-raw-${{ github.run_id }}
@@ -106,3 +94,15 @@ jobs:
             git commit -m "data: update World Cup 2026 live snapshot"
             git push origin HEAD:main
           fi
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Validate production interface
+        working-directory: web
+        run: |
+          npm install --no-audit --no-fund --package-lock=false
+          npm run build
