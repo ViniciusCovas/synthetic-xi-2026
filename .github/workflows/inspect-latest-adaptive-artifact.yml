@@ -38,6 +38,7 @@ jobs:
             --json databaseId,createdAt \
             --jq 'sort_by(.createdAt) | reverse | .[0].databaseId')"
           test -n "${RUN_ID}"
+          export ADAPTIVE_FAILED_RUN_ID="${RUN_ID}"
           rm -rf inspected
           mkdir -p inspected data/audits
           gh run download "${RUN_ID}" \
@@ -46,7 +47,7 @@ jobs:
             --dir inspected/raw
           gh run view "${RUN_ID}" --repo "${GITHUB_REPOSITORY}" --log > inspected/run.log
           python - <<'PY'
-          import json, re
+          import json, os, re
           from pathlib import Path
 
           root = Path('inspected/raw')
@@ -79,7 +80,7 @@ jobs:
               return int(a or b)
 
           report = {
-              'failed_run_id': int('${RUN_ID}'),
+              'failed_run_id': int(os.environ['ADAPTIVE_FAILED_RUN_ID']),
               'raw_json_files': len(files),
               'unique_fixtures_with_raw_data': len(ids),
               'player_payload_files': len(players),
