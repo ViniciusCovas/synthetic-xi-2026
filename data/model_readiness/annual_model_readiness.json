@@ -1,4 +1,17 @@
 {
-  "status": "waiting_for_adaptive_extraction_batches",
-  "rankings_allowed": false
+  "status": "partial_window_artifacts_updated",
+  "rankings_allowed": false,
+  "active_rows": 18094,
+  "players_with_detail": 1009,
+  "players_with_grid_evidence": 918,
+  "current_window_players": 1001,
+  "pre_world_cup_players": 855,
+  "pass_accuracy_rule": "sum(passes_accuracy_raw) / sum(passes_total)",
+  "lateral_grid_warning": "outer_low y outer_high no se interpretarán como izquierda/derecha hasta validar la orientación del proveedor.",
+  "next_steps": [
+    "Continuar la extracción adaptativa.",
+    "Validar empíricamente la orientación lateral del grid.",
+    "Resolver las once funciones con estabilidad mínima del 60%.",
+    "Calcular cobertura exacta por jugador y ventana."
+  ]
 }
