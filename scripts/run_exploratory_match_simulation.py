@@ -9,7 +9,8 @@ from pathlib import Path
 import pandas as pd
 
 from simulator.engine import SimulationConfig, simulate_many
-from simulator.profiles import build_teams, team_to_rows
+from simulator.profiles import team_to_rows
+from simulator.profiles_v2 import build_teams
 
 OUT_DIR = Path("data/simulations/exploratory_v0_1")
 
