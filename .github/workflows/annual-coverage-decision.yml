@@ -1,0 +1,53 @@
+name: Decide Annual 2025-2026 Coverage
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/analyze_annual_coverage.py"
+      - "data/audits/annual_player_coverage.csv"
+      - "data/audits/annual_player_competitions.csv"
+      - "data/audits/annual_competition_coverage.csv"
+      - ".github/workflows/annual-coverage-decision.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  decide:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas
+
+      - name: Compute weighted coverage decision
+        run: python scripts/analyze_annual_coverage.py
+
+      - name: Publish coverage decision
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/audits
+          if git diff --cached --quiet; then
+            echo "No decision changes to publish"
+          else
+            git commit -m "data: publish weighted annual coverage decision"
+            git push origin HEAD:main
+          fi
