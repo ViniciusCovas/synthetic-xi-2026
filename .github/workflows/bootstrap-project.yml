@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
 
       - name: Reconstruct validated project package
         shell: bash
@@ -29,6 +33,7 @@ jobs:
 
           rsync -a \
             --exclude='.git/' \
+            --exclude='.github/workflows/' \
             --exclude='.pytest_cache/' \
             --exclude='__pycache__/' \
             --exclude='node_modules/' \
@@ -36,7 +41,6 @@ jobs:
             "$PROJECT_ROOT/" "$GITHUB_WORKSPACE/"
 
           rm -rf "$GITHUB_WORKSPACE/.bootstrap"
-          rm -f "$GITHUB_WORKSPACE/.github/workflows/bootstrap-project.yml"
 
       - name: Publish clean source code
         shell: bash
@@ -45,9 +49,10 @@ jobs:
           git config user.name "synthetic-xi-bot"
           git config user.email "actions@users.noreply.github.com"
           git add -A
+          git status --short
           git diff --cached --quiet && { echo "No source changes found"; exit 1; }
           git commit -m "feat: bootstrap Synthetic XI 2026 v0.3"
-          git push
+          git push origin HEAD:main
 
       - uses: actions/setup-python@v5
         with:
@@ -91,4 +96,4 @@ jobs:
           set -euo pipefail
           git add data/processed web/public/data
           git diff --cached --quiet || git commit -m "data: first World Cup 2026 snapshot"
-          git push
+          git push origin HEAD:main
