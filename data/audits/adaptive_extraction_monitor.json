@@ -1,0 +1,25 @@
+{
+  "status": "adaptive_extraction_monitored",
+  "eligible_players": 1062,
+  "eligible_players_seen": 943,
+  "eligible_player_recall": 0.8879472693032016,
+  "benchmark_players_seen": 850,
+  "completed_fixtures": 190,
+  "completed_with_target_players": 190,
+  "player_endpoint_empty": 0,
+  "no_target_player_returned": 0,
+  "active_player_rows": 4673,
+  "lineup_rows": 6619,
+  "active_minutes_nonnull_rate": 1.0,
+  "active_position_nonnull_rate": 1.0,
+  "active_passes_nonnull_rate": 0.9882302589343035,
+  "methodological_gate": {
+    "rankings_allowed": false,
+    "requirements_before_ranking": [
+      "Finalizar o estabilizar la cola de fixtures elegibles.",
+      "Calcular cobertura exacta por jugador dentro de cada ventana.",
+      "Resolver 11 funciones posicionales con evidencia estable.",
+      "Mantener solo jugadores con al menos 80% de cobertura detallada."
+    ]
+  }
+}

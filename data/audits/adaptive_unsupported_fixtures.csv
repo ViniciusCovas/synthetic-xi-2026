@@ -1,0 +1,386 @@
+fixture_id,league_id,league_name,season,target_players,reason
+1431049,18,AFC Champions League Two,2025,1,pilot_zero_player_endpoint
+1415916,301,Pro League,2025,1,pilot_zero_player_endpoint
+1415917,301,Pro League,2025,1,pilot_zero_player_endpoint
+1415918,301,Pro League,2025,3,pilot_zero_player_endpoint
+1415919,301,Pro League,2025,5,pilot_zero_player_endpoint
+1404268,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415920,301,Pro League,2025,1,pilot_zero_player_endpoint
+1415921,301,Pro League,2025,1,pilot_zero_player_endpoint
+1415922,301,Pro League,2025,1,pilot_zero_player_endpoint
+1415923,301,Pro League,2025,3,pilot_zero_player_endpoint
+1415924,301,Pro League,2025,1,pilot_zero_player_endpoint
+1415926,301,Pro League,2025,4,pilot_zero_player_endpoint
+1415927,301,Pro League,2025,2,pilot_zero_player_endpoint
+1442427,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415928,301,Pro League,2025,2,pilot_zero_player_endpoint
+1415929,301,Pro League,2025,1,pilot_zero_player_endpoint
+1415588,318,1. Division,2025,1,pilot_zero_player_endpoint
+1442428,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415600,318,1. Division,2025,1,pilot_zero_player_endpoint
+1415598,318,1. Division,2025,4,pilot_zero_player_endpoint
+1446895,301,Pro League,2025,3,pilot_zero_player_endpoint
+1446896,301,Pro League,2025,2,pilot_zero_player_endpoint
+1446898,301,Pro League,2025,1,pilot_zero_player_endpoint
+1446899,301,Pro League,2025,2,pilot_zero_player_endpoint
+1446592,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1446900,301,Pro League,2025,2,pilot_zero_player_endpoint
+1415607,318,1. Division,2025,1,pilot_zero_player_endpoint
+1446901,301,Pro League,2025,3,pilot_zero_player_endpoint
+1415603,318,1. Division,2025,3,pilot_zero_player_endpoint
+1415606,318,1. Division,2025,1,pilot_zero_player_endpoint
+1438568,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1438572,18,AFC Champions League Two,2025,4,pilot_zero_player_endpoint
+1415590,318,1. Division,2025,1,pilot_zero_player_endpoint
+1438573,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1438576,18,AFC Champions League Two,2025,9,pilot_zero_player_endpoint
+1438578,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1438581,18,AFC Champions League Two,2025,1,pilot_zero_player_endpoint
+1446596,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1446902,301,Pro League,2025,1,pilot_zero_player_endpoint
+1446903,301,Pro League,2025,2,pilot_zero_player_endpoint
+1446904,301,Pro League,2025,3,pilot_zero_player_endpoint
+1446905,301,Pro League,2025,3,pilot_zero_player_endpoint
+1415610,318,1. Division,2025,1,pilot_zero_player_endpoint
+1446906,301,Pro League,2025,2,pilot_zero_player_endpoint
+1446907,301,Pro League,2025,2,pilot_zero_player_endpoint
+1415609,318,1. Division,2025,3,pilot_zero_player_endpoint
+1415614,318,1. Division,2025,1,pilot_zero_player_endpoint
+1446909,301,Pro League,2025,2,pilot_zero_player_endpoint
+1415592,318,1. Division,2025,3,pilot_zero_player_endpoint
+1446910,301,Pro League,2025,2,pilot_zero_player_endpoint
+1446911,301,Pro League,2025,4,pilot_zero_player_endpoint
+1446913,301,Pro League,2025,2,pilot_zero_player_endpoint
+1446914,301,Pro League,2025,1,pilot_zero_player_endpoint
+1446915,301,Pro League,2025,2,pilot_zero_player_endpoint
+1415617,318,1. Division,2025,3,pilot_zero_player_endpoint
+1446611,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415618,318,1. Division,2025,1,pilot_zero_player_endpoint
+1415620,318,1. Division,2025,1,pilot_zero_player_endpoint
+1438583,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1438585,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1438586,18,AFC Champions League Two,2025,1,pilot_zero_player_endpoint
+1438590,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1438592,18,AFC Champions League Two,2025,13,pilot_zero_player_endpoint
+1415628,318,1. Division,2025,1,pilot_zero_player_endpoint
+1446615,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415627,318,1. Division,2025,3,pilot_zero_player_endpoint
+1415626,318,1. Division,2025,1,pilot_zero_player_endpoint
+1446917,301,Pro League,2025,3,pilot_zero_player_endpoint
+1446918,301,Pro League,2025,3,pilot_zero_player_endpoint
+1415633,318,1. Division,2025,3,pilot_zero_player_endpoint
+1446620,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1446919,301,Pro League,2025,2,pilot_zero_player_endpoint
+1446922,301,Pro League,2025,4,pilot_zero_player_endpoint
+1446921,301,Pro League,2025,1,pilot_zero_player_endpoint
+1415630,318,1. Division,2025,1,pilot_zero_player_endpoint
+1415631,318,1. Division,2025,1,pilot_zero_player_endpoint
+1438604,18,AFC Champions League Two,2025,4,pilot_zero_player_endpoint
+1438605,18,AFC Champions League Two,2025,9,pilot_zero_player_endpoint
+1438606,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1438614,18,AFC Champions League Two,2025,3,pilot_zero_player_endpoint
+1446627,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415637,318,1. Division,2025,1,pilot_zero_player_endpoint
+1415643,318,1. Division,2025,4,pilot_zero_player_endpoint
+1484203,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1484210,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1484212,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1446923,301,Pro League,2025,2,pilot_zero_player_endpoint
+1484214,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1446924,301,Pro League,2025,3,pilot_zero_player_endpoint
+1446925,301,Pro League,2025,1,pilot_zero_player_endpoint
+1484215,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1446926,301,Pro League,2025,2,pilot_zero_player_endpoint
+1446928,301,Pro League,2025,2,pilot_zero_player_endpoint
+1446929,301,Pro League,2025,3,pilot_zero_player_endpoint
+1415644,318,1. Division,2025,1,pilot_zero_player_endpoint
+1415645,318,1. Division,2025,1,pilot_zero_player_endpoint
+1446640,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415649,318,1. Division,2025,3,pilot_zero_player_endpoint
+1438624,18,AFC Champions League Two,2025,4,pilot_zero_player_endpoint
+1438625,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1438626,18,AFC Champions League Two,2025,9,pilot_zero_player_endpoint
+1438631,18,AFC Champions League Two,2025,3,pilot_zero_player_endpoint
+1446650,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415655,318,1. Division,2025,3,pilot_zero_player_endpoint
+1415657,318,1. Division,2025,2,pilot_zero_player_endpoint
+1481739,301,Pro League,2025,1,pilot_zero_player_endpoint
+1481740,301,Pro League,2025,1,pilot_zero_player_endpoint
+1481741,301,Pro League,2025,2,pilot_zero_player_endpoint
+1481742,301,Pro League,2025,1,pilot_zero_player_endpoint
+1415663,318,1. Division,2025,3,pilot_zero_player_endpoint
+1446651,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1481744,301,Pro League,2025,4,pilot_zero_player_endpoint
+1481745,301,Pro League,2025,4,pilot_zero_player_endpoint
+1415658,318,1. Division,2025,1,pilot_zero_player_endpoint
+1415662,318,1. Division,2025,1,pilot_zero_player_endpoint
+1438634,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1438635,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1438636,18,AFC Champions League Two,2025,1,pilot_zero_player_endpoint
+1438638,18,AFC Champions League Two,2025,9,pilot_zero_player_endpoint
+1438639,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1438640,18,AFC Champions League Two,2025,4,pilot_zero_player_endpoint
+1446659,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415669,318,1. Division,2025,1,pilot_zero_player_endpoint
+1415668,318,1. Division,2025,3,pilot_zero_player_endpoint
+1415671,318,1. Division,2025,1,pilot_zero_player_endpoint
+1485651,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1485652,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1485656,206,Türkiye Kupası,2025,2,pilot_zero_player_endpoint
+1485657,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1485645,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1485641,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1415678,318,1. Division,2025,3,pilot_zero_player_endpoint
+1415674,318,1. Division,2025,1,pilot_zero_player_endpoint
+1446674,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415672,318,1. Division,2025,1,pilot_zero_player_endpoint
+1438647,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1438648,18,AFC Champions League Two,2025,1,pilot_zero_player_endpoint
+1415682,318,1. Division,2025,1,pilot_zero_player_endpoint
+1446678,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415685,318,1. Division,2025,3,pilot_zero_player_endpoint
+1415679,318,1. Division,2025,1,pilot_zero_player_endpoint
+1489318,206,Türkiye Kupası,2025,2,pilot_zero_player_endpoint
+1489320,206,Türkiye Kupası,2025,3,pilot_zero_player_endpoint
+1489311,206,Türkiye Kupası,2025,14,pilot_zero_player_endpoint
+1485334,301,Pro League,2025,1,pilot_zero_player_endpoint
+1485335,301,Pro League,2025,1,pilot_zero_player_endpoint
+1485336,301,Pro League,2025,5,pilot_zero_player_endpoint
+1485337,301,Pro League,2025,3,pilot_zero_player_endpoint
+1485338,301,Pro League,2025,1,pilot_zero_player_endpoint
+1415692,318,1. Division,2025,1,pilot_zero_player_endpoint
+1438656,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1489317,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1489310,206,Türkiye Kupası,2025,14,pilot_zero_player_endpoint
+1489313,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1438661,18,AFC Champions League Two,2025,13,pilot_zero_player_endpoint
+1438662,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1489319,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1485341,301,Pro League,2025,1,pilot_zero_player_endpoint
+1485342,301,Pro League,2025,1,pilot_zero_player_endpoint
+1485343,301,Pro League,2025,4,pilot_zero_player_endpoint
+1485344,301,Pro League,2025,3,pilot_zero_player_endpoint
+1485345,301,Pro League,2025,1,pilot_zero_player_endpoint
+1485348,301,Pro League,2025,1,pilot_zero_player_endpoint
+1485350,301,Pro League,2025,3,pilot_zero_player_endpoint
+1485351,301,Pro League,2025,2,pilot_zero_player_endpoint
+1485352,301,Pro League,2025,2,pilot_zero_player_endpoint
+1485353,301,Pro League,2025,3,pilot_zero_player_endpoint
+1485354,301,Pro League,2025,2,pilot_zero_player_endpoint
+1415694,318,1. Division,2025,1,pilot_zero_player_endpoint
+1415695,318,1. Division,2025,1,pilot_zero_player_endpoint
+1415697,318,1. Division,2025,3,pilot_zero_player_endpoint
+1485355,301,Pro League,2025,1,pilot_zero_player_endpoint
+1485356,301,Pro League,2025,2,pilot_zero_player_endpoint
+1485357,301,Pro League,2025,2,pilot_zero_player_endpoint
+1485358,301,Pro League,2025,3,pilot_zero_player_endpoint
+1485359,301,Pro League,2025,1,pilot_zero_player_endpoint
+1485360,301,Pro League,2025,1,pilot_zero_player_endpoint
+1485361,301,Pro League,2025,3,pilot_zero_player_endpoint
+1415701,318,1. Division,2025,1,pilot_zero_player_endpoint
+1491194,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1485339,301,Pro League,2025,1,pilot_zero_player_endpoint
+1415705,318,1. Division,2025,1,pilot_zero_player_endpoint
+1485340,301,Pro League,2025,1,pilot_zero_player_endpoint
+1415702,318,1. Division,2025,3,pilot_zero_player_endpoint
+1489321,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1489324,206,Türkiye Kupası,2025,5,pilot_zero_player_endpoint
+1489331,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1489330,206,Türkiye Kupası,2025,9,pilot_zero_player_endpoint
+1489322,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1489332,206,Türkiye Kupası,2025,2,pilot_zero_player_endpoint
+1485346,301,Pro League,2025,2,pilot_zero_player_endpoint
+1489326,206,Türkiye Kupası,2025,9,pilot_zero_player_endpoint
+1489328,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1489329,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1489327,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1485347,301,Pro League,2025,1,pilot_zero_player_endpoint
+1489325,206,Türkiye Kupası,2025,5,pilot_zero_player_endpoint
+1485362,301,Pro League,2025,1,pilot_zero_player_endpoint
+1485363,301,Pro League,2025,1,pilot_zero_player_endpoint
+1485364,301,Pro League,2025,4,pilot_zero_player_endpoint
+1415708,318,1. Division,2025,3,pilot_zero_player_endpoint
+1491206,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1485365,301,Pro League,2025,3,pilot_zero_player_endpoint
+1415709,318,1. Division,2025,1,pilot_zero_player_endpoint
+1485366,301,Pro League,2025,2,pilot_zero_player_endpoint
+1415707,318,1. Division,2025,1,pilot_zero_player_endpoint
+1485368,301,Pro League,2025,2,pilot_zero_player_endpoint
+1415716,318,1. Division,2025,1,pilot_zero_player_endpoint
+1491215,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415715,318,1. Division,2025,3,pilot_zero_player_endpoint
+1415717,318,1. Division,2025,1,pilot_zero_player_endpoint
+1501822,301,Pro League,2025,5,pilot_zero_player_endpoint
+1501823,301,Pro League,2025,2,pilot_zero_player_endpoint
+1501824,301,Pro League,2025,1,pilot_zero_player_endpoint
+1501827,301,Pro League,2025,3,pilot_zero_player_endpoint
+1501828,301,Pro League,2025,2,pilot_zero_player_endpoint
+1491218,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415724,318,1. Division,2025,3,pilot_zero_player_endpoint
+1415727,318,1. Division,2025,1,pilot_zero_player_endpoint
+1415721,318,1. Division,2025,1,pilot_zero_player_endpoint
+1489337,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1489343,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1489342,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1489344,206,Türkiye Kupası,2025,2,pilot_zero_player_endpoint
+1489333,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1489338,206,Türkiye Kupası,2025,5,pilot_zero_player_endpoint
+1415691,318,1. Division,2025,4,pilot_zero_player_endpoint
+1489335,206,Türkiye Kupası,2025,9,pilot_zero_player_endpoint
+1489339,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1489341,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1505587,301,Pro League,2025,1,pilot_zero_player_endpoint
+1505588,301,Pro League,2025,3,pilot_zero_player_endpoint
+1489340,206,Türkiye Kupası,2025,5,pilot_zero_player_endpoint
+1505589,301,Pro League,2025,1,pilot_zero_player_endpoint
+1489334,206,Türkiye Kupası,2025,9,pilot_zero_player_endpoint
+1505591,301,Pro League,2025,4,pilot_zero_player_endpoint
+1505592,301,Pro League,2025,2,pilot_zero_player_endpoint
+1505593,301,Pro League,2025,2,pilot_zero_player_endpoint
+1415734,318,1. Division,2025,1,pilot_zero_player_endpoint
+1415732,318,1. Division,2025,4,pilot_zero_player_endpoint
+1502135,18,AFC Champions League Two,2025,4,pilot_zero_player_endpoint
+1502136,18,AFC Champions League Two,2025,4,pilot_zero_player_endpoint
+1502138,18,AFC Champions League Two,2025,1,pilot_zero_player_endpoint
+1502139,18,AFC Champions League Two,2025,9,pilot_zero_player_endpoint
+1505594,301,Pro League,2025,2,pilot_zero_player_endpoint
+1505595,301,Pro League,2025,3,pilot_zero_player_endpoint
+1491233,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415741,318,1. Division,2025,1,pilot_zero_player_endpoint
+1505597,301,Pro League,2025,4,pilot_zero_player_endpoint
+1415736,318,1. Division,2025,1,pilot_zero_player_endpoint
+1415740,318,1. Division,2025,3,pilot_zero_player_endpoint
+1502143,18,AFC Champions League Two,2025,4,pilot_zero_player_endpoint
+1502144,18,AFC Champions League Two,2025,4,pilot_zero_player_endpoint
+1502145,18,AFC Champions League Two,2025,1,pilot_zero_player_endpoint
+1502148,18,AFC Champions League Two,2025,9,pilot_zero_player_endpoint
+1505602,301,Pro League,2025,1,pilot_zero_player_endpoint
+1505603,301,Pro League,2025,2,pilot_zero_player_endpoint
+1491244,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415747,318,1. Division,2025,3,pilot_zero_player_endpoint
+1505604,301,Pro League,2025,2,pilot_zero_player_endpoint
+1505605,301,Pro League,2025,3,pilot_zero_player_endpoint
+1415743,318,1. Division,2025,2,pilot_zero_player_endpoint
+1505606,301,Pro League,2025,1,pilot_zero_player_endpoint
+1505607,301,Pro League,2025,4,pilot_zero_player_endpoint
+1505608,301,Pro League,2025,1,pilot_zero_player_endpoint
+1505609,301,Pro League,2025,1,pilot_zero_player_endpoint
+1505610,301,Pro League,2025,1,pilot_zero_player_endpoint
+1505611,301,Pro League,2025,2,pilot_zero_player_endpoint
+1505612,301,Pro League,2025,3,pilot_zero_player_endpoint
+1505613,301,Pro League,2025,2,pilot_zero_player_endpoint
+1505614,301,Pro League,2025,3,pilot_zero_player_endpoint
+1415750,318,1. Division,2025,1,pilot_zero_player_endpoint
+1491255,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415754,318,1. Division,2025,3,pilot_zero_player_endpoint
+1415755,318,1. Division,2025,1,pilot_zero_player_endpoint
+1489345,206,Türkiye Kupası,2025,10,pilot_zero_player_endpoint
+1489348,206,Türkiye Kupası,2025,7,pilot_zero_player_endpoint
+1489349,206,Türkiye Kupası,2025,6,pilot_zero_player_endpoint
+1489355,206,Türkiye Kupası,2025,10,pilot_zero_player_endpoint
+1489347,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1489351,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1489353,206,Türkiye Kupası,2025,1,pilot_zero_player_endpoint
+1491256,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415757,318,1. Division,2025,3,pilot_zero_player_endpoint
+1415759,318,1. Division,2025,1,pilot_zero_player_endpoint
+1505598,301,Pro League,2025,1,pilot_zero_player_endpoint
+1505599,301,Pro League,2025,1,pilot_zero_player_endpoint
+1505600,301,Pro League,2025,2,pilot_zero_player_endpoint
+1415758,318,1. Division,2025,1,pilot_zero_player_endpoint
+1521238,301,Pro League,2025,2,pilot_zero_player_endpoint
+1521241,301,Pro League,2025,1,pilot_zero_player_endpoint
+1521239,301,Pro League,2025,1,pilot_zero_player_endpoint
+1521242,301,Pro League,2025,1,pilot_zero_player_endpoint
+1521243,301,Pro League,2025,3,pilot_zero_player_endpoint
+1521237,301,Pro League,2025,3,pilot_zero_player_endpoint
+1521240,301,Pro League,2025,2,pilot_zero_player_endpoint
+1415764,318,1. Division,2025,3,pilot_zero_player_endpoint
+1491269,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1415763,318,1. Division,2025,1,pilot_zero_player_endpoint
+1415767,318,1. Division,2025,1,pilot_zero_player_endpoint
+1521246,301,Pro League,2025,1,pilot_zero_player_endpoint
+1521250,301,Pro League,2025,2,pilot_zero_player_endpoint
+1521247,301,Pro League,2025,2,pilot_zero_player_endpoint
+1521248,301,Pro League,2025,4,pilot_zero_player_endpoint
+1521244,301,Pro League,2025,1,pilot_zero_player_endpoint
+1521245,301,Pro League,2025,3,pilot_zero_player_endpoint
+1534225,318,1. Division,2025,1,pilot_zero_player_endpoint
+1491276,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1534228,318,1. Division,2025,3,pilot_zero_player_endpoint
+1534229,318,1. Division,2025,1,pilot_zero_player_endpoint
+1491283,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1535127,301,Pro League,2025,4,pilot_zero_player_endpoint
+1535128,301,Pro League,2025,2,pilot_zero_player_endpoint
+1537389,318,1. Division,2025,4,pilot_zero_player_endpoint
+1535130,301,Pro League,2025,2,pilot_zero_player_endpoint
+1535131,301,Pro League,2025,1,pilot_zero_player_endpoint
+1535132,301,Pro League,2025,1,pilot_zero_player_endpoint
+1537391,318,1. Division,2025,1,pilot_zero_player_endpoint
+1535129,301,Pro League,2025,3,pilot_zero_player_endpoint
+1537625,301,Pro League,2025,3,pilot_zero_player_endpoint
+1537627,301,Pro League,2025,1,pilot_zero_player_endpoint
+1537628,301,Pro League,2025,4,pilot_zero_player_endpoint
+1537629,301,Pro League,2025,1,pilot_zero_player_endpoint
+1537630,301,Pro League,2025,2,pilot_zero_player_endpoint
+1537626,301,Pro League,2025,2,pilot_zero_player_endpoint
+1537393,318,1. Division,2025,3,pilot_zero_player_endpoint
+1537394,318,1. Division,2025,1,pilot_zero_player_endpoint
+1537392,318,1. Division,2025,1,pilot_zero_player_endpoint
+1537396,318,1. Division,2025,3,pilot_zero_player_endpoint
+1537397,318,1. Division,2025,2,pilot_zero_player_endpoint
+1491231,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1525481,18,AFC Champions League Two,2025,9,pilot_zero_player_endpoint
+1525480,18,AFC Champions League Two,2025,2,pilot_zero_player_endpoint
+1531970,206,Türkiye Kupası,2025,10,pilot_zero_player_endpoint
+1541869,18,AFC Champions League Two,2025,9,pilot_zero_player_endpoint
+1531969,206,Türkiye Kupası,2025,9,pilot_zero_player_endpoint
+1538422,301,Pro League,2025,1,pilot_zero_player_endpoint
+1538423,301,Pro League,2025,3,pilot_zero_player_endpoint
+1531971,206,Türkiye Kupası,2025,3,pilot_zero_player_endpoint
+1538424,301,Pro League,2025,5,pilot_zero_player_endpoint
+1531968,206,Türkiye Kupası,2025,6,pilot_zero_player_endpoint
+1538427,301,Pro League,2025,1,pilot_zero_player_endpoint
+1538428,301,Pro League,2025,2,pilot_zero_player_endpoint
+1491291,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1537400,318,1. Division,2025,4,pilot_zero_player_endpoint
+1537399,318,1. Division,2025,1,pilot_zero_player_endpoint
+1538425,301,Pro League,2025,1,pilot_zero_player_endpoint
+1491297,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1542383,318,1. Division,2025,1,pilot_zero_player_endpoint
+1542384,318,1. Division,2025,1,pilot_zero_player_endpoint
+1542385,318,1. Division,2025,3,pilot_zero_player_endpoint
+1542135,301,Pro League,2025,1,pilot_zero_player_endpoint
+1542136,301,Pro League,2025,1,pilot_zero_player_endpoint
+1542137,301,Pro League,2025,3,pilot_zero_player_endpoint
+1542138,301,Pro League,2025,2,pilot_zero_player_endpoint
+1542691,206,Türkiye Kupası,2025,6,pilot_zero_player_endpoint
+1542139,301,Pro League,2025,1,pilot_zero_player_endpoint
+1542387,318,1. Division,2025,1,pilot_zero_player_endpoint
+1542388,318,1. Division,2025,4,pilot_zero_player_endpoint
+1542140,301,Pro League,2025,3,pilot_zero_player_endpoint
+1542141,301,Pro League,2025,2,pilot_zero_player_endpoint
+1491304,296,Thai League 1,2025,1,pilot_zero_player_endpoint
+1543776,318,1. Division,2025,1,pilot_zero_player_endpoint
+1543777,318,1. Division,2025,1,pilot_zero_player_endpoint
+1543778,318,1. Division,2025,3,pilot_zero_player_endpoint
+1543176,301,Pro League,2025,3,pilot_zero_player_endpoint
+1543177,301,Pro League,2025,2,pilot_zero_player_endpoint
+1543178,301,Pro League,2025,2,pilot_zero_player_endpoint
+1543179,301,Pro League,2025,1,pilot_zero_player_endpoint
+1543180,301,Pro League,2025,3,pilot_zero_player_endpoint
+1543181,301,Pro League,2025,1,pilot_zero_player_endpoint
+1543182,301,Pro League,2025,1,pilot_zero_player_endpoint
+1542692,206,Türkiye Kupası,2025,2,pilot_zero_player_endpoint
+1544963,301,Pro League,2025,1,pilot_zero_player_endpoint
+1544965,301,Pro League,2025,2,pilot_zero_player_endpoint
+1543779,318,1. Division,2025,3,pilot_zero_player_endpoint
+1543780,318,1. Division,2025,2,pilot_zero_player_endpoint
+1544966,301,Pro League,2025,4,pilot_zero_player_endpoint
+1544967,301,Pro League,2025,1,pilot_zero_player_endpoint
+1544968,301,Pro League,2025,2,pilot_zero_player_endpoint
+1544969,301,Pro League,2025,3,pilot_zero_player_endpoint
+1542549,18,AFC Champions League Two,2025,9,pilot_zero_player_endpoint
+1543783,318,1. Division,2025,1,pilot_zero_player_endpoint
+1543784,318,1. Division,2025,4,pilot_zero_player_endpoint
+1545069,206,Türkiye Kupası,2025,3,pilot_zero_player_endpoint

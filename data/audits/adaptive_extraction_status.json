@@ -1,0 +1,21 @@
+{
+  "status": "adaptive_batch_completed",
+  "generated_at_utc": "2026-07-18T20:51:55.674257+00:00",
+  "batch_id": "batch_29660506825",
+  "eligible_players": 1062,
+  "benchmark_players": 929,
+  "queue_total_estimate": 11831,
+  "completed_fixtures_total": 190,
+  "fixtures_processed_this_batch": 190,
+  "player_rows_this_batch": 6619,
+  "lineup_rows_this_batch": 6619,
+  "network_calls_this_batch": 380,
+  "daily_requests_remaining_reported": 545,
+  "stopped_by_quota_guard": true,
+  "unsupported_zero_endpoint_fixtures": 385,
+  "raw_responses_sha256": "f7c4ac2cd878e8bf6e67ef2ab87695e9fcda4703cced7c6c16e4bc05a2a8ae2e",
+  "methodological_gate": {
+    "rankings_allowed": false,
+    "next_step": "Recalcular cobertura por jugador y continuar por lotes hasta completar la cola elegible."
+  }
+}
