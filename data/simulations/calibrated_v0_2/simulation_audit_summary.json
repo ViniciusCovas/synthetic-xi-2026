@@ -1,0 +1,99 @@
+{
+  "status": "complete_simulation_audit_exported",
+  "simulations": 10000,
+  "master_seed": 20260718,
+  "one_row_per_simulated_match": true,
+  "full_ledger_artifact": "all_10000_simulated_matches.csv.gz",
+  "outcomes": {
+    "synthetic_wins": 2763,
+    "draws": 2341,
+    "real_best_xi_wins": 4896
+  },
+  "probabilities": {
+    "synthetic_win": 0.2763,
+    "draw": 0.2341,
+    "real_best_xi_win": 0.4896
+  },
+  "means": {
+    "home_goals": 1.1893,
+    "away_goals": 1.6711,
+    "total_goals": 2.8604,
+    "total_shots": 17.397,
+    "total_shots_on_target": 8.6536,
+    "home_xg": 1.181292559187329,
+    "away_xg": 1.662044542645835,
+    "zero_zero_probability": 0.0545
+  },
+  "percentiles": {
+    "home_goals": {
+      "5": 0.0,
+      "25": 0.0,
+      "50": 1.0,
+      "75": 2.0,
+      "95": 3.0
+    },
+    "away_goals": {
+      "5": 0.0,
+      "25": 1.0,
+      "50": 1.0,
+      "75": 2.0,
+      "95": 4.0
+    },
+    "total_goals": {
+      "5": 0.0,
+      "25": 2.0,
+      "50": 3.0,
+      "75": 4.0,
+      "95": 6.0
+    },
+    "total_shots": {
+      "5": 11.0,
+      "25": 14.0,
+      "50": 17.0,
+      "75": 20.0,
+      "95": 25.0
+    },
+    "total_shots_on_target": {
+      "5": 4.0,
+      "25": 7.0,
+      "50": 8.0,
+      "75": 11.0,
+      "95": 14.0
+    },
+    "home_xg": {
+      "5": 0.4970145184081906,
+      "25": 0.8573123317904603,
+      "50": 1.1450470148159537,
+      "75": 1.470713591998358,
+      "95": 1.989228463172532
+    },
+    "away_xg": {
+      "5": 0.7840603841913638,
+      "25": 1.2499971901242715,
+      "50": 1.6218040610925994,
+      "75": 2.0255262652711337,
+      "95": 2.662428993617243
+    }
+  },
+  "calibration_targets": {
+    "matches": 94,
+    "goals_per_match": 2.9148936170212765,
+    "shots_per_match": 18.094871004214205,
+    "shots_on_target_per_match": 8.378558947476618,
+    "zero_zero_rate": 0.07446808510638298
+  },
+  "interpretation_gate": {
+    "simulation_process_reproducible": true,
+    "engineering_calibration_passed": true,
+    "final_scientific_team_comparison_allowed": false,
+    "reason": "El motor y su distribución son auditables, pero los perfiles anuales y la resolución definitiva de once funciones siguen incompletos."
+  },
+  "difference_from_principal_summary": {
+    "synthetic_win_probability": 0.0,
+    "draw_probability": 0.0,
+    "real_win_probability": 0.0,
+    "mean_total_goals": 4.440892098500626e-16,
+    "mean_total_shots": 0.0
+  },
+  "matches_principal_summary": true
+}
