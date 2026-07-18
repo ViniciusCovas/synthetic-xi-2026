@@ -1,0 +1,4 @@
+minute,team,type,actor,xg,headline
+38,Synthetic XI — exploratorio,shot_off_target,SYN-ST20,0.238,Ocasión peligrosa de SYN-ST20 fuera
+40,Real Best XI — exploratorio,shot_on_target,Lionel Messi,0.28,Remate de Lionel Messi detenido por el portero
+81,Real Best XI — exploratorio,turnover,Michael Olise,0.0,Michael Olise pierde el balón bajo presión cerca del área
