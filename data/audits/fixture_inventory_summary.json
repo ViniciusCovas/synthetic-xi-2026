@@ -1,0 +1,18 @@
+{
+  "status": "fixture_inventory_completed",
+  "generated_at_utc": "2026-07-18T19:42:23.363543+00:00",
+  "league_season_pairs_requested": 125,
+  "network_calls_this_run": 125,
+  "failed_league_season_pairs": 0,
+  "unique_fixtures_union_window": 13332,
+  "official_senior_fixtures_union_window": 12929,
+  "official_senior_fixtures_current_window": 12590,
+  "official_senior_fixtures_pre_world_cup_window": 12766,
+  "friendlies_excluded": 363,
+  "youth_fixtures_excluded": 40,
+  "raw_responses_sha256": "ee63c9bba3dd7632776eec4c7bc2c401d90cc4a0ced7025d02c8f5d63e276e01",
+  "methodological_gate": {
+    "rankings_allowed": false,
+    "next_step": "Priorizar fixtures que contienen jugadores elegibles y descargar estadísticas individuales en lotes auditables."
+  }
+}
