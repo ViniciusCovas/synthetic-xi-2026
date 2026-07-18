@@ -1,0 +1,15 @@
+{
+  "failed_run_id": 29659001106,
+  "raw_json_files": 2800,
+  "unique_fixtures_with_raw_data": 1400,
+  "player_payload_files": 1400,
+  "lineup_payload_files": 1400,
+  "player_payloads_nonempty": 1400,
+  "lineup_payloads_nonempty": 1400,
+  "fixtures_processed_this_batch_from_log": 1400,
+  "player_rows_this_batch_from_log": 21696,
+  "lineup_rows_this_batch_from_log": 21710,
+  "network_calls_this_batch_from_log": 2800,
+  "daily_requests_remaining_reported_from_log": 925,
+  "publication_failure_interpretation": "La extracción y el archivo bruto terminaron; falló únicamente la publicación del commit compacto."
+}
