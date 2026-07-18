@@ -1,0 +1,81 @@
+{
+  "version": "broadcast_v1.0",
+  "title": "Synthetic XI vs Real Best XI",
+  "probabilities": {"synthetic_win": 0.2763, "draw": 0.2341, "real_win": 0.4896},
+  "calibration": {"matches": 94, "mean_goals": 2.9149, "mean_shots": 18.0949, "mean_shots_on_target": 8.3786, "zero_zero_rate": 0.0745},
+  "teams": {
+    "home": {"name": "Synthetic XI", "short": "SYN"},
+    "away": {"name": "Real Best XI", "short": "RBX"}
+  },
+  "replays": [
+    {
+      "id": "representative",
+      "label": "Partido representativo",
+      "description": "Timeline directa del partido seleccionado por el motor por cercanía a las medias de 10.000 simulaciones.",
+      "scoreline_probability": 0.0974,
+      "stats": {"home_goals": 1, "away_goals": 2, "home_xg": 1.025, "away_xg": 1.637, "home_shots": 8, "away_shots": 9, "home_shots_on_target": 4, "away_shots_on_target": 6, "home_possession": 0.4811},
+      "events": [
+        {"minute":5,"team":"home","type":"shot_on_target","actor":"SYN-W220","zone":1,"xg":0.096},
+        {"minute":16,"team":"away","type":"shot_on_target","actor":"Lionel Messi","zone":2,"xg":0.174},
+        {"minute":17,"team":"away","type":"shot_off_target","actor":"Désiré Doué","zone":3,"xg":0.278},
+        {"minute":18,"team":"home","type":"turnover","actor":"SYN-W120","zone":2,"xg":0.0},
+        {"minute":22,"team":"away","type":"shot_on_target","actor":"Michael Olise","zone":1,"xg":0.107},
+        {"minute":24,"team":"away","type":"turnover","actor":"Yan Diomande","zone":2,"xg":0.0},
+        {"minute":28,"team":"away","type":"shot_on_target","actor":"Michael Olise","zone":2,"xg":0.172},
+        {"minute":28,"team":"away","type":"shot_off_target","actor":"Michael Olise","zone":2,"xg":0.172},
+        {"minute":30,"team":"away","type":"goal","actor":"Michael Olise","zone":2,"xg":0.172},
+        {"minute":33,"team":"home","type":"shot_on_target","actor":"SYN-W220","zone":2,"xg":0.154},
+        {"minute":38,"team":"away","type":"shot_off_target","actor":"Michael Olise","zone":2,"xg":0.172},
+        {"minute":41,"team":"home","type":"shot_on_target","actor":"SYN-ST20","zone":1,"xg":0.109},
+        {"minute":48,"team":"home","type":"turnover","actor":"SYN-W220","zone":2,"xg":0.0},
+        {"minute":58,"team":"away","type":"goal","actor":"Lionel Messi","zone":1,"xg":0.109},
+        {"minute":71,"team":"away","type":"turnover","actor":"Frenkie de Jong","zone":2,"xg":0.0},
+        {"minute":72,"team":"away","type":"shot_on_target","actor":"Lionel Messi","zone":3,"xg":0.282},
+        {"minute":79,"team":"home","type":"shot_off_target","actor":"SYN-AM20","zone":3,"xg":0.228},
+        {"minute":85,"team":"home","type":"goal","actor":"SYN-ST20","zone":1,"xg":0.109},
+        {"minute":86,"team":"home","type":"shot_off_target","actor":"SYN-W120","zone":2,"xg":0.151},
+        {"minute":89,"team":"home","type":"turnover","actor":"SYN-ST20","zone":2,"xg":0.0}
+      ]
+    },
+    {
+      "id": "synthetic-upset",
+      "label": "Sorpresa sintética",
+      "description": "Reconstrucción visual coherente con el marcador 2–1, presente en 7,24% de las simulaciones.",
+      "scoreline_probability": 0.0724,
+      "stats": {"home_goals": 2, "away_goals": 1, "home_xg": 1.49, "away_xg": 1.37, "home_shots": 9, "away_shots": 10, "home_shots_on_target": 5, "away_shots_on_target": 5, "home_possession": 0.494},
+      "events": [
+        {"minute":8,"team":"away","type":"shot_on_target","actor":"Michael Olise","zone":2,"xg":0.13},
+        {"minute":14,"team":"home","type":"shot_off_target","actor":"SYN-W220","zone":2,"xg":0.12},
+        {"minute":25,"team":"home","type":"goal","actor":"SYN-ST20","zone":2,"xg":0.18},
+        {"minute":32,"team":"away","type":"turnover","actor":"Frenkie de Jong","zone":2,"xg":0.0},
+        {"minute":44,"team":"away","type":"goal","actor":"Lionel Messi","zone":3,"xg":0.24},
+        {"minute":51,"team":"home","type":"shot_on_target","actor":"SYN-AM20","zone":2,"xg":0.16},
+        {"minute":63,"team":"away","type":"shot_off_target","actor":"Désiré Doué","zone":3,"xg":0.21},
+        {"minute":76,"team":"home","type":"goal","actor":"SYN-W120","zone":2,"xg":0.15},
+        {"minute":84,"team":"away","type":"shot_on_target","actor":"Lionel Messi","zone":3,"xg":0.28},
+        {"minute":90,"team":"away","type":"turnover","actor":"Michael Olise","zone":2,"xg":0.0}
+      ]
+    },
+    {
+      "id": "high-intensity",
+      "label": "Alta intensidad",
+      "description": "Reconstrucción visual coherente con el 2–2, marcador presente en 5,06% de las simulaciones.",
+      "scoreline_probability": 0.0506,
+      "stats": {"home_goals": 2, "away_goals": 2, "home_xg": 1.68, "away_xg": 1.74, "home_shots": 11, "away_shots": 12, "home_shots_on_target": 6, "away_shots_on_target": 6, "home_possession": 0.487},
+      "events": [
+        {"minute":6,"team":"home","type":"goal","actor":"SYN-W220","zone":2,"xg":0.17},
+        {"minute":12,"team":"away","type":"shot_on_target","actor":"Lionel Messi","zone":2,"xg":0.14},
+        {"minute":19,"team":"away","type":"goal","actor":"Michael Olise","zone":2,"xg":0.20},
+        {"minute":27,"team":"home","type":"shot_off_target","actor":"SYN-ST20","zone":3,"xg":0.26},
+        {"minute":34,"team":"away","type":"goal","actor":"Lionel Messi","zone":3,"xg":0.29},
+        {"minute":40,"team":"home","type":"shot_on_target","actor":"SYN-AM20","zone":2,"xg":0.16},
+        {"minute":53,"team":"home","type":"goal","actor":"SYN-ST20","zone":2,"xg":0.18},
+        {"minute":61,"team":"away","type":"shot_on_target","actor":"Désiré Doué","zone":2,"xg":0.14},
+        {"minute":69,"team":"home","type":"shot_on_target","actor":"SYN-W120","zone":2,"xg":0.12},
+        {"minute":78,"team":"away","type":"shot_off_target","actor":"Michael Olise","zone":3,"xg":0.25},
+        {"minute":87,"team":"home","type":"turnover","actor":"SYN-CM20","zone":2,"xg":0.0}
+      ]
+    }
+  ],
+  "methodological_note": "El replay representativo usa la timeline directa del motor calibrado. Los otros dos son reconstrucciones visuales coherentes con marcadores muestreados de la distribución. Los perfiles de los onces siguen siendo provisionales."
+}
