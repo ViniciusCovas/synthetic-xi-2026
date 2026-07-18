@@ -6,9 +6,13 @@ on:
     paths:
       - "scripts/build_partial_window_artifacts.py"
       - "data/lake/**"
+      - "data/processed/fixtures.csv"
+      - "data/processed/player_matches.csv"
       - "simulator/**"
-      - "scripts/run_exploratory_match_simulation.py"
+      - "scripts/build_simulator_calibration.py"
+      - "scripts/run_calibrated_match_simulation.py"
       - "tests/test_simulator.py"
+      - "tests/test_calibrated_simulator.py"
       - ".github/workflows/annual-model-readiness.yml"
   schedule:
     - cron: "47 * * * *"
@@ -45,35 +49,40 @@ jobs:
       - name: Build partial windows and role evidence
         run: python scripts/build_partial_window_artifacts.py
 
-      - name: Test exploratory simulator
+      - name: Derive observed World Cup calibration targets
+        run: python scripts/build_simulator_calibration.py
+
+      - name: Test simulator engines
         env:
           PYTHONPATH: .
-        run: pytest -q tests/test_simulator.py
+        run: pytest -q tests/test_simulator.py tests/test_calibrated_simulator.py
 
-      - name: Run 10000 exploratory matches
+      - name: Run 10000 calibrated matches
         env:
           PYTHONPATH: .
-        run: python scripts/run_exploratory_match_simulation.py
+        run: python scripts/run_calibrated_match_simulation.py
 
-      - name: Archive simulator outputs
+      - name: Archive calibrated simulator outputs
         uses: actions/upload-artifact@v4
         with:
-          name: exploratory-simulator-${{ github.run_id }}
-          path: data/simulations/exploratory_v0_1
+          name: calibrated-simulator-${{ github.run_id }}
+          path: |
+            data/simulations/calibration
+            data/simulations/calibrated_v0_2
           retention-days: 30
           if-no-files-found: error
 
-      - name: Publish readiness and simulation artifacts
+      - name: Publish readiness and calibrated simulation
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "synthetic-xi-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/model_readiness data/simulations/exploratory_v0_1
+          git add data/model_readiness data/simulations/calibration data/simulations/calibrated_v0_2
           if git diff --cached --quiet; then
             echo "No readiness or simulation changes to publish"
           else
-            git commit -m "data: update model readiness and exploratory simulation"
+            git commit -m "data: update calibrated Synthetic XI simulation"
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
