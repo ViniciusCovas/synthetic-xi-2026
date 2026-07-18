@@ -1,0 +1,85 @@
+name: Adaptive Annual Player Extraction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_adaptive_annual_extraction.py"
+      - "scripts/analyze_adaptive_extraction.py"
+      - ".github/workflows/adaptive-annual-extraction.yml"
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: adaptive-annual-player-extraction
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restore resumable raw cache
+        uses: actions/cache@v4
+        with:
+          path: data/raw/adaptive_annual
+          key: adaptive-annual-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            adaptive-annual-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: pip install pandas requests
+
+      - name: Run quota-safe adaptive extraction
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_MAX_REQUESTS_PER_MINUTE: "190"
+          MAX_NETWORK_REQUESTS: "2800"
+          MIN_DAILY_REQUESTS_REMAINING: "600"
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        run: python scripts/run_adaptive_annual_extraction.py
+
+      - name: Analyze accumulated extraction quality
+        if: ${{ always() }}
+        run: python scripts/analyze_adaptive_extraction.py
+
+      - name: Archive raw responses
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: adaptive-annual-raw-${{ github.run_id }}
+          path: data/raw/adaptive_annual
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Publish compact lake batch and status
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/lake data/audits
+          if git diff --cached --quiet; then
+            echo "No adaptive extraction changes to publish"
+          else
+            git commit -m "data: publish adaptive annual extraction batch"
+            git push origin HEAD:main
+          fi
