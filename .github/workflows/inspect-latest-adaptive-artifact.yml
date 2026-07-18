@@ -1,0 +1,112 @@
+name: Inspect Latest Adaptive Artifact
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/inspect-latest-adaptive-artifact.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Inspect latest failed adaptive run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          RUN_ID="$(gh run list \
+            --repo "${GITHUB_REPOSITORY}" \
+            --workflow adaptive-annual-extraction.yml \
+            --status failure \
+            --limit 10 \
+            --json databaseId,createdAt \
+            --jq 'sort_by(.createdAt) | reverse | .[0].databaseId')"
+          test -n "${RUN_ID}"
+          rm -rf inspected
+          mkdir -p inspected data/audits
+          gh run download "${RUN_ID}" \
+            --repo "${GITHUB_REPOSITORY}" \
+            --name "adaptive-annual-raw-${RUN_ID}" \
+            --dir inspected/raw
+          gh run view "${RUN_ID}" --repo "${GITHUB_REPOSITORY}" --log > inspected/run.log
+          python - <<'PY'
+          import json, re
+          from pathlib import Path
+
+          root = Path('inspected/raw')
+          files = list(root.rglob('fixture_*_*.json'))
+          players = [p for p in files if p.name.endswith('_players.json')]
+          lineups = [p for p in files if p.name.endswith('_lineups.json')]
+          ids = set()
+          player_nonempty = 0
+          lineup_nonempty = 0
+          for p in files:
+              m = re.match(r'fixture_(\d+)_(players|lineups)\.json$', p.name)
+              if m:
+                  ids.add(int(m.group(1)))
+              try:
+                  payload = json.loads(p.read_text(encoding='utf-8'))
+                  nonempty = bool(payload.get('response') or [])
+                  if p.name.endswith('_players.json') and nonempty:
+                      player_nonempty += 1
+                  if p.name.endswith('_lineups.json') and nonempty:
+                      lineup_nonempty += 1
+              except Exception:
+                  pass
+
+          log = Path('inspected/run.log').read_text(encoding='utf-8', errors='ignore')
+          def last_int(key):
+              matches = re.findall(rf'"{re.escape(key)}"\s*:\s*(?:"(\d+)"|(\d+))', log)
+              if not matches:
+                  return None
+              a, b = matches[-1]
+              return int(a or b)
+
+          report = {
+              'failed_run_id': int('${RUN_ID}'),
+              'raw_json_files': len(files),
+              'unique_fixtures_with_raw_data': len(ids),
+              'player_payload_files': len(players),
+              'lineup_payload_files': len(lineups),
+              'player_payloads_nonempty': player_nonempty,
+              'lineup_payloads_nonempty': lineup_nonempty,
+              'fixtures_processed_this_batch_from_log': last_int('fixtures_processed_this_batch'),
+              'player_rows_this_batch_from_log': last_int('player_rows_this_batch'),
+              'lineup_rows_this_batch_from_log': last_int('lineup_rows_this_batch'),
+              'network_calls_this_batch_from_log': last_int('network_calls_this_batch'),
+              'daily_requests_remaining_reported_from_log': last_int('daily_requests_remaining_reported'),
+              'publication_failure_interpretation': 'La extracción y el archivo bruto terminaron; falló únicamente la publicación del commit compacto.'
+          }
+          Path('data/audits/latest_failed_adaptive_artifact_report.json').write_text(
+              json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8'
+          )
+          print(json.dumps(report, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Publish diagnostic report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/audits/latest_failed_adaptive_artifact_report.json
+          git commit -m "data: inspect failed adaptive extraction artifact"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
