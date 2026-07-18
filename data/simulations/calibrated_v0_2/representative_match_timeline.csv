@@ -1,0 +1,21 @@
+minute,team,type,actor,zone,xg,headline
+5,Synthetic XI — exploratorio,shot_on_target,SYN-W220,1,0.096,Remate de SYN-W220 detenido por el portero
+16,Real Best XI — exploratorio,shot_on_target,Lionel Messi,2,0.174,Remate de Lionel Messi detenido por el portero
+17,Real Best XI — exploratorio,shot_off_target,Désiré Doué,3,0.278,Ocasión de Désiré Doué fuera
+18,Synthetic XI — exploratorio,turnover,SYN-W120,2,0.0,SYN-W120 pierde el balón bajo presión
+22,Real Best XI — exploratorio,shot_on_target,Michael Olise,1,0.107,Remate de Michael Olise detenido por el portero
+24,Real Best XI — exploratorio,turnover,Yan Diomande,2,0.0,Yan Diomande pierde el balón bajo presión
+28,Real Best XI — exploratorio,shot_on_target,Michael Olise,2,0.172,Remate de Michael Olise detenido por el portero
+28,Real Best XI — exploratorio,shot_off_target,Michael Olise,2,0.172,Ocasión de Michael Olise fuera
+30,Real Best XI — exploratorio,goal,Michael Olise,2,0.172,GOL de Michael Olise
+33,Synthetic XI — exploratorio,shot_on_target,SYN-W220,2,0.154,Remate de SYN-W220 detenido por el portero
+38,Real Best XI — exploratorio,shot_off_target,Michael Olise,2,0.172,Ocasión de Michael Olise fuera
+41,Synthetic XI — exploratorio,shot_on_target,SYN-ST20,1,0.109,Remate de SYN-ST20 detenido por el portero
+48,Synthetic XI — exploratorio,turnover,SYN-W220,2,0.0,SYN-W220 pierde el balón bajo presión
+58,Real Best XI — exploratorio,goal,Lionel Messi,1,0.109,GOL de Lionel Messi
+71,Real Best XI — exploratorio,turnover,Frenkie de Jong,2,0.0,Frenkie de Jong pierde el balón bajo presión
+72,Real Best XI — exploratorio,shot_on_target,Lionel Messi,3,0.282,Remate de Lionel Messi detenido por el portero
+79,Synthetic XI — exploratorio,shot_off_target,SYN-AM20,3,0.228,Ocasión de SYN-AM20 fuera
+85,Synthetic XI — exploratorio,goal,SYN-ST20,1,0.109,GOL de SYN-ST20
+86,Synthetic XI — exploratorio,shot_off_target,SYN-W120,2,0.151,Ocasión de SYN-W120 fuera
+89,Synthetic XI — exploratorio,turnover,SYN-ST20,2,0.0,SYN-ST20 pierde el balón bajo presión

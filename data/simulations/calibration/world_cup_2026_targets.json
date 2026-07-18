@@ -1,0 +1,31 @@
+{
+  "status": "world_cup_2026_calibration_ready",
+  "primary_sample_rule": "Solo partidos con status FT; 90 minutos reglamentarios.",
+  "source_match_count": 94,
+  "excluded_aet_matches": 4,
+  "excluded_pen_matches": 4,
+  "exact_total_goals": 274.0,
+  "mean_goals_per_match": 2.9148936170212765,
+  "goals_standard_deviation": 1.7454061022235627,
+  "zero_zero_rate": 0.07446808510638298,
+  "home_win_rate": 0.48936170212765956,
+  "draw_rate": 0.2127659574468085,
+  "away_win_rate": 0.2978723404255319,
+  "captured_player_goals": 207.0,
+  "player_goal_capture_rate": 0.7554744525547445,
+  "event_capture_adjustment": 1.3236714975845412,
+  "captured_shots": 1285.0,
+  "captured_shots_on_target": 595.0,
+  "mean_shots_per_match": 18.094871004214205,
+  "mean_shots_on_target_per_match": 8.378558947476618,
+  "model_possessions_per_match": 104.0,
+  "model_possessions_note": "Parámetro de estados de posesión del simulador; no se presenta como una medición de posesiones reales del proveedor.",
+  "shot_probability_per_model_possession": 0.17398914427129045,
+  "goal_probability_per_shot": 0.1610894941634241,
+  "shots_on_target_probability_per_shot": 0.46303501945525294,
+  "methodological_gate": {
+    "calibration_targets_allowed": true,
+    "final_team_comparison_allowed": false,
+    "reason": "Los objetivos de calibración son observados, pero los perfiles anuales y las once funciones todavía son provisionales."
+  }
+}
