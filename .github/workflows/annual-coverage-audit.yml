@@ -1,0 +1,67 @@
+name: Audit Annual 2025-2026 Coverage
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/annual-coverage-audit.yml"
+      - "scripts/audit_annual_coverage.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    concurrency:
+      group: synthetic-xi-annual-coverage-audit
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install audit dependencies
+        run: pip install pandas requests
+
+      - name: Audit World Cup player annual coverage
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+        run: python scripts/audit_annual_coverage.py
+
+      - name: Archive raw audit responses
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: annual-coverage-raw-${{ github.run_id }}
+          path: data/raw/annual_coverage
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Publish compact audit results
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/audits
+          if git diff --cached --quiet; then
+            echo "No audit changes to publish"
+          else
+            git commit -m "data: publish annual 2025-2026 coverage audit"
+            git push origin HEAD:main
+          fi
