@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/annual-coverage-audit.yml"
-      - "scripts/audit_annual_coverage.py"
+      - "scripts/audit_annual_coverage_v2.py"
   workflow_dispatch:
 
 permissions:
@@ -13,6 +13,7 @@ permissions:
 
 env:
   PYTHONUNBUFFERED: "1"
+  API_MAX_REQUESTS_PER_MINUTE: "220"
 
 jobs:
   audit:
@@ -35,13 +36,21 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Restore resumable API cache
+        uses: actions/cache@v4
+        with:
+          path: data/raw/annual_coverage
+          key: annual-coverage-v2-${{ runner.os }}-${{ hashFiles('scripts/audit_annual_coverage_v2.py') }}
+          restore-keys: |
+            annual-coverage-v2-${{ runner.os }}-
+
       - name: Install audit dependencies
         run: pip install pandas requests
 
       - name: Audit World Cup player annual coverage
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-        run: python scripts/audit_annual_coverage.py
+        run: python scripts/audit_annual_coverage_v2.py
 
       - name: Archive raw audit responses
         if: ${{ always() }}
@@ -53,9 +62,14 @@ jobs:
           if-no-files-found: warn
 
       - name: Publish compact audit results
+        if: ${{ always() }}
         shell: bash
         run: |
           set -euo pipefail
+          if [ ! -d data/audits ]; then
+            echo "No audit directory to publish"
+            exit 0
+          fi
           git config user.name "synthetic-xi-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/audits
