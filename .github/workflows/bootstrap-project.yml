@@ -1,60 +1,37 @@
-name: Bootstrap Synthetic XI 2026
+name: Refresh World Cup 2026 Data
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/bootstrap-project.yml"
   workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
 
 permissions:
   contents: write
 
+env:
+  PYTHONUNBUFFERED: "1"
+
 jobs:
-  bootstrap:
+  refresh:
     runs-on: ubuntu-latest
+    concurrency:
+      group: synthetic-xi-world-cup-2026
+      cancel-in-progress: false
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout main
+        uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Reconstruct validated project package
-        shell: bash
-        run: |
-          set -euo pipefail
-          cat .bootstrap/part* > /tmp/synthetic-xi-project.b64
-          base64 --decode /tmp/synthetic-xi-project.b64 > /tmp/synthetic-xi-project.tar.gz
-          gzip -t /tmp/synthetic-xi-project.tar.gz
-          mkdir -p /tmp/synthetic-xi-source
-          tar -xzf /tmp/synthetic-xi-project.tar.gz -C /tmp/synthetic-xi-source
-
-          PROJECT_FILE="$(find /tmp/synthetic-xi-source -maxdepth 3 -type f -name pyproject.toml | head -n 1)"
-          test -n "$PROJECT_FILE"
-          PROJECT_ROOT="$(dirname "$PROJECT_FILE")"
-          echo "Project root: $PROJECT_ROOT"
-
-          rsync -a \
-            --exclude='.git/' \
-            --exclude='.github/workflows/' \
-            --exclude='.pytest_cache/' \
-            --exclude='__pycache__/' \
-            --exclude='node_modules/' \
-            --exclude='dist/' \
-            "$PROJECT_ROOT/" "$GITHUB_WORKSPACE/"
-
-          rm -rf "$GITHUB_WORKSPACE/.bootstrap"
-
-      - name: Publish clean source code
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name "synthetic-xi-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add -A
-          git status --short
-          git diff --cached --quiet && { echo "No source changes found"; exit 1; }
-          git commit -m "feat: bootstrap Synthetic XI 2026 v0.3"
-          git push origin HEAD:main
-
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
@@ -62,7 +39,32 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Generate first live World Cup 2026 snapshot
+      - name: Verify paid World Cup 2026 access
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+        run: |
+          python - <<'PY'
+          import os
+          import requests
+
+          response = requests.get(
+              "https://v3.football.api-sports.io/leagues",
+              params={"id": 1, "season": 2026},
+              headers={"x-apisports-key": os.environ["API_FOOTBALL_KEY"]},
+              timeout=60,
+          )
+          response.raise_for_status()
+          payload = response.json()
+          errors = payload.get("errors") or {}
+          if errors:
+              raise SystemExit(f"API-Football access error: {errors}")
+          if not payload.get("response"):
+              raise SystemExit("API-Football returned no World Cup 2026 competition record")
+          print("World Cup 2026 access confirmed")
+          print("Daily requests remaining:", response.headers.get("x-ratelimit-requests-remaining", "not reported"))
+          PY
+
+      - name: Generate live World Cup 2026 snapshot
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
         run: python scripts/refresh_2026.py
@@ -70,7 +72,8 @@ jobs:
       - name: Run scientific tests
         run: pytest -q
 
-      - uses: actions/setup-node@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: npm
@@ -94,6 +97,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
           git add data/processed web/public/data
-          git diff --cached --quiet || git commit -m "data: first World Cup 2026 snapshot"
-          git push origin HEAD:main
+          if git diff --cached --quiet; then
+            echo "No generated-data changes to publish"
+          else
+            git commit -m "data: update World Cup 2026 live snapshot"
+            git push origin HEAD:main
+          fi
