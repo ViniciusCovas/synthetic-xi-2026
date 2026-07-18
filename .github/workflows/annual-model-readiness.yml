@@ -1,0 +1,56 @@
+name: Annual Model Readiness
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/build_partial_window_artifacts.py"
+      - ".github/workflows/annual-model-readiness.yml"
+  schedule:
+    - cron: "47 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: annual-model-readiness
+  cancel-in-progress: true
+
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas
+
+      - name: Build partial windows and role evidence
+        run: python scripts/build_partial_window_artifacts.py
+
+      - name: Publish readiness artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/model_readiness
+          if git diff --cached --quiet; then
+            echo "No readiness changes to publish"
+          else
+            git commit -m "data: update annual model readiness"
+            git push origin HEAD:main
+          fi
