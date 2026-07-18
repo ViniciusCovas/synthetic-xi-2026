@@ -1,0 +1,73 @@
+name: Pilot Fixture Detail Extraction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/pilot_fixture_detail_extraction.py"
+      - ".github/workflows/fixture-detail-pilot.yml"
+      - "data/audits/exact_fixture_inventory.csv"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restore fixture detail pilot cache
+        uses: actions/cache@v4
+        with:
+          path: data/raw/fixture_detail_pilot
+          key: fixture-detail-pilot-${{ runner.os }}-${{ hashFiles('scripts/pilot_fixture_detail_extraction.py') }}
+          restore-keys: |
+            fixture-detail-pilot-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: pip install pandas requests
+
+      - name: Run stratified fixture detail pilot
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_MAX_REQUESTS_PER_MINUTE: "200"
+          PILOT_MAX_FIXTURES: "250"
+        run: python scripts/pilot_fixture_detail_extraction.py
+
+      - name: Archive raw pilot responses
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: fixture-detail-pilot-raw-${{ github.run_id }}
+          path: data/raw/fixture_detail_pilot
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Publish pilot quality report
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/audits
+          if git diff --cached --quiet; then
+            echo "No pilot report changes to publish"
+          else
+            git commit -m "data: publish fixture detail pilot"
+            git push origin HEAD:main
+          fi
