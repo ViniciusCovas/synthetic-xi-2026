@@ -1,0 +1,37 @@
+{
+  "status": "audit_completed_decision_pending",
+  "generated_at_utc": "2026-07-18T18:59:03.990565+00:00",
+  "window_current": [
+    "2025-07-18",
+    "2026-07-17"
+  ],
+  "window_pre_world_cup": [
+    "2025-06-11",
+    "2026-06-10"
+  ],
+  "world_cup_teams": 48,
+  "squad_rows": 1248,
+  "unique_players_audited": 1248,
+  "players_with_2025_statistics": 1218,
+  "players_with_2026_statistics": 1236,
+  "players_with_both_seasons": 1217,
+  "players_without_statistics": 11,
+  "competition_stat_lines": 8215,
+  "unique_league_season_pairs": 228,
+  "league_season_pairs_with_player_match_statistics_share": 0.5482456140350878,
+  "network_calls_this_run": 2773,
+  "daily_requests_remaining_reported": "4453",
+  "failed_requests": 0,
+  "configured_requests_per_minute_ceiling": 220,
+  "raw_responses_sha256": "83212888ad15050fbbc42595aaf568b0583c1706538e5a5cc2e07c3b02d41030",
+  "methodological_gate": {
+    "ranking_allowed": false,
+    "next_decision": "Revisar sesgo de cobertura por país, liga, posición y selección antes de extraer partidos."
+  },
+  "notes": [
+    "Las estadísticas de temporada sirven para mapear el universo, no para el ranking final de ventana exacta.",
+    "La auditoría usa caché persistente y puede reanudarse sin repetir respuestas ya guardadas.",
+    "La siguiente fase recogerá fixtures dentro de fechas exactas y deduplicará partidos.",
+    "Los amistosos se marcarán y se excluirán del modelo principal."
+  ]
+}

@@ -1,0 +1,229 @@
+league_id,league_name,league_type,country,season,coverage_events,coverage_lineups,coverage_fixture_statistics,coverage_player_statistics,coverage_players,coverage_injuries,coverage_predictions,coverage_odds,coverage_standings,season_start,season_end
+1,World Cup,Cup,World,2026,True,True,True,True,True,True,True,True,True,2026-06-11,2026-07-19
+2,UEFA Champions League,Cup,World,2025,True,True,True,True,True,True,True,False,True,2025-07-08,2026-05-30
+2,UEFA Champions League,Cup,World,2026,True,True,True,True,True,False,True,True,False,2026-07-07,2026-07-29
+3,UEFA Europa League,Cup,World,2025,True,True,True,True,True,True,True,False,True,2025-07-10,2026-05-20
+6,Africa Cup of Nations,Cup,World,2025,True,True,True,True,True,False,True,False,True,2025-12-21,2026-01-18
+10,Friendlies,Cup,World,2025,True,True,True,True,True,False,True,False,False,2025-01-04,2025-12-21
+10,Friendlies,Cup,World,2026,True,True,True,True,True,False,True,True,False,2026-01-01,2026-11-15
+11,CONMEBOL Sudamericana,Cup,World,2025,True,True,True,True,True,False,True,False,True,2025-03-05,2025-11-22
+11,CONMEBOL Sudamericana,Cup,World,2026,True,True,True,True,True,False,True,True,True,2026-03-03,2026-07-29
+12,CAF Champions League,Cup,World,2025,True,True,True,True,True,False,True,False,True,2025-09-16,2026-05-24
+13,CONMEBOL Libertadores,Cup,World,2025,True,True,True,True,True,True,True,False,True,2025-02-05,2025-11-29
+13,CONMEBOL Libertadores,Cup,World,2026,True,True,True,True,True,False,True,False,True,2026-02-04,2026-08-18
+15,FIFA Club World Cup,Cup,World,2025,True,True,True,True,True,False,True,False,True,2025-06-15,2025-07-13
+16,CONCACAF Champions League,Cup,World,2025,True,True,True,True,True,False,True,False,False,2025-02-05,2025-06-02
+16,CONCACAF Champions League,Cup,World,2026,True,True,True,True,True,False,True,False,False,2026-02-04,2026-05-30
+17,AFC Champions League Elite,Cup,World,2025,True,True,True,True,True,True,True,False,True,2025-08-12,2026-04-25
+18,AFC Champions League Two,Cup,World,2025,True,True,True,True,True,False,True,False,False,2025-08-13,2026-05-16
+20,CAF Confederation Cup,Cup,World,2025,True,True,True,True,True,False,True,False,True,2025-09-16,2026-05-16
+22,CONCACAF Gold Cup,Cup,World,2025,True,True,True,True,True,False,True,False,True,2025-06-15,2025-07-06
+23,EAFF E-1 Football Championship,Cup,World,2025,True,False,False,False,True,False,True,False,False,2025-07-07,2025-07-15
+30,World Cup - Qualification Asia,Cup,World,2026,True,True,True,True,True,False,True,False,True,2023-10-12,2025-11-18
+31,World Cup - Qualification CONCACAF,Cup,World,2026,True,True,True,True,True,True,True,False,True,2024-03-22,2025-11-19
+33,World Cup - Qualification Oceania,Cup,World,2026,True,True,False,False,True,False,True,False,False,2024-09-05,2025-03-24
+34,World Cup - Qualification South America,Cup,World,2026,True,True,True,True,True,False,True,False,True,2023-09-07,2025-09-09
+37,World Cup - Qualification Intercontinental Play-offs,Cup,World,2026,True,True,True,True,True,False,True,False,False,2026-03-26,2026-03-31
+38,UEFA U21 Championship,Cup,World,2025,True,True,True,True,True,False,True,False,True,2025-06-11,2025-06-28
+39,Premier League,League,England,2025,True,True,True,True,True,True,True,False,True,2025-08-15,2026-05-24
+40,Championship,League,England,2025,True,True,True,True,True,True,True,False,True,2025-08-08,2026-05-23
+41,League One,League,England,2025,True,True,True,True,True,True,True,False,True,2025-08-01,2026-05-24
+45,FA Cup,Cup,England,2025,True,True,True,True,True,False,True,False,False,2025-08-01,2026-05-16
+46,EFL Trophy,Cup,England,2025,True,True,True,True,True,False,True,False,True,2025-08-26,2026-04-12
+48,League Cup,Cup,England,2025,True,True,True,True,True,True,True,False,False,2025-07-29,2026-03-22
+61,Ligue 1,League,France,2025,True,True,True,True,True,True,True,False,True,2025-08-15,2026-05-29
+62,Ligue 2,League,France,2025,True,True,True,True,True,True,True,False,True,2025-08-09,2026-05-24
+63,National 1,League,France,2025,True,True,False,False,True,True,True,False,True,2025-08-08,2026-05-15
+66,Coupe de France,Cup,France,2025,True,True,True,True,True,False,True,False,False,2025-11-14,2026-05-22
+67,National 2 - Group A,League,France,2025,True,True,False,False,True,False,True,False,True,2025-08-16,2026-05-16
+71,Serie A,League,Brazil,2025,True,True,True,True,True,True,True,False,True,2025-03-29,2025-12-07
+71,Serie A,League,Brazil,2026,True,True,True,True,True,True,True,True,True,2026-01-28,2026-12-02
+73,Copa Do Brasil,Cup,Brazil,2025,True,True,True,True,True,False,True,False,False,2025-02-18,2025-12-21
+73,Copa Do Brasil,Cup,Brazil,2026,True,True,True,True,True,False,True,False,False,2026-02-17,2026-08-05
+78,Bundesliga,League,Germany,2025,True,True,True,True,True,True,True,False,True,2025-08-22,2026-05-25
+79,2. Bundesliga,League,Germany,2025,True,True,True,True,True,True,True,False,True,2025-08-01,2026-05-26
+80,3. Liga,League,Germany,2025,True,True,True,True,True,True,True,False,True,2025-08-01,2026-05-16
+81,DFB Pokal,Cup,Germany,2025,True,True,True,True,True,True,True,False,False,2025-08-15,2026-05-23
+88,Eredivisie,League,Netherlands,2025,True,True,True,True,True,True,True,False,True,2025-08-08,2026-05-24
+89,Eerste Divisie,League,Netherlands,2025,True,True,True,True,True,True,True,False,True,2025-08-08,2026-05-23
+90,KNVB Beker,Cup,Netherlands,2025,True,True,True,True,True,False,True,False,False,2025-09-02,2026-04-19
+94,Primeira Liga,League,Portugal,2025,True,True,True,True,True,True,True,False,True,2025-08-08,2026-05-28
+95,Segunda Liga,League,Portugal,2025,True,True,True,True,True,False,True,False,True,2025-08-09,2026-05-29
+96,Taça de Portugal,Cup,Portugal,2025,True,True,True,True,True,False,True,False,False,2025-08-30,2026-05-24
+98,J1 League,League,Japan,2025,True,True,True,True,True,True,True,False,True,2025-02-14,2025-12-06
+98,J1 League,League,Japan,2026,True,True,True,True,True,False,True,False,True,2026-02-06,2026-06-06
+99,J2 League,League,Japan,2025,True,True,False,False,True,True,True,False,True,2025-02-15,2025-12-14
+101,J-League Cup,Cup,Japan,2025,True,True,False,False,True,False,True,False,True,2025-03-20,2025-11-01
+102,Emperor Cup,Cup,Japan,2025,True,True,False,False,True,True,True,False,False,2025-05-24,2025-11-22
+103,Eliteserien,League,Norway,2025,True,True,True,True,True,True,True,False,True,2025-03-29,2025-12-11
+103,Eliteserien,League,Norway,2026,True,True,True,True,True,True,True,True,True,2026-03-14,2026-12-06
+104,1. Division,League,Norway,2025,True,True,False,False,True,True,True,False,True,2025-03-31,2025-11-30
+105,NM Cupen,Cup,Norway,2025,True,True,False,False,True,False,True,False,False,2025-03-26,2025-12-06
+106,Ekstraklasa,League,Poland,2025,True,True,True,True,True,True,True,False,True,2025-07-18,2026-05-23
+113,Allsvenskan,League,Sweden,2025,True,True,True,True,True,True,True,False,True,2025-03-29,2025-11-29
+113,Allsvenskan,League,Sweden,2026,True,True,True,True,True,True,True,True,True,2026-04-04,2026-11-29
+114,Superettan,League,Sweden,2026,True,True,True,True,True,False,True,True,True,2026-04-03,2026-11-07
+119,Superliga,League,Denmark,2025,True,True,True,True,True,True,True,False,True,2025-07-18,2026-05-21
+128,Liga Profesional Argentina,League,Argentina,2025,True,True,True,True,True,True,True,False,True,2025-01-23,2025-12-14
+128,Liga Profesional Argentina,League,Argentina,2026,True,True,True,True,True,False,True,True,True,2026-01-22,2026-11-08
+130,Copa Argentina,Cup,Argentina,2025,True,True,False,False,True,False,True,False,False,2025-01-23,2025-11-15
+135,Serie A,League,Italy,2025,True,True,True,True,True,True,True,False,True,2025-08-23,2026-05-24
+136,Serie B,League,Italy,2025,True,True,True,True,True,True,True,False,True,2025-08-22,2026-05-29
+137,Coppa Italia,Cup,Italy,2025,True,True,True,True,True,False,True,False,False,2025-08-09,2026-05-13
+140,La Liga,League,Spain,2025,True,True,True,True,True,True,True,False,True,2025-08-15,2026-05-24
+141,Segunda División,League,Spain,2025,True,True,True,True,True,True,True,False,True,2025-08-15,2026-06-20
+143,Copa del Rey,Cup,Spain,2025,True,True,True,True,True,False,True,False,False,2025-09-27,2026-04-18
+144,Jupiler Pro League,League,Belgium,2025,True,True,True,True,True,True,True,False,True,2025-07-25,2026-05-31
+145,Challenger Pro League,League,Belgium,2025,True,True,True,True,True,True,True,False,True,2025-08-08,2026-04-18
+147,Cup,Cup,Belgium,2025,True,True,False,False,True,False,True,False,False,2025-08-02,2026-05-14
+162,Primera División,League,Costa-Rica,2025,True,True,False,False,True,True,True,False,True,2025-07-25,2026-05-17
+169,Super League,League,China,2026,True,True,True,True,True,False,True,True,True,2026-03-06,2026-11-08
+172,First League,League,Bulgaria,2025,True,True,True,True,True,True,True,False,True,2025-07-18,2026-05-29
+179,Premiership,League,Scotland,2025,True,True,True,True,True,True,True,False,True,2025-08-02,2026-05-25
+182,Challenge Cup,Cup,Scotland,2025,True,True,False,False,True,False,True,False,False,2025-08-12,2026-03-28
+185,League Cup,Cup,Scotland,2025,True,True,True,False,True,False,True,False,False,2025-07-11,2025-12-14
+186,Ligue 1,League,Algeria,2025,True,True,False,False,True,True,True,False,True,2025-08-21,2026-06-06
+188,A-League,League,Australia,2025,True,True,True,True,True,True,True,False,True,2025-10-17,2026-05-23
+197,Super League 1,League,Greece,2025,True,True,True,True,True,True,True,False,True,2025-08-23,2026-05-21
+199,Cup,Cup,Greece,2025,True,True,True,False,True,False,True,False,False,2025-08-18,2026-04-25
+200,Botola Pro,League,Morocco,2025,True,True,True,False,True,False,True,False,True,2025-09-12,2026-07-21
+202,Ligue 1,League,Tunisia,2025,True,True,False,False,True,True,True,False,True,2025-08-09,2026-05-13
+203,Süper Lig,League,Turkey,2025,True,True,True,True,True,True,True,False,True,2025-08-08,2026-05-17
+204,1. Lig,League,Turkey,2025,True,True,True,True,True,True,True,False,True,2025-08-08,2026-05-24
+206,Türkiye Kupası,Cup,Turkey,2025,True,True,True,True,True,False,True,False,True,2025-09-02,2026-05-22
+207,Super League,League,Switzerland,2025,True,True,True,True,True,True,True,False,True,2025-07-25,2026-05-21
+209,Schweizer Cup,Cup,Switzerland,2025,True,True,False,False,True,False,True,False,False,2025-08-15,2026-05-24
+210,HNL,League,Croatia,2025,True,True,True,True,True,True,True,False,True,2025-08-01,2026-05-23
+218,Bundesliga,League,Austria,2025,True,True,True,True,True,True,True,False,True,2025-08-01,2026-05-25
+220,Cup,Cup,Austria,2025,True,True,False,False,True,False,True,False,False,2025-07-25,2026-05-01
+233,Premier League,League,Egypt,2025,True,True,True,True,True,False,True,False,True,2025-08-08,2026-05-28
+234,Liga Nacional,League,Honduras,2025,True,True,False,False,True,False,True,False,True,2025-07-23,2026-05-24
+235,Premier League,League,Russia,2025,True,True,True,True,True,True,True,False,True,2025-07-18,2026-05-23
+237,Cup,Cup,Russia,2025,True,True,True,False,True,False,True,False,False,2025-07-29,2026-05-24
+239,Primera A,League,Colombia,2025,True,True,True,True,True,True,True,False,True,2025-01-24,2025-12-17
+239,Primera A,League,Colombia,2026,True,True,True,True,True,False,True,True,True,2026-01-16,2026-11-08
+242,Liga Pro,League,Ecuador,2025,True,True,True,True,True,False,True,False,True,2025-02-15,2025-12-21
+242,Liga Pro,League,Ecuador,2026,True,True,True,True,True,False,True,True,True,2026-02-21,2026-09-13
+244,Veikkausliiga,League,Finland,2025,True,True,True,True,True,True,True,False,True,2025-04-05,2025-11-09
+244,Veikkausliiga,League,Finland,2026,True,True,True,True,True,False,True,True,True,2026-04-04,2026-08-31
+250,Division Profesional - Apertura,League,Paraguay,2025,True,True,False,False,True,False,True,False,True,2025-01-24,2025-05-30
+251,Division Intermedia,League,Paraguay,2025,True,True,False,False,True,False,True,False,True,2025-03-28,2025-10-05
+252,Division Profesional - Clausura,League,Paraguay,2026,False,False,False,False,True,False,True,False,True,2026-07-24,2026-08-03
+253,Major League Soccer,League,USA,2025,True,True,True,True,True,True,True,False,True,2025-02-22,2025-12-06
+253,Major League Soccer,League,USA,2026,True,True,True,True,True,True,True,True,True,2026-02-21,2026-11-08
+255,USL Championship,League,USA,2025,True,True,False,False,True,True,True,False,True,2025-03-09,2025-11-22
+257,US Open Cup,Cup,USA,2025,True,True,False,False,True,False,True,False,False,2025-03-18,2025-10-02
+257,US Open Cup,Cup,USA,2026,True,True,False,False,True,False,True,False,False,2026-03-17,2026-09-16
+259,Canadian Championship,Cup,Canada,2025,True,True,False,False,True,False,True,False,False,2025-04-29,2025-10-02
+262,Liga MX,League,Mexico,2025,True,True,True,True,True,True,True,False,True,2025-07-12,2026-05-24
+262,Liga MX,League,Mexico,2026,True,True,True,True,True,False,True,True,True,2026-07-17,2026-11-23
+265,Primera División,League,Chile,2025,True,True,True,True,True,True,True,False,True,2025-02-15,2025-12-07
+265,Primera División,League,Chile,2026,True,True,True,True,True,False,True,True,True,2026-01-30,2026-12-06
+267,Copa Chile,Cup,Chile,2025,True,True,False,False,True,False,True,False,False,2025-01-26,2025-12-10
+270,Primera División - Clausura,League,Uruguay,2025,True,True,False,False,True,True,True,False,True,2025-07-06,2025-11-30
+271,NB I,League,Hungary,2025,True,True,True,True,True,False,True,False,True,2025-07-25,2026-05-16
+273,Magyar Kupa,Cup,Hungary,2025,True,True,False,False,True,False,True,False,False,2025-08-02,2026-05-09
+283,Liga I,League,Romania,2025,True,True,True,True,True,True,True,False,True,2025-07-11,2026-06-01
+286,Super Liga,League,Serbia,2025,True,True,True,True,True,False,True,False,True,2025-07-19,2026-05-23
+288,Premier Soccer League,League,South-Africa,2025,True,True,True,True,True,True,True,False,True,2025-08-09,2026-06-13
+290,Persian Gulf Pro League,League,Iran,2025,True,True,False,False,True,True,True,False,True,2025-08-18,2026-07-22
+292,K League 1,League,South-Korea,2025,True,True,True,True,True,True,True,False,True,2025-02-15,2025-12-07
+292,K League 1,League,South-Korea,2026,True,True,True,True,True,False,True,True,True,2026-02-28,2026-12-30
+294,FA Cup,Cup,South-Korea,2025,True,True,False,False,True,False,True,False,False,2025-03-08,2025-12-06
+296,Thai League 1,League,Thailand,2025,True,True,True,True,True,False,True,False,True,2025-08-15,2026-05-10
+299,Primera División,League,Venezuela,2025,True,True,False,False,True,False,True,False,True,2025-01-24,2025-12-06
+301,Pro League,League,United-Arab-Emirates,2025,True,True,True,True,True,True,True,False,True,2025-08-16,2026-05-16
+302,League Cup,Cup,United-Arab-Emirates,2025,True,True,True,False,True,False,True,False,False,2025-08-30,2026-05-01
+304,Liga Panameña de Fútbol,League,Panama,2025,True,True,True,False,True,False,True,False,True,2025-01-18,2025-11-29
+305,Stars League,League,Qatar,2025,True,True,True,True,True,True,True,False,True,2025-08-14,2026-05-08
+307,Pro League,League,Saudi-Arabia,2025,True,True,True,True,True,True,True,False,True,2025-08-28,2026-05-21
+318,1. Division,League,Cyprus,2025,True,True,True,True,True,True,True,False,True,2025-08-22,2026-05-22
+321,Cup,Cup,Cyprus,2025,True,True,False,False,True,False,True,False,False,2025-10-01,2026-05-29
+332,Super Liga,League,Slovakia,2025,True,True,True,True,True,True,True,False,True,2025-07-26,2026-05-16
+345,Czech Liga,League,Czech-Republic,2025,True,True,True,True,True,True,True,False,True,2025-07-18,2026-05-31
+346,FNL,League,Czech-Republic,2025,True,True,False,False,True,True,True,False,True,2025-07-18,2026-05-23
+357,Premier Division,League,Ireland,2025,True,True,True,True,True,True,True,False,True,2025-02-14,2025-11-07
+357,Premier Division,League,Ireland,2026,True,True,True,True,True,False,True,True,True,2026-02-06,2026-10-30
+359,FAI Cup,Cup,Ireland,2025,True,True,False,False,True,False,True,False,False,2025-05-11,2025-11-09
+369,Super League,League,Uzbekistan,2025,True,True,False,False,True,False,True,False,True,2025-03-07,2025-12-16
+373,1. SNL,League,Slovenia,2025,True,True,False,False,True,True,True,False,True,2025-07-18,2026-05-31
+379,Ligue Haïtienne,League,Haiti,2025,False,False,False,False,True,False,True,False,True,2025-03-23,2025-05-30
+383,Ligat Ha'al,League,Israel,2025,True,True,True,True,True,True,True,False,True,2025-08-23,2026-05-19
+385,Toto Cup Ligat Al,Cup,Israel,2025,True,True,False,False,True,False,True,False,False,2025-07-19,2025-10-28
+387,League,League,Jordan,2025,True,True,False,False,True,False,True,False,True,2025-07-31,2026-05-07
+389,Premier League,League,Kazakhstan,2025,True,True,False,False,True,True,True,False,True,2025-03-01,2025-10-26
+475,Paulista - A1,League,Brazil,2025,True,True,True,True,True,False,True,False,True,2025-01-15,2025-03-27
+475,Paulista - A1,League,Brazil,2026,True,True,True,True,True,False,True,False,True,2026-01-10,2026-03-08
+477,Gaúcho - 1,League,Brazil,2025,True,True,False,False,True,False,True,False,True,2025-01-22,2025-03-16
+477,Gaúcho - 1,League,Brazil,2026,True,True,False,False,True,False,True,False,True,2026-01-10,2026-03-08
+490,World Cup - U20,Cup,World,2025,True,True,True,True,True,False,True,False,False,2025-09-27,2025-10-19
+493,UEFA U19 Championship,Cup,World,2025,True,True,False,False,True,False,True,False,False,2025-06-13,2025-06-26
+495,Hazfi Cup,Cup,Iran,2025,True,True,False,False,True,False,True,False,False,2025-11-20,2026-01-12
+504,King's Cup,Cup,Saudi-Arabia,2025,True,True,True,True,True,False,True,False,False,2024-09-22,2025-05-08
+508,League Cup,Cup,South-Africa,2025,True,True,False,False,True,False,True,False,False,2025-10-03,2025-12-06
+509,8 Cup,Cup,South-Africa,2025,True,True,False,False,True,False,True,False,False,2025-08-02,2025-09-13
+516,Super Cup,Cup,Algeria,2025,True,True,False,False,True,False,True,False,False,2026-01-17,2026-01-17
+517,Trofeo de Campeones de la Superliga,Cup,Argentina,2025,True,True,False,False,True,False,True,False,False,2024-12-21,2024-12-21
+526,Trophée des Champions,Cup,France,2025,True,True,True,True,True,False,True,False,False,2026-01-08,2026-01-08
+528,Community Shield,Cup,England,2025,True,True,True,True,True,True,True,False,False,2025-08-10,2025-08-10
+529,Super Cup,Cup,Germany,2025,True,True,True,True,True,True,True,False,False,2025-08-16,2025-08-16
+531,UEFA Super Cup,Cup,World,2025,True,True,True,True,True,True,True,False,False,2025-08-13,2025-08-13
+533,CAF Super Cup,Cup,World,2025,True,True,True,True,True,False,True,False,False,2025-10-18,2025-10-18
+539,Super Cup,Cup,Egypt,2025,True,True,False,False,True,False,True,False,False,2024-10-20,2024-10-24
+547,Super Cup,Cup,Italy,2025,True,True,True,True,True,False,True,False,False,2025-12-18,2025-12-22
+548,Super Cup,Cup,Japan,2025,True,True,False,False,True,False,True,False,False,2025-02-08,2025-02-08
+550,Super Cup,Cup,Portugal,2025,True,True,False,False,True,False,True,False,False,2025-07-31,2025-07-31
+551,Super Cup,Cup,Turkey,2025,True,True,True,True,True,False,True,False,False,2026-01-05,2026-01-10
+556,Super Cup,Cup,Spain,2025,True,True,True,True,True,False,True,False,False,2026-01-07,2026-01-11
+560,Presidents Cup,Cup,United-Arab-Emirates,2025,True,True,False,False,True,False,True,False,False,2025-09-13,2026-05-22
+602,Baiano - 1,League,Brazil,2025,True,True,False,False,True,False,True,False,True,2025-01-11,2025-03-22
+606,Paranaense - 1,League,Brazil,2025,True,True,False,False,True,False,True,False,True,2025-01-11,2025-03-29
+612,Copa do Nordeste,Cup,Brazil,2025,True,True,False,False,True,False,True,False,False,2025-01-04,2025-09-07
+624,Carioca - 1,League,Brazil,2025,True,True,True,True,True,False,True,False,True,2025-01-11,2025-03-16
+624,Carioca - 1,League,Brazil,2026,True,True,True,True,True,False,True,False,True,2026-01-11,2026-03-08
+628,Goiano - 1,League,Brazil,2025,True,True,False,False,True,False,True,False,True,2025-01-15,2025-03-30
+629,Mineiro - 1,League,Brazil,2025,True,True,False,False,True,False,True,False,True,2025-01-18,2025-03-15
+630,Matogrossense,League,Brazil,2025,True,False,False,False,True,False,True,False,True,2025-01-11,2025-03-29
+632,Supercopa do Brasil,Cup,Brazil,2025,True,True,False,False,True,False,True,False,False,2025-02-02,2025-02-02
+663,Super Cup,Cup,Russia,2025,True,True,False,False,True,False,True,False,False,2025-07-12,2025-07-12
+667,Friendlies Clubs,Cup,World,2025,True,True,True,True,True,False,True,False,False,2025-01-03,2025-12-30
+713,Superliga,Cup,Colombia,2025,True,True,False,False,True,False,True,False,False,2025-01-30,2025-02-07
+714,Cup,Cup,Egypt,2025,True,True,False,False,True,False,True,False,False,2025-11-27,2026-05-10
+727,Super Cup,Cup,Poland,2025,True,True,False,False,True,False,True,False,False,2025-07-13,2025-07-13
+772,Leagues Cup,Cup,World,2025,True,True,True,True,True,True,True,False,False,2025-07-29,2025-09-01
+773,Sudamericano U20,Cup,World,2025,True,True,False,False,True,False,True,False,False,2025-01-23,2025-02-16
+802,Cup,Cup,Uzbekistan,2025,True,True,False,False,True,False,True,False,False,2025-04-01,2025-10-29
+816,Shield Cup,Cup,Jordan,2025,True,False,False,False,True,False,True,False,False,2025-08-28,2025-12-20
+824,Emir Cup,Cup,Qatar,2025,True,True,False,False,True,False,True,False,False,2025-04-21,2025-05-24
+824,Emir Cup,Cup,Qatar,2026,True,True,False,False,True,False,True,False,False,2026-01-10,2026-05-09
+826,Super Cup,Cup,Saudi-Arabia,2025,True,True,False,False,True,False,True,False,False,2024-08-13,2024-08-17
+848,UEFA Europa Conference League,Cup,World,2025,True,True,True,True,True,True,True,False,True,2025-07-08,2026-05-27
+850,UEFA U21 Championship - Qualification,Cup,World,2025,True,True,False,False,True,False,True,False,True,2023-03-24,2024-11-19
+851,Carioca A2,League,Brazil,2026,True,False,False,False,True,False,True,False,True,2026-04-29,2026-07-04
+852,Super Cup,Cup,Cyprus,2025,True,True,False,False,True,False,True,False,False,2025-10-30,2025-10-30
+857,Campeón de Campeones,Cup,Mexico,2025,True,False,False,False,True,False,True,False,False,2025-07-21,2025-07-21
+860,Arab Cup,Cup,World,2025,True,True,False,False,True,False,True,False,True,2025-11-25,2025-12-18
+874,Australia Cup,Cup,Australia,2025,True,True,False,False,True,False,True,False,False,2025-05-13,2025-10-04
+886,UEFA U17 Championship - Qualification,Cup,World,2025,True,True,False,False,True,False,True,False,False,2024-10-09,2025-06-10
+893,UEFA U19 Championship - Qualification,Cup,World,2025,True,True,False,False,True,False,True,False,False,2024-10-09,2025-11-18
+899,League Cup,Cup,Finland,2025,True,True,False,False,True,False,True,False,False,2025-01-11,2025-03-29
+905,Super Cup,Cup,Iran,2025,True,True,False,False,True,False,True,False,False,2025-08-11,2025-08-11
+909,MLS Next Pro,League,USA,2025,True,True,False,False,True,False,True,False,True,2025-03-07,2025-11-09
+914,Tournoi Maurice Revello,Cup,World,2025,True,False,False,False,True,False,True,False,False,2025-06-03,2025-06-10
+937,Emirates Cup,Cup,World,2025,True,True,False,False,True,False,True,False,False,2025-08-09,2025-08-09
+965,AFC U20 Asian Cup,Cup,World,2025,True,True,False,False,True,False,True,False,False,2025-02-12,2025-03-01
+1008,CAFA Nations Cup,Cup,World,2025,True,True,False,False,True,False,True,False,False,2025-08-29,2025-09-08
+1022,Premier League - Summer Series,League,England,2025,False,False,False,False,True,False,True,False,False,2026-07-25,2026-08-02
+1028,CONCACAF Central American Cup,Cup,World,2025,True,True,False,False,True,False,True,False,False,2025-07-30,2025-12-04
+1038,King's Cup,Cup,World,2025,True,True,False,False,True,False,True,False,False,2025-09-04,2025-09-07
+1087,Ykkösliiga,League,Finland,2025,True,True,False,False,True,False,True,False,True,2025-04-21,2025-10-26
+1089,UAE-Qatar - Super Shield,Cup,World,2025,True,True,False,False,True,False,True,False,False,2025-01-18,2025-01-18
+1095,USL League One Cup,League,USA,2025,True,True,False,False,True,False,True,False,False,2025-04-25,2025-10-05
+1123,UAE-Qatar - Super Cup,Cup,World,2025,True,True,False,False,True,False,True,False,False,2025-01-17,2025-01-17
+1123,UAE-Qatar - Super Cup,Cup,World,2026,True,True,False,False,True,False,True,False,False,2026-01-22,2026-01-25
+1168,FIFA Intercontinental Cup,Cup,World,2025,True,True,True,True,True,False,True,False,False,2025-09-14,2025-12-17
+1178,Super Copa International,Cup,Argentina,2025,True,True,False,False,True,False,True,False,False,2025-07-05,2025-07-05
+1179,Copa do Brasil U17,Cup,Brazil,2025,True,False,False,False,True,False,True,False,False,2025-03-11,2025-05-05
+1186,FIFA Club World Cup - Play-In,Cup,World,2025,True,True,False,False,True,False,True,False,False,2025-06-01,2025-06-01
+1194,Super Cup,Cup,Tunisia,2025,True,True,False,False,True,False,True,False,False,2025-07-27,2025-08-03
+1210,Super Cup,Cup,Greece,2026,True,True,False,False,True,False,True,False,False,2026-01-03,2026-01-03
