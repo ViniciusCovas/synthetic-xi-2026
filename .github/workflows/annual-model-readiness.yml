@@ -5,8 +5,11 @@ on:
     branches: [main]
     paths:
       - "scripts/build_partial_window_artifacts.py"
-      - ".github/workflows/annual-model-readiness.yml"
       - "data/lake/**"
+      - "simulator/**"
+      - "scripts/run_exploratory_match_simulation.py"
+      - "tests/test_simulator.py"
+      - ".github/workflows/annual-model-readiness.yml"
   schedule:
     - cron: "47 * * * *"
   workflow_dispatch:
@@ -21,7 +24,7 @@ concurrency:
 jobs:
   readiness:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
 
     steps:
       - name: Checkout main
@@ -37,22 +40,40 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install pandas
+        run: pip install pandas numpy pytest
 
       - name: Build partial windows and role evidence
         run: python scripts/build_partial_window_artifacts.py
 
-      - name: Publish readiness artifacts
+      - name: Test exploratory simulator
+        env:
+          PYTHONPATH: .
+        run: pytest -q tests/test_simulator.py
+
+      - name: Run 10000 exploratory matches
+        env:
+          PYTHONPATH: .
+        run: python scripts/run_exploratory_match_simulation.py
+
+      - name: Archive simulator outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: exploratory-simulator-${{ github.run_id }}
+          path: data/simulations/exploratory_v0_1
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Publish readiness and simulation artifacts
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "synthetic-xi-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/model_readiness
+          git add data/model_readiness data/simulations/exploratory_v0_1
           if git diff --cached --quiet; then
-            echo "No readiness changes to publish"
+            echo "No readiness or simulation changes to publish"
           else
-            git commit -m "data: update annual model readiness"
+            git commit -m "data: update model readiness and exploratory simulation"
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
