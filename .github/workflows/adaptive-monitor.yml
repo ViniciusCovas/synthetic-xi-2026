@@ -1,0 +1,59 @@
+name: Adaptive Extraction Monitor
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/analyze_adaptive_extraction.py"
+      - "data/lake/**"
+      - ".github/workflows/adaptive-monitor.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: adaptive-extraction-monitor
+  cancel-in-progress: true
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas
+
+      - name: Recalculate adaptive extraction monitor
+        run: python scripts/analyze_adaptive_extraction.py
+
+      - name: Publish corrected monitor
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/audits/adaptive_extraction_monitor.json \
+                  data/audits/adaptive_extraction_monitor.md \
+                  data/audits/adaptive_player_coverage.csv
+          if git diff --cached --quiet; then
+            echo "No monitor changes to publish"
+          else
+            git commit -m "data: update corrected adaptive extraction monitor"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
