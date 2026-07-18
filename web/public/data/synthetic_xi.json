@@ -1,0 +1,112 @@
+[
+  {
+    "slot": "GK",
+    "position_group": "GK",
+    "source_ordinal": 1,
+    "entity_type": "avatar_sintético",
+    "entity_id": "SYN-GK20",
+    "entity_name": "SYN-GK20",
+    "team_name": "Synthetic XI",
+    "available": true
+  },
+  {
+    "slot": "RB",
+    "position_group": "FB",
+    "source_ordinal": 1,
+    "entity_type": "avatar_sintético",
+    "entity_id": "SYN-FB20",
+    "entity_name": "SYN-FB20",
+    "team_name": "Synthetic XI",
+    "available": true
+  },
+  {
+    "slot": "RCB",
+    "position_group": "CB",
+    "source_ordinal": 1,
+    "entity_type": "avatar_sintético",
+    "entity_id": "SYN-CB20",
+    "entity_name": "SYN-CB20",
+    "team_name": "Synthetic XI",
+    "available": true
+  },
+  {
+    "slot": "LCB",
+    "position_group": "CB",
+    "source_ordinal": 2,
+    "entity_type": "avatar_sintético",
+    "entity_id": "SYN-CB20",
+    "entity_name": "SYN-CB20",
+    "team_name": "Synthetic XI",
+    "available": true
+  },
+  {
+    "slot": "LB",
+    "position_group": "FB",
+    "source_ordinal": 2,
+    "entity_type": "avatar_sintético",
+    "entity_id": "SYN-FB20",
+    "entity_name": "SYN-FB20",
+    "team_name": "Synthetic XI",
+    "available": true
+  },
+  {
+    "slot": "DM",
+    "position_group": "DM",
+    "source_ordinal": 1,
+    "entity_type": "avatar_sintético",
+    "entity_id": "SYN-DM20",
+    "entity_name": "SYN-DM20",
+    "team_name": "Synthetic XI",
+    "available": true
+  },
+  {
+    "slot": "CM",
+    "position_group": "CM",
+    "source_ordinal": 1,
+    "entity_type": "avatar_sintético",
+    "entity_id": "SYN-CM20",
+    "entity_name": "SYN-CM20",
+    "team_name": "Synthetic XI",
+    "available": true
+  },
+  {
+    "slot": "AM",
+    "position_group": "AM",
+    "source_ordinal": 1,
+    "entity_type": "avatar_sintético",
+    "entity_id": "SYN-AM20",
+    "entity_name": "SYN-AM20",
+    "team_name": "Synthetic XI",
+    "available": true
+  },
+  {
+    "slot": "RW",
+    "position_group": "W",
+    "source_ordinal": 1,
+    "entity_type": "avatar_sintético",
+    "entity_id": "SYN-W20",
+    "entity_name": "SYN-W20",
+    "team_name": "Synthetic XI",
+    "available": true
+  },
+  {
+    "slot": "LW",
+    "position_group": "W",
+    "source_ordinal": 2,
+    "entity_type": "avatar_sintético",
+    "entity_id": "SYN-W20",
+    "entity_name": "SYN-W20",
+    "team_name": "Synthetic XI",
+    "available": true
+  },
+  {
+    "slot": "ST",
+    "position_group": "ST",
+    "source_ordinal": 1,
+    "entity_type": "avatar_sintético",
+    "entity_id": "SYN-ST20",
+    "entity_name": "SYN-ST20",
+    "team_name": "Synthetic XI",
+    "available": true
+  }
+]

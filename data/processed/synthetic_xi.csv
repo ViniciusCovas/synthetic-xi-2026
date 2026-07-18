@@ -1,0 +1,12 @@
+slot,position_group,source_ordinal,entity_type,entity_id,entity_name,team_name,available
+GK,GK,1,avatar_sintético,SYN-GK20,SYN-GK20,Synthetic XI,True
+RB,FB,1,avatar_sintético,SYN-FB20,SYN-FB20,Synthetic XI,True
+RCB,CB,1,avatar_sintético,SYN-CB20,SYN-CB20,Synthetic XI,True
+LCB,CB,2,avatar_sintético,SYN-CB20,SYN-CB20,Synthetic XI,True
+LB,FB,2,avatar_sintético,SYN-FB20,SYN-FB20,Synthetic XI,True
+DM,DM,1,avatar_sintético,SYN-DM20,SYN-DM20,Synthetic XI,True
+CM,CM,1,avatar_sintético,SYN-CM20,SYN-CM20,Synthetic XI,True
+AM,AM,1,avatar_sintético,SYN-AM20,SYN-AM20,Synthetic XI,True
+RW,W,1,avatar_sintético,SYN-W20,SYN-W20,Synthetic XI,True
+LW,W,2,avatar_sintético,SYN-W20,SYN-W20,Synthetic XI,True
+ST,ST,1,avatar_sintético,SYN-ST20,SYN-ST20,Synthetic XI,True

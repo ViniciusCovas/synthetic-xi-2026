@@ -1,1 +1,90 @@
-[]
+[
+  {
+    "avatar_id": "SYN-GK20",
+    "position_group": "GK",
+    "requested_top_n": 20,
+    "actual_n": 20,
+    "eligible_pool_n": 42,
+    "sample_complete": true,
+    "mean_rank_score": 0.4280069664,
+    "median_minutes": 363.5,
+    "interpretation_label": "centroide robusto de los 20 mejores GK elegibles en el corte acumulado de la Copa 2026"
+  },
+  {
+    "avatar_id": "SYN-CB20",
+    "position_group": "CB",
+    "requested_top_n": 20,
+    "actual_n": 20,
+    "eligible_pool_n": 91,
+    "sample_complete": true,
+    "mean_rank_score": 0.5514025855,
+    "median_minutes": 360.0,
+    "interpretation_label": "centroide robusto de los 20 mejores CB elegibles en el corte acumulado de la Copa 2026"
+  },
+  {
+    "avatar_id": "SYN-FB20",
+    "position_group": "FB",
+    "requested_top_n": 20,
+    "actual_n": 20,
+    "eligible_pool_n": 75,
+    "sample_complete": true,
+    "mean_rank_score": 0.539244056,
+    "median_minutes": 312.0,
+    "interpretation_label": "centroide robusto de los 20 mejores FB elegibles en el corte acumulado de la Copa 2026"
+  },
+  {
+    "avatar_id": "SYN-DM20",
+    "position_group": "DM",
+    "requested_top_n": 20,
+    "actual_n": 20,
+    "eligible_pool_n": 29,
+    "sample_complete": true,
+    "mean_rank_score": 0.2065046995,
+    "median_minutes": 270.0,
+    "interpretation_label": "centroide robusto de los 20 mejores DM elegibles en el corte acumulado de la Copa 2026"
+  },
+  {
+    "avatar_id": "SYN-CM20",
+    "position_group": "CM",
+    "requested_top_n": 20,
+    "actual_n": 20,
+    "eligible_pool_n": 52,
+    "sample_complete": true,
+    "mean_rank_score": 0.3994182115,
+    "median_minutes": 300.0,
+    "interpretation_label": "centroide robusto de los 20 mejores CM elegibles en el corte acumulado de la Copa 2026"
+  },
+  {
+    "avatar_id": "SYN-AM20",
+    "position_group": "AM",
+    "requested_top_n": 20,
+    "actual_n": 17,
+    "eligible_pool_n": 17,
+    "sample_complete": false,
+    "mean_rank_score": -1.567373682e-16,
+    "median_minutes": 230.0,
+    "interpretation_label": "centroide robusto de los 17 mejores AM elegibles en el corte acumulado de la Copa 2026"
+  },
+  {
+    "avatar_id": "SYN-W20",
+    "position_group": "W",
+    "requested_top_n": 20,
+    "actual_n": 20,
+    "eligible_pool_n": 39,
+    "sample_complete": true,
+    "mean_rank_score": 0.395196911,
+    "median_minutes": 304.0,
+    "interpretation_label": "centroide robusto de los 20 mejores W elegibles en el corte acumulado de la Copa 2026"
+  },
+  {
+    "avatar_id": "SYN-ST20",
+    "position_group": "ST",
+    "requested_top_n": 20,
+    "actual_n": 20,
+    "eligible_pool_n": 39,
+    "sample_complete": true,
+    "mean_rank_score": 0.4435583933,
+    "median_minutes": 354.0,
+    "interpretation_label": "centroide robusto de los 20 mejores ST elegibles en el corte acumulado de la Copa 2026"
+  }
+]

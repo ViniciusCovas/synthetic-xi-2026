@@ -1,1 +1,920 @@
-[]
+[
+  {
+    "fixture_id": 1489369,
+    "date": "2026-06-11T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "Mexico",
+    "away_team": "South Africa",
+    "home_goals": 2,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1538999,
+    "date": "2026-06-12T02:00:00+00:00",
+    "status": "FT",
+    "home_team": "South Korea",
+    "away_team": "Czechia",
+    "home_goals": 2,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1539000,
+    "date": "2026-06-12T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "Canada",
+    "away_team": "Bosnia & Herzegovina",
+    "home_goals": 1,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489370,
+    "date": "2026-06-13T01:00:00+00:00",
+    "status": "FT",
+    "home_team": "USA",
+    "away_team": "Paraguay",
+    "home_goals": 4,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489373,
+    "date": "2026-06-13T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "Qatar",
+    "away_team": "Switzerland",
+    "home_goals": 1,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489371,
+    "date": "2026-06-13T22:00:00+00:00",
+    "status": "FT",
+    "home_team": "Brazil",
+    "away_team": "Morocco",
+    "home_goals": 1,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489372,
+    "date": "2026-06-14T01:00:00+00:00",
+    "status": "FT",
+    "home_team": "Haiti",
+    "away_team": "Scotland",
+    "home_goals": 0,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1539001,
+    "date": "2026-06-14T04:00:00+00:00",
+    "status": "FT",
+    "home_team": "Australia",
+    "away_team": "Türkiye",
+    "home_goals": 2,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489374,
+    "date": "2026-06-14T17:00:00+00:00",
+    "status": "FT",
+    "home_team": "Germany",
+    "away_team": "Curaçao",
+    "home_goals": 7,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489376,
+    "date": "2026-06-14T20:00:00+00:00",
+    "status": "FT",
+    "home_team": "Netherlands",
+    "away_team": "Japan",
+    "home_goals": 2,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1489375,
+    "date": "2026-06-14T23:00:00+00:00",
+    "status": "FT",
+    "home_team": "Ivory Coast",
+    "away_team": "Ecuador",
+    "home_goals": 1,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1539002,
+    "date": "2026-06-15T02:00:00+00:00",
+    "status": "FT",
+    "home_team": "Sweden",
+    "away_team": "Tunisia",
+    "home_goals": 5,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489380,
+    "date": "2026-06-15T16:00:00+00:00",
+    "status": "FT",
+    "home_team": "Spain",
+    "away_team": "Cape Verde Islands",
+    "home_goals": 0,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489377,
+    "date": "2026-06-15T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "Belgium",
+    "away_team": "Egypt",
+    "home_goals": 1,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489379,
+    "date": "2026-06-15T22:00:00+00:00",
+    "status": "FT",
+    "home_team": "Saudi Arabia",
+    "away_team": "Uruguay",
+    "home_goals": 1,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489378,
+    "date": "2026-06-16T01:00:00+00:00",
+    "status": "FT",
+    "home_team": "Iran",
+    "away_team": "New Zealand",
+    "home_goals": 2,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1489383,
+    "date": "2026-06-16T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "France",
+    "away_team": "Senegal",
+    "home_goals": 3,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1539016,
+    "date": "2026-06-16T22:00:00+00:00",
+    "status": "FT",
+    "home_team": "Iraq",
+    "away_team": "Norway",
+    "home_goals": 1,
+    "away_goals": 4
+  },
+  {
+    "fixture_id": 1489381,
+    "date": "2026-06-17T01:00:00+00:00",
+    "status": "FT",
+    "home_team": "Argentina",
+    "away_team": "Algeria",
+    "home_goals": 3,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489382,
+    "date": "2026-06-17T04:00:00+00:00",
+    "status": "FT",
+    "home_team": "Austria",
+    "away_team": "Jordan",
+    "home_goals": 3,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1539003,
+    "date": "2026-06-17T17:00:00+00:00",
+    "status": "FT",
+    "home_team": "Portugal",
+    "away_team": "Congo DR",
+    "home_goals": 1,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489384,
+    "date": "2026-06-17T20:00:00+00:00",
+    "status": "FT",
+    "home_team": "England",
+    "away_team": "Croatia",
+    "home_goals": 4,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1489385,
+    "date": "2026-06-17T23:00:00+00:00",
+    "status": "FT",
+    "home_team": "Ghana",
+    "away_team": "Panama",
+    "home_goals": 1,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489386,
+    "date": "2026-06-18T02:00:00+00:00",
+    "status": "FT",
+    "home_team": "Uzbekistan",
+    "away_team": "Colombia",
+    "home_goals": 1,
+    "away_goals": 3
+  },
+  {
+    "fixture_id": 1539004,
+    "date": "2026-06-18T16:00:00+00:00",
+    "status": "FT",
+    "home_team": "Czechia",
+    "away_team": "South Africa",
+    "home_goals": 1,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1539005,
+    "date": "2026-06-18T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "Switzerland",
+    "away_team": "Bosnia & Herzegovina",
+    "home_goals": 4,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489387,
+    "date": "2026-06-18T22:00:00+00:00",
+    "status": "FT",
+    "home_team": "Canada",
+    "away_team": "Qatar",
+    "home_goals": 6,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489388,
+    "date": "2026-06-19T01:00:00+00:00",
+    "status": "FT",
+    "home_team": "Mexico",
+    "away_team": "South Korea",
+    "home_goals": 1,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489391,
+    "date": "2026-06-19T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "USA",
+    "away_team": "Australia",
+    "home_goals": 2,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489390,
+    "date": "2026-06-19T22:00:00+00:00",
+    "status": "FT",
+    "home_team": "Scotland",
+    "away_team": "Morocco",
+    "home_goals": 0,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489389,
+    "date": "2026-06-20T00:30:00+00:00",
+    "status": "FT",
+    "home_team": "Brazil",
+    "away_team": "Haiti",
+    "home_goals": 3,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1539006,
+    "date": "2026-06-20T03:00:00+00:00",
+    "status": "FT",
+    "home_team": "Türkiye",
+    "away_team": "Paraguay",
+    "home_goals": 0,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1539007,
+    "date": "2026-06-20T17:00:00+00:00",
+    "status": "FT",
+    "home_team": "Netherlands",
+    "away_team": "Sweden",
+    "home_goals": 5,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489393,
+    "date": "2026-06-20T20:00:00+00:00",
+    "status": "FT",
+    "home_team": "Germany",
+    "away_team": "Ivory Coast",
+    "home_goals": 2,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489392,
+    "date": "2026-06-21T00:00:00+00:00",
+    "status": "FT",
+    "home_team": "Ecuador",
+    "away_team": "Curaçao",
+    "home_goals": 0,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489394,
+    "date": "2026-06-21T04:00:00+00:00",
+    "status": "FT",
+    "home_team": "Tunisia",
+    "away_team": "Japan",
+    "home_goals": 0,
+    "away_goals": 4
+  },
+  {
+    "fixture_id": 1489397,
+    "date": "2026-06-21T16:00:00+00:00",
+    "status": "FT",
+    "home_team": "Spain",
+    "away_team": "Saudi Arabia",
+    "home_goals": 4,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489395,
+    "date": "2026-06-21T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "Belgium",
+    "away_team": "Iran",
+    "home_goals": 0,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489398,
+    "date": "2026-06-21T22:00:00+00:00",
+    "status": "FT",
+    "home_team": "Uruguay",
+    "away_team": "Cape Verde Islands",
+    "home_goals": 2,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1489396,
+    "date": "2026-06-22T01:00:00+00:00",
+    "status": "FT",
+    "home_team": "New Zealand",
+    "away_team": "Egypt",
+    "home_goals": 1,
+    "away_goals": 3
+  },
+  {
+    "fixture_id": 1489399,
+    "date": "2026-06-22T17:00:00+00:00",
+    "status": "FT",
+    "home_team": "Argentina",
+    "away_team": "Austria",
+    "home_goals": 2,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1539017,
+    "date": "2026-06-22T21:00:00+00:00",
+    "status": "FT",
+    "home_team": "France",
+    "away_team": "Iraq",
+    "home_goals": 3,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489401,
+    "date": "2026-06-23T00:00:00+00:00",
+    "status": "FT",
+    "home_team": "Norway",
+    "away_team": "Senegal",
+    "home_goals": 3,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1489400,
+    "date": "2026-06-23T03:00:00+00:00",
+    "status": "FT",
+    "home_team": "Jordan",
+    "away_team": "Algeria",
+    "home_goals": 1,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1489404,
+    "date": "2026-06-23T17:00:00+00:00",
+    "status": "FT",
+    "home_team": "Portugal",
+    "away_team": "Uzbekistan",
+    "home_goals": 5,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489402,
+    "date": "2026-06-23T20:00:00+00:00",
+    "status": "FT",
+    "home_team": "England",
+    "away_team": "Ghana",
+    "home_goals": 0,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489403,
+    "date": "2026-06-23T23:00:00+00:00",
+    "status": "FT",
+    "home_team": "Panama",
+    "away_team": "Croatia",
+    "home_goals": 0,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1539008,
+    "date": "2026-06-24T02:00:00+00:00",
+    "status": "FT",
+    "home_team": "Colombia",
+    "away_team": "Congo DR",
+    "home_goals": 1,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489408,
+    "date": "2026-06-24T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "Switzerland",
+    "away_team": "Canada",
+    "home_goals": 2,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1539009,
+    "date": "2026-06-24T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "Bosnia & Herzegovina",
+    "away_team": "Qatar",
+    "home_goals": 3,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489405,
+    "date": "2026-06-24T22:00:00+00:00",
+    "status": "FT",
+    "home_team": "Morocco",
+    "away_team": "Haiti",
+    "home_goals": 4,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1489406,
+    "date": "2026-06-24T22:00:00+00:00",
+    "status": "FT",
+    "home_team": "Scotland",
+    "away_team": "Brazil",
+    "home_goals": 0,
+    "away_goals": 3
+  },
+  {
+    "fixture_id": 1539010,
+    "date": "2026-06-25T01:00:00+00:00",
+    "status": "FT",
+    "home_team": "Czechia",
+    "away_team": "Mexico",
+    "home_goals": 0,
+    "away_goals": 3
+  },
+  {
+    "fixture_id": 1489407,
+    "date": "2026-06-25T01:00:00+00:00",
+    "status": "FT",
+    "home_team": "South Africa",
+    "away_team": "South Korea",
+    "home_goals": 1,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489410,
+    "date": "2026-06-25T20:00:00+00:00",
+    "status": "FT",
+    "home_team": "Ecuador",
+    "away_team": "Germany",
+    "home_goals": 2,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489409,
+    "date": "2026-06-25T20:00:00+00:00",
+    "status": "FT",
+    "home_team": "Curaçao",
+    "away_team": "Ivory Coast",
+    "home_goals": 0,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1539011,
+    "date": "2026-06-25T23:00:00+00:00",
+    "status": "FT",
+    "home_team": "Japan",
+    "away_team": "Sweden",
+    "home_goals": 1,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489412,
+    "date": "2026-06-25T23:00:00+00:00",
+    "status": "FT",
+    "home_team": "Tunisia",
+    "away_team": "Netherlands",
+    "home_goals": 1,
+    "away_goals": 3
+  },
+  {
+    "fixture_id": 1539012,
+    "date": "2026-06-26T02:00:00+00:00",
+    "status": "FT",
+    "home_team": "Türkiye",
+    "away_team": "USA",
+    "home_goals": 3,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1489411,
+    "date": "2026-06-26T02:00:00+00:00",
+    "status": "FT",
+    "home_team": "Paraguay",
+    "away_team": "Australia",
+    "home_goals": 0,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1539074,
+    "date": "2026-06-26T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "Senegal",
+    "away_team": "Iraq",
+    "home_goals": 5,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489416,
+    "date": "2026-06-26T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "Norway",
+    "away_team": "France",
+    "home_goals": 1,
+    "away_goals": 4
+  },
+  {
+    "fixture_id": 1489417,
+    "date": "2026-06-27T00:00:00+00:00",
+    "status": "FT",
+    "home_team": "Uruguay",
+    "away_team": "Spain",
+    "home_goals": 0,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489413,
+    "date": "2026-06-27T00:00:00+00:00",
+    "status": "FT",
+    "home_team": "Cape Verde Islands",
+    "away_team": "Saudi Arabia",
+    "home_goals": 0,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1489414,
+    "date": "2026-06-27T03:00:00+00:00",
+    "status": "FT",
+    "home_team": "Egypt",
+    "away_team": "Iran",
+    "home_goals": 1,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489415,
+    "date": "2026-06-27T03:00:00+00:00",
+    "status": "FT",
+    "home_team": "New Zealand",
+    "away_team": "Belgium",
+    "home_goals": 1,
+    "away_goals": 5
+  },
+  {
+    "fixture_id": 1489420,
+    "date": "2026-06-27T21:00:00+00:00",
+    "status": "FT",
+    "home_team": "Croatia",
+    "away_team": "Ghana",
+    "home_goals": 2,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489422,
+    "date": "2026-06-27T21:00:00+00:00",
+    "status": "FT",
+    "home_team": "Panama",
+    "away_team": "England",
+    "home_goals": 0,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1489419,
+    "date": "2026-06-27T23:30:00+00:00",
+    "status": "FT",
+    "home_team": "Colombia",
+    "away_team": "Portugal",
+    "home_goals": 0,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1539013,
+    "date": "2026-06-27T23:30:00+00:00",
+    "status": "FT",
+    "home_team": "Congo DR",
+    "away_team": "Uzbekistan",
+    "home_goals": 3,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1489418,
+    "date": "2026-06-28T02:00:00+00:00",
+    "status": "FT",
+    "home_team": "Algeria",
+    "away_team": "Austria",
+    "home_goals": 3,
+    "away_goals": 3
+  },
+  {
+    "fixture_id": 1489421,
+    "date": "2026-06-28T02:00:00+00:00",
+    "status": "FT",
+    "home_team": "Jordan",
+    "away_team": "Argentina",
+    "home_goals": 1,
+    "away_goals": 3
+  },
+  {
+    "fixture_id": 1561329,
+    "date": "2026-06-28T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "South Africa",
+    "away_team": "Canada",
+    "home_goals": 0,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1562344,
+    "date": "2026-06-29T17:00:00+00:00",
+    "status": "FT",
+    "home_team": "Brazil",
+    "away_team": "Japan",
+    "home_goals": 2,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1565176,
+    "date": "2026-06-29T20:30:00+00:00",
+    "status": "PEN",
+    "home_team": "Germany",
+    "away_team": "Paraguay",
+    "home_goals": 1,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1562345,
+    "date": "2026-06-30T01:00:00+00:00",
+    "status": "PEN",
+    "home_team": "Netherlands",
+    "away_team": "Morocco",
+    "home_goals": 1,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1564789,
+    "date": "2026-06-30T17:00:00+00:00",
+    "status": "FT",
+    "home_team": "Ivory Coast",
+    "away_team": "Norway",
+    "home_goals": 1,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1565177,
+    "date": "2026-06-30T21:00:00+00:00",
+    "status": "FT",
+    "home_team": "France",
+    "away_team": "Sweden",
+    "home_goals": 3,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1567306,
+    "date": "2026-07-01T01:00:00+00:00",
+    "status": "FT",
+    "home_team": "Mexico",
+    "away_team": "Ecuador",
+    "home_goals": 2,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1567307,
+    "date": "2026-07-01T16:00:00+00:00",
+    "status": "FT",
+    "home_team": "England",
+    "away_team": "Congo DR",
+    "home_goals": 2,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1567308,
+    "date": "2026-07-01T20:00:00+00:00",
+    "status": "AET",
+    "home_team": "Belgium",
+    "away_team": "Senegal",
+    "home_goals": 3,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1562586,
+    "date": "2026-07-02T00:00:00+00:00",
+    "status": "FT",
+    "home_team": "USA",
+    "away_team": "Bosnia & Herzegovina",
+    "home_goals": 2,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1567311,
+    "date": "2026-07-02T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "Spain",
+    "away_team": "Austria",
+    "home_goals": 3,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1567309,
+    "date": "2026-07-02T23:00:00+00:00",
+    "status": "FT",
+    "home_team": "Portugal",
+    "away_team": "Croatia",
+    "home_goals": 2,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1567312,
+    "date": "2026-07-03T03:00:00+00:00",
+    "status": "FT",
+    "home_team": "Switzerland",
+    "away_team": "Algeria",
+    "home_goals": 2,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1565178,
+    "date": "2026-07-03T18:00:00+00:00",
+    "status": "PEN",
+    "home_team": "Australia",
+    "away_team": "Egypt",
+    "home_goals": 1,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1565179,
+    "date": "2026-07-03T22:00:00+00:00",
+    "status": "AET",
+    "home_team": "Argentina",
+    "away_team": "Cape Verde Islands",
+    "home_goals": 3,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1567310,
+    "date": "2026-07-04T01:30:00+00:00",
+    "status": "FT",
+    "home_team": "Colombia",
+    "away_team": "Ghana",
+    "home_goals": 1,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1567824,
+    "date": "2026-07-04T17:00:00+00:00",
+    "status": "FT",
+    "home_team": "Canada",
+    "away_team": "Morocco",
+    "home_goals": 0,
+    "away_goals": 3
+  },
+  {
+    "fixture_id": 1569870,
+    "date": "2026-07-04T21:00:00+00:00",
+    "status": "FT",
+    "home_team": "Paraguay",
+    "away_team": "France",
+    "home_goals": 0,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1568100,
+    "date": "2026-07-05T20:00:00+00:00",
+    "status": "FT",
+    "home_team": "Brazil",
+    "away_team": "Norway",
+    "home_goals": 1,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1570714,
+    "date": "2026-07-06T01:00:00+00:00",
+    "status": "FT",
+    "home_team": "Mexico",
+    "away_team": "England",
+    "home_goals": 2,
+    "away_goals": 3
+  },
+  {
+    "fixture_id": 1576756,
+    "date": "2026-07-06T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "Portugal",
+    "away_team": "Spain",
+    "home_goals": 0,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1570715,
+    "date": "2026-07-07T00:00:00+00:00",
+    "status": "FT",
+    "home_team": "USA",
+    "away_team": "Belgium",
+    "home_goals": 1,
+    "away_goals": 4
+  },
+  {
+    "fixture_id": 1576804,
+    "date": "2026-07-07T16:00:00+00:00",
+    "status": "FT",
+    "home_team": "Argentina",
+    "away_team": "Egypt",
+    "home_goals": 3,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1576805,
+    "date": "2026-07-07T20:00:00+00:00",
+    "status": "PEN",
+    "home_team": "Switzerland",
+    "away_team": "Colombia",
+    "home_goals": 0,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1578539,
+    "date": "2026-07-09T20:00:00+00:00",
+    "status": "FT",
+    "home_team": "France",
+    "away_team": "Morocco",
+    "home_goals": 2,
+    "away_goals": 0
+  },
+  {
+    "fixture_id": 1581821,
+    "date": "2026-07-10T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "Spain",
+    "away_team": "Belgium",
+    "home_goals": 2,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1581037,
+    "date": "2026-07-11T21:00:00+00:00",
+    "status": "AET",
+    "home_team": "Norway",
+    "away_team": "England",
+    "home_goals": 1,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1582681,
+    "date": "2026-07-12T01:00:00+00:00",
+    "status": "AET",
+    "home_team": "Argentina",
+    "away_team": "Switzerland",
+    "home_goals": 3,
+    "away_goals": 1
+  },
+  {
+    "fixture_id": 1585131,
+    "date": "2026-07-14T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "France",
+    "away_team": "Spain",
+    "home_goals": 0,
+    "away_goals": 2
+  },
+  {
+    "fixture_id": 1586077,
+    "date": "2026-07-15T19:00:00+00:00",
+    "status": "FT",
+    "home_team": "England",
+    "away_team": "Argentina",
+    "home_goals": 1,
+    "away_goals": 2
+  }
+]
