@@ -10,17 +10,17 @@
     "real_coordination_factor": 1.0,
     "simulations": 1500,
     "shared_tempo_sigma": 0.19999999999999998,
-    "synthetic_win_probability": 0.2653333333333333,
+    "synthetic_win_probability": 0.2693333333333333,
     "draw_probability": 0.25866666666666666,
-    "real_win_probability": 0.476,
-    "mean_total_goals": 3.0533333333333332
+    "real_win_probability": 0.472,
+    "mean_total_goals": 3.0073333333333334
   },
   "ranges": {
-    "synthetic_win_min": 0.23666666666666666,
-    "synthetic_win_max": 0.3466666666666667,
-    "draw_min": 0.23333333333333334,
-    "draw_max": 0.25866666666666666,
-    "real_win_min": 0.4026666666666667,
+    "synthetic_win_min": 0.24133333333333334,
+    "synthetic_win_max": 0.352,
+    "draw_min": 0.22933333333333333,
+    "draw_max": 0.2653333333333333,
+    "real_win_min": 0.4033333333333333,
     "real_win_max": 0.5213333333333333
   },
   "robust_direction": true,
