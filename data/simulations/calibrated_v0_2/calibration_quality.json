@@ -1,9 +1,9 @@
 {
   "status": "calibration_quality_evaluated",
-  "absolute_goal_error": 0.0026063829787235093,
-  "absolute_shot_error": 0.475271004214207,
-  "absolute_shot_on_target_error": 0.4306410525233826,
-  "absolute_zero_zero_error": 0.022768085106382972,
+  "absolute_goal_error": 0.012806382978723274,
+  "absolute_shot_error": 0.47257100421420617,
+  "absolute_shot_on_target_error": 0.4508410525233817,
+  "absolute_zero_zero_error": 0.023268085106382973,
   "engineering_gate_passed": true,
   "final_scientific_gate_passed": false
 }

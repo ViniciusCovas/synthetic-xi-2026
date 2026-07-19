@@ -5,24 +5,24 @@
   "one_row_per_simulated_match": true,
   "full_ledger_artifact": "all_10000_simulated_matches.csv.gz",
   "outcomes": {
-    "synthetic_wins": 2800,
-    "draws": 2361,
-    "real_best_xi_wins": 4839
+    "synthetic_wins": 2864,
+    "draws": 2362,
+    "real_best_xi_wins": 4774
   },
   "probabilities": {
-    "synthetic_win": 0.28,
-    "draw": 0.2361,
-    "real_best_xi_win": 0.4839
+    "synthetic_win": 0.2864,
+    "draw": 0.2362,
+    "real_best_xi_win": 0.4774
   },
   "means": {
-    "home_goals": 1.2299,
-    "away_goals": 1.6876,
-    "total_goals": 2.9175,
-    "total_shots": 17.6196,
-    "total_shots_on_target": 8.8092,
-    "home_xg": 1.22308201658044,
-    "away_xg": 1.677232326164274,
-    "zero_zero_probability": 0.0517
+    "home_goals": 1.2501,
+    "away_goals": 1.6776,
+    "total_goals": 2.9277,
+    "total_shots": 17.6223,
+    "total_shots_on_target": 8.8294,
+    "home_xg": 1.243193947479452,
+    "away_xg": 1.6671556837080046,
+    "zero_zero_probability": 0.0512
   },
   "percentiles": {
     "home_goals": {
@@ -61,18 +61,18 @@
       "95": 14.0
     },
     "home_xg": {
-      "5": 0.5230702869731463,
-      "25": 0.88572927007599,
-      "50": 1.1865141248211941,
-      "75": 1.5191576210492044,
-      "95": 2.04457211519346
+      "5": 0.5354697162629698,
+      "25": 0.9003866839241161,
+      "50": 1.2060098856381305,
+      "75": 1.543689903837312,
+      "95": 2.076041955177639
     },
     "away_xg": {
-      "5": 0.7966952426817809,
-      "25": 1.2659777099865166,
-      "50": 1.6451708149558932,
-      "75": 2.04634705988983,
-      "95": 2.685350980304225
+      "5": 0.795223987436018,
+      "25": 1.258732722143169,
+      "50": 1.6357908933096121,
+      "75": 2.031855671982802,
+      "95": 2.6719357612672234
     }
   },
   "calibration_targets": {
@@ -92,7 +92,7 @@
     "synthetic_win_probability": 0.0,
     "draw_probability": 0.0,
     "real_win_probability": 0.0,
-    "mean_total_goals": 0.0,
+    "mean_total_goals": 4.440892098500626e-16,
     "mean_total_shots": 0.0
   },
   "matches_principal_summary": true
