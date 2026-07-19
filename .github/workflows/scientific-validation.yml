@@ -35,8 +35,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: scientific-validation-suite
-  cancel-in-progress: true
+  group: synthetic-xi-data-writer
+  cancel-in-progress: false
 
 jobs:
   validate:
@@ -107,9 +107,17 @@ jobs:
           git add data/model_readiness data/validation data/simulations/calibrated_v0_3 data/releases/v1_0 paper
           if git diff --cached --quiet; then
             echo "No scientific validation changes to publish"
-          else
-            git commit -m "science: update selection, validation and release outputs"
-            git fetch origin main
-            git rebase origin/main
-            git push origin HEAD:main
+            exit 0
           fi
+          git commit -m "science: update selection, validation and release outputs"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            if git rebase -X theirs origin/main && git push origin HEAD:main; then
+              echo "Published successfully on attempt ${attempt}"
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          echo "Failed to publish after three attempts"
+          exit 1
