@@ -6,6 +6,7 @@ on:
     paths:
       - ".github/workflows/immediate-residual-extraction.yml"
       - "scripts/run_batched_selection_extraction_safe.py"
+      - "ops/immediate-residual-trigger.txt"
   workflow_dispatch:
 
 permissions:
