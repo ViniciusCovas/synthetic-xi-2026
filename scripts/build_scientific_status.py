@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+"""Aggregate scientific gates into one machine-readable status file."""
+from __future__ import annotations
+import json
+from pathlib import Path
+O=Path('data/model_readiness/scientific_validation_status.json')
+def load(p,d):
+    x=Path(p);return json.loads(x.read_text()) if x.exists() else d
+def main():
+    c=load('data/model_readiness/coverage_audit_summary.json',{'coverage_gate_passed':False,'status':'missing'});l=load('data/model_readiness/lateral_grid_validation.json',{'orientation_validated':False,'status':'missing'});r=load('data/model_readiness/eleven_role_readiness.json',{'eleven_role_gate_passed':False,'status':'missing'});b=load('data/validation/predictive_backtest_summary.json',{'internal_temporal_validation_passed':False,'external_pre_tournament_validation_passed':False,'status':'missing'});q=load('data/simulations/calibrated_v0_3/calibration_quality.json',{'engineering_gate_passed':False,'status':'missing'});s=load('data/validation/sensitivity_summary.json',{'status':'missing'});n=load('data/validation/nested_uncertainty_summary.json',{'status':'missing'})
+    g={'computational_reproducibility':True,'aggregate_event_calibration_v0_3':bool(q.get('engineering_gate_passed')),'per_player_window_coverage':bool(c.get('coverage_gate_passed')),'lateral_orientation':bool(l.get('orientation_validated')),'definitive_eleven_roles':bool(r.get('eleven_role_gate_passed')),'internal_rolling_origin_prediction':bool(b.get('internal_temporal_validation_passed')),'external_pre_tournament_prediction':bool(b.get('external_pre_tournament_validation_passed')),'topn_and_coordination_sensitivity':s.get('status')=='topn_and_coordination_sensitivity_complete','nested_parameter_uncertainty':n.get('status')=='nested_uncertainty_complete'}
+    req=['aggregate_event_calibration_v0_3','per_player_window_coverage','lateral_orientation','definitive_eleven_roles','internal_rolling_origin_prediction','external_pre_tournament_prediction','topn_and_coordination_sensitivity','nested_parameter_uncertainty'];final=all(g[k] for k in req);block=[k for k in req if not g[k]]
+    status={'status':'scientific_validation_gates_evaluated','gates':g,'final_team_comparison_allowed':final,'arxiv_results_ready':final,'blocking_gates':block,'current_claim_ceiling':'validated comparative result' if final else 'exploratory, calibrated and auditable simulation','next_priority':'freeze final result and update manuscript' if final else 'complete targeted fixture extraction' if not g['per_player_window_coverage'] else 'validate lateral grid and eleven roles' if not g['definitive_eleven_roles'] else 'build external frozen pre-tournament holdout','sources':{'coverage':c.get('status'),'lateral':l.get('status'),'roles':r.get('status'),'backtest':b.get('status'),'v0_3':q.get('status'),'sensitivity':s.get('status'),'nested':n.get('status')}}
+    O.parent.mkdir(parents=True,exist_ok=True);O.write_text(json.dumps(status,ensure_ascii=False,indent=2));print(json.dumps(status,ensure_ascii=False,indent=2))
+if __name__=='__main__':main()
