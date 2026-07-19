@@ -19,7 +19,7 @@
   "current_claim_ceiling": "exploratory, calibrated and auditable simulation",
   "next_priority": "extract only unresolved selection challengers and recalculate uncertainty bounds",
   "sources": {
-    "coverage": "missing",
+    "coverage": "selection_sufficiency_evaluated",
     "lateral": "lateral_grid_orientation_evaluated",
     "roles": "eleven_role_resolution_evaluated",
     "internal_backtest": "internal_rolling_origin_backtest_complete",

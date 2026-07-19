@@ -1,274 +1,294 @@
 {
   "simulations": 10000,
   "shared_tempo_sigma": 0.19999999999999998,
-  "home_win_probability": 0.2648,
-  "draw_probability": 0.2487,
-  "away_win_probability": 0.4865,
-  "mean_home_goals": 1.186,
-  "mean_away_goals": 1.7013,
-  "mean_total_goals": 2.8873,
-  "mean_total_shots": 17.6011,
-  "mean_total_shots_on_target": 8.7843,
-  "mean_home_xg": 1.1943819403274776,
-  "mean_away_xg": 1.6884492938556788,
-  "zero_zero_probability": 0.0736,
+  "home_win_probability": 0.2671,
+  "draw_probability": 0.245,
+  "away_win_probability": 0.4879,
+  "mean_home_goals": 1.2475,
+  "mean_away_goals": 1.7505,
+  "mean_total_goals": 2.998,
+  "mean_total_shots": 17.9378,
+  "mean_total_shots_on_target": 9.014,
+  "mean_home_xg": 1.2546021834488288,
+  "mean_away_xg": 1.7406216622354924,
+  "zero_zero_probability": 0.0642,
   "top_scorelines": [
     {
       "score": "1-1",
-      "probability": 0.1091
+      "probability": 0.1081
     },
     {
       "score": "0-1",
-      "probability": 0.1029
+      "probability": 0.1002
     },
     {
       "score": "1-2",
-      "probability": 0.0872
+      "probability": 0.0879
     },
     {
       "score": "0-2",
-      "probability": 0.078
-    },
-    {
-      "score": "0-0",
-      "probability": 0.0736
+      "probability": 0.0731
     },
     {
       "score": "1-0",
-      "probability": 0.0689
+      "probability": 0.0668
+    },
+    {
+      "score": "0-0",
+      "probability": 0.0642
     },
     {
       "score": "2-1",
-      "probability": 0.0618
+      "probability": 0.0598
     },
     {
       "score": "2-2",
-      "probability": 0.0507
+      "probability": 0.0529
     },
     {
       "score": "1-3",
-      "probability": 0.0483
+      "probability": 0.0511
     },
     {
       "score": "0-3",
-      "probability": 0.0395
+      "probability": 0.0409
     },
     {
       "score": "2-0",
-      "probability": 0.0385
+      "probability": 0.0379
     },
     {
       "score": "2-3",
-      "probability": 0.0294
+      "probability": 0.0311
     }
   ],
   "outcomes": {
-    "home_wins": 2648,
-    "draws": 2487,
-    "away_wins": 4865
+    "home_wins": 2671,
+    "draws": 2450,
+    "away_wins": 4879
   },
   "representative_match": {
     "home": "Synthetic XI — exploratorio",
     "away": "Real Best XI — exploratorio",
     "home_goals": 1,
     "away_goals": 2,
-    "home_xg": 0.789,
-    "away_xg": 1.823,
-    "home_shots": 6,
-    "away_shots": 11,
-    "home_shots_on_target": 5,
-    "away_shots_on_target": 6,
-    "home_possession_share": 0.4324,
+    "home_xg": 1.444,
+    "away_xg": 1.158,
+    "home_shots": 11,
+    "away_shots": 7,
+    "home_shots_on_target": 6,
+    "away_shots_on_target": 4,
+    "home_possession_share": 0.4959,
     "timeline": [
       {
-        "minute": 3,
+        "minute": 6,
+        "team": "Synthetic XI — exploratorio",
+        "type": "turnover",
+        "actor": "SYN-W220",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "SYN-W220 pierde el balón bajo presión",
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 8,
         "team": "Synthetic XI — exploratorio",
         "type": "shot_on_target",
         "actor": "SYN-W120",
-        "zone": 2,
-        "xg": 0.148,
+        "zone": 3,
+        "xg": 0.238,
         "headline": "Remate de SYN-W120 detenido por el portero",
-        "shared_tempo_multiplier": 0.9687
+        "shared_tempo_multiplier": 1.0791
       },
       {
-        "minute": 4,
+        "minute": 9,
+        "team": "Synthetic XI — exploratorio",
+        "type": "turnover",
+        "actor": "SYN-W220",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "SYN-W220 pierde el balón bajo presión",
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 14,
+        "team": "Real Best XI — exploratorio",
+        "type": "shot_off_target",
+        "actor": "Michael Olise",
+        "zone": 2,
+        "xg": 0.166,
+        "headline": "Ocasión de Michael Olise fuera",
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 15,
+        "team": "Synthetic XI — exploratorio",
+        "type": "shot_off_target",
+        "actor": "SYN-W220",
+        "zone": 2,
+        "xg": 0.147,
+        "headline": "Ocasión de SYN-W220 fuera",
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 25,
+        "team": "Real Best XI — exploratorio",
+        "type": "turnover",
+        "actor": "João Félix",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "João Félix pierde el balón bajo presión",
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 26,
+        "team": "Synthetic XI — exploratorio",
+        "type": "shot_on_target",
+        "actor": "SYN-ST20",
+        "zone": 1,
+        "xg": 0.1,
+        "headline": "Remate de SYN-ST20 detenido por el portero",
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 41,
         "team": "Real Best XI — exploratorio",
         "type": "shot_on_target",
         "actor": "Lionel Messi",
         "zone": 2,
-        "xg": 0.19,
+        "xg": 0.182,
         "headline": "Remate de Lionel Messi detenido por el portero",
-        "shared_tempo_multiplier": 0.9687
+        "shared_tempo_multiplier": 1.0791
       },
       {
-        "minute": 19,
-        "team": "Synthetic XI — exploratorio",
-        "type": "goal",
-        "actor": "SYN-AM20",
+        "minute": 45,
+        "team": "Real Best XI — exploratorio",
+        "type": "turnover",
+        "actor": "João Félix",
         "zone": 2,
-        "xg": 0.144,
-        "headline": "GOL de SYN-AM20",
-        "shared_tempo_multiplier": 0.9687
+        "xg": 0.0,
+        "headline": "João Félix pierde el balón bajo presión",
+        "shared_tempo_multiplier": 1.0791
       },
       {
-        "minute": 22,
+        "minute": 54,
+        "team": "Synthetic XI — exploratorio",
+        "type": "turnover",
+        "actor": "SYN-CM20",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "SYN-CM20 pierde el balón bajo presión",
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 54,
+        "team": "Real Best XI — exploratorio",
+        "type": "goal",
+        "actor": "Lionel Messi",
+        "zone": 2,
+        "xg": 0.182,
+        "headline": "GOL de Lionel Messi",
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 58,
+        "team": "Real Best XI — exploratorio",
+        "type": "goal",
+        "actor": "João Félix",
+        "zone": 2,
+        "xg": 0.177,
+        "headline": "GOL de João Félix",
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 60,
         "team": "Real Best XI — exploratorio",
         "type": "turnover",
         "actor": "Lionel Messi",
         "zone": 2,
         "xg": 0.0,
         "headline": "Lionel Messi pierde el balón bajo presión",
-        "shared_tempo_multiplier": 0.9687
-      },
-      {
-        "minute": 22,
-        "team": "Real Best XI — exploratorio",
-        "type": "goal",
-        "actor": "Yan Diomande",
-        "zone": 3,
-        "xg": 0.239,
-        "headline": "GOL de Yan Diomande",
-        "shared_tempo_multiplier": 0.9687
-      },
-      {
-        "minute": 23,
-        "team": "Synthetic XI — exploratorio",
-        "type": "shot_on_target",
-        "actor": "SYN-W220",
-        "zone": 2,
-        "xg": 0.152,
-        "headline": "Remate de SYN-W220 detenido por el portero",
-        "shared_tempo_multiplier": 0.9687
-      },
-      {
-        "minute": 25,
-        "team": "Real Best XI — exploratorio",
-        "type": "goal",
-        "actor": "Lionel Messi",
-        "zone": 2,
-        "xg": 0.19,
-        "headline": "GOL de Lionel Messi",
-        "shared_tempo_multiplier": 0.9687
-      },
-      {
-        "minute": 35,
-        "team": "Real Best XI — exploratorio",
-        "type": "shot_off_target",
-        "actor": "Michael Olise",
-        "zone": 2,
-        "xg": 0.164,
-        "headline": "Ocasión de Michael Olise fuera",
-        "shared_tempo_multiplier": 0.9687
-      },
-      {
-        "minute": 36,
-        "team": "Real Best XI — exploratorio",
-        "type": "shot_off_target",
-        "actor": "Désiré Doué",
-        "zone": 2,
-        "xg": 0.167,
-        "headline": "Ocasión de Désiré Doué fuera",
-        "shared_tempo_multiplier": 0.9687
-      },
-      {
-        "minute": 43,
-        "team": "Synthetic XI — exploratorio",
-        "type": "shot_on_target",
-        "actor": "SYN-ST20",
-        "zone": 2,
-        "xg": 0.167,
-        "headline": "Remate de SYN-ST20 detenido por el portero",
-        "shared_tempo_multiplier": 0.9687
-      },
-      {
-        "minute": 56,
-        "team": "Synthetic XI — exploratorio",
-        "type": "turnover",
-        "actor": "SYN-CM20",
-        "zone": 3,
-        "xg": 0.0,
-        "headline": "SYN-CM20 pierde el balón bajo presión",
-        "shared_tempo_multiplier": 0.9687
+        "shared_tempo_multiplier": 1.0791
       },
       {
         "minute": 61,
         "team": "Synthetic XI — exploratorio",
-        "type": "shot_on_target",
-        "actor": "SYN-AM20",
-        "zone": 1,
-        "xg": 0.09,
-        "headline": "Remate de SYN-AM20 detenido por el portero",
-        "shared_tempo_multiplier": 0.9687
-      },
-      {
-        "minute": 69,
-        "team": "Real Best XI — exploratorio",
         "type": "turnover",
-        "actor": "Désiré Doué",
-        "zone": 2,
-        "xg": 0.0,
-        "headline": "Désiré Doué pierde el balón bajo presión",
-        "shared_tempo_multiplier": 0.9687
-      },
-      {
-        "minute": 74,
-        "team": "Real Best XI — exploratorio",
-        "type": "turnover",
-        "actor": "Désiré Doué",
-        "zone": 2,
-        "xg": 0.0,
-        "headline": "Désiré Doué pierde el balón bajo presión",
-        "shared_tempo_multiplier": 0.9687
-      },
-      {
-        "minute": 75,
-        "team": "Real Best XI — exploratorio",
-        "type": "turnover",
-        "actor": "Michael Olise",
-        "zone": 2,
-        "xg": 0.0,
-        "headline": "Michael Olise pierde el balón bajo presión",
-        "shared_tempo_multiplier": 0.9687
-      },
-      {
-        "minute": 76,
-        "team": "Real Best XI — exploratorio",
-        "type": "shot_on_target",
-        "actor": "Yan Diomande",
-        "zone": 2,
-        "xg": 0.148,
-        "headline": "Remate de Yan Diomande detenido por el portero",
-        "shared_tempo_multiplier": 0.9687
-      },
-      {
-        "minute": 84,
-        "team": "Real Best XI — exploratorio",
-        "type": "shot_on_target",
-        "actor": "Désiré Doué",
-        "zone": 1,
-        "xg": 0.104,
-        "headline": "Remate de Désiré Doué detenido por el portero",
-        "shared_tempo_multiplier": 0.9687
-      },
-      {
-        "minute": 86,
-        "team": "Real Best XI — exploratorio",
-        "type": "shot_on_target",
-        "actor": "Michael Olise",
+        "actor": "SYN-ST20",
         "zone": 3,
-        "xg": 0.265,
-        "headline": "Remate de Michael Olise detenido por el portero",
-        "shared_tempo_multiplier": 0.9687
+        "xg": 0.0,
+        "headline": "SYN-ST20 pierde el balón bajo presión",
+        "shared_tempo_multiplier": 1.0791
       },
       {
-        "minute": 89,
+        "minute": 67,
         "team": "Real Best XI — exploratorio",
         "type": "shot_off_target",
         "actor": "Yan Diomande",
-        "zone": 2,
-        "xg": 0.148,
+        "zone": 3,
+        "xg": 0.243,
         "headline": "Ocasión de Yan Diomande fuera",
-        "shared_tempo_multiplier": 0.9687
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 69,
+        "team": "Synthetic XI — exploratorio",
+        "type": "shot_on_target",
+        "actor": "SYN-ST20",
+        "zone": 1,
+        "xg": 0.1,
+        "headline": "Remate de SYN-ST20 detenido por el portero",
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 69,
+        "team": "Synthetic XI — exploratorio",
+        "type": "shot_on_target",
+        "actor": "SYN-W120",
+        "zone": 2,
+        "xg": 0.147,
+        "headline": "Remate de SYN-W120 detenido por el portero",
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 71,
+        "team": "Synthetic XI — exploratorio",
+        "type": "turnover",
+        "actor": "SYN-W220",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "SYN-W220 pierde el balón bajo presión",
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 77,
+        "team": "Synthetic XI — exploratorio",
+        "type": "shot_on_target",
+        "actor": "SYN-CM20",
+        "zone": 3,
+        "xg": 0.195,
+        "headline": "Remate de SYN-CM20 detenido por el portero",
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 87,
+        "team": "Synthetic XI — exploratorio",
+        "type": "goal",
+        "actor": "SYN-W220",
+        "zone": 2,
+        "xg": 0.147,
+        "headline": "GOL de SYN-W220",
+        "shared_tempo_multiplier": 1.0791
+      },
+      {
+        "minute": 88,
+        "team": "Real Best XI — exploratorio",
+        "type": "shot_on_target",
+        "actor": "Yan Diomande",
+        "zone": 1,
+        "xg": 0.094,
+        "headline": "Remate de Yan Diomande detenido por el portero",
+        "shared_tempo_multiplier": 1.0791
       }
     ]
   },
@@ -288,10 +308,10 @@
     "model_possessions_per_match": 104.0
   },
   "calibration_error": {
-    "goals_per_match": -0.027593617021276273,
-    "shots_per_match": -0.4937710042142065,
-    "shots_on_target_per_match": 0.405741052523382,
-    "zero_zero_rate": -0.0008680851063829764
+    "goals_per_match": 0.08310638297872375,
+    "shots_per_match": -0.15707100421420606,
+    "shots_on_target_per_match": 0.6354410525233813,
+    "zero_zero_rate": -0.010268085106382982
   },
   "shared_tempo_interpretation": "Mean-one match-wide lognormal tempo creates shared low-event and high-event states without post-hoc score editing.",
   "methodological_gate": {

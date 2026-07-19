@@ -1,12 +1,12 @@
 Indicator,Value
 Eligible players,1062.0
-Eligible players observed,1009.0
-Eligible-player recall,0.9500941619585688
+Eligible players observed,1055.0
+Eligible-player recall,0.9934086629001884
 Benchmark players,929.0
-Benchmark players observed,886.0
-Benchmark-player recall,0.9537136706135629
-Fixtures processed,1400.0
-Active player-match rows,18094.0
-Players with grid evidence,918.0
-Players in current annual window,1001.0
-Players in pre-World-Cup window,855.0
+Benchmark players observed,924.0
+Benchmark-player recall,0.9946178686759957
+Fixtures processed,4231.0
+Active player-match rows,31116.0
+Players with grid evidence,1036.0
+Players in current annual window,1053.0
+Players in pre-World-Cup window,1016.0
