@@ -3,7 +3,7 @@
   "screening_interval": "90% ability interval; final estimates retain 95% intervals",
   "eligible_candidates": 1037,
   "fully_covered_both_windows": 426,
-  "unresolved_players": 406,
+  "unresolved_players": 407,
   "priority_player_fixture_pairs": 10700,
   "priority_unique_fixtures": 3839,
   "roles": [
@@ -58,7 +58,7 @@
       "stable_candidates": 12,
       "required_pool_size": 12,
       "covered_candidates": 10,
-      "unresolved_challengers": 5,
+      "unresolved_challengers": 6,
       "role_gate_passed": false
     },
     {

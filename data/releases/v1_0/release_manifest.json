@@ -1,6 +1,6 @@
 {
   "release": "v1.0-candidate",
-  "generated_at_utc": "2026-07-19T09:42:56.810527+00:00",
+  "generated_at_utc": "2026-07-19T11:09:40.471704+00:00",
   "scientific_ready": false,
   "claim_ceiling": "exploratory, calibrated and auditable simulation",
   "blocking_gates": [
@@ -10,7 +10,7 @@
     {
       "path": "data/model_readiness/annual_model_readiness.json",
       "bytes": 706,
-      "sha256": "e15977aa0a859c0e366a7afda00a0e2bd0daf4af0eea2e44aa4775ffa9c9229d"
+      "sha256": "8bbd9a655d81cad1ad6489fd305b8fab938b30e7f74117c6343399b93368f218"
     },
     {
       "path": "data/model_readiness/candidate_coverage_status.json",
@@ -75,22 +75,22 @@
     {
       "path": "data/model_readiness/partial_annual_current_totals.csv",
       "bytes": 173750,
-      "sha256": "b17f32d922547bcbbb0a1f8923f77b80ab582c23c7d835fe9fcc9557449c42b7"
+      "sha256": "1cb61487181f682ea41f660080d54a1587a3961789b698f6d5f5d05e01524f0b"
     },
     {
       "path": "data/model_readiness/partial_pre_world_cup_totals.csv",
-      "bytes": 164498,
-      "sha256": "1585a26e881f7a40dfb5af7a0de11e8fbcc2f03809cb541682fa7f351a4cebb4"
+      "bytes": 164500,
+      "sha256": "2977d32deea80ffc823cec2342a608f029dcbffd09ed383fa3b6e4a9552295f2"
     },
     {
       "path": "data/model_readiness/partial_role_evidence.csv",
       "bytes": 145315,
-      "sha256": "ab39e4d485f93d5067cc73e0e5bddd9580f45dbede54d7e5065b019c461905a3"
+      "sha256": "b9ca2b2e4a5d3e79530cda3711e9e8d7ca83890c95f054f83903eb47cccfdcce"
     },
     {
       "path": "data/model_readiness/player_window_coverage.csv",
-      "bytes": 390161,
-      "sha256": "5bb166f4bd9657370f66cf1cfe6c4db66e945d68b1d5cabbd7b19d8e4a72a7b6"
+      "bytes": 390157,
+      "sha256": "9008f0c6a7871371ff3ffa64921e07d83b0f184242c3e3141233c4c010f765e9"
     },
     {
       "path": "data/model_readiness/scientific_validation_status.json",
@@ -99,18 +99,18 @@
     },
     {
       "path": "data/model_readiness/selection_frontier.csv",
-      "bytes": 452763,
-      "sha256": "c230b1d73c5f9765fde4c4045f87f2841d0ef8583f8e32f94b331213ea9c4770"
+      "bytes": 453455,
+      "sha256": "2d24c5e7c4ad57b16b93bb1bfd1efdb87ae58ccd81b61beb33b6b658c4c546e2"
     },
     {
       "path": "data/model_readiness/selection_frontier_all_candidates.csv",
-      "bytes": 452763,
-      "sha256": "c230b1d73c5f9765fde4c4045f87f2841d0ef8583f8e32f94b331213ea9c4770"
+      "bytes": 453455,
+      "sha256": "2d24c5e7c4ad57b16b93bb1bfd1efdb87ae58ccd81b61beb33b6b658c4c546e2"
     },
     {
       "path": "data/model_readiness/selection_frontier_coverage.csv",
       "bytes": 380100,
-      "sha256": "92cd84e92859e2b331303391f335d51a5231c6fe99bf727ce6b33df8c0cac764"
+      "sha256": "b815baf32f79c1144558de7cdbf606cbcdc54122924311d57bd25d8f780ccb79"
     },
     {
       "path": "data/model_readiness/selection_frontier_priority_fixtures.csv",
@@ -124,8 +124,8 @@
     },
     {
       "path": "data/model_readiness/selection_sufficiency_all_players.csv",
-      "bytes": 577192,
-      "sha256": "139f676781a4bd2a5d58b0dfd2fb4e6f622fd39da8232ce201ce9dd1fd95f7f2"
+      "bytes": 577993,
+      "sha256": "96007b7d8bfc10f311ec5c86c043e00673e3e65b899fcd327a357399c3b0788e"
     },
     {
       "path": "data/model_readiness/selection_sufficiency_priority_fixtures.csv",
@@ -135,37 +135,37 @@
     {
       "path": "data/model_readiness/selection_sufficiency_status.json",
       "bytes": 3082,
-      "sha256": "819b0d7376bf596de2a5d6f9d4f66a71c00c12ea5eaebdfecd1e7960f391a9c7"
+      "sha256": "4ed46c21eceb1bc498e67a0fc0f48b7a32fc4ceb099ee32e821ee7fc3a252d03"
     },
     {
       "path": "data/model_readiness/selection_sufficiency_unresolved_players.csv",
-      "bytes": 240376,
-      "sha256": "96e24067ac18df62163814b78e444e02055a4a78e03a5fd39cad7ea7f814c885"
+      "bytes": 241316,
+      "sha256": "bcea5a1f036311c8b0f0b2493d698b2117cd789ebbb0bbad99f8850a106234b0"
     },
     {
       "path": "data/validation/external_pre_tournament_holdout_summary.json",
-      "bytes": 888,
-      "sha256": "6823026979f132dc1cecafde7d675c834e08a2353fbe230e3d6ac293f624690f"
+      "bytes": 886,
+      "sha256": "3c3ce3c948182388753ccb4f2fbceed22509488a772ef0996d2024051bcaecdf"
     },
     {
       "path": "data/validation/external_pre_tournament_predictions.csv",
-      "bytes": 18657,
-      "sha256": "56ea01e646d29fa81a7a6bd36ae8d75345dfe2f846fbc0cbc391b9d6dc2c2553"
+      "bytes": 18687,
+      "sha256": "ed35d91c350fd811609482913b819ee9b4646df593f5133593f0cd3c562b42dd"
     },
     {
       "path": "data/validation/frozen_pre_tournament_team_strengths.csv",
-      "bytes": 4277,
-      "sha256": "38118ef205619daca72601ee866a40beec6bf451ca50e8258bdf7aecd3a4e9d4"
+      "bytes": 4278,
+      "sha256": "6f1011fbdc877eea0ca85fa305455a3e3d5b3c95522f4e773e3e0a20202142af"
     },
     {
       "path": "data/validation/nested_uncertainty_summary.json",
-      "bytes": 1388,
-      "sha256": "3ecfec3c1703a4aa4dbac1442fdaf0e55ed417841c664e5375c274c40da8720e"
+      "bytes": 1378,
+      "sha256": "3b04c1bf7d849ccd871058673c4a5646c97bfb28ff1dfcd1eb438f94a50df303"
     },
     {
       "path": "data/validation/nested_uncertainty_worlds.csv",
-      "bytes": 18840,
-      "sha256": "de1d4241da92b47f29379b3c66deae6f529d3f66b2b78e4ebb79114e1d4fce94"
+      "bytes": 18831,
+      "sha256": "d3c5fd8d8ffa08280920e4c93a01bd1bc83c94d81b6c0dc852d6a8fd57615b65"
     },
     {
       "path": "data/validation/predictive_backtest_summary.json",
@@ -189,43 +189,43 @@
     },
     {
       "path": "data/validation/sensitivity_summary.json",
-      "bytes": 973,
-      "sha256": "69f7f150ffc27d4b0b34fcabdf23cbcc0cf4f6af0b80211100cac3c0ba5e3d01"
+      "bytes": 929,
+      "sha256": "52b216af54d5e809eb76441169c8c0acf325ab026e34ff83368a37125b2b4846"
     },
     {
       "path": "data/validation/topn_chemistry_sensitivity.csv",
-      "bytes": 1727,
-      "sha256": "4637a61ad8b4f646b5b7c2205970f55fd838c451cb7ebc79c80e9d15c0fbf6b4"
+      "bytes": 1652,
+      "sha256": "75d7f016b109f986d4b6402c3dc60903996b635ad63cd21515b3df0d80b4bfc7"
     },
     {
       "path": "data/validation/topn_roster_sensitivity.csv",
       "bytes": 12609,
-      "sha256": "04a696724c2e591f3697c6ed211650d41c4f282b636cde5eff274f429558599e"
+      "sha256": "af79c4dd32ce5bc098c93be702c0b4a45bad7ee91abdfe03afb1071adac3b757"
     },
     {
       "path": "data/simulations/calibrated_v0_3/calibration_quality.json",
       "bytes": 381,
-      "sha256": "f0331c23367c5b2f9476a2154795e76bd0ec68b2d29c42e24c058a6293d91c4e"
+      "sha256": "2c7019dfe89aecdf2d61b039c2176b266516b3bc7345de798b2c908ce32285fe"
     },
     {
       "path": "data/simulations/calibrated_v0_3/real_best_xi_provisional.csv",
-      "bytes": 911,
-      "sha256": "73b0c45eae9e692b50d6339991015c7de29db04973f9982543069a680d952858"
+      "bytes": 908,
+      "sha256": "ca08ff2e2ff25a3c40f59d3ad7e4966ff1018ff7050a55e58a5e39907b52f910"
     },
     {
       "path": "data/simulations/calibrated_v0_3/shared_tempo_tuning.csv",
-      "bytes": 1682,
-      "sha256": "cbffc809b8e8844bc51097bc1fabc535b7fe3f5c7eef2139eefeb3ed8b942815"
+      "bytes": 1671,
+      "sha256": "2938e76ec821d1c03ac076a52a68ea37c16107e1b8415d0da9e3607eaa64b629"
     },
     {
       "path": "data/simulations/calibrated_v0_3/simulation_summary.json",
-      "bytes": 8608,
-      "sha256": "c6ecf9f67d950dabb7badea95221df4c19e2c25f445c12f9e9142b7bf2fd32a0"
+      "bytes": 8607,
+      "sha256": "ed996d120ca74307480c071a101d685f77f039a933feec8097afd499ddea6bc6"
     },
     {
       "path": "data/simulations/calibrated_v0_3/synthetic_xi_membership.csv",
       "bytes": 4429,
-      "sha256": "2aae7a64fde995e9ff7ff6d996cc10ca6e93b13375acfca11a0051be2ae7a4cd"
+      "sha256": "57f949f2632f28eec6ab2a469e813c39233acd12f962edbbd47190f3e4540a8b"
     },
     {
       "path": "paper/exhibits/README.md",
@@ -234,33 +234,33 @@
     },
     {
       "path": "paper/exhibits/figure_01_monte_carlo_convergence.png",
-      "bytes": 93376,
-      "sha256": "53dc9bcb2c1fcbb2fe6144262510076cda243271e408ea66039113eb2db218c4"
+      "bytes": 92808,
+      "sha256": "eb69efdfe717abf39e753261ce9198cf590105ecd0b1650d9dd06296c6115be7"
     },
     {
       "path": "paper/exhibits/figure_02_scoreline_distribution.png",
-      "bytes": 65590,
-      "sha256": "9ae04a1e33125e68cb9e09433c241df93213d44af6d8bb71413ae30c081aae83"
+      "bytes": 65666,
+      "sha256": "c027025b98e7d7cd7b29f7e06d434d3060e1db12416bf30b021b7dfd737f74e4"
     },
     {
       "path": "paper/exhibits/figure_03_aggregate_calibration.png",
-      "bytes": 53179,
-      "sha256": "2595a5aeb43af117ee8e572dccb0c7f2a4a792bf8a0dbe1d8143b4a36926e057"
+      "bytes": 53215,
+      "sha256": "fd670d1f90e02505f6019068b5ddda4ad79cbd0c185632ad77ba503831ea122b"
     },
     {
       "path": "paper/exhibits/table_01_data_and_model_readiness.csv",
       "bytes": 387,
-      "sha256": "7a833568dd252c78af41190637fbe6e25e8d26361e236987560764b376cfdcba"
+      "sha256": "70492b94f0160ccaef403d6e1c6c2d79539e2a5da9ab32c1def5def5a42e1bc7"
     },
     {
       "path": "paper/exhibits/table_02_exploratory_match_outcomes.csv",
-      "bytes": 106,
-      "sha256": "01a3c0da0fb3bd87e7d99bd14940a8ac9451c3e382de57f1edc923b129885f11"
+      "bytes": 104,
+      "sha256": "e707a3928995416d023c5229179b7433306269a851aee8a43d783b960dd336a5"
     },
     {
       "path": "paper/exhibits/table_03_simulation_percentiles.csv",
-      "bytes": 346,
-      "sha256": "c62851e5e03e1aea6a218418afb02ae1efcaf94c727a7edfb103a0746277a245"
+      "bytes": 343,
+      "sha256": "2c9b95a09cc2b186e7ec8ee0c64ae30c7bf24c12904970f862aa57f61565d35b"
     },
     {
       "path": "paper/exhibits/table_04_scientific_gates.csv",
@@ -270,7 +270,7 @@
     {
       "path": "paper/exhibits/table_calibration_ratios.csv",
       "bytes": 150,
-      "sha256": "3ef9223e861de6ab41c9655a6c365e910f8d833bfee434bb1b5ab6075008c46d"
+      "sha256": "d60621f32715ceb10d988cfb143b793b3e4c0301042ca6a9215300407e6fed71"
     },
     {
       "path": "paper/exhibits_scientific/README.md",
@@ -299,13 +299,13 @@
     },
     {
       "path": "paper/exhibits_scientific/figure_08_topn_coordination_sensitivity.png",
-      "bytes": 193904,
-      "sha256": "a4e2df5d4a30aac995723f87f65fea43c02b962c60861a0e022e1d96be9a8cfb"
+      "bytes": 192779,
+      "sha256": "59051d157bb2bc47c4766b808c136ceba3dd647eb552c97f7add704819187ba7"
     },
     {
       "path": "paper/exhibits_scientific/figure_09_nested_uncertainty.png",
-      "bytes": 62959,
-      "sha256": "7b5c72d17a6df1085e14d48c9583b5905b47393432e60c9b13b9800b4afe8b82"
+      "bytes": 62942,
+      "sha256": "fd1394017890e31acdf741b630b3b14e866f1e84ac37f1506955803b04e23f4d"
     },
     {
       "path": "paper/exhibits_scientific/figure_10_v02_v03_calibration.png",
@@ -315,7 +315,7 @@
     {
       "path": "paper/exhibits_scientific/table_05_player_window_coverage.csv",
       "bytes": 389324,
-      "sha256": "e9cc74758475db42b02beab6bca20b8b8d6d7f9bb7dd9dee55e8617eb77f7042"
+      "sha256": "a492abaca4436e410e004d0f810d3a2fb2ba1b2c0b5c56fab1ec448ad5152ca5"
     },
     {
       "path": "paper/exhibits_scientific/table_06_eleven_role_candidates.csv",
@@ -334,18 +334,18 @@
     },
     {
       "path": "paper/exhibits_scientific/table_09_sensitivity.csv",
-      "bytes": 1696,
-      "sha256": "46477603ab9585b1c75a29d71c7e6f30be067328c4fecdefb16cc1f310fa2302"
+      "bytes": 1625,
+      "sha256": "63feb8f684fd6cd6d787ec2ca11f6fea4678f95fe00b6fcb54989748ffdd6d06"
     },
     {
       "path": "paper/exhibits_scientific/table_10_nested_uncertainty_worlds.csv",
-      "bytes": 18692,
-      "sha256": "c740195adaa209678ae57da8869a710ad5d483a91ac868e88a7556333a77cb7e"
+      "bytes": 18683,
+      "sha256": "1e5fe934f2e5c0ba9d9b1f9fd571dc8fb480e05d1aa2a15faa641627878b775c"
     },
     {
       "path": "paper/exhibits_scientific/table_11_v02_v03_calibration.csv",
-      "bytes": 411,
-      "sha256": "ed0b8e157ec39225e6d62c7d4f046034920fe4265a21d90d20563335e7609502"
+      "bytes": 399,
+      "sha256": "6a158bee6ef2bfc5142cd0f81b41f224a20e5c395d85d077971f53ee13a0cfd6"
     },
     {
       "path": "paper/exhibits_scientific/table_12_scientific_validation_gates.csv",

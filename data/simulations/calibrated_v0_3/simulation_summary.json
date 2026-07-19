@@ -1,37 +1,37 @@
 {
   "simulations": 10000,
   "shared_tempo_sigma": 0.19999999999999998,
-  "home_win_probability": 0.2687,
-  "draw_probability": 0.2484,
-  "away_win_probability": 0.4829,
-  "mean_home_goals": 1.2255,
-  "mean_away_goals": 1.7148,
-  "mean_total_goals": 2.9403,
-  "mean_total_shots": 17.8065,
-  "mean_total_shots_on_target": 8.9158,
-  "mean_home_xg": 1.2341885408447142,
-  "mean_away_xg": 1.7036954805200404,
-  "zero_zero_probability": 0.069,
+  "home_win_probability": 0.2688,
+  "draw_probability": 0.248,
+  "away_win_probability": 0.4832,
+  "mean_home_goals": 1.2257,
+  "mean_away_goals": 1.715,
+  "mean_total_goals": 2.9407,
+  "mean_total_shots": 17.8084,
+  "mean_total_shots_on_target": 8.9166,
+  "mean_home_xg": 1.2342934142273798,
+  "mean_away_xg": 1.703931116818518,
+  "zero_zero_probability": 0.0689,
   "top_scorelines": [
     {
       "score": "1-1",
-      "probability": 0.1094
+      "probability": 0.1093
     },
     {
       "score": "0-1",
-      "probability": 0.1013
+      "probability": 0.1015
     },
     {
       "score": "1-2",
-      "probability": 0.0863
+      "probability": 0.0864
     },
     {
       "score": "0-2",
-      "probability": 0.0743
+      "probability": 0.0742
     },
     {
       "score": "0-0",
-      "probability": 0.069
+      "probability": 0.0689
     },
     {
       "score": "1-0",
@@ -42,16 +42,16 @@
       "probability": 0.0603
     },
     {
-      "score": "2-2",
-      "probability": 0.0519
+      "score": "1-3",
+      "probability": 0.0518
     },
     {
-      "score": "1-3",
+      "score": "2-2",
       "probability": 0.0517
     },
     {
       "score": "0-3",
-      "probability": 0.0396
+      "probability": 0.0395
     },
     {
       "score": "2-0",
@@ -59,13 +59,13 @@
     },
     {
       "score": "2-3",
-      "probability": 0.0305
+      "probability": 0.0306
     }
   ],
   "outcomes": {
-    "home_wins": 2687,
-    "draws": 2484,
-    "away_wins": 4829
+    "home_wins": 2688,
+    "draws": 2480,
+    "away_wins": 4832
   },
   "representative_match": {
     "home": "Synthetic XI — exploratorio",
@@ -298,10 +298,10 @@
     "model_possessions_per_match": 104.0
   },
   "calibration_error": {
-    "goals_per_match": 0.025406382978723663,
-    "shots_per_match": -0.2883710042142056,
-    "shots_on_target_per_match": 0.5372410525233828,
-    "zero_zero_rate": -0.005468085106382969
+    "goals_per_match": 0.02580638297872362,
+    "shots_per_match": -0.28647100421420646,
+    "shots_on_target_per_match": 0.5380410525233827,
+    "zero_zero_rate": -0.005568085106382972
   },
   "shared_tempo_interpretation": "Mean-one match-wide lognormal tempo creates shared low-event and high-event states without post-hoc score editing.",
   "methodological_gate": {
