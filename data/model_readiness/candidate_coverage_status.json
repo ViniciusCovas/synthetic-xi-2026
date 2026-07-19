@@ -2,22 +2,22 @@
   "status": "candidate_relevant_coverage_evaluated",
   "estimand": "final Real XI plus every Top-10/20/30 avatar candidate",
   "benchmark_candidates": 929,
-  "avatar_top30_candidates": 277,
-  "relevant_union": 958,
+  "avatar_top30_candidates": 263,
+  "relevant_union": 954,
   "windows": [
     {
       "window": "annual_current",
-      "relevant_players": 958,
-      "players_passing_80pct": 113,
-      "pass_rate": 0.11795407098121086,
-      "missing_fixture_endpoints": 30426
+      "relevant_players": 954,
+      "players_passing_80pct": 302,
+      "pass_rate": 0.3165618448637317,
+      "missing_fixture_endpoints": 19128
     },
     {
       "window": "pre_world_cup",
-      "relevant_players": 958,
-      "players_passing_80pct": 189,
-      "pass_rate": 0.19728601252609604,
-      "missing_fixture_endpoints": 31060
+      "relevant_players": 954,
+      "players_passing_80pct": 459,
+      "pass_rate": 0.4811320754716981,
+      "missing_fixture_endpoints": 19752
     }
   ],
   "candidate_coverage_gate_passed": false,

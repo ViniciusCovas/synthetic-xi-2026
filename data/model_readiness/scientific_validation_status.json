@@ -3,7 +3,7 @@
   "gates": {
     "computational_reproducibility": true,
     "aggregate_event_calibration_v0_3": true,
-    "candidate_relevant_window_coverage": false,
+    "selection_sufficiency": false,
     "lateral_orientation": true,
     "definitive_eleven_roles": true,
     "internal_rolling_origin_prediction": true,
@@ -14,12 +14,12 @@
   "final_team_comparison_allowed": false,
   "arxiv_results_ready": false,
   "blocking_gates": [
-    "candidate_relevant_window_coverage"
+    "selection_sufficiency"
   ],
   "current_claim_ceiling": "exploratory, calibrated and auditable simulation",
-  "next_priority": "complete targeted extraction or transparently exclude under-covered candidates",
+  "next_priority": "extract only unresolved selection challengers and recalculate uncertainty bounds",
   "sources": {
-    "coverage": "candidate_relevant_coverage_evaluated",
+    "coverage": "missing",
     "lateral": "lateral_grid_orientation_evaluated",
     "roles": "eleven_role_resolution_evaluated",
     "internal_backtest": "internal_rolling_origin_backtest_complete",
