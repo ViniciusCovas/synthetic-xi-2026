@@ -1,9 +1,9 @@
 {
   "status": "partial_window_artifacts_updated",
   "rankings_allowed": false,
-  "active_rows": 31116,
+  "active_rows": 32564,
   "players_with_detail": 1055,
-  "players_with_grid_evidence": 1036,
+  "players_with_grid_evidence": 1037,
   "current_window_players": 1053,
   "pre_world_cup_players": 1016,
   "pass_accuracy_rule": "sum(passes_accuracy_raw) / sum(passes_total)",
