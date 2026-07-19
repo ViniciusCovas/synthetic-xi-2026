@@ -1,0 +1,17 @@
+{
+  "status": "cached_lake_inventory_complete",
+  "generated_at_utc": "2026-07-19T19:22:52.392331+00:00",
+  "network_calls": 0,
+  "methodological_effect": "diagnostic_only",
+  "csv_files_scanned": 60,
+  "raw_json_files_available": 0,
+  "player_sources_found": 15,
+  "lineup_sources_found": 9,
+  "cached_unique_player_fixture_pairs": 51175,
+  "cached_players": 6976,
+  "cached_minutes_total": 3085366.0,
+  "unresolved_players_in_comparison": 323,
+  "positive_cache_minus_ledger_players": 4729,
+  "positive_cache_minus_ledger_minutes": 410213.0,
+  "next_action": "use source inventory and lineup schema to build a scope-correct exact-window coverage ledger"
+}
