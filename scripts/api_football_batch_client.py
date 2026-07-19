@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -13,6 +14,7 @@ import requests
 
 API_BASE = "https://v3.football.api-sports.io"
 RAW_DIR = Path("data/raw/adaptive_annual/bundles")
+FINAL_CALLS_FLAG = Path("ops/use-final-daily-calls.flag")
 
 
 class QuotaStop(RuntimeError):
@@ -35,6 +37,13 @@ class BatchClient:
         safe_rpm = float(os.getenv("API_SAFE_REQUESTS_PER_MINUTE", "180"))
         self.interval = 60.0 / max(safe_rpm, 1.0)
         self.last_call = 0.0
+
+        today_utc = datetime.now(timezone.utc).date().isoformat()
+        flag_value = FINAL_CALLS_FLAG.read_text(encoding="utf-8").strip() if FINAL_CALLS_FLAG.exists() else ""
+        self.final_calls_mode = bool(flag_value and flag_value == today_utc)
+        if self.final_calls_mode:
+            self.max_calls = min(self.max_calls, 3)
+            self.min_remaining = min(self.min_remaining, 1)
 
     def _headers(self, response: requests.Response) -> None:
         mapping = {
@@ -75,9 +84,11 @@ class BatchClient:
     ) -> dict[str, Any]:
         if not fixture_ids or len(fixture_ids) > 20:
             raise ValueError("fixture_ids must contain between 1 and 20 ids")
-        force_refresh = force_refresh or os.getenv("FORCE_REQUERY_BUNDLES", "").strip().lower() in {
-            "true", "1", "yes", "y"
-        }
+        force_refresh = (
+            force_refresh
+            or self.final_calls_mode
+            or os.getenv("FORCE_REQUERY_BUNDLES", "").strip().lower() in {"true", "1", "yes", "y"}
+        )
         ids = "-".join(str(value) for value in fixture_ids)
         digest = hashlib.sha256(ids.encode()).hexdigest()[:20]
         path = RAW_DIR / f"fixtures_{digest}.json"
