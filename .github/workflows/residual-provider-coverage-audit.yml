@@ -1,0 +1,61 @@
+name: Residual Provider Coverage Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/scientific/audit_residual_provider_coverage.py"
+      - ".github/workflows/residual-provider-coverage-audit.yml"
+      - "data/model_readiness/coverage_priority_fixtures.csv"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: residual-provider-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas
+
+      - name: Audit provider support
+        run: python scripts/scientific/audit_residual_provider_coverage.py
+
+      - name: Publish audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/audits/residual_provider_coverage
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "science: publish residual provider support audit"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            if git rebase -X theirs origin/main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 4))
+          done
+          exit 1
