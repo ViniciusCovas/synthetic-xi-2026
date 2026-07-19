@@ -1,0 +1,67 @@
+top_n,team,slot,selection
+10,synthetic,GK,Joan García | Bart Verbruggen | Manuel Neuer | Alisson | Uğurcan Çakır | Mike Maignan | Robin Roefs | Edouard Mendy | Gerónimo Rulli | Dean Henderson
+10,synthetic,CB1,Cristian Romero | Ramy Bensebaini | Shurandy Sambo | Jan Paul van Hecke | Chris Richards | Emmanuel Agbadou | Ibrahima Konaté | Waldemar Anton | Dayot Upamecano | José María Giménez
+10,synthetic,CB2,Cristian Romero | Ramy Bensebaini | Shurandy Sambo | Jan Paul van Hecke | Chris Richards | Emmanuel Agbadou | Ibrahima Konaté | Waldemar Anton | Dayot Upamecano | José María Giménez
+10,synthetic,FB1,Nuno Mendes | Rayan Aït-Nouri | João Cancelo | David Raum | Alejandro Grimaldo | Joshua Kimmich | Alphonso Davies | Achraf Hakimi | Alexander Freeman | Julian Ryerson
+10,synthetic,FB2,Nuno Mendes | Rayan Aït-Nouri | João Cancelo | David Raum | Alejandro Grimaldo | Joshua Kimmich | Alphonso Davies | Achraf Hakimi | Alexander Freeman | Julian Ryerson
+10,synthetic,DM,İsmail Yüksek | Elliot Anderson | Rodri | Moisés Caicedo | Aurélien Tchouaméni | Lamine Camara | João Neves | Christ Inao Oulaï | Casemiro | Rodrigo Bentancur
+10,synthetic,CM,Frenkie de Jong | Jude Bellingham | Warren Zaïre-Emery | Valentín Barco | Angelo Stiller | Youri Tielemans | Aleksandar Pavlović | Leon Goretzka | Ryan Gravenberch | Bruno Guimarães
+10,synthetic,AM,Michael Olise | Lamine Yamal | Rayan Cherki | Luis Díaz | Jérémy Doku | Bruno Fernandes | Raphinha | Pedri | Rúben Neves | Sadio Mané
+10,synthetic,W1,Désiré Doué | Yan Diomande | Kang-in Lee | Ousmane Dembélé | Bukayo Saka | Jamal Musiala | Arda Güler | Bradley Barcola | Marcus Rashford | Julián Alvarez
+10,synthetic,W2,Désiré Doué | Yan Diomande | Kang-in Lee | Ousmane Dembélé | Bukayo Saka | Jamal Musiala | Arda Güler | Bradley Barcola | Marcus Rashford | Julián Alvarez
+10,synthetic,ST,Lionel Messi | Kylian Mbappé | Vinícius Júnior | Harry Kane | Jens Petter Hauge | Marcus Thuram | Gonçalo Ramos | Ismael Saibari | Matheus Cunha | Deniz Undav
+10,real,GK,Joan García
+10,real,CB1,Cristian Romero
+10,real,CB2,Ramy Bensebaini
+10,real,FB1,Nuno Mendes
+10,real,FB2,Rayan Aït-Nouri
+10,real,DM,İsmail Yüksek
+10,real,CM,Frenkie de Jong
+10,real,AM,Michael Olise
+10,real,W1,Désiré Doué
+10,real,W2,Yan Diomande
+10,real,ST,Lionel Messi
+20,synthetic,GK,Joan García | Bart Verbruggen | Manuel Neuer | Alisson | Uğurcan Çakır | Mike Maignan | Robin Roefs | Edouard Mendy | Gerónimo Rulli | Dean Henderson | Matěj Kovář | Mike Penders | David Raya | Emiliano Martínez | Mark Flekken | Thibaut Courtois | Diogo Costa | Gregor Kobel | Bono | Alexander Nübel
+20,synthetic,CB1,Cristian Romero | Ramy Bensebaini | Shurandy Sambo | Jan Paul van Hecke | Chris Richards | Emmanuel Agbadou | Ibrahima Konaté | Waldemar Anton | Dayot Upamecano | José María Giménez | Ronald Araújo | Marc Pubill | Willian Pacho | Pau Cubarsí | Çağlar Söyüncü | Yasser Ibrahim | Hassan Al Tambakti | Abdukodir Khusanov | Kalidou Koulibaly | Maxence Lacroix
+20,synthetic,CB2,Cristian Romero | Ramy Bensebaini | Shurandy Sambo | Jan Paul van Hecke | Chris Richards | Emmanuel Agbadou | Ibrahima Konaté | Waldemar Anton | Dayot Upamecano | José María Giménez | Ronald Araújo | Marc Pubill | Willian Pacho | Pau Cubarsí | Çağlar Söyüncü | Yasser Ibrahim | Hassan Al Tambakti | Abdukodir Khusanov | Kalidou Koulibaly | Maxence Lacroix
+20,synthetic,FB1,Nuno Mendes | Rayan Aït-Nouri | João Cancelo | David Raum | Alejandro Grimaldo | Joshua Kimmich | Alphonso Davies | Achraf Hakimi | Alexander Freeman | Julian Ryerson | Pedro Porro | Konrad Laimer | Jules Koundé | Exequiel Palacios | Reece James | Antonee Robinson | Matheus Nunes | Eric García | Guéla Doué | Nathaniel Brown
+20,synthetic,FB2,Nuno Mendes | Rayan Aït-Nouri | João Cancelo | David Raum | Alejandro Grimaldo | Joshua Kimmich | Alphonso Davies | Achraf Hakimi | Alexander Freeman | Julian Ryerson | Pedro Porro | Konrad Laimer | Jules Koundé | Exequiel Palacios | Reece James | Antonee Robinson | Matheus Nunes | Eric García | Guéla Doué | Nathaniel Brown
+20,synthetic,DM,İsmail Yüksek | Elliot Anderson | Rodri | Moisés Caicedo | Aurélien Tchouaméni | Lamine Camara | João Neves | Christ Inao Oulaï | Casemiro | Rodrigo Bentancur | Amadou Onana | Éderson | Manuel Ugarte | N'Golo Kanté | Samir El Mourabet | Ayyoub Bouaddi | Idrissa Gueye | Ryan Christie | Jhon Arias | Martín Zubimendi
+20,synthetic,CM,Frenkie de Jong | Jude Bellingham | Warren Zaïre-Emery | Valentín Barco | Angelo Stiller | Youri Tielemans | Aleksandar Pavlović | Leon Goretzka | Ryan Gravenberch | Bruno Guimarães | Kobbie Mainoo | Luka Modrić | Iliman Ndiaye | Lucas Paquetá | Granit Xhaka | Hakan Çalhanoğlu | Giuliano Simeone | Alexis Mac Allister | Nabil Bentaleb | Felix Nmecha
+20,synthetic,AM,Michael Olise | Lamine Yamal | Rayan Cherki | Luis Díaz | Jérémy Doku | Bruno Fernandes | Raphinha | Pedri | Rúben Neves | Sadio Mané | Azzedine Ounahi | Dani Olmo | Vitinha | Salem Al-Dawsari | Brahim Díaz | Thiago Almada | Martin Ødegaard | Declan Rice | Amad Diallo | Leroy Sané
+20,synthetic,W1,Désiré Doué | Yan Diomande | Kang-in Lee | Ousmane Dembélé | Bukayo Saka | Jamal Musiala | Arda Güler | Bradley Barcola | Marcus Rashford | Julián Alvarez | Nicolas Pépé | Florian Wirtz | Andreas Schjelderup | Noni Madueke | Kerem Aktürkoğlu | João Félix | Charles De Ketelaere | Mohamed Salah | Gabriel Martinelli | Julio Enciso
+20,synthetic,W2,Désiré Doué | Yan Diomande | Kang-in Lee | Ousmane Dembélé | Bukayo Saka | Jamal Musiala | Arda Güler | Bradley Barcola | Marcus Rashford | Julián Alvarez | Nicolas Pépé | Florian Wirtz | Andreas Schjelderup | Noni Madueke | Kerem Aktürkoğlu | João Félix | Charles De Ketelaere | Mohamed Salah | Gabriel Martinelli | Julio Enciso
+20,synthetic,ST,Lionel Messi | Kylian Mbappé | Vinícius Júnior | Harry Kane | Jens Petter Hauge | Marcus Thuram | Gonçalo Ramos | Ismael Saibari | Matheus Cunha | Deniz Undav | Nico Paz | Erling Haaland | Sultan Mandash | Lautaro Martínez | Alexander Sørloth | Ricardo Pepi | Julián Quiñones | Kai Havertz | Nicolas Jackson | Omar Marmoush
+20,real,GK,Joan García
+20,real,CB1,Cristian Romero
+20,real,CB2,Ramy Bensebaini
+20,real,FB1,Nuno Mendes
+20,real,FB2,Rayan Aït-Nouri
+20,real,DM,İsmail Yüksek
+20,real,CM,Frenkie de Jong
+20,real,AM,Michael Olise
+20,real,W1,Désiré Doué
+20,real,W2,Yan Diomande
+20,real,ST,Lionel Messi
+30,synthetic,GK,Joan García | Bart Verbruggen | Manuel Neuer | Alisson | Uğurcan Çakır | Mike Maignan | Robin Roefs | Edouard Mendy | Gerónimo Rulli | Dean Henderson | Matěj Kovář | Mike Penders | David Raya | Emiliano Martínez | Mark Flekken | Thibaut Courtois | Diogo Costa | Gregor Kobel | Bono | Alexander Nübel | Ederson | Mory Diaw | Jordan Pickford | Senne Lammens | Ronwen Williams | Oliver Baumann | José Sá | Juan Musso | Unai Simón | Brice Samba
+30,synthetic,CB1,Cristian Romero | Ramy Bensebaini | Shurandy Sambo | Jan Paul van Hecke | Chris Richards | Emmanuel Agbadou | Ibrahima Konaté | Waldemar Anton | Dayot Upamecano | José María Giménez | Ronald Araújo | Marc Pubill | Willian Pacho | Pau Cubarsí | Çağlar Söyüncü | Yasser Ibrahim | Hassan Al Tambakti | Abdukodir Khusanov | Kalidou Koulibaly | Maxence Lacroix | Min-jae Kim | Kevin Danso | Gabriel Magalhães | David Affengruber | Abdülkerim Bardakcı | Malick Thiaw | Piero Hincapié | Trevoh Chalobah | Manuel Akanji | Marquinhos
+30,synthetic,CB2,Cristian Romero | Ramy Bensebaini | Shurandy Sambo | Jan Paul van Hecke | Chris Richards | Emmanuel Agbadou | Ibrahima Konaté | Waldemar Anton | Dayot Upamecano | José María Giménez | Ronald Araújo | Marc Pubill | Willian Pacho | Pau Cubarsí | Çağlar Söyüncü | Yasser Ibrahim | Hassan Al Tambakti | Abdukodir Khusanov | Kalidou Koulibaly | Maxence Lacroix | Min-jae Kim | Kevin Danso | Gabriel Magalhães | David Affengruber | Abdülkerim Bardakcı | Malick Thiaw | Piero Hincapié | Trevoh Chalobah | Manuel Akanji | Marquinhos
+30,synthetic,FB1,Nuno Mendes | Rayan Aït-Nouri | João Cancelo | David Raum | Alejandro Grimaldo | Joshua Kimmich | Alphonso Davies | Achraf Hakimi | Alexander Freeman | Julian Ryerson | Pedro Porro | Konrad Laimer | Jules Koundé | Exequiel Palacios | Reece James | Antonee Robinson | Matheus Nunes | Eric García | Guéla Doué | Nathaniel Brown | Mert Müldür | Krépin Diatta | Edson Álvarez | Mats Wieffer | Noussair Mazraoui | Malo Gusto | Daniel Muñoz | Nico O'Reilly | Nico Schlotterbeck | Nélson Semedo
+30,synthetic,FB2,Nuno Mendes | Rayan Aït-Nouri | João Cancelo | David Raum | Alejandro Grimaldo | Joshua Kimmich | Alphonso Davies | Achraf Hakimi | Alexander Freeman | Julian Ryerson | Pedro Porro | Konrad Laimer | Jules Koundé | Exequiel Palacios | Reece James | Antonee Robinson | Matheus Nunes | Eric García | Guéla Doué | Nathaniel Brown | Mert Müldür | Krépin Diatta | Edson Álvarez | Mats Wieffer | Noussair Mazraoui | Malo Gusto | Daniel Muñoz | Nico O'Reilly | Nico Schlotterbeck | Nélson Semedo
+30,synthetic,DM,İsmail Yüksek | Elliot Anderson | Rodri | Moisés Caicedo | Aurélien Tchouaméni | Lamine Camara | João Neves | Christ Inao Oulaï | Casemiro | Rodrigo Bentancur | Amadou Onana | Éderson | Manuel Ugarte | N'Golo Kanté | Samir El Mourabet | Ayyoub Bouaddi | Idrissa Gueye | Ryan Christie | Jhon Arias | Martín Zubimendi | Nicolas Seiwald | Ibrahim Sangaré | Nasser Al-Dawsari | Richard Ríos | Neil El Aynaoui | Sander Berge | Kaishu Sano | Tyler Adams | Ao Tanaka | Diego Gómez
+30,synthetic,CM,Frenkie de Jong | Jude Bellingham | Warren Zaïre-Emery | Valentín Barco | Angelo Stiller | Youri Tielemans | Aleksandar Pavlović | Leon Goretzka | Ryan Gravenberch | Bruno Guimarães | Kobbie Mainoo | Luka Modrić | Iliman Ndiaye | Lucas Paquetá | Granit Xhaka | Hakan Çalhanoğlu | Giuliano Simeone | Alexis Mac Allister | Nabil Bentaleb | Felix Nmecha | Leandro Paredes | Teboho Mokoena | In-Beom Hwang | Quinten Timber | Manu Koné | Malik Tillman | Emam Ashour | Pedro Vite | Patrick Berg | Jean-Ricner Bellegarde
+30,synthetic,AM,Michael Olise | Lamine Yamal | Rayan Cherki | Luis Díaz | Jérémy Doku | Bruno Fernandes | Raphinha | Pedri | Rúben Neves | Sadio Mané | Azzedine Ounahi | Dani Olmo | Vitinha | Salem Al-Dawsari | Brahim Díaz | Thiago Almada | Martin Ødegaard | Declan Rice | Amad Diallo | Leroy Sané | Federico Valverde | Riyad Mahrez | Enzo Fernández | Pedro Neto | Yunus Akgün | Barış Alper Yılmaz | Tijjani Reijnders | Hans Vanaken | Pascal Groß | Morgan Rogers
+30,synthetic,W1,Désiré Doué | Yan Diomande | Kang-in Lee | Ousmane Dembélé | Bukayo Saka | Jamal Musiala | Arda Güler | Bradley Barcola | Marcus Rashford | Julián Alvarez | Nicolas Pépé | Florian Wirtz | Andreas Schjelderup | Noni Madueke | Kerem Aktürkoğlu | João Félix | Charles De Ketelaere | Mohamed Salah | Gabriel Martinelli | Julio Enciso | Christian Pulišić | Ibrahim Maza | Kenan Yıldız | Leandro Trossard | Jamie Leweling | Cody Gakpo | Ruben Vargas | Maghnes Akliouche | Bilal El Khannouss | Anthony Gordon
+30,synthetic,W2,Désiré Doué | Yan Diomande | Kang-in Lee | Ousmane Dembélé | Bukayo Saka | Jamal Musiala | Arda Güler | Bradley Barcola | Marcus Rashford | Julián Alvarez | Nicolas Pépé | Florian Wirtz | Andreas Schjelderup | Noni Madueke | Kerem Aktürkoğlu | João Félix | Charles De Ketelaere | Mohamed Salah | Gabriel Martinelli | Julio Enciso | Christian Pulišić | Ibrahim Maza | Kenan Yıldız | Leandro Trossard | Jamie Leweling | Cody Gakpo | Ruben Vargas | Maghnes Akliouche | Bilal El Khannouss | Anthony Gordon
+30,synthetic,ST,Lionel Messi | Kylian Mbappé | Vinícius Júnior | Harry Kane | Jens Petter Hauge | Marcus Thuram | Gonçalo Ramos | Ismael Saibari | Matheus Cunha | Deniz Undav | Nico Paz | Erling Haaland | Sultan Mandash | Lautaro Martínez | Alexander Sørloth | Ricardo Pepi | Julián Quiñones | Kai Havertz | Nicolas Jackson | Omar Marmoush | Darwin Núñez | José López | Ismaïla Sarr | Ollie Watkins | Ferran Torres | Noah Okafor | Mikel Oyarzabal | Patrik Schick | Nicolás González | Donyell Malen
+30,real,GK,Joan García
+30,real,CB1,Cristian Romero
+30,real,CB2,Ramy Bensebaini
+30,real,FB1,Nuno Mendes
+30,real,FB2,Rayan Aït-Nouri
+30,real,DM,İsmail Yüksek
+30,real,CM,Frenkie de Jong
+30,real,AM,Michael Olise
+30,real,W1,Désiré Doué
+30,real,W2,Yan Diomande
+30,real,ST,Lionel Messi

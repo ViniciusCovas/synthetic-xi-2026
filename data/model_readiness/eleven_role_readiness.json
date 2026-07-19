@@ -1,0 +1,23 @@
+{
+  "status": "eleven_role_resolution_evaluated",
+  "orientation_validated": true,
+  "selected_mapping": "low_is_left",
+  "players_with_role_evidence": 1015,
+  "players_stable_at_60pct": 813,
+  "scientific_role_eligible_players": 123,
+  "candidate_counts": {
+    "GK": 10,
+    "RB": 20,
+    "RCB": 11,
+    "LCB": 5,
+    "LB": 13,
+    "DM": 7,
+    "CM": 23,
+    "AM": 2,
+    "RW": 22,
+    "LW": 4,
+    "ST": 6
+  },
+  "eleven_role_gate_passed": true,
+  "rankings_allowed": false
+}

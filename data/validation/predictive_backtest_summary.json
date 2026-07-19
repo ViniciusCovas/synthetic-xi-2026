@@ -1,0 +1,56 @@
+{
+  "status": "internal_rolling_origin_backtest_complete",
+  "scope": "World Cup 2026 completed 90-minute matches",
+  "protocol": "each prediction uses only earlier tournament matches",
+  "evaluation_matches_per_model": 82,
+  "models": [
+    {
+      "model": "poisson_shrunk",
+      "matches": 82,
+      "brier_score": 0.5750231082280485,
+      "log_loss": 0.9738465243982752,
+      "ranked_probability_score": 0.20821524381449538,
+      "top1_accuracy": 0.5609756097560976,
+      "log_loss_skill_vs_naive": 0.09985013315856872
+    },
+    {
+      "model": "transparent_form",
+      "matches": 82,
+      "brier_score": 0.5841888341792215,
+      "log_loss": 0.9814621903847229,
+      "ranked_probability_score": 0.2095235122061464,
+      "top1_accuracy": 0.5609756097560976,
+      "log_loss_skill_vs_naive": 0.09281078912245855
+    },
+    {
+      "model": "dixon_coles_shrunk",
+      "matches": 82,
+      "brier_score": 0.5850476637678661,
+      "log_loss": 0.9893144231439256,
+      "ranked_probability_score": 0.20988600307113164,
+      "top1_accuracy": 0.5609756097560976,
+      "log_loss_skill_vs_naive": 0.08555278070375871
+    },
+    {
+      "model": "naive_base_rate",
+      "matches": 82,
+      "brier_score": 0.6512995226344757,
+      "log_loss": 1.0818715419193927,
+      "ranked_probability_score": 0.2434591900751871,
+      "top1_accuracy": 0.4634146341463415,
+      "log_loss_skill_vs_naive": 0.0
+    }
+  ],
+  "best_model_by_log_loss": "poisson_shrunk",
+  "best_non_naive_model": "poisson_shrunk",
+  "non_naive_beats_naive_log_loss": true,
+  "internal_temporal_validation_passed": true,
+  "external_pre_tournament_validation_passed": false,
+  "final_predictive_gate_passed": false,
+  "limitations": [
+    "small tournament sample",
+    "team histories begin inside the same tournament",
+    "no betting-market benchmark",
+    "not yet based on frozen pre-World-Cup player profiles"
+  ]
+}

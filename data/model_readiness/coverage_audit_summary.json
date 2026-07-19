@@ -1,0 +1,30 @@
+{
+  "status": "exact_fixture_coverage_audited",
+  "definition": "processed eligible fixture endpoints / expected official senior fixtures",
+  "eligible_players": 1062,
+  "windows": [
+    {
+      "window": "annual_current",
+      "eligible_players": 1062,
+      "players_with_expected_fixtures": 1062,
+      "players_passing_80pct": 120,
+      "pass_rate": 0.11299435028248588,
+      "median_fixture_coverage": 0.28205128205128205,
+      "p10_fixture_coverage": 0.08928571428571429
+    },
+    {
+      "window": "pre_world_cup",
+      "eligible_players": 1062,
+      "players_with_expected_fixtures": 1058,
+      "players_passing_80pct": 202,
+      "pass_rate": 0.1902071563088512,
+      "median_fixture_coverage": 0.21182983682983683,
+      "p10_fixture_coverage": 0.0
+    }
+  ],
+  "all_players_pass_current_window": false,
+  "all_players_pass_pre_world_cup_window": false,
+  "coverage_gate_passed": false,
+  "rankings_allowed": false,
+  "note": "Final rankings remain blocked until role and predictive gates also pass."
+}

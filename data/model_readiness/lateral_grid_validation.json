@@ -1,0 +1,17 @@
+{
+  "status": "lateral_grid_orientation_evaluated",
+  "orientation_validated": true,
+  "selected_mapping": "low_is_left",
+  "matched_anchor_players": 12,
+  "anchor_observations": 345,
+  "observation_agreement": 0.9739130434782609,
+  "player_majority_agreement": 1.0,
+  "minimum_requirements": {
+    "anchor_players": 5,
+    "observations": 15,
+    "agreement": 0.8
+  },
+  "manual_anchor_source": "data/reference/lateral_role_anchors.csv",
+  "rankings_allowed": false,
+  "note": "Left/right labels may be used only when orientation_validated is true. The audit depends on a versioned, human-reviewed anchor list."
+}

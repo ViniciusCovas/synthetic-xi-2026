@@ -1,0 +1,10 @@
+{
+  "status": "v0_3_calibration_quality_evaluated",
+  "selected_shared_tempo_sigma": 0.19999999999999998,
+  "absolute_goal_error": 0.027593617021276273,
+  "absolute_shot_error": 0.4937710042142065,
+  "absolute_shot_on_target_error": 0.405741052523382,
+  "absolute_zero_zero_error": 0.0008680851063829764,
+  "engineering_gate_passed": true,
+  "final_scientific_gate_passed": false
+}

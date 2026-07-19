@@ -1,0 +1,55 @@
+{
+  "status": "nested_uncertainty_complete",
+  "outer_parameter_worlds": 120,
+  "inner_matches_per_world": 80,
+  "total_matches": 9600,
+  "intervals": {
+    "synthetic_win_probability": {
+      "mean": 0.26385416666666667,
+      "median": 0.2625,
+      "p025": 0.1746875,
+      "p10": 0.2,
+      "p90": 0.3375,
+      "p975": 0.36281249999999987
+    },
+    "draw_probability": {
+      "mean": 0.25135416666666666,
+      "median": 0.25,
+      "p025": 0.1746875,
+      "p10": 0.2,
+      "p90": 0.3137500000000001,
+      "p975": 0.3625
+    },
+    "real_win_probability": {
+      "mean": 0.4847916666666666,
+      "median": 0.48124999999999996,
+      "p025": 0.375,
+      "p10": 0.4,
+      "p90": 0.5625,
+      "p975": 0.6
+    },
+    "mean_total_goals": {
+      "mean": 2.8490624999999996,
+      "median": 2.8499999999999996,
+      "p025": 2.3496875,
+      "p10": 2.5725000000000002,
+      "p90": 3.1650000000000005,
+      "p975": 3.3503125
+    }
+  },
+  "probability_real_xi_more_likely_than_synthetic": 0.9833333333333333,
+  "uncertainty_scope": [
+    "player-profile uncertainty",
+    "coordination sensitivity",
+    "shared tempo",
+    "ability and conversion scales",
+    "match randomness"
+  ],
+  "not_yet_included": [
+    "league-strength posterior",
+    "role-classification posterior",
+    "injury and lineup uncertainty",
+    "externally estimated chemistry"
+  ],
+  "final_scientific_gate_passed": false
+}

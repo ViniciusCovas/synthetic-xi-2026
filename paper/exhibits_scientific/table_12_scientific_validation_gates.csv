@@ -1,0 +1,10 @@
+gate,passed
+computational_reproducibility,True
+aggregate_event_calibration_v0_3,True
+per_player_window_coverage,False
+lateral_orientation,True
+definitive_eleven_roles,True
+internal_rolling_origin_prediction,True
+external_pre_tournament_prediction,False
+topn_and_coordination_sensitivity,True
+nested_parameter_uncertainty,True

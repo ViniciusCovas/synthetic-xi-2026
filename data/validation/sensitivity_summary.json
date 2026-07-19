@@ -1,0 +1,29 @@
+{
+  "status": "topn_and_coordination_sensitivity_complete",
+  "scenarios": 12,
+  "simulations_per_scenario": 1500,
+  "baseline_top_n": 20,
+  "baseline": {
+    "top_n": 20,
+    "scenario": "equal_full_coordination",
+    "synthetic_coordination_factor": 1.0,
+    "real_coordination_factor": 1.0,
+    "simulations": 1500,
+    "shared_tempo_sigma": 0.19999999999999998,
+    "synthetic_win_probability": 0.25866666666666666,
+    "draw_probability": 0.25066666666666665,
+    "real_win_probability": 0.49066666666666664,
+    "mean_total_goals": 2.937333333333333
+  },
+  "ranges": {
+    "synthetic_win_min": 0.232,
+    "synthetic_win_max": 0.3433333333333333,
+    "draw_min": 0.234,
+    "draw_max": 0.2673333333333333,
+    "real_win_min": 0.4,
+    "real_win_max": 0.5306666666666666
+  },
+  "robust_direction": true,
+  "final_scientific_gate_passed": false,
+  "note": "Coordination factors are declared sensitivity assumptions, not estimated chemistry parameters."
+}
