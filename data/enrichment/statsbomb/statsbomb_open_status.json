@@ -1,0 +1,13 @@
+{
+  "status": "statsbomb_open_data_sync_completed",
+  "generated_at_utc": "2026-07-19T15:38:54.017805+00:00",
+  "competitions_available": 80,
+  "development_competitions_selected": 2,
+  "matches_catalogued": 115,
+  "sample_matches_ingested": 3,
+  "sample_events": 10137,
+  "sample_team_match_feature_rows": 6,
+  "licensed_world_cup_2026_data_available": false,
+  "methodological_role": "development and external spatial validation only; never merged into Synthetic XI v1.0 player rankings without a separate harmonisation study",
+  "attribution_required": "Hudl StatsBomb Open Data"
+}

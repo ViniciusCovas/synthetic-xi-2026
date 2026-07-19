@@ -1,0 +1,8 @@
+{
+  "status": "fixture_context_catalog_built",
+  "generated_at_utc": "2026-07-19T15:38:48.365182+00:00",
+  "fixtures": 102,
+  "fixtures_with_venue_metadata": 0,
+  "fixtures_missing_venue_metadata": 102,
+  "context_in_main_v1": false
+}

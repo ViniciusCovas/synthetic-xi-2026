@@ -1,0 +1,7 @@
+{
+  "status": "waiting_for_daily_reset",
+  "fixtures_total": 102,
+  "daily_limit_reported": 7500,
+  "quota_remaining_reported": 5,
+  "network_calls": 0
+}

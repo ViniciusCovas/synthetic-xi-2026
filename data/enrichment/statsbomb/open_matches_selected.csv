@@ -1,0 +1,116 @@
+match_id,competition_id,season_id,competition_name,season_name,match_date,kick_off,home_team,away_team,home_score,away_score,stadium,referee,data_version,shot_fidelity_version,xy_fidelity_version
+3930166,55,282,UEFA Euro,2024,2024-06-18,19:00:00.000,Portugal,Czech Republic,2,1,Red Bull Arena,Marco Guida,1.1.0,2,2
+3930159,55,282,UEFA Euro,2024,2024-06-15,13:00:00.000,Hungary,Switzerland,1,3,RheinEnergieStadion,Slavko Vinčić,1.1.0,2,2
+3930163,55,282,UEFA Euro,2024,2024-06-16,19:00:00.000,Serbia,England,0,1,VELTINS-Arena,Daniele Orsato,1.1.0,2,2
+3930181,55,282,UEFA Euro,2024,2024-06-25,19:00:00.000,England,Slovenia,0,0,RheinEnergieStadion,Clément Turpin,1.1.0,2,2
+3930178,55,282,UEFA Euro,2024,2024-06-24,19:00:00.000,Croatia,Italy,1,1,Red Bull Arena,Danny Desmond Makkelie,1.1.0,2,2
+3930160,55,282,UEFA Euro,2024,2024-06-15,16:00:00.000,Spain,Croatia,3,0,Olympiastadion Berlin,Michael Oliver,1.1.0,2,2
+3930170,55,282,UEFA Euro,2024,2024-06-20,13:00:00.000,Slovenia,Serbia,1,1,Allianz Arena,István Kovács,1.1.0,2,2
+3938643,55,282,UEFA Euro,2024,2024-06-25,16:00:00.000,France,Poland,1,1,Signal-Iduna-Park,Marco Guida,1.1.0,2,2
+3938641,55,282,UEFA Euro,2024,2024-06-21,16:00:00.000,Poland,Austria,1,3,Olympiastadion Berlin,Halil Umut Meler,1.1.0,2,2
+3938642,55,282,UEFA Euro,2024,2024-06-22,13:00:00.000,Georgia,Czech Republic,1,1,Volksparkstadion,Daniel Siebert,1.1.0,2,2
+3938639,55,282,UEFA Euro,2024,2024-06-18,16:00:00.000,Turkey,Georgia,3,1,Signal-Iduna-Park,Facundo Tello Figueroa,1.1.0,2,2
+3938638,55,282,UEFA Euro,2024,2024-06-17,13:00:00.000,Romania,Ukraine,3,0,Allianz Arena,Glenn Nyberg,1.1.0,2,2
+3938640,55,282,UEFA Euro,2024,2024-06-21,13:00:00.000,Slovakia,Ukraine,1,2,Merkur Spiel-Arena,Michael Oliver,1.1.0,2,2
+3938637,55,282,UEFA Euro,2024,2024-06-16,13:00:00.000,Poland,Netherlands,1,2,Volksparkstadion,Artur Manuel Ribeiro Soares Dias,1.1.0,2,2
+3938644,55,282,UEFA Euro,2024,2024-06-26,19:00:00.000,Georgia,Portugal,2,0,VELTINS-Arena,Sandro Schärer,1.1.0,2,2
+3941019,55,282,UEFA Euro,2024,2024-07-01,16:00:00.000,France,Belgium,1,0,Merkur Spiel-Arena,Glenn Nyberg,1.1.0,2,2
+3942227,55,282,UEFA Euro,2024,2024-07-06,16:00:00.000,England,Switzerland,1,1,Merkur Spiel-Arena,Daniele Orsato,1.1.0,2,2
+3930174,55,282,UEFA Euro,2024,2024-06-22,16:00:00.000,Turkey,Portugal,0,3,Signal-Iduna-Park,Felix Zwayer,1.1.0,2,2
+3930162,55,282,UEFA Euro,2024,2024-06-16,16:00:00.000,Slovenia,Denmark,1,1,MHPArena,Sandro Schärer,1.1.0,2,2
+3930176,55,282,UEFA Euro,2024,2024-06-23,19:00:00.000,Switzerland,Germany,1,1,Deutsche Bank Park,Daniele Orsato,1.1.0,2,2
+3930169,55,282,UEFA Euro,2024,2024-06-19,19:00:00.000,Scotland,Switzerland,1,1,RheinEnergieStadion,Ivan Kružliak,1.1.0,2,2
+3942819,55,282,UEFA Euro,2024,2024-07-10,19:00:00.000,Netherlands,England,1,2,Signal-Iduna-Park,Felix Zwayer,1.1.0,2,2
+3943043,55,282,UEFA Euro,2024,2024-07-14,19:00:00.000,Spain,England,2,1,Olympiastadion Berlin,François Letexier,1.1.0,2,2
+3942752,55,282,UEFA Euro,2024,2024-07-09,19:00:00.000,Spain,France,2,1,Allianz Arena,Slavko Vinčić,1.1.0,2,2
+3942382,55,282,UEFA Euro,2024,2024-07-06,19:00:00.000,Netherlands,Turkey,2,1,Olympiastadion Berlin,Clément Turpin,1.1.0,2,2
+3942349,55,282,UEFA Euro,2024,2024-07-05,19:00:00.000,Portugal,France,0,0,Volksparkstadion,Michael Oliver,1.1.0,2,2
+3930180,55,282,UEFA Euro,2024,2024-06-25,16:00:00.000,Netherlands,Austria,2,3,Olympiastadion Berlin,Ivan Kružliak,1.1.0,2,2
+3930171,55,282,UEFA Euro,2024,2024-06-20,16:00:00.000,Denmark,England,1,1,Deutsche Bank Park,Artur Manuel Ribeiro Soares Dias,1.1.0,2,2
+3942226,55,282,UEFA Euro,2024,2024-07-05,16:00:00.000,Spain,Germany,2,1,MHPArena,Anthony Taylor,1.1.0,2,2
+3938645,55,282,UEFA Euro,2024,2024-06-26,16:00:00.000,Ukraine,Belgium,0,0,MHPArena,Anthony Taylor,1.1.0,2,2
+3930184,55,282,UEFA Euro,2024,2024-06-26,22:00:00.000,Czech Republic,Turkey,1,2,Volksparkstadion,István Kovács,1.1.0,2,2
+3941022,55,282,UEFA Euro,2024,2024-07-02,19:00:00.000,Austria,Turkey,1,2,Red Bull Arena,Artur Manuel Ribeiro Soares Dias,1.1.0,2,2
+3941021,55,282,UEFA Euro,2024,2024-07-02,16:00:00.000,Romania,Netherlands,0,3,Allianz Arena,Felix Zwayer,1.1.0,2,2
+3941020,55,282,UEFA Euro,2024,2024-07-01,19:00:00.000,Portugal,Slovenia,0,0,Deutsche Bank Park,Daniele Orsato,1.1.0,2,2
+3941018,55,282,UEFA Euro,2024,2024-06-30,19:00:00.000,Spain,Georgia,4,1,RheinEnergieStadion,François Letexier,1.1.0,2,2
+3941017,55,282,UEFA Euro,2024,2024-06-30,16:00:00.000,England,Slovakia,2,1,VELTINS-Arena,Halil Umut Meler,1.1.0,2,2
+3930182,55,282,UEFA Euro,2024,2024-06-25,19:00:00.000,Denmark,Serbia,0,0,Allianz Arena,François Letexier,1.1.0,2,2
+3930179,55,282,UEFA Euro,2024,2024-06-24,19:00:00.000,Albania,Spain,0,1,Merkur Spiel-Arena,Glenn Nyberg,1.1.0,2,2
+3940983,55,282,UEFA Euro,2024,2024-06-29,19:00:00.000,Germany,Denmark,2,0,Signal-Iduna-Park,Michael Oliver,1.1.0,2,2
+3940878,55,282,UEFA Euro,2024,2024-06-29,16:00:00.000,Switzerland,Italy,2,0,Olympiastadion Berlin,Szymon Marciniak,1.1.0,2,2
+3930177,55,282,UEFA Euro,2024,2024-06-23,19:00:00.000,Scotland,Hungary,0,1,MHPArena,Facundo Tello Figueroa,1.1.0,2,2
+3930173,55,282,UEFA Euro,2024,2024-06-21,19:00:00.000,Netherlands,France,0,0,Trainingszentrum RB Leipzig Platz 1,Anthony Taylor,1.1.0,2,2
+3930172,55,282,UEFA Euro,2024,2024-06-20,19:00:00.000,Spain,Italy,1,0,VELTINS-Arena,Slavko Vinčić,1.1.0,2,2
+3930167,55,282,UEFA Euro,2024,2024-06-19,13:00:00.000,Croatia,Albania,2,2,Volksparkstadion,François Letexier,1.1.0,2,2
+3930168,55,282,UEFA Euro,2024,2024-06-19,16:00:00.000,Germany,Hungary,2,0,MHPArena,Danny Desmond Makkelie,1.1.0,2,2
+3930165,55,282,UEFA Euro,2024,2024-06-17,19:00:00.000,Austria,France,0,1,Merkur Spiel-Arena,Jesús Gil Manzano,1.1.0,2,2
+3930164,55,282,UEFA Euro,2024,2024-06-17,16:00:00.000,Belgium,Slovakia,0,1,Deutsche Bank Park,Halil Umut Meler,1.1.0,2,2
+3930161,55,282,UEFA Euro,2024,2024-06-15,19:00:00.000,Italy,Albania,2,1,Signal-Iduna-Park,Felix Zwayer,1.1.0,2,2
+3930183,55,282,UEFA Euro,2024,2024-06-26,16:00:00.000,Slovakia,Romania,1,1,Deutsche Bank Park,Daniel Siebert,1.1.0,2,2
+3930175,55,282,UEFA Euro,2024,2024-06-22,19:00:00.000,Belgium,Romania,2,0,RheinEnergieStadion,Szymon Marciniak,1.1.0,2,2
+3930158,55,282,UEFA Euro,2024,2024-06-14,19:00:00.000,Germany,Scotland,5,1,Allianz Arena,Clément Turpin,1.1.0,2,2
+3857276,43,106,FIFA World Cup,2022,2022-12-01,15:00:00.000,Canada,Morocco,1,2,Al Thumama Stadium,Raphael Claus,1.1.0,2,2
+3857271,43,106,FIFA World Cup,2022,2022-11-21,13:00:00.000,England,Iran,6,2,Sheikh Khalifa International Stadium,Raphael Claus,1.1.0,2,2
+3857296,43,106,FIFA World Cup,2022,2022-12-01,15:00:00.000,Croatia,Belgium,0,0,Ahmad bin Ali Stadium,Anthony Taylor,1.1.0,2,2
+3857274,43,106,FIFA World Cup,2022,2022-11-25,16:00:00.000,Netherlands,Ecuador,1,1,Sheikh Khalifa International Stadium,Mustapha Ghorbal,1.1.0,2,2
+3857255,43,106,FIFA World Cup,2022,2022-12-01,19:00:00.000,Japan,Spain,2,1,Sheikh Khalifa International Stadium,Victor Miguel de Freitas Gomes,1.1.0,2,2
+3857272,43,106,FIFA World Cup,2022,2022-11-25,19:00:00.000,England,United States,0,0,Al Bayt Stadium,Jesús Valenzuela Sáez,1.1.0,2,2
+3857278,43,106,FIFA World Cup,2022,2022-11-29,19:00:00.000,Iran,United States,0,1,Al Thumama Stadium,Antonio Miguel Mateu Lahoz,1.1.0,2,2
+3857277,43,106,FIFA World Cup,2022,2022-11-23,10:00:00.000,Morocco,Croatia,0,0,Al Bayt Stadium,Fernando Andrés Rapallini,1.1.0,2,2
+3857273,43,106,FIFA World Cup,2022,2022-11-25,10:00:00.000,Wales,Iran,0,2,Ahmad bin Ali Stadium,Mario Alberto Escobar Toca,1.1.0,2,2
+3857275,43,106,FIFA World Cup,2022,2022-11-30,15:00:00.000,Tunisia,France,1,0,Education City Stadium ,Matthew Conger,1.1.0,2,2
+3857261,43,106,FIFA World Cup,2022,2022-11-29,19:00:00.000,Wales,England,0,3,Ahmad bin Ali Stadium,Slavko Vinčić,1.1.0,2,2
+3857290,43,106,FIFA World Cup,2022,2022-11-24,10:00:00.000,Switzerland,Cameroon,1,0,Al Janoub Stadium   ,Facundo Tello Figueroa,1.1.0,2,2
+3857298,43,106,FIFA World Cup,2022,2022-11-24,16:00:00.000,Portugal,Ghana,3,2,Stadium 974,Ismail Elfath,1.1.0,2,2
+3857285,43,106,FIFA World Cup,2022,2022-11-21,16:00:00.000,Senegal,Netherlands,0,2,Al Thumama Stadium,Wilton Pereira Sampaio,1.1.0,2,2
+3857282,43,106,FIFA World Cup,2022,2022-11-21,19:00:00.000,United States,Wales,1,1,Ahmad bin Ali Stadium,Abdulrahman Ibrahim Al Jassim,1.1.0,2,2
+3857297,43,106,FIFA World Cup,2022,2022-11-26,13:00:00.000,Poland,Saudi Arabia,2,0,Education City Stadium ,Wilton Pereira Sampaio,1.1.0,2,2
+3857294,43,106,FIFA World Cup,2022,2022-11-29,15:00:00.000,Netherlands,Qatar,2,0,Al Bayt Stadium,Bakary Papa Gassama,1.1.0,2,2
+3857266,43,106,FIFA World Cup,2022,2022-11-26,16:00:00.000,France,Denmark,2,1,Stadium 974,Szymon Marciniak,1.1.0,2,2
+3857284,43,106,FIFA World Cup,2022,2022-11-23,13:00:00.000,Germany,Japan,1,2,Sheikh Khalifa International Stadium,Ivan Arcides Barton Cisneros,1.1.0,2,2
+3857254,43,106,FIFA World Cup,2022,2022-11-22,13:00:00.000,Denmark,Tunisia,0,0,Education City Stadium ,César Arturo Ramos Palazuelos,1.1.0,2,2
+3857265,43,106,FIFA World Cup,2022,2022-11-22,16:00:00.000,Mexico,Poland,0,0,Stadium 974,Chris Beath,1.1.0,2,2
+3857301,43,106,FIFA World Cup,2022,2022-11-25,13:00:00.000,Qatar,Senegal,1,3,Al Thumama Stadium,Antonio Miguel Mateu Lahoz,1.1.0,2,2
+3857268,43,106,FIFA World Cup,2022,2022-11-23,19:00:00.000,Belgium,Canada,1,0,Ahmad bin Ali Stadium,Janny Sikazwe,1.1.0,2,2
+3857269,43,106,FIFA World Cup,2022,2022-11-28,16:00:00.000,Brazil,Switzerland,1,0,Stadium 974,Ivan Arcides Barton Cisneros,1.1.0,2,2
+3869321,43,106,FIFA World Cup,2022,2022-12-09,19:00:00.000,Netherlands,Argentina,2,2,Lusail Stadium,Antonio Miguel Mateu Lahoz,1.1.0,2,2
+3857292,43,106,FIFA World Cup,2022,2022-12-01,19:00:00.000,Costa Rica,Germany,2,4,Al Bayt Stadium,Stéphanie Frappart,1.1.0,2,2
+3857295,43,106,FIFA World Cup,2022,2022-11-27,10:00:00.000,Japan,Costa Rica,0,1,Ahmad bin Ali Stadium,Michael Oliver,1.1.0,2,2
+3869685,43,106,FIFA World Cup,2022,2022-12-18,17:00:00.000,Argentina,France,3,3,Lusail Stadium,Szymon Marciniak,1.1.0,2,2
+3869684,43,106,FIFA World Cup,2022,2022-12-17,17:00:00.000,Croatia,Morocco,2,1,Sheikh Khalifa International Stadium,Abdulrahman Ibrahim Al Jassim,1.1.0,2,2
+3857256,43,106,FIFA World Cup,2022,2022-12-02,19:00:00.000,Serbia,Switzerland,2,3,Stadium 974,Fernando Andrés Rapallini,1.1.0,2,2
+3869151,43,106,FIFA World Cup,2022,2022-12-03,21:00:00.000,Argentina,Australia,2,1,Ahmad bin Ali Stadium,Szymon Marciniak,1.1.0,2,2
+3857257,43,106,FIFA World Cup,2022,2022-11-30,15:00:00.000,Australia,Denmark,1,0,Al Janoub Stadium   ,Mustapha Ghorbal,1.1.0,2,2
+3857258,43,106,FIFA World Cup,2022,2022-11-24,19:00:00.000,Brazil,Serbia,2,0,Lusail Stadium,Alireza Faghani,1.1.0,2,2
+3857288,43,106,FIFA World Cup,2022,2022-11-26,10:00:00.000,Tunisia,Australia,0,1,Al Janoub Stadium   ,Daniel Siebert,1.1.0,2,2
+3857267,43,106,FIFA World Cup,2022,2022-11-29,15:00:00.000,Ecuador,Senegal,1,2,Sheikh Khalifa International Stadium,Clément Turpin,1.1.0,2,2
+3857287,43,106,FIFA World Cup,2022,2022-11-24,13:00:00.000,Uruguay,South Korea,0,0,Education City Stadium ,Clément Turpin,1.1.0,2,2
+3869486,43,106,FIFA World Cup,2022,2022-12-10,17:00:00.000,Morocco,Portugal,1,0,Al Thumama Stadium,Facundo Tello Figueroa,1.1.0,2,2
+3857260,43,106,FIFA World Cup,2022,2022-11-30,19:00:00.000,Saudi Arabia,Mexico,1,2,Lusail Stadium,Michael Oliver,1.1.0,2,2
+3857264,43,106,FIFA World Cup,2022,2022-11-30,19:00:00.000,Poland,Argentina,0,2,Stadium 974,Danny Desmond Makkelie,1.1.0,2,2
+3857289,43,106,FIFA World Cup,2022,2022-11-26,19:00:00.000,Argentina,Mexico,2,0,Lusail Stadium,Daniele Orsato,1.1.0,2,2
+3869254,43,106,FIFA World Cup,2022,2022-12-06,21:00:00.000,Portugal,Switzerland,6,1,Lusail Stadium,César Arturo Ramos Palazuelos,1.1.0,2,2
+3869118,43,106,FIFA World Cup,2022,2022-12-04,21:00:00.000,England,Senegal,3,0,Al Bayt Stadium,Ivan Arcides Barton Cisneros,1.1.0,2,2
+3869519,43,106,FIFA World Cup,2022,2022-12-13,21:00:00.000,Argentina,Croatia,3,0,Lusail Stadium,Daniele Orsato,1.1.0,2,2
+3869354,43,106,FIFA World Cup,2022,2022-12-10,21:00:00.000,England,France,1,2,Al Bayt Stadium,Wilton Pereira Sampaio,1.1.0,2,2
+3869552,43,106,FIFA World Cup,2022,2022-12-14,21:00:00.000,France,Morocco,2,0,Al Bayt Stadium,César Arturo Ramos Palazuelos,1.1.0,2,2
+3869420,43,106,FIFA World Cup,2022,2022-12-09,17:00:00.000,Croatia,Brazil,1,1,Education City Stadium ,Michael Oliver,1.1.0,2,2
+3869220,43,106,FIFA World Cup,2022,2022-12-06,17:00:00.000,Morocco,Spain,0,0,Education City Stadium ,Fernando Andrés Rapallini,1.1.0,2,2
+3869219,43,106,FIFA World Cup,2022,2022-12-05,17:00:00.000,Japan,Croatia,1,1,Al Janoub Stadium   ,Ismail Elfath,1.1.0,2,2
+3869253,43,106,FIFA World Cup,2022,2022-12-05,21:00:00.000,Brazil,South Korea,4,1,Stadium 974,Clément Turpin,1.1.0,2,2
+3869152,43,106,FIFA World Cup,2022,2022-12-04,17:00:00.000,France,Poland,3,1,Al Thumama Stadium,Jesús Valenzuela Sáez,1.1.0,2,2
+3869117,43,106,FIFA World Cup,2022,2022-12-03,17:00:00.000,Netherlands,United States,3,1,Sheikh Khalifa International Stadium,Wilton Pereira Sampaio,1.1.0,2,2
+3857270,43,106,FIFA World Cup,2022,2022-11-28,19:00:00.000,Portugal,Uruguay,2,0,Lusail Stadium,Alireza Faghani,1.1.0,2,2
+3857263,43,106,FIFA World Cup,2022,2022-11-27,19:00:00.000,Spain,Germany,1,1,Al Bayt Stadium,Danny Desmond Makkelie,1.1.0,2,2
+3857259,43,106,FIFA World Cup,2022,2022-11-28,10:00:00.000,Cameroon,Serbia,3,3,Al Janoub Stadium   ,Mohamed Abdulla Hassan Mohd,1.1.0,2,2
+3857283,43,106,FIFA World Cup,2022,2022-11-27,13:00:00.000,Belgium,Morocco,0,2,Al Thumama Stadium,César Arturo Ramos Palazuelos,1.1.0,2,2
+3857286,43,106,FIFA World Cup,2022,2022-11-20,16:00:00.000,Qatar,Ecuador,0,2,Al Bayt Stadium,Daniele Orsato,1.1.0,2,2
+3857300,43,106,FIFA World Cup,2022,2022-11-22,10:00:00.000,Argentina,Saudi Arabia,1,2,Lusail Stadium,Slavko Vinčić,1.1.0,2,2
+3857299,43,106,FIFA World Cup,2022,2022-11-28,13:00:00.000,South Korea,Ghana,2,3,Education City Stadium ,Anthony Taylor,1.1.0,2,2
+3857293,43,106,FIFA World Cup,2022,2022-12-02,15:00:00.000,Ghana,Uruguay,0,2,Al Janoub Stadium   ,Daniel Siebert,1.1.0,2,2
+3857291,43,106,FIFA World Cup,2022,2022-11-23,16:00:00.000,Spain,Costa Rica,7,0,Al Thumama Stadium,,1.1.0,2,2
+3857281,43,106,FIFA World Cup,2022,2022-11-27,16:00:00.000,Croatia,Canada,4,1,Sheikh Khalifa International Stadium,Andrés Matonte,1.1.0,2,2
+3857280,43,106,FIFA World Cup,2022,2022-12-02,19:00:00.000,Cameroon,Brazil,1,0,Lusail Stadium,Ismail Elfath,1.1.0,2,2
+3857279,43,106,FIFA World Cup,2022,2022-11-22,19:00:00.000,France,Australia,4,1,Al Janoub Stadium   ,Victor Miguel de Freitas Gomes,1.1.0,2,2
+3857262,43,106,FIFA World Cup,2022,2022-12-02,15:00:00.000,South Korea,Portugal,2,1,Education City Stadium ,Facundo Tello Figueroa,1.1.0,2,2
