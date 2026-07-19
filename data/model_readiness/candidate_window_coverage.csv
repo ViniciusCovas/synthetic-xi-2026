@@ -399,8 +399,8 @@ player_id,player_name,world_cup_team,squad_position,reported_minutes,benchmark_p
 2649,Ahmed Fatouh,Egypt,Defender,2382.0,True,pre_world_cup,47,14,0.2978723404255319,33,12,720.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark
 2654,Mohamed Hany,Egypt,Defender,4015.0,True,annual_current,48,48,1.0,0,42,3689.0,4015.0,0.9188044831880448,0.9188044831880448,True,provider aggregate minutes plus exact fixture inventory,benchmark
 2654,Mohamed Hany,Egypt,Defender,4015.0,True,pre_world_cup,43,43,1.0,0,37,3209.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator,benchmark
-2656,Karim Hafez,Egypt,Defender,1824.0,True,annual_current,46,44,0.9565217391304348,2,36,1806.0,1824.0,0.9901315789473684,0.9901315789473684,True,provider aggregate minutes plus exact fixture inventory,benchmark
-2656,Karim Hafez,Egypt,Defender,1824.0,True,pre_world_cup,41,39,0.951219512195122,2,31,1634.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator,benchmark
+2656,Karim Hafez,Egypt,Defender,1824.0,True,annual_current,46,45,0.9782608695652174,1,36,1806.0,1824.0,0.9901315789473684,0.9901315789473684,True,provider aggregate minutes plus exact fixture inventory,benchmark
+2656,Karim Hafez,Egypt,Defender,1824.0,True,pre_world_cup,41,40,0.975609756097561,1,31,1634.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator,benchmark
 2660,Nabil Emad Dunga,Egypt,Midfielder,1817.0,True,annual_current,79,22,0.2784810126582278,57,9,286.0,1817.0,0.1574023115024766,0.1574023115024766,False,provider aggregate minutes plus exact fixture inventory,benchmark
 2660,Nabil Emad Dunga,Egypt,Midfielder,1817.0,True,pre_world_cup,74,17,0.2297297297297297,57,4,286.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark
 2664,Trézéguet,Egypt,Attacker,3042.0,True,annual_current,48,48,1.0,0,40,2752.0,3042.0,0.9046679815910584,0.9046679815910584,True,provider aggregate minutes plus exact fixture inventory,benchmark
@@ -627,8 +627,8 @@ player_id,player_name,world_cup_team,squad_position,reported_minutes,benchmark_p
 16805,Rami Rabia,Egypt,Defender,1730.0,False,pre_world_cup,33,7,0.2121212121212121,26,7,471.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,avatar_top30_pool
 16813,Hamdi Fathy,Egypt,Defender,1853.0,True,annual_current,34,16,0.4705882352941176,18,12,886.0,1853.0,0.478143550998381,0.478143550998381,False,provider aggregate minutes plus exact fixture inventory,benchmark
 16813,Hamdi Fathy,Egypt,Defender,1853.0,True,pre_world_cup,29,11,0.3793103448275862,18,8,645.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark
-16841,Mohanad Lasheen,Egypt,Midfielder,3638.0,True,annual_current,54,51,0.9444444444444444,3,43,3237.0,3638.0,0.8897746014293568,0.8897746014293568,True,provider aggregate minutes plus exact fixture inventory,benchmark
-16841,Mohanad Lasheen,Egypt,Midfielder,3638.0,True,pre_world_cup,49,46,0.9387755102040816,3,39,2878.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator,benchmark
+16841,Mohanad Lasheen,Egypt,Midfielder,3638.0,True,annual_current,54,52,0.9629629629629628,2,43,3237.0,3638.0,0.8897746014293568,0.8897746014293568,True,provider aggregate minutes plus exact fixture inventory,benchmark
+16841,Mohanad Lasheen,Egypt,Midfielder,3638.0,True,pre_world_cup,49,47,0.9591836734693876,2,39,2878.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator,benchmark
 16871,Ahmed Zizo,Egypt,Attacker,2298.0,True,annual_current,48,48,1.0,0,38,2120.0,2298.0,0.9225413402959096,0.9225413402959096,True,provider aggregate minutes plus exact fixture inventory,benchmark
 16871,Ahmed Zizo,Egypt,Attacker,2298.0,True,pre_world_cup,43,43,1.0,0,33,2056.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator,benchmark
 17269,Emam Ashour,Egypt,Midfielder,2153.0,True,annual_current,48,48,1.0,0,30,2015.0,2153.0,0.9359033906177426,0.9359033906177426,True,provider aggregate minutes plus exact fixture inventory,benchmark
@@ -765,8 +765,8 @@ player_id,player_name,world_cup_team,squad_position,reported_minutes,benchmark_p
 22224,Gabriel Magalhães,Brazil,Defender,6241.0,True,pre_world_cup,66,66,1.0,0,55,4300.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator,benchmark_and_avatar
 22236,Rafael Leão,Portugal,Midfielder,2271.0,True,annual_current,46,46,1.0,0,37,2127.0,2271.0,0.9365918097754292,0.9365918097754292,True,provider aggregate minutes plus exact fixture inventory,benchmark
 22236,Rafael Leão,Portugal,Midfielder,2271.0,True,pre_world_cup,41,41,1.0,0,32,1966.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator,benchmark
-24810,J. Córdoba,Colombia,Attacker,3377.0,True,annual_current,37,10,0.2702702702702703,27,10,473.0,3377.0,0.1400651465798045,0.1400651465798045,False,provider aggregate minutes plus exact fixture inventory,benchmark
-24810,J. Córdoba,Colombia,Attacker,3377.0,True,pre_world_cup,33,6,0.1818181818181818,27,5,373.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark
+24810,J. Córdoba,Colombia,Attacker,3377.0,True,annual_current,37,10,0.2702702702702703,27,11,563.0,3377.0,0.1667160201362156,0.1667160201362156,False,provider aggregate minutes plus exact fixture inventory,benchmark
+24810,J. Córdoba,Colombia,Attacker,3377.0,True,pre_world_cup,33,6,0.1818181818181818,27,6,463.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark
 24845,J. Ryerson,Norway,Defender,4416.0,True,annual_current,53,53,1.0,0,51,3290.0,4416.0,0.7450181159420289,0.7450181159420289,False,provider aggregate minutes plus exact fixture inventory,benchmark_and_avatar
 24845,J. Ryerson,Norway,Defender,4416.0,True,pre_world_cup,52,52,1.0,0,50,3435.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator,benchmark_and_avatar
 24866,Douglas Santos,Brazil,Defender,2733.0,True,annual_current,37,10,0.2702702702702703,27,9,711.0,2733.0,0.2601536772777168,0.2601536772777168,False,provider aggregate minutes plus exact fixture inventory,benchmark_and_avatar
@@ -1271,8 +1271,8 @@ player_id,player_name,world_cup_team,squad_position,reported_minutes,benchmark_p
 94541,J. Bell,New Zealand,Midfielder,4331.0,True,pre_world_cup,32,17,0.53125,15,16,1374.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark
 95460,A. Arce,Paraguay,Attacker,3335.0,True,annual_current,71,15,0.2112676056338028,56,8,71.0,3335.0,0.0212893553223388,0.0212893553223388,False,provider aggregate minutes plus exact fixture inventory,benchmark
 95460,A. Arce,Paraguay,Attacker,3335.0,True,pre_world_cup,74,12,0.1621621621621621,62,4,20.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark
-96512,Kevin Pina,Cape Verde Islands,Midfielder,2730.0,True,annual_current,34,7,0.2058823529411764,27,7,532.0,2730.0,0.1948717948717948,0.1948717948717948,False,provider aggregate minutes plus exact fixture inventory,benchmark_and_avatar
-96512,Kevin Pina,Cape Verde Islands,Midfielder,2730.0,True,pre_world_cup,30,3,0.1,27,3,181.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark_and_avatar
+96512,Kevin Pina,Cape Verde Islands,Midfielder,2730.0,True,annual_current,34,7,0.2058823529411764,27,8,543.0,2730.0,0.1989010989010989,0.1989010989010989,False,provider aggregate minutes plus exact fixture inventory,benchmark_and_avatar
+96512,Kevin Pina,Cape Verde Islands,Midfielder,2730.0,True,pre_world_cup,30,3,0.1,27,4,192.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark_and_avatar
 96615,I. Díaz,Panama,Attacker,4829.0,True,annual_current,67,56,0.835820895522388,11,30,1713.0,4829.0,0.3547318285359288,0.3547318285359288,False,provider aggregate minutes plus exact fixture inventory,benchmark_and_avatar
 96615,I. Díaz,Panama,Attacker,4829.0,True,pre_world_cup,75,59,0.7866666666666666,16,32,2096.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark_and_avatar
 98936,L. Foster,South Africa,Attacker,2088.0,True,annual_current,48,46,0.9583333333333334,2,36,1771.0,2088.0,0.8481800766283525,0.8481800766283525,True,provider aggregate minutes plus exact fixture inventory,benchmark
@@ -1455,8 +1455,8 @@ player_id,player_name,world_cup_team,squad_position,reported_minutes,benchmark_p
 174915,J. Casimir,Haiti,Midfielder,2075.0,True,pre_world_cup,40,40,1.0,0,36,1854.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator,benchmark
 175439,Homam Ahmed,Qatar,Defender,2525.0,True,annual_current,79,21,0.2658227848101265,58,9,440.0,2525.0,0.1742574257425742,0.1742574257425742,False,provider aggregate minutes plus exact fixture inventory,benchmark
 175439,Homam Ahmed,Qatar,Defender,2525.0,True,pre_world_cup,76,18,0.2368421052631578,58,7,317.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark
-179699,F. Mayele,Congo DR,Attacker,2744.0,True,annual_current,51,48,0.9411764705882352,3,45,2556.0,2744.0,0.9314868804664724,0.9314868804664724,True,provider aggregate minutes plus exact fixture inventory,benchmark
-179699,F. Mayele,Congo DR,Attacker,2744.0,True,pre_world_cup,47,44,0.9361702127659576,3,41,2509.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator,benchmark
+179699,F. Mayele,Congo DR,Attacker,2744.0,True,annual_current,51,49,0.9607843137254902,2,45,2556.0,2744.0,0.9314868804664724,0.9314868804664724,True,provider aggregate minutes plus exact fixture inventory,benchmark
+179699,F. Mayele,Congo DR,Attacker,2744.0,True,pre_world_cup,47,45,0.9574468085106383,2,41,2509.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator,benchmark
 179856,B. Old,New Zealand,Attacker,2566.0,True,annual_current,43,10,0.2325581395348837,33,9,467.0,2566.0,0.1819953234606391,0.1819953234606391,False,provider aggregate minutes plus exact fixture inventory,benchmark
 179856,B. Old,New Zealand,Attacker,2566.0,True,pre_world_cup,40,7,0.175,33,6,376.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark
 179862,M. Stamenic,New Zealand,Midfielder,3788.0,True,annual_current,54,41,0.7592592592592593,13,34,2332.0,3788.0,0.6156282998944034,0.6156282998944034,False,provider aggregate minutes plus exact fixture inventory,benchmark
@@ -1853,8 +1853,8 @@ player_id,player_name,world_cup_team,squad_position,reported_minutes,benchmark_p
 390002,M. Chávez,Mexico,Defender,2595.0,True,pre_world_cup,101,13,0.1287128712871287,88,12,325.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark_and_avatar
 392387,O. Makhanya,South Africa,Defender,4022.0,True,annual_current,37,21,0.5675675675675675,16,19,1368.0,4022.0,0.3401292889109895,0.3401292889109895,False,provider aggregate minutes plus exact fixture inventory,benchmark
 392387,O. Makhanya,South Africa,Defender,4022.0,True,pre_world_cup,39,17,0.4358974358974359,22,15,1368.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark
-395075,Mostafa Zico,Egypt,Midfielder,2001.0,True,annual_current,47,44,0.9361702127659576,3,41,1869.0,2001.0,0.934032983508246,0.934032983508246,True,provider aggregate minutes plus exact fixture inventory,benchmark
-395075,Mostafa Zico,Egypt,Midfielder,2001.0,True,pre_world_cup,42,39,0.9285714285714286,3,36,1494.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator,benchmark
+395075,Mostafa Zico,Egypt,Midfielder,2001.0,True,annual_current,47,45,0.9574468085106383,2,41,1869.0,2001.0,0.934032983508246,0.934032983508246,True,provider aggregate minutes plus exact fixture inventory,benchmark
+395075,Mostafa Zico,Egypt,Midfielder,2001.0,True,pre_world_cup,42,40,0.9523809523809524,2,36,1494.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator,benchmark
 395559,Kerim-Sam Alajbegovic,Bosnia & Herzegovina,Midfielder,2988.0,True,annual_current,48,15,0.3125,33,15,777.0,2988.0,0.2600401606425703,0.2600401606425703,False,provider aggregate minutes plus exact fixture inventory,benchmark
 395559,Kerim-Sam Alajbegovic,Bosnia & Herzegovina,Midfielder,2988.0,True,pre_world_cup,44,11,0.25,33,11,500.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator,benchmark
 396623,Pau Cubarsí Paredes,Spain,Defender,4947.0,True,annual_current,64,64,1.0,0,63,4615.0,4947.0,0.932888619365272,0.932888619365272,True,provider aggregate minutes plus exact fixture inventory,benchmark

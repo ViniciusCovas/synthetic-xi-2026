@@ -10,14 +10,14 @@
       "relevant_players": 957,
       "players_passing_80pct": 406,
       "pass_rate": 0.42424242424242425,
-      "missing_fixture_endpoints": 10432
+      "missing_fixture_endpoints": 10428
     },
     {
       "window": "pre_world_cup",
       "relevant_players": 957,
       "players_passing_80pct": 624,
       "pass_rate": 0.6520376175548589,
-      "missing_fixture_endpoints": 10797
+      "missing_fixture_endpoints": 10793
     }
   ],
   "candidate_coverage_gate_passed": false,
