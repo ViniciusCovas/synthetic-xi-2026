@@ -1,0 +1,74 @@
+name: Immediate Scope Promotion
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/immediate-scope-promotion.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: immediate-scope-promotion
+  cancel-in-progress: true
+
+jobs:
+  promote-now:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas numpy
+
+      - name: Rebuild exact-window coverage from cached evidence
+        run: python scripts/scientific/build_scope_correct_coverage.py
+
+      - name: Evaluate corrected gate in shadow mode
+        run: python scripts/scientific/shadow_scope_correct_selection.py
+
+      - name: Promote corrected ledger and residual queue
+        run: python scripts/scientific/promote_scope_correct_coverage.py
+
+      - name: Rebuild canonical gate and release
+        run: |
+          python scripts/build_selection_sufficiency_gate.py
+          python scripts/build_scientific_status.py
+          python scripts/build_final_release_package.py
+
+      - name: Publish canonical corrected outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/model_readiness data/audits/scope_correct_coverage data/releases/v1_0 paper METHODOLOGY_CORRECTION_EXACT_WINDOW_COVERAGE.md
+          if git diff --cached --quiet; then
+            echo "No scope promotion changes to publish."
+            exit 0
+          fi
+          git commit -m "science: promote exact-window coverage correction"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase -X theirs origin/main && git push origin HEAD:main; then
+              echo "Scope promotion published on attempt ${attempt}."
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 4))
+          done
+          echo "Failed to publish immediate scope promotion." >&2
+          exit 1
