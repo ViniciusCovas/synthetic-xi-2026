@@ -10,8 +10,11 @@ on:
       - "data/model_readiness/coverage_priority_fixtures.csv"
       - ".github/workflows/targeted-coverage-extraction.yml"
   schedule:
-    # Hourly safety check; 00:05 UTC is 18:05 in Mexico City, just after daily reset.
-    - cron: "5 * * * *"
+    # After the 00:00 UTC daily reset, retry every 20 minutes for four hours.
+    # 00:05 UTC corresponds to 18:05 in Mexico City during UTC-6.
+    - cron: "5,25,45 0-3 * * *"
+    # Outside the reset window, keep an hourly recovery check.
+    - cron: "5 4-23 * * *"
   workflow_dispatch:
 
 permissions:
