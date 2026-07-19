@@ -2,8 +2,8 @@
   "version": "broadcast_v1.0",
   "title": "Synthetic XI vs Real Best XI",
   "probabilities": {
-    "synthetic_win": 0.2763,
-    "draw": 0.2341,
+    "synthetic_win": 0.2795,
+    "draw": 0.2309,
     "real_win": 0.4896
   },
   "calibration": {
@@ -28,176 +28,152 @@
       "id": "representative",
       "label": "Partido representativo",
       "description": "Timeline directa del partido seleccionado por el motor por cercanía a las medias de 10.000 simulaciones.",
-      "scoreline_probability": 0.0974,
+      "scoreline_probability": 0.0991,
       "stats": {
         "home_goals": 1,
         "away_goals": 2,
-        "home_xg": 1.025,
-        "away_xg": 1.637,
-        "home_shots": 8,
+        "home_xg": 1.285,
+        "away_xg": 1.262,
+        "home_shots": 9,
         "away_shots": 9,
-        "home_shots_on_target": 4,
-        "away_shots_on_target": 6,
-        "home_possession": 0.4811
+        "home_shots_on_target": 1,
+        "away_shots_on_target": 3,
+        "home_possession": 0.5657
       },
       "events": [
         {
-          "minute": 5,
-          "team": "home",
-          "type": "shot_on_target",
-          "actor": "SYN-W220",
-          "zone": 1,
-          "xg": 0.096
+          "minute": 11,
+          "team": "away",
+          "type": "shot_off_target",
+          "actor": "Michael Olise",
+          "zone": 2,
+          "xg": 0.181
         },
         {
-          "minute": 16,
-          "team": "away",
-          "type": "shot_on_target",
-          "actor": "Lionel Messi",
+          "minute": 12,
+          "team": "home",
+          "type": "shot_off_target",
+          "actor": "SYN-ST20",
           "zone": 2,
-          "xg": 0.174
+          "xg": 0.18
         },
         {
           "minute": 17,
-          "team": "away",
-          "type": "shot_off_target",
-          "actor": "Désiré Doué",
-          "zone": 3,
-          "xg": 0.278
-        },
-        {
-          "minute": 18,
           "team": "home",
-          "type": "turnover",
+          "type": "shot_off_target",
           "actor": "SYN-W120",
           "zone": 2,
-          "xg": 0.0
+          "xg": 0.161
         },
         {
-          "minute": 22,
+          "minute": 21,
           "team": "away",
-          "type": "shot_on_target",
+          "type": "goal",
           "actor": "Michael Olise",
+          "zone": 2,
+          "xg": 0.181
+        },
+        {
+          "minute": 32,
+          "team": "away",
+          "type": "shot_off_target",
+          "actor": "Michael Olise",
+          "zone": 2,
+          "xg": 0.181
+        },
+        {
+          "minute": 40,
+          "team": "home",
+          "type": "shot_off_target",
+          "actor": "SYN-CM20",
+          "zone": 3,
+          "xg": 0.203
+        },
+        {
+          "minute": 41,
+          "team": "away",
+          "type": "goal",
+          "actor": "Lionel Messi",
           "zone": 1,
           "xg": 0.107
         },
         {
-          "minute": 24,
+          "minute": 42,
           "team": "away",
           "type": "turnover",
-          "actor": "Yan Diomande",
-          "zone": 2,
-          "xg": 0.0
-        },
-        {
-          "minute": 28,
-          "team": "away",
-          "type": "shot_on_target",
-          "actor": "Michael Olise",
-          "zone": 2,
-          "xg": 0.172
-        },
-        {
-          "minute": 28,
-          "team": "away",
-          "type": "shot_off_target",
-          "actor": "Michael Olise",
-          "zone": 2,
-          "xg": 0.172
-        },
-        {
-          "minute": 30,
-          "team": "away",
-          "type": "goal",
-          "actor": "Michael Olise",
-          "zone": 2,
-          "xg": 0.172
-        },
-        {
-          "minute": 33,
-          "team": "home",
-          "type": "shot_on_target",
-          "actor": "SYN-W220",
-          "zone": 2,
-          "xg": 0.154
-        },
-        {
-          "minute": 38,
-          "team": "away",
-          "type": "shot_off_target",
-          "actor": "Michael Olise",
-          "zone": 2,
-          "xg": 0.172
-        },
-        {
-          "minute": 41,
-          "team": "home",
-          "type": "shot_on_target",
-          "actor": "SYN-ST20",
-          "zone": 1,
-          "xg": 0.109
-        },
-        {
-          "minute": 48,
-          "team": "home",
-          "type": "turnover",
-          "actor": "SYN-W220",
-          "zone": 2,
-          "xg": 0.0
-        },
-        {
-          "minute": 58,
-          "team": "away",
-          "type": "goal",
-          "actor": "Lionel Messi",
-          "zone": 1,
-          "xg": 0.109
-        },
-        {
-          "minute": 71,
-          "team": "away",
-          "type": "turnover",
-          "actor": "Frenkie de Jong",
-          "zone": 2,
-          "xg": 0.0
-        },
-        {
-          "minute": 72,
-          "team": "away",
-          "type": "shot_on_target",
-          "actor": "Lionel Messi",
+          "actor": "Pedri",
           "zone": 3,
-          "xg": 0.282
+          "xg": 0.0
+        },
+        {
+          "minute": 54,
+          "team": "away",
+          "type": "turnover",
+          "actor": "Michael Olise",
+          "zone": 2,
+          "xg": 0.0
+        },
+        {
+          "minute": 62,
+          "team": "home",
+          "type": "shot_off_target",
+          "actor": "SYN-W220",
+          "zone": 2,
+          "xg": 0.156
+        },
+        {
+          "minute": 63,
+          "team": "home",
+          "type": "turnover",
+          "actor": "SYN-W120",
+          "zone": 2,
+          "xg": 0.0
+        },
+        {
+          "minute": 74,
+          "team": "home",
+          "type": "turnover",
+          "actor": "SYN-W120",
+          "zone": 2,
+          "xg": 0.0
+        },
+        {
+          "minute": 76,
+          "team": "away",
+          "type": "shot_on_target",
+          "actor": "João Félix",
+          "zone": 2,
+          "xg": 0.174
+        },
+        {
+          "minute": 78,
+          "team": "away",
+          "type": "turnover",
+          "actor": "João Félix",
+          "zone": 3,
+          "xg": 0.0
         },
         {
           "minute": 79,
           "team": "home",
-          "type": "shot_off_target",
-          "actor": "SYN-AM20",
-          "zone": 3,
-          "xg": 0.228
-        },
-        {
-          "minute": 85,
-          "team": "home",
           "type": "goal",
           "actor": "SYN-ST20",
-          "zone": 1,
-          "xg": 0.109
+          "zone": 2,
+          "xg": 0.18
         },
         {
-          "minute": 86,
+          "minute": 87,
           "team": "home",
-          "type": "shot_off_target",
-          "actor": "SYN-W120",
+          "type": "turnover",
+          "actor": "SYN-W220",
           "zone": 2,
-          "xg": 0.151
+          "xg": 0.0
         },
         {
           "minute": 89,
-          "team": "home",
+          "team": "away",
           "type": "turnover",
-          "actor": "SYN-ST20",
+          "actor": "Lionel Messi",
           "zone": 2,
           "xg": 0.0
         }
@@ -207,7 +183,7 @@
       "id": "synthetic-upset",
       "label": "Sorpresa sintética",
       "description": "Reconstrucción visual coherente con el marcador 2–1 muestreado por Monte Carlo.",
-      "scoreline_probability": 0.0724,
+      "scoreline_probability": 0.07,
       "stats": {
         "home_goals": 2,
         "away_goals": 1,
@@ -306,7 +282,7 @@
       "id": "high-intensity",
       "label": "Alta intensidad",
       "description": "Reconstrucción visual coherente con el marcador 2–2 muestreado por Monte Carlo.",
-      "scoreline_probability": 0.0506,
+      "scoreline_probability": 0.0536,
       "stats": {
         "home_goals": 2,
         "away_goals": 2,
