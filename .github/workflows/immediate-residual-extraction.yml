@@ -44,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: pip install pandas requests numpy matplotlib
 
-      - name: Use at most three remaining daily calls
+      - name: Use at most three remaining daily calls and record result
         env:
           PYTHONPATH: .
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
@@ -55,7 +55,30 @@ jobs:
           FORCE_REQUERY_BUNDLES: "true"
           SCOPE_MAX_REQUERY_ATTEMPTS: "2"
           GITHUB_RUN_ID: "immediate_${{ github.run_id }}"
-        run: python scripts/run_batched_selection_extraction.py
+        shell: bash
+        run: |
+          mkdir -p data/audits
+          set +e
+          python scripts/run_batched_selection_extraction.py > /tmp/immediate_residual.log 2>&1
+          code=$?
+          set -e
+          cat /tmp/immediate_residual.log
+          EXIT_CODE="$code" python - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+          from pathlib import Path
+          log = Path('/tmp/immediate_residual.log').read_text(errors='replace')
+          status = {
+              'status': 'immediate_residual_execution_recorded',
+              'generated_at_utc': datetime.now(timezone.utc).isoformat(),
+              'exit_code': int(os.environ['EXIT_CODE']),
+              'api_key_present': bool(os.environ.get('API_FOOTBALL_KEY')),
+              'log_tail': log[-4000:],
+          }
+          Path('data/audits/immediate_residual_execution_status.json').write_text(
+              json.dumps(status, ensure_ascii=False, indent=2), encoding='utf-8'
+          )
+          PY
 
       - name: Rebuild corrected scientific pipeline
         run: |
@@ -79,7 +102,7 @@ jobs:
           retention-days: 30
           if-no-files-found: warn
 
-      - name: Publish residual extraction outputs
+      - name: Publish residual extraction outputs and diagnostics
         if: ${{ always() }}
         shell: bash
         run: |
