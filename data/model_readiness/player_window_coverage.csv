@@ -937,8 +937,8 @@ player_id,player_name,world_cup_team,squad_position,reported_minutes,benchmark_p
 34211,Cho Gue-Sung,South Korea,Attacker,2327.0,True,pre_world_cup,48,48,1.0,0,37,1980.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator
 34374,Song Bum-Keun,South Korea,Goalkeeper,2475.0,True,annual_current,37,7,0.1891891891891892,30,5,180.0,2475.0,0.07272727272727272,0.07272727272727272,False,provider aggregate minutes plus exact fixture inventory
 34374,Song Bum-Keun,South Korea,Goalkeeper,2475.0,True,pre_world_cup,36,4,0.1111111111111111,32,2,180.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
-34418,Kim Tae-Hyeon,South Korea,Defender,4204.0,True,annual_current,38,20,0.5263157894736842,18,16,1086.0,4204.0,0.25832540437678403,0.25832540437678403,False,provider aggregate minutes plus exact fixture inventory
-34418,Kim Tae-Hyeon,South Korea,Defender,4204.0,True,pre_world_cup,39,17,0.4358974358974359,22,13,1086.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
+34418,Kim Tae-Hyeon,South Korea,Defender,4204.0,True,annual_current,38,20,0.5263157894736842,18,17,1176.0,4204.0,0.2797335870599429,0.2797335870599429,False,provider aggregate minutes plus exact fixture inventory
+34418,Kim Tae-Hyeon,South Korea,Defender,4204.0,True,pre_world_cup,39,17,0.4358974358974359,22,14,1176.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
 34431,Lee Dong-Gyeong,South Korea,Attacker,2714.0,True,annual_current,62,9,0.14516129032258066,53,6,209.0,2714.0,0.07700810611643331,0.07700810611643331,False,provider aggregate minutes plus exact fixture inventory
 34431,Lee Dong-Gyeong,South Korea,Attacker,2714.0,True,pre_world_cup,62,7,0.11290322580645161,55,4,289.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
 34710,Oh Hyeon-Gyu,South Korea,Attacker,3676.0,True,annual_current,98,96,0.9795918367346939,2,49,3098.0,3676.0,0.8427638737758433,0.8427638737758433,True,provider aggregate minutes plus exact fixture inventory
@@ -1845,8 +1845,8 @@ player_id,player_name,world_cup_team,squad_position,reported_minutes,benchmark_p
 303467,A. Fatawu,Ghana,Midfielder,3994.0,True,pre_world_cup,46,46,1.0,0,44,3726.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator
 304228,Z. Debast,Belgium,Defender,1531.0,False,annual_current,59,59,1.0,0,28,1451.0,1531.0,0.9477465708687133,0.9477465708687133,True,provider aggregate minutes plus exact fixture inventory
 304228,Z. Debast,Belgium,Defender,1531.0,False,pre_world_cup,53,53,1.0,0,27,1451.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator
-304782,T. Hayakawa,Japan,Goalkeeper,5324.0,True,annual_current,39,21,0.5384615384615384,18,18,1266.0,5324.0,0.23779113448534936,0.23779113448534936,False,provider aggregate minutes plus exact fixture inventory
-304782,T. Hayakawa,Japan,Goalkeeper,5324.0,True,pre_world_cup,39,17,0.4358974358974359,22,14,1266.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
+304782,T. Hayakawa,Japan,Goalkeeper,5324.0,True,annual_current,39,21,0.5384615384615384,18,19,1356.0,5324.0,0.25469571750563486,0.25469571750563486,False,provider aggregate minutes plus exact fixture inventory
+304782,T. Hayakawa,Japan,Goalkeeper,5324.0,True,pre_world_cup,39,17,0.4358974358974359,22,15,1356.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
 304951,Lee Gi-Hyuk,South Korea,Defender,2538.0,True,annual_current,47,9,0.19148936170212766,38,8,613.0,2538.0,0.24152876280535854,0.24152876280535854,False,provider aggregate minutes plus exact fixture inventory
 304951,Lee Gi-Hyuk,South Korea,Defender,2538.0,True,pre_world_cup,46,6,0.13043478260869565,40,5,343.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
 304958,Yang Hyun-Jun,South Korea,Attacker,3725.0,True,annual_current,53,53,1.0,0,49,2664.0,3725.0,0.7151677852348993,0.7151677852348993,False,provider aggregate minutes plus exact fixture inventory

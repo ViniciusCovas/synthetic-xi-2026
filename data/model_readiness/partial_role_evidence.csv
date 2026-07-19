@@ -531,7 +531,7 @@ player_id,player_name,active_fixtures,active_minutes,starts,modal_provider_posit
 34168,Jin-kyu Kim,2,141.0,2,M,1.0,M,1.0,4.0,1.0,outer_high,1.0,4-1-4-1,South Korea,Midfielder,True,True
 34211,Gue-sung Cho,37,2009.0,22,F,0.8918918918918919,F,0.8918918918918919,4.0,0.5909090909090909,outer_high,1.0,3-4-2-1,South Korea,Attacker,True,True
 34374,Bum-keun Song,2,180.0,2,G,1.0,G,1.0,1.0,1.0,outer_high,1.0,4-1-4-1,South Korea,Goalkeeper,True,True
-34418,Tae-hyeon Kim,12,1086.0,12,D,1.0,D,1.0,2.0,1.0,outer_high,1.0,4-4-2,South Korea,Defender,True,True
+34418,Tae-hyeon Kim,13,1176.0,13,D,1.0,D,1.0,2.0,1.0,outer_high,1.0,4-4-2,South Korea,Defender,True,True
 34431,Dong-gyeong Lee,4,289.0,3,F,0.5,F,0.5,4.0,0.6666666666666666,outer_high,1.0,4-4-2,South Korea,Attacker,True,True
 34710,Hyeon-gyu Oh,16,1217.0,13,F,1.0,F,1.0,5.0,1.0,outer_high,1.0,4-1-4-1,South Korea,Attacker,True,True
 34710,Hyun-gyu Oh,30,1881.0,22,F,1.0,F,1.0,5.0,0.9545454545454546,outer_high,1.0,4-2-3-1,South Korea,Attacker,True,True
@@ -1025,7 +1025,7 @@ player_id,player_name,active_fixtures,active_minutes,starts,modal_provider_posit
 303362,Rafik Belghali,38,2874.0,33,M,0.5263157894736842,M,0.5263157894736842,3.0,0.5454545454545454,outer_high,1.0,3-5-2,Algeria,Defender,True,True
 303467,Abdul Fatawu Issahaku,48,3855.0,43,M,0.875,M,0.8958333333333334,4.0,1.0,outer_high,1.0,4-2-3-1,Ghana,Midfielder,True,True
 304228,Zeno Debast,22,1451.0,13,D,1.0,D,1.0,2.0,1.0,outer_high,0.9230769230769231,4-2-3-1,Belgium,Defender,True,False
-304782,Tomoki Hayakawa,14,1266.0,14,G,1.0,G,1.0,1.0,1.0,outer_high,1.0,4-4-2,Japan,Goalkeeper,True,True
+304782,Tomoki Hayakawa,15,1356.0,15,G,1.0,G,1.0,1.0,1.0,outer_high,1.0,4-4-2,Japan,Goalkeeper,True,True
 304951,Gi-Hyuk Lee,8,613.0,6,D,1.0,D,1.0,2.0,1.0,outer_high,1.0,4-4-2,South Korea,Defender,True,True
 304958,Yang Hyun-Jun,41,2664.0,35,M,0.5609756097560976,M,0.5609756097560976,4.0,0.7428571428571429,outer_high,0.8285714285714286,4-3-3,South Korea,Attacker,True,True
 305832,Matías Galarza,24,1546.0,13,M,0.9583333333333334,M,0.9545454545454546,3.0,0.7692307692307693,outer_high,0.46153846153846156,4-3-3,Paraguay,Midfielder,True,True
