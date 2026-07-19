@@ -1,4 +1,11 @@
 {
-  "status": "waiting_for_coverage_priority_file",
-  "network_calls": 0
+  "status": "targeted_coverage_extraction_completed",
+  "priority_fixture_candidates": 8828,
+  "fixtures_completed_this_run": 1414,
+  "player_rows": 8810,
+  "lineup_rows": 8819,
+  "network_calls": 2800,
+  "quota_remaining_reported": 4824,
+  "quota_stopped": true,
+  "rankings_allowed": false
 }
