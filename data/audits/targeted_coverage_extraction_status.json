@@ -1,7 +1,7 @@
 {
   "status": "batched_targeted_extraction_completed",
   "bundle_size": 20,
-  "priority_fixture_candidates": 1726,
+  "priority_fixture_candidates": 364,
   "fixtures_requested_this_run": 0,
   "fixtures_returned_this_run": 0,
   "fixtures_completed_this_run": 0,
