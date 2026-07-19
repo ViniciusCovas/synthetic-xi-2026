@@ -16,6 +16,21 @@ RAW_GLOBS = (
     "data/raw/fixture_inventory/*.json",
 )
 OUT_DIR = Path("data/enrichment/context")
+METADATA_COLUMNS = [
+    "fixture_id",
+    "api_date",
+    "api_timestamp",
+    "api_timezone",
+    "referee",
+    "venue_id",
+    "venue_name",
+    "venue_city",
+    "league_id",
+    "league_name",
+    "league_country",
+    "home_team_api",
+    "away_team_api",
+]
 
 
 def iter_items() -> Iterable[dict[str, Any]]:
@@ -68,7 +83,7 @@ def main() -> None:
 
     fixtures = pd.read_csv(FIXTURES_PATH)
     metadata_rows = [row for item in iter_items() if (row := flatten(item)) is not None]
-    metadata = pd.DataFrame(metadata_rows)
+    metadata = pd.DataFrame(metadata_rows, columns=METADATA_COLUMNS)
     if not metadata.empty:
         metadata = metadata.drop_duplicates("fixture_id", keep="last")
     catalog = fixtures.merge(metadata, on="fixture_id", how="left")
