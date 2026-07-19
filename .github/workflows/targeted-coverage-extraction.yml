@@ -7,6 +7,9 @@ on:
       - "scripts/api_football_batch_client.py"
       - "scripts/run_batched_selection_extraction.py"
       - "scripts/build_selection_sufficiency_gate.py"
+      - "scripts/scientific/build_scope_correct_coverage.py"
+      - "scripts/scientific/shadow_scope_correct_selection.py"
+      - "scripts/scientific/promote_scope_correct_coverage.py"
       - "data/model_readiness/coverage_priority_fixtures.csv"
       - ".github/workflows/targeted-coverage-extraction.yml"
   schedule:
@@ -36,10 +39,12 @@ jobs:
           ref: main
           fetch-depth: 0
           persist-credentials: true
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: Restore resumable raw cache
         uses: actions/cache@v4
         with:
@@ -49,9 +54,11 @@ jobs:
             targeted-bundle-${{ runner.os }}-
             targeted-annual-${{ runner.os }}-
             adaptive-annual-${{ runner.os }}-
+
       - name: Install dependencies
         run: pip install pandas requests numpy matplotlib
-      - name: Extract, recalculate and immediately continue
+
+      - name: Extract, rebuild exact-window coverage and immediately continue
         env:
           PYTHONPATH: .
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
@@ -66,20 +73,33 @@ jobs:
             echo "=== extraction cycle ${cycle} ==="
             GITHUB_RUN_ID="${{ github.run_id }}_${cycle}" python scripts/run_batched_selection_extraction.py
             python scripts/build_partial_window_artifacts.py
-            python scripts/build_exact_coverage_audit.py
             python scripts/validate_lateral_grid.py
             python scripts/resolve_eleven_roles.py
             python scripts/build_selection_frontier.py
+
+            # The exact-window v2 pipeline replaces the former season-denominator audit.
+            python scripts/scientific/build_scope_correct_coverage.py
+            python scripts/scientific/shadow_scope_correct_selection.py
+            python scripts/scientific/promote_scope_correct_coverage.py
             python scripts/build_selection_sufficiency_gate.py
             python scripts/build_scientific_status.py
             python scripts/build_final_release_package.py
+
             python - <<'PY'
           import json
           from pathlib import Path
           s=json.loads(Path('data/model_readiness/selection_sufficiency_status.json').read_text())
           q=json.loads(Path('data/audits/targeted_coverage_extraction_status.json').read_text())
-          print({'gate':s.get('selection_sufficiency_gate_passed'),'unresolved':s.get('unresolved_players'),'priority_fixtures':s.get('priority_unique_fixtures'),'remaining':q.get('quota_remaining_reported'),'network_calls':q.get('network_calls')})
+          print({
+              'coverage_definition': s.get('coverage_definition'),
+              'gate': s.get('selection_sufficiency_gate_passed'),
+              'unresolved': s.get('unresolved_players'),
+              'priority_fixtures': s.get('priority_unique_fixtures'),
+              'remaining': q.get('quota_remaining_reported'),
+              'network_calls': q.get('network_calls'),
+          })
           PY
+
             if python - <<'PY'
           import json,sys
           from pathlib import Path
@@ -94,9 +114,11 @@ jobs:
               break
             fi
           done
+
       - name: Analyze accumulated extraction quality
         if: ${{ always() }}
         run: python scripts/analyze_adaptive_extraction.py
+
       - name: Archive raw responses
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
@@ -105,6 +127,7 @@ jobs:
           path: data/raw/adaptive_annual
           retention-days: 30
           if-no-files-found: warn
+
       - name: Publish extraction, validation and release outputs
         if: ${{ always() }}
         shell: bash
@@ -112,12 +135,12 @@ jobs:
           set -euo pipefail
           git config user.name "synthetic-xi-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data paper
+          git add data paper METHODOLOGY_CORRECTION_EXACT_WINDOW_COVERAGE.md
           if git diff --cached --quiet; then
             echo "No extraction or validation changes to publish"
             exit 0
           fi
-          git commit -m "data: publish quota-efficient batched coverage"
+          git commit -m "data: publish exact-window targeted coverage"
           for attempt in 1 2 3; do
             git fetch origin main
             if git rebase -X theirs origin/main && git push origin HEAD:main; then
