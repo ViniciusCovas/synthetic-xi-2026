@@ -1,0 +1,14 @@
+path,status,rows,players,fixtures,minutes
+data/audits/fixture_detail_pilot_players.csv,included,7976,6476,190,384306.0
+data/lake/batches/batch_29660506825_players.csv.gz,included,6619,1062,190,315253.0
+data/lake/batches/batch_29660520489_players.csv.gz,included,15077,874,1210,947243.0
+data/lake/batches/batch_29672394066_players.csv.gz,included,5452,644,1383,362750.0
+data/lake/batches/batch_29689679842_players.csv.gz,included,2,2,1,180.0
+data/lake/batches/batch_bundle_29690789529_1_players.csv.gz,included,5176,509,2988,347704.0
+data/lake/batches/batch_bundle_29690789529_2_players.csv.gz,included,1294,106,1060,86907.0
+data/lake/batches/batch_bundle_29690789529_3_players.csv.gz,included,28,7,14,2234.0
+data/lake/batches/batch_targeted_29671614118_players.csv.gz,included,8810,686,1386,579411.0
+data/lake/batches/batch_targeted_29676051690_players.csv.gz,included,1548,221,633,109979.0
+data/lake/batches/batch_targeted_29682546014_players.csv.gz,included,2,2,1,101.0
+data/lake/batches/batch_targeted_29683983575_players.csv.gz,included,2,2,1,101.0
+data/lake/batches/batch_targeted_29694514010_players.csv.gz,included,2,2,1,180.0

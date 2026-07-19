@@ -1,0 +1,22 @@
+{
+  "status": "cached_minute_reconciliation_complete",
+  "generated_at_utc": "2026-07-19T19:25:39.417467+00:00",
+  "network_calls": 0,
+  "methodological_change": false,
+  "policy_preserved": "80% fixture endpoint coverage plus 80% annual detailed-minute reconciliation",
+  "source_files_included": 13,
+  "raw_unique_player_fixture_pairs": 51012,
+  "mapped_official_inventory_pairs": 51012,
+  "fixture_inventory_mapping_rate": 1.0,
+  "deduplicated_official_player_fixture_pairs": 51012,
+  "recovered_detailed_minutes": 5191.0,
+  "players_with_recovered_minutes": 37,
+  "window_rows_originally_passing": 1621,
+  "window_rows_passing_after_reconciliation": 1621,
+  "false_to_true_window_rows": 0,
+  "annual_players_passing_after_reconciliation": 631,
+  "pre_world_cup_players_passing_after_reconciliation": 990,
+  "annual_ratios_above_1_05": 2,
+  "promotion_safe": true,
+  "next_action": "promote reconciled ledger and rerun selection gate"
+}
