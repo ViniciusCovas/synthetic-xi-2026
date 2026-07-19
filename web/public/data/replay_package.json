@@ -3,8 +3,8 @@
   "title": "Synthetic XI vs Real Best XI",
   "probabilities": {
     "synthetic_win": 0.2864,
-    "draw": 0.2362,
-    "real_win": 0.4774
+    "draw": 0.2361,
+    "real_win": 0.4775
   },
   "calibration": {
     "matches": 94,
@@ -28,7 +28,7 @@
       "id": "representative",
       "label": "Partido representativo",
       "description": "Timeline directa del partido seleccionado por el motor por cercanía a las medias de 10.000 simulaciones.",
-      "scoreline_probability": 0.0957,
+      "scoreline_probability": 0.0958,
       "stats": {
         "home_goals": 1,
         "away_goals": 2,
