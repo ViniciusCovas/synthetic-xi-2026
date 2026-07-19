@@ -1,0 +1,11 @@
+{
+  "false_to_true_by_window": {
+    "annual_current": 344
+  },
+  "true_to_false_by_window": {
+    "annual_current": 12,
+    "pre_world_cup": 31
+  },
+  "true_to_false_players": 31,
+  "true_to_false_missing_startXI_total": 364
+}

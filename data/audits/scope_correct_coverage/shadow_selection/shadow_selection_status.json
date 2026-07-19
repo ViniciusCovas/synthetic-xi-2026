@@ -1,0 +1,115 @@
+{
+  "status": "shadow_scope_correct_selection_complete",
+  "generated_at_utc": "2026-07-19T19:30:02.128453+00:00",
+  "network_calls": 0,
+  "canonical_files_changed": false,
+  "eligibility_definition": ">=900 exact-window detailed minutes",
+  "coverage_definition": "exact_window_known_minutes_v2",
+  "eligible_candidates": 971,
+  "fully_covered_both_windows": 935,
+  "unresolved_players": 31,
+  "roles": [
+    {
+      "role": "GK",
+      "eligible_candidates": 94,
+      "stable_candidates": 94,
+      "required_pool_size": 30,
+      "covered_candidates": 91,
+      "unresolved_challengers": 3,
+      "role_gate_passed": false
+    },
+    {
+      "role": "RB",
+      "eligible_candidates": 238,
+      "stable_candidates": 216,
+      "required_pool_size": 30,
+      "covered_candidates": 208,
+      "unresolved_challengers": 9,
+      "role_gate_passed": false
+    },
+    {
+      "role": "RCB",
+      "eligible_candidates": 36,
+      "stable_candidates": 29,
+      "required_pool_size": 29,
+      "covered_candidates": 29,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "LCB",
+      "eligible_candidates": 24,
+      "stable_candidates": 11,
+      "required_pool_size": 11,
+      "covered_candidates": 11,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "LB",
+      "eligible_candidates": 42,
+      "stable_candidates": 30,
+      "required_pool_size": 30,
+      "covered_candidates": 30,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "DM",
+      "eligible_candidates": 22,
+      "stable_candidates": 12,
+      "required_pool_size": 12,
+      "covered_candidates": 12,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "CM",
+      "eligible_candidates": 109,
+      "stable_candidates": 62,
+      "required_pool_size": 30,
+      "covered_candidates": 61,
+      "unresolved_challengers": 1,
+      "role_gate_passed": false
+    },
+    {
+      "role": "AM",
+      "eligible_candidates": 143,
+      "stable_candidates": 116,
+      "required_pool_size": 30,
+      "covered_candidates": 106,
+      "unresolved_challengers": 10,
+      "role_gate_passed": false
+    },
+    {
+      "role": "RW",
+      "eligible_candidates": 238,
+      "stable_candidates": 206,
+      "required_pool_size": 30,
+      "covered_candidates": 198,
+      "unresolved_challengers": 8,
+      "role_gate_passed": false
+    },
+    {
+      "role": "LW",
+      "eligible_candidates": 11,
+      "stable_candidates": 8,
+      "required_pool_size": 8,
+      "covered_candidates": 8,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "ST",
+      "eligible_candidates": 14,
+      "stable_candidates": 3,
+      "required_pool_size": 3,
+      "covered_candidates": 3,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    }
+  ],
+  "shadow_selection_sufficiency_gate_passed": false,
+  "rankings_allowed": false,
+  "next_action": "prioritize only residual unresolved players after scope correction"
+}
