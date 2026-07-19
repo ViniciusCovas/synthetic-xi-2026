@@ -1,0 +1,46 @@
+name: Minute Reconciliation Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/scientific/minute_reconciliation_audit.py"
+      - ".github/workflows/minute-reconciliation-audit.yml"
+      - "data/model_readiness/player_window_coverage.csv"
+      - "data/model_readiness/selection_sufficiency_unresolved_players.csv"
+      - "data/audits/annual_player_precheck.csv"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: synthetic-xi-data-writer
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pandas numpy
+      - run: python scripts/scientific/minute_reconciliation_audit.py
+      - shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/audits/offline_readiness
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "science: publish minute reconciliation audit"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
