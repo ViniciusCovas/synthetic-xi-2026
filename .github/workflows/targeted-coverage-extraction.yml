@@ -1,13 +1,17 @@
-name: Targeted Coverage Extraction
+name: Quota-Efficient Coverage Extraction
 
 on:
   push:
     branches: [main]
     paths:
-      - "scripts/run_targeted_coverage_extraction.py"
+      - "scripts/api_football_batch_client.py"
+      - "scripts/run_batched_selection_extraction.py"
+      - "scripts/build_selection_sufficiency_gate.py"
+      - "data/model_readiness/coverage_priority_fixtures.csv"
       - ".github/workflows/targeted-coverage-extraction.yml"
   schedule:
-    - cron: "7 2,8,14,20 * * *"
+    # Hourly safety check; 00:05 UTC is 18:05 in Mexico City, just after daily reset.
+    - cron: "5 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -37,33 +41,68 @@ jobs:
         uses: actions/cache@v4
         with:
           path: data/raw/adaptive_annual
-          key: targeted-annual-${{ runner.os }}-${{ github.run_id }}
+          key: targeted-bundle-${{ runner.os }}-${{ github.run_id }}
           restore-keys: |
+            targeted-bundle-${{ runner.os }}-
             targeted-annual-${{ runner.os }}-
             adaptive-annual-${{ runner.os }}-
       - name: Install dependencies
-        run: pip install pandas requests
-      - name: Extract fixtures selected by coverage audit
+        run: pip install pandas requests numpy matplotlib
+      - name: Extract, recalculate and immediately continue
         env:
           PYTHONPATH: .
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-          API_MAX_REQUESTS_PER_MINUTE: "190"
-          MAX_NETWORK_REQUESTS: "2800"
-          MIN_DAILY_REQUESTS_REMAINING: "600"
-          GITHUB_RUN_ID: ${{ github.run_id }}
-        run: python scripts/run_targeted_coverage_extraction.py
+          API_SAFE_REQUESTS_PER_MINUTE: "180"
+          MAX_NETWORK_REQUESTS: "700"
+          MIN_DAILY_REQUESTS_REMAINING: "20"
+          FIXTURE_BUNDLE_SIZE: "20"
+        shell: bash
+        run: |
+          set -euo pipefail
+          for cycle in 1 2 3; do
+            echo "=== extraction cycle ${cycle} ==="
+            GITHUB_RUN_ID="${{ github.run_id }}_${cycle}" python scripts/run_batched_selection_extraction.py
+            python scripts/build_partial_window_artifacts.py
+            python scripts/build_exact_coverage_audit.py
+            python scripts/validate_lateral_grid.py
+            python scripts/resolve_eleven_roles.py
+            python scripts/build_selection_frontier.py
+            python scripts/build_selection_sufficiency_gate.py
+            python scripts/build_scientific_status.py
+            python scripts/build_final_release_package.py
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('data/model_readiness/selection_sufficiency_status.json').read_text())
+          q=json.loads(Path('data/audits/targeted_coverage_extraction_status.json').read_text())
+          print({'gate':s.get('selection_sufficiency_gate_passed'),'unresolved':s.get('unresolved_players'),'priority_fixtures':s.get('priority_unique_fixtures'),'remaining':q.get('quota_remaining_reported'),'network_calls':q.get('network_calls')})
+          PY
+            if python - <<'PY'
+          import json,sys
+          from pathlib import Path
+          s=json.loads(Path('data/model_readiness/selection_sufficiency_status.json').read_text())
+          q=json.loads(Path('data/audits/targeted_coverage_extraction_status.json').read_text())
+          done=bool(s.get('selection_sufficiency_gate_passed')) or int(s.get('priority_unique_fixtures') or 0)==0
+          exhausted=(q.get('quota_remaining_reported') is not None and int(q['quota_remaining_reported'])<=20)
+          sys.exit(0 if done or exhausted else 1)
+          PY
+            then
+              echo "Stopping closed loop: gate passed, queue empty, or daily reserve reached."
+              break
+            fi
+          done
       - name: Analyze accumulated extraction quality
         if: ${{ always() }}
         run: python scripts/analyze_adaptive_extraction.py
-      - name: Archive targeted raw responses
+      - name: Archive raw responses
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
-          name: targeted-annual-raw-${{ github.run_id }}
+          name: targeted-bundle-raw-${{ github.run_id }}
           path: data/raw/adaptive_annual
           retention-days: 30
           if-no-files-found: warn
-      - name: Publish targeted batch and status
+      - name: Publish extraction batches and status
         if: ${{ always() }}
         shell: bash
         run: |
@@ -72,9 +111,9 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add data/lake data/audits
           if git diff --cached --quiet; then
-            echo "No targeted extraction changes to publish"
+            echo "No extraction changes to publish"
           else
-            git commit -m "data: publish targeted coverage batch"
+            git commit -m "data: publish quota-efficient batched coverage"
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
