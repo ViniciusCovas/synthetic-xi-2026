@@ -1,0 +1,4 @@
+selection_unresolved,classification,players
+False,current_ledger_passes,632
+False,minutes_exist_in_precheck_but_not_current_ledger,107
+True,minutes_exist_in_precheck_but_not_current_ledger,323

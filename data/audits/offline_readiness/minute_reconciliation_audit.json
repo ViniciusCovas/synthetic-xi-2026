@@ -1,0 +1,19 @@
+{
+  "status": "minute_reconciliation_audit_complete",
+  "generated_at_utc": "2026-07-19T18:58:04.585011+00:00",
+  "network_calls": 0,
+  "methodological_effect": "diagnostic_only",
+  "players_compared": 1062,
+  "unresolved_players_compared": 323,
+  "classification_counts_all": {
+    "current_ledger_passes": 632,
+    "minutes_exist_in_precheck_but_not_current_ledger": 430
+  },
+  "classification_counts_unresolved": {
+    "minutes_exist_in_precheck_but_not_current_ledger": 323
+  },
+  "unresolved_minutes_present_precheck_not_current_total": 422082.0,
+  "unresolved_players_zero_missing_fixtures": 307,
+  "interpretation": "A large precheck/current gap indicates a reconciliation or source-scope problem; it is not by itself permission to relax the 80% gate.",
+  "next_action": "trace the source and competition scope of precheck detailed_match_minutes, then rebuild the durable lake from cached raw responses before making new API calls"
+}
