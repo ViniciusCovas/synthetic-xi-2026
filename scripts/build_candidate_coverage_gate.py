@@ -18,12 +18,15 @@ def as_bool(v): return str(v).strip().lower() in {'true','1','yes','y'}
 
 def main():
     coverage=pd.read_csv(OUT/'player_window_coverage.csv')
-    roles=pd.read_csv(OUT/'resolved_eleven_roles.csv')
+    roles=pd.read_csv(OUT/'eleven_role_evidence.csv')
     totals=pd.read_csv(OUT/'partial_annual_current_totals.csv')
     precheck=pd.read_csv('data/audits/annual_player_precheck.csv')
-    base=roles.merge(totals[['player_id','minutes_num','goals_total','assists','passes_key','shots_on','tackles_total','interceptions','duels_won']].copy(),on='player_id',how='left')
-    for c in ['minutes_num','goals_total','assists','passes_key','shots_on','tackles_total','interceptions','duels_won']:
-        base[c]=pd.to_numeric(base.get(c),errors='coerce').fillna(0.0)
+    metric_cols=['player_id','minutes_num','goals_total','assists','passes_key','shots_on','tackles_total','interceptions','duels_won']
+    for c in metric_cols:
+        if c not in totals.columns: totals[c]=0.0
+    base=roles.merge(totals[metric_cols].copy(),on='player_id',how='left')
+    for c in metric_cols[1:]:
+        base[c]=pd.to_numeric(base[c],errors='coerce').fillna(0.0)
     m=(base['minutes_num']/90).clip(lower=1e-9)
     base['transparent_score']=(
         5*(base['goals_total']/m)+3*(base['assists']/m)+1.2*(base['passes_key']/m)+
@@ -40,7 +43,8 @@ def main():
     ledger.to_csv(OUT/'candidate_window_coverage.csv',index=False)
     rows=[]
     for window,sub in ledger.groupby('window'):
-        rows.append({'window':window,'relevant_players':int(sub['player_id'].nunique()),'players_passing_80pct':int(sub.loc[sub['coverage_pass_80pct'].map(as_bool),'player_id'].nunique()),'pass_rate':float(sub['coverage_pass_80pct'].map(as_bool).mean()),'missing_fixture_endpoints':int(pd.to_numeric(sub['missing_fixture_endpoints'],errors='coerce').fillna(0).sum())})
+        passed=sub['coverage_pass_80pct'].map(as_bool)
+        rows.append({'window':window,'relevant_players':int(sub['player_id'].nunique()),'players_passing_80pct':int(sub.loc[passed,'player_id'].nunique()),'pass_rate':float(passed.mean()),'missing_fixture_endpoints':int(pd.to_numeric(sub['missing_fixture_endpoints'],errors='coerce').fillna(0).sum())})
     current=ledger.loc[ledger['window'].eq('annual_current'),'coverage_pass_80pct'].map(as_bool)
     pre=ledger.loc[ledger['window'].eq('pre_world_cup'),'coverage_pass_80pct'].map(as_bool)
     status={'status':'candidate_relevant_coverage_evaluated','estimand':'final Real XI plus every Top-10/20/30 avatar candidate','benchmark_candidates':len(benchmark_ids),'avatar_top30_candidates':len(avatar_ids),'relevant_union':len(relevant),'windows':rows,'candidate_coverage_gate_passed':bool(len(current) and current.all() and len(pre) and pre.all()),'policy':'players below 80% must be targeted for extraction or excluded before rebuilding final teams','rankings_allowed':False}
