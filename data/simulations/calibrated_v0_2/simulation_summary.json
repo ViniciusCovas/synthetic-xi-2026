@@ -3,57 +3,57 @@
   "simulations": 10000,
   "home": "Synthetic XI — exploratorio",
   "away": "Real Best XI — exploratorio",
-  "home_win_probability": 0.2795,
-  "draw_probability": 0.2309,
-  "away_win_probability": 0.4896,
-  "mean_home_goals": 1.2487,
-  "mean_away_goals": 1.7263,
-  "mean_total_goals": 2.9749999999999996,
-  "mean_home_xg": 1.2419342018577084,
-  "mean_away_xg": 1.7139649904415226,
-  "mean_total_shots": 17.7364,
-  "mean_total_shots_on_target": 8.9055,
-  "zero_zero_probability": 0.0489,
+  "home_win_probability": 0.2798,
+  "draw_probability": 0.2363,
+  "away_win_probability": 0.4839,
+  "mean_home_goals": 1.2298,
+  "mean_away_goals": 1.6876,
+  "mean_total_goals": 2.9173999999999998,
+  "mean_home_xg": 1.222891901893426,
+  "mean_away_xg": 1.6770372524129966,
+  "mean_total_shots": 17.6177,
+  "mean_total_shots_on_target": 8.8077,
+  "zero_zero_probability": 0.0517,
   "top_scorelines": [
     {
       "score": "1-1",
-      "probability": 0.1105
+      "probability": 0.1172
     },
     {
       "score": "1-2",
-      "probability": 0.0991
+      "probability": 0.0968
     },
     {
       "score": "0-1",
-      "probability": 0.0883
+      "probability": 0.0926
     },
     {
       "score": "0-2",
-      "probability": 0.0757
+      "probability": 0.0752
     },
     {
       "score": "2-1",
-      "probability": 0.07
+      "probability": 0.0696
     },
     {
       "score": "1-0",
-      "probability": 0.0621
-    },
-    {
-      "score": "2-2",
-      "probability": 0.0536
+      "probability": 0.0634
     },
     {
       "score": "1-3",
-      "probability": 0.0505
+      "probability": 0.0518
     },
     {
       "score": "0-0",
-      "probability": 0.0489
+      "probability": 0.0517
+    },
+    {
+      "score": "2-2",
+      "probability": 0.0511
     },
     {
       "score": "0-3",
-      "probability": 0.0486
+      "probability": 0.0472
     }
   ],
   "calibration_targets": {
@@ -68,143 +68,62 @@
     "model_possessions_per_match": 104.0
   },
   "calibration_error": {
-    "goals_per_match": 0.06010638297872317,
-    "shots_per_match": -0.35847100421420564,
-    "shots_on_target_per_match": 0.526941052523382,
-    "zero_zero_rate": -0.025568085106382976
+    "goals_per_match": 0.0025063829787232983,
+    "shots_per_match": -0.4771710042142061,
+    "shots_on_target_per_match": 0.4291410525233825,
+    "zero_zero_rate": -0.022768085106382972
   },
   "representative_match": {
     "home": "Synthetic XI — exploratorio",
     "away": "Real Best XI — exploratorio",
     "home_goals": 1,
     "away_goals": 2,
-    "home_xg": 1.285,
-    "away_xg": 1.262,
-    "home_shots": 9,
-    "away_shots": 9,
-    "home_shots_on_target": 1,
-    "away_shots_on_target": 3,
-    "home_possession_share": 0.5657,
+    "home_xg": 0.829,
+    "away_xg": 2.011,
+    "home_shots": 6,
+    "away_shots": 12,
+    "home_shots_on_target": 3,
+    "away_shots_on_target": 5,
+    "home_possession_share": 0.4082,
     "timeline": [
       {
-        "minute": 11,
+        "minute": 6,
         "team": "Real Best XI — exploratorio",
         "type": "shot_off_target",
-        "actor": "Michael Olise",
-        "zone": 2,
-        "xg": 0.181,
-        "headline": "Ocasión de Michael Olise fuera"
-      },
-      {
-        "minute": 12,
-        "team": "Synthetic XI — exploratorio",
-        "type": "shot_off_target",
-        "actor": "SYN-ST20",
-        "zone": 2,
-        "xg": 0.18,
-        "headline": "Ocasión de SYN-ST20 fuera"
-      },
-      {
-        "minute": 17,
-        "team": "Synthetic XI — exploratorio",
-        "type": "shot_off_target",
-        "actor": "SYN-W120",
-        "zone": 2,
-        "xg": 0.161,
-        "headline": "Ocasión de SYN-W120 fuera"
-      },
-      {
-        "minute": 21,
-        "team": "Real Best XI — exploratorio",
-        "type": "goal",
-        "actor": "Michael Olise",
-        "zone": 2,
-        "xg": 0.181,
-        "headline": "GOL de Michael Olise"
-      },
-      {
-        "minute": 32,
-        "team": "Real Best XI — exploratorio",
-        "type": "shot_off_target",
-        "actor": "Michael Olise",
-        "zone": 2,
-        "xg": 0.181,
-        "headline": "Ocasión de Michael Olise fuera"
-      },
-      {
-        "minute": 40,
-        "team": "Synthetic XI — exploratorio",
-        "type": "shot_off_target",
-        "actor": "SYN-CM20",
-        "zone": 3,
-        "xg": 0.203,
-        "headline": "Ocasión de SYN-CM20 fuera"
-      },
-      {
-        "minute": 41,
-        "team": "Real Best XI — exploratorio",
-        "type": "goal",
         "actor": "Lionel Messi",
-        "zone": 1,
-        "xg": 0.107,
-        "headline": "GOL de Lionel Messi"
-      },
-      {
-        "minute": 42,
-        "team": "Real Best XI — exploratorio",
-        "type": "turnover",
-        "actor": "Pedri",
-        "zone": 3,
-        "xg": 0.0,
-        "headline": "Pedri pierde el balón bajo presión"
-      },
-      {
-        "minute": 54,
-        "team": "Real Best XI — exploratorio",
-        "type": "turnover",
-        "actor": "Michael Olise",
         "zone": 2,
-        "xg": 0.0,
-        "headline": "Michael Olise pierde el balón bajo presión"
+        "xg": 0.192,
+        "headline": "Ocasión de Lionel Messi fuera"
       },
       {
-        "minute": 62,
-        "team": "Synthetic XI — exploratorio",
-        "type": "shot_off_target",
-        "actor": "SYN-W220",
-        "zone": 2,
-        "xg": 0.156,
-        "headline": "Ocasión de SYN-W220 fuera"
-      },
-      {
-        "minute": 63,
-        "team": "Synthetic XI — exploratorio",
-        "type": "turnover",
-        "actor": "SYN-W120",
-        "zone": 2,
-        "xg": 0.0,
-        "headline": "SYN-W120 pierde el balón bajo presión"
-      },
-      {
-        "minute": 74,
-        "team": "Synthetic XI — exploratorio",
-        "type": "turnover",
-        "actor": "SYN-W120",
-        "zone": 2,
-        "xg": 0.0,
-        "headline": "SYN-W120 pierde el balón bajo presión"
-      },
-      {
-        "minute": 76,
+        "minute": 10,
         "team": "Real Best XI — exploratorio",
         "type": "shot_on_target",
         "actor": "João Félix",
-        "zone": 2,
-        "xg": 0.174,
+        "zone": 1,
+        "xg": 0.114,
         "headline": "Remate de João Félix detenido por el portero"
       },
       {
-        "minute": 78,
+        "minute": 16,
+        "team": "Real Best XI — exploratorio",
+        "type": "goal",
+        "actor": "Pedri",
+        "zone": 3,
+        "xg": 0.209,
+        "headline": "GOL de Pedri"
+      },
+      {
+        "minute": 18,
+        "team": "Real Best XI — exploratorio",
+        "type": "shot_off_target",
+        "actor": "Yan Diomande",
+        "zone": 3,
+        "xg": 0.257,
+        "headline": "Ocasión de Yan Diomande fuera"
+      },
+      {
+        "minute": 22,
         "team": "Real Best XI — exploratorio",
         "type": "turnover",
         "actor": "João Félix",
@@ -213,31 +132,94 @@
         "headline": "João Félix pierde el balón bajo presión"
       },
       {
-        "minute": 79,
+        "minute": 29,
         "team": "Synthetic XI — exploratorio",
         "type": "goal",
         "actor": "SYN-ST20",
-        "zone": 2,
-        "xg": 0.18,
+        "zone": 1,
+        "xg": 0.104,
         "headline": "GOL de SYN-ST20"
       },
       {
-        "minute": 87,
+        "minute": 31,
         "team": "Synthetic XI — exploratorio",
-        "type": "turnover",
-        "actor": "SYN-W220",
+        "type": "shot_off_target",
+        "actor": "SYN-ST20",
         "zone": 2,
-        "xg": 0.0,
-        "headline": "SYN-W220 pierde el balón bajo presión"
+        "xg": 0.166,
+        "headline": "Ocasión de SYN-ST20 fuera"
       },
       {
-        "minute": 89,
+        "minute": 37,
         "team": "Real Best XI — exploratorio",
-        "type": "turnover",
+        "type": "shot_off_target",
+        "actor": "Lionel Messi",
+        "zone": 3,
+        "xg": 0.31,
+        "headline": "Ocasión de Lionel Messi fuera"
+      },
+      {
+        "minute": 45,
+        "team": "Synthetic XI — exploratorio",
+        "type": "shot_on_target",
+        "actor": "SYN-W120",
+        "zone": 2,
+        "xg": 0.148,
+        "headline": "Remate de SYN-W120 detenido por el portero"
+      },
+      {
+        "minute": 51,
+        "team": "Synthetic XI — exploratorio",
+        "type": "shot_on_target",
+        "actor": "SYN-ST20",
+        "zone": 2,
+        "xg": 0.166,
+        "headline": "Remate de SYN-ST20 detenido por el portero"
+      },
+      {
+        "minute": 54,
+        "team": "Real Best XI — exploratorio",
+        "type": "goal",
         "actor": "Lionel Messi",
         "zone": 2,
-        "xg": 0.0,
-        "headline": "Lionel Messi pierde el balón bajo presión"
+        "xg": 0.192,
+        "headline": "GOL de Lionel Messi"
+      },
+      {
+        "minute": 56,
+        "team": "Synthetic XI — exploratorio",
+        "type": "shot_off_target",
+        "actor": "SYN-W120",
+        "zone": 2,
+        "xg": 0.148,
+        "headline": "Ocasión de SYN-W120 fuera"
+      },
+      {
+        "minute": 67,
+        "team": "Real Best XI — exploratorio",
+        "type": "shot_off_target",
+        "actor": "Pedri",
+        "zone": 3,
+        "xg": 0.209,
+        "headline": "Ocasión de Pedri fuera"
+      },
+      {
+        "minute": 67,
+        "team": "Real Best XI — exploratorio",
+        "type": "shot_on_target",
+        "actor": "Pedri",
+        "zone": 2,
+        "xg": 0.129,
+        "headline": "Remate de Pedri detenido por el portero"
+      },
+      {
+        "minute": 79,
+        "team": "Real Best XI — exploratorio",
+        "type": "shot_on_target",
+        "actor": "Michael Olise",
+        "zone": 1,
+        "xg": 0.101,
+        "headline": "Remate de Michael Olise detenido por el portero"
       }
     ]
   },
