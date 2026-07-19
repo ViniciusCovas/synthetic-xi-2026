@@ -1,0 +1,105 @@
+name: Immediate Residual Extraction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/immediate-residual-extraction.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: immediate-residual-extraction
+  cancel-in-progress: true
+
+jobs:
+  extract-now:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restore raw bundle cache
+        uses: actions/cache@v4
+        with:
+          path: data/raw/adaptive_annual
+          key: immediate-residual-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            targeted-bundle-${{ runner.os }}-
+            adaptive-annual-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: pip install pandas requests numpy matplotlib
+
+      - name: Use at most three remaining daily calls
+        env:
+          PYTHONPATH: .
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_SAFE_REQUESTS_PER_MINUTE: "120"
+          MAX_NETWORK_REQUESTS: "3"
+          MIN_DAILY_REQUESTS_REMAINING: "1"
+          FIXTURE_BUNDLE_SIZE: "20"
+          FORCE_REQUERY_BUNDLES: "true"
+          SCOPE_MAX_REQUERY_ATTEMPTS: "2"
+          GITHUB_RUN_ID: "immediate_${{ github.run_id }}"
+        run: python scripts/run_batched_selection_extraction.py
+
+      - name: Rebuild corrected scientific pipeline
+        run: |
+          python scripts/build_partial_window_artifacts.py
+          python scripts/validate_lateral_grid.py
+          python scripts/resolve_eleven_roles.py
+          python scripts/build_selection_frontier.py
+          python scripts/scientific/build_scope_correct_coverage.py
+          python scripts/scientific/shadow_scope_correct_selection.py
+          python scripts/scientific/promote_scope_correct_coverage.py
+          python scripts/build_selection_sufficiency_gate.py
+          python scripts/build_scientific_status.py
+          python scripts/build_final_release_package.py
+
+      - name: Archive fresh responses
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: immediate-residual-raw-${{ github.run_id }}
+          path: data/raw/adaptive_annual
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Publish residual extraction outputs
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data paper METHODOLOGY_CORRECTION_EXACT_WINDOW_COVERAGE.md
+          if git diff --cached --quiet; then
+            echo "No residual extraction changes to publish."
+            exit 0
+          fi
+          git commit -m "data: publish immediate residual evidence"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase -X theirs origin/main && git push origin HEAD:main; then
+              echo "Residual evidence published on attempt ${attempt}."
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 4))
+          done
+          echo "Failed to publish immediate residual evidence." >&2
+          exit 1
