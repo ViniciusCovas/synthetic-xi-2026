@@ -410,7 +410,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 22236,Rafael Leão,36,2127.0,36,31,1.0,0.9722222222222222,True,Portugal,Midfielder,2271.0,True
 22265,Nuno Da Costa,32,1171.0,32,28,1.0,0.96875,True,Cape Verde Islands,Attacker,1340.0,False
 24012,Lionel M'Pasi,12,1140.0,12,8,1.0,1.0,True,Congo DR,Goalkeeper,1275.0,False
-24810,Jhon Córdoba,9,563.0,9,6,1.0,1.0,True,Colombia,Attacker,3377.0,True
+24810,Jhon Córdoba,9,653.0,10,7,1.0,1.0,True,Colombia,Attacker,3377.0,True
 24845,Julian Ryerson,51,3661.0,46,47,1.0,1.0,True,Norway,Defender,4416.0,True
 24866,Douglas Santos,8,711.0,8,3,1.0,1.0,True,Brazil,Defender,2733.0,True
 24888,Hee-Chan Hwang,34,1873.0,34,31,1.0,1.0,True,South Korea,Attacker,2665.0,True
@@ -617,8 +617,8 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 50999,Matt Turner,10,900.0,10,9,1.0,1.0,True,USA,Goalkeeper,2487.0,True
 51016,Tajon Buchanan,52,2973.0,48,47,1.0,1.0,True,Canada,Midfielder,3446.0,True
 51114,Cristian Roldán,14,1231.0,12,14,1.0,1.0,True,USA,Midfielder,5309.0,True
-51148,Dayne St. Clair,33,2991.0,28,33,1.0,1.0,True,Canada,Goalkeeper,5283.0,True
-51149,Michael Boxall,25,1871.0,21,22,1.0,1.0,True,New Zealand,Defender,4489.0,True
+51148,Dayne St. Clair,34,3081.0,29,34,1.0,1.0,True,Canada,Goalkeeper,5283.0,True
+51149,Michael Boxall,26,1961.0,22,23,1.0,1.0,True,New Zealand,Defender,4489.0,True
 51466,Joaquín Piquerez,48,3821.0,43,48,1.0,1.0,True,Uruguay,Attacker,6038.0,True
 51494,Manuel Ugarte,29,1322.0,29,26,1.0,1.0,True,Uruguay,Midfielder,3203.0,True
 51530,Federico Viñas,39,2723.0,39,36,1.0,0.9743589743589743,True,Uruguay,Midfielder,3062.0,True
@@ -687,7 +687,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 94541,Joe Bell,19,1618.0,19,16,1.0,1.0,True,New Zealand,Midfielder,4331.0,True
 94562,Santiago Giménez,28,1308.0,22,24,1.0,1.0,True,Mexico,Attacker,1609.0,False
 95460,Alex Arce,4,71.0,4,2,1.0,1.0,True,Paraguay,Attacker,3335.0,True
-96512,Kevin Lenini,8,543.0,8,4,1.0,1.0,True,Cape Verde Islands,Midfielder,2730.0,True
+96512,Kevin Lenini,8,554.0,9,5,1.0,1.0,True,Cape Verde Islands,Midfielder,2730.0,True
 96615,Ismael Díaz,32,2131.0,27,30,1.0,1.0,True,Panama,Attacker,4829.0,True
 98936,Lyle Foster,31,1771.0,31,30,1.0,0.967741935483871,True,South Africa,Attacker,2088.0,True
 99211,Jin-seob Park,2,38.0,2,0,1.0,1.0,True,South Korea,Midfielder,3210.0,True
