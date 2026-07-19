@@ -1,0 +1,59 @@
+name: Final Scientific Gates
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/build_candidate_coverage_gate.py"
+      - "scripts/run_external_pre_tournament_holdout.py"
+      - "scripts/build_scientific_status.py"
+      - "data/model_readiness/**"
+      - "data/processed/fixtures.csv"
+      - ".github/workflows/final-scientific-gates.yml"
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: final-scientific-gates
+  cancel-in-progress: true
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas numpy
+      - name: Evaluate candidate-relevant coverage
+        run: python scripts/build_candidate_coverage_gate.py
+      - name: Run frozen pre-tournament holdout
+        run: python scripts/run_external_pre_tournament_holdout.py
+      - name: Rebuild scientific status
+        run: python scripts/build_scientific_status.py
+      - name: Publish outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/model_readiness/candidate_window_coverage.csv data/model_readiness/candidate_coverage_status.json data/model_readiness/scientific_validation_status.json data/validation/external_pre_tournament_predictions.csv data/validation/external_pre_tournament_holdout_summary.json data/validation/frozen_pre_tournament_team_strengths.csv
+          if git diff --cached --quiet; then
+            echo "No final-gate changes"
+          else
+            git commit -m "science: update candidate coverage and external holdout"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
