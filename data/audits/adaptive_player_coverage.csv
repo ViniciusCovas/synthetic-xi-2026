@@ -468,7 +468,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 34168,Jin-gyu Kim,4,199.0,4,2,1.0,1.0,True,South Korea,Midfielder,2665.0,True
 34211,Gue-sung Cho,37,2009.0,37,35,1.0,0.972972972972973,True,South Korea,Attacker,2327.0,True
 34374,Bum-keun Song,2,180.0,2,2,1.0,1.0,True,South Korea,Goalkeeper,2475.0,True
-34418,Tae-hyeon Kim,12,1086.0,12,12,1.0,1.0,True,South Korea,Defender,4204.0,True
+34418,Tae-hyeon Kim,13,1176.0,13,13,1.0,1.0,True,South Korea,Defender,4204.0,True
 34431,Dong-gyeong Lee,4,289.0,3,4,1.0,1.0,True,South Korea,Attacker,2714.0,True
 34710,Hyun-gyu Oh,46,3098.0,46,43,1.0,1.0,True,South Korea,Attacker,3676.0,True
 35532,Julián Quiñones,39,3167.0,35,34,1.0,1.0,True,Mexico,Midfielder,3625.0,True
@@ -922,7 +922,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 303362,Rafik Belghali,38,2874.0,38,34,1.0,1.0,True,Algeria,Defender,3002.0,True
 303467,Abdul Fatawu Issahaku,48,3855.0,48,44,1.0,1.0,True,Ghana,Midfielder,3994.0,True
 304228,Zeno Debast,22,1451.0,22,22,1.0,1.0,True,Belgium,Defender,1531.0,False
-304782,Tomoki Hayakawa,14,1266.0,14,14,1.0,1.0,True,Japan,Goalkeeper,5324.0,True
+304782,Tomoki Hayakawa,15,1356.0,15,15,1.0,1.0,True,Japan,Goalkeeper,5324.0,True
 304951,Gi-Hyuk Lee,8,613.0,8,5,1.0,1.0,True,South Korea,Defender,2538.0,True
 304958,Yang Hyun-Jun,41,2664.0,41,40,1.0,1.0,True,South Korea,Attacker,3725.0,True
 305832,Matías Galarza,24,1546.0,24,20,1.0,1.0,True,Paraguay,Midfielder,3372.0,True

@@ -10,11 +10,11 @@
   "completed_with_target_players": 8864,
   "player_endpoint_empty": 480,
   "no_target_player_returned": 1088,
-  "active_player_rows": 38510,
+  "active_player_rows": 38512,
   "lineup_rows": 44629,
-  "active_minutes_nonnull_rate": 0.9999740327187744,
-  "active_position_nonnull_rate": 0.9999740327187744,
-  "active_passes_nonnull_rate": 0.9931965723188783,
+  "active_minutes_nonnull_rate": 0.9999740340673037,
+  "active_position_nonnull_rate": 0.9999740340673037,
+  "active_passes_nonnull_rate": 0.9931969256335688,
   "methodological_gate": {
     "rankings_allowed": false,
     "requirements_before_ranking": [

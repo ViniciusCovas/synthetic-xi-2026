@@ -1,10 +1,14 @@
 {
-  "status": "targeted_coverage_extraction_completed",
-  "priority_fixture_candidates": 364,
+  "status": "batched_targeted_extraction_completed",
+  "bundle_size": 20,
+  "priority_fixture_candidates": 1726,
+  "fixtures_requested_this_run": 0,
+  "fixtures_returned_this_run": 0,
   "fixtures_completed_this_run": 0,
-  "player_rows": 2,
+  "player_rows": 0,
   "lineup_rows": 0,
-  "network_calls": 1,
+  "network_calls": 0,
+  "daily_limit_reported": 7500,
   "quota_remaining_reported": 4,
   "quota_stopped": true,
   "rankings_allowed": false
