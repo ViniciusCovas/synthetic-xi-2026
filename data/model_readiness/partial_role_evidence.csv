@@ -687,8 +687,8 @@ player_id,player_name,active_fixtures,active_minutes,starts,modal_provider_posit
 50999,Matt Turner,10,900.0,10,G,1.0,G,1.0,1.0,1.0,outer_high,1.0,4-2-3-1,USA,Goalkeeper,True,True
 51016,Tajon Buchanan,52,2973.0,35,M,0.6346153846153846,M,0.6346153846153846,3.0,0.9142857142857143,outer_high,0.8857142857142857,4-4-2,Canada,Midfielder,True,True
 51114,Cristian Roldán,14,1231.0,14,M,1.0,M,1.0,3.0,1.0,outer_high,0.5384615384615384,4-2-3-1,USA,Midfielder,True,True
-51148,Dayne St. Clair,33,2991.0,33,G,1.0,G,1.0,1.0,1.0,outer_high,1.0,5-4-1,Canada,Goalkeeper,True,True
-51149,Michael Boxall,25,1871.0,19,D,1.0,D,1.0,2.0,1.0,outer_high,1.0,5-4-1,New Zealand,Defender,True,True
+51148,Dayne St. Clair,34,3081.0,34,G,1.0,G,1.0,1.0,1.0,outer_high,1.0,5-4-1,Canada,Goalkeeper,True,True
+51149,Michael Boxall,26,1961.0,20,D,1.0,D,1.0,2.0,1.0,outer_high,1.0,5-4-1,New Zealand,Defender,True,True
 51466,Joaquín Piquerez,48,3821.0,43,D,0.8958333333333334,D,0.9111111111111111,2.0,0.9024390243902439,outer_low,0.8780487804878049,4-2-3-1,Uruguay,Attacker,True,True
 51494,Manuel Ugarte,29,1322.0,14,M,1.0,M,1.0,3.0,1.0,outer_high,0.6428571428571429,3-4-2-1,Uruguay,Midfielder,True,True
 51530,Federico Viñas,39,2723.0,30,F,0.8461538461538461,F,0.8461538461538461,5.0,0.5714285714285714,outer_high,0.8928571428571429,4-2-3-1,Uruguay,Midfielder,True,True
