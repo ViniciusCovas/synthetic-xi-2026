@@ -75,6 +75,9 @@ class BatchClient:
     ) -> dict[str, Any]:
         if not fixture_ids or len(fixture_ids) > 20:
             raise ValueError("fixture_ids must contain between 1 and 20 ids")
+        force_refresh = force_refresh or os.getenv("FORCE_REQUERY_BUNDLES", "").strip().lower() in {
+            "true", "1", "yes", "y"
+        }
         ids = "-".join(str(value) for value in fixture_ids)
         digest = hashlib.sha256(ids.encode()).hexdigest()[:20]
         path = RAW_DIR / f"fixtures_{digest}.json"
