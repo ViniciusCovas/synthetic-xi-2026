@@ -458,7 +458,7 @@ player_id,player_name,active_fixtures,active_minutes,starts,modal_provider_posit
 22265,Nuno Da Costa,32,1171.0,10,F,0.875,F,0.8709677419354839,4.0,0.6,outer_high,0.9,4-2-3-1,Cape Verde Islands,Attacker,True,False
 24012,Lionel M'Pasi,8,780.0,8,G,1.0,G,1.0,1.0,1.0,outer_high,1.0,4-1-4-1,Congo DR,Goalkeeper,True,False
 24012,Lionel Mpasi Nzau,4,360.0,4,G,1.0,G,1.0,1.0,1.0,outer_high,1.0,5-3-2,Congo DR,Goalkeeper,True,False
-24810,Jhon Córdoba,8,473.0,6,F,1.0,F,1.0,5.0,0.8333333333333334,outer_high,0.6666666666666666,4-2-3-1,Colombia,Attacker,True,True
+24810,Jhon Córdoba,9,563.0,7,F,1.0,F,1.0,5.0,0.8333333333333334,outer_high,0.6666666666666666,4-2-3-1,Colombia,Attacker,True,True
 24845,Julian Ryerson,51,3661.0,42,M,0.6862745098039216,M,0.6862745098039216,3.0,0.8333333333333334,outer_high,0.9523809523809523,3-4-2-1,Norway,Defender,True,True
 24866,Douglas Santos,8,711.0,8,D,1.0,D,1.0,2.0,1.0,outer_low,0.7142857142857143,4-3-3,Brazil,Defender,True,True
 24888,Hee-Chan Hwang,28,1509.0,19,F,0.9285714285714286,F,0.9285714285714286,4.0,0.9473684210526315,outer_high,0.6842105263157895,3-5-2,South Korea,Attacker,True,True
@@ -761,7 +761,7 @@ player_id,player_name,active_fixtures,active_minutes,starts,modal_provider_posit
 94541,Joe Bell,19,1618.0,18,M,1.0,M,1.0,3.0,1.0,outer_high,1.0,4-1-4-1,New Zealand,Midfielder,True,True
 94562,Santiago Giménez,28,1308.0,13,F,1.0,F,1.0,4.0,0.7692307692307693,outer_high,1.0,3-5-2,Mexico,Attacker,True,False
 95460,Alex Arce,4,71.0,0,F,1.0,F,1.0,,0.0,,0.0,4-4-2,Paraguay,Attacker,True,True
-96512,Kevin Lenini,7,532.0,6,M,1.0,M,1.0,3.0,1.0,outer_high,1.0,4-1-4-1,Cape Verde Islands,Midfielder,True,True
+96512,Kevin Lenini,8,543.0,6,M,1.0,M,1.0,3.0,1.0,outer_high,1.0,4-1-4-1,Cape Verde Islands,Midfielder,True,True
 96615,Ismael Díaz,32,2131.0,24,M,0.5625,M,0.5625,4.0,0.9130434782608695,outer_high,0.6521739130434783,4-2-3-1,Panama,Attacker,True,True
 98936,Lyle Foster,31,1771.0,20,F,0.9032258064516129,F,0.9032258064516129,4.0,0.6,outer_high,0.95,4-2-3-1,South Africa,Attacker,True,True
 99211,Jin-seob Park,2,38.0,0,M,1.0,M,1.0,,0.0,,0.0,,South Korea,Midfielder,True,True

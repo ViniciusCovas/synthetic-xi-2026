@@ -2,8 +2,8 @@
   "version": "broadcast_v1.0",
   "title": "Synthetic XI vs Real Best XI",
   "probabilities": {
-    "synthetic_win": 0.2798,
-    "draw": 0.2363,
+    "synthetic_win": 0.28,
+    "draw": 0.2361,
     "real_win": 0.4839
   },
   "calibration": {
@@ -28,7 +28,7 @@
       "id": "representative",
       "label": "Partido representativo",
       "description": "Timeline directa del partido seleccionado por el motor por cercanía a las medias de 10.000 simulaciones.",
-      "scoreline_probability": 0.0968,
+      "scoreline_probability": 0.097,
       "stats": {
         "home_goals": 1,
         "away_goals": 2,
@@ -167,7 +167,7 @@
       "id": "synthetic-upset",
       "label": "Sorpresa sintética",
       "description": "Reconstrucción visual coherente con el marcador 2–1 muestreado por Monte Carlo.",
-      "scoreline_probability": 0.0696,
+      "scoreline_probability": 0.0697,
       "stats": {
         "home_goals": 2,
         "away_goals": 1,

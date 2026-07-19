@@ -5,23 +5,23 @@
   "one_row_per_simulated_match": true,
   "full_ledger_artifact": "all_10000_simulated_matches.csv.gz",
   "outcomes": {
-    "synthetic_wins": 2798,
-    "draws": 2363,
+    "synthetic_wins": 2800,
+    "draws": 2361,
     "real_best_xi_wins": 4839
   },
   "probabilities": {
-    "synthetic_win": 0.2798,
-    "draw": 0.2363,
+    "synthetic_win": 0.28,
+    "draw": 0.2361,
     "real_best_xi_win": 0.4839
   },
   "means": {
-    "home_goals": 1.2298,
+    "home_goals": 1.2299,
     "away_goals": 1.6876,
-    "total_goals": 2.9174,
-    "total_shots": 17.6177,
-    "total_shots_on_target": 8.8077,
-    "home_xg": 1.222891901893426,
-    "away_xg": 1.6770372524129966,
+    "total_goals": 2.9175,
+    "total_shots": 17.6196,
+    "total_shots_on_target": 8.8092,
+    "home_xg": 1.22308201658044,
+    "away_xg": 1.677232326164274,
     "zero_zero_probability": 0.0517
   },
   "percentiles": {
@@ -61,18 +61,18 @@
       "95": 14.0
     },
     "home_xg": {
-      "5": 0.5230643344461181,
-      "25": 0.885719190498635,
-      "50": 1.1863681063113587,
-      "75": 1.5190743788550483,
-      "95": 2.044369791019089
+      "5": 0.5230702869731463,
+      "25": 0.88572927007599,
+      "50": 1.1865141248211941,
+      "75": 1.5191576210492044,
+      "95": 2.04457211519346
     },
     "away_xg": {
-      "5": 0.7966850967166293,
-      "25": 1.2648313759700134,
-      "50": 1.6453774495462765,
-      "75": 2.04612304115683,
-      "95": 2.6845976301388927
+      "5": 0.7966952426817809,
+      "25": 1.2659777099865166,
+      "50": 1.6451708149558932,
+      "75": 2.04634705988983,
+      "95": 2.685350980304225
     }
   },
   "calibration_targets": {
@@ -92,7 +92,7 @@
     "synthetic_win_probability": 0.0,
     "draw_probability": 0.0,
     "real_win_probability": 0.0,
-    "mean_total_goals": 4.440892098500626e-16,
+    "mean_total_goals": 0.0,
     "mean_total_shots": 0.0
   },
   "matches_principal_summary": true
