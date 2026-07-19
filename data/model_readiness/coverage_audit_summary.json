@@ -9,7 +9,7 @@
       "players_with_expected_fixtures": 1062,
       "players_passing_80pct": 432,
       "pass_rate": 0.4067796610169492,
-      "median_fixture_coverage": 0.9606553147574819,
+      "median_fixture_coverage": 0.961901306240929,
       "p10_fixture_coverage": 0.23529411764705882
     },
     {
@@ -18,7 +18,7 @@
       "players_with_expected_fixtures": 1058,
       "players_passing_80pct": 661,
       "pass_rate": 0.6224105461393596,
-      "median_fixture_coverage": 0.9523809523809523,
+      "median_fixture_coverage": 0.9534883720930233,
       "p10_fixture_coverage": 0.17392857142857143
     }
   ],

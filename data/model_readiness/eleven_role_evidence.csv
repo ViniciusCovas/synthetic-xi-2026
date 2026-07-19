@@ -232,7 +232,7 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 2639,S. Mandash,Saudi Arabia,Midfielder,RW,1.0,9,RW:9,1627.0,low_is_left,0.6923076923076923,False,True,False
 2649,A. Fatouh,Egypt,Defender,LB,0.42857142857142855,7,LB:3 | RB:2 | LCB:2,2382.0,low_is_left,0.3653846153846153,False,False,False
 2654,M. Hany,Egypt,Defender,RB,1.0,34,RB:34,4015.0,low_is_left,1.0,True,True,True
-2656,K. Hafez,Egypt,Defender,RB,0.8,20,RB:16 | LB:3 | LCB:1,1824.0,low_is_left,0.9565217391304348,True,True,True
+2656,K. Hafez,Egypt,Defender,RB,0.8,20,RB:16 | LB:3 | LCB:1,1824.0,low_is_left,0.9782608695652174,True,True,True
 2660,N. Dunga,Egypt,Midfielder,AM,1.0,4,AM:4,1817.0,low_is_left,0.2784810126582278,False,True,False
 2664,Trezeguet,Egypt,Attacker,RW,0.42857142857142855,28,RW:12 | LW:8 | ST:8,3042.0,low_is_left,1.0,True,False,False
 2664,Trézéguet,Egypt,Attacker,RW,1.0,1,RW:1,3042.0,low_is_left,1.0,True,True,True
@@ -373,7 +373,7 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 16805,R. Rabia,Egypt,Defender,LCB,0.6666666666666666,3,LCB:2 | RCB:1,1730.0,low_is_left,0.3157894736842105,False,True,False
 16813,H. Fathy,Egypt,Defender,LCB,0.5,4,LCB:2 | RCB:1 | RB:1,1853.0,low_is_left,0.4705882352941176,False,False,False
 16831,E. M. Soliman,Egypt,Goalkeeper,GK,1.0,4,GK:4,1406.0,low_is_left,0.2666666666666666,False,True,False
-16841,M. Lasheen,Egypt,Midfielder,DM,0.5428571428571428,35,DM:19 | CM:11 | AM:5,3638.0,low_is_left,0.9444444444444444,True,False,False
+16841,M. Lasheen,Egypt,Midfielder,DM,0.5428571428571428,35,DM:19 | CM:11 | AM:5,3638.0,low_is_left,0.9629629629629628,True,False,False
 16871,Zizo,Egypt,Attacker,RW,0.8181818181818182,22,RW:18 | ST:3 | LW:1,2298.0,low_is_left,1.0,True,True,True
 17269,E. Ashour,Egypt,Midfielder,CM,0.47368421052631576,19,CM:9 | AM:8 | ST:1 | RW:1,2153.0,low_is_left,1.0,True,False,False
 18110,M. Crocombe,New Zealand,Goalkeeper,GK,1.0,12,GK:12,3338.0,low_is_left,0.5,False,True,False
@@ -867,7 +867,7 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 164026,A. Olwan,Jordan,Attacker,RW,1.0,3,RW:3,1367.0,low_is_left,0.2,False,True,False
 174915,J. Casimir,Haiti,Midfielder,RW,0.7727272727272727,22,RW:17 | RB:4 | ST:1,2075.0,low_is_left,1.0,True,True,True
 175439,H. Al Amin,Qatar,Defender,LB,0.6,5,LB:3 | RB:2,2525.0,low_is_left,0.2658227848101265,False,True,False
-179699,F. Mayele,Congo DR,Attacker,RW,1.0,29,RW:29,2744.0,low_is_left,0.9411764705882352,True,True,True
+179699,F. Mayele,Congo DR,Attacker,RW,1.0,29,RW:29,2744.0,low_is_left,0.9607843137254902,True,True,True
 179856,B. Old,New Zealand,Attacker,RB,1.0,4,RB:4,2566.0,low_is_left,0.2325581395348837,False,True,False
 179862,M. Stamenic,New Zealand,Midfielder,AM,0.5416666666666666,24,AM:13 | CM:11,3788.0,low_is_left,0.7592592592592593,False,False,False
 180560,H. Mejbri,Tunisia,Attacker,RW,0.8666666666666667,15,RW:13 | ST:2,2274.0,low_is_left,0.9183673469387756,True,True,True
@@ -1112,7 +1112,7 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 390002,M. Chávez,Mexico,Defender,LB,1.0,2,LB:2,2595.0,low_is_left,0.12,False,True,False
 392387,O. Makhanya,South Africa,Defender,RB,1.0,15,RB:15,4022.0,low_is_left,0.5675675675675675,False,True,False
 393977,A. Arous,Tunisia,Defender,RB,1.0,9,RB:9,1751.0,low_is_left,0.6585365853658537,False,True,False
-395075,M. Ziko,Egypt,Midfielder,RW,0.7142857142857143,21,RW:15 | ST:4 | LW:2,2001.0,low_is_left,0.9361702127659576,True,True,True
+395075,M. Ziko,Egypt,Midfielder,RW,0.7142857142857143,21,RW:15 | ST:4 | LW:2,2001.0,low_is_left,0.9574468085106383,True,True,True
 395559,K. Alajbegovic,Bosnia & Herzegovina,Midfielder,RW,0.5714285714285714,7,RW:4 | LW:3,2988.0,low_is_left,0.3125,False,False,False
 396623,P. Cubarsi,Spain,Defender,RCB,0.8076923076923077,52,RCB:42 | LCB:9 | RB:1,4947.0,low_is_left,1.0,True,True,True
 400948,A. Diao,Senegal,Attacker,RW,0.6153846153846154,13,RW:8 | ST:5,1773.0,low_is_left,0.8958333333333334,False,True,False
@@ -1146,4 +1146,4 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 513776,Y. Diomande,Ivory Coast,Midfielder,RW,0.8205128205128205,39,RW:32 | LW:7,3467.0,low_is_left,1.0,True,True,True
 535046,A. Amaimouni,Morocco,Midfielder,RW,1.0,6,RW:6,1574.0,low_is_left,0.5128205128205128,False,True,False
 542644,A. Jasim,Iraq,Attacker,RW,0.875,8,RW:7 | LW:1,1566.0,low_is_left,0.4146341463414634,False,True,False
-550371,T. Alaa,Egypt,Defender,RB,1.0,3,RB:3,980.0,low_is_left,0.5897435897435898,False,True,False
+550371,T. Alaa,Egypt,Defender,RB,1.0,3,RB:3,980.0,low_is_left,0.6025641025641025,False,True,False
