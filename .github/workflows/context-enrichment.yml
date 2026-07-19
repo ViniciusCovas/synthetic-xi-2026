@@ -1,0 +1,119 @@
+name: Context and Spatial Enrichment
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/enrichment/**"
+      - "tests/test_enrichment.py"
+      - "ENRICHMENT.md"
+      - ".github/workflows/context-enrichment.yml"
+  schedule:
+    - cron: "15 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: synthetic-xi-data-writer
+  cancel-in-progress: false
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restore enrichment caches
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/raw/world_cup_fixture_metadata
+            data/raw/open_meteo
+            data/raw/statsbomb_open
+            data/raw/adaptive_annual
+            data/raw/fixture_inventory
+          key: enrichment-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            enrichment-${{ runner.os }}-
+            targeted-bundle-${{ runner.os }}-
+            targeted-annual-${{ runner.os }}-
+            adaptive-annual-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: pip install pandas numpy requests pytest
+
+      - name: Fetch compact World Cup fixture metadata
+        env:
+          PYTHONPATH: .
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          FIXTURE_METADATA_MIN_REMAINING: "20"
+          FIXTURE_METADATA_MAX_CALLS: "10"
+          API_SAFE_REQUESTS_PER_MINUTE: "120"
+        run: python scripts/enrichment/fetch_world_cup_fixture_metadata.py
+
+      - name: Build match context and Open-Meteo weather
+        env:
+          PYTHONPATH: .
+        run: |
+          python scripts/enrichment/build_fixture_context_catalog.py
+          python scripts/enrichment/fetch_open_meteo_weather.py
+
+      - name: Sync Hudl StatsBomb Open Data development sample
+        env:
+          PYTHONPATH: .
+          STATSBOMB_OPEN_COMPETITIONS: "2"
+          STATSBOMB_OPEN_SAMPLE_MATCHES: "3"
+        run: python scripts/enrichment/sync_statsbomb_open_data.py
+
+      - name: Test enrichment components
+        env:
+          PYTHONPATH: .
+        run: pytest -q tests/test_enrichment.py
+
+      - name: Archive raw enrichment sources
+        uses: actions/upload-artifact@v4
+        with:
+          name: context-spatial-enrichment-${{ github.run_id }}
+          path: |
+            data/raw/world_cup_fixture_metadata
+            data/raw/open_meteo
+            data/raw/statsbomb_open
+            data/enrichment
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Publish processed enrichment outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/enrichment
+          if git diff --cached --quiet; then
+            echo "No enrichment changes to publish"
+            exit 0
+          fi
+          git commit -m "data: publish contextual and spatial enrichment"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            if git rebase -X theirs origin/main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          exit 1
