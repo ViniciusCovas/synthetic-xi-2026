@@ -1,0 +1,7 @@
+Gate,Status,Evidence or requirement
+Computational reproducibility,Passed,Same data and seeds reproduce the ledger
+Aggregate event calibration,Passed,"Goals, shots, shots on target and 0–0 frequency"
+Annual player coverage,In progress,Exact per-player coverage by temporal window pending
+Definitive eleven-role resolution,Pending,Requires lateral-orientation validation and ≥60% stability
+Out-of-sample predictive validation,Pending,Requires rolling-origin backtest and proper scoring rules
+Final team-comparison claim,Blocked,Exploratory until all methodological gates pass
