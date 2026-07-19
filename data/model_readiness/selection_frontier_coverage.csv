@@ -1221,10 +1221,10 @@ player_id,player_name,world_cup_team,squad_position,reported_minutes,benchmark_p
 51016,T. Buchanan,Canada,Midfielder,3446.0,True,pre_world_cup,53,53,1.0,0,51,2593.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator
 51114,C. Roldan,USA,Midfielder,5309.0,True,annual_current,44,20,0.4545454545454545,24,14,1051.0,5309.0,0.1979657185910717,0.1979657185910717,False,provider aggregate minutes plus exact fixture inventory
 51114,C. Roldan,USA,Midfielder,5309.0,True,pre_world_cup,45,17,0.3777777777777777,28,14,1231.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
-51148,D. St. Clair,Canada,Goalkeeper,5283.0,True,annual_current,40,35,0.875,5,34,2533.0,5283.0,0.4794624266515238,0.4794624266515238,False,provider aggregate minutes plus exact fixture inventory
-51148,D. St. Clair,Canada,Goalkeeper,5283.0,True,pre_world_cup,45,38,0.8444444444444444,7,35,2991.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator
-51149,M. Boxall,New Zealand,Defender,4489.0,True,annual_current,36,28,0.7777777777777778,8,21,1511.0,4489.0,0.3366005791935843,0.3366005791935843,False,provider aggregate minutes plus exact fixture inventory
-51149,M. Boxall,New Zealand,Defender,4489.0,True,pre_world_cup,39,29,0.7435897435897436,10,22,1665.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
+51148,D. St. Clair,Canada,Goalkeeper,5283.0,True,annual_current,40,35,0.875,5,35,2623.0,5283.0,0.496498201779292,0.496498201779292,False,provider aggregate minutes plus exact fixture inventory
+51148,D. St. Clair,Canada,Goalkeeper,5283.0,True,pre_world_cup,45,38,0.8444444444444444,7,36,3081.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator
+51149,M. Boxall,New Zealand,Defender,4489.0,True,annual_current,36,28,0.7777777777777778,8,22,1601.0,4489.0,0.3566495878814881,0.3566495878814881,False,provider aggregate minutes plus exact fixture inventory
+51149,M. Boxall,New Zealand,Defender,4489.0,True,pre_world_cup,39,29,0.7435897435897436,10,23,1755.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
 51466,J. Piquerez,Uruguay,Attacker,6038.0,True,annual_current,70,70,1.0,0,53,3341.0,6038.0,0.5533289168598874,0.5533289168598874,False,provider aggregate minutes plus exact fixture inventory
 51466,J. Piquerez,Uruguay,Attacker,6038.0,True,pre_world_cup,73,73,1.0,0,55,3821.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator
 51494,M. Ugarte,Uruguay,Midfielder,3203.0,True,annual_current,45,45,1.0,0,44,1322.0,3203.0,0.4127380580705588,0.4127380580705588,False,provider aggregate minutes plus exact fixture inventory

@@ -1,6 +1,6 @@
 {
   "release": "v1.0-candidate",
-  "generated_at_utc": "2026-07-19T12:45:47.460899+00:00",
+  "generated_at_utc": "2026-07-19T14:26:25.126881+00:00",
   "scientific_ready": false,
   "claim_ceiling": "exploratory, calibrated and auditable simulation",
   "blocking_gates": [
@@ -10,17 +10,17 @@
     {
       "path": "data/model_readiness/annual_model_readiness.json",
       "bytes": 706,
-      "sha256": "8bbd9a655d81cad1ad6489fd305b8fab938b30e7f74117c6343399b93368f218"
+      "sha256": "5c39fe625460c1e1cc1c597878e24c942450516f1257d21974c9a247d0c49879"
     },
     {
       "path": "data/model_readiness/candidate_coverage_status.json",
       "bytes": 803,
-      "sha256": "baf13dbaa264a402376232cd8655510f6bc0aec92c936f8d24aa550e81fca410"
+      "sha256": "bce67e58c54a7b6a21c8a0d643cf6942b5464ba9d88f19493a1a90a8f8e0170d"
     },
     {
       "path": "data/model_readiness/candidate_window_coverage.csv",
       "bytes": 374716,
-      "sha256": "6254994eff909d698110675f47b736645e43583ce7ae7251af7bdcce30165fbe"
+      "sha256": "be9172bf7ca59aaa7679766d9b19cc7a5267a61d6d38a916c741a04407dc201f"
     },
     {
       "path": "data/model_readiness/coverage_audit_summary.json",
@@ -75,22 +75,22 @@
     {
       "path": "data/model_readiness/partial_annual_current_totals.csv",
       "bytes": 173750,
-      "sha256": "1cb61487181f682ea41f660080d54a1587a3961789b698f6d5f5d05e01524f0b"
+      "sha256": "cc660b3075d2f32173919da028893c87f726b844b5d5982c48ec75cf619f56f7"
     },
     {
       "path": "data/model_readiness/partial_pre_world_cup_totals.csv",
-      "bytes": 164500,
-      "sha256": "2977d32deea80ffc823cec2342a608f029dcbffd09ed383fa3b6e4a9552295f2"
+      "bytes": 164490,
+      "sha256": "6f901f6b50d9fab6019a44cf0d3d5f1b1cabc80a81b5a1d0b20876501a5226bb"
     },
     {
       "path": "data/model_readiness/partial_role_evidence.csv",
       "bytes": 145315,
-      "sha256": "b9ca2b2e4a5d3e79530cda3711e9e8d7ca83890c95f054f83903eb47cccfdcce"
+      "sha256": "f7838f7728dc13ba8355abb283df65d0a6b35f535cf8e57787d8c1eec509e873"
     },
     {
       "path": "data/model_readiness/player_window_coverage.csv",
-      "bytes": 390157,
-      "sha256": "9008f0c6a7871371ff3ffa64921e07d83b0f184242c3e3141233c4c010f765e9"
+      "bytes": 390159,
+      "sha256": "aa6ce7b391c27eefe6e2cc9f038f804d1af2addc4350a7b13a591a9054c205d3"
     },
     {
       "path": "data/model_readiness/scientific_validation_status.json",
@@ -99,18 +99,18 @@
     },
     {
       "path": "data/model_readiness/selection_frontier.csv",
-      "bytes": 453455,
-      "sha256": "2d24c5e7c4ad57b16b93bb1bfd1efdb87ae58ccd81b61beb33b6b658c4c546e2"
+      "bytes": 453452,
+      "sha256": "495ffe29ff314faeea5449636fa85a88334e61c65ff1b62a59d2451739533ab4"
     },
     {
       "path": "data/model_readiness/selection_frontier_all_candidates.csv",
-      "bytes": 453455,
-      "sha256": "2d24c5e7c4ad57b16b93bb1bfd1efdb87ae58ccd81b61beb33b6b658c4c546e2"
+      "bytes": 453452,
+      "sha256": "495ffe29ff314faeea5449636fa85a88334e61c65ff1b62a59d2451739533ab4"
     },
     {
       "path": "data/model_readiness/selection_frontier_coverage.csv",
-      "bytes": 380100,
-      "sha256": "b815baf32f79c1144558de7cdbf606cbcdc54122924311d57bd25d8f780ccb79"
+      "bytes": 380098,
+      "sha256": "82bc3cc6ce2db3f43a11996672a2e390e6f9aa21fdb0bfaf56d0bf334496ba9c"
     },
     {
       "path": "data/model_readiness/selection_frontier_priority_fixtures.csv",
@@ -124,8 +124,8 @@
     },
     {
       "path": "data/model_readiness/selection_sufficiency_all_players.csv",
-      "bytes": 577993,
-      "sha256": "96007b7d8bfc10f311ec5c86c043e00673e3e65b899fcd327a357399c3b0788e"
+      "bytes": 577985,
+      "sha256": "05947705101d99ecf7e9f83b8d887081d0fe4b2a6351bc8fe974aec9d4fe1a74"
     },
     {
       "path": "data/model_readiness/selection_sufficiency_priority_fixtures.csv",
@@ -139,23 +139,23 @@
     },
     {
       "path": "data/model_readiness/selection_sufficiency_unresolved_players.csv",
-      "bytes": 241316,
-      "sha256": "bcea5a1f036311c8b0f0b2493d698b2117cd789ebbb0bbad99f8850a106234b0"
+      "bytes": 241304,
+      "sha256": "ced666f8d808b09e2b410d6bb49d4863a3c1e524a8dc926eec283edc4bad8816"
     },
     {
       "path": "data/validation/external_pre_tournament_holdout_summary.json",
-      "bytes": 886,
-      "sha256": "3c3ce3c948182388753ccb4f2fbceed22509488a772ef0996d2024051bcaecdf"
+      "bytes": 887,
+      "sha256": "3c4b77a06843d57e97eafa0c1d6f8c48157199963d356f719dbab2a2e261ff6e"
     },
     {
       "path": "data/validation/external_pre_tournament_predictions.csv",
-      "bytes": 18687,
-      "sha256": "ed35d91c350fd811609482913b819ee9b4646df593f5133593f0cd3c562b42dd"
+      "bytes": 18691,
+      "sha256": "7deca732a9b5b5f3cc7805faf60a00d68e7e15ccfba6c4e2e4d2843d119d3018"
     },
     {
       "path": "data/validation/frozen_pre_tournament_team_strengths.csv",
-      "bytes": 4278,
-      "sha256": "6f1011fbdc877eea0ca85fa305455a3e3d5b3c95522f4e773e3e0a20202142af"
+      "bytes": 4271,
+      "sha256": "e6a978af5c60c9e24c421b15475880f88ec6a53e3cd907f5d727ce1414573387"
     },
     {
       "path": "data/validation/nested_uncertainty_summary.json",
@@ -250,7 +250,7 @@
     {
       "path": "paper/exhibits/table_01_data_and_model_readiness.csv",
       "bytes": 387,
-      "sha256": "70492b94f0160ccaef403d6e1c6c2d79539e2a5da9ab32c1def5def5a42e1bc7"
+      "sha256": "2313a2c3e0e70b8a473f318e8ceb12f641a6d901700a0c870a940056ccb03567"
     },
     {
       "path": "paper/exhibits/table_02_exploratory_match_outcomes.csv",
@@ -314,8 +314,8 @@
     },
     {
       "path": "paper/exhibits_scientific/table_05_player_window_coverage.csv",
-      "bytes": 389324,
-      "sha256": "a492abaca4436e410e004d0f810d3a2fb2ba1b2c0b5c56fab1ec448ad5152ca5"
+      "bytes": 389322,
+      "sha256": "78115490d088e25d79cd0ce71fc56e4a8168f17c1416beb791477c96444b1596"
     },
     {
       "path": "paper/exhibits_scientific/table_06_eleven_role_candidates.csv",
