@@ -7,11 +7,15 @@ on:
       - "scripts/build_exact_coverage_audit.py"
       - "scripts/validate_lateral_grid.py"
       - "scripts/resolve_eleven_roles.py"
+      - "scripts/build_selection_frontier.py"
+      - "scripts/build_selection_sufficiency_gate.py"
       - "scripts/run_predictive_backtest.py"
+      - "scripts/run_external_pre_tournament_holdout.py"
       - "scripts/tune_shared_tempo_and_run_v3.py"
       - "scripts/run_sensitivity_analysis.py"
       - "scripts/run_nested_uncertainty.py"
       - "scripts/build_scientific_status.py"
+      - "scripts/build_final_release_package.py"
       - "scripts/build_scientific_exhibits.py"
       - "simulator/shared_tempo.py"
       - "tests/test_scientific_validation.py"
@@ -24,7 +28,7 @@ on:
       - "data/processed/player_matches.csv"
       - ".github/workflows/scientific-validation.yml"
   schedule:
-    - cron: "37 */6 * * *"
+    - cron: "47 3-13 19 7 *"
   workflow_dispatch:
 
 permissions:
@@ -37,7 +41,7 @@ concurrency:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 180
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
@@ -51,42 +55,37 @@ jobs:
           python-version: "3.12"
       - name: Install scientific dependencies
         run: pip install pandas numpy pytest matplotlib
-      - name: Rebuild partial annual artifacts
-        run: python scripts/build_partial_window_artifacts.py
-      - name: Audit exact player coverage by temporal window
-        run: python scripts/build_exact_coverage_audit.py
-      - name: Validate provider lateral-grid orientation
-        run: python scripts/validate_lateral_grid.py
-      - name: Resolve eleven positional functions conservatively
-        run: python scripts/resolve_eleven_roles.py
-      - name: Test scientific validation components
+      - name: Rebuild data and selection gates
+        env:
+          PYTHONPATH: .
+        run: |
+          python scripts/build_partial_window_artifacts.py
+          python scripts/build_exact_coverage_audit.py
+          python scripts/validate_lateral_grid.py
+          python scripts/resolve_eleven_roles.py
+          python scripts/build_selection_frontier.py
+          python scripts/build_selection_sufficiency_gate.py
+      - name: Test scientific components
         env:
           PYTHONPATH: .
         run: pytest -q tests/test_simulator.py tests/test_calibrated_simulator.py tests/test_scientific_validation.py
-      - name: Run rolling-origin predictive backtest
+      - name: Run predictive and simulation validation
         env:
           PYTHONPATH: .
-        run: python scripts/run_predictive_backtest.py
-      - name: Tune shared-tempo model and run calibrated v0.3
-        env:
-          PYTHONPATH: .
-        run: python scripts/tune_shared_tempo_and_run_v3.py
-      - name: Run Top-N and coordination sensitivity
-        env:
-          PYTHONPATH: .
-        run: python scripts/run_sensitivity_analysis.py
-      - name: Run nested parameter and match uncertainty
-        env:
-          PYTHONPATH: .
-        run: python scripts/run_nested_uncertainty.py
-      - name: Aggregate scientific gates
-        run: python scripts/build_scientific_status.py
-      - name: Build paper exhibits
+        run: |
+          python scripts/run_predictive_backtest.py
+          python scripts/run_external_pre_tournament_holdout.py
+          python scripts/tune_shared_tempo_and_run_v3.py
+          python scripts/run_sensitivity_analysis.py
+          python scripts/run_nested_uncertainty.py
+          python scripts/build_scientific_status.py
+      - name: Build paper and release outputs
         env:
           MPLBACKEND: Agg
         run: |
           python scripts/build_paper_exhibits.py
           python scripts/build_scientific_exhibits.py
+          python scripts/build_final_release_package.py
       - name: Archive scientific validation package
         uses: actions/upload-artifact@v4
         with:
@@ -95,8 +94,8 @@ jobs:
             data/model_readiness
             data/validation
             data/simulations/calibrated_v0_3
-            paper/exhibits
-            paper/exhibits_scientific
+            data/releases/v1_0
+            paper
           retention-days: 30
           if-no-files-found: error
       - name: Publish scientific validation outputs
@@ -105,11 +104,11 @@ jobs:
           set -euo pipefail
           git config user.name "synthetic-xi-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/model_readiness data/validation data/simulations/calibrated_v0_3 paper/exhibits paper/exhibits_scientific
+          git add data/model_readiness data/validation data/simulations/calibrated_v0_3 data/releases/v1_0 paper
           if git diff --cached --quiet; then
             echo "No scientific validation changes to publish"
           else
-            git commit -m "science: update coverage, validation and uncertainty outputs"
+            git commit -m "science: update selection, validation and release outputs"
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
