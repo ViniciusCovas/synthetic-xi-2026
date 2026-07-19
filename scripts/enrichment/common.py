@@ -6,7 +6,7 @@ import hashlib
 import json
 import re
 import unicodedata
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -25,7 +25,8 @@ def cache_path(directory: Path, prefix: str, parts: Iterable[Any]) -> Path:
 
 def parse_iso(value: Any) -> datetime:
     text = str(value).replace("Z", "+00:00")
-    return datetime.fromisoformat(text)
+    parsed = datetime.fromisoformat(text)
+    return parsed.replace(tzinfo=timezone.utc) if parsed.tzinfo is None else parsed
 
 
 def nearest_time_index(times: list[str], target: datetime) -> int:
