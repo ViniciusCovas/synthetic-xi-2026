@@ -1,0 +1,38 @@
+{
+  "status": "offline_selection_readiness_audit_complete",
+  "generated_at_utc": "2026-07-19T18:53:28.016905+00:00",
+  "network_calls": 0,
+  "methodological_effect": "diagnostic_only_no_gate_or_ranking_changes",
+  "eligible_candidates": 1060,
+  "fully_covered_both_windows": 631,
+  "unresolved_players": 323,
+  "priority_unique_fixtures_declared": 364,
+  "reason_counts": {
+    "covered_pool_shortage": 4,
+    "high_ability_role_stabilization": 21,
+    "top35_guardrail": 1,
+    "upper90_can_enter_real_xi": 284,
+    "upper90_can_enter_top30": 13
+  },
+  "anomaly_counts": {
+    "anomaly_cov80_but_annual_fail": 308,
+    "anomaly_cov80_but_prewc_fail": 0,
+    "anomaly_zero_missing_but_annual_fail": 307,
+    "anomaly_zero_missing_but_prewc_fail": 0,
+    "anomaly_both_windows_pass_but_not_covered": 0,
+    "anomaly_covered_without_both_windows": 0,
+    "anomaly_role_stability_flag": 0
+  },
+  "duplicate_rows": {
+    "rows_with_duplicated_player_id": 0,
+    "rows_with_duplicated_player_name_and_team": 2
+  },
+  "fixture_queue": {
+    "status": "fixture_information_value_queue_built",
+    "fixture_column": "fixture_id",
+    "player_column": "player_id",
+    "fixtures": 364,
+    "player_fixture_pairs": 766
+  },
+  "next_action": "review anomalies and consume fixtures in information-value order after quota reset"
+}
