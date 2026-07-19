@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/immediate-residual-extraction.yml"
+      - "scripts/run_batched_selection_extraction_safe.py"
   workflow_dispatch:
 
 permissions:
@@ -59,7 +60,7 @@ jobs:
         run: |
           mkdir -p data/audits
           set +e
-          python scripts/run_batched_selection_extraction.py > /tmp/immediate_residual.log 2>&1
+          python scripts/run_batched_selection_extraction_safe.py > /tmp/immediate_residual.log 2>&1
           code=$?
           set -e
           cat /tmp/immediate_residual.log
