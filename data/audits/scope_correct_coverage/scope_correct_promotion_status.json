@@ -1,6 +1,6 @@
 {
   "status": "scope_correct_coverage_promoted",
-  "generated_at_utc": "2026-07-19T21:00:59.771800+00:00",
+  "generated_at_utc": "2026-07-19T22:39:08.676606+00:00",
   "network_calls": 0,
   "canonical_ledger": "data/model_readiness/player_window_coverage.csv",
   "former_ledger_backup": "data/model_readiness/player_window_coverage_v1_season_denominator.csv",

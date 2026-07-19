@@ -1,6 +1,6 @@
 # Synthetic XI scientific release candidate
 
-Generated: 2026-07-19T21:01:00.235625+00:00
+Generated: 2026-07-19T22:39:09.387983+00:00
 Scientific status: **BLOCKED**
 Claim ceiling: exploratory, calibrated and auditable simulation
 
