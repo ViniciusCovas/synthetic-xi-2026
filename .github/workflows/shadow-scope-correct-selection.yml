@@ -1,0 +1,63 @@
+name: Shadow Scope-Correct Selection
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/scientific/shadow_scope_correct_selection.py"
+      - ".github/workflows/shadow-scope-correct-selection.yml"
+      - "data/audits/scope_correct_coverage/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: synthetic-xi-data-writer
+  cancel-in-progress: false
+
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas numpy
+
+      - name: Evaluate shadow gate
+        run: python scripts/scientific/shadow_scope_correct_selection.py
+
+      - name: Publish shadow outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/audits/scope_correct_coverage/shadow_selection
+          if git diff --cached --quiet; then
+            echo "No shadow selection changes to publish."
+            exit 0
+          fi
+          git commit -m "science: publish shadow scope-correct selection"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            if git rebase origin/main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort || true
+            sleep $((attempt * 5))
+          done
+          echo "Failed to publish shadow selection after retries." >&2
+          exit 1
