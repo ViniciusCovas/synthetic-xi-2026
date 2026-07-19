@@ -1,21 +1,21 @@
 {
   "simulations": 10000,
   "shared_tempo_sigma": 0.19999999999999998,
-  "home_win_probability": 0.2794,
+  "home_win_probability": 0.2795,
   "draw_probability": 0.244,
-  "away_win_probability": 0.4766,
-  "mean_home_goals": 1.2489,
-  "mean_away_goals": 1.7013,
-  "mean_total_goals": 2.9502,
-  "mean_total_shots": 17.8342,
-  "mean_total_shots_on_target": 8.941,
-  "mean_home_xg": 1.2576845007193775,
-  "mean_away_xg": 1.6940169890969041,
+  "away_win_probability": 0.4765,
+  "mean_home_goals": 1.2488,
+  "mean_away_goals": 1.7012,
+  "mean_total_goals": 2.95,
+  "mean_total_shots": 17.8338,
+  "mean_total_shots_on_target": 8.9405,
+  "mean_home_xg": 1.2576488416501148,
+  "mean_away_xg": 1.6940066361705812,
   "zero_zero_probability": 0.0674,
   "top_scorelines": [
     {
       "score": "1-1",
-      "probability": 0.1087
+      "probability": 0.1086
     },
     {
       "score": "0-1",
@@ -31,7 +31,7 @@
     },
     {
       "score": "1-0",
-      "probability": 0.0718
+      "probability": 0.0719
     },
     {
       "score": "0-0",
@@ -47,7 +47,7 @@
     },
     {
       "score": "2-2",
-      "probability": 0.0495
+      "probability": 0.0496
     },
     {
       "score": "2-0",
@@ -59,13 +59,13 @@
     },
     {
       "score": "2-3",
-      "probability": 0.0304
+      "probability": 0.0303
     }
   ],
   "outcomes": {
-    "home_wins": 2794,
+    "home_wins": 2795,
     "draws": 2440,
-    "away_wins": 4766
+    "away_wins": 4765
   },
   "representative_match": {
     "home": "Synthetic XI — exploratorio",
@@ -298,9 +298,9 @@
     "model_possessions_per_match": 104.0
   },
   "calibration_error": {
-    "goals_per_match": 0.03530638297872368,
-    "shots_per_match": -0.2606710042142062,
-    "shots_on_target_per_match": 0.5624410525233827,
+    "goals_per_match": 0.035106382978723705,
+    "shots_per_match": -0.26107100421420526,
+    "shots_on_target_per_match": 0.5619410525233821,
     "zero_zero_rate": -0.007068085106382974
   },
   "shared_tempo_interpretation": "Mean-one match-wide lognormal tempo creates shared low-event and high-event states without post-hoc score editing.",
