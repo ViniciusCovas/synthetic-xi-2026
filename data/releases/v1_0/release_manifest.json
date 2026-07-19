@@ -1,6 +1,6 @@
 {
   "release": "v1.0-candidate",
-  "generated_at_utc": "2026-07-19T14:26:25.126881+00:00",
+  "generated_at_utc": "2026-07-19T14:29:11.961493+00:00",
   "scientific_ready": false,
   "claim_ceiling": "exploratory, calibrated and auditable simulation",
   "blocking_gates": [
@@ -10,7 +10,7 @@
     {
       "path": "data/model_readiness/annual_model_readiness.json",
       "bytes": 706,
-      "sha256": "5c39fe625460c1e1cc1c597878e24c942450516f1257d21974c9a247d0c49879"
+      "sha256": "40947ce917b3a50a1e53cf5e9356a49d4de57c88c17353e952b92a6211d63ffb"
     },
     {
       "path": "data/model_readiness/candidate_coverage_status.json",
@@ -24,73 +24,73 @@
     },
     {
       "path": "data/model_readiness/coverage_audit_summary.json",
-      "bytes": 1033,
-      "sha256": "e38ff6083187dccd26bc924a2fbaeab884d0464d6673d39dd98f120519310d1b"
+      "bytes": 1002,
+      "sha256": "7f7f9a03246584169271c396f103f8694023c66033d9b75fbaf20d594a99ca48"
     },
     {
       "path": "data/model_readiness/coverage_priority_fixtures.csv",
-      "bytes": 1163310,
-      "sha256": "c94dfd88a981bda51963b4d3eac6c8e35401eb821b83a35fb71e65c065839672"
+      "bytes": 82731,
+      "sha256": "ee01b7d2d4d4e5ed1b834343cb17d8b75d8cd0d8a652c9635366144fdcd504c6"
     },
     {
       "path": "data/model_readiness/coverage_priority_fixtures_all.csv",
-      "bytes": 1976193,
-      "sha256": "6cd9dc8063f7f09adba01a0c8bea5921f1b0a89ff4ec709db18c38d6fc4db9b4"
+      "bytes": 343922,
+      "sha256": "a1b191cbf39e829a0436cd1e773254174680ae389623bf62e9d08ec39ad637d3"
     },
     {
       "path": "data/model_readiness/coverage_summary_by_window.csv",
-      "bytes": 304,
-      "sha256": "9e69b0d65fbaa43ce998c8d83f69d55e5e8e406b40269f0c91e78b2380fedfce"
+      "bytes": 273,
+      "sha256": "e9eb675014cdf3f6423b756d475d62d7cb080e381fa52e2e93f8629edbffe11a"
     },
     {
       "path": "data/model_readiness/eleven_role_candidate_counts.csv",
-      "bytes": 88,
-      "sha256": "a480a60113641fee07fc05fdc0b9d9f73f3840a21872d85c0790c6bb13275484"
+      "bytes": 89,
+      "sha256": "436d041e74db24beea5ef0b3d8b51661171739167464cca6a962a6210075ac7c"
     },
     {
       "path": "data/model_readiness/eleven_role_evidence.csv",
-      "bytes": 129388,
-      "sha256": "f1be8c21797b03737b4a826776b6184d20d8c518ecb41be1be645c6aedb51772"
+      "bytes": 126921,
+      "sha256": "1bcfc7c99808c8b1b7de30f26b229cc8c0535a09f845fb209dacfecd6499c4ac"
     },
     {
       "path": "data/model_readiness/eleven_role_readiness.json",
-      "bytes": 481,
-      "sha256": "6f9bf85df423aac1b293fc7ae2d8fee7e7b5d8c81310d10dd32787545e11cf81"
+      "bytes": 482,
+      "sha256": "14875c1cc32270215e6431d6c6a0ef030450fffef31fad21ec97903a3c275a77"
     },
     {
       "path": "data/model_readiness/lateral_grid_anchor_evidence.csv",
-      "bytes": 27475,
-      "sha256": "54f27b4bf71fe020ae90a8e48389e97d630dbe9db876743b17cc48ce31ded5cc"
+      "bytes": 27552,
+      "sha256": "68982685dece4626207002f4e33d5848e873c998b2192c028e39145e72615758"
     },
     {
       "path": "data/model_readiness/lateral_grid_mapping_comparison.csv",
       "bytes": 128,
-      "sha256": "ddb3a8af9da3582fe869cf9fe3e9b97ff18ec185e43328c6d817941b0060d74a"
+      "sha256": "86024a24ba006cbc0fb2459fbce7f29718ec24c5de75077f340b5bd143aa028a"
     },
     {
       "path": "data/model_readiness/lateral_grid_validation.json",
       "bytes": 614,
-      "sha256": "d6b96abc76b8e0e083b229ba5364a81215025436b705fcc5ad5a4320a55b222d"
+      "sha256": "ab70c1eb66410aafc98303eda5c87c747ba1a0e1e2f5fa95fd3f28f57944349c"
     },
     {
       "path": "data/model_readiness/partial_annual_current_totals.csv",
-      "bytes": 173750,
-      "sha256": "cc660b3075d2f32173919da028893c87f726b844b5d5982c48ec75cf619f56f7"
+      "bytes": 179202,
+      "sha256": "591706463abef9c384c0baa83af2d5035aa0c2d13fe3b006794686f4ec8e0eda"
     },
     {
       "path": "data/model_readiness/partial_pre_world_cup_totals.csv",
-      "bytes": 164490,
-      "sha256": "6f901f6b50d9fab6019a44cf0d3d5f1b1cabc80a81b5a1d0b20876501a5226bb"
+      "bytes": 174090,
+      "sha256": "191405f28cb5bd7ad2bb34e107effe06065fb2cd9e8054638604df6c2e77f1b4"
     },
     {
       "path": "data/model_readiness/partial_role_evidence.csv",
-      "bytes": 145315,
-      "sha256": "f7838f7728dc13ba8355abb283df65d0a6b35f535cf8e57787d8c1eec509e873"
+      "bytes": 151338,
+      "sha256": "4dccadb69e166fec81d18371f231672762428607421bfcf9f764d997963f1e6b"
     },
     {
       "path": "data/model_readiness/player_window_coverage.csv",
-      "bytes": 390159,
-      "sha256": "aa6ce7b391c27eefe6e2cc9f038f804d1af2addc4350a7b13a591a9054c205d3"
+      "bytes": 377621,
+      "sha256": "08f8bfb4e33ac4f7fa94d2e20898a01e26fb5ab706924611e58dfcf9a1addd23"
     },
     {
       "path": "data/model_readiness/scientific_validation_status.json",
@@ -99,48 +99,48 @@
     },
     {
       "path": "data/model_readiness/selection_frontier.csv",
-      "bytes": 453452,
-      "sha256": "495ffe29ff314faeea5449636fa85a88334e61c65ff1b62a59d2451739533ab4"
+      "bytes": 477227,
+      "sha256": "d0462bc2ad275f171372f777e725a86a257aba9fa3a148c2dd0c1fb1283880f8"
     },
     {
       "path": "data/model_readiness/selection_frontier_all_candidates.csv",
-      "bytes": 453452,
-      "sha256": "495ffe29ff314faeea5449636fa85a88334e61c65ff1b62a59d2451739533ab4"
+      "bytes": 477227,
+      "sha256": "d0462bc2ad275f171372f777e725a86a257aba9fa3a148c2dd0c1fb1283880f8"
     },
     {
       "path": "data/model_readiness/selection_frontier_coverage.csv",
-      "bytes": 380098,
-      "sha256": "82bc3cc6ce2db3f43a11996672a2e390e6f9aa21fdb0bfaf56d0bf334496ba9c"
+      "bytes": 376530,
+      "sha256": "7a9a9f65e923f5b6bc0371233476f035046411b0f3e460d9b7826e210a11f02f"
     },
     {
       "path": "data/model_readiness/selection_frontier_priority_fixtures.csv",
-      "bytes": 1783410,
-      "sha256": "3082619d5aae73f2aa5fa33c8918274147fb83ba71da7332aff97b03e2993bad"
+      "bytes": 332467,
+      "sha256": "0e9102dde2d5f7f8bbe1fd107b7cd4997c6eada01f8aeeccd7631d38ebd5425a"
     },
     {
       "path": "data/model_readiness/selection_frontier_status.json",
-      "bytes": 1128,
-      "sha256": "e0612514b64c549faacb8ac3621644821ef77d527517896fecf3e459bea00c4f"
+      "bytes": 1125,
+      "sha256": "fddb205666dfc4e9cb04da11588f45f793be2ab8f6dd513d5ecf5e10a74b00fc"
     },
     {
       "path": "data/model_readiness/selection_sufficiency_all_players.csv",
-      "bytes": 577985,
-      "sha256": "05947705101d99ecf7e9f83b8d887081d0fe4b2a6351bc8fe974aec9d4fe1a74"
+      "bytes": 594976,
+      "sha256": "8916196dccfdd3892ec20cf54b4bcb6a94fe9aedac93657162ada077b576d8f5"
     },
     {
       "path": "data/model_readiness/selection_sufficiency_priority_fixtures.csv",
-      "bytes": 1163310,
-      "sha256": "c94dfd88a981bda51963b4d3eac6c8e35401eb821b83a35fb71e65c065839672"
+      "bytes": 82731,
+      "sha256": "ee01b7d2d4d4e5ed1b834343cb17d8b75d8cd0d8a652c9635366144fdcd504c6"
     },
     {
       "path": "data/model_readiness/selection_sufficiency_status.json",
-      "bytes": 3082,
-      "sha256": "4ed46c21eceb1bc498e67a0fc0f48b7a32fc4ceb099ee32e821ee7fc3a252d03"
+      "bytes": 3079,
+      "sha256": "76ed139f20deb4345042c74576848c160dd97cc0c3c29c06bb4c5e3255b905e1"
     },
     {
       "path": "data/model_readiness/selection_sufficiency_unresolved_players.csv",
-      "bytes": 241304,
-      "sha256": "ced666f8d808b09e2b410d6bb49d4863a3c1e524a8dc926eec283edc4bad8816"
+      "bytes": 184639,
+      "sha256": "32cb1b9bbd50ca141fb616f918de976de8db1e2821a36249af3a6e9fe85872b6"
     },
     {
       "path": "data/validation/external_pre_tournament_holdout_summary.json",
@@ -149,13 +149,13 @@
     },
     {
       "path": "data/validation/external_pre_tournament_predictions.csv",
-      "bytes": 18691,
-      "sha256": "7deca732a9b5b5f3cc7805faf60a00d68e7e15ccfba6c4e2e4d2843d119d3018"
+      "bytes": 18671,
+      "sha256": "812f1a83fe63a98768bb4fe4c020715673d4b314bba1f3e8c38eaaa5f1991dd8"
     },
     {
       "path": "data/validation/frozen_pre_tournament_team_strengths.csv",
-      "bytes": 4271,
-      "sha256": "e6a978af5c60c9e24c421b15475880f88ec6a53e3cd907f5d727ce1414573387"
+      "bytes": 4280,
+      "sha256": "23fb01e7c51ed8567dd4a36ccbd174a6d0bdd93a23d524ab5a8621d4b6526704"
     },
     {
       "path": "data/validation/nested_uncertainty_summary.json",

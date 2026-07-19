@@ -1,38 +1,38 @@
 {
   "status": "selection_frontier_evaluated",
   "method": "role-wise 95% uncertainty frontier plus top-35 and insufficient-evidence guardrails",
-  "eligible_role_candidates": 1037,
-  "frontier_players": 1037,
+  "eligible_role_candidates": 1060,
+  "frontier_players": 1060,
   "frontier_by_role": {
-    "GK": 104,
-    "RB": 233,
-    "RCB": 48,
-    "LCB": 34,
-    "LB": 51,
-    "DM": 27,
-    "CM": 124,
-    "AM": 129,
-    "RW": 253,
-    "LW": 13,
-    "ST": 21
+    "GK": 109,
+    "RB": 259,
+    "RCB": 42,
+    "LCB": 25,
+    "LB": 46,
+    "DM": 25,
+    "CM": 111,
+    "AM": 155,
+    "RW": 258,
+    "LW": 11,
+    "ST": 19
   },
-  "unscored_or_low_role_evidence_retained": 332,
-  "priority_player_fixture_pairs": 21546,
-  "priority_unique_fixtures": 6649,
+  "unscored_or_low_role_evidence_retained": 241,
+  "priority_player_fixture_pairs": 3925,
+  "priority_unique_fixtures": 1669,
   "windows": [
     {
       "window": "annual_current",
-      "frontier_players": 1037,
-      "players_passing_80pct": 432,
-      "pass_rate": 0.4165863066538091,
-      "missing_fixture_endpoints": 11248
+      "frontier_players": 1060,
+      "players_passing_80pct": 631,
+      "pass_rate": 0.5952830188679246,
+      "missing_fixture_endpoints": 2043
     },
     {
       "window": "pre_world_cup",
-      "frontier_players": 1037,
-      "players_passing_80pct": 661,
-      "pass_rate": 0.6374156219864995,
-      "missing_fixture_endpoints": 11599
+      "frontier_players": 1060,
+      "players_passing_80pct": 990,
+      "pass_rate": 0.9339622641509434,
+      "missing_fixture_endpoints": 2121
     }
   ],
   "frontier_coverage_gate_passed": false,

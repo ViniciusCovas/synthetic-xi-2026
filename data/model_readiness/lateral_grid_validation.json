@@ -3,8 +3,8 @@
   "orientation_validated": true,
   "selected_mapping": "low_is_left",
   "matched_anchor_players": 12,
-  "anchor_observations": 370,
-  "observation_agreement": 0.9621621621621622,
+  "anchor_observations": 371,
+  "observation_agreement": 0.9595687331536388,
   "player_majority_agreement": 1.0,
   "minimum_requirements": {
     "anchor_players": 5,
