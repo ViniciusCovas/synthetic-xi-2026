@@ -1,0 +1,73 @@
+name: Promote Scope-Correct Coverage
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/scientific/promote_scope_correct_coverage.py"
+      - "scripts/build_selection_sufficiency_gate.py"
+      - "METHODOLOGY_CORRECTION_EXACT_WINDOW_COVERAGE.md"
+      - ".github/workflows/promote-scope-correct-coverage.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: synthetic-xi-data-writer
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas numpy
+
+      - name: Promote audited coverage and build residual queue
+        run: python scripts/scientific/promote_scope_correct_coverage.py
+
+      - name: Rebuild canonical selection gate
+        run: python scripts/build_selection_sufficiency_gate.py
+
+      - name: Rebuild scientific status
+        run: python scripts/build_scientific_status.py
+
+      - name: Rebuild release candidate
+        run: python scripts/build_final_release_package.py
+
+      - name: Publish promoted scientific outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/model_readiness data/audits/scope_correct_coverage data/releases/v1_0 paper METHODOLOGY_CORRECTION_EXACT_WINDOW_COVERAGE.md
+          if git diff --cached --quiet; then
+            echo "No promoted outputs to publish."
+            exit 0
+          fi
+          git commit -m "science: promote exact-window coverage correction"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            if git rebase origin/main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort || true
+            sleep $((attempt * 5))
+          done
+          echo "Failed to publish promoted outputs after retries." >&2
+          exit 1
