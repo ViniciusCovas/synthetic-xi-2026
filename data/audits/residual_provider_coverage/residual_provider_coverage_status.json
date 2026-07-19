@@ -1,0 +1,14 @@
+{
+  "status": "residual_provider_coverage_audited",
+  "generated_at_utc": "2026-07-19T19:56:13.046985+00:00",
+  "network_calls": 0,
+  "residual_players": 31,
+  "residual_unique_fixtures": 292,
+  "residual_player_fixture_pairs": 759,
+  "fixtures_declared_with_player_statistics": 292,
+  "fixtures_declared_without_player_statistics": 0,
+  "fixtures_without_coverage_metadata": 0,
+  "players_touching_unsupported_fixtures": 0,
+  "interpretation": "Declared provider support is an audit signal, not evidence that every fixture contains a player-statistics row.",
+  "next_action": "requery declared-supported fixtures; classify persistent gaps as structural provider missingness"
+}

@@ -1,0 +1,35 @@
+league_id,season,league_name,provider_league_name,country,coverage_player_statistics,coverage_lineups,coverage_events,priority_reason,selection_resolution_reason,resolved_role,unique_fixtures,unique_players,player_fixture_pairs
+318,2025,1. Division,1. Division,Cyprus,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,35,3,82
+204,2025,1. Lig,1. Lig,Turkey,True,True,True,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,32,1,64
+62,2025,Ligue 2,Ligue 2,France,True,True,True,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,24,1,48
+301,2025,Pro League,Pro League,United-Arab-Emirates,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,22,2,44
+301,2025,Pro League,Pro League,United-Arab-Emirates,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,21,2,42
+197,2025,Super League 1,Super League 1,Greece,True,True,True,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,18,1,36
+301,2025,Pro League,Pro League,United-Arab-Emirates,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,17,3,40
+98,2025,J1 League,J1 League,Japan,True,True,True,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,17,1,30
+98,2025,J1 League,J1 League,Japan,True,True,True,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,17,1,30
+318,2025,1. Division,1. Division,Cyprus,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,16,1,32
+301,2025,Pro League,Pro League,United-Arab-Emirates,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,14,1,28
+305,2025,Stars League,Stars League,Qatar,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,12,2,24
+80,2025,3. Liga,3. Liga,Germany,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,11,2,22
+172,2025,First League,First League,Bulgaria,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,9,1,18
+301,2025,Pro League,Pro League,United-Arab-Emirates,True,True,True,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,9,1,18
+383,2025,Ligat Ha'al,Ligat Ha'al,Israel,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,9,1,18
+305,2025,Stars League,Stars League,Qatar,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,8,1,16
+332,2025,Super Liga,Super Liga,Slovakia,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,8,1,16
+2,2025,UEFA Champions League,UEFA Champions League,World,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,7,2,14
+301,2025,Pro League,Pro League,United-Arab-Emirates,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,7,1,14
+305,2025,Stars League,Stars League,Qatar,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,7,1,14
+2,2025,UEFA Champions League,UEFA Champions League,World,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,7,2,13
+305,2025,Stars League,Stars League,Qatar,True,True,True,known_startXI_without_detailed_row,high_ability_role_stabilization,RB,6,1,12
+383,2025,Ligat Ha'al,Ligat Ha'al,Israel,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,6,1,12
+98,2026,J1 League,J1 League,Japan,True,True,True,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5,1,10
+98,2026,J1 League,J1 League,Japan,True,True,True,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5,1,10
+307,2025,Pro League,Pro League,Saudi-Arabia,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5,1,10
+3,2025,UEFA Europa League,UEFA Europa League,World,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,4,2,8
+66,2025,Coupe de France,Coupe de France,France,True,True,True,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,4,1,8
+848,2025,UEFA Europa Conference League,UEFA Europa Conference League,World,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,4,1,8
+848,2025,UEFA Europa Conference League,UEFA Europa Conference League,World,True,True,True,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,4,1,8
+3,2025,UEFA Europa League,UEFA Europa League,World,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,2,1,4
+206,2025,Türkiye Kupası,Türkiye Kupası,Turkey,True,True,True,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,2,1,4
+15,2025,FIFA Club World Cup,FIFA Club World Cup,World,True,True,True,missing_fixture_endpoint,upper90_can_enter_real_xi,RW,1,2,2
