@@ -1,0 +1,23 @@
+{
+  "status": "external_pre_tournament_holdout_complete",
+  "profile_freeze": "2026-06-10",
+  "holdout": "World Cup 2026 FT matches",
+  "matches": 85,
+  "teams_with_frozen_profiles": 46,
+  "model": "frozen squad-strength Poisson baseline",
+  "fixed_goal_prior": 2.6,
+  "brier_score": 0.5022981181830494,
+  "log_loss": 0.8678608431411774,
+  "ranked_probability_score": 0.18374078900301946,
+  "top1_accuracy": 0.6823529411764706,
+  "naive_log_loss": 1.0986122886681096,
+  "log_loss_skill_vs_naive": 0.2100390173194595,
+  "external_pre_tournament_validation_passed": true,
+  "claim_scope": "predictive information in frozen player-profile aggregation, not full validation of the event simulator",
+  "limitations": [
+    "fixed global goal prior",
+    "no betting-market comparison",
+    "club-to-national-team transfer assumption",
+    "lineup availability not known before each match"
+  ]
+}

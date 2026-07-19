@@ -3,27 +3,27 @@
   "gates": {
     "computational_reproducibility": true,
     "aggregate_event_calibration_v0_3": true,
-    "per_player_window_coverage": false,
+    "candidate_relevant_window_coverage": false,
     "lateral_orientation": true,
     "definitive_eleven_roles": true,
     "internal_rolling_origin_prediction": true,
-    "external_pre_tournament_prediction": false,
+    "external_pre_tournament_prediction": true,
     "topn_and_coordination_sensitivity": true,
     "nested_parameter_uncertainty": true
   },
   "final_team_comparison_allowed": false,
   "arxiv_results_ready": false,
   "blocking_gates": [
-    "per_player_window_coverage",
-    "external_pre_tournament_prediction"
+    "candidate_relevant_window_coverage"
   ],
   "current_claim_ceiling": "exploratory, calibrated and auditable simulation",
-  "next_priority": "complete targeted fixture extraction",
+  "next_priority": "complete targeted extraction or transparently exclude under-covered candidates",
   "sources": {
-    "coverage": "exact_fixture_coverage_audited",
+    "coverage": "candidate_relevant_coverage_evaluated",
     "lateral": "lateral_grid_orientation_evaluated",
     "roles": "eleven_role_resolution_evaluated",
-    "backtest": "internal_rolling_origin_backtest_complete",
+    "internal_backtest": "internal_rolling_origin_backtest_complete",
+    "external_holdout": "external_pre_tournament_holdout_complete",
     "v0_3": "v0_3_calibration_quality_evaluated",
     "sensitivity": "topn_and_coordination_sensitivity_complete",
     "nested": "nested_uncertainty_complete"
