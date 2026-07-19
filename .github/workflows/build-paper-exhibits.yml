@@ -1,0 +1,68 @@
+name: Build Paper Exhibits
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/build_paper_exhibits.py"
+      - ".github/workflows/build-paper-exhibits.yml"
+      - "data/simulations/calibrated_v0_2/**"
+      - "data/simulations/calibration/**"
+      - "data/audits/adaptive_extraction_monitor.json"
+      - "data/model_readiness/annual_model_readiness.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-paper-exhibits
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas matplotlib
+
+      - name: Generate paper figures and tables
+        run: python scripts/build_paper_exhibits.py
+
+      - name: Archive exhibits
+        uses: actions/upload-artifact@v4
+        with:
+          name: synthetic-xi-paper-exhibits-${{ github.run_id }}
+          path: paper/exhibits
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Publish exhibits
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add paper/exhibits
+          if git diff --cached --quiet; then
+            echo "No exhibit changes to publish"
+          else
+            git commit -m "paper: update reproducible figures and tables"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
