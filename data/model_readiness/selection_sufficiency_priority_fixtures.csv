@@ -1,255 +1,760 @@
-player_id,player_name,world_cup_team,window,fixture_id,benchmark_precheck,priority_reason,selection_resolution_reason
-2699,S. Ghoddos,Iran,annual_current,1446905,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,annual_current,1446909,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,annual_current,1446928,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,annual_current,1485352,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,annual_current,1485357,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,annual_current,1485366,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,annual_current,1505593,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,annual_current,1505605,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,annual_current,1505611,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,pre_world_cup,1446905,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,pre_world_cup,1446909,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,pre_world_cup,1446928,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,pre_world_cup,1485352,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,pre_world_cup,1485357,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,pre_world_cup,1485366,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,pre_world_cup,1505593,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,pre_world_cup,1505605,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-2699,S. Ghoddos,Iran,pre_world_cup,1505611,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398320,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398333,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398335,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398349,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398364,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398374,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398384,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398404,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398410,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398424,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398433,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398444,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398447,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398463,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398471,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398483,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398513,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398516,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398533,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398544,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398551,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398564,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398565,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398592,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398604,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398607,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398624,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398631,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398644,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398646,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398663,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1398668,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1400744,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1400759,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1400761,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1400794,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1400803,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1400819,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1400857,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1400867,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1400882,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1400890,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1400896,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1400901,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1537081,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1537088,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1537092,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1537094,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1537098,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,annual_current,1537108,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398320,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398333,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398335,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398349,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398364,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398374,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398384,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398404,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398410,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398424,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398433,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398444,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398447,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398463,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398471,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398483,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398513,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398516,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398533,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398544,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398551,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398564,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398565,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398592,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398604,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398607,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398624,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398631,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398644,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398646,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398663,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1398668,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1400744,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1400759,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1400761,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1400794,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1400803,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1400819,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1400857,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1400867,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1400882,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1400890,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1400896,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1400901,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1537081,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1537088,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1537092,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1537094,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1537098,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-21101,S. Moutoussamy,Congo DR,pre_world_cup,1537108,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1324182,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1324202,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1324216,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1324227,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1324242,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1324252,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1324267,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1324273,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1324289,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1324299,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1324302,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1324312,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1324322,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1501309,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1504674,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1504683,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1504695,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,annual_current,1504705,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324142,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324153,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324162,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324174,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324182,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324202,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324216,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324227,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324242,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324252,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324267,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324273,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324289,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324299,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324302,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324312,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1324322,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1501309,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1504674,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1504683,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1504695,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-34418,Kim Tae-Hyeon,South Korea,pre_world_cup,1504705,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389126,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389135,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389147,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389162,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389174,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389189,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389222,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389235,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389239,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389257,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389267,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389281,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389304,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389321,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389329,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389343,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389358,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389367,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389377,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389387,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389396,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389405,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1389406,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1396828,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1485861,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1486807,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1488830,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,annual_current,1495627,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389126,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389135,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389147,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389162,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389174,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389189,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389222,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389235,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389239,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389257,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389267,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389281,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389304,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389321,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389329,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389343,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389358,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389367,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389377,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389387,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389396,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389405,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1389406,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1396828,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1485861,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1486807,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1488830,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-129670,N. Mbuku,Congo DR,pre_world_cup,1495627,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1324182,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1324202,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1324216,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1324227,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1324242,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1324252,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1324267,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1324273,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1324289,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1324299,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1324302,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1324312,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1324322,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1501309,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1504674,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1504683,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1504695,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,annual_current,1504705,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324142,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324153,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324162,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324174,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324182,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324202,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324216,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324227,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324242,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324252,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324267,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324273,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324289,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324299,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324302,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324312,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1324322,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1501309,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1504674,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1504683,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1504695,True,player_below_80pct_coverage,upper90_can_enter_real_xi
-304782,T. Hayakawa,Japan,pre_world_cup,1504705,True,player_below_80pct_coverage,upper90_can_enter_real_xi
+player_id,fixture_id,window,priority_reason,selection_resolution_reason,resolved_role,reason_weight,data_weight,priority_score
+2514,1321725,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RW,5.0,2.0,7.0
+36579,1321725,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RW,5.0,2.0,7.0
+34418,1324142,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324142,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324153,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324153,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324162,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324162,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324174,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324174,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324182,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1324182,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324182,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1324182,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324202,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1324202,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324202,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1324202,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324216,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1324216,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324216,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1324216,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324227,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1324227,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324227,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1324227,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324242,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1324242,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324242,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1324242,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324252,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1324252,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324252,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1324252,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324267,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1324267,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324267,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1324267,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324273,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1324273,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324273,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1324273,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324289,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1324289,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324289,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1324289,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324299,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1324299,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324299,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1324299,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324302,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1324302,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324302,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1324302,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324312,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1324312,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324312,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1324312,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1324322,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1324322,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1324322,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1324322,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+129670,1389126,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389126,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389135,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389135,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389147,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389147,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389162,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389162,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389174,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389174,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389189,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389189,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389222,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389222,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389235,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389235,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389239,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389239,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389257,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389257,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389267,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389267,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389281,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389281,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389304,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389304,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389321,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389321,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389329,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389329,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389343,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389343,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389358,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389358,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389367,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389367,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389377,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389377,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389387,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389387,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389396,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389396,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389405,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389405,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389406,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1389406,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1396828,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1396828,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398320,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398320,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398333,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398333,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398335,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398335,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398349,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398349,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398364,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398364,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398374,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398374,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398384,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398384,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398404,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398404,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398410,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398410,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398424,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398424,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398433,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398433,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398444,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398444,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398447,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398447,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398463,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398463,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398471,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398471,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398483,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398483,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398513,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398513,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398516,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398516,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398533,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398533,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398544,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398544,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398551,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398551,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398564,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398564,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398565,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398565,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398592,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398592,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398604,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398604,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398607,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398607,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398624,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398624,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398631,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398631,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398644,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398644,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398646,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398646,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398663,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398663,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398668,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1398668,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400744,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400744,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400759,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400759,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400761,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400761,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400794,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400794,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400803,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400803,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400819,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400819,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400857,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400857,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400867,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400867,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400882,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400882,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400890,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400890,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400896,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400896,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400901,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1400901,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+8450,1410025,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+8450,1410025,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+8450,1410056,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+8450,1410056,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+8450,1421166,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+8450,1421166,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+8450,1421182,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+8450,1421182,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+2699,1446905,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1446905,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1446909,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1446909,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1446928,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1446928,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1485352,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1485352,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1485357,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1485357,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1485366,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1485366,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+129670,1485861,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1485861,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1486807,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1486807,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1488830,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1488830,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1495627,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+129670,1495627,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+34418,1501309,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1501309,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1501309,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1501309,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1504674,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1504674,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1504674,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1504674,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1504683,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1504683,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1504683,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1504683,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1504695,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1504695,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1504695,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1504695,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+34418,1504705,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+34418,1504705,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,RB,5.0,2.0,7.0
+304782,1504705,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+304782,1504705,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,GK,5.0,2.0,7.0
+2699,1505593,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1505593,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1505605,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1505605,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1505611,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+2699,1505611,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,CM,5.0,2.0,7.0
+21101,1537081,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1537081,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1537088,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1537088,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1537092,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1537092,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1537094,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1537094,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1537098,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1537098,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1537108,annual_current,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+21101,1537108,pre_world_cup,missing_fixture_endpoint,upper90_can_enter_real_xi,AM,5.0,2.0,7.0
+160925,1383440,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1383451,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1383451,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1383451,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1383451,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1383454,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1383454,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1383454,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1383454,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2975,1384111,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1384111,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1384133,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1384133,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1384140,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1384140,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1384145,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1384145,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1384163,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1384163,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+37435,1388041,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1388041,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+8450,1389594,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+8450,1389594,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+8450,1389645,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+8450,1389645,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41627,1389645,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+41627,1389645,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+8450,1389652,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+8450,1389652,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+8450,1389661,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+8450,1389661,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41627,1389661,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+41627,1389661,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+8450,1389684,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+8450,1389684,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41627,1389684,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+41627,1389684,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+8450,1389732,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+8450,1389732,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41627,1389732,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+41627,1389732,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+8450,1389742,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+8450,1389742,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41627,1389742,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+41627,1389742,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+8450,1389753,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+8450,1389753,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41627,1389753,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+41627,1389753,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+283174,1393730,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+283174,1393730,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+377930,1393732,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+377930,1393732,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+377930,1393737,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+377930,1393737,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+283174,1393738,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+283174,1393738,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+42207,1393741,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+42207,1393741,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+283174,1393745,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+283174,1393745,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+377930,1393749,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+377930,1393749,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+42207,1393750,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+42207,1393750,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+283174,1393752,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+283174,1393752,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+42207,1393753,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+42207,1393753,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+377930,1393757,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+377930,1393757,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+42207,1393759,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+42207,1393759,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+377930,1393759,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+377930,1393759,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+42288,1393763,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+42288,1393763,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+283174,1393764,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+283174,1393764,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+377930,1393771,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+377930,1393771,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+283174,1393772,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+283174,1393772,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+42288,1393775,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+42288,1393775,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+42207,1393775,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+42207,1393775,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+283174,1393782,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+283174,1393782,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+42207,1393790,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+42207,1393790,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+42288,1393792,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+42288,1393792,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+535046,1394076,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394076,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394084,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394084,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394096,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394096,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394111,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394111,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394115,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394115,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394127,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394127,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394165,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394165,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394176,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+535046,1394176,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+350799,1394389,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+350799,1394389,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+350799,1394400,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+350799,1394400,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+350799,1394409,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+350799,1394409,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+160925,1405447,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+160925,1405447,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2975,1405451,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1405451,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1405458,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1405458,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+160925,1405461,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+160925,1405461,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1410019,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1410019,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1410049,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1410049,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+49837,1410072,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+49837,1410072,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+49837,1410075,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+49837,1410075,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+113580,1415590,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415590,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1415592,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1415592,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1415592,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415592,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1415598,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1415598,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1415598,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415598,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2860,1415598,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2860,1415598,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1415603,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1415603,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1415603,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415603,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415607,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415607,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1415609,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1415609,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2860,1415609,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2860,1415609,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415609,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415609,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415614,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415614,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415617,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415617,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2860,1415617,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2860,1415617,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415620,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415620,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415626,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415626,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1415627,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1415627,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1415627,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415627,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415630,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415630,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415643,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415643,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1415643,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1415643,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2860,1415643,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2860,1415643,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415643,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415643,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415644,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415644,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1415649,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1415649,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2860,1415649,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2860,1415649,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415657,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415657,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1415668,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1415668,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1415668,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415668,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415679,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415679,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1415685,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1415685,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1415685,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415685,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415692,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415692,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415695,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415695,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1415697,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1415697,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1415697,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415697,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415701,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415701,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1415708,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1415708,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1415708,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415708,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415717,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415717,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415721,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415721,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1415724,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1415724,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2860,1415724,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2860,1415724,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415732,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1415732,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415732,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1415732,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1415916,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1415916,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2699,1415918,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,5.0,1.5,6.5
+2699,1415918,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,5.0,1.5,6.5
+2514,1415919,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+2514,1415919,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+41608,1415919,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1415919,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+341844,1415921,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+341844,1415921,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2699,1415923,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,5.0,1.5,6.5
+2699,1415923,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,5.0,1.5,6.5
+70535,1415924,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+70535,1415924,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+2514,1415926,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+2514,1415926,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+341844,1415927,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+341844,1415927,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+41608,1415928,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1415928,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1419568,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1419568,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1421138,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1421138,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1421138,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1421138,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1421145,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1421145,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1421145,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1421145,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1421175,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1421175,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1421202,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1421202,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+542644,1435928,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+542644,1435928,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+542644,1435937,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+542644,1435937,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+542644,1435943,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+542644,1435943,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+542644,1435949,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+542644,1435949,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+542644,1435960,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+542644,1435960,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+37435,1436778,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1436778,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+160925,1436780,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+160925,1436780,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1436783,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1436783,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+160925,1437227,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+160925,1437227,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2699,1446895,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,5.0,1.5,6.5
+2699,1446895,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,5.0,1.5,6.5
+341844,1446895,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+341844,1446895,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1446896,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1446896,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+41608,1446899,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1446899,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+70535,1446900,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+70535,1446900,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+16805,1446901,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+16805,1446901,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2514,1446901,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+2514,1446901,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+341844,1446902,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+341844,1446902,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+70535,1446903,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+70535,1446903,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+16805,1446904,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+16805,1446904,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2514,1446904,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+2514,1446904,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+19614,1446906,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1446906,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+41608,1446907,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1446907,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+70535,1446910,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+70535,1446910,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+341844,1446910,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+341844,1446910,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1446911,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1446911,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+16805,1446911,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+16805,1446911,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2514,1446911,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+2514,1446911,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+41608,1446913,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1446913,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1446917,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1446917,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+341844,1446917,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+341844,1446917,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2699,1446918,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,5.0,1.5,6.5
+2699,1446918,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,5.0,1.5,6.5
+70535,1446919,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+70535,1446919,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+16805,1446922,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+16805,1446922,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2514,1446922,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+2514,1446922,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+36579,1446922,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+36579,1446922,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+341844,1446923,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+341844,1446923,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+16805,1446924,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+16805,1446924,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2514,1446924,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+2514,1446924,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+36579,1446924,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+36579,1446924,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+19614,1446925,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1446925,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+70535,1446929,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+70535,1446929,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+41608,1446929,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1446929,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+37435,1451486,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1451486,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1451495,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1451495,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1451617,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1451617,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+41608,1485346,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1485346,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1485353,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1485353,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+19614,1485354,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1485354,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+49837,1489326,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+49837,1489326,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+49837,1489334,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+49837,1489334,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+42207,1491601,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+42207,1491601,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+377930,1491607,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+377930,1491607,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+377930,1491631,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+377930,1491631,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+42207,1491631,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+42207,1491631,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,GK,5.0,1.5,6.5
+42288,1491649,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+42288,1491649,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+19614,1505602,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1505602,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+341844,1505608,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+341844,1505608,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1505609,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1505609,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+41608,1505612,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1505612,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+36579,1505614,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+36579,1505614,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+41608,1521238,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1521238,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1528518,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1528518,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1528526,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1528526,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1528532,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2975,1528532,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+113580,1537392,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1537392,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1537393,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1537393,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1537393,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1537393,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1537399,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1537399,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1537400,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1537400,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1537400,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1537400,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2699,1537625,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,5.0,1.5,6.5
+2699,1537625,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,5.0,1.5,6.5
+41608,1537626,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1537626,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+8450,1540727,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+8450,1540727,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+37435,1540975,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1540975,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1540978,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1540978,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1540980,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1540980,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1540984,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1540984,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+341844,1542139,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+341844,1542139,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+16805,1542140,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+16805,1542140,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+36579,1542140,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+36579,1542140,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+19614,1542141,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1542141,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1542383,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+113580,1542383,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+16805,1543176,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+16805,1543176,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+36579,1543176,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+36579,1543176,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+41608,1543177,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1543177,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+19614,1543178,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1543178,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2699,1543180,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,5.0,1.5,6.5
+2699,1543180,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,5.0,1.5,6.5
+25341,1543778,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1543778,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1543778,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1543778,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+25341,1543779,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+25341,1543779,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+1324,1543779,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+1324,1543779,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+2699,1544965,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,5.0,1.5,6.5
+2699,1544965,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,CM,5.0,1.5,6.5
+16805,1544966,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+16805,1544966,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+2514,1544966,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+2514,1544966,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+36579,1544966,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+36579,1544966,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RW,5.0,1.5,6.5
+341844,1544967,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+341844,1544967,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1544969,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+19614,1544969,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+41608,1544969,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+41608,1544969,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,RB,5.0,1.5,6.5
+37435,1546530,annual_current,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+37435,1546530,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_real_xi,AM,5.0,1.5,6.5
+16813,1393731,annual_current,known_startXI_without_detailed_row,high_ability_role_stabilization,RB,4.5,1.5,6.0
+16813,1393731,pre_world_cup,known_startXI_without_detailed_row,high_ability_role_stabilization,RB,4.5,1.5,6.0
+16813,1393744,annual_current,known_startXI_without_detailed_row,high_ability_role_stabilization,RB,4.5,1.5,6.0
+16813,1393744,pre_world_cup,known_startXI_without_detailed_row,high_ability_role_stabilization,RB,4.5,1.5,6.0
+16813,1393763,annual_current,known_startXI_without_detailed_row,high_ability_role_stabilization,RB,4.5,1.5,6.0
+16813,1393763,pre_world_cup,known_startXI_without_detailed_row,high_ability_role_stabilization,RB,4.5,1.5,6.0
+16813,1393775,annual_current,known_startXI_without_detailed_row,high_ability_role_stabilization,RB,4.5,1.5,6.0
+16813,1393775,pre_world_cup,known_startXI_without_detailed_row,high_ability_role_stabilization,RB,4.5,1.5,6.0
+16813,1491633,annual_current,known_startXI_without_detailed_row,high_ability_role_stabilization,RB,4.5,1.5,6.0
+16813,1491633,pre_world_cup,known_startXI_without_detailed_row,high_ability_role_stabilization,RB,4.5,1.5,6.0
+16813,1491649,annual_current,known_startXI_without_detailed_row,high_ability_role_stabilization,RB,4.5,1.5,6.0
+16813,1491649,pre_world_cup,known_startXI_without_detailed_row,high_ability_role_stabilization,RB,4.5,1.5,6.0
+73520,1415919,annual_current,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1415919,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1415928,annual_current,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1415928,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1446899,annual_current,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1446899,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1446907,annual_current,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1446907,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1446913,annual_current,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1446913,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1446917,annual_current,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1446917,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1446929,annual_current,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1446929,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1485346,annual_current,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1485346,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1485353,annual_current,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1485353,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1505612,annual_current,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1505612,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1521238,annual_current,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1521238,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1537626,annual_current,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1537626,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1543177,annual_current,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1543177,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1544969,annual_current,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0
+73520,1544969,pre_world_cup,known_startXI_without_detailed_row,upper90_can_enter_top30,RW,3.5,1.5,5.0

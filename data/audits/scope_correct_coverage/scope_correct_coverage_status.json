@@ -1,12 +1,13 @@
 {
   "status": "scope_correct_coverage_complete",
-  "generated_at_utc": "2026-07-19T19:28:08.843174+00:00",
+  "generated_at_utc": "2026-07-19T19:43:31.605786+00:00",
   "network_calls": 0,
   "threshold_changed": false,
-  "scope_correction": "removed season aggregates from exact-window denominator",
-  "coverage_definition": "fixture endpoint >=80% and conservative lower-bound coverage of exact-window known minutes >=80%",
-  "cached_player_fixture_pairs": 51012,
+  "scope_correction": "season aggregates removed; exact fixture coverage recomputed from durable progress",
+  "coverage_definition": "fixture endpoint >=80% and event-bounded lower coverage of exact-window known minutes >=80%",
+  "cached_player_fixture_pairs": 43544,
   "cached_lineup_player_fixture_pairs": 52959,
+  "cached_exit_event_pairs": 0,
   "window_rows_passing_before": 1621,
   "window_rows_passing_after": 1922,
   "false_to_true_window_rows": 344,
@@ -14,7 +15,7 @@
   "annual_players_passing": 963,
   "pre_world_cup_players_passing": 959,
   "players_with_known_missing_startXI": 143,
+  "missing_startXI_pairs_with_exit_event": 0,
   "aggregate_eligible_but_below_900_exact_minutes": 89,
-  "promotion_candidate": false,
-  "next_action": "promote v2 ledger and enforce exact-window 900-minute eligibility"
+  "next_action": "run shadow selection, promote ledger, and query only residual evidence"
 }

@@ -1,6 +1,6 @@
 {
   "release": "v1.0-candidate",
-  "generated_at_utc": "2026-07-19T19:43:04.728633+00:00",
+  "generated_at_utc": "2026-07-19T19:43:33.795443+00:00",
   "scientific_ready": false,
   "claim_ceiling": "exploratory, calibrated and auditable simulation",
   "blocking_gates": [
@@ -14,13 +14,13 @@
     },
     {
       "path": "data/model_readiness/candidate_coverage_status.json",
-      "bytes": 803,
-      "sha256": "bce67e58c54a7b6a21c8a0d643cf6942b5464ba9d88f19493a1a90a8f8e0170d"
+      "bytes": 800,
+      "sha256": "3c8983ddebfc43fc28c3f38163999ca5e08a437be43212fac360e08476fc1020"
     },
     {
       "path": "data/model_readiness/candidate_window_coverage.csv",
-      "bytes": 374716,
-      "sha256": "be9172bf7ca59aaa7679766d9b19cc7a5267a61d6d38a916c741a04407dc201f"
+      "bytes": 362256,
+      "sha256": "512541fc2f3b7b991f69ad44e2533cfc3e3e03d839356c499c56888d293fe126"
     },
     {
       "path": "data/model_readiness/coverage_audit_summary.json",
@@ -29,13 +29,13 @@
     },
     {
       "path": "data/model_readiness/coverage_priority_fixtures.csv",
-      "bytes": 27873,
-      "sha256": "cdb98a94b8b6697c60e20949a43c6ae333c2a9674d56cb10f287cd27d96d65b0"
+      "bytes": 76897,
+      "sha256": "c552f6cfbe8de4935b7127aa2eb2c8e65bbfca6855e20e452d9f594976732695"
     },
     {
       "path": "data/model_readiness/coverage_priority_fixtures_all.csv",
-      "bytes": 343922,
-      "sha256": "a1b191cbf39e829a0436cd1e773254174680ae389623bf62e9d08ec39ad637d3"
+      "bytes": 76897,
+      "sha256": "c552f6cfbe8de4935b7127aa2eb2c8e65bbfca6855e20e452d9f594976732695"
     },
     {
       "path": "data/model_readiness/coverage_summary_by_window.csv",
@@ -89,6 +89,11 @@
     },
     {
       "path": "data/model_readiness/player_window_coverage.csv",
+      "bytes": 697608,
+      "sha256": "9b7bfae590a992f12c53117594c97f31f88e2bbe3de16b032656f915b2c04fa9"
+    },
+    {
+      "path": "data/model_readiness/player_window_coverage_v1_season_denominator.csv",
       "bytes": 377619,
       "sha256": "67652b129600c8e62076c75e45c0b8253ba68c639ea8fe7e667843ed92732de0"
     },
@@ -124,23 +129,23 @@
     },
     {
       "path": "data/model_readiness/selection_sufficiency_all_players.csv",
-      "bytes": 556271,
-      "sha256": "e0c445812e16e3c61ea82f6066e42708c75df5774fb915dde8db2eff69023015"
+      "bytes": 670291,
+      "sha256": "91487c8b77f93d2530180f7da746e3f83bcfe8d5a660ed141941a8a46d39c20c"
     },
     {
       "path": "data/model_readiness/selection_sufficiency_priority_fixtures.csv",
-      "bytes": 27873,
-      "sha256": "cdb98a94b8b6697c60e20949a43c6ae333c2a9674d56cb10f287cd27d96d65b0"
+      "bytes": 76897,
+      "sha256": "c552f6cfbe8de4935b7127aa2eb2c8e65bbfca6855e20e452d9f594976732695"
     },
     {
       "path": "data/model_readiness/selection_sufficiency_status.json",
-      "bytes": 3202,
-      "sha256": "f1b40962e4d1e7312a6c335300ba265615f755628b3e54c9c40ede930af8d037"
+      "bytes": 3191,
+      "sha256": "03c80af02417017e8a904f68057a1ed75c9b08700df574ab968006b4cfabd3a3"
     },
     {
       "path": "data/model_readiness/selection_sufficiency_unresolved_players.csv",
-      "bytes": 169423,
-      "sha256": "9b761e12b6a83f88447ca54548051448148e334e48b2046d7b125515eb049968"
+      "bytes": 23155,
+      "sha256": "654de1d894a022a80ca4c4d7b195f87204ef4ac3ad91175128fc5da04fe3b26b"
     },
     {
       "path": "data/validation/external_pre_tournament_holdout_summary.json",
