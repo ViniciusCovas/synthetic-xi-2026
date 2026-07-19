@@ -1,0 +1,116 @@
+name: Scientific Validation Suite
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/build_exact_coverage_audit.py"
+      - "scripts/validate_lateral_grid.py"
+      - "scripts/resolve_eleven_roles.py"
+      - "scripts/run_predictive_backtest.py"
+      - "scripts/tune_shared_tempo_and_run_v3.py"
+      - "scripts/run_sensitivity_analysis.py"
+      - "scripts/run_nested_uncertainty.py"
+      - "scripts/build_scientific_status.py"
+      - "scripts/build_scientific_exhibits.py"
+      - "simulator/shared_tempo.py"
+      - "tests/test_scientific_validation.py"
+      - "data/reference/lateral_role_anchors.csv"
+      - "data/lake/**"
+      - "data/audits/annual_player_precheck.csv"
+      - "data/audits/annual_player_competitions.csv"
+      - "data/audits/exact_fixture_inventory.csv"
+      - "data/processed/fixtures.csv"
+      - "data/processed/player_matches.csv"
+      - ".github/workflows/scientific-validation.yml"
+  schedule:
+    - cron: "37 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scientific-validation-suite
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install scientific dependencies
+        run: pip install pandas numpy pytest matplotlib
+      - name: Rebuild partial annual artifacts
+        run: python scripts/build_partial_window_artifacts.py
+      - name: Audit exact player coverage by temporal window
+        run: python scripts/build_exact_coverage_audit.py
+      - name: Validate provider lateral-grid orientation
+        run: python scripts/validate_lateral_grid.py
+      - name: Resolve eleven positional functions conservatively
+        run: python scripts/resolve_eleven_roles.py
+      - name: Test scientific validation components
+        env:
+          PYTHONPATH: .
+        run: pytest -q tests/test_simulator.py tests/test_calibrated_simulator.py tests/test_scientific_validation.py
+      - name: Run rolling-origin predictive backtest
+        env:
+          PYTHONPATH: .
+        run: python scripts/run_predictive_backtest.py
+      - name: Tune shared-tempo model and run calibrated v0.3
+        env:
+          PYTHONPATH: .
+        run: python scripts/tune_shared_tempo_and_run_v3.py
+      - name: Run Top-N and coordination sensitivity
+        env:
+          PYTHONPATH: .
+        run: python scripts/run_sensitivity_analysis.py
+      - name: Run nested parameter and match uncertainty
+        env:
+          PYTHONPATH: .
+        run: python scripts/run_nested_uncertainty.py
+      - name: Aggregate scientific gates
+        run: python scripts/build_scientific_status.py
+      - name: Build paper exhibits
+        env:
+          MPLBACKEND: Agg
+        run: |
+          python scripts/build_paper_exhibits.py
+          python scripts/build_scientific_exhibits.py
+      - name: Archive scientific validation package
+        uses: actions/upload-artifact@v4
+        with:
+          name: scientific-validation-${{ github.run_id }}
+          path: |
+            data/model_readiness
+            data/validation
+            data/simulations/calibrated_v0_3
+            paper/exhibits
+            paper/exhibits_scientific
+          retention-days: 30
+          if-no-files-found: error
+      - name: Publish scientific validation outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/model_readiness data/validation data/simulations/calibrated_v0_3 paper/exhibits paper/exhibits_scientific
+          if git diff --cached --quiet; then
+            echo "No scientific validation changes to publish"
+          else
+            git commit -m "science: update coverage, validation and uncertainty outputs"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
