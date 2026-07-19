@@ -5,39 +5,39 @@
   "total_matches": 9600,
   "intervals": {
     "synthetic_win_probability": {
-      "mean": 0.2747916666666667,
-      "median": 0.275,
+      "mean": 0.28260416666666666,
+      "median": 0.2875,
       "p025": 0.175,
       "p10": 0.2,
-      "p90": 0.35,
+      "p90": 0.3625,
       "p975": 0.3875
     },
     "draw_probability": {
-      "mean": 0.250625,
-      "median": 0.25625,
+      "mean": 0.25083333333333335,
+      "median": 0.25,
       "p025": 0.175,
       "p10": 0.1875,
-      "p90": 0.3012500000000001,
-      "p975": 0.35031249999999986
+      "p90": 0.3125,
+      "p975": 0.35
     },
     "real_win_probability": {
-      "mean": 0.47458333333333336,
-      "median": 0.475,
-      "p025": 0.3621875,
-      "p10": 0.39875000000000005,
+      "mean": 0.4665625,
+      "median": 0.4625,
+      "p025": 0.35,
+      "p10": 0.3875,
       "p90": 0.55,
-      "p975": 0.5753124999999999
+      "p975": 0.575
     },
     "mean_total_goals": {
-      "mean": 2.9058333333333333,
-      "median": 2.9,
-      "p025": 2.4625,
-      "p10": 2.57375,
-      "p90": 3.2025000000000006,
-      "p975": 3.4003124999999996
+      "mean": 2.915833333333333,
+      "median": 2.9125,
+      "p025": 2.44875,
+      "p10": 2.6175,
+      "p90": 3.2037500000000003,
+      "p975": 3.4375
     }
   },
-  "probability_real_xi_more_likely_than_synthetic": 0.95,
+  "probability_real_xi_more_likely_than_synthetic": 0.9333333333333333,
   "uncertainty_scope": [
     "player-profile uncertainty",
     "coordination sensitivity",

@@ -1,10 +1,10 @@
 {
   "status": "v0_3_calibration_quality_evaluated",
   "selected_shared_tempo_sigma": 0.19999999999999998,
-  "absolute_goal_error": 0.02580638297872362,
-  "absolute_shot_error": 0.28647100421420646,
-  "absolute_shot_on_target_error": 0.5380410525233827,
-  "absolute_zero_zero_error": 0.005568085106382972,
+  "absolute_goal_error": 0.03530638297872368,
+  "absolute_shot_error": 0.2606710042142062,
+  "absolute_shot_on_target_error": 0.5624410525233827,
+  "absolute_zero_zero_error": 0.007068085106382974,
   "engineering_gate_passed": true,
   "final_scientific_gate_passed": false
 }

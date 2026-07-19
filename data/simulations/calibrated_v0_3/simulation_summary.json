@@ -1,79 +1,79 @@
 {
   "simulations": 10000,
   "shared_tempo_sigma": 0.19999999999999998,
-  "home_win_probability": 0.2688,
-  "draw_probability": 0.248,
-  "away_win_probability": 0.4832,
-  "mean_home_goals": 1.2257,
-  "mean_away_goals": 1.715,
-  "mean_total_goals": 2.9407,
-  "mean_total_shots": 17.8084,
-  "mean_total_shots_on_target": 8.9166,
-  "mean_home_xg": 1.2342934142273798,
-  "mean_away_xg": 1.703931116818518,
-  "zero_zero_probability": 0.0689,
+  "home_win_probability": 0.2794,
+  "draw_probability": 0.244,
+  "away_win_probability": 0.4766,
+  "mean_home_goals": 1.2489,
+  "mean_away_goals": 1.7013,
+  "mean_total_goals": 2.9502,
+  "mean_total_shots": 17.8342,
+  "mean_total_shots_on_target": 8.941,
+  "mean_home_xg": 1.2576845007193775,
+  "mean_away_xg": 1.6940169890969041,
+  "zero_zero_probability": 0.0674,
   "top_scorelines": [
     {
       "score": "1-1",
-      "probability": 0.1093
+      "probability": 0.1087
     },
     {
       "score": "0-1",
-      "probability": 0.1015
+      "probability": 0.0989
     },
     {
       "score": "1-2",
-      "probability": 0.0864
+      "probability": 0.0877
     },
     {
       "score": "0-2",
-      "probability": 0.0742
-    },
-    {
-      "score": "0-0",
-      "probability": 0.0689
+      "probability": 0.0732
     },
     {
       "score": "1-0",
-      "probability": 0.0686
+      "probability": 0.0718
+    },
+    {
+      "score": "0-0",
+      "probability": 0.0674
     },
     {
       "score": "2-1",
-      "probability": 0.0603
+      "probability": 0.0625
     },
     {
       "score": "1-3",
-      "probability": 0.0518
+      "probability": 0.0514
     },
     {
       "score": "2-2",
-      "probability": 0.0517
-    },
-    {
-      "score": "0-3",
-      "probability": 0.0395
+      "probability": 0.0495
     },
     {
       "score": "2-0",
-      "probability": 0.0386
+      "probability": 0.0387
+    },
+    {
+      "score": "0-3",
+      "probability": 0.0377
     },
     {
       "score": "2-3",
-      "probability": 0.0306
+      "probability": 0.0304
     }
   ],
   "outcomes": {
-    "home_wins": 2688,
-    "draws": 2480,
-    "away_wins": 4832
+    "home_wins": 2794,
+    "draws": 2440,
+    "away_wins": 4766
   },
   "representative_match": {
     "home": "Synthetic XI — exploratorio",
     "away": "Real Best XI — exploratorio",
     "home_goals": 1,
     "away_goals": 2,
-    "home_xg": 1.047,
-    "away_xg": 1.65,
+    "home_xg": 1.058,
+    "away_xg": 1.648,
     "home_shots": 7,
     "away_shots": 10,
     "home_shots_on_target": 4,
@@ -96,7 +96,7 @@
         "type": "goal",
         "actor": "João Félix",
         "zone": 2,
-        "xg": 0.169,
+        "xg": 0.168,
         "headline": "GOL de João Félix",
         "shared_tempo_multiplier": 1.0663
       },
@@ -106,7 +106,7 @@
         "type": "shot_off_target",
         "actor": "Yan Diomande",
         "zone": 2,
-        "xg": 0.151,
+        "xg": 0.15,
         "headline": "Ocasión de Yan Diomande fuera",
         "shared_tempo_multiplier": 1.0663
       },
@@ -136,7 +136,7 @@
         "type": "shot_off_target",
         "actor": "SYN-CM20",
         "zone": 3,
-        "xg": 0.214,
+        "xg": 0.215,
         "headline": "Ocasión de SYN-CM20 fuera",
         "shared_tempo_multiplier": 1.0663
       },
@@ -156,7 +156,7 @@
         "type": "shot_off_target",
         "actor": "Yan Diomande",
         "zone": 2,
-        "xg": 0.151,
+        "xg": 0.15,
         "headline": "Ocasión de Yan Diomande fuera",
         "shared_tempo_multiplier": 1.0663
       },
@@ -166,7 +166,7 @@
         "type": "shot_off_target",
         "actor": "João Félix",
         "zone": 2,
-        "xg": 0.169,
+        "xg": 0.168,
         "headline": "Ocasión de João Félix fuera",
         "shared_tempo_multiplier": 1.0663
       },
@@ -206,7 +206,7 @@
         "type": "shot_off_target",
         "actor": "SYN-W120",
         "zone": 3,
-        "xg": 0.261,
+        "xg": 0.266,
         "headline": "Ocasión de SYN-W120 fuera",
         "shared_tempo_multiplier": 1.0663
       },
@@ -226,7 +226,7 @@
         "type": "shot_on_target",
         "actor": "SYN-W120",
         "zone": 1,
-        "xg": 0.101,
+        "xg": 0.103,
         "headline": "Remate de SYN-W120 detenido por el portero",
         "shared_tempo_multiplier": 1.0663
       },
@@ -236,7 +236,7 @@
         "type": "shot_on_target",
         "actor": "SYN-AM20",
         "zone": 2,
-        "xg": 0.155,
+        "xg": 0.154,
         "headline": "Remate de SYN-AM20 detenido por el portero",
         "shared_tempo_multiplier": 1.0663
       },
@@ -276,7 +276,7 @@
         "type": "goal",
         "actor": "SYN-W120",
         "zone": 1,
-        "xg": 0.101,
+        "xg": 0.103,
         "headline": "GOL de SYN-W120",
         "shared_tempo_multiplier": 1.0663
       }
@@ -298,10 +298,10 @@
     "model_possessions_per_match": 104.0
   },
   "calibration_error": {
-    "goals_per_match": 0.02580638297872362,
-    "shots_per_match": -0.28647100421420646,
-    "shots_on_target_per_match": 0.5380410525233827,
-    "zero_zero_rate": -0.005568085106382972
+    "goals_per_match": 0.03530638297872368,
+    "shots_per_match": -0.2606710042142062,
+    "shots_on_target_per_match": 0.5624410525233827,
+    "zero_zero_rate": -0.007068085106382974
   },
   "shared_tempo_interpretation": "Mean-one match-wide lognormal tempo creates shared low-event and high-event states without post-hoc score editing.",
   "methodological_gate": {

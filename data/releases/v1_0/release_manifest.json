@@ -1,6 +1,6 @@
 {
   "release": "v1.0-candidate",
-  "generated_at_utc": "2026-07-19T14:29:11.961493+00:00",
+  "generated_at_utc": "2026-07-19T14:41:06.291054+00:00",
   "scientific_ready": false,
   "claim_ceiling": "exploratory, calibrated and auditable simulation",
   "blocking_gates": [
@@ -144,28 +144,28 @@
     },
     {
       "path": "data/validation/external_pre_tournament_holdout_summary.json",
-      "bytes": 887,
-      "sha256": "3c4b77a06843d57e97eafa0c1d6f8c48157199963d356f719dbab2a2e261ff6e"
+      "bytes": 888,
+      "sha256": "f66a61b5b364199866ea27627dfbb975006ccb66e908344749f732652faa250a"
     },
     {
       "path": "data/validation/external_pre_tournament_predictions.csv",
-      "bytes": 18671,
-      "sha256": "812f1a83fe63a98768bb4fe4c020715673d4b314bba1f3e8c38eaaa5f1991dd8"
+      "bytes": 18689,
+      "sha256": "b79f595f27f87d18befeb636a9f05048c17f3c931ac4ed40726391a4e217ad9d"
     },
     {
       "path": "data/validation/frozen_pre_tournament_team_strengths.csv",
-      "bytes": 4280,
-      "sha256": "23fb01e7c51ed8567dd4a36ccbd174a6d0bdd93a23d524ab5a8621d4b6526704"
+      "bytes": 4288,
+      "sha256": "86ed05dd5cc1a6ac802398dc5bae5aee7f98e4b3bb7ba6913078e5f215c225d7"
     },
     {
       "path": "data/validation/nested_uncertainty_summary.json",
-      "bytes": 1378,
-      "sha256": "3b04c1bf7d849ccd871058673c4a5646c97bfb28ff1dfcd1eb438f94a50df303"
+      "bytes": 1327,
+      "sha256": "07a9002d6b29aac777544618b6e4b33f45b383f33674c2267883aab87f1002f8"
     },
     {
       "path": "data/validation/nested_uncertainty_worlds.csv",
-      "bytes": 18831,
-      "sha256": "d3c5fd8d8ffa08280920e4c93a01bd1bc83c94d81b6c0dc852d6a8fd57615b65"
+      "bytes": 18838,
+      "sha256": "fbeccdc0c7df0d919b64f7ce1caaa07cea68e1cad24fa5c89c471b4e1e5d9e81"
     },
     {
       "path": "data/validation/predictive_backtest_summary.json",
@@ -189,43 +189,43 @@
     },
     {
       "path": "data/validation/sensitivity_summary.json",
-      "bytes": 929,
-      "sha256": "52b216af54d5e809eb76441169c8c0acf325ab026e34ff83368a37125b2b4846"
+      "bytes": 960,
+      "sha256": "3fa354e7345c7fff886712f117e15b9fecd4a76a96593526acc434c37e1d22ae"
     },
     {
       "path": "data/validation/topn_chemistry_sensitivity.csv",
-      "bytes": 1652,
-      "sha256": "75d7f016b109f986d4b6402c3dc60903996b635ad63cd21515b3df0d80b4bfc7"
+      "bytes": 1670,
+      "sha256": "3c4833b412287d83b98a06414f8d14f67fdc2b28459cadb1cc431584d9bd7302"
     },
     {
       "path": "data/validation/topn_roster_sensitivity.csv",
-      "bytes": 12609,
-      "sha256": "af79c4dd32ce5bc098c93be702c0b4a45bad7ee91abdfe03afb1071adac3b757"
+      "bytes": 12614,
+      "sha256": "75fd8a89f31b32580eae4eb975c94d425d2c2f5cf753baf0fc5e454d5201b720"
     },
     {
       "path": "data/simulations/calibrated_v0_3/calibration_quality.json",
-      "bytes": 381,
-      "sha256": "2c7019dfe89aecdf2d61b039c2176b266516b3bc7345de798b2c908ce32285fe"
+      "bytes": 380,
+      "sha256": "f3d59a55c9c3074d5389b6c93ea6a565a116c8d6e6c1c6481eeceb8a84fa4adb"
     },
     {
       "path": "data/simulations/calibrated_v0_3/real_best_xi_provisional.csv",
-      "bytes": 908,
-      "sha256": "ca08ff2e2ff25a3c40f59d3ad7e4966ff1018ff7050a55e58a5e39907b52f910"
+      "bytes": 911,
+      "sha256": "dac7d7dc3ebcb81fec5947a22ae5f8097cb0bdcec15b2cde816570e31b64f398"
     },
     {
       "path": "data/simulations/calibrated_v0_3/shared_tempo_tuning.csv",
-      "bytes": 1671,
-      "sha256": "2938e76ec821d1c03ac076a52a68ea37c16107e1b8415d0da9e3607eaa64b629"
+      "bytes": 1767,
+      "sha256": "b45f8fc4dfbd6901a4c948b5043550b489724d243c81cc4cec4aefc0e54373b9"
     },
     {
       "path": "data/simulations/calibrated_v0_3/simulation_summary.json",
-      "bytes": 8607,
-      "sha256": "ed996d120ca74307480c071a101d685f77f039a933feec8097afd499ddea6bc6"
+      "bytes": 8606,
+      "sha256": "19995f196ddf21f890add7a8e96c3cb6aad3e9042832af698783b087503e71f9"
     },
     {
       "path": "data/simulations/calibrated_v0_3/synthetic_xi_membership.csv",
-      "bytes": 4429,
-      "sha256": "57f949f2632f28eec6ab2a469e813c39233acd12f962edbbd47190f3e4540a8b"
+      "bytes": 4418,
+      "sha256": "c961a70f93c1fdffb1f4916949ca95f6b4c98f112abae6a90832c48295734e98"
     },
     {
       "path": "paper/exhibits/README.md",
@@ -249,8 +249,8 @@
     },
     {
       "path": "paper/exhibits/table_01_data_and_model_readiness.csv",
-      "bytes": 387,
-      "sha256": "2313a2c3e0e70b8a473f318e8ceb12f641a6d901700a0c870a940056ccb03567"
+      "bytes": 358,
+      "sha256": "68e76ae91429a865fe950db8759a1d58ca0319a818265b6b7a21d6ad8dbc82cd"
     },
     {
       "path": "paper/exhibits/table_02_exploratory_match_outcomes.csv",
@@ -279,13 +279,13 @@
     },
     {
       "path": "paper/exhibits_scientific/figure_04_player_coverage_ecdf.png",
-      "bytes": 113772,
-      "sha256": "bc8840e9db4051e796757a2f9efffdb5e178b7f99fd74c176914b86f98cd8946"
+      "bytes": 92564,
+      "sha256": "f5f74469d6a92950308e1e02b6f73bb6b669bd2554b7703b8ad8b5974ddc916d"
     },
     {
       "path": "paper/exhibits_scientific/figure_05_role_candidate_depth.png",
-      "bytes": 68810,
-      "sha256": "640e08265e1e0318953bc54c30199df98d087c73d8adfbd964c9c55da9aff9fd"
+      "bytes": 72783,
+      "sha256": "c1224731c25f35bdb765473920a11dd9446f5e32e799c9d57fdc3164669bfe16"
     },
     {
       "path": "paper/exhibits_scientific/figure_06_predictive_log_loss.png",
@@ -299,28 +299,28 @@
     },
     {
       "path": "paper/exhibits_scientific/figure_08_topn_coordination_sensitivity.png",
-      "bytes": 192779,
-      "sha256": "59051d157bb2bc47c4766b808c136ceba3dd647eb552c97f7add704819187ba7"
+      "bytes": 195068,
+      "sha256": "583f4a3ca49ca4139bd00ba62cc44e10ff4a672d96f83230e9b73c66301f6018"
     },
     {
       "path": "paper/exhibits_scientific/figure_09_nested_uncertainty.png",
-      "bytes": 62942,
-      "sha256": "fd1394017890e31acdf741b630b3b14e866f1e84ac37f1506955803b04e23f4d"
+      "bytes": 62935,
+      "sha256": "d7d1a417233971b85b12f4275139dde67ea4be016598cae3759625f723765ea3"
     },
     {
       "path": "paper/exhibits_scientific/figure_10_v02_v03_calibration.png",
       "bytes": 65827,
-      "sha256": "0c28a746850af704832d21957177e16efe94d7775db496844d5872b2e494fca5"
+      "sha256": "142db706c0403389dcd8309ba9fac43c235691bdf8658358ef60d2b73917f5cd"
     },
     {
       "path": "paper/exhibits_scientific/table_05_player_window_coverage.csv",
-      "bytes": 389322,
-      "sha256": "78115490d088e25d79cd0ce71fc56e4a8168f17c1416beb791477c96444b1596"
+      "bytes": 377322,
+      "sha256": "59d9db1da248c93be61100e2301b7a0e9078e14f046f07287016044dafc5c2c2"
     },
     {
       "path": "paper/exhibits_scientific/table_06_eleven_role_candidates.csv",
-      "bytes": 88,
-      "sha256": "a480a60113641fee07fc05fdc0b9d9f73f3840a21872d85c0790c6bb13275484"
+      "bytes": 89,
+      "sha256": "436d041e74db24beea5ef0b3d8b51661171739167464cca6a962a6210075ac7c"
     },
     {
       "path": "paper/exhibits_scientific/table_07_predictive_model_scores.csv",
@@ -334,18 +334,18 @@
     },
     {
       "path": "paper/exhibits_scientific/table_09_sensitivity.csv",
-      "bytes": 1625,
-      "sha256": "63feb8f684fd6cd6d787ec2ca11f6fea4678f95fe00b6fcb54989748ffdd6d06"
+      "bytes": 1641,
+      "sha256": "6ec38b4b37aab33c208b3963efd4a3f4066bc6e1fc3cf3ba019e5b478cd1e012"
     },
     {
       "path": "paper/exhibits_scientific/table_10_nested_uncertainty_worlds.csv",
-      "bytes": 18683,
-      "sha256": "1e5fe934f2e5c0ba9d9b1f9fd571dc8fb480e05d1aa2a15faa641627878b775c"
+      "bytes": 18690,
+      "sha256": "006a73ae09b43f720012aefc9d0cc507f0e0b5735dd69847e2b3c20194da6fd0"
     },
     {
       "path": "paper/exhibits_scientific/table_11_v02_v03_calibration.csv",
-      "bytes": 399,
-      "sha256": "6a158bee6ef2bfc5142cd0f81b41f224a20e5c395d85d077971f53ee13a0cfd6"
+      "bytes": 397,
+      "sha256": "e804aec01a5edbbce7fdf9b64c107c5fb90f2da3b9be1f65e96be651feb3898b"
     },
     {
       "path": "paper/exhibits_scientific/table_12_scientific_validation_gates.csv",
