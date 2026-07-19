@@ -815,8 +815,8 @@ player_id,player_name,world_cup_team,squad_position,reported_minutes,benchmark_p
 22265,Nuno da Costa,Cape Verde Islands,Attacker,1340.0,False,pre_world_cup,44,38,0.8636363636363636,6,35,1014.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator
 24012,L. Mpasi,Congo DR,Goalkeeper,1275.0,False,annual_current,43,35,0.813953488372093,8,33,1140.0,1275.0,0.8941176470588236,0.8941176470588236,True,provider aggregate minutes plus exact fixture inventory
 24012,L. Mpasi,Congo DR,Goalkeeper,1275.0,False,pre_world_cup,39,31,0.7948717948717948,8,29,780.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
-24810,J. Córdoba,Colombia,Attacker,3377.0,True,annual_current,37,10,0.2702702702702703,27,10,473.0,3377.0,0.1400651465798045,0.1400651465798045,False,provider aggregate minutes plus exact fixture inventory
-24810,J. Córdoba,Colombia,Attacker,3377.0,True,pre_world_cup,33,6,0.1818181818181818,27,5,373.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
+24810,J. Córdoba,Colombia,Attacker,3377.0,True,annual_current,37,10,0.2702702702702703,27,11,563.0,3377.0,0.1667160201362156,0.1667160201362156,False,provider aggregate minutes plus exact fixture inventory
+24810,J. Córdoba,Colombia,Attacker,3377.0,True,pre_world_cup,33,6,0.1818181818181818,27,6,463.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
 24845,J. Ryerson,Norway,Defender,4416.0,True,annual_current,53,53,1.0,0,51,3290.0,4416.0,0.7450181159420289,0.7450181159420289,False,provider aggregate minutes plus exact fixture inventory
 24845,J. Ryerson,Norway,Defender,4416.0,True,pre_world_cup,52,52,1.0,0,50,3435.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator
 24866,Douglas Santos,Brazil,Defender,2733.0,True,annual_current,37,10,0.2702702702702703,27,9,711.0,2733.0,0.2601536772777168,0.2601536772777168,False,provider aggregate minutes plus exact fixture inventory
@@ -1359,8 +1359,8 @@ player_id,player_name,world_cup_team,squad_position,reported_minutes,benchmark_p
 94541,J. Bell,New Zealand,Midfielder,4331.0,True,pre_world_cup,32,17,0.53125,15,16,1374.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
 94562,S. Giménez,Mexico,Attacker,1609.0,False,annual_current,46,46,1.0,0,25,1133.0,1609.0,0.704164077066501,0.704164077066501,False,provider aggregate minutes plus exact fixture inventory
 94562,S. Giménez,Mexico,Attacker,1609.0,False,pre_world_cup,47,47,1.0,0,26,1217.0,,,,True,exact fixture inventory; no independent aggregate-minute denominator
-96512,Kevin Pina,Cape Verde Islands,Midfielder,2730.0,True,annual_current,34,7,0.2058823529411764,27,7,532.0,2730.0,0.1948717948717948,0.1948717948717948,False,provider aggregate minutes plus exact fixture inventory
-96512,Kevin Pina,Cape Verde Islands,Midfielder,2730.0,True,pre_world_cup,30,3,0.1,27,3,181.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
+96512,Kevin Pina,Cape Verde Islands,Midfielder,2730.0,True,annual_current,34,7,0.2058823529411764,27,8,543.0,2730.0,0.1989010989010989,0.1989010989010989,False,provider aggregate minutes plus exact fixture inventory
+96512,Kevin Pina,Cape Verde Islands,Midfielder,2730.0,True,pre_world_cup,30,3,0.1,27,4,192.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
 96615,I. Díaz,Panama,Attacker,4829.0,True,annual_current,67,56,0.835820895522388,11,30,1713.0,4829.0,0.3547318285359288,0.3547318285359288,False,provider aggregate minutes plus exact fixture inventory
 96615,I. Díaz,Panama,Attacker,4829.0,True,pre_world_cup,75,59,0.7866666666666666,16,32,2096.0,,,,False,exact fixture inventory; no independent aggregate-minute denominator
 98936,L. Foster,South Africa,Attacker,2088.0,True,annual_current,48,46,0.9583333333333334,2,36,1771.0,2088.0,0.8481800766283525,0.8481800766283525,True,provider aggregate minutes plus exact fixture inventory
