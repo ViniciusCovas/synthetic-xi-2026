@@ -42,12 +42,12 @@ class BatchClient:
             "x-ratelimit-requests-limit": "daily_limit",
             "x-ratelimit-limit": "minute_limit",
         }
-        lower = {k.lower(): v for k, v in response.headers.items()}
-        for header, attr in mapping.items():
+        lower = {key.lower(): value for key, value in response.headers.items()}
+        for header, attribute in mapping.items():
             value = lower.get(header)
             if value is not None:
                 try:
-                    setattr(self, attr, int(value))
+                    setattr(self, attribute, int(value))
                 except ValueError:
                     pass
 
@@ -60,20 +60,25 @@ class BatchClient:
         self._headers(response)
         response.raise_for_status()
         payload = response.json()
-        req = ((payload.get("response") or {}).get("requests") or {})
-        if req.get("limit_day") is not None:
-            self.daily_limit = int(req["limit_day"])
-        if req.get("current") is not None and self.daily_limit is not None:
-            self.remaining = max(0, self.daily_limit - int(req["current"]))
+        requests_status = ((payload.get("response") or {}).get("requests") or {})
+        if requests_status.get("limit_day") is not None:
+            self.daily_limit = int(requests_status["limit_day"])
+        if requests_status.get("current") is not None and self.daily_limit is not None:
+            self.remaining = max(0, self.daily_limit - int(requests_status["current"]))
         return payload
 
-    def get_fixtures_bundle(self, fixture_ids: list[int]) -> dict[str, Any]:
+    def get_fixtures_bundle(
+        self,
+        fixture_ids: list[int],
+        *,
+        force_refresh: bool = False,
+    ) -> dict[str, Any]:
         if not fixture_ids or len(fixture_ids) > 20:
             raise ValueError("fixture_ids must contain between 1 and 20 ids")
-        ids = "-".join(str(x) for x in fixture_ids)
+        ids = "-".join(str(value) for value in fixture_ids)
         digest = hashlib.sha256(ids.encode()).hexdigest()[:20]
         path = RAW_DIR / f"fixtures_{digest}.json"
-        if path.exists():
+        if path.exists() and not force_refresh:
             return json.loads(path.read_text(encoding="utf-8"))
         if self.calls >= self.max_calls:
             raise QuotaStop("Límite de llamadas del lote alcanzado")
