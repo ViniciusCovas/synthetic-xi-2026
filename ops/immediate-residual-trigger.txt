@@ -1,0 +1,2 @@
+Trigger created at 2026-07-19T20:05:00Z.
+Purpose: use at most three remaining daily API calls on the highest-information residual fixtures, then rebuild exact-window coverage and scientific gates.
