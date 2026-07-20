@@ -1,0 +1,67 @@
+scenario,role,player_id,player_name,world_cup_team,score,conservative_score,covered,provider_structural_missingness_confirmed
+observed,GK,182718,J. Garcia,Spain,0.809506995311787,0.7361646068035926,True,False
+observed,RB,271539,J. Hadjam,Algeria,0.745403673407056,0.6392828275786414,True,False
+observed,RCB,69,B. Mechele,Belgium,0.7073087044532894,0.6430216348010012,True,False
+observed,LCB,624,N. Otamendi,Argentina,0.7100013786997497,0.6383553006518449,True,False
+observed,LB,263482,N. Mendes,Portugal,0.7103090167412799,0.6301661187091787,True,False
+observed,DM,44,Rodri,Spain,0.6861275926502921,0.598104116592785,True,False
+observed,CM,19617,M. Olise,France,0.8102143473077419,0.7411715531901322,True,False
+observed,AM,6005,J. Quintero,Colombia,0.7829120220261333,0.6782423778763674,True,False
+observed,RW,154,L. Messi,Argentina,0.8327019832961582,0.7573312252151297,True,False
+observed,LW,909,M. Rashford,England,0.683823961586197,0.5959410607731312,True,False
+observed,ST,153,O. Dembele,France,0.7411214479612049,0.6523527359858712,True,False
+empirical_low,GK,182718,J. Garcia,Spain,0.809506995311787,0.7361646068035926,True,False
+empirical_low,RB,271539,J. Hadjam,Algeria,0.7177094691036507,0.6115886232752361,True,False
+empirical_low,RCB,69,B. Mechele,Belgium,0.7073087044532894,0.6430216348010012,True,False
+empirical_low,LCB,624,N. Otamendi,Argentina,0.7100013786997497,0.6383553006518449,True,False
+empirical_low,LB,263482,N. Mendes,Portugal,0.7103090167412799,0.6301661187091787,True,False
+empirical_low,DM,44,Rodri,Spain,0.6861275926502921,0.598104116592785,True,False
+empirical_low,CM,19617,M. Olise,France,0.8102143473077419,0.7411715531901322,True,False
+empirical_low,AM,6005,J. Quintero,Colombia,0.7829120220261333,0.6782423778763674,True,False
+empirical_low,RW,154,L. Messi,Argentina,0.8327019832961582,0.7573312252151297,True,False
+empirical_low,LW,909,M. Rashford,England,0.683823961586197,0.5959410607731312,True,False
+empirical_low,ST,153,O. Dembele,France,0.7411214479612049,0.6523527359858712,True,False
+empirical_median,GK,182718,J. Garcia,Spain,0.809506995311787,0.7361646068035926,True,False
+empirical_median,RB,271539,J. Hadjam,Algeria,0.7245005484622371,0.6183797026338225,True,False
+empirical_median,RCB,69,B. Mechele,Belgium,0.7073087044532894,0.6430216348010012,True,False
+empirical_median,LCB,624,N. Otamendi,Argentina,0.7100013786997497,0.6383553006518449,True,False
+empirical_median,LB,263482,N. Mendes,Portugal,0.7103090167412799,0.6301661187091787,True,False
+empirical_median,DM,44,Rodri,Spain,0.6861275926502921,0.598104116592785,True,False
+empirical_median,CM,19617,M. Olise,France,0.8102143473077419,0.7411715531901322,True,False
+empirical_median,AM,6005,J. Quintero,Colombia,0.7829120220261333,0.6782423778763674,True,False
+empirical_median,RW,154,L. Messi,Argentina,0.8327019832961582,0.7573312252151297,True,False
+empirical_median,LW,909,M. Rashford,England,0.683823961586197,0.5959410607731312,True,False
+empirical_median,ST,153,O. Dembele,France,0.7411214479612049,0.6523527359858712,True,False
+empirical_high,GK,182718,J. Garcia,Spain,0.809506995311787,0.7361646068035926,True,False
+empirical_high,RB,271539,J. Hadjam,Algeria,0.7341988673618234,0.6280780215334087,True,False
+empirical_high,RCB,69,B. Mechele,Belgium,0.7073087044532894,0.6430216348010012,True,False
+empirical_high,LCB,624,N. Otamendi,Argentina,0.7100013786997497,0.6383553006518449,True,False
+empirical_high,LB,263482,N. Mendes,Portugal,0.7103090167412799,0.6301661187091787,True,False
+empirical_high,DM,44,Rodri,Spain,0.6861275926502921,0.598104116592785,True,False
+empirical_high,CM,19617,M. Olise,France,0.8102143473077419,0.7411715531901322,True,False
+empirical_high,AM,6005,J. Quintero,Colombia,0.7829120220261333,0.6782423778763674,True,False
+empirical_high,RW,154,L. Messi,Argentina,0.8327019832961582,0.7573312252151297,True,False
+empirical_high,LW,909,M. Rashford,England,0.683823961586197,0.5959410607731312,True,False
+empirical_high,ST,153,O. Dembele,France,0.7411214479612049,0.6523527359858712,True,False
+strict_low,GK,182718,J. Garcia,Spain,0.809506995311787,0.7361646068035926,True,False
+strict_low,RB,25158,D. Raum,Germany,0.6677485732012052,0.5829657989373184,True,False
+strict_low,RCB,69,B. Mechele,Belgium,0.7073087044532894,0.6430216348010012,True,False
+strict_low,LCB,624,N. Otamendi,Argentina,0.7100013786997497,0.6383553006518449,True,False
+strict_low,LB,263482,N. Mendes,Portugal,0.7103090167412799,0.6301661187091787,True,False
+strict_low,DM,44,Rodri,Spain,0.6861275926502921,0.598104116592785,True,False
+strict_low,CM,19617,M. Olise,France,0.8102143473077419,0.7411715531901322,True,False
+strict_low,AM,6005,J. Quintero,Colombia,0.7829120220261333,0.6782423778763674,True,False
+strict_low,RW,154,L. Messi,Argentina,0.8327019832961582,0.7573312252151297,True,False
+strict_low,LW,909,M. Rashford,England,0.683823961586197,0.5959410607731312,True,False
+strict_low,ST,153,O. Dembele,France,0.7411214479612049,0.6523527359858712,True,False
+strict_high,GK,269349,L. Hornicek,Czech Republic,0.8093157362073218,0.737474679416944,True,False
+strict_high,RB,271539,J. Hadjam,Algeria,0.7670816955389056,0.660960849710491,True,False
+strict_high,RCB,69,B. Mechele,Belgium,0.7073087044532894,0.6430216348010012,True,False
+strict_high,LCB,624,N. Otamendi,Argentina,0.7100013786997497,0.6383553006518449,True,False
+strict_high,LB,263482,N. Mendes,Portugal,0.7103090167412799,0.6301661187091787,True,False
+strict_high,DM,44,Rodri,Spain,0.6861275926502921,0.598104116592785,True,False
+strict_high,CM,19617,M. Olise,France,0.8102143473077419,0.7411715531901322,True,False
+strict_high,AM,113580,W. Semedo,Cape Verde Islands,0.7991933643030724,0.6798816125028116,False,True
+strict_high,RW,154,L. Messi,Argentina,0.8327019832961582,0.7573312252151297,True,False
+strict_high,LW,909,M. Rashford,England,0.683823961586197,0.5959410607731312,True,False
+strict_high,ST,153,O. Dembele,France,0.7411214479612049,0.6523527359858712,True,False

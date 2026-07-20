@@ -1,0 +1,12 @@
+role,scenario_winner_count,scenario_winner_ids,scenario_winner_names,strict_identified,identified_player_id,identified_player_name,winner_strict_lower,best_competitor_strict_upper,scenario_identified,role_point_identified
+AM,2,6005 | 113580,J. Quintero | W. Semedo,False,,,0.6782423778763674,0.6798816125028116,False,False
+CM,1,19617,M. Olise,True,19617.0,M. Olise,0.7411715531901322,0.7023608006424747,True,True
+DM,1,44,Rodri,True,44.0,Rodri,0.598104116592785,0.5846627527561109,True,True
+GK,2,182718 | 269349,J. Garcia | L. Hornicek,False,,,0.7361646068035926,0.737474679416944,False,False
+LB,1,263482,N. Mendes,True,263482.0,N. Mendes,0.6301661187091787,0.610181355468397,True,True
+LCB,1,624,N. Otamendi,True,624.0,N. Otamendi,0.6383553006518449,0.5975208105338974,True,True
+LW,1,909,M. Rashford,True,909.0,M. Rashford,0.5959410607731312,0.5758080839362196,True,True
+RB,2,25158 | 271539,D. Raum | J. Hadjam,False,,,0.5829657989373184,0.660960849710491,False,False
+RCB,1,69,B. Mechele,True,69.0,B. Mechele,0.6430216348010012,0.5887259414431827,True,True
+RW,1,154,L. Messi,True,154.0,L. Messi,0.7573312252151297,0.7282035238869933,True,True
+ST,1,153,O. Dembele,True,153.0,O. Dembele,0.6523527359858712,0.630476092492678,True,True

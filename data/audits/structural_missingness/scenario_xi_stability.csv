@@ -1,0 +1,7 @@
+scenario,xi_size,jaccard_vs_observed,changed_players_vs_observed
+observed,11,1.0,0
+empirical_low,11,1.0,0
+empirical_median,11,1.0,0
+empirical_high,11,1.0,0
+strict_low,11,0.8333333333333334,2
+strict_high,11,0.6923076923076923,4

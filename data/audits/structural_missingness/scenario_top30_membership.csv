@@ -1,0 +1,1459 @@
+scenario,role,rank,player_id,player_name,covered,provider_structural_missingness_confirmed
+observed,GK,1,182718,J. Garcia,True,False
+observed,GK,2,49866,U. Cakir,True,False
+observed,GK,3,129058,B. Verbruggen,True,False
+observed,GK,4,732,L. Zidane,True,False
+observed,GK,5,138804,M. Kovar,True,False
+observed,GK,6,22221,M. Maignan,True,False
+observed,GK,7,369,D. Costa,True,False
+observed,GK,8,497,M. Neuer,True,False
+observed,GK,9,46417,S. Chaine,True,False
+observed,GK,10,47296,G. Rulli,True,False
+observed,GK,11,269349,L. Hornicek,True,False
+observed,GK,12,280,Alisson,True,False
+observed,GK,13,353883,P. Beach,True,False
+observed,GK,14,2986,E. Mendy,True,False
+observed,GK,15,1142,Y. Mvogo,True,False
+observed,GK,16,702,O. Baumann,True,False
+observed,GK,17,2482,C. Vargas,True,False
+observed,GK,18,2892,Kim Seung-Gyu,True,False
+observed,GK,19,119853,M. Diaw,True,False
+observed,GK,20,20566,Y. Diouf,True,False
+observed,GK,21,194536,R. Roefs,True,False
+observed,GK,22,524,D. Kotarski,True,False
+observed,GK,23,46245,R. Goss,True,False
+observed,GK,24,221605,F. Wiegele,True,False
+observed,GK,25,6870,P. Izzo,True,False
+observed,GK,26,64190,Y. Fofana,True,False
+observed,GK,27,340151,M. Penders,True,False
+observed,GK,28,3275,R. Williams,True,False
+observed,GK,29,26232,M. Flekken,True,False
+observed,GK,30,19088,D. Henderson,True,False
+observed,RB,1,271539,J. Hadjam,True,False
+observed,RB,2,25158,D. Raum,True,False
+observed,RB,3,6002,E. Palacios,True,False
+observed,RB,4,2869,E. Alvarez,True,False
+observed,RB,5,41552,P. Ciss,True,False
+observed,RB,6,9,A. Hakimi,True,False
+observed,RB,7,390002,M. Chavez Garcia,True,False
+observed,RB,8,38735,S. Dest,True,False
+observed,RB,9,355994,A. Freeman,True,False
+observed,RB,10,359561,K. Sebelebele,True,False
+observed,RB,11,502,J. Kimmich,True,False
+observed,RB,12,47519,P. Porro,True,False
+observed,RB,13,1257,J. Kounde,True,False
+observed,RB,14,195992,J. Caceres,True,False
+observed,RB,15,1231,V. Coufal,True,False
+observed,RB,16,81,K. Diatta,True,False
+observed,RB,17,1117,K. Tierney,True,False
+observed,RB,18,153622,K. Trewin,True,False
+observed,RB,19,19545,R. James,True,False
+observed,RB,20,39058,F. Bjorkan,True,False
+observed,RB,21,161747,G. Doue,True,False
+observed,RB,22,1719,M. Muldur,True,False
+observed,RB,23,2975,C. Blackman,False,True
+observed,RB,24,283252,Z. El Ouahdi,True,False
+observed,RB,25,41621,M. Nunes,True,False
+observed,RB,26,134995,N. Boushal,True,False
+observed,RB,27,48489,M. Muheim,True,False
+observed,RB,28,44367,A. Majrashi,True,False
+observed,RB,29,353808,D. Fonville,True,False
+observed,RB,30,161907,M. Gusto,True,False
+observed,RCB,1,69,B. Mechele,True,False
+observed,RCB,2,265595,G. Inacio,True,False
+observed,RCB,3,318,K. Koulibaly,True,False
+observed,RCB,4,20995,M. Lacroix,True,False
+observed,RCB,5,2897,Kim Min-Jae,True,False
+observed,RCB,6,61837,A. Bardakci,True,False
+observed,RCB,7,22224,Gabriel,True,False
+observed,RCB,8,290,V. van Dijk,True,False
+observed,RCB,9,266345,E. Lira,True,False
+observed,RCB,10,30776,C. Romero,True,False
+observed,RCB,11,1149,D. Upamecano,True,False
+observed,RCB,12,38695,J. P. van Hecke,True,False
+observed,RCB,13,295793,M. Pubill,True,False
+observed,RCB,14,2532,B. Khoukhi,True,False
+observed,RCB,15,25287,K. Danso,True,False
+observed,RCB,16,396623,P. Cubarsi,True,False
+observed,RCB,17,161939,T. Araujo,True,False
+observed,RCB,18,31,J. M. Gimenez,True,False
+observed,RCB,19,16804,Y. Ibrahim,True,False
+observed,RCB,20,312964,N. Ngoy,True,False
+observed,RCB,21,101814,R. Araujo,True,False
+observed,RCB,22,375,C. Mbemba,True,False
+observed,RCB,23,257,Marquinhos,True,False
+observed,RCB,24,567,R. Dias,True,False
+observed,RCB,25,44507,A. Lajami,True,False
+observed,RCB,26,162964,R. Hranac,True,False
+observed,RCB,27,30521,M. Demiral,True,False
+observed,RCB,28,626,J. Stones,True,False
+observed,RCB,29,18814,I. Diop,True,False
+observed,LCB,1,624,N. Otamendi,True,False
+observed,LCB,2,2194,R. Bensebaini,True,False
+observed,LCB,3,16367,W. Pacho,True,False
+observed,LCB,4,529,N. Tagliafico,True,False
+observed,LCB,5,2467,L. Martinez,True,False
+observed,LCB,6,30424,Ibanez,True,False
+observed,LCB,7,972,J. Tah,True,False
+observed,LCB,8,152849,M. van de Ven,True,False
+observed,LCB,9,129033,J. Gvardiol,True,False
+observed,LCB,10,20836,C. Operi,True,False
+observed,LCB,11,278898,C. Riad,True,False
+observed,LB,1,263482,N. Mendes,True,False
+observed,LB,2,21138,R. Ait-Nouri,True,False
+observed,LB,3,46334,A. Modiba,True,False
+observed,LB,4,51776,M. Araujo,True,False
+observed,LB,5,21098,J. Kayembe,True,False
+observed,LB,6,19549,A. Robinson,True,False
+observed,LB,7,307123,N. O'Reilly,True,False
+observed,LB,8,375974,J. Seys,True,False
+observed,LB,9,162451,A. Salah-Eddine,True,False
+observed,LB,10,47300,T. Hernandez,True,False
+observed,LB,11,51466,J. Piquerez,True,False
+observed,LB,12,127817,P. Hincapie,True,False
+observed,LB,13,47380,M. Cucurella,True,False
+observed,LB,14,162007,M. De Cuyper,True,False
+observed,LB,15,50057,E. Elmali,True,False
+observed,LB,16,19235,D. Spence,True,False
+observed,LB,17,7578,G. Mensah,True,False
+observed,LB,18,409303,M. Diouf,True,False
+observed,LB,19,33,L. Hernandez,True,False
+observed,LB,20,51572,M. Vina,True,False
+observed,LB,21,18816,A. Masuaku,True,False
+observed,LB,22,289,A. Robertson,True,False
+observed,LB,23,1361,F. Kadioglu,True,False
+observed,LB,24,158121,I. Jakobs,True,False
+observed,LB,25,2724,L. Digne,True,False
+observed,LB,26,306940,Y. Medina,True,False
+observed,LB,27,46731,P. Estupinan,True,False
+observed,LB,28,198654,D. Svensson,True,False
+observed,LB,29,25915,P. Mwene,True,False
+observed,LB,30,146772,Y. Belammari,True,False
+observed,DM,1,44,Rodri,True,False
+observed,DM,2,137210,A. Stiller,True,False
+observed,DM,3,374058,L. Camara,True,False
+observed,DM,4,162714,A. Onana,True,False
+observed,DM,5,2926,Y. Tielemans,True,False
+observed,DM,6,511,L. Goretzka,True,False
+observed,DM,7,328033,A. Pavlovic,True,False
+observed,DM,8,96512,K. Lenini,True,False
+observed,DM,9,1464,G. Xhaka,True,False
+observed,DM,10,1934,S. Berge,True,False
+observed,DM,11,269172,Z. Al Johani,True,False
+observed,DM,12,292,J. Henderson,True,False
+observed,CM,1,19617,M. Olise,True,False
+observed,CM,2,156477,R. Cherki,True,False
+observed,CM,3,2489,L. Diaz,True,False
+observed,CM,4,1422,J. Doku,True,False
+observed,CM,5,214463,I. Yuksek,True,False
+observed,CM,6,2676,R. Neves,True,False
+observed,CM,7,635,R. Mahrez,True,False
+observed,CM,8,41112,Trincao,True,False
+observed,CM,9,116117,M. Caicedo,True,False
+observed,CM,10,538,F. de Jong,True,False
+observed,CM,11,319572,V. Barco,True,False
+observed,CM,12,128384,Vitinha,True,False
+observed,CM,13,129718,J. Bellingham,True,False
+observed,CM,14,1271,A. Tchouameni,True,False
+observed,CM,15,39064,P. Berg,True,False
+observed,CM,16,1323,D. Olmo,True,False
+observed,CM,17,2472,R. de Paul,True,False
+observed,CM,18,6067,T. Almada,True,False
+observed,CM,19,37127,M. Odegaard,True,False
+observed,CM,20,1578,G. Lo Celso,True,False
+observed,CM,21,747,Casemiro,True,False
+observed,CM,22,754,L. Modric,True,False
+observed,CM,23,51494,M. Ugarte,True,False
+observed,CM,24,415431,S. El Mourabet,True,False
+observed,CM,25,1640,H. Calhanoglu,True,False
+observed,CM,26,10135,Bruno Guimaraes,True,False
+observed,CM,27,10097,Ederson,True,False
+observed,CM,28,36902,T. Reijnders,True,False
+observed,CM,29,335051,J. Neves,True,False
+observed,CM,30,750,A. Fidalgo,True,False
+observed,AM,1,6005,J. Quintero,True,False
+observed,AM,2,414149,R. Mofokeng,True,False
+observed,AM,3,271,L. Paredes,True,False
+observed,AM,4,37155,O. Kokcu,True,False
+observed,AM,5,129678,A. Ounahi,True,False
+observed,AM,6,350850,B. Zeneli,True,False
+observed,AM,7,395559,K. Alajbegovic,True,False
+observed,AM,8,78,H. Vanaken,True,False
+observed,AM,9,441269,P. Okon-Engstler,True,False
+observed,AM,10,474591,C. Inao Oulai,True,False
+observed,AM,11,263228,P. Guiagon,True,False
+observed,AM,12,1864,P. Neto,True,False
+observed,AM,13,454,Y. Akgun,True,False
+observed,AM,14,644,L. Sane,True,False
+observed,AM,15,362400,M. Arfsten,True,False
+observed,AM,16,51114,C. Roldan,True,False
+observed,AM,17,295977,T. Moremi,True,False
+observed,AM,18,7562,R. Schmid,True,False
+observed,AM,19,35576,O. Pineda,True,False
+observed,AM,20,339887,C. Y. Uzun,True,False
+observed,AM,21,63274,B. A. Yilmaz,True,False
+observed,AM,22,13376,J. Campaz,True,False
+observed,AM,23,345748,Andres Gomez,True,False
+observed,AM,24,38123,A. Hrustic,True,False
+observed,AM,25,5994,J. Carrascal,True,False
+observed,AM,26,160925,T. Ali,False,True
+observed,AM,27,7050,A. O'Neill,True,False
+observed,AM,28,6934,A. Rufer,True,False
+observed,AM,29,475575,C. Yirenkyi,True,False
+observed,AM,30,1322,N. Moro,True,False
+observed,RW,1,154,L. Messi,True,False
+observed,RW,2,513776,Y. Diomande,True,False
+observed,RW,3,278,K. Mbappe,True,False
+observed,RW,4,583,Joao Felix,True,False
+observed,RW,5,25414,J. Yeboah,True,False
+observed,RW,6,343027,D. Doue,True,False
+observed,RW,7,2889,A. Vega,True,False
+observed,RW,8,276,Neymar,True,False
+observed,RW,9,535046,A. Amaimouni,False,True
+observed,RW,10,927,Lee Kang-In,True,False
+observed,RW,11,186,Son Heung-Min,True,False
+observed,RW,12,108563,R. Zalazar,True,False
+observed,RW,13,1460,B. Saka,True,False
+observed,RW,14,326067,A. Hadj Moussa,True,False
+observed,RW,15,350037,N. Paz,True,False
+observed,RW,16,350799,Jeremy Arevalo,True,False
+observed,RW,17,3246,N. Pepe,True,False
+observed,RW,18,2544,A. Afif,True,False
+observed,RW,19,517,J. Rodriguez,True,False
+observed,RW,20,147859,C. De Ketelaere,True,False
+observed,RW,21,377122,Endrick,True,False
+observed,RW,22,7722,S. Kalajdzic,True,False
+observed,RW,23,184,H. Kane,True,False
+observed,RW,24,35532,J. Quinones,True,False
+observed,RW,25,295513,J. Lopez,True,False
+observed,RW,26,292396,A. Londono,True,False
+observed,RW,27,44701,K. Al Ghannam,True,False
+observed,RW,28,6009,J. Alvarez,True,False
+observed,RW,29,35885,A. Zendejas,True,False
+observed,RW,30,369544,G. Yassine,True,False
+observed,LW,1,909,M. Rashford,True,False
+observed,LW,2,314511,A. Nusa,True,False
+observed,LW,3,127769,G. Martinelli,True,False
+observed,LW,4,247,C. Gakpo,True,False
+observed,LW,5,1946,L. Trossard,True,False
+observed,LW,6,387643,B. Toure,True,False
+observed,LW,7,26315,N. Gonzalez,True,False
+observed,LW,8,301771,S. Adingra,True,False
+observed,ST,1,153,O. Dembele,True,False
+observed,ST,2,181812,J. Musiala,True,False
+observed,ST,3,2601,D. Kamada,True,False
+empirical_low,GK,1,182718,J. Garcia,True,False
+empirical_low,GK,2,49866,U. Cakir,True,False
+empirical_low,GK,3,129058,B. Verbruggen,True,False
+empirical_low,GK,4,732,L. Zidane,True,False
+empirical_low,GK,5,138804,M. Kovar,True,False
+empirical_low,GK,6,22221,M. Maignan,True,False
+empirical_low,GK,7,497,M. Neuer,True,False
+empirical_low,GK,8,369,D. Costa,True,False
+empirical_low,GK,9,46417,S. Chaine,True,False
+empirical_low,GK,10,47296,G. Rulli,True,False
+empirical_low,GK,11,280,Alisson,True,False
+empirical_low,GK,12,353883,P. Beach,True,False
+empirical_low,GK,13,2986,E. Mendy,True,False
+empirical_low,GK,14,1142,Y. Mvogo,True,False
+empirical_low,GK,15,702,O. Baumann,True,False
+empirical_low,GK,16,269349,L. Hornicek,True,False
+empirical_low,GK,17,2482,C. Vargas,True,False
+empirical_low,GK,18,2892,Kim Seung-Gyu,True,False
+empirical_low,GK,19,119853,M. Diaw,True,False
+empirical_low,GK,20,20566,Y. Diouf,True,False
+empirical_low,GK,21,194536,R. Roefs,True,False
+empirical_low,GK,22,524,D. Kotarski,True,False
+empirical_low,GK,23,46245,R. Goss,True,False
+empirical_low,GK,24,221605,F. Wiegele,True,False
+empirical_low,GK,25,6870,P. Izzo,True,False
+empirical_low,GK,26,64190,Y. Fofana,True,False
+empirical_low,GK,27,340151,M. Penders,True,False
+empirical_low,GK,28,3275,R. Williams,True,False
+empirical_low,GK,29,26232,M. Flekken,True,False
+empirical_low,GK,30,19088,D. Henderson,True,False
+empirical_low,RB,1,271539,J. Hadjam,True,False
+empirical_low,RB,2,25158,D. Raum,True,False
+empirical_low,RB,3,6002,E. Palacios,True,False
+empirical_low,RB,4,2869,E. Alvarez,True,False
+empirical_low,RB,5,41552,P. Ciss,True,False
+empirical_low,RB,6,9,A. Hakimi,True,False
+empirical_low,RB,7,390002,M. Chavez Garcia,True,False
+empirical_low,RB,8,38735,S. Dest,True,False
+empirical_low,RB,9,359561,K. Sebelebele,True,False
+empirical_low,RB,10,502,J. Kimmich,True,False
+empirical_low,RB,11,47519,P. Porro,True,False
+empirical_low,RB,12,355994,A. Freeman,True,False
+empirical_low,RB,13,1257,J. Kounde,True,False
+empirical_low,RB,14,195992,J. Caceres,True,False
+empirical_low,RB,15,1231,V. Coufal,True,False
+empirical_low,RB,16,81,K. Diatta,True,False
+empirical_low,RB,17,1117,K. Tierney,True,False
+empirical_low,RB,18,153622,K. Trewin,True,False
+empirical_low,RB,19,19545,R. James,True,False
+empirical_low,RB,20,39058,F. Bjorkan,True,False
+empirical_low,RB,21,161747,G. Doue,True,False
+empirical_low,RB,22,1719,M. Muldur,True,False
+empirical_low,RB,23,283252,Z. El Ouahdi,True,False
+empirical_low,RB,24,41621,M. Nunes,True,False
+empirical_low,RB,25,134995,N. Boushal,True,False
+empirical_low,RB,26,44367,A. Majrashi,True,False
+empirical_low,RB,27,353808,D. Fonville,True,False
+empirical_low,RB,28,161907,M. Gusto,True,False
+empirical_low,RB,29,48489,M. Muheim,True,False
+empirical_low,RB,30,2881,J. Gallardo,True,False
+empirical_low,RCB,1,69,B. Mechele,True,False
+empirical_low,RCB,2,265595,G. Inacio,True,False
+empirical_low,RCB,3,318,K. Koulibaly,True,False
+empirical_low,RCB,4,20995,M. Lacroix,True,False
+empirical_low,RCB,5,2897,Kim Min-Jae,True,False
+empirical_low,RCB,6,61837,A. Bardakci,True,False
+empirical_low,RCB,7,22224,Gabriel,True,False
+empirical_low,RCB,8,290,V. van Dijk,True,False
+empirical_low,RCB,9,266345,E. Lira,True,False
+empirical_low,RCB,10,30776,C. Romero,True,False
+empirical_low,RCB,11,1149,D. Upamecano,True,False
+empirical_low,RCB,12,38695,J. P. van Hecke,True,False
+empirical_low,RCB,13,295793,M. Pubill,True,False
+empirical_low,RCB,14,2532,B. Khoukhi,True,False
+empirical_low,RCB,15,25287,K. Danso,True,False
+empirical_low,RCB,16,396623,P. Cubarsi,True,False
+empirical_low,RCB,17,161939,T. Araujo,True,False
+empirical_low,RCB,18,31,J. M. Gimenez,True,False
+empirical_low,RCB,19,16804,Y. Ibrahim,True,False
+empirical_low,RCB,20,312964,N. Ngoy,True,False
+empirical_low,RCB,21,101814,R. Araujo,True,False
+empirical_low,RCB,22,375,C. Mbemba,True,False
+empirical_low,RCB,23,257,Marquinhos,True,False
+empirical_low,RCB,24,567,R. Dias,True,False
+empirical_low,RCB,25,44507,A. Lajami,True,False
+empirical_low,RCB,26,162964,R. Hranac,True,False
+empirical_low,RCB,27,30521,M. Demiral,True,False
+empirical_low,RCB,28,626,J. Stones,True,False
+empirical_low,RCB,29,18814,I. Diop,True,False
+empirical_low,LCB,1,624,N. Otamendi,True,False
+empirical_low,LCB,2,2194,R. Bensebaini,True,False
+empirical_low,LCB,3,16367,W. Pacho,True,False
+empirical_low,LCB,4,529,N. Tagliafico,True,False
+empirical_low,LCB,5,2467,L. Martinez,True,False
+empirical_low,LCB,6,30424,Ibanez,True,False
+empirical_low,LCB,7,972,J. Tah,True,False
+empirical_low,LCB,8,152849,M. van de Ven,True,False
+empirical_low,LCB,9,129033,J. Gvardiol,True,False
+empirical_low,LCB,10,20836,C. Operi,True,False
+empirical_low,LCB,11,278898,C. Riad,True,False
+empirical_low,LB,1,263482,N. Mendes,True,False
+empirical_low,LB,2,21138,R. Ait-Nouri,True,False
+empirical_low,LB,3,46334,A. Modiba,True,False
+empirical_low,LB,4,51776,M. Araujo,True,False
+empirical_low,LB,5,21098,J. Kayembe,True,False
+empirical_low,LB,6,19549,A. Robinson,True,False
+empirical_low,LB,7,307123,N. O'Reilly,True,False
+empirical_low,LB,8,375974,J. Seys,True,False
+empirical_low,LB,9,162451,A. Salah-Eddine,True,False
+empirical_low,LB,10,47300,T. Hernandez,True,False
+empirical_low,LB,11,51466,J. Piquerez,True,False
+empirical_low,LB,12,127817,P. Hincapie,True,False
+empirical_low,LB,13,47380,M. Cucurella,True,False
+empirical_low,LB,14,162007,M. De Cuyper,True,False
+empirical_low,LB,15,50057,E. Elmali,True,False
+empirical_low,LB,16,19235,D. Spence,True,False
+empirical_low,LB,17,7578,G. Mensah,True,False
+empirical_low,LB,18,409303,M. Diouf,True,False
+empirical_low,LB,19,33,L. Hernandez,True,False
+empirical_low,LB,20,51572,M. Vina,True,False
+empirical_low,LB,21,18816,A. Masuaku,True,False
+empirical_low,LB,22,289,A. Robertson,True,False
+empirical_low,LB,23,1361,F. Kadioglu,True,False
+empirical_low,LB,24,158121,I. Jakobs,True,False
+empirical_low,LB,25,2724,L. Digne,True,False
+empirical_low,LB,26,306940,Y. Medina,True,False
+empirical_low,LB,27,46731,P. Estupinan,True,False
+empirical_low,LB,28,198654,D. Svensson,True,False
+empirical_low,LB,29,25915,P. Mwene,True,False
+empirical_low,LB,30,146772,Y. Belammari,True,False
+empirical_low,DM,1,44,Rodri,True,False
+empirical_low,DM,2,137210,A. Stiller,True,False
+empirical_low,DM,3,374058,L. Camara,True,False
+empirical_low,DM,4,162714,A. Onana,True,False
+empirical_low,DM,5,2926,Y. Tielemans,True,False
+empirical_low,DM,6,511,L. Goretzka,True,False
+empirical_low,DM,7,328033,A. Pavlovic,True,False
+empirical_low,DM,8,96512,K. Lenini,True,False
+empirical_low,DM,9,1464,G. Xhaka,True,False
+empirical_low,DM,10,1934,S. Berge,True,False
+empirical_low,DM,11,269172,Z. Al Johani,True,False
+empirical_low,DM,12,292,J. Henderson,True,False
+empirical_low,CM,1,19617,M. Olise,True,False
+empirical_low,CM,2,156477,R. Cherki,True,False
+empirical_low,CM,3,2489,L. Diaz,True,False
+empirical_low,CM,4,1422,J. Doku,True,False
+empirical_low,CM,5,214463,I. Yuksek,True,False
+empirical_low,CM,6,2676,R. Neves,True,False
+empirical_low,CM,7,635,R. Mahrez,True,False
+empirical_low,CM,8,41112,Trincao,True,False
+empirical_low,CM,9,116117,M. Caicedo,True,False
+empirical_low,CM,10,538,F. de Jong,True,False
+empirical_low,CM,11,319572,V. Barco,True,False
+empirical_low,CM,12,128384,Vitinha,True,False
+empirical_low,CM,13,129718,J. Bellingham,True,False
+empirical_low,CM,14,1271,A. Tchouameni,True,False
+empirical_low,CM,15,39064,P. Berg,True,False
+empirical_low,CM,16,1323,D. Olmo,True,False
+empirical_low,CM,17,6067,T. Almada,True,False
+empirical_low,CM,18,37127,M. Odegaard,True,False
+empirical_low,CM,19,2472,R. de Paul,True,False
+empirical_low,CM,20,1578,G. Lo Celso,True,False
+empirical_low,CM,21,747,Casemiro,True,False
+empirical_low,CM,22,754,L. Modric,True,False
+empirical_low,CM,23,51494,M. Ugarte,True,False
+empirical_low,CM,24,415431,S. El Mourabet,True,False
+empirical_low,CM,25,1640,H. Calhanoglu,True,False
+empirical_low,CM,26,10135,Bruno Guimaraes,True,False
+empirical_low,CM,27,10097,Ederson,True,False
+empirical_low,CM,28,36902,T. Reijnders,True,False
+empirical_low,CM,29,335051,J. Neves,True,False
+empirical_low,CM,30,750,A. Fidalgo,True,False
+empirical_low,AM,1,6005,J. Quintero,True,False
+empirical_low,AM,2,414149,R. Mofokeng,True,False
+empirical_low,AM,3,271,L. Paredes,True,False
+empirical_low,AM,4,37155,O. Kokcu,True,False
+empirical_low,AM,5,129678,A. Ounahi,True,False
+empirical_low,AM,6,350850,B. Zeneli,True,False
+empirical_low,AM,7,395559,K. Alajbegovic,True,False
+empirical_low,AM,8,78,H. Vanaken,True,False
+empirical_low,AM,9,441269,P. Okon-Engstler,True,False
+empirical_low,AM,10,263228,P. Guiagon,True,False
+empirical_low,AM,11,474591,C. Inao Oulai,True,False
+empirical_low,AM,12,1864,P. Neto,True,False
+empirical_low,AM,13,454,Y. Akgun,True,False
+empirical_low,AM,14,644,L. Sane,True,False
+empirical_low,AM,15,362400,M. Arfsten,True,False
+empirical_low,AM,16,295977,T. Moremi,True,False
+empirical_low,AM,17,7562,R. Schmid,True,False
+empirical_low,AM,18,339887,C. Y. Uzun,True,False
+empirical_low,AM,19,63274,B. A. Yilmaz,True,False
+empirical_low,AM,20,13376,J. Campaz,True,False
+empirical_low,AM,21,51114,C. Roldan,True,False
+empirical_low,AM,22,345748,Andres Gomez,True,False
+empirical_low,AM,23,38123,A. Hrustic,True,False
+empirical_low,AM,24,5994,J. Carrascal,True,False
+empirical_low,AM,25,35576,O. Pineda,True,False
+empirical_low,AM,26,7050,A. O'Neill,True,False
+empirical_low,AM,27,6934,A. Rufer,True,False
+empirical_low,AM,28,475575,C. Yirenkyi,True,False
+empirical_low,AM,29,1322,N. Moro,True,False
+empirical_low,AM,30,311543,N. Angulo,True,False
+empirical_low,RW,1,154,L. Messi,True,False
+empirical_low,RW,2,513776,Y. Diomande,True,False
+empirical_low,RW,3,278,K. Mbappe,True,False
+empirical_low,RW,4,25414,J. Yeboah,True,False
+empirical_low,RW,5,583,Joao Felix,True,False
+empirical_low,RW,6,343027,D. Doue,True,False
+empirical_low,RW,7,2889,A. Vega,True,False
+empirical_low,RW,8,276,Neymar,True,False
+empirical_low,RW,9,927,Lee Kang-In,True,False
+empirical_low,RW,10,186,Son Heung-Min,True,False
+empirical_low,RW,11,1460,B. Saka,True,False
+empirical_low,RW,12,326067,A. Hadj Moussa,True,False
+empirical_low,RW,13,350037,N. Paz,True,False
+empirical_low,RW,14,3246,N. Pepe,True,False
+empirical_low,RW,15,2544,A. Afif,True,False
+empirical_low,RW,16,517,J. Rodriguez,True,False
+empirical_low,RW,17,147859,C. De Ketelaere,True,False
+empirical_low,RW,18,377122,Endrick,True,False
+empirical_low,RW,19,7722,S. Kalajdzic,True,False
+empirical_low,RW,20,184,H. Kane,True,False
+empirical_low,RW,21,108563,R. Zalazar,True,False
+empirical_low,RW,22,35532,J. Quinones,True,False
+empirical_low,RW,23,295513,J. Lopez,True,False
+empirical_low,RW,24,44701,K. Al Ghannam,True,False
+empirical_low,RW,25,6009,J. Alvarez,True,False
+empirical_low,RW,26,35885,A. Zendejas,True,False
+empirical_low,RW,27,292396,A. Londono,True,False
+empirical_low,RW,28,369544,G. Yassine,True,False
+empirical_low,RW,29,72155,A. Ueda,True,False
+empirical_low,RW,30,279482,B. Cipenga,True,False
+empirical_low,LW,1,909,M. Rashford,True,False
+empirical_low,LW,2,314511,A. Nusa,True,False
+empirical_low,LW,3,127769,G. Martinelli,True,False
+empirical_low,LW,4,247,C. Gakpo,True,False
+empirical_low,LW,5,1946,L. Trossard,True,False
+empirical_low,LW,6,387643,B. Toure,True,False
+empirical_low,LW,7,26315,N. Gonzalez,True,False
+empirical_low,LW,8,301771,S. Adingra,True,False
+empirical_low,ST,1,153,O. Dembele,True,False
+empirical_low,ST,2,181812,J. Musiala,True,False
+empirical_low,ST,3,2601,D. Kamada,True,False
+empirical_median,GK,1,182718,J. Garcia,True,False
+empirical_median,GK,2,49866,U. Cakir,True,False
+empirical_median,GK,3,129058,B. Verbruggen,True,False
+empirical_median,GK,4,732,L. Zidane,True,False
+empirical_median,GK,5,138804,M. Kovar,True,False
+empirical_median,GK,6,22221,M. Maignan,True,False
+empirical_median,GK,7,497,M. Neuer,True,False
+empirical_median,GK,8,369,D. Costa,True,False
+empirical_median,GK,9,46417,S. Chaine,True,False
+empirical_median,GK,10,47296,G. Rulli,True,False
+empirical_median,GK,11,280,Alisson,True,False
+empirical_median,GK,12,353883,P. Beach,True,False
+empirical_median,GK,13,2986,E. Mendy,True,False
+empirical_median,GK,14,1142,Y. Mvogo,True,False
+empirical_median,GK,15,269349,L. Hornicek,True,False
+empirical_median,GK,16,702,O. Baumann,True,False
+empirical_median,GK,17,2482,C. Vargas,True,False
+empirical_median,GK,18,2892,Kim Seung-Gyu,True,False
+empirical_median,GK,19,119853,M. Diaw,True,False
+empirical_median,GK,20,20566,Y. Diouf,True,False
+empirical_median,GK,21,194536,R. Roefs,True,False
+empirical_median,GK,22,524,D. Kotarski,True,False
+empirical_median,GK,23,46245,R. Goss,True,False
+empirical_median,GK,24,221605,F. Wiegele,True,False
+empirical_median,GK,25,6870,P. Izzo,True,False
+empirical_median,GK,26,64190,Y. Fofana,True,False
+empirical_median,GK,27,340151,M. Penders,True,False
+empirical_median,GK,28,3275,R. Williams,True,False
+empirical_median,GK,29,26232,M. Flekken,True,False
+empirical_median,GK,30,19088,D. Henderson,True,False
+empirical_median,RB,1,271539,J. Hadjam,True,False
+empirical_median,RB,2,25158,D. Raum,True,False
+empirical_median,RB,3,6002,E. Palacios,True,False
+empirical_median,RB,4,2869,E. Alvarez,True,False
+empirical_median,RB,5,41552,P. Ciss,True,False
+empirical_median,RB,6,9,A. Hakimi,True,False
+empirical_median,RB,7,390002,M. Chavez Garcia,True,False
+empirical_median,RB,8,38735,S. Dest,True,False
+empirical_median,RB,9,355994,A. Freeman,True,False
+empirical_median,RB,10,359561,K. Sebelebele,True,False
+empirical_median,RB,11,502,J. Kimmich,True,False
+empirical_median,RB,12,47519,P. Porro,True,False
+empirical_median,RB,13,1257,J. Kounde,True,False
+empirical_median,RB,14,195992,J. Caceres,True,False
+empirical_median,RB,15,1231,V. Coufal,True,False
+empirical_median,RB,16,81,K. Diatta,True,False
+empirical_median,RB,17,1117,K. Tierney,True,False
+empirical_median,RB,18,153622,K. Trewin,True,False
+empirical_median,RB,19,19545,R. James,True,False
+empirical_median,RB,20,39058,F. Bjorkan,True,False
+empirical_median,RB,21,161747,G. Doue,True,False
+empirical_median,RB,22,1719,M. Muldur,True,False
+empirical_median,RB,23,283252,Z. El Ouahdi,True,False
+empirical_median,RB,24,41621,M. Nunes,True,False
+empirical_median,RB,25,134995,N. Boushal,True,False
+empirical_median,RB,26,48489,M. Muheim,True,False
+empirical_median,RB,27,44367,A. Majrashi,True,False
+empirical_median,RB,28,353808,D. Fonville,True,False
+empirical_median,RB,29,161907,M. Gusto,True,False
+empirical_median,RB,30,2881,J. Gallardo,True,False
+empirical_median,RCB,1,69,B. Mechele,True,False
+empirical_median,RCB,2,265595,G. Inacio,True,False
+empirical_median,RCB,3,318,K. Koulibaly,True,False
+empirical_median,RCB,4,20995,M. Lacroix,True,False
+empirical_median,RCB,5,2897,Kim Min-Jae,True,False
+empirical_median,RCB,6,61837,A. Bardakci,True,False
+empirical_median,RCB,7,22224,Gabriel,True,False
+empirical_median,RCB,8,290,V. van Dijk,True,False
+empirical_median,RCB,9,266345,E. Lira,True,False
+empirical_median,RCB,10,30776,C. Romero,True,False
+empirical_median,RCB,11,1149,D. Upamecano,True,False
+empirical_median,RCB,12,38695,J. P. van Hecke,True,False
+empirical_median,RCB,13,295793,M. Pubill,True,False
+empirical_median,RCB,14,2532,B. Khoukhi,True,False
+empirical_median,RCB,15,25287,K. Danso,True,False
+empirical_median,RCB,16,396623,P. Cubarsi,True,False
+empirical_median,RCB,17,161939,T. Araujo,True,False
+empirical_median,RCB,18,31,J. M. Gimenez,True,False
+empirical_median,RCB,19,16804,Y. Ibrahim,True,False
+empirical_median,RCB,20,312964,N. Ngoy,True,False
+empirical_median,RCB,21,101814,R. Araujo,True,False
+empirical_median,RCB,22,375,C. Mbemba,True,False
+empirical_median,RCB,23,257,Marquinhos,True,False
+empirical_median,RCB,24,567,R. Dias,True,False
+empirical_median,RCB,25,44507,A. Lajami,True,False
+empirical_median,RCB,26,162964,R. Hranac,True,False
+empirical_median,RCB,27,30521,M. Demiral,True,False
+empirical_median,RCB,28,626,J. Stones,True,False
+empirical_median,RCB,29,18814,I. Diop,True,False
+empirical_median,LCB,1,624,N. Otamendi,True,False
+empirical_median,LCB,2,2194,R. Bensebaini,True,False
+empirical_median,LCB,3,16367,W. Pacho,True,False
+empirical_median,LCB,4,529,N. Tagliafico,True,False
+empirical_median,LCB,5,2467,L. Martinez,True,False
+empirical_median,LCB,6,30424,Ibanez,True,False
+empirical_median,LCB,7,972,J. Tah,True,False
+empirical_median,LCB,8,152849,M. van de Ven,True,False
+empirical_median,LCB,9,129033,J. Gvardiol,True,False
+empirical_median,LCB,10,20836,C. Operi,True,False
+empirical_median,LCB,11,278898,C. Riad,True,False
+empirical_median,LB,1,263482,N. Mendes,True,False
+empirical_median,LB,2,21138,R. Ait-Nouri,True,False
+empirical_median,LB,3,46334,A. Modiba,True,False
+empirical_median,LB,4,51776,M. Araujo,True,False
+empirical_median,LB,5,21098,J. Kayembe,True,False
+empirical_median,LB,6,19549,A. Robinson,True,False
+empirical_median,LB,7,307123,N. O'Reilly,True,False
+empirical_median,LB,8,375974,J. Seys,True,False
+empirical_median,LB,9,162451,A. Salah-Eddine,True,False
+empirical_median,LB,10,47300,T. Hernandez,True,False
+empirical_median,LB,11,51466,J. Piquerez,True,False
+empirical_median,LB,12,127817,P. Hincapie,True,False
+empirical_median,LB,13,47380,M. Cucurella,True,False
+empirical_median,LB,14,162007,M. De Cuyper,True,False
+empirical_median,LB,15,50057,E. Elmali,True,False
+empirical_median,LB,16,19235,D. Spence,True,False
+empirical_median,LB,17,7578,G. Mensah,True,False
+empirical_median,LB,18,409303,M. Diouf,True,False
+empirical_median,LB,19,33,L. Hernandez,True,False
+empirical_median,LB,20,51572,M. Vina,True,False
+empirical_median,LB,21,18816,A. Masuaku,True,False
+empirical_median,LB,22,289,A. Robertson,True,False
+empirical_median,LB,23,1361,F. Kadioglu,True,False
+empirical_median,LB,24,158121,I. Jakobs,True,False
+empirical_median,LB,25,2724,L. Digne,True,False
+empirical_median,LB,26,306940,Y. Medina,True,False
+empirical_median,LB,27,46731,P. Estupinan,True,False
+empirical_median,LB,28,198654,D. Svensson,True,False
+empirical_median,LB,29,25915,P. Mwene,True,False
+empirical_median,LB,30,146772,Y. Belammari,True,False
+empirical_median,DM,1,44,Rodri,True,False
+empirical_median,DM,2,137210,A. Stiller,True,False
+empirical_median,DM,3,374058,L. Camara,True,False
+empirical_median,DM,4,162714,A. Onana,True,False
+empirical_median,DM,5,2926,Y. Tielemans,True,False
+empirical_median,DM,6,511,L. Goretzka,True,False
+empirical_median,DM,7,328033,A. Pavlovic,True,False
+empirical_median,DM,8,96512,K. Lenini,True,False
+empirical_median,DM,9,1464,G. Xhaka,True,False
+empirical_median,DM,10,1934,S. Berge,True,False
+empirical_median,DM,11,269172,Z. Al Johani,True,False
+empirical_median,DM,12,292,J. Henderson,True,False
+empirical_median,CM,1,19617,M. Olise,True,False
+empirical_median,CM,2,156477,R. Cherki,True,False
+empirical_median,CM,3,2489,L. Diaz,True,False
+empirical_median,CM,4,1422,J. Doku,True,False
+empirical_median,CM,5,214463,I. Yuksek,True,False
+empirical_median,CM,6,2676,R. Neves,True,False
+empirical_median,CM,7,635,R. Mahrez,True,False
+empirical_median,CM,8,41112,Trincao,True,False
+empirical_median,CM,9,116117,M. Caicedo,True,False
+empirical_median,CM,10,538,F. de Jong,True,False
+empirical_median,CM,11,319572,V. Barco,True,False
+empirical_median,CM,12,128384,Vitinha,True,False
+empirical_median,CM,13,129718,J. Bellingham,True,False
+empirical_median,CM,14,1271,A. Tchouameni,True,False
+empirical_median,CM,15,39064,P. Berg,True,False
+empirical_median,CM,16,1323,D. Olmo,True,False
+empirical_median,CM,17,6067,T. Almada,True,False
+empirical_median,CM,18,2472,R. de Paul,True,False
+empirical_median,CM,19,37127,M. Odegaard,True,False
+empirical_median,CM,20,1578,G. Lo Celso,True,False
+empirical_median,CM,21,747,Casemiro,True,False
+empirical_median,CM,22,754,L. Modric,True,False
+empirical_median,CM,23,51494,M. Ugarte,True,False
+empirical_median,CM,24,415431,S. El Mourabet,True,False
+empirical_median,CM,25,1640,H. Calhanoglu,True,False
+empirical_median,CM,26,10135,Bruno Guimaraes,True,False
+empirical_median,CM,27,10097,Ederson,True,False
+empirical_median,CM,28,36902,T. Reijnders,True,False
+empirical_median,CM,29,335051,J. Neves,True,False
+empirical_median,CM,30,750,A. Fidalgo,True,False
+empirical_median,AM,1,6005,J. Quintero,True,False
+empirical_median,AM,2,414149,R. Mofokeng,True,False
+empirical_median,AM,3,271,L. Paredes,True,False
+empirical_median,AM,4,37155,O. Kokcu,True,False
+empirical_median,AM,5,129678,A. Ounahi,True,False
+empirical_median,AM,6,350850,B. Zeneli,True,False
+empirical_median,AM,7,395559,K. Alajbegovic,True,False
+empirical_median,AM,8,78,H. Vanaken,True,False
+empirical_median,AM,9,441269,P. Okon-Engstler,True,False
+empirical_median,AM,10,263228,P. Guiagon,True,False
+empirical_median,AM,11,474591,C. Inao Oulai,True,False
+empirical_median,AM,12,1864,P. Neto,True,False
+empirical_median,AM,13,454,Y. Akgun,True,False
+empirical_median,AM,14,644,L. Sane,True,False
+empirical_median,AM,15,362400,M. Arfsten,True,False
+empirical_median,AM,16,295977,T. Moremi,True,False
+empirical_median,AM,17,7562,R. Schmid,True,False
+empirical_median,AM,18,51114,C. Roldan,True,False
+empirical_median,AM,19,339887,C. Y. Uzun,True,False
+empirical_median,AM,20,63274,B. A. Yilmaz,True,False
+empirical_median,AM,21,35576,O. Pineda,True,False
+empirical_median,AM,22,13376,J. Campaz,True,False
+empirical_median,AM,23,345748,Andres Gomez,True,False
+empirical_median,AM,24,38123,A. Hrustic,True,False
+empirical_median,AM,25,5994,J. Carrascal,True,False
+empirical_median,AM,26,7050,A. O'Neill,True,False
+empirical_median,AM,27,6934,A. Rufer,True,False
+empirical_median,AM,28,475575,C. Yirenkyi,True,False
+empirical_median,AM,29,1322,N. Moro,True,False
+empirical_median,AM,30,311543,N. Angulo,True,False
+empirical_median,RW,1,154,L. Messi,True,False
+empirical_median,RW,2,513776,Y. Diomande,True,False
+empirical_median,RW,3,278,K. Mbappe,True,False
+empirical_median,RW,4,583,Joao Felix,True,False
+empirical_median,RW,5,25414,J. Yeboah,True,False
+empirical_median,RW,6,343027,D. Doue,True,False
+empirical_median,RW,7,2889,A. Vega,True,False
+empirical_median,RW,8,276,Neymar,True,False
+empirical_median,RW,9,927,Lee Kang-In,True,False
+empirical_median,RW,10,186,Son Heung-Min,True,False
+empirical_median,RW,11,1460,B. Saka,True,False
+empirical_median,RW,12,326067,A. Hadj Moussa,True,False
+empirical_median,RW,13,350037,N. Paz,True,False
+empirical_median,RW,14,108563,R. Zalazar,True,False
+empirical_median,RW,15,3246,N. Pepe,True,False
+empirical_median,RW,16,2544,A. Afif,True,False
+empirical_median,RW,17,517,J. Rodriguez,True,False
+empirical_median,RW,18,147859,C. De Ketelaere,True,False
+empirical_median,RW,19,377122,Endrick,True,False
+empirical_median,RW,20,535046,A. Amaimouni,False,True
+empirical_median,RW,21,7722,S. Kalajdzic,True,False
+empirical_median,RW,22,184,H. Kane,True,False
+empirical_median,RW,23,35532,J. Quinones,True,False
+empirical_median,RW,24,295513,J. Lopez,True,False
+empirical_median,RW,25,44701,K. Al Ghannam,True,False
+empirical_median,RW,26,350799,Jeremy Arevalo,True,False
+empirical_median,RW,27,6009,J. Alvarez,True,False
+empirical_median,RW,28,35885,A. Zendejas,True,False
+empirical_median,RW,29,292396,A. Londono,True,False
+empirical_median,RW,30,369544,G. Yassine,True,False
+empirical_median,LW,1,909,M. Rashford,True,False
+empirical_median,LW,2,314511,A. Nusa,True,False
+empirical_median,LW,3,127769,G. Martinelli,True,False
+empirical_median,LW,4,247,C. Gakpo,True,False
+empirical_median,LW,5,1946,L. Trossard,True,False
+empirical_median,LW,6,387643,B. Toure,True,False
+empirical_median,LW,7,26315,N. Gonzalez,True,False
+empirical_median,LW,8,301771,S. Adingra,True,False
+empirical_median,ST,1,153,O. Dembele,True,False
+empirical_median,ST,2,181812,J. Musiala,True,False
+empirical_median,ST,3,2601,D. Kamada,True,False
+empirical_high,GK,1,182718,J. Garcia,True,False
+empirical_high,GK,2,49866,U. Cakir,True,False
+empirical_high,GK,3,129058,B. Verbruggen,True,False
+empirical_high,GK,4,732,L. Zidane,True,False
+empirical_high,GK,5,138804,M. Kovar,True,False
+empirical_high,GK,6,22221,M. Maignan,True,False
+empirical_high,GK,7,369,D. Costa,True,False
+empirical_high,GK,8,497,M. Neuer,True,False
+empirical_high,GK,9,46417,S. Chaine,True,False
+empirical_high,GK,10,47296,G. Rulli,True,False
+empirical_high,GK,11,269349,L. Hornicek,True,False
+empirical_high,GK,12,280,Alisson,True,False
+empirical_high,GK,13,353883,P. Beach,True,False
+empirical_high,GK,14,2986,E. Mendy,True,False
+empirical_high,GK,15,1142,Y. Mvogo,True,False
+empirical_high,GK,16,702,O. Baumann,True,False
+empirical_high,GK,17,2482,C. Vargas,True,False
+empirical_high,GK,18,2892,Kim Seung-Gyu,True,False
+empirical_high,GK,19,119853,M. Diaw,True,False
+empirical_high,GK,20,20566,Y. Diouf,True,False
+empirical_high,GK,21,194536,R. Roefs,True,False
+empirical_high,GK,22,524,D. Kotarski,True,False
+empirical_high,GK,23,46245,R. Goss,True,False
+empirical_high,GK,24,221605,F. Wiegele,True,False
+empirical_high,GK,25,6870,P. Izzo,True,False
+empirical_high,GK,26,64190,Y. Fofana,True,False
+empirical_high,GK,27,340151,M. Penders,True,False
+empirical_high,GK,28,3275,R. Williams,True,False
+empirical_high,GK,29,26232,M. Flekken,True,False
+empirical_high,GK,30,19088,D. Henderson,True,False
+empirical_high,RB,1,271539,J. Hadjam,True,False
+empirical_high,RB,2,25158,D. Raum,True,False
+empirical_high,RB,3,6002,E. Palacios,True,False
+empirical_high,RB,4,2869,E. Alvarez,True,False
+empirical_high,RB,5,41552,P. Ciss,True,False
+empirical_high,RB,6,9,A. Hakimi,True,False
+empirical_high,RB,7,390002,M. Chavez Garcia,True,False
+empirical_high,RB,8,38735,S. Dest,True,False
+empirical_high,RB,9,355994,A. Freeman,True,False
+empirical_high,RB,10,359561,K. Sebelebele,True,False
+empirical_high,RB,11,502,J. Kimmich,True,False
+empirical_high,RB,12,47519,P. Porro,True,False
+empirical_high,RB,13,1257,J. Kounde,True,False
+empirical_high,RB,14,195992,J. Caceres,True,False
+empirical_high,RB,15,1231,V. Coufal,True,False
+empirical_high,RB,16,81,K. Diatta,True,False
+empirical_high,RB,17,1117,K. Tierney,True,False
+empirical_high,RB,18,2975,C. Blackman,False,True
+empirical_high,RB,19,153622,K. Trewin,True,False
+empirical_high,RB,20,19545,R. James,True,False
+empirical_high,RB,21,39058,F. Bjorkan,True,False
+empirical_high,RB,22,161747,G. Doue,True,False
+empirical_high,RB,23,1719,M. Muldur,True,False
+empirical_high,RB,24,283252,Z. El Ouahdi,True,False
+empirical_high,RB,25,41621,M. Nunes,True,False
+empirical_high,RB,26,134995,N. Boushal,True,False
+empirical_high,RB,27,48489,M. Muheim,True,False
+empirical_high,RB,28,44367,A. Majrashi,True,False
+empirical_high,RB,29,353808,D. Fonville,True,False
+empirical_high,RB,30,161907,M. Gusto,True,False
+empirical_high,RCB,1,69,B. Mechele,True,False
+empirical_high,RCB,2,265595,G. Inacio,True,False
+empirical_high,RCB,3,318,K. Koulibaly,True,False
+empirical_high,RCB,4,20995,M. Lacroix,True,False
+empirical_high,RCB,5,2897,Kim Min-Jae,True,False
+empirical_high,RCB,6,61837,A. Bardakci,True,False
+empirical_high,RCB,7,22224,Gabriel,True,False
+empirical_high,RCB,8,290,V. van Dijk,True,False
+empirical_high,RCB,9,266345,E. Lira,True,False
+empirical_high,RCB,10,30776,C. Romero,True,False
+empirical_high,RCB,11,1149,D. Upamecano,True,False
+empirical_high,RCB,12,38695,J. P. van Hecke,True,False
+empirical_high,RCB,13,295793,M. Pubill,True,False
+empirical_high,RCB,14,2532,B. Khoukhi,True,False
+empirical_high,RCB,15,25287,K. Danso,True,False
+empirical_high,RCB,16,396623,P. Cubarsi,True,False
+empirical_high,RCB,17,161939,T. Araujo,True,False
+empirical_high,RCB,18,31,J. M. Gimenez,True,False
+empirical_high,RCB,19,16804,Y. Ibrahim,True,False
+empirical_high,RCB,20,312964,N. Ngoy,True,False
+empirical_high,RCB,21,101814,R. Araujo,True,False
+empirical_high,RCB,22,375,C. Mbemba,True,False
+empirical_high,RCB,23,257,Marquinhos,True,False
+empirical_high,RCB,24,567,R. Dias,True,False
+empirical_high,RCB,25,44507,A. Lajami,True,False
+empirical_high,RCB,26,162964,R. Hranac,True,False
+empirical_high,RCB,27,30521,M. Demiral,True,False
+empirical_high,RCB,28,626,J. Stones,True,False
+empirical_high,RCB,29,18814,I. Diop,True,False
+empirical_high,LCB,1,624,N. Otamendi,True,False
+empirical_high,LCB,2,2194,R. Bensebaini,True,False
+empirical_high,LCB,3,16367,W. Pacho,True,False
+empirical_high,LCB,4,529,N. Tagliafico,True,False
+empirical_high,LCB,5,2467,L. Martinez,True,False
+empirical_high,LCB,6,30424,Ibanez,True,False
+empirical_high,LCB,7,972,J. Tah,True,False
+empirical_high,LCB,8,152849,M. van de Ven,True,False
+empirical_high,LCB,9,129033,J. Gvardiol,True,False
+empirical_high,LCB,10,20836,C. Operi,True,False
+empirical_high,LCB,11,278898,C. Riad,True,False
+empirical_high,LB,1,263482,N. Mendes,True,False
+empirical_high,LB,2,21138,R. Ait-Nouri,True,False
+empirical_high,LB,3,46334,A. Modiba,True,False
+empirical_high,LB,4,51776,M. Araujo,True,False
+empirical_high,LB,5,21098,J. Kayembe,True,False
+empirical_high,LB,6,19549,A. Robinson,True,False
+empirical_high,LB,7,307123,N. O'Reilly,True,False
+empirical_high,LB,8,375974,J. Seys,True,False
+empirical_high,LB,9,162451,A. Salah-Eddine,True,False
+empirical_high,LB,10,47300,T. Hernandez,True,False
+empirical_high,LB,11,51466,J. Piquerez,True,False
+empirical_high,LB,12,127817,P. Hincapie,True,False
+empirical_high,LB,13,47380,M. Cucurella,True,False
+empirical_high,LB,14,162007,M. De Cuyper,True,False
+empirical_high,LB,15,50057,E. Elmali,True,False
+empirical_high,LB,16,19235,D. Spence,True,False
+empirical_high,LB,17,7578,G. Mensah,True,False
+empirical_high,LB,18,409303,M. Diouf,True,False
+empirical_high,LB,19,33,L. Hernandez,True,False
+empirical_high,LB,20,51572,M. Vina,True,False
+empirical_high,LB,21,18816,A. Masuaku,True,False
+empirical_high,LB,22,289,A. Robertson,True,False
+empirical_high,LB,23,1361,F. Kadioglu,True,False
+empirical_high,LB,24,158121,I. Jakobs,True,False
+empirical_high,LB,25,2724,L. Digne,True,False
+empirical_high,LB,26,306940,Y. Medina,True,False
+empirical_high,LB,27,46731,P. Estupinan,True,False
+empirical_high,LB,28,198654,D. Svensson,True,False
+empirical_high,LB,29,25915,P. Mwene,True,False
+empirical_high,LB,30,146772,Y. Belammari,True,False
+empirical_high,DM,1,44,Rodri,True,False
+empirical_high,DM,2,137210,A. Stiller,True,False
+empirical_high,DM,3,374058,L. Camara,True,False
+empirical_high,DM,4,162714,A. Onana,True,False
+empirical_high,DM,5,2926,Y. Tielemans,True,False
+empirical_high,DM,6,511,L. Goretzka,True,False
+empirical_high,DM,7,328033,A. Pavlovic,True,False
+empirical_high,DM,8,96512,K. Lenini,True,False
+empirical_high,DM,9,1464,G. Xhaka,True,False
+empirical_high,DM,10,1934,S. Berge,True,False
+empirical_high,DM,11,269172,Z. Al Johani,True,False
+empirical_high,DM,12,292,J. Henderson,True,False
+empirical_high,CM,1,19617,M. Olise,True,False
+empirical_high,CM,2,156477,R. Cherki,True,False
+empirical_high,CM,3,2489,L. Diaz,True,False
+empirical_high,CM,4,1422,J. Doku,True,False
+empirical_high,CM,5,214463,I. Yuksek,True,False
+empirical_high,CM,6,2676,R. Neves,True,False
+empirical_high,CM,7,635,R. Mahrez,True,False
+empirical_high,CM,8,41112,Trincao,True,False
+empirical_high,CM,9,116117,M. Caicedo,True,False
+empirical_high,CM,10,538,F. de Jong,True,False
+empirical_high,CM,11,319572,V. Barco,True,False
+empirical_high,CM,12,128384,Vitinha,True,False
+empirical_high,CM,13,129718,J. Bellingham,True,False
+empirical_high,CM,14,1271,A. Tchouameni,True,False
+empirical_high,CM,15,39064,P. Berg,True,False
+empirical_high,CM,16,1323,D. Olmo,True,False
+empirical_high,CM,17,2472,R. de Paul,True,False
+empirical_high,CM,18,6067,T. Almada,True,False
+empirical_high,CM,19,37127,M. Odegaard,True,False
+empirical_high,CM,20,1578,G. Lo Celso,True,False
+empirical_high,CM,21,747,Casemiro,True,False
+empirical_high,CM,22,754,L. Modric,True,False
+empirical_high,CM,23,51494,M. Ugarte,True,False
+empirical_high,CM,24,415431,S. El Mourabet,True,False
+empirical_high,CM,25,1640,H. Calhanoglu,True,False
+empirical_high,CM,26,10135,Bruno Guimaraes,True,False
+empirical_high,CM,27,10097,Ederson,True,False
+empirical_high,CM,28,36902,T. Reijnders,True,False
+empirical_high,CM,29,335051,J. Neves,True,False
+empirical_high,CM,30,750,A. Fidalgo,True,False
+empirical_high,AM,1,6005,J. Quintero,True,False
+empirical_high,AM,2,414149,R. Mofokeng,True,False
+empirical_high,AM,3,271,L. Paredes,True,False
+empirical_high,AM,4,37155,O. Kokcu,True,False
+empirical_high,AM,5,129678,A. Ounahi,True,False
+empirical_high,AM,6,350850,B. Zeneli,True,False
+empirical_high,AM,7,395559,K. Alajbegovic,True,False
+empirical_high,AM,8,78,H. Vanaken,True,False
+empirical_high,AM,9,441269,P. Okon-Engstler,True,False
+empirical_high,AM,10,474591,C. Inao Oulai,True,False
+empirical_high,AM,11,263228,P. Guiagon,True,False
+empirical_high,AM,12,1864,P. Neto,True,False
+empirical_high,AM,13,454,Y. Akgun,True,False
+empirical_high,AM,14,644,L. Sane,True,False
+empirical_high,AM,15,362400,M. Arfsten,True,False
+empirical_high,AM,16,51114,C. Roldan,True,False
+empirical_high,AM,17,35576,O. Pineda,True,False
+empirical_high,AM,18,295977,T. Moremi,True,False
+empirical_high,AM,19,7562,R. Schmid,True,False
+empirical_high,AM,20,339887,C. Y. Uzun,True,False
+empirical_high,AM,21,63274,B. A. Yilmaz,True,False
+empirical_high,AM,22,13376,J. Campaz,True,False
+empirical_high,AM,23,345748,Andres Gomez,True,False
+empirical_high,AM,24,38123,A. Hrustic,True,False
+empirical_high,AM,25,160925,T. Ali,False,True
+empirical_high,AM,26,5994,J. Carrascal,True,False
+empirical_high,AM,27,7050,A. O'Neill,True,False
+empirical_high,AM,28,6934,A. Rufer,True,False
+empirical_high,AM,29,37435,D. Duarte,False,True
+empirical_high,AM,30,37461,K. Felida,True,False
+empirical_high,RW,1,154,L. Messi,True,False
+empirical_high,RW,2,513776,Y. Diomande,True,False
+empirical_high,RW,3,278,K. Mbappe,True,False
+empirical_high,RW,4,583,Joao Felix,True,False
+empirical_high,RW,5,25414,J. Yeboah,True,False
+empirical_high,RW,6,343027,D. Doue,True,False
+empirical_high,RW,7,2889,A. Vega,True,False
+empirical_high,RW,8,276,Neymar,True,False
+empirical_high,RW,9,927,Lee Kang-In,True,False
+empirical_high,RW,10,186,Son Heung-Min,True,False
+empirical_high,RW,11,535046,A. Amaimouni,False,True
+empirical_high,RW,12,108563,R. Zalazar,True,False
+empirical_high,RW,13,1460,B. Saka,True,False
+empirical_high,RW,14,326067,A. Hadj Moussa,True,False
+empirical_high,RW,15,350037,N. Paz,True,False
+empirical_high,RW,16,3246,N. Pepe,True,False
+empirical_high,RW,17,2544,A. Afif,True,False
+empirical_high,RW,18,517,J. Rodriguez,True,False
+empirical_high,RW,19,350799,Jeremy Arevalo,True,False
+empirical_high,RW,20,147859,C. De Ketelaere,True,False
+empirical_high,RW,21,377122,Endrick,True,False
+empirical_high,RW,22,7722,S. Kalajdzic,True,False
+empirical_high,RW,23,184,H. Kane,True,False
+empirical_high,RW,24,35532,J. Quinones,True,False
+empirical_high,RW,25,295513,J. Lopez,True,False
+empirical_high,RW,26,292396,A. Londono,True,False
+empirical_high,RW,27,44701,K. Al Ghannam,True,False
+empirical_high,RW,28,6009,J. Alvarez,True,False
+empirical_high,RW,29,35885,A. Zendejas,True,False
+empirical_high,RW,30,369544,G. Yassine,True,False
+empirical_high,LW,1,909,M. Rashford,True,False
+empirical_high,LW,2,314511,A. Nusa,True,False
+empirical_high,LW,3,127769,G. Martinelli,True,False
+empirical_high,LW,4,247,C. Gakpo,True,False
+empirical_high,LW,5,1946,L. Trossard,True,False
+empirical_high,LW,6,387643,B. Toure,True,False
+empirical_high,LW,7,26315,N. Gonzalez,True,False
+empirical_high,LW,8,301771,S. Adingra,True,False
+empirical_high,ST,1,153,O. Dembele,True,False
+empirical_high,ST,2,181812,J. Musiala,True,False
+empirical_high,ST,3,2601,D. Kamada,True,False
+strict_low,GK,1,182718,J. Garcia,True,False
+strict_low,GK,2,49866,U. Cakir,True,False
+strict_low,GK,3,129058,B. Verbruggen,True,False
+strict_low,GK,4,732,L. Zidane,True,False
+strict_low,GK,5,138804,M. Kovar,True,False
+strict_low,GK,6,22221,M. Maignan,True,False
+strict_low,GK,7,497,M. Neuer,True,False
+strict_low,GK,8,46417,S. Chaine,True,False
+strict_low,GK,9,47296,G. Rulli,True,False
+strict_low,GK,10,280,Alisson,True,False
+strict_low,GK,11,353883,P. Beach,True,False
+strict_low,GK,12,2986,E. Mendy,True,False
+strict_low,GK,13,1142,Y. Mvogo,True,False
+strict_low,GK,14,369,D. Costa,True,False
+strict_low,GK,15,702,O. Baumann,True,False
+strict_low,GK,16,2892,Kim Seung-Gyu,True,False
+strict_low,GK,17,119853,M. Diaw,True,False
+strict_low,GK,18,20566,Y. Diouf,True,False
+strict_low,GK,19,194536,R. Roefs,True,False
+strict_low,GK,20,524,D. Kotarski,True,False
+strict_low,GK,21,46245,R. Goss,True,False
+strict_low,GK,22,221605,F. Wiegele,True,False
+strict_low,GK,23,2482,C. Vargas,True,False
+strict_low,GK,24,6870,P. Izzo,True,False
+strict_low,GK,25,64190,Y. Fofana,True,False
+strict_low,GK,26,340151,M. Penders,True,False
+strict_low,GK,27,3275,R. Williams,True,False
+strict_low,GK,28,26232,M. Flekken,True,False
+strict_low,GK,29,19088,D. Henderson,True,False
+strict_low,GK,30,30393,A. Lafont,True,False
+strict_low,RB,1,25158,D. Raum,True,False
+strict_low,RB,2,6002,E. Palacios,True,False
+strict_low,RB,3,2869,E. Alvarez,True,False
+strict_low,RB,4,271539,J. Hadjam,True,False
+strict_low,RB,5,41552,P. Ciss,True,False
+strict_low,RB,6,9,A. Hakimi,True,False
+strict_low,RB,7,390002,M. Chavez Garcia,True,False
+strict_low,RB,8,38735,S. Dest,True,False
+strict_low,RB,9,359561,K. Sebelebele,True,False
+strict_low,RB,10,502,J. Kimmich,True,False
+strict_low,RB,11,47519,P. Porro,True,False
+strict_low,RB,12,1257,J. Kounde,True,False
+strict_low,RB,13,195992,J. Caceres,True,False
+strict_low,RB,14,1231,V. Coufal,True,False
+strict_low,RB,15,81,K. Diatta,True,False
+strict_low,RB,16,1117,K. Tierney,True,False
+strict_low,RB,17,153622,K. Trewin,True,False
+strict_low,RB,18,19545,R. James,True,False
+strict_low,RB,19,39058,F. Bjorkan,True,False
+strict_low,RB,20,161747,G. Doue,True,False
+strict_low,RB,21,1719,M. Muldur,True,False
+strict_low,RB,22,283252,Z. El Ouahdi,True,False
+strict_low,RB,23,41621,M. Nunes,True,False
+strict_low,RB,24,355994,A. Freeman,True,False
+strict_low,RB,25,44367,A. Majrashi,True,False
+strict_low,RB,26,353808,D. Fonville,True,False
+strict_low,RB,27,161907,M. Gusto,True,False
+strict_low,RB,28,2881,J. Gallardo,True,False
+strict_low,RB,29,7090,M. Svoboda,True,False
+strict_low,RB,30,351014,J. Suzuki,True,False
+strict_low,RCB,1,69,B. Mechele,True,False
+strict_low,RCB,2,265595,G. Inacio,True,False
+strict_low,RCB,3,318,K. Koulibaly,True,False
+strict_low,RCB,4,20995,M. Lacroix,True,False
+strict_low,RCB,5,2897,Kim Min-Jae,True,False
+strict_low,RCB,6,61837,A. Bardakci,True,False
+strict_low,RCB,7,22224,Gabriel,True,False
+strict_low,RCB,8,290,V. van Dijk,True,False
+strict_low,RCB,9,266345,E. Lira,True,False
+strict_low,RCB,10,30776,C. Romero,True,False
+strict_low,RCB,11,1149,D. Upamecano,True,False
+strict_low,RCB,12,38695,J. P. van Hecke,True,False
+strict_low,RCB,13,295793,M. Pubill,True,False
+strict_low,RCB,14,2532,B. Khoukhi,True,False
+strict_low,RCB,15,25287,K. Danso,True,False
+strict_low,RCB,16,396623,P. Cubarsi,True,False
+strict_low,RCB,17,161939,T. Araujo,True,False
+strict_low,RCB,18,31,J. M. Gimenez,True,False
+strict_low,RCB,19,16804,Y. Ibrahim,True,False
+strict_low,RCB,20,312964,N. Ngoy,True,False
+strict_low,RCB,21,101814,R. Araujo,True,False
+strict_low,RCB,22,375,C. Mbemba,True,False
+strict_low,RCB,23,257,Marquinhos,True,False
+strict_low,RCB,24,567,R. Dias,True,False
+strict_low,RCB,25,44507,A. Lajami,True,False
+strict_low,RCB,26,162964,R. Hranac,True,False
+strict_low,RCB,27,30521,M. Demiral,True,False
+strict_low,RCB,28,626,J. Stones,True,False
+strict_low,RCB,29,18814,I. Diop,True,False
+strict_low,LCB,1,624,N. Otamendi,True,False
+strict_low,LCB,2,2194,R. Bensebaini,True,False
+strict_low,LCB,3,16367,W. Pacho,True,False
+strict_low,LCB,4,529,N. Tagliafico,True,False
+strict_low,LCB,5,2467,L. Martinez,True,False
+strict_low,LCB,6,30424,Ibanez,True,False
+strict_low,LCB,7,972,J. Tah,True,False
+strict_low,LCB,8,152849,M. van de Ven,True,False
+strict_low,LCB,9,129033,J. Gvardiol,True,False
+strict_low,LCB,10,278898,C. Riad,True,False
+strict_low,LCB,11,20836,C. Operi,True,False
+strict_low,LB,1,263482,N. Mendes,True,False
+strict_low,LB,2,21138,R. Ait-Nouri,True,False
+strict_low,LB,3,46334,A. Modiba,True,False
+strict_low,LB,4,51776,M. Araujo,True,False
+strict_low,LB,5,21098,J. Kayembe,True,False
+strict_low,LB,6,19549,A. Robinson,True,False
+strict_low,LB,7,307123,N. O'Reilly,True,False
+strict_low,LB,8,375974,J. Seys,True,False
+strict_low,LB,9,162451,A. Salah-Eddine,True,False
+strict_low,LB,10,47300,T. Hernandez,True,False
+strict_low,LB,11,51466,J. Piquerez,True,False
+strict_low,LB,12,127817,P. Hincapie,True,False
+strict_low,LB,13,47380,M. Cucurella,True,False
+strict_low,LB,14,162007,M. De Cuyper,True,False
+strict_low,LB,15,50057,E. Elmali,True,False
+strict_low,LB,16,19235,D. Spence,True,False
+strict_low,LB,17,7578,G. Mensah,True,False
+strict_low,LB,18,409303,M. Diouf,True,False
+strict_low,LB,19,33,L. Hernandez,True,False
+strict_low,LB,20,51572,M. Vina,True,False
+strict_low,LB,21,18816,A. Masuaku,True,False
+strict_low,LB,22,289,A. Robertson,True,False
+strict_low,LB,23,1361,F. Kadioglu,True,False
+strict_low,LB,24,158121,I. Jakobs,True,False
+strict_low,LB,25,2724,L. Digne,True,False
+strict_low,LB,26,306940,Y. Medina,True,False
+strict_low,LB,27,46731,P. Estupinan,True,False
+strict_low,LB,28,198654,D. Svensson,True,False
+strict_low,LB,29,25915,P. Mwene,True,False
+strict_low,LB,30,146772,Y. Belammari,True,False
+strict_low,DM,1,44,Rodri,True,False
+strict_low,DM,2,137210,A. Stiller,True,False
+strict_low,DM,3,374058,L. Camara,True,False
+strict_low,DM,4,162714,A. Onana,True,False
+strict_low,DM,5,2926,Y. Tielemans,True,False
+strict_low,DM,6,511,L. Goretzka,True,False
+strict_low,DM,7,328033,A. Pavlovic,True,False
+strict_low,DM,8,96512,K. Lenini,True,False
+strict_low,DM,9,1464,G. Xhaka,True,False
+strict_low,DM,10,1934,S. Berge,True,False
+strict_low,DM,11,269172,Z. Al Johani,True,False
+strict_low,DM,12,292,J. Henderson,True,False
+strict_low,CM,1,19617,M. Olise,True,False
+strict_low,CM,2,156477,R. Cherki,True,False
+strict_low,CM,3,2489,L. Diaz,True,False
+strict_low,CM,4,1422,J. Doku,True,False
+strict_low,CM,5,2676,R. Neves,True,False
+strict_low,CM,6,635,R. Mahrez,True,False
+strict_low,CM,7,41112,Trincao,True,False
+strict_low,CM,8,214463,I. Yuksek,True,False
+strict_low,CM,9,116117,M. Caicedo,True,False
+strict_low,CM,10,538,F. de Jong,True,False
+strict_low,CM,11,319572,V. Barco,True,False
+strict_low,CM,12,128384,Vitinha,True,False
+strict_low,CM,13,129718,J. Bellingham,True,False
+strict_low,CM,14,1271,A. Tchouameni,True,False
+strict_low,CM,15,39064,P. Berg,True,False
+strict_low,CM,16,1323,D. Olmo,True,False
+strict_low,CM,17,6067,T. Almada,True,False
+strict_low,CM,18,37127,M. Odegaard,True,False
+strict_low,CM,19,1578,G. Lo Celso,True,False
+strict_low,CM,20,747,Casemiro,True,False
+strict_low,CM,21,2472,R. de Paul,True,False
+strict_low,CM,22,754,L. Modric,True,False
+strict_low,CM,23,51494,M. Ugarte,True,False
+strict_low,CM,24,415431,S. El Mourabet,True,False
+strict_low,CM,25,1640,H. Calhanoglu,True,False
+strict_low,CM,26,10135,Bruno Guimaraes,True,False
+strict_low,CM,27,10097,Ederson,True,False
+strict_low,CM,28,36902,T. Reijnders,True,False
+strict_low,CM,29,335051,J. Neves,True,False
+strict_low,CM,30,750,A. Fidalgo,True,False
+strict_low,AM,1,6005,J. Quintero,True,False
+strict_low,AM,2,414149,R. Mofokeng,True,False
+strict_low,AM,3,271,L. Paredes,True,False
+strict_low,AM,4,37155,O. Kokcu,True,False
+strict_low,AM,5,129678,A. Ounahi,True,False
+strict_low,AM,6,350850,B. Zeneli,True,False
+strict_low,AM,7,395559,K. Alajbegovic,True,False
+strict_low,AM,8,78,H. Vanaken,True,False
+strict_low,AM,9,441269,P. Okon-Engstler,True,False
+strict_low,AM,10,263228,P. Guiagon,True,False
+strict_low,AM,11,1864,P. Neto,True,False
+strict_low,AM,12,454,Y. Akgun,True,False
+strict_low,AM,13,644,L. Sane,True,False
+strict_low,AM,14,362400,M. Arfsten,True,False
+strict_low,AM,15,474591,C. Inao Oulai,True,False
+strict_low,AM,16,295977,T. Moremi,True,False
+strict_low,AM,17,7562,R. Schmid,True,False
+strict_low,AM,18,339887,C. Y. Uzun,True,False
+strict_low,AM,19,63274,B. A. Yilmaz,True,False
+strict_low,AM,20,13376,J. Campaz,True,False
+strict_low,AM,21,345748,Andres Gomez,True,False
+strict_low,AM,22,38123,A. Hrustic,True,False
+strict_low,AM,23,5994,J. Carrascal,True,False
+strict_low,AM,24,7050,A. O'Neill,True,False
+strict_low,AM,25,6934,A. Rufer,True,False
+strict_low,AM,26,475575,C. Yirenkyi,True,False
+strict_low,AM,27,1322,N. Moro,True,False
+strict_low,AM,28,311543,N. Angulo,True,False
+strict_low,AM,29,33321,K. Nakamura,True,False
+strict_low,AM,30,242,R. Thomas,True,False
+strict_low,RW,1,154,L. Messi,True,False
+strict_low,RW,2,513776,Y. Diomande,True,False
+strict_low,RW,3,278,K. Mbappe,True,False
+strict_low,RW,4,25414,J. Yeboah,True,False
+strict_low,RW,5,343027,D. Doue,True,False
+strict_low,RW,6,2889,A. Vega,True,False
+strict_low,RW,7,583,Joao Felix,True,False
+strict_low,RW,8,276,Neymar,True,False
+strict_low,RW,9,927,Lee Kang-In,True,False
+strict_low,RW,10,186,Son Heung-Min,True,False
+strict_low,RW,11,1460,B. Saka,True,False
+strict_low,RW,12,326067,A. Hadj Moussa,True,False
+strict_low,RW,13,350037,N. Paz,True,False
+strict_low,RW,14,3246,N. Pepe,True,False
+strict_low,RW,15,2544,A. Afif,True,False
+strict_low,RW,16,517,J. Rodriguez,True,False
+strict_low,RW,17,147859,C. De Ketelaere,True,False
+strict_low,RW,18,377122,Endrick,True,False
+strict_low,RW,19,7722,S. Kalajdzic,True,False
+strict_low,RW,20,184,H. Kane,True,False
+strict_low,RW,21,35532,J. Quinones,True,False
+strict_low,RW,22,295513,J. Lopez,True,False
+strict_low,RW,23,44701,K. Al Ghannam,True,False
+strict_low,RW,24,6009,J. Alvarez,True,False
+strict_low,RW,25,35885,A. Zendejas,True,False
+strict_low,RW,26,369544,G. Yassine,True,False
+strict_low,RW,27,72155,A. Ueda,True,False
+strict_low,RW,28,279482,B. Cipenga,True,False
+strict_low,RW,29,161585,F. Conceicao,True,False
+strict_low,RW,30,73868,R. Pepi,True,False
+strict_low,LW,1,909,M. Rashford,True,False
+strict_low,LW,2,314511,A. Nusa,True,False
+strict_low,LW,3,127769,G. Martinelli,True,False
+strict_low,LW,4,247,C. Gakpo,True,False
+strict_low,LW,5,1946,L. Trossard,True,False
+strict_low,LW,6,387643,B. Toure,True,False
+strict_low,LW,7,26315,N. Gonzalez,True,False
+strict_low,LW,8,301771,S. Adingra,True,False
+strict_low,ST,1,153,O. Dembele,True,False
+strict_low,ST,2,181812,J. Musiala,True,False
+strict_low,ST,3,2601,D. Kamada,True,False
+strict_high,GK,1,269349,L. Hornicek,True,False
+strict_high,GK,2,182718,J. Garcia,True,False
+strict_high,GK,3,49866,U. Cakir,True,False
+strict_high,GK,4,369,D. Costa,True,False
+strict_high,GK,5,129058,B. Verbruggen,True,False
+strict_high,GK,6,732,L. Zidane,True,False
+strict_high,GK,7,42207,M. Abunada,False,True
+strict_high,GK,8,138804,M. Kovar,True,False
+strict_high,GK,9,22221,M. Maignan,True,False
+strict_high,GK,10,497,M. Neuer,True,False
+strict_high,GK,11,46417,S. Chaine,True,False
+strict_high,GK,12,47296,G. Rulli,True,False
+strict_high,GK,13,280,Alisson,True,False
+strict_high,GK,14,353883,P. Beach,True,False
+strict_high,GK,15,2986,E. Mendy,True,False
+strict_high,GK,16,1142,Y. Mvogo,True,False
+strict_high,GK,17,2482,C. Vargas,True,False
+strict_high,GK,18,702,O. Baumann,True,False
+strict_high,GK,19,2892,Kim Seung-Gyu,True,False
+strict_high,GK,20,119853,M. Diaw,True,False
+strict_high,GK,21,20566,Y. Diouf,True,False
+strict_high,GK,22,194536,R. Roefs,True,False
+strict_high,GK,23,524,D. Kotarski,True,False
+strict_high,GK,24,46245,R. Goss,True,False
+strict_high,GK,25,221605,F. Wiegele,True,False
+strict_high,GK,26,6870,P. Izzo,True,False
+strict_high,GK,27,64190,Y. Fofana,True,False
+strict_high,GK,28,340151,M. Penders,True,False
+strict_high,GK,29,3275,R. Williams,True,False
+strict_high,GK,30,26232,M. Flekken,True,False
+strict_high,RB,1,271539,J. Hadjam,True,False
+strict_high,RB,2,2975,C. Blackman,False,True
+strict_high,RB,3,41608,D. Borges,False,True
+strict_high,RB,4,25341,D. Luckassen,False,True
+strict_high,RB,5,25158,D. Raum,True,False
+strict_high,RB,6,41552,P. Ciss,True,False
+strict_high,RB,7,6002,E. Palacios,True,False
+strict_high,RB,8,2869,E. Alvarez,True,False
+strict_high,RB,9,355994,A. Freeman,True,False
+strict_high,RB,10,8450,A. Seck,False,True
+strict_high,RB,11,9,A. Hakimi,True,False
+strict_high,RB,12,390002,M. Chavez Garcia,True,False
+strict_high,RB,13,38735,S. Dest,True,False
+strict_high,RB,14,359561,K. Sebelebele,True,False
+strict_high,RB,15,332056,W. Pina,True,False
+strict_high,RB,16,502,J. Kimmich,True,False
+strict_high,RB,17,47519,P. Porro,True,False
+strict_high,RB,18,1257,J. Kounde,True,False
+strict_high,RB,19,195992,J. Caceres,True,False
+strict_high,RB,20,1231,V. Coufal,True,False
+strict_high,RB,21,81,K. Diatta,True,False
+strict_high,RB,22,1117,K. Tierney,True,False
+strict_high,RB,23,134995,N. Boushal,True,False
+strict_high,RB,24,48489,M. Muheim,True,False
+strict_high,RB,25,153622,K. Trewin,True,False
+strict_high,RB,26,19545,R. James,True,False
+strict_high,RB,27,39058,F. Bjorkan,True,False
+strict_high,RB,28,161747,G. Doue,True,False
+strict_high,RB,29,1719,M. Muldur,True,False
+strict_high,RB,30,283252,Z. El Ouahdi,True,False
+strict_high,RCB,1,69,B. Mechele,True,False
+strict_high,RCB,2,265595,G. Inacio,True,False
+strict_high,RCB,3,318,K. Koulibaly,True,False
+strict_high,RCB,4,20995,M. Lacroix,True,False
+strict_high,RCB,5,2897,Kim Min-Jae,True,False
+strict_high,RCB,6,61837,A. Bardakci,True,False
+strict_high,RCB,7,22224,Gabriel,True,False
+strict_high,RCB,8,290,V. van Dijk,True,False
+strict_high,RCB,9,266345,E. Lira,True,False
+strict_high,RCB,10,30776,C. Romero,True,False
+strict_high,RCB,11,1149,D. Upamecano,True,False
+strict_high,RCB,12,38695,J. P. van Hecke,True,False
+strict_high,RCB,13,295793,M. Pubill,True,False
+strict_high,RCB,14,2532,B. Khoukhi,True,False
+strict_high,RCB,15,25287,K. Danso,True,False
+strict_high,RCB,16,396623,P. Cubarsi,True,False
+strict_high,RCB,17,161939,T. Araujo,True,False
+strict_high,RCB,18,31,J. M. Gimenez,True,False
+strict_high,RCB,19,16804,Y. Ibrahim,True,False
+strict_high,RCB,20,312964,N. Ngoy,True,False
+strict_high,RCB,21,101814,R. Araujo,True,False
+strict_high,RCB,22,375,C. Mbemba,True,False
+strict_high,RCB,23,257,Marquinhos,True,False
+strict_high,RCB,24,567,R. Dias,True,False
+strict_high,RCB,25,44507,A. Lajami,True,False
+strict_high,RCB,26,162964,R. Hranac,True,False
+strict_high,RCB,27,30521,M. Demiral,True,False
+strict_high,RCB,28,626,J. Stones,True,False
+strict_high,RCB,29,18814,I. Diop,True,False
+strict_high,LCB,1,624,N. Otamendi,True,False
+strict_high,LCB,2,2194,R. Bensebaini,True,False
+strict_high,LCB,3,16367,W. Pacho,True,False
+strict_high,LCB,4,529,N. Tagliafico,True,False
+strict_high,LCB,5,2467,L. Martinez,True,False
+strict_high,LCB,6,30424,Ibanez,True,False
+strict_high,LCB,7,972,J. Tah,True,False
+strict_high,LCB,8,20836,C. Operi,True,False
+strict_high,LCB,9,152849,M. van de Ven,True,False
+strict_high,LCB,10,129033,J. Gvardiol,True,False
+strict_high,LCB,11,278898,C. Riad,True,False
+strict_high,LB,1,263482,N. Mendes,True,False
+strict_high,LB,2,21138,R. Ait-Nouri,True,False
+strict_high,LB,3,46334,A. Modiba,True,False
+strict_high,LB,4,51776,M. Araujo,True,False
+strict_high,LB,5,21098,J. Kayembe,True,False
+strict_high,LB,6,19549,A. Robinson,True,False
+strict_high,LB,7,307123,N. O'Reilly,True,False
+strict_high,LB,8,375974,J. Seys,True,False
+strict_high,LB,9,162451,A. Salah-Eddine,True,False
+strict_high,LB,10,47300,T. Hernandez,True,False
+strict_high,LB,11,51466,J. Piquerez,True,False
+strict_high,LB,12,127817,P. Hincapie,True,False
+strict_high,LB,13,47380,M. Cucurella,True,False
+strict_high,LB,14,162007,M. De Cuyper,True,False
+strict_high,LB,15,50057,E. Elmali,True,False
+strict_high,LB,16,19235,D. Spence,True,False
+strict_high,LB,17,7578,G. Mensah,True,False
+strict_high,LB,18,409303,M. Diouf,True,False
+strict_high,LB,19,33,L. Hernandez,True,False
+strict_high,LB,20,51572,M. Vina,True,False
+strict_high,LB,21,18816,A. Masuaku,True,False
+strict_high,LB,22,289,A. Robertson,True,False
+strict_high,LB,23,1361,F. Kadioglu,True,False
+strict_high,LB,24,158121,I. Jakobs,True,False
+strict_high,LB,25,2724,L. Digne,True,False
+strict_high,LB,26,306940,Y. Medina,True,False
+strict_high,LB,27,46731,P. Estupinan,True,False
+strict_high,LB,28,198654,D. Svensson,True,False
+strict_high,LB,29,25915,P. Mwene,True,False
+strict_high,LB,30,146772,Y. Belammari,True,False
+strict_high,DM,1,44,Rodri,True,False
+strict_high,DM,2,137210,A. Stiller,True,False
+strict_high,DM,3,374058,L. Camara,True,False
+strict_high,DM,4,162714,A. Onana,True,False
+strict_high,DM,5,2926,Y. Tielemans,True,False
+strict_high,DM,6,511,L. Goretzka,True,False
+strict_high,DM,7,328033,A. Pavlovic,True,False
+strict_high,DM,8,96512,K. Lenini,True,False
+strict_high,DM,9,1464,G. Xhaka,True,False
+strict_high,DM,10,1934,S. Berge,True,False
+strict_high,DM,11,269172,Z. Al Johani,True,False
+strict_high,DM,12,292,J. Henderson,True,False
+strict_high,CM,1,19617,M. Olise,True,False
+strict_high,CM,2,156477,R. Cherki,True,False
+strict_high,CM,3,2489,L. Diaz,True,False
+strict_high,CM,4,1422,J. Doku,True,False
+strict_high,CM,5,214463,I. Yuksek,True,False
+strict_high,CM,6,2676,R. Neves,True,False
+strict_high,CM,7,635,R. Mahrez,True,False
+strict_high,CM,8,41112,Trincao,True,False
+strict_high,CM,9,116117,M. Caicedo,True,False
+strict_high,CM,10,538,F. de Jong,True,False
+strict_high,CM,11,319572,V. Barco,True,False
+strict_high,CM,12,128384,Vitinha,True,False
+strict_high,CM,13,129718,J. Bellingham,True,False
+strict_high,CM,14,1271,A. Tchouameni,True,False
+strict_high,CM,15,39064,P. Berg,True,False
+strict_high,CM,16,1323,D. Olmo,True,False
+strict_high,CM,17,2472,R. de Paul,True,False
+strict_high,CM,18,6067,T. Almada,True,False
+strict_high,CM,19,37127,M. Odegaard,True,False
+strict_high,CM,20,1578,G. Lo Celso,True,False
+strict_high,CM,21,747,Casemiro,True,False
+strict_high,CM,22,754,L. Modric,True,False
+strict_high,CM,23,51494,M. Ugarte,True,False
+strict_high,CM,24,415431,S. El Mourabet,True,False
+strict_high,CM,25,1640,H. Calhanoglu,True,False
+strict_high,CM,26,10135,Bruno Guimaraes,True,False
+strict_high,CM,27,10097,Ederson,True,False
+strict_high,CM,28,36902,T. Reijnders,True,False
+strict_high,CM,29,335051,J. Neves,True,False
+strict_high,CM,30,750,A. Fidalgo,True,False
+strict_high,AM,1,113580,W. Semedo,False,True
+strict_high,AM,2,6005,J. Quintero,True,False
+strict_high,AM,3,414149,R. Mofokeng,True,False
+strict_high,AM,4,37155,O. Kokcu,True,False
+strict_high,AM,5,271,L. Paredes,True,False
+strict_high,AM,6,129678,A. Ounahi,True,False
+strict_high,AM,7,350850,B. Zeneli,True,False
+strict_high,AM,8,1324,I. Sunjic,False,True
+strict_high,AM,9,160925,T. Ali,False,True
+strict_high,AM,10,474591,C. Inao Oulai,True,False
+strict_high,AM,11,37435,D. Duarte,False,True
+strict_high,AM,12,395559,K. Alajbegovic,True,False
+strict_high,AM,13,78,H. Vanaken,True,False
+strict_high,AM,14,441269,P. Okon-Engstler,True,False
+strict_high,AM,15,51114,C. Roldan,True,False
+strict_high,AM,16,341844,M. Ghorbani,False,True
+strict_high,AM,17,263228,P. Guiagon,True,False
+strict_high,AM,18,35576,O. Pineda,True,False
+strict_high,AM,19,1864,P. Neto,True,False
+strict_high,AM,20,19614,S. Ezatolahi,False,True
+strict_high,AM,21,454,Y. Akgun,True,False
+strict_high,AM,22,644,L. Sane,True,False
+strict_high,AM,23,362400,M. Arfsten,True,False
+strict_high,AM,24,295977,T. Moremi,True,False
+strict_high,AM,25,7562,R. Schmid,True,False
+strict_high,AM,26,339887,C. Y. Uzun,True,False
+strict_high,AM,27,63274,B. A. Yilmaz,True,False
+strict_high,AM,28,13376,J. Campaz,True,False
+strict_high,AM,29,345748,Andres Gomez,True,False
+strict_high,AM,30,38123,A. Hrustic,True,False
+strict_high,RW,1,154,L. Messi,True,False
+strict_high,RW,2,535046,A. Amaimouni,False,True
+strict_high,RW,3,513776,Y. Diomande,True,False
+strict_high,RW,4,278,K. Mbappe,True,False
+strict_high,RW,5,583,Joao Felix,True,False
+strict_high,RW,6,108563,R. Zalazar,True,False
+strict_high,RW,7,25414,J. Yeboah,True,False
+strict_high,RW,8,343027,D. Doue,True,False
+strict_high,RW,9,350799,Jeremy Arevalo,True,False
+strict_high,RW,10,2889,A. Vega,True,False
+strict_high,RW,11,276,Neymar,True,False
+strict_high,RW,12,927,Lee Kang-In,True,False
+strict_high,RW,13,186,Son Heung-Min,True,False
+strict_high,RW,14,1460,B. Saka,True,False
+strict_high,RW,15,89982,S. Moghanlou,False,True
+strict_high,RW,16,326067,A. Hadj Moussa,True,False
+strict_high,RW,17,350037,N. Paz,True,False
+strict_high,RW,18,3246,N. Pepe,True,False
+strict_high,RW,19,2544,A. Afif,True,False
+strict_high,RW,20,517,J. Rodriguez,True,False
+strict_high,RW,21,147859,C. De Ketelaere,True,False
+strict_high,RW,22,377122,Endrick,True,False
+strict_high,RW,23,292396,A. Londono,True,False
+strict_high,RW,24,7722,S. Kalajdzic,True,False
+strict_high,RW,25,73520,A. Ganiev,False,True
+strict_high,RW,26,184,H. Kane,True,False
+strict_high,RW,27,35532,J. Quinones,True,False
+strict_high,RW,28,295513,J. Lopez,True,False
+strict_high,RW,29,44701,K. Al Ghannam,True,False
+strict_high,RW,30,6009,J. Alvarez,True,False
+strict_high,LW,1,909,M. Rashford,True,False
+strict_high,LW,2,314511,A. Nusa,True,False
+strict_high,LW,3,127769,G. Martinelli,True,False
+strict_high,LW,4,247,C. Gakpo,True,False
+strict_high,LW,5,1946,L. Trossard,True,False
+strict_high,LW,6,387643,B. Toure,True,False
+strict_high,LW,7,26315,N. Gonzalez,True,False
+strict_high,LW,8,301771,S. Adingra,True,False
+strict_high,ST,1,153,O. Dembele,True,False
+strict_high,ST,2,181812,J. Musiala,True,False
+strict_high,ST,3,2601,D. Kamada,True,False
