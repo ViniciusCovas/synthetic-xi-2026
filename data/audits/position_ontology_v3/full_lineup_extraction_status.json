@@ -1,0 +1,18 @@
+{
+  "status": "priority_full_lineup_extraction_completed",
+  "generated_at_utc": "2026-07-20T15:11:56.312187+00:00",
+  "network_calls": 800,
+  "provider_remaining": 6375,
+  "quota_stopped": true,
+  "queue_before_batch": 9591,
+  "fixtures_processed_this_batch": 800,
+  "new_rows_this_batch": 33577,
+  "total_recovered_rows": 33577,
+  "total_fixture_team_groups": 1600,
+  "groups_with_exactly_11_starters": 1600,
+  "errors": [],
+  "remaining_priority_fixtures": 8791,
+  "output_batch": "data/lake/batches/batch_full_provider_lineups.csv.gz",
+  "progress_file": "data/lake/full_lineup_extraction_progress.csv",
+  "next_action": "rerun the ontology-v3 complete-lineup audit"
+}
