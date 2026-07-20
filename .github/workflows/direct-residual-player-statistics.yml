@@ -1,0 +1,135 @@
+name: Direct Residual Player Statistics
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/run_direct_residual_player_stats.py
+      - .github/workflows/direct-residual-player-statistics.yml
+      - ops/direct-residual-player-stats-trigger.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: direct-residual-player-statistics
+  cancel-in-progress: false
+
+jobs:
+  extract-and-rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pandas requests numpy matplotlib
+
+      - name: Query dedicated fixture-player endpoint
+        id: direct_extract
+        continue-on-error: true
+        env:
+          PYTHONPATH: .
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_SAFE_REQUESTS_PER_MINUTE: '120'
+          MAX_NETWORK_REQUESTS: '200'
+          MIN_DAILY_REQUESTS_REMAINING: '5'
+          GITHUB_RUN_ID: direct_${{ github.run_id }}
+        run: |
+          mkdir -p data/audits
+          set +e
+          python scripts/run_direct_residual_player_stats.py > /tmp/direct_residual.log 2>&1
+          code=$?
+          set -e
+          tail -n 120 /tmp/direct_residual.log
+          echo "$code" > data/audits/direct_residual_player_stats_exit_code.txt
+          exit "$code"
+
+      - name: Rebuild coverage and selection gate
+        if: always()
+        id: rebuild
+        continue-on-error: true
+        run: |
+          set -e
+          python scripts/build_partial_window_artifacts.py
+          python scripts/validate_lateral_grid.py
+          python scripts/resolve_eleven_roles.py
+          python scripts/build_selection_frontier.py
+          python scripts/scientific/build_scope_correct_coverage.py
+          python scripts/scientific/shadow_scope_correct_selection.py
+          python scripts/scientific/promote_scope_correct_coverage.py
+          python scripts/build_selection_sufficiency_gate.py
+          python scripts/build_scientific_status.py
+          python scripts/build_final_release_package.py
+          python scripts/scientific/rebuild_cached_coverage_ledger.py
+
+      - name: Verify protected provisional output is untouched
+        if: always()
+        run: |
+          if git diff --name-only | grep -E '(^|/)real_best_xi_provisional\.csv$'; then
+            echo 'Protected provisional file changed unexpectedly.' >&2
+            exit 1
+          fi
+
+      - name: Archive direct endpoint responses
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: direct-residual-player-responses-${{ github.run_id }}
+          path: data/raw/direct_residual_players
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Publish extraction evidence and rebuilt gate
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f data/lake/direct_player_stats_progress.csv data/lake/batches/direct_residual_*_players.csv.gz data/audits/direct_residual_player_stats_status.json data/audits/direct_residual_player_stats_exit_code.txt 2>/dev/null || true
+          git add data/audits data/model_readiness data/releases paper METHODOLOGY_CORRECTION_EXACT_WINDOW_COVERAGE.md 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No direct residual changes to publish."
+            exit 0
+          fi
+          git commit -m "data: publish direct residual player statistics"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase -X theirs origin/main && git push origin HEAD:main; then
+              echo "Direct residual evidence published on attempt ${attempt}."
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 4))
+          done
+          echo "Failed to publish direct residual evidence." >&2
+          exit 1
+
+      - name: Enforce extraction and rebuild success
+        if: always()
+        run: |
+          code=$(cat data/audits/direct_residual_player_stats_exit_code.txt 2>/dev/null || echo 1)
+          if [ "$code" != "0" ]; then
+            echo "Direct residual extraction failed with exit code $code" >&2
+            exit "$code"
+          fi
+          if [ "${{ steps.rebuild.outcome }}" != "success" ]; then
+            echo "Scientific rebuild failed after extraction" >&2
+            exit 1
+          fi
