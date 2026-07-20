@@ -1,6 +1,6 @@
 {
   "status": "complete_lineup_position_evidence_and_eligibility_audited",
-  "generated_at_utc": "2026-07-20T16:15:43.784624+00:00",
+  "generated_at_utc": "2026-07-20T16:34:08.004946+00:00",
   "network_calls": 0,
   "fixture_team_lineup_groups": 13678,
   "structurally_complete_groups": 5290,
@@ -28,5 +28,5 @@
   "classification_policy": "only exact 11-player grids whose row sizes match a supported declared formation",
   "eligibility_policy": "one primary role per player; >=1800 exact-window total minutes; >=900 primary-role minutes; >=3 observations; >=60% of classified role minutes",
   "next_action": "extract more complete lineups for deficient roles; total-minute failures cannot be repaired by lineup extraction",
-  "eligibility_updated_at_utc": "2026-07-20T16:15:44.291529+00:00"
+  "eligibility_updated_at_utc": "2026-07-20T16:34:08.437292+00:00"
 }

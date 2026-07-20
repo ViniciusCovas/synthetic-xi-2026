@@ -1,20 +1,59 @@
 {
-  "status": "blind_review_packet_blocked",
-  "generated_at_utc": "2026-07-20T16:15:44.695581+00:00",
-  "reason": "minimum 20 stable primary candidates not reached in every role",
-  "eligible_primary_candidates_by_role": {
-    "GK": 42,
-    "RB": 39,
-    "RCB": 36,
-    "LCB": 38,
-    "LB": 38,
-    "DM": 44,
-    "CM": 32,
-    "AM": 12,
-    "RW": 18,
-    "LW": 23,
-    "ST": 55
+  "status": "blind_position_review_v3_1_packet_ready",
+  "generated_at_utc": "2026-07-20T16:34:19.050456+00:00",
+  "network_calls": 0,
+  "protocol": "non-circular family-support gate followed by independent exact-slot review",
+  "source_role_minutes": "data/audits/position_ontology_v3/complete_lineup_player_role_minutes.csv",
+  "source_role_minutes_sha256": "2b276ccea9b932a2c3ddc99b919cd248e122429a004923d37375086cb688d79d",
+  "review_cases": 621,
+  "family_supported_cases": 503,
+  "near_family_threshold_cases": 61,
+  "high_impact_cases": 244,
+  "family_support_candidates": {
+    "CB": 91,
+    "FB": 89,
+    "GK": 43,
+    "MID": 162,
+    "ST": 66,
+    "WING": 81
   },
-  "review_packet_ready": false,
-  "next_action": "continue outcome-blind complete-lineup extraction for deficient roles"
+  "slot_support_candidates": {
+    "GK": 43,
+    "RB": 89,
+    "RCB": 91,
+    "LCB": 91,
+    "LB": 89,
+    "DM": 162,
+    "CM": 162,
+    "AM": 162,
+    "RW": 81,
+    "LW": 81,
+    "ST": 66
+  },
+  "public_anchor_cases_hidden_from_reviewers": 26,
+  "selection_rule": ">=1800 annual minutes and >=900 minutes/3 observations in one positional family; plus preregistered high-impact and 600-899-minute near-threshold challengers",
+  "blinded_fields": [
+    "automatic exact roles and role families",
+    "scores and rankings",
+    "public anchors",
+    "simulation membership and outcomes"
+  ],
+  "reviewers_required": 2,
+  "allowed_primary_roles": [
+    "GK",
+    "RB",
+    "RCB",
+    "LCB",
+    "LB",
+    "DM",
+    "CM",
+    "AM",
+    "RW",
+    "LW",
+    "ST",
+    "UNRESOLVED"
+  ],
+  "secondary_role_policy": "optional; at most one secondary slot",
+  "review_packet_ready": true,
+  "next_action": "two independent football experts complete the forms; then run evaluate_blind_position_review_v3.py"
 }
