@@ -1,0 +1,186 @@
+{
+  "selection_rule": "deterministic medoid lineup and closest-to-aggregate match among 600 prespecified candidates",
+  "combination_id": "real_xi_set_02",
+  "seed": 2462264330,
+  "synthetic_home": false,
+  "distance": 0.56240956583571,
+  "synthetic_goals": 1,
+  "real_goals": 2,
+  "raw_result": {
+    "home": "Real XI real_xi_set_02",
+    "away": "Synthetic XI Top 20",
+    "home_goals": 2,
+    "away_goals": 1,
+    "home_xg": 2.023,
+    "away_xg": 1.573,
+    "home_shots": 9,
+    "away_shots": 9,
+    "home_shots_on_target": 5,
+    "away_shots_on_target": 4,
+    "home_possession_share": 0.4512,
+    "timeline": [
+      {
+        "minute": 4,
+        "team": "Real XI real_xi_set_02",
+        "type": "shot_on_target",
+        "actor": "M. Rashford",
+        "zone": 1,
+        "xg": 0.112,
+        "headline": "Remate de M. Rashford detenido por el portero"
+      },
+      {
+        "minute": 12,
+        "team": "Real XI real_xi_set_02",
+        "type": "shot_on_target",
+        "actor": "L. Messi",
+        "zone": 1,
+        "xg": 0.118,
+        "headline": "Remate de L. Messi detenido por el portero"
+      },
+      {
+        "minute": 14,
+        "team": "Synthetic XI Top 20",
+        "type": "shot_off_target",
+        "actor": "SYN-LW-T20",
+        "zone": 3,
+        "xg": 0.223,
+        "headline": "Ocasión de SYN-LW-T20 fuera"
+      },
+      {
+        "minute": 15,
+        "team": "Synthetic XI Top 20",
+        "type": "turnover",
+        "actor": "SYN-RW-T20",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "SYN-RW-T20 pierde el balón bajo presión"
+      },
+      {
+        "minute": 17,
+        "team": "Synthetic XI Top 20",
+        "type": "goal",
+        "actor": "SYN-AM-T20",
+        "zone": 3,
+        "xg": 0.23,
+        "headline": "GOL de SYN-AM-T20"
+      },
+      {
+        "minute": 21,
+        "team": "Real XI real_xi_set_02",
+        "type": "goal",
+        "actor": "M. Rashford",
+        "zone": 3,
+        "xg": 0.289,
+        "headline": "GOL de M. Rashford"
+      },
+      {
+        "minute": 30,
+        "team": "Real XI real_xi_set_02",
+        "type": "shot_on_target",
+        "actor": "O. Dembele",
+        "zone": 3,
+        "xg": 0.306,
+        "headline": "Remate de O. Dembele detenido por el portero"
+      },
+      {
+        "minute": 32,
+        "team": "Real XI real_xi_set_02",
+        "type": "goal",
+        "actor": "M. Rashford",
+        "zone": 3,
+        "xg": 0.289,
+        "headline": "GOL de M. Rashford"
+      },
+      {
+        "minute": 33,
+        "team": "Synthetic XI Top 20",
+        "type": "shot_on_target",
+        "actor": "SYN-AM-T20",
+        "zone": 3,
+        "xg": 0.23,
+        "headline": "Remate de SYN-AM-T20 detenido por el portero"
+      },
+      {
+        "minute": 45,
+        "team": "Synthetic XI Top 20",
+        "type": "shot_off_target",
+        "actor": "SYN-AM-T20",
+        "zone": 2,
+        "xg": 0.142,
+        "headline": "Ocasión de SYN-AM-T20 fuera"
+      },
+      {
+        "minute": 54,
+        "team": "Real XI real_xi_set_02",
+        "type": "shot_off_target",
+        "actor": "O. Dembele",
+        "zone": 3,
+        "xg": 0.306,
+        "headline": "Ocasión de O. Dembele fuera"
+      },
+      {
+        "minute": 54,
+        "team": "Synthetic XI Top 20",
+        "type": "shot_off_target",
+        "actor": "SYN-LW-T20",
+        "zone": 3,
+        "xg": 0.223,
+        "headline": "Ocasión de SYN-LW-T20 fuera"
+      },
+      {
+        "minute": 55,
+        "team": "Real XI real_xi_set_02",
+        "type": "shot_off_target",
+        "actor": "M. Olise",
+        "zone": 2,
+        "xg": 0.177,
+        "headline": "Ocasión de M. Olise fuera"
+      },
+      {
+        "minute": 57,
+        "team": "Synthetic XI Top 20",
+        "type": "turnover",
+        "actor": "SYN-LW-T20",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "SYN-LW-T20 pierde el balón bajo presión"
+      },
+      {
+        "minute": 58,
+        "team": "Real XI real_xi_set_02",
+        "type": "shot_off_target",
+        "actor": "O. Dembele",
+        "zone": 3,
+        "xg": 0.306,
+        "headline": "Ocasión de O. Dembele fuera"
+      },
+      {
+        "minute": 62,
+        "team": "Synthetic XI Top 20",
+        "type": "turnover",
+        "actor": "SYN-RW-T20",
+        "zone": 3,
+        "xg": 0.0,
+        "headline": "SYN-RW-T20 pierde el balón bajo presión"
+      },
+      {
+        "minute": 63,
+        "team": "Synthetic XI Top 20",
+        "type": "shot_on_target",
+        "actor": "SYN-LW-T20",
+        "zone": 2,
+        "xg": 0.138,
+        "headline": "Remate de SYN-LW-T20 detenido por el portero"
+      },
+      {
+        "minute": 83,
+        "team": "Synthetic XI Top 20",
+        "type": "shot_on_target",
+        "actor": "SYN-RW-T20",
+        "zone": 2,
+        "xg": 0.159,
+        "headline": "Remate de SYN-RW-T20 detenido por el portero"
+      }
+    ]
+  }
+}

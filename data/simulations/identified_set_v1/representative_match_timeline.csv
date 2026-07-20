@@ -1,0 +1,19 @@
+minute,team,type,actor,zone,xg,headline
+4,Real XI real_xi_set_02,shot_on_target,M. Rashford,1,0.112,Remate de M. Rashford detenido por el portero
+12,Real XI real_xi_set_02,shot_on_target,L. Messi,1,0.118,Remate de L. Messi detenido por el portero
+14,Synthetic XI Top 20,shot_off_target,SYN-LW-T20,3,0.223,Ocasión de SYN-LW-T20 fuera
+15,Synthetic XI Top 20,turnover,SYN-RW-T20,2,0.0,SYN-RW-T20 pierde el balón bajo presión
+17,Synthetic XI Top 20,goal,SYN-AM-T20,3,0.23,GOL de SYN-AM-T20
+21,Real XI real_xi_set_02,goal,M. Rashford,3,0.289,GOL de M. Rashford
+30,Real XI real_xi_set_02,shot_on_target,O. Dembele,3,0.306,Remate de O. Dembele detenido por el portero
+32,Real XI real_xi_set_02,goal,M. Rashford,3,0.289,GOL de M. Rashford
+33,Synthetic XI Top 20,shot_on_target,SYN-AM-T20,3,0.23,Remate de SYN-AM-T20 detenido por el portero
+45,Synthetic XI Top 20,shot_off_target,SYN-AM-T20,2,0.142,Ocasión de SYN-AM-T20 fuera
+54,Real XI real_xi_set_02,shot_off_target,O. Dembele,3,0.306,Ocasión de O. Dembele fuera
+54,Synthetic XI Top 20,shot_off_target,SYN-LW-T20,3,0.223,Ocasión de SYN-LW-T20 fuera
+55,Real XI real_xi_set_02,shot_off_target,M. Olise,2,0.177,Ocasión de M. Olise fuera
+57,Synthetic XI Top 20,turnover,SYN-LW-T20,2,0.0,SYN-LW-T20 pierde el balón bajo presión
+58,Real XI real_xi_set_02,shot_off_target,O. Dembele,3,0.306,Ocasión de O. Dembele fuera
+62,Synthetic XI Top 20,turnover,SYN-RW-T20,3,0.0,SYN-RW-T20 pierde el balón bajo presión
+63,Synthetic XI Top 20,shot_on_target,SYN-LW-T20,2,0.138,Remate de SYN-LW-T20 detenido por el portero
+83,Synthetic XI Top 20,shot_on_target,SYN-RW-T20,2,0.159,Remate de SYN-RW-T20 detenido por el portero

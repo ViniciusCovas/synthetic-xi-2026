@@ -1,0 +1,15 @@
+{
+  "status": "identified_set_simulation_complete",
+  "primary_estimand": "outcome-probability envelope across all eight plausible Real XIs",
+  "primary_scenario": "primary_top20_pooled",
+  "primary_directionally_robust": true,
+  "primary_robust_direction": "real",
+  "all_prespecified_sensitivities_directionally_robust": true,
+  "all_sensitivities_same_direction": true,
+  "engineering_calibration_gate_passed": true,
+  "headline_claim_allowed": true,
+  "recommended_public_headline": "El mejor XI real resistió a todas las versiones del equipo sintético",
+  "unique_real_xi_claim_allowed": false,
+  "point_comparison_claim_allowed": false,
+  "allowed_scientific_claim": "Report the identified envelope across every plausible Real XI, calibration-bootstrap intervals, and prespecified Top-N, uncertainty, and model-response sensitivities."
+}
