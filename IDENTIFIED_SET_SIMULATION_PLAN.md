@@ -37,7 +37,7 @@ Se simularán las ocho combinaciones cartesianas ya publicadas en `data/releases
 ## Incertidumbre
 
 1. Incertidumbre de perfil individual ya incorporada en el motor.
-2. Ochenta mundos de calibración, incluyendo el mundo observado y 79 remuestreos bootstrap de los 94 partidos FT.
+2. Mundos de calibración que incluyen el mundo observado y remuestreos bootstrap de los 94 partidos FT.
 3. Corrientes comunes de semillas entre las ocho alineaciones.
 4. Simulación espejo con Synthetic XI y Real XI alternando la etiqueta de local, con ventaja local igual a cero.
 
@@ -46,8 +46,9 @@ Se simularán las ocho combinaciones cartesianas ya publicadas en `data/releases
 - Top 20.
 - Incertidumbre del avatar agrupada según el tamaño real del Top-N, con piso de 0.025.
 - Parámetros calibrados base del motor.
-- 80 mundos.
-- 100 partidos por orientación y mundo para cada uno de los ocho Real XI.
+- 40 mundos de calibración.
+- 40 partidos por orientación y mundo para cada uno de los ocho Real XI.
+- 3,200 partidos por Real XI; 25,600 en el escenario principal.
 
 ## Sensibilidades preespecificadas
 
@@ -56,6 +57,7 @@ Se simularán las ocho combinaciones cartesianas ya publicadas en `data/releases
 - Top 20 sin reducción de incertidumbre por agregación; se usa la mediana de incertidumbre de los miembros.
 - Respuesta baja de habilidad en posesión, disparo y conversión.
 - Respuesta alta de habilidad en posesión, disparo y conversión.
+- Cada sensibilidad utiliza 20 mundos, 25 partidos por orientación y 1,000 partidos por Real XI.
 
 ## Regla de decisión
 
@@ -87,3 +89,9 @@ Un titular fuerte solo será autorizado si la dirección también permanece igua
 - manifiesto reproducible;
 - partido representativo;
 - métodos y paquete narrativo con guardrails.
+
+## Enmienda computacional ciega a resultados
+
+La primera ejecución integral comenzó con un presupuesto de 396,800 partidos. Antes de que existiera cualquier salida de resultados, se sustituyó por un presupuesto de precisión de **65,600 partidos** para evitar computación redundante del motor secuencial. La enmienda no altera la pregunta, el estimando, los equipos, la semilla, las sensibilidades, los parámetros ni la regla de decisión.
+
+El escenario principal conserva 3,200 partidos por cada Real XI. En el caso de máxima varianza binomial (`p = 0.5`), el error estándar Monte Carlo de una probabilidad agregada por alineación es aproximadamente `0.0088`. Cada sensibilidad conserva 1,000 partidos por alineación, con error estándar máximo aproximado de `0.0158`; estas corridas se utilizan únicamente para verificar dirección y no para reemplazar la estimación principal.
