@@ -1,6 +1,6 @@
 {
   "status": "blind_position_review_v3_1_packet_ready",
-  "generated_at_utc": "2026-07-20T16:34:19.050456+00:00",
+  "generated_at_utc": "2026-07-20T16:35:28.424455+00:00",
   "network_calls": 0,
   "protocol": "non-circular family-support gate followed by independent exact-slot review",
   "source_role_minutes": "data/audits/position_ontology_v3/complete_lineup_player_role_minutes.csv",
