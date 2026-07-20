@@ -43,23 +43,43 @@ jobs:
         run: python scripts/scientific/shadow_scope_correct_selection.py
 
       - name: Export the cache-rebuild package
-        run: python scripts/scientific/rebuild_cached_coverage_ledger.py
+        id: exporter
+        continue-on-error: true
+        run: |
+          mkdir -p data/model_readiness/cache_rebuild
+          set +e
+          python scripts/scientific/rebuild_cached_coverage_ledger.py > data/model_readiness/cache_rebuild/exporter.log 2>&1
+          code=$?
+          echo "$code" > data/model_readiness/cache_rebuild/exporter_exit_code.txt
+          cat data/model_readiness/cache_rebuild/exporter.log
+          exit "$code"
 
       - name: Verify protected provisional output is untouched
+        if: always()
         run: |
           if git diff --name-only | grep -E '(^|/)real_best_xi_provisional\.csv$'; then
             echo 'Protected provisional file changed unexpectedly.' >&2
             exit 1
           fi
 
-      - name: Commit rebuilt ledger outputs
+      - name: Commit rebuilt ledger outputs or diagnostics
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/model_readiness/cache_rebuild/
+          git add -f data/model_readiness/cache_rebuild/
           if git diff --cached --quiet; then
             echo "No output changes to commit."
             exit 0
           fi
-          git commit -m "science: rebuild cached player-fixture coverage ledger"
+          git commit -m "science: publish cached coverage rebuild outputs"
           git push
+
+      - name: Enforce exporter success
+        if: always()
+        run: |
+          code=$(cat data/model_readiness/cache_rebuild/exporter_exit_code.txt 2>/dev/null || echo 1)
+          if [ "$code" != "0" ]; then
+            echo "Coverage exporter failed with exit code $code" >&2
+            exit "$code"
+          fi
