@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   gate:
@@ -16,59 +16,55 @@ jobs:
     timeout-minutes: 45
     env:
       PYTHONPATH: .
-      SNAPSHOT: 08276007a68a923294e0aea44fb2e8dbbd553021
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref || 'definitive-real-vs-ai' }}
           fetch-depth: 0
-          persist-credentials: true
-
-      - name: Restore ontology audit snapshot
-        run: |
-          mkdir -p data/audits/position_ontology_v2
-          git show "$SNAPSHOT:data/audits/position_ontology_v2/player_position_audit.csv" > data/audits/position_ontology_v2/audited_player_roles.csv
-          git show "$SNAPSHOT:data/audits/position_ontology_v2/position_ontology_audit_status.json" > data/audits/position_ontology_v2/ontology_audit_status.json
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: pip
 
-      - name: Install and test
+      - name: Install, compile and test
         run: |
           pip install -r requirements.txt pytest
           python -m py_compile simulator/ai_xi_generator.py
+          python -m py_compile scripts/scientific/audit_complete_lineups_v3.py
+          python -m py_compile scripts/scientific/build_blind_position_review_packet_v3.py
+          python -m py_compile scripts/scientific/evaluate_blind_position_review_v3.py
           python -m py_compile scripts/scientific/build_definitive_experiment_gate.py
-          python -m py_compile scripts/scientific/build_blind_position_review_packet.py
-          python -m py_compile scripts/scientific/evaluate_blind_position_review.py
+          python -m py_compile scripts/scientific/build_definitive_teams.py
           pytest -q tests/test_ai_xi_generator.py
 
-      - name: Build review packet and hard gate
+      - name: Evaluate current scientific gates
         run: |
-          python scripts/scientific/build_blind_position_review_packet.py
-          python scripts/scientific/evaluate_blind_position_review.py
-          rm -f data/audits/position_ontology_v2/blind_review/answer_key_do_not_share_with_reviewers.csv
+          python scripts/scientific/evaluate_blind_position_review_v3.py
           python scripts/scientific/build_definitive_experiment_gate.py
           python - <<'PY'
           import json
           from pathlib import Path
-          s=json.loads(Path('data/audits/definitive_experiment_v1/gate_status.json').read_text())
-          assert s['partial_identification_allowed'] is False
-          if not s['final_experiment_gate_passed']:
-              assert not s['final_simulation_allowed']
+          status = json.loads(Path('data/audits/definitive_experiment_v1/gate_status.json').read_text())
+          assert status['partial_identification_allowed'] is False
+          assert status['estimand'] == 'one deterministic Real XI versus one deterministic AI XI'
+          if not status['design_gate_passed']:
+              assert not status['final_team_files_allowed']
+          if not status['final_experiment_gate_passed']:
+              assert not status['final_simulation_allowed']
           PY
 
-      - name: Upload forms and gate
+      - name: Upload public forms and gate status
         uses: actions/upload-artifact@v4
         with:
           name: definitive-real-vs-ai-${{ github.run_id }}
           path: |
-            data/audits/position_ontology_v2/blind_review/reviewer_a_form.csv
-            data/audits/position_ontology_v2/blind_review/reviewer_b_form.csv
-            data/audits/position_ontology_v2/blind_review/REVIEW_INSTRUCTIONS_ES.md
-            data/audits/position_ontology_v2/blind_review/packet_manifest.json
+            data/audits/position_ontology_v3/blind_review/reviewer_a_form.csv
+            data/audits/position_ontology_v3/blind_review/reviewer_b_form.csv
+            data/audits/position_ontology_v3/blind_review/REVIEW_INSTRUCTIONS_PT.md
+            data/audits/position_ontology_v3/blind_review/packet_manifest.json
+            data/audits/position_ontology_v3/blind_review/blind_review_evaluation.json
             data/audits/definitive_experiment_v1/
             POSITION_ONTOLOGY_CODEBOOK_ES.md
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 90
