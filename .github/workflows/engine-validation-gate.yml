@@ -1,7 +1,47 @@
 name: Engine Validation Gate
-on: workflow_dispatch
+
+on:
+  push:
+    branches: [definitive-real-vs-ai]
+    paths:
+      - scripts/scientific/build_engine_validation_gate.py
+      - scripts/scientific/build_definitive_experiment_gate.py
+      - .github/workflows/engine-validation-gate.yml
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONPATH: .
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || 'definitive-real-vs-ai' }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build status files
+        run: |
+          python -m py_compile scripts/scientific/build_engine_validation_gate.py
+          python -m py_compile scripts/scientific/build_definitive_experiment_gate.py
+          python scripts/scientific/build_engine_validation_gate.py
+          python scripts/scientific/build_definitive_experiment_gate.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: engine-validation-${{ github.run_id }}
+          path: |
+            data/audits/engine_validation_v1/
+            data/audits/definitive_experiment_v1/
+          if-no-files-found: error
+          retention-days: 90
