@@ -1,0 +1,12 @@
+role,eligible_current_ontology,audited_stable_candidates,minimum_10_pool,top20_complete
+GK,109,94,True,True
+RB,260,7,False,False
+RCB,42,69,True,True
+LCB,25,74,True,True
+LB,45,10,True,False
+DM,25,145,True,True
+CM,111,7,False,False
+AM,155,22,True,True
+RW,258,2,False,False
+LW,11,5,False,False
+ST,19,42,True,True
