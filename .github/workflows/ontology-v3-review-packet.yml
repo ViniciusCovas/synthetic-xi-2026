@@ -4,6 +4,7 @@ on:
   push:
     branches: [definitive-real-vs-ai]
     paths:
+      - scripts/scientific/apply_definitive_eligibility_v3.py
       - scripts/scientific/build_blind_position_review_packet_v3.py
       - scripts/scientific/evaluate_blind_position_review_v3.py
       - .github/workflows/ontology-v3-review-packet.yml
@@ -38,12 +39,14 @@ jobs:
           mkdir -p data/audits/position_ontology_v2
           git show "$V2_SNAPSHOT:data/audits/position_ontology_v2/player_position_audit.csv" > data/audits/position_ontology_v2/audited_player_roles.csv
 
-      - name: Rebuild primary roles and gated review packet
+      - name: Rebuild eligibility and gated review packet
         run: |
           python -m py_compile scripts/scientific/audit_complete_lineups_v3.py
+          python -m py_compile scripts/scientific/apply_definitive_eligibility_v3.py
           python -m py_compile scripts/scientific/build_blind_position_review_packet_v3.py
           python -m py_compile scripts/scientific/evaluate_blind_position_review_v3.py
           python scripts/scientific/audit_complete_lineups_v3.py
+          python scripts/scientific/apply_definitive_eligibility_v3.py
           python scripts/scientific/build_blind_position_review_packet_v3.py
           python scripts/scientific/evaluate_blind_position_review_v3.py
 
