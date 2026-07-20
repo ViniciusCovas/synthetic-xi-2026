@@ -23,6 +23,7 @@ jobs:
     timeout-minutes: 90
     env:
       PYTHONPATH: .
+      EXTRACTION_PHASE: post-recovery-am-rw-deficit-1
       API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
       MAX_NETWORK_REQUESTS: '800'
       MIN_DAILY_REQUESTS_REMAINING: '500'
