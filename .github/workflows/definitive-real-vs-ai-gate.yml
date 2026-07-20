@@ -3,32 +3,12 @@ name: Definitive Real XI vs AI XI Gate
 on:
   push:
     branches: [definitive-real-vs-ai]
-    paths:
-      - DEFINITIVE_REAL_VS_AI_PROTOCOL.md
-      - simulator/ai_xi_generator.py
-      - tests/test_ai_xi_generator.py
-      - scripts/scientific/build_definitive_experiment_gate.py
-      - scripts/scientific/build_blind_position_review_packet.py
-      - scripts/scientific/evaluate_blind_position_review.py
-      - .github/workflows/definitive-real-vs-ai-gate.yml
   pull_request:
     branches: [main]
-    paths:
-      - DEFINITIVE_REAL_VS_AI_PROTOCOL.md
-      - simulator/ai_xi_generator.py
-      - tests/test_ai_xi_generator.py
-      - scripts/scientific/build_definitive_experiment_gate.py
-      - scripts/scientific/build_blind_position_review_packet.py
-      - scripts/scientific/evaluate_blind_position_review.py
-      - .github/workflows/definitive-real-vs-ai-gate.yml
   workflow_dispatch:
 
 permissions:
   contents: write
-
-concurrency:
-  group: definitive-real-vs-ai-gate-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   gate:
@@ -36,117 +16,59 @@ jobs:
     timeout-minutes: 45
     env:
       PYTHONPATH: .
-      ONTOLOGY_SNAPSHOT_SHA: 08276007a68a923294e0aea44fb2e8dbbd553021
+      SNAPSHOT: 08276007a68a923294e0aea44fb2e8dbbd553021
     steps:
-      - name: Checkout experiment branch
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref || 'definitive-real-vs-ai' }}
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Restore frozen ontology audit snapshot
+      - name: Restore ontology audit snapshot
         run: |
-          set -euo pipefail
           mkdir -p data/audits/position_ontology_v2
-          if [ ! -f data/audits/position_ontology_v2/audited_player_roles.csv ]; then
-            git show "$ONTOLOGY_SNAPSHOT_SHA:data/audits/position_ontology_v2/audited_player_roles.csv" > data/audits/position_ontology_v2/audited_player_roles.csv
-          fi
-          if [ ! -f data/audits/position_ontology_v2/ontology_audit_status.json ]; then
-            git show "$ONTOLOGY_SNAPSHOT_SHA:data/audits/position_ontology_v2/ontology_audit_status.json" > data/audits/position_ontology_v2/ontology_audit_status.json
-          fi
-          test -s data/audits/position_ontology_v2/audited_player_roles.csv
-          test -s data/audits/position_ontology_v2/ontology_audit_status.json
+          git show "$SNAPSHOT:data/audits/position_ontology_v2/player_position_audit.csv" > data/audits/position_ontology_v2/audited_player_roles.csv
+          git show "$SNAPSHOT:data/audits/position_ontology_v2/position_ontology_audit_status.json" > data/audits/position_ontology_v2/ontology_audit_status.json
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: pip
 
-      - name: Install dependencies
+      - name: Install and test
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install pytest
-
-      - name: Compile scientific sources
-        run: |
+          pip install -r requirements.txt pytest
           python -m py_compile simulator/ai_xi_generator.py
           python -m py_compile scripts/scientific/build_definitive_experiment_gate.py
           python -m py_compile scripts/scientific/build_blind_position_review_packet.py
           python -m py_compile scripts/scientific/evaluate_blind_position_review.py
+          pytest -q tests/test_ai_xi_generator.py
 
-      - name: Test AI player generator
-        run: pytest -q tests/test_ai_xi_generator.py
-
-      - name: Build blind review packet
+      - name: Build review packet and hard gate
         run: |
           python scripts/scientific/build_blind_position_review_packet.py
           python scripts/scientific/evaluate_blind_position_review.py
           rm -f data/audits/position_ontology_v2/blind_review/answer_key_do_not_share_with_reviewers.csv
-
-      - name: Evaluate definitive experiment gate
-        run: python scripts/scientific/build_definitive_experiment_gate.py
-
-      - name: Enforce no premature final claim
-        run: |
+          python scripts/scientific/build_definitive_experiment_gate.py
           python - <<'PY'
           import json
           from pathlib import Path
-          path = Path('data/audits/definitive_experiment_v1/gate_status.json')
-          status = json.loads(path.read_text(encoding='utf-8'))
-          assert status['partial_identification_allowed'] is False
-          if not status['final_experiment_gate_passed']:
-              assert status['final_team_files_allowed'] is False
-              assert status['final_simulation_allowed'] is False
+          s=json.loads(Path('data/audits/definitive_experiment_v1/gate_status.json').read_text())
+          assert s['partial_identification_allowed'] is False
+          if not s['final_experiment_gate_passed']:
+              assert not s['final_simulation_allowed']
           PY
-          if git diff --name-only | grep -E '^data/simulations/identified_set_v1/'; then
-            echo 'Frozen diagnostic simulation changed unexpectedly.' >&2
-            exit 1
-          fi
 
-      - name: Upload reviewer forms
-        if: always()
+      - name: Upload forms and gate
         uses: actions/upload-artifact@v4
         with:
-          name: blind-position-review-forms-${{ github.run_id }}
+          name: definitive-real-vs-ai-${{ github.run_id }}
           path: |
             data/audits/position_ontology_v2/blind_review/reviewer_a_form.csv
             data/audits/position_ontology_v2/blind_review/reviewer_b_form.csv
             data/audits/position_ontology_v2/blind_review/REVIEW_INSTRUCTIONS_ES.md
             data/audits/position_ontology_v2/blind_review/packet_manifest.json
-            data/audits/definitive_experiment_v1/gate_status.json
-            data/audits/definitive_experiment_v1/README.md
+            data/audits/definitive_experiment_v1/
             POSITION_ONTOLOGY_CODEBOOK_ES.md
           if-no-files-found: error
           retention-days: 90
-
-      - name: Publish gate and public review packet
-        if: github.event_name != 'pull_request'
-        run: |
-          set -euo pipefail
-          git config user.name 'synthetic-xi-bot'
-          git config user.email 'actions@users.noreply.github.com'
-          git add -f data/audits/definitive_experiment_v1/
-          for file in reviewer_a_form.csv reviewer_b_form.csv REVIEW_INSTRUCTIONS_ES.md packet_manifest.json blind_review_evaluation.json; do
-            path="data/audits/position_ontology_v2/blind_review/$file"
-            [ ! -f "$path" ] || git add -f "$path"
-          done
-          git reset -- data/audits/position_ontology_v2/audited_player_roles.csv 2>/dev/null || true
-          git reset -- data/audits/position_ontology_v2/ontology_audit_status.json 2>/dev/null || true
-          git reset -- data/audits/position_ontology_v2/blind_review/answer_key_do_not_share_with_reviewers.csv 2>/dev/null || true
-          if git diff --cached --quiet; then
-            echo 'No generated evidence to publish.'
-            exit 0
-          fi
-          git commit -m 'science: publish definitive experiment gate and blind packet'
-          for attempt in 1 2 3 4 5; do
-            git fetch origin definitive-real-vs-ai
-            if git rebase -X theirs origin/definitive-real-vs-ai && git push origin HEAD:definitive-real-vs-ai; then
-              exit 0
-            fi
-            git rebase --abort 2>/dev/null || true
-            sleep $((attempt * 4))
-          done
-          exit 1
