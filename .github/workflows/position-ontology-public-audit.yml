@@ -42,6 +42,23 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Apply null-safe formation hotfix
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('scripts/scientific/audit_position_ontology.py')
+          text = path.read_text(encoding='utf-8')
+          old = '''def normalize_formation(value: object) -> str:
+              return str(value or "").strip().replace(" ", "")'''
+          new = '''def normalize_formation(value: object) -> str:
+              if pd.isna(value):
+                  return ""
+              return str(value).strip().replace(" ", "")'''
+          if old not in text:
+              raise SystemExit('Expected normalize_formation source block not found')
+          path.write_text(text.replace(old, new), encoding='utf-8')
+          PY
+
       - name: Validate audit source
         run: python -m py_compile scripts/scientific/audit_position_ontology.py
 
