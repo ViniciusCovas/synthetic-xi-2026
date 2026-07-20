@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - scripts/scientific/build_structural_missingness_sensitivity.py
+      - scripts/scientific/run_structural_missingness_sensitivity_safe.py
       - .github/workflows/structural-missingness-sensitivity.yml
   workflow_dispatch:
 
@@ -80,7 +81,7 @@ jobs:
         run: |
           mkdir -p data/audits/structural_missingness
           set +e
-          python scripts/scientific/build_structural_missingness_sensitivity.py > data/audits/structural_missingness/execution.log 2>&1
+          python scripts/scientific/run_structural_missingness_sensitivity_safe.py > data/audits/structural_missingness/execution.log 2>&1
           code=$?
           set -e
           echo "$code" > data/audits/structural_missingness/exit_code.txt
