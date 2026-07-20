@@ -20,6 +20,8 @@ jobs:
   simulate:
     runs-on: ubuntu-latest
     timeout-minutes: 240
+    env:
+      PYTHONPATH: .
     steps:
       - name: Checkout frozen repository state
         uses: actions/checkout@v4
