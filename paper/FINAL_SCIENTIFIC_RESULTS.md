@@ -1,6 +1,6 @@
 # Synthetic XI scientific release candidate
 
-Generated: 2026-07-20T03:58:31.956894+00:00
+Generated: 2026-07-20T06:58:51.775407+00:00
 Scientific status: **BLOCKED**
 Claim ceiling: exploratory, calibrated and auditable simulation
 
@@ -10,19 +10,19 @@ Claim ceiling: exploratory, calibrated and auditable simulation
 
 ## Data-selection sufficiency
 
-- Eligible candidates: 972
-- Fully covered in both windows: 940
-- Unresolved challengers: 27
-- Remaining priority fixtures: 181
+- Eligible candidates: 1019
+- Fully covered in both windows: 978
+- Unresolved challengers: 41
+- Remaining priority fixtures: 291
 
 ## Predictive validation
 
 - Internal best model: poisson_shrunk
 - Internal temporal gate: True
 - External holdout matches: 91
-- External log loss: 0.8832017520786613
+- External log loss: 0.8816425489577903
 - External accuracy: 0.6263736263736264
-- External skill vs naive: 0.19607512023245155
+- External skill vs naive: 0.19749436807534726
 
 ## Simulator validation
 

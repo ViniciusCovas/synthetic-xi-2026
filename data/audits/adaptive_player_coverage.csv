@@ -41,7 +41,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 299,Fabinho,43,3780.0,45,42,1.0,1.0,True,Brazil,Midfielder,5291.0,True
 304,Sadio Mané,41,3389.0,41,37,1.0,1.0,True,Senegal,Midfielder,4360.0,True
 306,Mohamed Salah,52,4145.0,52,47,1.0,1.0,True,Egypt,Attacker,4285.0,True
-313,David Ospina,8,729.0,8,8,1.0,1.0,True,Colombia,Goalkeeper,4820.0,True
+313,David Ospina,34,3078.0,31,34,1.0,1.0,True,Colombia,Goalkeeper,4820.0,True
 318,Kalidou Koulibaly,34,2956.0,29,32,1.0,1.0,True,Senegal,Defender,3136.0,True
 328,Fabián Ruiz,48,2859.0,41,41,1.0,1.0,True,Spain,Midfielder,2715.0,True
 369,Diogo Costa,53,4730.0,53,48,1.0,1.0,True,Portugal,Goalkeeper,7705.0,True
@@ -49,7 +49,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 399,Alexander Nübel,49,4476.0,49,49,1.0,1.0,True,Germany,Goalkeeper,4641.0,True
 409,Nabil Bentaleb,41,2303.0,41,37,1.0,1.0,True,Algeria,Midfielder,2702.0,True
 415,Weston McKennie,57,4592.0,53,52,1.0,1.0,True,USA,Midfielder,4961.0,True
-417,Alessandro Schöpf,10,777.0,10,10,1.0,1.0,True,Austria,Midfielder,2155.0,True
+417,Alessandro Schöpf,27,2035.0,27,27,1.0,1.0,True,Austria,Midfielder,2155.0,True
 421,Breel Embolo,40,2548.0,40,34,1.0,1.0,True,Switzerland,Attacker,3139.0,True
 427,Haji Wright,46,2774.0,45,44,1.0,1.0,True,USA,Attacker,2923.0,True
 429,Fernando Muslera,44,3966.0,43,41,1.0,1.0,True,Uruguay,Goalkeeper,4102.0,True
@@ -184,7 +184,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 2467,Lisandro Martínez,25,1898.0,25,19,1.0,1.0,True,Argentina,Defender,2534.0,True
 2468,Gonzalo Montiel,38,3003.0,36,33,1.0,1.0,True,Argentina,Defender,4694.0,True
 2472,Rodrigo de Paul,46,3823.0,43,40,1.0,1.0,True,Argentina,Midfielder,5168.0,True
-2481,Álvaro Montero,7,635.0,7,7,1.0,1.0,True,Colombia,Goalkeeper,4277.0,True
+2481,Álvaro Montero,21,1907.0,19,21,1.0,1.0,True,Colombia,Goalkeeper,4277.0,True
 2482,Camilo Vargas,40,3655.0,40,35,1.0,1.0,True,Colombia,Goalkeeper,4992.0,True
 2483,Deiver Machado,23,1495.0,22,22,1.0,1.0,True,Colombia,Defender,2026.0,True
 2484,Yerry Mina,29,2343.0,29,28,1.0,1.0,True,Colombia,Defender,2834.0,True
@@ -193,14 +193,14 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 2499,Junior Alonso,53,4681.0,50,48,1.0,1.0,True,Paraguay,Defender,8456.0,True
 2500,Fabián Balbuena,15,1084.0,15,14,1.0,0.9333333333333333,True,Paraguay,Defender,1843.0,True
 2502,Gustavo Gómez,72,6321.0,66,67,1.0,1.0,True,Paraguay,Defender,9607.0,True
-2507,Miguel Almirón,24,2025.0,20,20,1.0,1.0,True,Paraguay,Midfielder,5522.0,True
+2507,Miguel Almirón,31,2635.0,26,27,1.0,1.0,True,Paraguay,Midfielder,5522.0,True
 2514,Alejandro Romero,21,1374.0,17,20,1.0,1.0,True,Paraguay,Attacker,1595.0,False
 2522,Antonio Sanabria,30,1246.0,29,28,1.0,0.9333333333333333,True,Paraguay,Attacker,1912.0,True
 2530,Pedro Miguel,21,1777.0,21,18,1.0,1.0,True,Qatar,Defender,2728.0,True
 2532,Boualem Khoukhi,21,1869.0,21,18,1.0,1.0,True,Qatar,Defender,2697.0,True
 2533,Abdelaziz Hatem,11,521.0,11,10,1.0,1.0,True,Qatar,Midfielder,1047.0,False
 2535,Assim Madibo,10,797.0,10,8,1.0,1.0,True,Qatar,Midfielder,1161.0,False
-2539,Ahmed Fathi,9,668.0,9,6,1.0,1.0,True,Qatar,Midfielder,2174.0,True
+2539,Ahmed Fathi,13,1027.0,13,10,1.0,1.0,True,Qatar,Midfielder,2174.0,True
 2543,Almoez Ali,8,340.0,8,7,1.0,1.0,True,Qatar,Attacker,1920.0,True
 2544,Akram Afif,26,2306.0,26,23,1.0,1.0,True,Qatar,Attacker,3842.0,True
 2575,Jackson Porozo,39,3424.0,37,37,1.0,1.0,True,Ecuador,Defender,3784.0,True
@@ -223,7 +223,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 2722,Ayoub El Kaabi,46,3378.0,46,45,1.0,1.0,True,Morocco,Attacker,3622.0,True
 2724,Lucas Digne,49,3205.0,49,44,1.0,1.0,True,France,Defender,3617.0,True
 2741,Mathew Ryan,37,3241.0,37,36,1.0,0.972972972972973,True,Australia,Goalkeeper,4411.0,True
-2742,Miloš Degenek,4,281.0,4,4,1.0,1.0,True,Australia,Defender,2452.0,True
+2742,Miloš Degenek,22,1706.0,22,22,1.0,0.9545454545454546,True,Australia,Defender,2452.0,True
 2749,Jackson Irvine,30,1973.0,30,26,1.0,1.0,True,Australia,Midfielder,3334.0,True
 2755,Awer Mabil,31,1751.0,31,30,1.0,1.0,True,Australia,Midfielder,1791.0,False
 2763,Mario Pašalić,50,2897.0,50,46,1.0,0.98,True,Croatia,Midfielder,2983.0,True
@@ -234,19 +234,19 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 2860,Ken Sema,20,924.0,20,19,1.0,1.0,True,Sweden,Midfielder,1257.0,False
 2864,Alexander Isak,26,1402.0,26,22,1.0,1.0,True,Sweden,Attacker,1644.0,False
 2869,Edson Álvarez,27,1881.0,21,23,1.0,1.0,True,Mexico,Defender,2102.0,True
-2873,César Montes,17,1418.0,12,13,1.0,1.0,True,Mexico,Defender,3588.0,True
+2873,César Montes,35,2974.0,30,31,1.0,1.0,True,Mexico,Defender,3588.0,True
 2878,Jorge Sánchez,39,2952.0,36,35,1.0,0.9743589743589743,True,Mexico,Defender,3941.0,True
 2879,Roberto Alvarado,43,3401.0,37,38,1.0,1.0,True,Mexico,Attacker,4012.0,True
 2881,Jesús Gallardo,51,4190.0,45,46,1.0,1.0,True,Mexico,Defender,5035.0,True
 2887,Raúl Jiménez,53,3354.0,47,49,1.0,0.9811320754716981,True,Mexico,Attacker,3693.0,True
 2889,Alexis Vega,36,2393.0,28,35,1.0,1.0,True,Mexico,Attacker,2659.0,True
-2890,Hyeon-woo Jo,5,450.0,3,5,1.0,1.0,True,South Korea,Goalkeeper,4702.0,True
+2890,Hyeon-woo Jo,30,2700.0,27,29,0.9666666666666667,1.0,True,South Korea,Goalkeeper,4702.0,True
 2892,Seung-gyu Kim,33,2976.0,32,30,1.0,1.0,True,South Korea,Goalkeeper,3475.0,True
 2897,Min-jae Kim,40,2324.0,40,37,1.0,0.925,True,South Korea,Defender,3693.0,True
 2901,In-Beom Hwang,27,1656.0,27,24,1.0,1.0,True,South Korea,Midfielder,3073.0,True
 2906,Jae-sung Lee,41,2906.0,41,39,1.0,1.0,True,South Korea,Attacker,4217.0,True
 2909,Seung-Ho Paik,49,3739.0,49,46,1.0,0.9591836734693877,True,South Korea,Midfielder,4329.0,True
-2912,Moon-hwan Kim,3,251.0,3,2,1.0,1.0,True,South Korea,Midfielder,2198.0,True
+2912,Moon-hwan Kim,21,1543.0,21,20,1.0,1.0,True,South Korea,Midfielder,2198.0,True
 2920,Timothy Castagne,42,2870.0,42,36,1.0,0.9523809523809523,True,Belgium,Defender,3035.0,True
 2926,Youri Tielemans,40,3059.0,40,35,1.0,1.0,True,Belgium,Midfielder,3751.0,True
 2932,Jordan Pickford,46,4213.0,46,39,1.0,1.0,True,England,Goalkeeper,5413.0,True
@@ -269,7 +269,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 3428,Jordan Ayew,49,2692.0,49,45,1.0,0.9795918367346939,True,Ghana,Attacker,2952.0,True
 3608,Kwasi Sibo,31,2058.0,31,27,1.0,1.0,True,Ghana,Midfielder,2397.0,True
 4399,Hicham Boudaoui,39,2583.0,39,36,1.0,1.0,True,Algeria,Midfielder,2797.0,True
-4414,Oussama Benbot,3,274.0,3,2,1.0,1.0,True,Algeria,Goalkeeper,1014.0,False
+4414,Oussama Benbot,11,1014.0,11,10,1.0,1.0,True,Algeria,Goalkeeper,1014.0,False
 4561,Zineddine Belaid,11,740.0,11,9,1.0,1.0,True,Algeria,Defender,924.0,False
 5994,Jorge Carrascal,49,2743.0,49,49,1.0,1.0,True,Colombia,Midfielder,3100.0,True
 5996,Enzo Fernández,68,5532.0,60,62,1.0,1.0,True,Argentina,Midfielder,7468.0,True
@@ -283,14 +283,14 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 6503,Nahuel Molina,55,3041.0,54,49,1.0,0.9818181818181818,True,Argentina,Defender,4360.0,True
 6610,Marcos Senesi,40,3461.0,40,39,1.0,1.0,True,Argentina,Midfielder,3677.0,True
 6716,Alexis Mac Allister,63,4617.0,63,56,1.0,1.0,True,Argentina,Midfielder,5945.0,True
-6808,Jacob Italiano,10,821.0,10,8,1.0,1.0,True,Australia,Defender,2476.0,True
+6808,Jacob Italiano,26,2229.0,26,24,1.0,1.0,True,Australia,Defender,2476.0,True
 6865,Kosta Barbarouses,22,1340.0,22,22,1.0,1.0,True,New Zealand,Attacker,1664.0,False
 6870,Paul Izzo,26,2340.0,26,26,1.0,1.0,True,Australia,Goalkeeper,2703.0,True
 6904,Connor Metcalfe,32,1027.0,32,28,1.0,0.90625,True,Australia,Midfielder,2254.0,True
 6932,Callan Elliot,28,1774.0,28,27,1.0,0.8928571428571429,True,New Zealand,Defender,1834.0,True
 6934,Alex Rufer,23,2044.0,23,23,1.0,1.0,True,New Zealand,Midfielder,2486.0,True
-6935,Sarpreet Singh,7,365.0,7,4,1.0,1.0,True,New Zealand,Midfielder,2011.0,True
-6938,Ben Waine,7,433.0,7,7,1.0,1.0,True,New Zealand,Attacker,2078.0,True
+6935,Sarpreet Singh,20,1170.0,20,17,1.0,1.0,True,New Zealand,Midfielder,2011.0,True
+6938,Ben Waine,35,1779.0,35,35,1.0,0.9428571428571428,True,New Zealand,Attacker,2078.0,True
 7050,Aiden O'Neill,36,2978.0,33,32,1.0,1.0,True,Australia,Midfielder,4547.0,True
 7090,Michael Svoboda,30,2552.0,30,30,1.0,1.0,True,Austria,Defender,2613.0,True
 7197,Andrés Andrade,43,3881.0,39,40,1.0,1.0,True,Panama,Defender,3958.0,True
@@ -325,8 +325,8 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 14395,Kristijan Jakić,28,1841.0,28,28,1.0,1.0,True,Croatia,Midfielder,1860.0,True
 14701,Josip Šutalo,35,2653.0,35,31,1.0,1.0,True,Croatia,Defender,2742.0,True
 15286,Mousa Tamari,39,2706.0,39,36,1.0,1.0,True,Jordan,Midfielder,3584.0,True
-15304,Vozinha,5,480.0,5,1,1.0,1.0,True,Cape Verde Islands,Goalkeeper,1560.0,False
-15769,Frans Putros,2,125.0,2,1,1.0,1.0,True,Iraq,Defender,961.0,False
+15304,Vozinha,11,1020.0,11,7,1.0,1.0,True,Cape Verde Islands,Goalkeeper,1560.0,False
+15769,Frans Putros,7,549.0,7,6,1.0,1.0,True,Iraq,Defender,961.0,False
 16360,Alan Franco,62,5252.0,59,58,1.0,1.0,True,Ecuador,Defender,8477.0,True
 16367,Willian Pacho,56,4928.0,50,52,1.0,1.0,True,Ecuador,Defender,6579.0,True
 16369,Gonzalo Plata,62,3657.0,58,58,1.0,1.0,True,Ecuador,Attacker,5764.0,True
@@ -346,7 +346,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 18592,Iliman Ndiaye,42,3381.0,42,39,1.0,1.0,True,Senegal,Midfielder,3765.0,True
 18776,Çağlar Söyüncü,18,1087.0,18,17,1.0,1.0,True,Türkiye,Defender,1302.0,False
 18814,Issa Diop,23,1754.0,23,18,1.0,1.0,True,Morocco,Defender,2064.0,True
-18816,Arthur Masuaku,16,955.0,16,12,1.0,0.9375,True,Congo DR,Defender,1062.0,False
+18816,Arthur Masuaku,17,1062.0,17,13,1.0,0.9411764705882353,True,Congo DR,Defender,1062.0,False
 18830,Marko Arnautović,32,1848.0,32,28,1.0,1.0,True,Austria,Attacker,1986.0,True
 18846,Aaron Wan-Bissaka,34,2889.0,34,30,1.0,1.0,True,Congo DR,Defender,3249.0,True
 18861,Nathan Aké,37,1991.0,35,34,1.0,0.8648648648648649,True,Netherlands,Defender,2274.0,True
@@ -417,7 +417,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 24845,Julian Ryerson,51,3661.0,46,47,1.0,1.0,True,Norway,Defender,4416.0,True
 24866,Douglas Santos,29,2453.0,29,24,1.0,1.0,True,Brazil,Defender,2733.0,True
 24888,Hee-Chan Hwang,34,1873.0,34,31,1.0,1.0,True,South Korea,Attacker,2665.0,True
-25129,Dženis Burnić,6,230.0,6,4,1.0,1.0,True,Bosnia & Herzegovina,Midfielder,2366.0,True
+25129,Dženis Burnić,34,2118.0,34,32,1.0,1.0,True,Bosnia & Herzegovina,Midfielder,2366.0,True
 25158,David Raum,36,3030.0,36,34,1.0,1.0,True,Germany,Midfielder,3178.0,True
 25282,Gregor Kobel,58,5310.0,53,52,1.0,1.0,True,Switzerland,Goalkeeper,6210.0,True
 25287,Kevin Danso,40,2590.0,40,36,1.0,0.975,True,Austria,Defender,2696.0,True
@@ -442,7 +442,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 26475,Deniz Undav,50,3792.0,50,46,1.0,1.0,True,Germany,Attacker,3927.0,True
 28382,Haris Tabaković,36,2674.0,36,35,1.0,1.0,True,Bosnia & Herzegovina,Attacker,2806.0,True
 29704,Shoja Khalilzadeh,12,1075.0,12,9,1.0,1.0,True,Iran,Defender,1850.0,True
-29781,Mehdi Ghayedi,8,540.0,8,7,1.0,1.0,True,Iran,Attacker,1475.0,False
+29781,Mehdi Ghayedi,15,999.0,15,14,1.0,1.0,True,Iran,Attacker,1475.0,False
 30393,Alban Lafont,33,2963.0,33,33,1.0,1.0,True,Ivory Coast,Goalkeeper,3053.0,True
 30424,Roger Ibañez,40,3476.0,40,39,1.0,1.0,True,Brazil,Defender,3602.0,True
 30432,Marten de Roon,51,3928.0,51,50,1.0,1.0,True,Netherlands,Midfielder,3953.0,True
@@ -463,15 +463,15 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 33224,Daizen Maeda,50,3904.0,50,47,1.0,1.0,True,Japan,Attacker,4394.0,True
 33289,Koki Ogawa,32,1426.0,32,29,1.0,0.9375,True,Japan,Attacker,2004.0,True
 33321,Keito Nakamura,36,2801.0,36,32,1.0,1.0,True,Japan,Midfielder,3648.0,True
-33847,Jason Geria,3,118.0,3,1,1.0,1.0,True,Australia,Defender,2245.0,True
+33847,Jason Geria,8,450.0,7,6,1.0,1.0,True,Australia,Defender,2245.0,True
 33889,Kaishu Sano,51,4433.0,51,48,1.0,1.0,True,Japan,Midfielder,5049.0,True
-34168,Jin-gyu Kim,4,199.0,4,2,1.0,1.0,True,South Korea,Midfielder,2665.0,True
+34168,Jin-kyu Kim,25,1716.0,24,22,0.96,1.0,True,South Korea,Midfielder,2665.0,True
 34211,Gue-sung Cho,37,2009.0,37,35,1.0,0.972972972972973,True,South Korea,Attacker,2327.0,True
-34374,Bum-keun Song,2,180.0,2,2,1.0,1.0,True,South Korea,Goalkeeper,2475.0,True
+34374,Bum-keun Song,23,2070.0,22,22,0.9565217391304348,1.0,True,South Korea,Goalkeeper,2475.0,True
 34418,Tae-hyeon Kim,33,3066.0,30,34,1.0,1.0,True,South Korea,Defender,4204.0,True
-34431,Dong-gyeong Lee,4,289.0,3,4,1.0,1.0,True,South Korea,Attacker,2714.0,True
+34431,Dong-gyeong Lee,26,1950.0,25,25,0.9615384615384616,1.0,True,South Korea,Attacker,2714.0,True
 34710,Hyun-gyu Oh,46,3098.0,46,43,1.0,1.0,True,South Korea,Attacker,3676.0,True
-35532,Julián Quiñones,39,3167.0,35,34,1.0,1.0,True,Mexico,Midfielder,3625.0,True
+35532,Julián Quiñones,40,3255.0,36,35,1.0,1.0,True,Mexico,Midfielder,3625.0,True
 35533,Enner Valencia,38,2082.0,35,34,1.0,1.0,True,Ecuador,Attacker,3881.0,True
 35544,Johan Vásquez,48,4308.0,43,44,1.0,1.0,True,Mexico,Defender,4844.0,True
 35570,Stephen Eustaquio,33,1554.0,32,28,1.0,1.0,True,Canada,Midfielder,2087.0,True
@@ -497,7 +497,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 37175,Riechedly Bazoer,19,1185.0,19,18,1.0,0.9473684210526315,True,Curaçao,Defender,1230.0,False
 37272,Brandley Kuwas,38,2317.0,36,37,1.0,1.0,True,Curaçao,Attacker,2376.0,True
 37435,Deroy Duarte,37,2803.0,37,33,1.0,1.0,True,Cape Verde Islands,Midfielder,3100.0,True
-37436,Laros Duarte,7,406.0,7,3,1.0,1.0,True,Cape Verde Islands,Midfielder,4102.0,True
+37436,Laros Duarte,30,2298.0,30,26,1.0,1.0,True,Cape Verde Islands,Midfielder,4102.0,True
 37461,Kevin Felida,37,3213.0,37,37,1.0,1.0,True,Curaçao,Midfielder,3449.0,True
 37724,Crysencio Summerville,36,2808.0,36,32,1.0,1.0,True,Netherlands,Attacker,3252.0,True
 37892,Dennis Eckert Ayensa,35,1987.0,35,35,1.0,0.9714285714285714,True,Iran,Attacker,1987.0,True
@@ -521,13 +521,13 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 41608,Diney Borges,15,1380.0,15,11,1.0,1.0,True,Cape Verde Islands,Defender,1740.0,False
 41621,Matheus Nunes,54,4250.0,50,53,1.0,1.0,True,Portugal,Midfielder,4364.0,True
 41627,Kenji Gorré,26,1663.0,23,25,1.0,1.0,True,Curaçao,Attacker,2007.0,True
-41764,Márcio Rosa,3,270.0,3,3,1.0,1.0,True,Cape Verde Islands,Goalkeeper,1170.0,False
+41764,Márcio Rosa,13,1170.0,13,13,1.0,1.0,True,Cape Verde Islands,Goalkeeper,1170.0,False
 42012,Elias Achouri,39,2422.0,39,36,1.0,1.0,True,Tunisia,Midfielder,2586.0,True
 42021,Meshaal Aissa Barsham,20,1860.0,20,20,1.0,1.0,True,Qatar,Goalkeeper,3149.0,True
 42060,Sultan Al Brake,21,1693.0,21,19,1.0,1.0,True,Qatar,Defender,1728.0,False
 42075,Edmilson Junior,23,1945.0,23,20,1.0,1.0,True,Qatar,Attacker,2489.0,True
 42207,Mahmud Abunad,16,1440.0,16,13,1.0,1.0,True,Qatar,Goalkeeper,1665.0,False
-42261,Rebin Sulaka,5,168.0,5,3,1.0,0.8,True,Iraq,Defender,1886.0,True
+42261,Rebin Sulaka,17,1146.0,17,15,1.0,0.8823529411764706,True,Iraq,Defender,1886.0,True
 42286,Ahmed Al Ganehi,10,627.0,10,9,1.0,1.0,True,Qatar,Attacker,1262.0,False
 42288,Lucas Mendes,14,1021.0,14,13,1.0,0.9285714285714286,True,Qatar,Defender,2005.0,True
 42315,Mehdi Taremi,37,2006.0,37,34,1.0,0.9459459459459459,True,Iran,Attacker,2944.0,True
@@ -552,7 +552,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 44814,Lewis Ferguson,48,3219.0,48,45,1.0,1.0,True,Scotland,Midfielder,3602.0,True
 44865,John Souttar,34,2880.0,34,34,1.0,0.9705882352941176,True,Scotland,Defender,3879.0,True
 44871,Aaron Hickey,27,1123.0,27,26,1.0,0.9629629629629629,True,Scotland,Defender,1241.0,False
-45020,Duckens Nazon,9,458.0,6,8,1.0,1.0,True,Haiti,Attacker,1807.0,True
+45020,Duckens Nazon,14,606.0,11,13,1.0,1.0,True,Haiti,Attacker,1807.0,True
 45078,Ross Stewart,34,1360.0,34,33,1.0,1.0,True,Scotland,Attacker,1388.0,False
 45307,Lyndon Dykes,45,2106.0,45,43,1.0,1.0,True,Scotland,Attacker,2550.0,True
 46245,Ricardo Goss,29,2610.0,29,29,1.0,1.0,True,South Africa,Goalkeeper,2718.0,True
@@ -579,7 +579,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 47519,Pedro Porro,52,4374.0,52,47,1.0,1.0,True,Spain,Defender,4549.0,True
 47545,Gaël Kakuta,33,2127.0,33,33,1.0,1.0,True,Congo DR,Attacker,2254.0,True
 47582,Cucho Hernández,42,3175.0,42,40,1.0,1.0,True,Colombia,Attacker,3364.0,True
-47696,Alexander Bernhardsson,6,450.0,6,3,1.0,1.0,True,Sweden,Midfielder,1950.0,True
+47696,Alexander Bernhardsson,25,1717.0,25,22,1.0,1.0,True,Sweden,Midfielder,1950.0,True
 47903,Hjalmar Ekdal,21,1719.0,21,21,1.0,1.0,True,Sweden,Defender,1958.0,True
 47969,Gabriel Gudmundsson,39,3271.0,39,35,1.0,1.0,True,Sweden,Midfielder,3633.0,True
 47988,Carl Starfelt,32,2412.0,32,31,1.0,1.0,True,Sweden,Defender,2528.0,True
@@ -593,7 +593,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 48389,Noah Okafor,34,1920.0,34,33,1.0,0.9705882352941176,True,Switzerland,Attacker,2123.0,True
 48471,Ruben Vargas,30,1897.0,30,24,1.0,1.0,True,Switzerland,Attacker,2173.0,True
 48489,Miro Muheim,34,2739.0,34,31,1.0,1.0,True,Switzerland,Defender,2982.0,True
-48497,Cédric Itten,10,616.0,10,7,1.0,1.0,True,Switzerland,Attacker,3358.0,True
+48497,Cédric Itten,35,2789.0,35,32,1.0,1.0,True,Switzerland,Attacker,3358.0,True
 48555,Charles Pickel,27,797.0,27,25,1.0,0.9259259259259259,True,Congo DR,Midfielder,963.0,False
 48648,Dan Ndoye,43,2422.0,43,37,1.0,0.9767441860465116,True,Switzerland,Midfielder,2932.0,True
 49469,Mortadha Ben Ouanes,29,2307.0,29,28,1.0,1.0,True,Tunisia,Midfielder,2335.0,True
@@ -607,7 +607,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 50057,Eren Elmalı,40,2176.0,40,38,1.0,0.95,True,Türkiye,Midfielder,2268.0,True
 50077,Sergio Rochet,31,2805.0,30,30,1.0,1.0,True,Uruguay,Goalkeeper,3849.0,True
 50270,Ryan Mendes,37,2475.0,37,33,1.0,1.0,True,Cape Verde Islands,Midfielder,3983.0,True
-50272,Otabek Shukurov,8,499.0,8,5,1.0,1.0,True,Uzbekistan,Midfielder,2075.0,True
+50272,Otabek Shukurov,19,1191.0,19,16,1.0,1.0,True,Uzbekistan,Midfielder,2075.0,True
 50728,Matthew Freese,47,4257.0,39,43,1.0,1.0,True,USA,Goalkeeper,6119.0,True
 50735,Mark McKenzie,35,2871.0,34,34,1.0,1.0,True,USA,Defender,3388.0,True
 50739,Brenden Aaronson,47,2915.0,42,46,1.0,0.9787234042553191,True,USA,Attacker,3160.0,True
@@ -633,14 +633,14 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 51617,Darwin Núñez,26,1838.0,26,23,1.0,1.0,True,Uruguay,Attacker,2781.0,True
 51618,Brian Rodríguez,47,3010.0,45,44,1.0,1.0,True,Uruguay,Attacker,3985.0,True
 51776,Maximiliano Araújo,47,3756.0,47,44,1.0,1.0,True,Uruguay,Midfielder,5194.0,True
-53517,Dennis Hadžikadunić,5,318.0,5,4,1.0,1.0,True,Bosnia & Herzegovina,Defender,2247.0,True
+53517,Dennis Hadžikadunić,29,2247.0,29,28,1.0,1.0,True,Bosnia & Herzegovina,Defender,2247.0,True
 53535,Eldor Shomurodov,42,3532.0,42,39,1.0,1.0,True,Uzbekistan,Attacker,4520.0,True
 53886,Jalal Hassan,13,1155.0,13,11,1.0,1.0,True,Iraq,Goalkeeper,1834.0,True
-53900,Yazan Al-Arab,4,360.0,4,1,1.0,1.0,True,Jordan,Defender,4090.0,True
+53900,Yazan Alarab,27,2234.0,26,24,1.0,1.0,True,Jordan,Defender,4090.0,True
 53902,Ehsan Haddad,3,261.0,3,0,1.0,1.0,True,Jordan,Defender,1168.0,False
 57739,José Córdoba,37,2831.0,34,34,1.0,0.972972972972973,True,Panama,Defender,3236.0,True
 57807,Adalberto Carrasquilla,47,3566.0,46,47,1.0,1.0,True,Panama,Midfielder,5388.0,True
-57875,César Yanis,6,285.0,2,6,1.0,1.0,True,Panama,Midfielder,3133.0,True
+57875,César Yanis,30,2063.0,26,30,1.0,1.0,True,Panama,Midfielder,3133.0,True
 61837,Abdülkerim Bardakcı,46,3960.0,46,43,1.0,1.0,True,Türkiye,Defender,4365.0,True
 61895,Santiago Mele,21,1880.0,20,21,1.0,1.0,True,Uruguay,Goalkeeper,3889.0,True
 62490,Samet Akaydın,29,2571.0,29,29,1.0,1.0,True,Türkiye,Defender,2617.0,True
@@ -657,10 +657,10 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 66387,Pavel Šulc,45,2788.0,45,42,1.0,0.9555555555555556,True,Czech Republic,Attacker,2814.0,True
 66407,Ladislav Krejčí,37,3126.0,37,34,1.0,1.0,True,Czech Republic,Defender,3756.0,True
 67971,Marc Guéhi,60,5114.0,60,53,1.0,1.0,True,England,Defender,5364.0,True
-69196,Mahmoud Saber,7,342.0,7,5,1.0,0.8571428571428571,True,Egypt,Midfielder,2062.0,True
+69196,Mahmoud Saber,30,1972.0,30,28,1.0,0.9666666666666667,True,Egypt,Midfielder,2062.0,True
 69260,Roberto Lopes,39,3416.0,33,34,1.0,1.0,True,Cape Verde Islands,Defender,5703.0,True
 70078,Facundo Pellistri,15,872.0,15,15,1.0,1.0,True,Uruguay,Midfielder,2011.0,True
-70514,Armin Gigović,39,2525.0,39,37,1.0,1.0,True,Bosnia & Herzegovina,Midfielder,3117.0,True
+70514,Armin Gigović,40,2612.0,40,38,1.0,1.0,True,Bosnia & Herzegovina,Midfielder,3117.0,True
 70535,Ibrahim Adel,17,911.0,17,16,1.0,1.0,True,Egypt,Attacker,1016.0,False
 70670,Isidro Pitta,45,2885.0,43,44,1.0,1.0,True,Paraguay,Attacker,3940.0,True
 70732,José Canale,40,3494.0,40,36,1.0,1.0,True,Paraguay,Defender,3494.0,True
@@ -674,12 +674,12 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 73534,Utkir Yusupov,1,90.0,1,0,1.0,1.0,True,Uzbekistan,Goalkeeper,1080.0,False
 73868,Ricardo Pepi,38,1913.0,38,33,1.0,1.0,True,USA,Attacker,2082.0,True
 76867,Nihad Mujakić,27,2210.0,27,27,1.0,1.0,True,Bosnia & Herzegovina,Defender,2210.0,True
-77037,Jovo Lukić,3,164.0,3,1,1.0,1.0,True,Bosnia & Herzegovina,Attacker,2578.0,True
+77037,Jovo Lukić,34,2578.0,33,32,1.0,1.0,True,Bosnia & Herzegovina,Attacker,2578.0,True
 78494,Joel Waterman,28,2192.0,23,28,1.0,1.0,True,Canada,Defender,3791.0,True
 81224,Moisés Ramírez,28,2520.0,28,28,1.0,1.0,True,Ecuador,Goalkeeper,3294.0,True
 81573,Omar Marmoush,50,2371.0,47,45,1.0,0.94,True,Egypt,Midfielder,2892.0,True
 82090,Brandon Thomas-Asante,36,2042.0,36,34,1.0,0.9722222222222222,True,Ghana,Attacker,2190.0,True
-84087,Wilson Isidor,38,1462.0,38,35,1.0,0.9210526315789473,True,Haiti,Attacker,1613.0,False
+84087,Wilson Isidor,39,1540.0,39,36,1.0,0.9230769230769231,True,Haiti,Attacker,1613.0,False
 85041,Amine Gouiri,32,1955.0,32,28,1.0,1.0,True,Algeria,Attacker,2187.0,True
 87789,Johny Placide,33,2970.0,30,30,1.0,1.0,True,Haiti,Goalkeeper,3224.0,True
 89982,Shahriar Moghanlou,17,1188.0,17,14,1.0,1.0,True,Iran,Attacker,1308.0,False
@@ -688,17 +688,17 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 94333,Elijah Just,38,2963.0,38,35,1.0,1.0,True,New Zealand,Midfielder,3968.0,True
 94344,Nando Pijnaker,17,968.0,17,17,1.0,0.9411764705882353,True,New Zealand,Defender,3483.0,True
 94346,Tim Payne,17,1095.0,17,14,1.0,1.0,True,New Zealand,Defender,1698.0,False
-94360,Alex Paulsen,6,540.0,6,6,1.0,1.0,True,New Zealand,Goalkeeper,2441.0,True
+94360,Alex Paulsen,24,2160.0,24,24,1.0,1.0,True,New Zealand,Goalkeeper,2441.0,True
 94405,Francis De Vries,27,2049.0,27,25,1.0,1.0,True,New Zealand,Defender,2698.0,True
 94541,Joe Bell,29,2453.0,25,25,1.0,1.0,True,New Zealand,Midfielder,4331.0,True
 94562,Santiago Giménez,28,1308.0,22,24,1.0,1.0,True,Mexico,Attacker,1609.0,False
-95460,Alex Arce,9,391.0,9,7,1.0,1.0,True,Paraguay,Attacker,3335.0,True
+95460,Alex Arce,27,1603.0,26,25,1.0,1.0,True,Paraguay,Attacker,3335.0,True
 96512,Kevin Lenini,31,1584.0,33,29,1.0,0.9696969696969697,True,Cape Verde Islands,Midfielder,2730.0,True
 96615,Ismael Díaz,41,2842.0,35,39,1.0,1.0,True,Panama,Attacker,4829.0,True
 98936,Lyle Foster,32,1861.0,32,31,1.0,0.96875,True,South Africa,Attacker,2088.0,True
-99211,Jin-seob Park,4,218.0,4,2,1.0,1.0,True,South Korea,Midfielder,3210.0,True
+99211,Jin-seob Park,29,2422.0,28,25,1.0,1.0,True,South Korea,Midfielder,3210.0,True
 101814,Ronald Araújo,39,1731.0,39,39,1.0,0.9743589743589743,True,Uruguay,Defender,2593.0,True
-102538,Mo Abualnadi,1,72.0,1,0,1.0,1.0,True,Jordan,Defender,1108.0,False
+102538,Mo Abualnadi,6,457.0,6,5,1.0,1.0,True,Jordan,Defender,1108.0,False
 106485,Mauricio,66,3990.0,60,62,1.0,1.0,True,Paraguay,Midfielder,4982.0,True
 106851,Shuto Machino,35,1259.0,35,34,1.0,1.0,True,Japan,Attacker,1439.0,False
 108370,Martin Zlomislić,42,3794.0,42,42,1.0,1.0,True,Bosnia & Herzegovina,Goalkeeper,3884.0,True
@@ -707,7 +707,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 116117,Moisés Caicedo,61,5151.0,55,57,1.0,1.0,True,Ecuador,Midfielder,7234.0,True
 119853,Mory Diaw,33,2892.0,33,30,1.0,1.0,True,Senegal,Goalkeeper,3076.0,True
 123468,Marvin Keller,46,4140.0,46,46,1.0,1.0,True,Switzerland,Goalkeeper,4633.0,True
-123530,Mahmoud Al-Mardi,4,142.0,4,1,1.0,1.0,True,Jordan,Attacker,1107.0,False
+123530,Mahmoud Al-Mardi,6,291.0,6,3,1.0,1.0,True,Jordan,Attacker,1107.0,False
 125171,Josip Stanišić,47,3511.0,47,43,1.0,1.0,True,Croatia,Midfielder,3659.0,True
 126640,David Affengruber,38,3051.0,38,38,1.0,1.0,True,Austria,Defender,3065.0,True
 126642,Patrick Wimmer,28,1712.0,28,26,1.0,1.0,True,Austria,Midfielder,2105.0,True
@@ -715,7 +715,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 127227,Israel Reyes,46,3744.0,42,42,1.0,1.0,True,Mexico,Defender,5036.0,True
 127769,Gabriel Martinelli,59,2703.0,58,55,1.0,1.0,True,Brazil,Midfielder,3133.0,True
 127817,Piero Hincapié,48,3532.0,47,44,1.0,1.0,True,Ecuador,Midfielder,4703.0,True
-128007,Yannick Semedo,2,30.0,2,0,1.0,1.0,True,Cape Verde Islands,Midfielder,1059.0,False
+128007,Yannick Semedo,10,638.0,10,8,1.0,1.0,True,Cape Verde Islands,Midfielder,1059.0,False
 128384,Vitinha,62,5080.0,55,57,1.0,1.0,True,Portugal,Midfielder,5026.0,True
 128533,Jamie Leweling,51,3563.0,51,50,1.0,1.0,True,Germany,Attacker,3606.0,True
 128766,Louicius Don Deedson,20,753.0,17,17,1.0,0.95,True,Haiti,Midfielder,2887.0,True
@@ -728,7 +728,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 129678,Azzedine Ounahi,33,2428.0,33,27,1.0,1.0,True,Morocco,Midfielder,2956.0,True
 129718,Jude Bellingham,53,3782.0,47,46,1.0,1.0,True,England,Midfielder,3917.0,True
 133609,Pedri,50,3539.0,50,43,1.0,1.0,True,Spain,Midfielder,3719.0,True
-134217,Mohammad Mohebi,11,767.0,11,8,1.0,1.0,True,Iran,Midfielder,2269.0,True
+134217,Mohammad Mohebi,31,1864.0,31,28,1.0,1.0,True,Iran,Midfielder,2269.0,True
 134590,Oğuz Aydın,36,1175.0,36,35,1.0,0.9444444444444444,True,Türkiye,Attacker,1324.0,False
 134995,Nawaf Boushal,46,2715.0,42,44,1.0,1.0,True,Saudi Arabia,Defender,3958.0,True
 135059,Amine Ben Hmida,13,1103.0,13,10,1.0,1.0,True,Tunisia,Defender,1169.0,False
@@ -736,7 +736,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 135334,Santiago Bueno,34,3010.0,34,34,1.0,1.0,True,Uruguay,Defender,3480.0,True
 136503,Salah Zakaria,14,1295.0,14,14,1.0,1.0,True,Qatar,Goalkeeper,1405.0,False
 136723,Noni Madueke,53,2751.0,48,48,1.0,1.0,True,England,Midfielder,3739.0,True
-136880,Saleh Hardani,2,90.0,2,0,1.0,1.0,True,Iran,Defender,1078.0,False
+136880,Saleh Hardani,7,538.0,7,5,1.0,1.0,True,Iran,Defender,1078.0,False
 137210,Angelo Stiller,53,4303.0,53,52,1.0,1.0,True,Germany,Midfielder,4518.0,True
 137223,Jerome Opoku,37,3154.0,37,34,1.0,1.0,True,Ghana,Defender,3330.0,True
 137303,Evann Guessand,41,2106.0,41,39,1.0,1.0,True,Ivory Coast,Attacker,2285.0,True
@@ -747,11 +747,11 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 138835,Folarin Balogun,47,3565.0,47,43,1.0,1.0,True,USA,Attacker,4089.0,True
 138908,Elliot Anderson,57,4793.0,57,50,1.0,1.0,True,England,Midfielder,5633.0,True
 138935,Carney Chukwuemeka,41,1346.0,41,38,1.0,1.0,True,Austria,Midfielder,1440.0,False
-140607,Yazeed Abu Laila,3,270.0,3,0,1.0,1.0,True,Jordan,Goalkeeper,1639.0,False
-140609,Noor Al-Rawabdeh,3,270.0,3,0,1.0,1.0,True,Jordan,Midfielder,1279.0,False
-142016,João Paulo,4,283.0,4,2,1.0,1.0,True,Cape Verde Islands,Defender,2909.0,True
+140607,Yazeed Abu Laila,4,360.0,4,1,1.0,1.0,True,Jordan,Goalkeeper,1639.0,False
+140609,Noor Al-Rawabdeh,7,585.0,7,4,1.0,1.0,True,Jordan,Midfielder,1279.0,False
+142016,João Paulo,38,2909.0,38,36,1.0,1.0,True,Cape Verde Islands,Defender,2909.0,True
 142959,Kerem Aktürkoğlu,51,3443.0,47,49,1.0,1.0,True,Türkiye,Attacker,3657.0,True
-144709,Joseph Anang,7,646.0,7,7,1.0,1.0,True,Ghana,Goalkeeper,5179.0,True
+144709,Joseph Anang,39,3531.0,33,38,0.9743589743589743,1.0,True,Ghana,Goalkeeper,5179.0,True
 145465,Hussein Ali,22,1002.0,22,20,1.0,0.9545454545454546,True,Iraq,Defender,1618.0,False
 146772,Youssef Belammari,12,910.0,12,12,1.0,1.0,True,Morocco,Defender,1265.0,False
 147812,Ayman Yahya,37,1774.0,34,37,1.0,1.0,True,Saudi Arabia,Midfielder,2331.0,True
@@ -783,7 +783,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 162037,Malik Tillman,53,3268.0,47,48,1.0,0.9811320754716981,True,USA,Midfielder,3771.0,True
 162141,Koni De Winter,29,2054.0,29,29,1.0,0.9655172413793104,True,Belgium,Defender,2537.0,True
 162194,Lukáš Červ,47,3966.0,47,45,1.0,1.0,True,Czech Republic,Midfielder,3966.0,True
-162199,ArJany Martha,6,262.0,6,6,1.0,1.0,True,Curaçao,Midfielder,2997.0,True
+162199,ArJany Martha,47,2952.0,47,47,1.0,1.0,True,Curaçao,Midfielder,2997.0,True
 162451,Anass Salah-Eddine,33,2066.0,33,29,1.0,1.0,True,Morocco,Defender,2266.0,True
 162511,Senne Lammens,38,3349.0,38,37,1.0,1.0,True,Belgium,Goalkeeper,3799.0,True
 162707,Elye Wahi,36,1851.0,36,33,1.0,1.0,True,Ivory Coast,Attacker,2231.0,True
@@ -792,7 +792,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 162891,Juan Manuel Sanabria,34,2928.0,33,31,1.0,1.0,True,Uruguay,Defender,3122.0,True
 162964,Robin Hranáč,34,2693.0,34,31,1.0,1.0,True,Czech Republic,Defender,2783.0,True
 163032,Fabian Rieder,41,2847.0,41,36,1.0,0.975609756097561,True,Switzerland,Midfielder,3577.0,True
-163041,Bradley Cross,6,338.0,6,6,1.0,1.0,True,South Africa,Defender,1873.0,True
+163041,Bradley Cross,24,1843.0,24,24,1.0,1.0,True,South Africa,Defender,1873.0,True
 163189,Malick Thiaw,56,4688.0,56,54,1.0,1.0,True,Germany,Defender,4724.0,True
 163200,CJ dos Santos,17,1495.0,13,17,1.0,1.0,True,Cape Verde Islands,Goalkeeper,3025.0,True
 163220,Jeremy Antonisse,38,2479.0,35,36,1.0,1.0,True,Curaçao,Attacker,2943.0,True
@@ -848,7 +848,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 213980,Nizar Mahmoud Al-Rashdan,17,1460.0,17,14,1.0,1.0,True,Jordan,Midfielder,2525.0,True
 214463,İsmail Yüksek,45,2742.0,45,43,1.0,1.0,True,Türkiye,Midfielder,2772.0,True
 221605,Florian Wiegele,27,2446.0,27,27,1.0,1.0,True,Austria,Goalkeeper,2495.0,True
-226765,Elliot Stroud,20,1601.0,18,16,1.0,1.0,True,Sweden,Defender,3362.0,True
+226765,Elliot Stroud,28,2231.0,26,23,1.0,1.0,True,Sweden,Defender,3362.0,True
 237050,Ji-sung Eom,50,2758.0,50,48,1.0,1.0,True,South Korea,Attacker,2942.0,True
 237078,Pedro Vite,53,4239.0,47,49,1.0,1.0,True,Ecuador,Midfielder,6797.0,True
 237129,Pape Matar Sarr,40,2367.0,40,38,1.0,0.975,True,Senegal,Midfielder,2461.0,True
@@ -860,7 +860,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 263676,Abbosbek Fayzullaev,25,1388.0,25,22,1.0,0.96,True,Uzbekistan,Attacker,2361.0,True
 264094,Benjamin Tahirović,35,1774.0,35,31,1.0,1.0,True,Bosnia & Herzegovina,Midfielder,1867.0,True
 265444,Sondre Klingen Langås,26,2082.0,26,25,1.0,1.0,True,Norway,Defender,2707.0,True
-265448,Marko Farji,15,928.0,14,13,1.0,1.0,True,Iraq,Midfielder,2944.0,True
+265448,Marko Farji,23,1595.0,22,21,1.0,1.0,True,Iraq,Midfielder,2944.0,True
 265556,Telmo Arcanjo,31,1314.0,31,29,1.0,1.0,True,Cape Verde Islands,Midfielder,1574.0,False
 265595,Gonçalo Inácio,44,3802.0,44,44,1.0,1.0,True,Portugal,Defender,3935.0,True
 265782,David Möller Wolfe,31,1770.0,31,26,1.0,0.9032258064516129,True,Norway,Defender,2408.0,True
@@ -899,7 +899,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 284072,Ahmadou Bamba Dieng,26,1446.0,26,25,1.0,1.0,True,Senegal,Attacker,1470.0,False
 284295,Zidane Iqbal,25,1203.0,25,22,1.0,1.0,True,Iraq,Midfielder,1550.0,False
 284322,Kobbie Mainoo,30,1822.0,30,30,1.0,0.9333333333333333,True,England,Midfielder,2098.0,True
-284554,Owen Goodman,5,450.0,5,5,1.0,1.0,True,Canada,Goalkeeper,3011.0,True
+284554,Owen Goodman,34,3011.0,34,34,1.0,1.0,True,Canada,Goalkeeper,3011.0,True
 284869,Toni Fruk,40,2904.0,40,40,1.0,1.0,True,Croatia,Midfielder,2904.0,True
 289592,Kevin Castaño,29,1759.0,27,27,1.0,1.0,True,Colombia,Midfielder,4144.0,True
 290212,Denis Višinský,39,2186.0,39,38,1.0,0.9743589743589743,True,Czech Republic,Midfielder,2313.0,True
@@ -907,7 +907,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 291713,Armando González,38,2574.0,38,37,1.0,1.0,True,Mexico,Attacker,2855.0,True
 291964,Arda Güler,60,3954.0,54,57,1.0,1.0,True,Türkiye,Attacker,4225.0,True
 292396,Azarias Londoño,41,2552.0,37,36,1.0,1.0,True,Panama,Midfielder,3832.0,True
-292924,Ahmed Nadhir Benbouali,8,621.0,8,7,1.0,1.0,True,Algeria,Attacker,1327.0,False
+292924,Ahmed Nadhir Benbouali,16,1285.0,16,15,1.0,1.0,True,Algeria,Attacker,1327.0,False
 294824,Nathan-Dylan Saliba,42,2747.0,39,39,1.0,1.0,True,Canada,Midfielder,4541.0,True
 295026,Martin Baturina,38,2182.0,38,34,1.0,0.9736842105263158,True,Croatia,Attacker,4021.0,True
 295394,Munaf Younus,9,734.0,9,8,1.0,1.0,True,Iraq,Defender,1170.0,False
@@ -923,15 +923,15 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 303467,Abdul Fatawu Issahaku,48,3855.0,48,44,1.0,1.0,True,Ghana,Midfielder,3994.0,True
 304228,Zeno Debast,22,1451.0,22,22,1.0,1.0,True,Belgium,Defender,1531.0,False
 304782,Tomoki Hayakawa,36,3336.0,33,37,1.0,1.0,True,Japan,Goalkeeper,5324.0,True
-304951,Gi-Hyuk Lee,8,613.0,8,5,1.0,1.0,True,South Korea,Defender,2538.0,True
+304951,Gi-Hyuk Lee,27,2009.0,26,24,1.0,1.0,True,South Korea,Defender,2538.0,True
 304958,Yang Hyun-Jun,41,2664.0,41,40,1.0,1.0,True,South Korea,Attacker,3725.0,True
-305832,Matías Galarza,24,1546.0,24,20,1.0,1.0,True,Paraguay,Midfielder,3372.0,True
-306380,Musab Al Juwayr,40,2787.0,35,37,1.0,1.0,True,Saudi Arabia,Attacker,3922.0,True
+305832,Matías Galarza,28,1842.0,28,24,1.0,1.0,True,Paraguay,Midfielder,3372.0,True
+306380,Musab Al Juwayr,41,2868.0,36,38,1.0,1.0,True,Saudi Arabia,Attacker,3922.0,True
 306940,Yaimar Medina,39,2164.0,39,38,1.0,1.0,True,Ecuador,Midfielder,2397.0,True
 307123,Nico O'Reilly,62,4610.0,60,55,1.0,0.9838709677419355,True,England,Defender,4785.0,True
 308689,Sidny Lopes Cabral,29,2068.0,29,26,1.0,1.0,True,Cape Verde Islands,Defender,3799.0,True
-309182,Gilson Tavares,9,397.0,9,7,1.0,0.8888888888888888,True,Cape Verde Islands,Attacker,1667.0,False
-309763,Livano Comenencia,20,1511.0,17,17,1.0,1.0,True,Curaçao,Midfielder,5109.0,True
+309182,Benchimol,24,1260.0,24,22,1.0,0.875,True,Cape Verde Islands,Attacker,1667.0,False
+309763,Livano Comenencia,36,2406.0,33,33,1.0,1.0,True,Curaçao,Midfielder,5109.0,True
 310785,Mohannad Abu Taha,3,265.0,3,0,1.0,1.0,True,Jordan,Midfielder,1128.0,False
 310835,Abdallah Nasib,8,741.0,8,5,1.0,1.0,True,Jordan,Defender,1965.0,True
 311543,Nilson Angulo,41,3105.0,40,37,1.0,1.0,True,Ecuador,Midfielder,3509.0,True
@@ -940,7 +940,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 313353,Promise David,38,2034.0,35,34,1.0,0.9736842105263158,True,Canada,Attacker,2156.0,True
 313383,Obed Vargas,36,2581.0,29,33,1.0,1.0,True,Mexico,Midfielder,4641.0,True
 313937,Antoine Mendy,41,3308.0,41,41,1.0,1.0,True,Senegal,Defender,3582.0,True
-314377,Samed Baždar,9,328.0,9,8,1.0,1.0,True,Bosnia & Herzegovina,Attacker,942.0,False
+314377,Samed Baždar,26,816.0,26,25,1.0,0.9615384615384616,True,Bosnia & Herzegovina,Attacker,942.0,False
 314509,Matthieu Epolo,29,2610.0,29,29,1.0,1.0,True,Congo DR,Goalkeeper,2610.0,True
 314511,Antonio Nusa,41,2645.0,41,35,1.0,1.0,True,Norway,Midfielder,2889.0,True
 319572,Valentín Barco,44,3378.0,44,43,1.0,1.0,True,Argentina,Midfielder,3468.0,True
@@ -956,13 +956,13 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 327895,Paul Wanner,36,2499.0,36,32,1.0,1.0,True,Austria,Midfielder,2835.0,True
 328033,Aleksandar Pavlović,53,3681.0,48,49,1.0,1.0,True,Germany,Midfielder,3806.0,True
 328046,Ismael Koné,40,3090.0,38,38,1.0,1.0,True,Canada,Midfielder,3597.0,True
-328148,Edgardo Fariña,9,477.0,6,9,1.0,1.0,True,Panama,Defender,1227.0,False
+328148,Edgardo Fariña,17,1127.0,14,17,1.0,1.0,True,Panama,Defender,1227.0,False
 329163,Adil Boulbina,23,1507.0,23,21,1.0,0.9565217391304348,True,Algeria,Attacker,1347.0,False
 329409,Esmir Bajraktarević,41,1704.0,41,37,1.0,0.975609756097561,True,Bosnia & Herzegovina,Midfielder,1704.0,False
-330174,Tholo Thabang Matuludi,8,720.0,8,8,1.0,1.0,True,South Africa,Defender,2074.0,True
+330174,Tholo Thabang Matuludi,23,1950.0,23,23,1.0,1.0,True,South Africa,Defender,2074.0,True
 332056,Wagner Pina,35,2816.0,35,34,1.0,1.0,True,Cape Verde Islands,Defender,5102.0,True
 334429,Oumar Diakité,32,1585.0,32,30,1.0,0.96875,True,Ivory Coast,Midfielder,1829.0,True
-334915,Farès Ghedjemis,4,263.0,4,3,1.0,0.75,True,Algeria,Attacker,3099.0,True
+334915,Farès Ghedjemis,39,3099.0,39,38,1.0,0.9743589743589743,True,Algeria,Attacker,3099.0,True
 335051,João Neves,50,3615.0,43,45,1.0,1.0,True,Portugal,Midfielder,3725.0,True
 335056,Diego Moreira,43,2992.0,43,42,1.0,1.0,True,Belgium,Attacker,5600.0,True
 336657,Warren Zaïre-Emery,62,4439.0,55,61,1.0,1.0,True,France,Midfielder,4646.0,True
@@ -1011,7 +1011,7 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 369544,Gessime Yassine,36,1785.0,36,33,1.0,0.9722222222222222,True,Morocco,Attacker,2392.0,True
 374058,Lamine Camara,42,2949.0,42,38,1.0,1.0,True,Senegal,Midfielder,3285.0,True
 375598,Ngal'ayel Mukau,51,2821.0,51,47,1.0,1.0,True,Congo DR,Midfielder,3026.0,True
-375608,Moutaz Neffati,6,534.0,5,6,1.0,1.0,True,Tunisia,Defender,2649.0,True
+375608,Moutaz Neffati,21,1809.0,18,21,1.0,1.0,True,Tunisia,Defender,2649.0,True
 375930,Keisuke Goto,39,2898.0,39,38,1.0,1.0,True,Japan,Attacker,3000.0,True
 375974,Joaquin Seys,53,4020.0,53,52,1.0,1.0,True,Belgium,Defender,4090.0,True
 377122,Endrick,28,1841.0,28,24,1.0,0.9642857142857143,True,Brazil,Attacker,2219.0,True
@@ -1030,8 +1030,8 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 395559,Kerim Alajbegović,43,2637.0,43,39,1.0,1.0,True,Bosnia & Herzegovina,Midfielder,2988.0,True
 396623,Pau Cubarsí,55,4615.0,55,48,1.0,1.0,True,Spain,Defender,4947.0,True
 400948,Assane Diao,21,1172.0,21,20,1.0,1.0,True,Senegal,Attacker,1773.0,False
-403087,Mohammed Abu Al-Shamat,33,2560.0,33,30,1.0,1.0,True,Saudi Arabia,Midfielder,2694.0,True
-404172,Kojo Peprah Oppong,46,3609.0,45,44,1.0,1.0,True,Ghana,Defender,4957.0,True
+403087,Mohammed Abu Al-Shamat,34,2629.0,34,31,1.0,1.0,True,Saudi Arabia,Midfielder,2694.0,True
+404172,Kojo Peprah Oppong,49,3861.0,46,47,1.0,1.0,True,Ghana,Defender,4957.0,True
 405957,Lachlan Bayliss,27,1850.0,27,27,1.0,1.0,True,New Zealand,Midfielder,1861.0,True
 406244,Johan Manzambi,48,3554.0,48,44,1.0,1.0,True,Switzerland,Attacker,4131.0,True
 406303,Kendry Páez,39,1340.0,38,38,1.0,0.9487179487179487,True,Ecuador,Attacker,3859.0,True
@@ -1041,10 +1041,10 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 409303,El Hadji Malick Diouf,42,3496.0,42,39,1.0,1.0,True,Senegal,Defender,3753.0,True
 409670,Arjan Malić,26,1557.0,26,25,1.0,1.0,True,Bosnia & Herzegovina,Defender,1761.0,False
 410016,Prince Kwabena Adu,43,2215.0,43,40,1.0,1.0,True,Ghana,Midfielder,2503.0,True
-411800,Christopher Baah,31,2610.0,31,31,1.0,1.0,True,Ghana,Attacker,2823.0,True
+411800,Christopher Baah,32,2679.0,32,32,1.0,1.0,True,Ghana,Attacker,2823.0,True
 414149,Relebohile Mofokeng,32,2398.0,32,29,1.0,1.0,True,South Africa,Midfielder,2718.0,True
 415431,Samir El Mourabet,53,3332.0,53,48,1.0,1.0,True,Morocco,Midfielder,3585.0,True
-416901,Niko Sigur,14,959.0,10,11,1.0,1.0,True,Canada,Midfielder,3681.0,True
+416901,Niko Sigur,36,2698.0,32,33,1.0,1.0,True,Canada,Midfielder,3681.0,True
 422572,Kento Shiogai,28,891.0,28,27,1.0,0.9285714285714286,True,Japan,Attacker,921.0,False
 430078,Samukelo Kabini,23,1947.0,22,22,1.0,1.0,True,South Africa,Defender,2624.0,True
 430835,Tyler Bindon,29,2171.0,29,26,1.0,1.0,True,New Zealand,Defender,2840.0,True
@@ -1060,4 +1060,4 @@ player_id,player_name,detailed_fixtures,detailed_minutes,current_window_fixtures
 513776,Yan Diomande,45,3400.0,45,41,1.0,1.0,True,Ivory Coast,Midfielder,3467.0,True
 535046,Ayoube Amaimouni-Echghouyab,29,1502.0,29,27,1.0,0.896551724137931,True,Morocco,Midfielder,1574.0,False
 542644,Ali Jasim,20,1476.0,20,18,1.0,1.0,True,Iraq,Attacker,1566.0,False
-550371,Tariq Alaa,3,232.0,3,3,1.0,1.0,True,Egypt,Defender,980.0,False
+550371,Tarek Alaa,13,938.0,13,13,1.0,1.0,True,Egypt,Defender,980.0,False

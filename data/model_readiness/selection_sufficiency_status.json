@@ -3,28 +3,28 @@
   "coverage_definition": "exact_window_known_minutes_v2",
   "eligibility_definition": ">=900 exact-window detailed minutes",
   "screening_interval": "90% ability interval; final estimates retain 95% intervals",
-  "eligible_candidates": 972,
-  "fully_covered_both_windows": 940,
-  "unresolved_players": 27,
-  "priority_player_fixture_pairs": 515,
-  "priority_unique_fixtures": 181,
+  "eligible_candidates": 1019,
+  "fully_covered_both_windows": 978,
+  "unresolved_players": 41,
+  "priority_player_fixture_pairs": 784,
+  "priority_unique_fixtures": 291,
   "roles": [
     {
       "role": "GK",
-      "eligible_candidates": 94,
-      "stable_candidates": 94,
+      "eligible_candidates": 104,
+      "stable_candidates": 104,
       "required_pool_size": 30,
-      "covered_candidates": 92,
-      "unresolved_challengers": 2,
+      "covered_candidates": 98,
+      "unresolved_challengers": 6,
       "role_gate_passed": false
     },
     {
       "role": "RB",
-      "eligible_candidates": 238,
-      "stable_candidates": 216,
+      "eligible_candidates": 255,
+      "stable_candidates": 233,
       "required_pool_size": 30,
-      "covered_candidates": 209,
-      "unresolved_challengers": 8,
+      "covered_candidates": 222,
+      "unresolved_challengers": 12,
       "role_gate_passed": false
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "role": "LB",
-      "eligible_candidates": 42,
+      "eligible_candidates": 41,
       "stable_candidates": 30,
       "required_pool_size": 30,
       "covered_candidates": 30,
@@ -65,7 +65,7 @@
     },
     {
       "role": "CM",
-      "eligible_candidates": 109,
+      "eligible_candidates": 107,
       "stable_candidates": 62,
       "required_pool_size": 30,
       "covered_candidates": 61,
@@ -74,20 +74,20 @@
     },
     {
       "role": "AM",
-      "eligible_candidates": 143,
-      "stable_candidates": 116,
+      "eligible_candidates": 155,
+      "stable_candidates": 126,
       "required_pool_size": 30,
-      "covered_candidates": 108,
-      "unresolved_challengers": 8,
+      "covered_candidates": 115,
+      "unresolved_challengers": 11,
       "role_gate_passed": false
     },
     {
       "role": "RW",
-      "eligible_candidates": 239,
-      "stable_candidates": 207,
+      "eligible_candidates": 250,
+      "stable_candidates": 218,
       "required_pool_size": 30,
-      "covered_candidates": 199,
-      "unresolved_challengers": 8,
+      "covered_candidates": 207,
+      "unresolved_challengers": 11,
       "role_gate_passed": false
     },
     {

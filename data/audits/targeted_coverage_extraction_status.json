@@ -1,5 +1,18 @@
 {
-  "status": "no_unprocessed_or_requeryable_priority_fixtures",
+  "status": "batched_targeted_extraction_completed",
+  "bundle_size": 20,
+  "priority_fixture_candidates": 110,
+  "detail_requery_candidates": 110,
+  "fixtures_requested_this_run": 110,
+  "fixtures_returned_this_run": 110,
+  "fixtures_completed_this_run": 110,
+  "player_rows": 0,
+  "lineup_rows": 148,
+  "event_rows": 66,
   "network_calls": 0,
-  "max_requery_attempts": 2
+  "daily_limit_reported": 7500,
+  "quota_remaining_reported": 7208,
+  "quota_stopped": false,
+  "max_requery_attempts": 2,
+  "rankings_allowed": false
 }
