@@ -1,0 +1,100 @@
+name: Blind Position Review Packet
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/scientific/build_blind_position_review_packet.py
+      - scripts/scientific/evaluate_blind_position_review.py
+      - POSITION_ONTOLOGY_CODEBOOK_ES.md
+      - data/audits/position_ontology_v2/audited_player_roles.csv
+      - .github/workflows/blind-position-review-packet.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blind-position-review-packet
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONPATH: .
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Validate sources
+        run: |
+          python -m py_compile scripts/scientific/build_blind_position_review_packet.py
+          python -m py_compile scripts/scientific/evaluate_blind_position_review.py
+
+      - name: Generate blinded packet
+        run: python scripts/scientific/build_blind_position_review_packet.py
+
+      - name: Record waiting-state evaluation
+        run: python scripts/scientific/evaluate_blind_position_review.py
+
+      - name: Verify scientific protections
+        run: |
+          test -f data/audits/position_ontology_v2/blind_review/reviewer_a_form.csv
+          test -f data/audits/position_ontology_v2/blind_review/reviewer_b_form.csv
+          test -f data/audits/position_ontology_v2/blind_review/answer_key_do_not_share_with_reviewers.csv
+          test ! -f data/audits/position_ontology_v2/blind_review/reviewer_a_completed.csv
+          test ! -f data/audits/position_ontology_v2/blind_review/reviewer_b_completed.csv
+          if git diff --name-only | grep -E '^data/simulations/identified_set_v1/'; then
+            echo 'Frozen simulation changed unexpectedly.' >&2
+            exit 1
+          fi
+
+      - name: Upload review package
+        uses: actions/upload-artifact@v4
+        with:
+          name: blind-position-review-packet-${{ github.run_id }}
+          path: |
+            data/audits/position_ontology_v2/blind_review/reviewer_a_form.csv
+            data/audits/position_ontology_v2/blind_review/reviewer_b_form.csv
+            data/audits/position_ontology_v2/blind_review/REVIEW_INSTRUCTIONS_ES.md
+            data/audits/position_ontology_v2/blind_review/packet_manifest.json
+            POSITION_ONTOLOGY_CODEBOOK_ES.md
+          retention-days: 90
+
+      - name: Publish packet evidence
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f data/audits/position_ontology_v2/blind_review/
+          if git diff --cached --quiet; then
+            echo 'No packet changes to publish.'
+            exit 0
+          fi
+          git commit -m "science: publish blind position review packet"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase -X theirs origin/main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 4))
+          done
+          exit 1
