@@ -1,0 +1,7 @@
+role,player_id,player_name,world_cup_team,covered,provider_structural_missingness_confirmed
+AM,6005,J. Quintero,Colombia,True,False
+AM,113580,W. Semedo,Cape Verde Islands,False,True
+GK,182718,J. Garcia,Spain,True,False
+GK,269349,L. Hornicek,Czech Republic,True,False
+RB,25158,D. Raum,Germany,True,False
+RB,271539,J. Hadjam,Algeria,True,False

@@ -1,0 +1,9 @@
+role,player_id,player_name,world_cup_team,covered,provider_structural_missingness_confirmed
+CM,19617,M. Olise,France,True,False
+DM,44,Rodri,Spain,True,False
+LB,263482,N. Mendes,Portugal,True,False
+LCB,624,N. Otamendi,Argentina,True,False
+LW,909,M. Rashford,England,True,False
+RCB,69,B. Mechele,Belgium,True,False
+RW,154,L. Messi,Argentina,True,False
+ST,153,O. Dembele,France,True,False

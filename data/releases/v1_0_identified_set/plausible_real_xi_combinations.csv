@@ -1,0 +1,89 @@
+combination_id,role,player_id,player_name,world_cup_team,covered,provider_structural_missingness_confirmed
+real_xi_set_01,GK,182718,J. Garcia,Spain,True,False
+real_xi_set_01,RB,25158,D. Raum,Germany,True,False
+real_xi_set_01,RCB,69,B. Mechele,Belgium,True,False
+real_xi_set_01,LCB,624,N. Otamendi,Argentina,True,False
+real_xi_set_01,LB,263482,N. Mendes,Portugal,True,False
+real_xi_set_01,DM,44,Rodri,Spain,True,False
+real_xi_set_01,CM,19617,M. Olise,France,True,False
+real_xi_set_01,AM,6005,J. Quintero,Colombia,True,False
+real_xi_set_01,RW,154,L. Messi,Argentina,True,False
+real_xi_set_01,LW,909,M. Rashford,England,True,False
+real_xi_set_01,ST,153,O. Dembele,France,True,False
+real_xi_set_02,GK,182718,J. Garcia,Spain,True,False
+real_xi_set_02,RB,25158,D. Raum,Germany,True,False
+real_xi_set_02,RCB,69,B. Mechele,Belgium,True,False
+real_xi_set_02,LCB,624,N. Otamendi,Argentina,True,False
+real_xi_set_02,LB,263482,N. Mendes,Portugal,True,False
+real_xi_set_02,DM,44,Rodri,Spain,True,False
+real_xi_set_02,CM,19617,M. Olise,France,True,False
+real_xi_set_02,AM,113580,W. Semedo,Cape Verde Islands,False,True
+real_xi_set_02,RW,154,L. Messi,Argentina,True,False
+real_xi_set_02,LW,909,M. Rashford,England,True,False
+real_xi_set_02,ST,153,O. Dembele,France,True,False
+real_xi_set_03,GK,182718,J. Garcia,Spain,True,False
+real_xi_set_03,RB,271539,J. Hadjam,Algeria,True,False
+real_xi_set_03,RCB,69,B. Mechele,Belgium,True,False
+real_xi_set_03,LCB,624,N. Otamendi,Argentina,True,False
+real_xi_set_03,LB,263482,N. Mendes,Portugal,True,False
+real_xi_set_03,DM,44,Rodri,Spain,True,False
+real_xi_set_03,CM,19617,M. Olise,France,True,False
+real_xi_set_03,AM,6005,J. Quintero,Colombia,True,False
+real_xi_set_03,RW,154,L. Messi,Argentina,True,False
+real_xi_set_03,LW,909,M. Rashford,England,True,False
+real_xi_set_03,ST,153,O. Dembele,France,True,False
+real_xi_set_04,GK,182718,J. Garcia,Spain,True,False
+real_xi_set_04,RB,271539,J. Hadjam,Algeria,True,False
+real_xi_set_04,RCB,69,B. Mechele,Belgium,True,False
+real_xi_set_04,LCB,624,N. Otamendi,Argentina,True,False
+real_xi_set_04,LB,263482,N. Mendes,Portugal,True,False
+real_xi_set_04,DM,44,Rodri,Spain,True,False
+real_xi_set_04,CM,19617,M. Olise,France,True,False
+real_xi_set_04,AM,113580,W. Semedo,Cape Verde Islands,False,True
+real_xi_set_04,RW,154,L. Messi,Argentina,True,False
+real_xi_set_04,LW,909,M. Rashford,England,True,False
+real_xi_set_04,ST,153,O. Dembele,France,True,False
+real_xi_set_05,GK,269349,L. Hornicek,Czech Republic,True,False
+real_xi_set_05,RB,25158,D. Raum,Germany,True,False
+real_xi_set_05,RCB,69,B. Mechele,Belgium,True,False
+real_xi_set_05,LCB,624,N. Otamendi,Argentina,True,False
+real_xi_set_05,LB,263482,N. Mendes,Portugal,True,False
+real_xi_set_05,DM,44,Rodri,Spain,True,False
+real_xi_set_05,CM,19617,M. Olise,France,True,False
+real_xi_set_05,AM,6005,J. Quintero,Colombia,True,False
+real_xi_set_05,RW,154,L. Messi,Argentina,True,False
+real_xi_set_05,LW,909,M. Rashford,England,True,False
+real_xi_set_05,ST,153,O. Dembele,France,True,False
+real_xi_set_06,GK,269349,L. Hornicek,Czech Republic,True,False
+real_xi_set_06,RB,25158,D. Raum,Germany,True,False
+real_xi_set_06,RCB,69,B. Mechele,Belgium,True,False
+real_xi_set_06,LCB,624,N. Otamendi,Argentina,True,False
+real_xi_set_06,LB,263482,N. Mendes,Portugal,True,False
+real_xi_set_06,DM,44,Rodri,Spain,True,False
+real_xi_set_06,CM,19617,M. Olise,France,True,False
+real_xi_set_06,AM,113580,W. Semedo,Cape Verde Islands,False,True
+real_xi_set_06,RW,154,L. Messi,Argentina,True,False
+real_xi_set_06,LW,909,M. Rashford,England,True,False
+real_xi_set_06,ST,153,O. Dembele,France,True,False
+real_xi_set_07,GK,269349,L. Hornicek,Czech Republic,True,False
+real_xi_set_07,RB,271539,J. Hadjam,Algeria,True,False
+real_xi_set_07,RCB,69,B. Mechele,Belgium,True,False
+real_xi_set_07,LCB,624,N. Otamendi,Argentina,True,False
+real_xi_set_07,LB,263482,N. Mendes,Portugal,True,False
+real_xi_set_07,DM,44,Rodri,Spain,True,False
+real_xi_set_07,CM,19617,M. Olise,France,True,False
+real_xi_set_07,AM,6005,J. Quintero,Colombia,True,False
+real_xi_set_07,RW,154,L. Messi,Argentina,True,False
+real_xi_set_07,LW,909,M. Rashford,England,True,False
+real_xi_set_07,ST,153,O. Dembele,France,True,False
+real_xi_set_08,GK,269349,L. Hornicek,Czech Republic,True,False
+real_xi_set_08,RB,271539,J. Hadjam,Algeria,True,False
+real_xi_set_08,RCB,69,B. Mechele,Belgium,True,False
+real_xi_set_08,LCB,624,N. Otamendi,Argentina,True,False
+real_xi_set_08,LB,263482,N. Mendes,Portugal,True,False
+real_xi_set_08,DM,44,Rodri,Spain,True,False
+real_xi_set_08,CM,19617,M. Olise,France,True,False
+real_xi_set_08,AM,113580,W. Semedo,Cape Verde Islands,False,True
+real_xi_set_08,RW,154,L. Messi,Argentina,True,False
+real_xi_set_08,LW,909,M. Rashford,England,True,False
+real_xi_set_08,ST,153,O. Dembele,France,True,False
