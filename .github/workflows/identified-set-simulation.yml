@@ -1,0 +1,109 @@
+name: Identified Set Simulation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/scientific/run_identified_set_simulation.py
+      - .github/workflows/identified-set-simulation.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: identified-set-simulation
+  cancel-in-progress: false
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - name: Checkout frozen repository state
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Validate simulation source
+        run: |
+          python -m py_compile scripts/scientific/run_identified_set_simulation.py
+
+      - name: Run preregistered identified-set simulation
+        id: simulation
+        continue-on-error: true
+        run: |
+          rm -rf data/simulations/identified_set_v1
+          mkdir -p data/simulations/identified_set_v1
+          set +e
+          python scripts/scientific/run_identified_set_simulation.py > data/simulations/identified_set_v1/execution.log 2>&1
+          code=$?
+          set -e
+          echo "$code" > data/simulations/identified_set_v1/exit_code.txt
+          tail -n 120 data/simulations/identified_set_v1/execution.log
+          exit "$code"
+
+      - name: Verify scientific guardrails
+        if: always()
+        run: |
+          if git diff --name-only | grep -E '(^|/)(real_best_xi_provisional|final_rankings|synthetic_xi_vs_real_xi)\.csv$'; then
+            echo 'A protected point-ranking output changed unexpectedly.' >&2
+            exit 1
+          fi
+          test ! -e data/simulations/identified_set_v1/final_rankings.csv
+
+      - name: Archive complete simulation package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: identified-set-simulation-${{ github.run_id }}
+          path: data/simulations/identified_set_v1
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Publish simulation evidence or diagnostics
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f data/simulations/identified_set_v1/
+          if git diff --cached --quiet; then
+            echo "No simulation outputs to publish."
+            exit 0
+          fi
+          git commit -m "science: publish identified-set simulation"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase -X theirs origin/main && git push origin HEAD:main; then
+              echo "Simulation package published on attempt ${attempt}."
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          echo "Failed to publish simulation package." >&2
+          exit 1
+
+      - name: Enforce successful simulation
+        if: always()
+        run: |
+          code=$(cat data/simulations/identified_set_v1/exit_code.txt 2>/dev/null || echo 1)
+          if [ "$code" != "0" ]; then
+            echo "Identified-set simulation failed with exit code $code" >&2
+            exit "$code"
+          fi
