@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Evaluate pre-team and post-freeze engine validation for the definitive study.
 
-The script only reads committed validation and simulation evidence. It cannot promote
-an exploratory result and never treats the pre-tournament Poisson holdout as proof of
-every micro-event mechanism.
+The script only reads committed or same-run validation evidence. It cannot promote an
+exploratory result and never treats the pre-tournament Poisson holdout as proof of every
+micro-event mechanism.
 """
 from __future__ import annotations
 
@@ -15,8 +15,9 @@ from typing import Any, Iterable
 
 OUT = Path("data/audits/engine_validation_v1")
 HOLDOUT = Path("data/validation/external_pre_tournament_holdout_summary.json")
-DIRECTION = Path("data/audits/engine_validation_v1/independent_direction_check.json")
-SEARCH_ROOTS = [Path("data/simulations/calibrated_v0_2"), Path("data/validation")]
+DIRECTION = OUT / "independent_direction_check.json"
+MECHANISM = OUT / "mechanism_validation.json"
+SEARCH_ROOTS = [Path("data/simulations/calibrated_v0_2"), Path("data/validation"), OUT]
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -123,9 +124,6 @@ def main() -> None:
     passing_calibrations = [row for row in calibrations if calibration_pass(row)]
     event_calibration_pass = bool(passing_calibrations)
     mechanism_pass = any(item["value"] for item in mechanisms)
-
-    # An independent Poisson holdout establishes predictive signal, but the event engine
-    # still needs its own mechanism/PPC evidence before the pre-team engine gate can pass.
     preteam_gate = bool(holdout_pass and event_calibration_pass and mechanism_pass)
 
     frozen_teams_present = bool(direction.get("teams_frozen_and_hashed", False))
@@ -168,6 +166,7 @@ def main() -> None:
         "calibration_candidates": calibrations,
         "passing_calibration_candidates": passing_calibrations,
         "explicit_mechanism_evidence": mechanisms,
+        "mechanism_source_expected": str(MECHANISM),
         "preteam_engine_gate_passed": preteam_gate,
         "teams_frozen_and_hashed": frozen_teams_present,
         "independent_post_freeze_direction_check_passed": independent_direction_pass,
