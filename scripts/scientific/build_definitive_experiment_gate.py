@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Build the hard gate for one definitive Real XI versus one AI XI.
+"""Build phased gates for one definitive Real XI versus one definitive AI XI.
 
-This script never produces a final team or final simulation while a prerequisite is
-open. It also forbids partial-identification outputs in the definitive release.
+Phase A allows deterministic team construction only after ontology, blind review,
+coverage and role-population sufficiency pass. Phase B allows the final event simulation
+only after teams are frozen/hashed and independent engine validation also passes.
 """
 from __future__ import annotations
 
@@ -47,13 +48,15 @@ def main() -> None:
     engine = load_json(ENGINE)
 
     counts = role_counts(ontology)
-    population_pass = bool(counts) and all(counts[role] >= MIN_ROLE_POOL for role in ROLES)
+    population_pass = all(counts[role] >= MIN_ROLE_POOL for role in ROLES)
     blind_pass = bool(blind.get("review_gate_passed", False))
     coverage_pass = bool(coverage.get("shadow_selection_sufficiency_gate_passed", False))
-    engine_pass = bool(engine.get("final_engine_gate_passed", False))
     ontology_pass = bool(ontology.get("final_ontology_gate_passed", False)) and population_pass
     protocol_pass = PROTOCOL.exists()
     generator_pass = GENERATOR.exists()
+    preteam_engine_pass = bool(engine.get("preteam_engine_gate_passed", False))
+    final_engine_pass = bool(engine.get("final_engine_gate_passed", False))
+    teams_frozen = bool(engine.get("teams_frozen_and_hashed", False))
 
     gates = {
         "protocol_frozen": protocol_pass,
@@ -65,20 +68,40 @@ def main() -> None:
         "minimum_20_candidates_each_role": population_pass,
         "final_candidate_coverage_gate_passed": coverage_pass,
         "ai_generator_implemented": generator_pass,
-        "independent_engine_validation_passed": engine_pass,
+        "preteam_engine_validation_passed": preteam_engine_pass,
+        "teams_frozen_and_hashed": teams_frozen,
+        "independent_final_engine_validation_passed": final_engine_pass,
     }
-    hard_requirements = [
+
+    design_requirements = [
         "protocol_frozen",
         "blind_review_gate_passed",
         "ontology_v3_gate_passed",
         "minimum_20_candidates_each_role",
         "final_candidate_coverage_gate_passed",
         "ai_generator_implemented",
-        "independent_engine_validation_passed",
     ]
-    final_pass = all(bool(gates[name]) for name in hard_requirements)
+    design_gate = all(bool(gates[name]) for name in design_requirements)
+    team_generation_allowed = design_gate
 
-    blockers = [name for name in hard_requirements if not gates[name]]
+    final_requirements = design_requirements + [
+        "preteam_engine_validation_passed",
+        "teams_frozen_and_hashed",
+        "independent_final_engine_validation_passed",
+    ]
+    final_pass = all(bool(gates[name]) for name in final_requirements)
+
+    design_blockers = [name for name in design_requirements if not gates[name]]
+    final_blockers = [name for name in final_requirements if not gates[name]]
+    if design_gate and not teams_frozen:
+        next_action = "build exactly one Real XI and one AI XI, freeze both files and record SHA-256 hashes"
+    elif design_gate and teams_frozen and not final_pass:
+        next_action = "complete independent post-freeze engine checks before the 100,000-match run"
+    elif final_pass:
+        next_action = "run the preregistered final simulation under the frozen team and code hashes"
+    else:
+        next_action = "resolve design blockers without producing definitive team claims"
+
     status = {
         "status": "definitive_real_vs_ai_gate_evaluated",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
@@ -88,15 +111,13 @@ def main() -> None:
         "minimum_role_pool": MIN_ROLE_POOL,
         "audited_stable_candidates_by_role": counts,
         "gates": gates,
-        "blockers": blockers,
+        "design_gate_passed": design_gate,
+        "design_blockers": design_blockers,
+        "final_blockers": final_blockers,
         "final_experiment_gate_passed": final_pass,
-        "final_team_files_allowed": final_pass,
+        "final_team_files_allowed": team_generation_allowed,
         "final_simulation_allowed": final_pass,
-        "next_action": (
-            "freeze and hash both teams, then run the preregistered final simulation"
-            if final_pass
-            else "resolve blockers without producing final teams or final match claims"
-        ),
+        "next_action": next_action,
         "source_files": {
             "ontology": str(ONTOLOGY),
             "blind_review": str(BLIND),
@@ -110,15 +131,23 @@ def main() -> None:
         json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8"
     )
 
-    rows = ["# Definitive Real XI vs AI XI gate", "", f"Final gate: **{final_pass}**", ""]
-    rows.append("## Role populations")
-    rows.append("")
-    rows.append("| Role | Stable candidates | Required | Pass |")
-    rows.append("|---|---:|---:|---|")
+    rows = [
+        "# Definitive Real XI vs AI XI gate",
+        "",
+        f"Design gate: **{design_gate}**",
+        f"Final simulation gate: **{final_pass}**",
+        "",
+        "## Role populations",
+        "",
+        "| Role | Stable candidates | Required | Pass |",
+        "|---|---:|---:|---|",
+    ]
     for role in ROLES:
         rows.append(f"| {role} | {counts[role]} | {MIN_ROLE_POOL} | {counts[role] >= MIN_ROLE_POOL} |")
-    rows.extend(["", "## Blockers", ""])
-    rows.extend([f"- {item}" for item in blockers] or ["- none"])
+    rows.extend(["", "## Design blockers", ""])
+    rows.extend([f"- {item}" for item in design_blockers] or ["- none"])
+    rows.extend(["", "## Final-simulation blockers", ""])
+    rows.extend([f"- {item}" for item in final_blockers] or ["- none"])
     (ROOT / "README.md").write_text("\n".join(rows) + "\n", encoding="utf-8")
     print(json.dumps(status, ensure_ascii=False, indent=2))
 
