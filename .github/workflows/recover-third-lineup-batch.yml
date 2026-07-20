@@ -39,9 +39,10 @@ jobs:
       - name: Download successful data artifacts from failed publish runs
         run: |
           rm -rf /tmp/recovered
-          mkdir -p /tmp/recovered/general /tmp/recovered/deficit1
+          mkdir -p /tmp/recovered/general /tmp/recovered/deficit1 /tmp/recovered/postrecovery
           gh run download 29756527227 --repo "$GITHUB_REPOSITORY" --name full-lineup-priority-29756527227 --dir /tmp/recovered/general
           gh run download 29757330507 --repo "$GITHUB_REPOSITORY" --name full-lineup-priority-29757330507 --dir /tmp/recovered/deficit1
+          gh run download 29758986648 --repo "$GITHUB_REPOSITORY" --name full-lineup-priority-29758986648 --dir /tmp/recovered/postrecovery
           find /tmp/recovered -maxdepth 6 -type f -print
 
       - name: Merge recovered rows with any newer durable batch
