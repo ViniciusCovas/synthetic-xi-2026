@@ -1,103 +1,103 @@
 fixture_id,date,status,home_team,away_team,home_goals,away_goals,api_date,api_timestamp,api_timezone,referee,venue_id,venue_name,venue_city,league_id,league_name,league_country,home_team_api,away_team_api,metadata_available,context_source,context_in_main_v1
-1489369,2026-06-11T19:00:00+00:00,FT,Mexico,South Africa,2,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1538999,2026-06-12T02:00:00+00:00,FT,South Korea,Czechia,2,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539000,2026-06-12T19:00:00+00:00,FT,Canada,Bosnia & Herzegovina,1,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489370,2026-06-13T01:00:00+00:00,FT,USA,Paraguay,4,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489373,2026-06-13T19:00:00+00:00,FT,Qatar,Switzerland,1,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489371,2026-06-13T22:00:00+00:00,FT,Brazil,Morocco,1,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489372,2026-06-14T01:00:00+00:00,FT,Haiti,Scotland,0,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539001,2026-06-14T04:00:00+00:00,FT,Australia,Türkiye,2,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489374,2026-06-14T17:00:00+00:00,FT,Germany,Curaçao,7,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489376,2026-06-14T20:00:00+00:00,FT,Netherlands,Japan,2,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489375,2026-06-14T23:00:00+00:00,FT,Ivory Coast,Ecuador,1,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539002,2026-06-15T02:00:00+00:00,FT,Sweden,Tunisia,5,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489380,2026-06-15T16:00:00+00:00,FT,Spain,Cape Verde Islands,0,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489377,2026-06-15T19:00:00+00:00,FT,Belgium,Egypt,1,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489379,2026-06-15T22:00:00+00:00,FT,Saudi Arabia,Uruguay,1,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489378,2026-06-16T01:00:00+00:00,FT,Iran,New Zealand,2,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489383,2026-06-16T19:00:00+00:00,FT,France,Senegal,3,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539016,2026-06-16T22:00:00+00:00,FT,Iraq,Norway,1,4,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489381,2026-06-17T01:00:00+00:00,FT,Argentina,Algeria,3,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489382,2026-06-17T04:00:00+00:00,FT,Austria,Jordan,3,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539003,2026-06-17T17:00:00+00:00,FT,Portugal,Congo DR,1,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489384,2026-06-17T20:00:00+00:00,FT,England,Croatia,4,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489385,2026-06-17T23:00:00+00:00,FT,Ghana,Panama,1,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489386,2026-06-18T02:00:00+00:00,FT,Uzbekistan,Colombia,1,3,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539004,2026-06-18T16:00:00+00:00,FT,Czechia,South Africa,1,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539005,2026-06-18T19:00:00+00:00,FT,Switzerland,Bosnia & Herzegovina,4,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489387,2026-06-18T22:00:00+00:00,FT,Canada,Qatar,6,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489388,2026-06-19T01:00:00+00:00,FT,Mexico,South Korea,1,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489391,2026-06-19T19:00:00+00:00,FT,USA,Australia,2,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489390,2026-06-19T22:00:00+00:00,FT,Scotland,Morocco,0,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489389,2026-06-20T00:30:00+00:00,FT,Brazil,Haiti,3,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539006,2026-06-20T03:00:00+00:00,FT,Türkiye,Paraguay,0,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539007,2026-06-20T17:00:00+00:00,FT,Netherlands,Sweden,5,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489393,2026-06-20T20:00:00+00:00,FT,Germany,Ivory Coast,2,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489392,2026-06-21T00:00:00+00:00,FT,Ecuador,Curaçao,0,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489394,2026-06-21T04:00:00+00:00,FT,Tunisia,Japan,0,4,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489397,2026-06-21T16:00:00+00:00,FT,Spain,Saudi Arabia,4,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489395,2026-06-21T19:00:00+00:00,FT,Belgium,Iran,0,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489398,2026-06-21T22:00:00+00:00,FT,Uruguay,Cape Verde Islands,2,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489396,2026-06-22T01:00:00+00:00,FT,New Zealand,Egypt,1,3,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489399,2026-06-22T17:00:00+00:00,FT,Argentina,Austria,2,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539017,2026-06-22T21:00:00+00:00,FT,France,Iraq,3,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489401,2026-06-23T00:00:00+00:00,FT,Norway,Senegal,3,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489400,2026-06-23T03:00:00+00:00,FT,Jordan,Algeria,1,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489404,2026-06-23T17:00:00+00:00,FT,Portugal,Uzbekistan,5,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489402,2026-06-23T20:00:00+00:00,FT,England,Ghana,0,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489403,2026-06-23T23:00:00+00:00,FT,Panama,Croatia,0,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539008,2026-06-24T02:00:00+00:00,FT,Colombia,Congo DR,1,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489408,2026-06-24T19:00:00+00:00,FT,Switzerland,Canada,2,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539009,2026-06-24T19:00:00+00:00,FT,Bosnia & Herzegovina,Qatar,3,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489405,2026-06-24T22:00:00+00:00,FT,Morocco,Haiti,4,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489406,2026-06-24T22:00:00+00:00,FT,Scotland,Brazil,0,3,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539010,2026-06-25T01:00:00+00:00,FT,Czechia,Mexico,0,3,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489407,2026-06-25T01:00:00+00:00,FT,South Africa,South Korea,1,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489410,2026-06-25T20:00:00+00:00,FT,Ecuador,Germany,2,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489409,2026-06-25T20:00:00+00:00,FT,Curaçao,Ivory Coast,0,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539011,2026-06-25T23:00:00+00:00,FT,Japan,Sweden,1,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489412,2026-06-25T23:00:00+00:00,FT,Tunisia,Netherlands,1,3,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539012,2026-06-26T02:00:00+00:00,FT,Türkiye,USA,3,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489411,2026-06-26T02:00:00+00:00,FT,Paraguay,Australia,0,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539074,2026-06-26T19:00:00+00:00,FT,Senegal,Iraq,5,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489416,2026-06-26T19:00:00+00:00,FT,Norway,France,1,4,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489417,2026-06-27T00:00:00+00:00,FT,Uruguay,Spain,0,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489413,2026-06-27T00:00:00+00:00,FT,Cape Verde Islands,Saudi Arabia,0,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489414,2026-06-27T03:00:00+00:00,FT,Egypt,Iran,1,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489415,2026-06-27T03:00:00+00:00,FT,New Zealand,Belgium,1,5,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489420,2026-06-27T21:00:00+00:00,FT,Croatia,Ghana,2,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489422,2026-06-27T21:00:00+00:00,FT,Panama,England,0,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489419,2026-06-27T23:30:00+00:00,FT,Colombia,Portugal,0,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1539013,2026-06-27T23:30:00+00:00,FT,Congo DR,Uzbekistan,3,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489418,2026-06-28T02:00:00+00:00,FT,Algeria,Austria,3,3,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1489421,2026-06-28T02:00:00+00:00,FT,Jordan,Argentina,1,3,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1561329,2026-06-28T19:00:00+00:00,FT,South Africa,Canada,0,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1562344,2026-06-29T17:00:00+00:00,FT,Brazil,Japan,2,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1565176,2026-06-29T20:30:00+00:00,PEN,Germany,Paraguay,1,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1562345,2026-06-30T01:00:00+00:00,PEN,Netherlands,Morocco,1,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1564789,2026-06-30T17:00:00+00:00,FT,Ivory Coast,Norway,1,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1565177,2026-06-30T21:00:00+00:00,FT,France,Sweden,3,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1567306,2026-07-01T01:00:00+00:00,FT,Mexico,Ecuador,2,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1567307,2026-07-01T16:00:00+00:00,FT,England,Congo DR,2,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1567308,2026-07-01T20:00:00+00:00,AET,Belgium,Senegal,3,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1562586,2026-07-02T00:00:00+00:00,FT,USA,Bosnia & Herzegovina,2,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1567311,2026-07-02T19:00:00+00:00,FT,Spain,Austria,3,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1567309,2026-07-02T23:00:00+00:00,FT,Portugal,Croatia,2,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1567312,2026-07-03T03:00:00+00:00,FT,Switzerland,Algeria,2,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1565178,2026-07-03T18:00:00+00:00,PEN,Australia,Egypt,1,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1565179,2026-07-03T22:00:00+00:00,AET,Argentina,Cape Verde Islands,3,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1567310,2026-07-04T01:30:00+00:00,FT,Colombia,Ghana,1,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1567824,2026-07-04T17:00:00+00:00,FT,Canada,Morocco,0,3,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1569870,2026-07-04T21:00:00+00:00,FT,Paraguay,France,0,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1568100,2026-07-05T20:00:00+00:00,FT,Brazil,Norway,1,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1570714,2026-07-06T01:00:00+00:00,FT,Mexico,England,2,3,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1576756,2026-07-06T19:00:00+00:00,FT,Portugal,Spain,0,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1570715,2026-07-07T00:00:00+00:00,FT,USA,Belgium,1,4,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1576804,2026-07-07T16:00:00+00:00,FT,Argentina,Egypt,3,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1576805,2026-07-07T20:00:00+00:00,PEN,Switzerland,Colombia,0,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1578539,2026-07-09T20:00:00+00:00,FT,France,Morocco,2,0,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1581821,2026-07-10T19:00:00+00:00,FT,Spain,Belgium,2,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1581037,2026-07-11T21:00:00+00:00,AET,Norway,England,1,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1582681,2026-07-12T01:00:00+00:00,AET,Argentina,Switzerland,3,1,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1585131,2026-07-14T19:00:00+00:00,FT,France,Spain,0,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
-1586077,2026-07-15T19:00:00+00:00,FT,England,Argentina,1,2,,,,,,,,,,,,,False,API-Football fixture metadata,False
+1489369,2026-06-11T19:00:00+00:00,FT,Mexico,South Africa,2,0,2026-06-11T19:00:00+00:00,1781204400,UTC,"Wilton Pereira Sampaio, Brazil",1069.0,Estadio Banorte,Mexico City,1,World Cup,World,Mexico,South Africa,True,API-Football fixture metadata,False
+1538999,2026-06-12T02:00:00+00:00,FT,South Korea,Czechia,2,1,2026-06-12T02:00:00+00:00,1781229600,UTC,"Amin Mohamed Omar, Egypt",1076.0,Estadio Akron,Zapopan,1,World Cup,World,South Korea,Czechia,True,API-Football fixture metadata,False
+1539000,2026-06-12T19:00:00+00:00,FT,Canada,Bosnia & Herzegovina,1,1,2026-06-12T19:00:00+00:00,1781290800,UTC,"Facundo Raul Tello Figueroa, Argentina",312.0,BMO Field,Toronto,1,World Cup,World,Canada,Bosnia & Herzegovina,True,API-Football fixture metadata,False
+1489370,2026-06-13T01:00:00+00:00,FT,USA,Paraguay,4,1,2026-06-13T01:00:00+00:00,1781312400,UTC,"Danny Makkelie, Netherlands",,SoFi Stadium,Inglewood,1,World Cup,World,USA,Paraguay,True,API-Football fixture metadata,False
+1489373,2026-06-13T19:00:00+00:00,FT,Qatar,Switzerland,1,1,2026-06-13T19:00:00+00:00,1781377200,UTC,"Said Martinez, Honduras",,Levi's Stadium,Santa Clara,1,World Cup,World,Qatar,Switzerland,True,API-Football fixture metadata,False
+1489371,2026-06-13T22:00:00+00:00,FT,Brazil,Morocco,1,1,2026-06-13T22:00:00+00:00,1781388000,UTC,"Slavko Vinčić, Slovenia",,MetLife Stadium,East Rutherford,1,World Cup,World,Brazil,Morocco,True,API-Football fixture metadata,False
+1489372,2026-06-14T01:00:00+00:00,FT,Haiti,Scotland,0,1,2026-06-14T01:00:00+00:00,1781398800,UTC,"Mustapha Ghorbal, Algeria",1618.0,Gillette Stadium,Boston,1,World Cup,World,Haiti,Scotland,True,API-Football fixture metadata,False
+1539001,2026-06-14T04:00:00+00:00,FT,Australia,Türkiye,2,0,2026-06-14T04:00:00+00:00,1781409600,UTC,"Jesús Valenzuela, Venezuela",19445.0,BC Place,Vancouver,1,World Cup,World,Australia,Türkiye,True,API-Football fixture metadata,False
+1489374,2026-06-14T17:00:00+00:00,FT,Germany,Curaçao,7,1,2026-06-14T17:00:00+00:00,1781456400,UTC,"Jalal Jayed, Morocco",,NRG Stadium,Houston,1,World Cup,World,Germany,Curaçao,True,API-Football fixture metadata,False
+1489376,2026-06-14T20:00:00+00:00,FT,Netherlands,Japan,2,2,2026-06-14T20:00:00+00:00,1781467200,UTC,"Ismail Elfath, USA",,AT&T Stadium,Arlington,1,World Cup,World,Netherlands,Japan,True,API-Football fixture metadata,False
+1489375,2026-06-14T23:00:00+00:00,FT,Ivory Coast,Ecuador,1,0,2026-06-14T23:00:00+00:00,1781478000,UTC,"François Letexier, France",,Lincoln Financial Field,Philadelphia,1,World Cup,World,Ivory Coast,Ecuador,True,API-Football fixture metadata,False
+1539002,2026-06-15T02:00:00+00:00,FT,Sweden,Tunisia,5,1,2026-06-15T02:00:00+00:00,1781488800,UTC,"Yael Falcon Perez, Argentina",11905.0,Estadio BBVA,Monterrey,1,World Cup,World,Sweden,Tunisia,True,API-Football fixture metadata,False
+1489380,2026-06-15T16:00:00+00:00,FT,Spain,Cape Verde Islands,0,0,2026-06-15T16:00:00+00:00,1781539200,UTC,"Adham Mohammad, Jordan",1898.0,Mercedes-Benz Stadium,Atlanta,1,World Cup,World,Spain,Cape Verde Islands,True,API-Football fixture metadata,False
+1489377,2026-06-15T19:00:00+00:00,FT,Belgium,Egypt,1,1,2026-06-15T19:00:00+00:00,1781550000,UTC,"Ramon Abatti Abel, Brazil",11534.0,Lumen Field,Seattle,1,World Cup,World,Belgium,Egypt,True,API-Football fixture metadata,False
+1489379,2026-06-15T22:00:00+00:00,FT,Saudi Arabia,Uruguay,1,1,2026-06-15T22:00:00+00:00,1781560800,UTC,"Maurizio Mariani, Italy",,Hard Rock Stadium,Miami Gardens,1,World Cup,World,Saudi Arabia,Uruguay,True,API-Football fixture metadata,False
+1489378,2026-06-16T01:00:00+00:00,FT,Iran,New Zealand,2,2,2026-06-16T01:00:00+00:00,1781571600,UTC,"César Ramos Palazuelos, Mexico",,SoFi Stadium,Inglewood,1,World Cup,World,Iran,New Zealand,True,API-Football fixture metadata,False
+1489383,2026-06-16T19:00:00+00:00,FT,France,Senegal,3,1,2026-06-16T19:00:00+00:00,1781636400,UTC,"Alireza Faghani, Australia",,MetLife Stadium,East Rutherford,1,World Cup,World,France,Senegal,True,API-Football fixture metadata,False
+1539016,2026-06-16T22:00:00+00:00,FT,Iraq,Norway,1,4,2026-06-16T22:00:00+00:00,1781647200,UTC,"Pierre Ghislain Atcho, Gabon",1618.0,Gillette Stadium,Boston,1,World Cup,World,Iraq,Norway,True,API-Football fixture metadata,False
+1489381,2026-06-17T01:00:00+00:00,FT,Argentina,Algeria,3,0,2026-06-17T01:00:00+00:00,1781658000,UTC,"Szymon Marciniak, Poland",,Arrowhead Stadium,Kansas City,1,World Cup,World,Argentina,Algeria,True,API-Football fixture metadata,False
+1489382,2026-06-17T04:00:00+00:00,FT,Austria,Jordan,3,1,2026-06-17T04:00:00+00:00,1781668800,UTC,"Dahane Beida, Mauritania",,Levi's Stadium,Santa Clara,1,World Cup,World,Austria,Jordan,True,API-Football fixture metadata,False
+1539003,2026-06-17T17:00:00+00:00,FT,Portugal,Congo DR,1,1,2026-06-17T17:00:00+00:00,1781715600,UTC,"Abdulrahman Al-Jassim, Qatar",,NRG Stadium,Houston,1,World Cup,World,Portugal,Congo DR,True,API-Football fixture metadata,False
+1489384,2026-06-17T20:00:00+00:00,FT,England,Croatia,4,2,2026-06-17T20:00:00+00:00,1781726400,UTC,"Clement Turpin, France",,AT&T Stadium,Arlington,1,World Cup,World,England,Croatia,True,API-Football fixture metadata,False
+1489385,2026-06-17T23:00:00+00:00,FT,Ghana,Panama,1,0,2026-06-17T23:00:00+00:00,1781737200,UTC,"Glenn Nyberg, Sweden",312.0,BMO Field,Toronto,1,World Cup,World,Ghana,Panama,True,API-Football fixture metadata,False
+1489386,2026-06-18T02:00:00+00:00,FT,Uzbekistan,Colombia,1,3,2026-06-18T02:00:00+00:00,1781748000,UTC,"Anthony Taylor, England",1069.0,Estadio Banorte,Mexico City,1,World Cup,World,Uzbekistan,Colombia,True,API-Football fixture metadata,False
+1539004,2026-06-18T16:00:00+00:00,FT,Czechia,South Africa,1,1,2026-06-18T16:00:00+00:00,1781798400,UTC,"Tori Penso, USA",1898.0,Mercedes-Benz Stadium,Atlanta,1,World Cup,World,Czechia,South Africa,True,API-Football fixture metadata,False
+1539005,2026-06-18T19:00:00+00:00,FT,Switzerland,Bosnia & Herzegovina,4,1,2026-06-18T19:00:00+00:00,1781809200,UTC,"Joao Pedro Pinheiro, Portugal",,SoFi Stadium,Inglewood,1,World Cup,World,Switzerland,Bosnia & Herzegovina,True,API-Football fixture metadata,False
+1489387,2026-06-18T22:00:00+00:00,FT,Canada,Qatar,6,0,2026-06-18T22:00:00+00:00,1781820000,UTC,"Cristian Garay, Chile",19445.0,BC Place,Vancouver,1,World Cup,World,Canada,Qatar,True,API-Football fixture metadata,False
+1489388,2026-06-19T01:00:00+00:00,FT,Mexico,South Korea,1,0,2026-06-19T01:00:00+00:00,1781830800,UTC,"Gustavo Tejera, Uruguay",1076.0,Estadio Akron,Zapopan,1,World Cup,World,Mexico,South Korea,True,API-Football fixture metadata,False
+1489391,2026-06-19T19:00:00+00:00,FT,USA,Australia,2,0,2026-06-19T19:00:00+00:00,1781895600,UTC,"Felix Zwayer, Germany",11534.0,Lumen Field,Seattle,1,World Cup,World,USA,Australia,True,API-Football fixture metadata,False
+1489390,2026-06-19T22:00:00+00:00,FT,Scotland,Morocco,0,1,2026-06-19T22:00:00+00:00,1781906400,UTC,"Ilgiz Tantashev, Uzbekistan",1618.0,Gillette Stadium,Boston,1,World Cup,World,Scotland,Morocco,True,API-Football fixture metadata,False
+1489389,2026-06-20T00:30:00+00:00,FT,Brazil,Haiti,3,0,2026-06-20T00:30:00+00:00,1781915400,UTC,"Alejandro Hernandez, Spain",,Lincoln Financial Field,Philadelphia,1,World Cup,World,Brazil,Haiti,True,API-Football fixture metadata,False
+1539006,2026-06-20T03:00:00+00:00,FT,Türkiye,Paraguay,0,1,2026-06-20T03:00:00+00:00,1781924400,UTC,"Iván Barton, El Salvador",,Levi's Stadium,Santa Clara,1,World Cup,World,Türkiye,Paraguay,True,API-Football fixture metadata,False
+1539007,2026-06-20T17:00:00+00:00,FT,Netherlands,Sweden,5,1,2026-06-20T17:00:00+00:00,1781974800,UTC,"Michael Oliver, England",,NRG Stadium,Houston,1,World Cup,World,Netherlands,Sweden,True,API-Football fixture metadata,False
+1489393,2026-06-20T20:00:00+00:00,FT,Germany,Ivory Coast,2,1,2026-06-20T20:00:00+00:00,1781985600,UTC,"Juan Gabriel Benitez, Paraguay",312.0,BMO Field,Toronto,1,World Cup,World,Germany,Ivory Coast,True,API-Football fixture metadata,False
+1489392,2026-06-21T00:00:00+00:00,FT,Ecuador,Curaçao,0,0,2026-06-21T00:00:00+00:00,1782000000,UTC,"Ma Ning, China",,Arrowhead Stadium,Kansas City,1,World Cup,World,Ecuador,Curaçao,True,API-Football fixture metadata,False
+1489394,2026-06-21T04:00:00+00:00,FT,Tunisia,Japan,0,4,2026-06-21T04:00:00+00:00,1782014400,UTC,"Istvan Kovacs, Romania",11905.0,Estadio BBVA,Monterrey,1,World Cup,World,Tunisia,Japan,True,API-Football fixture metadata,False
+1489397,2026-06-21T16:00:00+00:00,FT,Spain,Saudi Arabia,4,0,2026-06-21T16:00:00+00:00,1782057600,UTC,"Raphael Claus, Brazil",1898.0,Mercedes-Benz Stadium,Atlanta,1,World Cup,World,Spain,Saudi Arabia,True,API-Football fixture metadata,False
+1489395,2026-06-21T19:00:00+00:00,FT,Belgium,Iran,0,0,2026-06-21T19:00:00+00:00,1782068400,UTC,"Dario Herrera, Argentina",,SoFi Stadium,Inglewood,1,World Cup,World,Belgium,Iran,True,API-Football fixture metadata,False
+1489398,2026-06-21T22:00:00+00:00,FT,Uruguay,Cape Verde Islands,2,2,2026-06-21T22:00:00+00:00,1782079200,UTC,"Espen Eskas, Norway",,Hard Rock Stadium,Miami Gardens,1,World Cup,World,Uruguay,Cape Verde Islands,True,API-Football fixture metadata,False
+1489396,2026-06-22T01:00:00+00:00,FT,New Zealand,Egypt,1,3,2026-06-22T01:00:00+00:00,1782090000,UTC,"Omar Mohamed Al Ali, United Arab Emirates",19445.0,BC Place,Vancouver,1,World Cup,World,New Zealand,Egypt,True,API-Football fixture metadata,False
+1489399,2026-06-22T17:00:00+00:00,FT,Argentina,Austria,2,0,2026-06-22T17:00:00+00:00,1782147600,UTC,"Amin Mohamed Omar, Egypt",,AT&T Stadium,Arlington,1,World Cup,World,Argentina,Austria,True,API-Football fixture metadata,False
+1539017,2026-06-22T21:00:00+00:00,FT,France,Iraq,3,0,2026-06-22T21:00:00+00:00,1782162000,UTC,"Drew Fischer, Canada",,Lincoln Financial Field,Philadelphia,1,World Cup,World,France,Iraq,True,API-Football fixture metadata,False
+1489401,2026-06-23T00:00:00+00:00,FT,Norway,Senegal,3,2,2026-06-23T00:00:00+00:00,1782172800,UTC,"Wilton Pereira Sampaio, Brazil",,MetLife Stadium,East Rutherford,1,World Cup,World,Norway,Senegal,True,API-Football fixture metadata,False
+1489400,2026-06-23T03:00:00+00:00,FT,Jordan,Algeria,1,2,2026-06-23T03:00:00+00:00,1782183600,UTC,"Slavko Vinčić, Slovenia",,Levi's Stadium,Santa Clara,1,World Cup,World,Jordan,Algeria,True,API-Football fixture metadata,False
+1489404,2026-06-23T17:00:00+00:00,FT,Portugal,Uzbekistan,5,0,2026-06-23T17:00:00+00:00,1782234000,UTC,"Jalal Jayed, Morocco",,NRG Stadium,Houston,1,World Cup,World,Portugal,Uzbekistan,True,API-Football fixture metadata,False
+1489402,2026-06-23T20:00:00+00:00,FT,England,Ghana,0,0,2026-06-23T20:00:00+00:00,1782244800,UTC,"Said Martinez, Honduras",1618.0,Gillette Stadium,Boston,1,World Cup,World,England,Ghana,True,API-Football fixture metadata,False
+1489403,2026-06-23T23:00:00+00:00,FT,Panama,Croatia,0,1,2026-06-23T23:00:00+00:00,1782255600,UTC,"Pierre Ghislain Atcho, Gabon",312.0,BMO Field,Toronto,1,World Cup,World,Panama,Croatia,True,API-Football fixture metadata,False
+1539008,2026-06-24T02:00:00+00:00,FT,Colombia,Congo DR,1,0,2026-06-24T02:00:00+00:00,1782266400,UTC,"Maurizio Mariani, Italy",1076.0,Estadio Akron,Zapopan,1,World Cup,World,Colombia,Congo DR,True,API-Football fixture metadata,False
+1489408,2026-06-24T19:00:00+00:00,FT,Switzerland,Canada,2,1,2026-06-24T19:00:00+00:00,1782327600,UTC,"Ramon Abatti Abel, Brazil",19445.0,BC Place,Vancouver,1,World Cup,World,Switzerland,Canada,True,API-Football fixture metadata,False
+1539009,2026-06-24T19:00:00+00:00,FT,Bosnia & Herzegovina,Qatar,3,1,2026-06-24T19:00:00+00:00,1782327600,UTC,"Jesús Valenzuela, Venezuela",11534.0,Lumen Field,Seattle,1,World Cup,World,Bosnia & Herzegovina,Qatar,True,API-Football fixture metadata,False
+1489405,2026-06-24T22:00:00+00:00,FT,Morocco,Haiti,4,2,2026-06-24T22:00:00+00:00,1782338400,UTC,"Danny Makkelie, Netherlands",1898.0,Mercedes-Benz Stadium,Atlanta,1,World Cup,World,Morocco,Haiti,True,API-Football fixture metadata,False
+1489406,2026-06-24T22:00:00+00:00,FT,Scotland,Brazil,0,3,2026-06-24T22:00:00+00:00,1782338400,UTC,"César Ramos Palazuelos, Mexico",,Hard Rock Stadium,Miami Gardens,1,World Cup,World,Scotland,Brazil,True,API-Football fixture metadata,False
+1539010,2026-06-25T01:00:00+00:00,FT,Czechia,Mexico,0,3,2026-06-25T01:00:00+00:00,1782349200,UTC,"Yael Falcon Perez, Argentina",1069.0,Estadio Banorte,Mexico City,1,World Cup,World,Czechia,Mexico,True,API-Football fixture metadata,False
+1489407,2026-06-25T01:00:00+00:00,FT,South Africa,South Korea,1,0,2026-06-25T01:00:00+00:00,1782349200,UTC,"Facundo Raul Tello Figueroa, Argentina",11905.0,Estadio BBVA,Monterrey,1,World Cup,World,South Africa,South Korea,True,API-Football fixture metadata,False
+1489410,2026-06-25T20:00:00+00:00,FT,Ecuador,Germany,2,1,2026-06-25T20:00:00+00:00,1782417600,UTC,"Tori Penso, USA",,MetLife Stadium,East Rutherford,1,World Cup,World,Ecuador,Germany,True,API-Football fixture metadata,False
+1489409,2026-06-25T20:00:00+00:00,FT,Curaçao,Ivory Coast,0,2,2026-06-25T20:00:00+00:00,1782417600,UTC,"Glenn Nyberg, Sweden",,Lincoln Financial Field,Philadelphia,1,World Cup,World,Curaçao,Ivory Coast,True,API-Football fixture metadata,False
+1539011,2026-06-25T23:00:00+00:00,FT,Japan,Sweden,1,1,2026-06-25T23:00:00+00:00,1782428400,UTC,"Iván Barton, El Salvador",,AT&T Stadium,Arlington,1,World Cup,World,Japan,Sweden,True,API-Football fixture metadata,False
+1489412,2026-06-25T23:00:00+00:00,FT,Tunisia,Netherlands,1,3,2026-06-25T23:00:00+00:00,1782428400,UTC,"Katia García, Mexico",,Arrowhead Stadium,Kansas City,1,World Cup,World,Tunisia,Netherlands,True,API-Football fixture metadata,False
+1539012,2026-06-26T02:00:00+00:00,FT,Türkiye,USA,3,2,2026-06-26T02:00:00+00:00,1782439200,UTC,"Mustapha Ghorbal, Algeria",,SoFi Stadium,Inglewood,1,World Cup,World,Türkiye,USA,True,API-Football fixture metadata,False
+1489411,2026-06-26T02:00:00+00:00,FT,Paraguay,Australia,0,0,2026-06-26T02:00:00+00:00,1782439200,UTC,"Clement Turpin, France",,Levi's Stadium,Santa Clara,1,World Cup,World,Paraguay,Australia,True,API-Football fixture metadata,False
+1539074,2026-06-26T19:00:00+00:00,FT,Senegal,Iraq,5,0,2026-06-26T19:00:00+00:00,1782500400,UTC,"Anthony Taylor, England",312.0,BMO Field,Toronto,1,World Cup,World,Senegal,Iraq,True,API-Football fixture metadata,False
+1489416,2026-06-26T19:00:00+00:00,FT,Norway,France,1,4,2026-06-26T19:00:00+00:00,1782500400,UTC,"Michael Oliver, England",1618.0,Gillette Stadium,Boston,1,World Cup,World,Norway,France,True,API-Football fixture metadata,False
+1489417,2026-06-27T00:00:00+00:00,FT,Uruguay,Spain,0,1,2026-06-27T00:00:00+00:00,1782518400,UTC,"Ismail Elfath, USA",1076.0,Estadio Akron,Zapopan,1,World Cup,World,Uruguay,Spain,True,API-Football fixture metadata,False
+1489413,2026-06-27T00:00:00+00:00,FT,Cape Verde Islands,Saudi Arabia,0,0,2026-06-27T00:00:00+00:00,1782518400,UTC,"François Letexier, France",,NRG Stadium,Houston,1,World Cup,World,Cape Verde Islands,Saudi Arabia,True,API-Football fixture metadata,False
+1489414,2026-06-27T03:00:00+00:00,FT,Egypt,Iran,1,1,2026-06-27T03:00:00+00:00,1782529200,UTC,"Szymon Marciniak, Poland",11534.0,Lumen Field,Seattle,1,World Cup,World,Egypt,Iran,True,API-Football fixture metadata,False
+1489415,2026-06-27T03:00:00+00:00,FT,New Zealand,Belgium,1,5,2026-06-27T03:00:00+00:00,1782529200,UTC,"Adham Mohammad, Jordan",19445.0,BC Place,Vancouver,1,World Cup,World,New Zealand,Belgium,True,API-Football fixture metadata,False
+1489420,2026-06-27T21:00:00+00:00,FT,Croatia,Ghana,2,1,2026-06-27T21:00:00+00:00,1782594000,UTC,"Drew Fischer, Canada",,Lincoln Financial Field,Philadelphia,1,World Cup,World,Croatia,Ghana,True,API-Football fixture metadata,False
+1489422,2026-06-27T21:00:00+00:00,FT,Panama,England,0,2,2026-06-27T21:00:00+00:00,1782594000,UTC,"Abdulrahman Al-Jassim, Qatar",,MetLife Stadium,East Rutherford,1,World Cup,World,Panama,England,True,API-Football fixture metadata,False
+1489419,2026-06-27T23:30:00+00:00,FT,Colombia,Portugal,0,0,2026-06-27T23:30:00+00:00,1782603000,UTC,"Alireza Faghani, Australia",,Hard Rock Stadium,Miami Gardens,1,World Cup,World,Colombia,Portugal,True,API-Football fixture metadata,False
+1539013,2026-06-27T23:30:00+00:00,FT,Congo DR,Uzbekistan,3,1,2026-06-27T23:30:00+00:00,1782603000,UTC,"Felix Zwayer, Germany",1898.0,Mercedes-Benz Stadium,Atlanta,1,World Cup,World,Congo DR,Uzbekistan,True,API-Football fixture metadata,False
+1489418,2026-06-28T02:00:00+00:00,FT,Algeria,Austria,3,3,2026-06-28T02:00:00+00:00,1782612000,UTC,I. Tantashev,,Arrowhead Stadium,Kansas City,1,World Cup,World,Algeria,Austria,True,API-Football fixture metadata,False
+1489421,2026-06-28T02:00:00+00:00,FT,Jordan,Argentina,1,3,2026-06-28T02:00:00+00:00,1782612000,UTC,I. Kovacs,,AT&T Stadium,Arlington,1,World Cup,World,Jordan,Argentina,True,API-Football fixture metadata,False
+1561329,2026-06-28T19:00:00+00:00,FT,South Africa,Canada,0,1,2026-06-28T19:00:00+00:00,1782673200,UTC,"Joao Pedro Pinheiro, Portugal",,SoFi Stadium,Inglewood,1,World Cup,World,South Africa,Canada,True,API-Football fixture metadata,False
+1562344,2026-06-29T17:00:00+00:00,FT,Brazil,Japan,2,1,2026-06-29T17:00:00+00:00,1782752400,UTC,"Maurizio Mariani, Italy",0.0,NRG Stadium,Houston,1,World Cup,World,Brazil,Japan,True,API-Football fixture metadata,False
+1565176,2026-06-29T20:30:00+00:00,PEN,Germany,Paraguay,1,1,2026-06-29T20:30:00+00:00,1782765000,UTC,"Jalal Jayed, Morocco",1618.0,Gillette Stadium,Boston,1,World Cup,World,Germany,Paraguay,True,API-Football fixture metadata,False
+1562345,2026-06-30T01:00:00+00:00,PEN,Netherlands,Morocco,1,1,2026-06-30T01:00:00+00:00,1782781200,UTC,W. Sampaio,11905.0,Estadio BBVA,Monterrey,1,World Cup,World,Netherlands,Morocco,True,API-Football fixture metadata,False
+1564789,2026-06-30T17:00:00+00:00,FT,Ivory Coast,Norway,1,2,2026-06-30T17:00:00+00:00,1782838800,UTC,"Jesús Valenzuela, Venezuela",0.0,AT&T Stadium,Dallas,1,World Cup,World,Ivory Coast,Norway,True,API-Football fixture metadata,False
+1565177,2026-06-30T21:00:00+00:00,FT,France,Sweden,3,0,2026-06-30T21:00:00+00:00,1782853200,UTC,"Danny Makkelie, Netherlands",0.0,MetLife Stadium,New-York,1,World Cup,World,France,Sweden,True,API-Football fixture metadata,False
+1567306,2026-07-01T01:00:00+00:00,FT,Mexico,Ecuador,2,0,2026-07-01T01:00:00+00:00,1782867600,UTC,S. Vincic,1069.0,Estadio Banorte,Mexico City,1,World Cup,World,Mexico,Ecuador,True,API-Football fixture metadata,False
+1567307,2026-07-01T16:00:00+00:00,FT,England,Congo DR,2,1,2026-07-01T16:00:00+00:00,1782921600,UTC,"Adham Mohammad, Jordan",1898.0,Mercedes-Benz Stadium,Atlanta,1,World Cup,World,England,Congo DR,True,API-Football fixture metadata,False
+1567308,2026-07-01T20:00:00+00:00,AET,Belgium,Senegal,3,2,2026-07-01T20:00:00+00:00,1782936000,UTC,"Said Martinez, Honduras",11534.0,Lumen Field,Seattle,1,World Cup,World,Belgium,Senegal,True,API-Football fixture metadata,False
+1562586,2026-07-02T00:00:00+00:00,FT,USA,Bosnia & Herzegovina,2,0,2026-07-02T00:00:00+00:00,1782950400,UTC,R. Claus,0.0,Levi's Stadium,San-Francisco,1,World Cup,World,USA,Bosnia & Herzegovina,True,API-Football fixture metadata,False
+1567311,2026-07-02T19:00:00+00:00,FT,Spain,Austria,3,0,2026-07-02T19:00:00+00:00,1783018800,UTC,"Glenn Nyberg, Sweden",,SoFi Stadium,Inglewood,1,World Cup,World,Spain,Austria,True,API-Football fixture metadata,False
+1567309,2026-07-02T23:00:00+00:00,FT,Portugal,Croatia,2,1,2026-07-02T23:00:00+00:00,1783033200,UTC,"Espen Eskas, Norway",312.0,BMO Field,Toronto,1,World Cup,World,Portugal,Croatia,True,API-Football fixture metadata,False
+1567312,2026-07-03T03:00:00+00:00,FT,Switzerland,Algeria,2,0,2026-07-03T03:00:00+00:00,1783047600,UTC,Y. Perez,19445.0,BC Place,Vancouver,1,World Cup,World,Switzerland,Algeria,True,API-Football fixture metadata,False
+1565178,2026-07-03T18:00:00+00:00,PEN,Australia,Egypt,1,1,2026-07-03T18:00:00+00:00,1783101600,UTC,"Gustavo Tejera, Uruguay",0.0,AT&T Stadium,Dallas,1,World Cup,World,Australia,Egypt,True,API-Football fixture metadata,False
+1565179,2026-07-03T22:00:00+00:00,AET,Argentina,Cape Verde Islands,3,2,2026-07-03T22:00:00+00:00,1783116000,UTC,"Drew Fischer, Canada",0.0,Hard Rock Stadium,Miami,1,World Cup,World,Argentina,Cape Verde Islands,True,API-Football fixture metadata,False
+1567310,2026-07-04T01:30:00+00:00,FT,Colombia,Ghana,1,0,2026-07-04T01:30:00+00:00,1783128600,UTC,C. Turpin,0.0,Arrowhead Stadium,Kansas City,1,World Cup,World,Colombia,Ghana,True,API-Football fixture metadata,False
+1567824,2026-07-04T17:00:00+00:00,FT,Canada,Morocco,0,3,2026-07-04T17:00:00+00:00,1783184400,UTC,"Michael Oliver, England",,NRG Stadium,Houston,1,World Cup,World,Canada,Morocco,True,API-Football fixture metadata,False
+1569870,2026-07-04T21:00:00+00:00,FT,Paraguay,France,0,1,2026-07-04T21:00:00+00:00,1783198800,UTC,"Ilgiz Tantashev, Uzbekistan",0.0,Lincoln Financial Field,Philadelphia,1,World Cup,World,Paraguay,France,True,API-Football fixture metadata,False
+1568100,2026-07-05T20:00:00+00:00,FT,Brazil,Norway,1,2,2026-07-05T20:00:00+00:00,1783281600,UTC,"Ismail Elfath, USA",0.0,MetLife Stadium,East Rutherford,1,World Cup,World,Brazil,Norway,True,API-Football fixture metadata,False
+1570714,2026-07-06T01:00:00+00:00,FT,Mexico,England,2,3,2026-07-06T01:00:00+00:00,1783299600,UTC,A. Faghani,,Estadio Banorte,Mexico City,1,World Cup,World,Mexico,England,True,API-Football fixture metadata,False
+1576756,2026-07-06T19:00:00+00:00,FT,Portugal,Spain,0,1,2026-07-06T19:00:00+00:00,1783364400,UTC,"Anthony Taylor, England",0.0,AT&T Stadium,Dallas,1,World Cup,World,Portugal,Spain,True,API-Football fixture metadata,False
+1570715,2026-07-07T00:00:00+00:00,FT,USA,Belgium,1,4,2026-07-07T00:00:00+00:00,1783382400,UTC,"Adham Mohammad, Jordan",11534.0,Lumen Field,Seattle,1,World Cup,World,USA,Belgium,True,API-Football fixture metadata,False
+1576804,2026-07-07T16:00:00+00:00,FT,Argentina,Egypt,3,2,2026-07-07T16:00:00+00:00,1783440000,UTC,"François Letexier, France",1898.0,Mercedes-Benz Stadium,Atlanta,1,World Cup,World,Argentina,Egypt,True,API-Football fixture metadata,False
+1576805,2026-07-07T20:00:00+00:00,PEN,Switzerland,Colombia,0,0,2026-07-07T20:00:00+00:00,1783454400,UTC,"Iván Barton, El Salvador",19445.0,BC Place,Vancouver,1,World Cup,World,Switzerland,Colombia,True,API-Football fixture metadata,False
+1578539,2026-07-09T20:00:00+00:00,FT,France,Morocco,2,0,2026-07-09T20:00:00+00:00,1783627200,UTC,"Facundo Raul Tello Figueroa, Argentina",1618.0,Gillette Stadium,Boston,1,World Cup,World,France,Morocco,True,API-Football fixture metadata,False
+1581821,2026-07-10T19:00:00+00:00,FT,Spain,Belgium,2,1,2026-07-10T19:00:00+00:00,1783710000,UTC,"Michael Oliver, England",0.0,SoFi Stadium,Los Angeles,1,World Cup,World,Spain,Belgium,True,API-Football fixture metadata,False
+1581037,2026-07-11T21:00:00+00:00,AET,Norway,England,1,2,2026-07-11T21:00:00+00:00,1783803600,UTC,"Clement Turpin, France",0.0,Hard Rock Stadium,Miami,1,World Cup,World,Norway,England,True,API-Football fixture metadata,False
+1582681,2026-07-12T01:00:00+00:00,AET,Argentina,Switzerland,3,1,2026-07-12T01:00:00+00:00,1783818000,UTC,"Joao Pedro Pinheiro, Portugal",0.0,Arrowhead Stadium,Kansas City,1,World Cup,World,Argentina,Switzerland,True,API-Football fixture metadata,False
+1585131,2026-07-14T19:00:00+00:00,FT,France,Spain,0,2,2026-07-14T19:00:00+00:00,1784055600,UTC,"Iván Barton, El Salvador",0.0,Dallas Stadium,Arlington,1,World Cup,World,France,Spain,True,API-Football fixture metadata,False
+1586077,2026-07-15T19:00:00+00:00,FT,England,Argentina,1,2,2026-07-15T19:00:00+00:00,1784142000,UTC,"Ismail Elfath, USA",1898.0,Mercedes-Benz Stadium,Atlanta,1,World Cup,World,England,Argentina,True,API-Football fixture metadata,False

@@ -1,5 +1,19 @@
 {
-  "status": "waiting_for_venue_metadata",
-  "fixtures": 102,
-  "weather_rows": 0
+  "status": "open_meteo_enrichment_completed",
+  "fixtures_with_context": 100,
+  "fixtures_failed": 2,
+  "errors": [
+    {
+      "fixture_id": 1565177,
+      "venue_city": "New-York",
+      "error": "geocoding returned no usable result"
+    },
+    {
+      "fixture_id": 1562586,
+      "venue_city": "San-Francisco",
+      "error": "geocoding returned no usable result"
+    }
+  ],
+  "dataset_choice": "Historical Forecast API for recent match-day conditions; UTC hourly nearest-kickoff value plus pre-match three-hour summaries",
+  "context_in_main_v1": false
 }
