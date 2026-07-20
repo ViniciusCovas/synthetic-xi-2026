@@ -12,45 +12,66 @@ Previous identified-set and exploratory simulations remain preserved as diagnost
 
 ## Player eligibility
 
-A real player may compete for one slot only when all requirements are met:
+A real player may compete for a slot only when all requirements are met:
 
 - at least 1,800 minutes in the frozen annual window;
-- at least 900 positional minutes or 60% of classified minutes in the evaluated role;
-- at least 90% relevant coverage;
+- at least 900 minutes and three complete-lineup observations in the slot's positional family;
+- the exact slot is supported by two independent blind reviewers or explicit adjudication;
+- at least 90% relevant coverage in both frozen windows;
 - one canonical identity per `player_id`;
-- validated ontology-v3 role;
 - complete role-specific statistical profile;
 - no unresolved high-impact human-review conflict.
 
-Every role must contain at least 20 eligible players. The pipeline may not silently reduce the pool size.
+The positional families are frozen as follows:
 
-## Ontology-v3 gate
+- `GK`: `GK`;
+- `FB`: `RB, LB`;
+- `CB`: `RCB, LCB`;
+- `MID`: `DM, CM, AM`;
+- `WING`: `RW, LW`;
+- `ST`: `ST`.
 
-Two independent reviewers must classify the blind packet without seeing model ranks, previous roles or simulation results. Promotion requires:
+Family minutes are used only to establish that a player has substantial experience in the relevant tactical line. The two blind reviewers resolve the exact slot. This prevents a circular rule in which the automatic ontology would have to be accepted before it could be independently audited.
 
-- Cohen's kappa of at least 0.80;
+A player may be eligible for a maximum of two reviewed slots, but one `player_id` may occupy only one slot in the final XI.
+
+Every final slot must contain at least 20 reviewed, eligible and fully covered candidates. The pipeline may not silently reduce the pool size.
+
+## Ontology-v3.1 gate
+
+The blind packet is built from players with at least 1,800 annual minutes and at least 900 minutes in one positional family, plus preregistered high-impact challengers. It does not require 20 automatically assigned exact-role primaries before review.
+
+Two independent reviewers classify the packet without seeing model ranks, previous roles or simulation results. Promotion requires:
+
+- Cohen's kappa of at least 0.80 for primary slots;
 - at least 90% agreement for high-impact cases;
 - at least 90% compatibility with official public anchors;
 - zero unresolved high-impact cases after adjudication;
-- at least 20 eligible candidates in every role.
+- at least 20 reviewed eligible candidates in every final slot.
 
 Official club, league and federation sources validate plausibility but never add ranking points.
 
 ## Real XI selection
 
-The top player in every role is selected by the frozen role-specific score. Ties are resolved in this order:
+The Real XI is selected by a global one-to-one assignment across the eleven slots. The optimizer maximizes the frozen sum of role-specific adjusted scores subject to:
 
-1. adjusted role score;
-2. conservative score;
-3. valid role minutes;
-4. positional stability;
-5. lower `player_id`.
+- exactly one player per slot;
+- no player occupying two slots;
+- only reviewed, eligible and fully covered candidate-role pairs;
+- deterministic tie-breaking.
 
-One `player_id` cannot occupy two slots.
+For equal total team utility, ties are resolved by:
+
+1. higher sum of conservative scores;
+2. higher sum of valid annual minutes;
+3. higher sum of reviewed-family minutes;
+4. lexicographically lower ordered `player_id` vector.
+
+A greedy slot-by-slot selection is not permitted because it can assign a versatile player suboptimally.
 
 ## AI XI generation
 
-Each AI player is generated only from complete vectors of eligible real players in the same role.
+Each AI player is generated only from complete vectors of eligible real players approved for the same reviewed slot.
 
 The main generator:
 
