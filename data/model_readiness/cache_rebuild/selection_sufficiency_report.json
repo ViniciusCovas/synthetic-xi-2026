@@ -1,0 +1,126 @@
+{
+  "status": "cache_only_coverage_rebuild_complete",
+  "generated_at_utc": "2026-07-20T01:09:45.584285+00:00",
+  "network_calls": 0,
+  "provider_api_calls": 0,
+  "deduplication_key": [
+    "fixture_id",
+    "player_id"
+  ],
+  "cached_player_fixture_pairs_after_deduplication": 53418,
+  "cached_detailed_minutes_after_deduplication": 3085487.0,
+  "eligible_candidates": 972,
+  "fully_covered_both_windows": 940,
+  "unresolved_players": 27,
+  "truly_unresolved_player_fixture_pairs": 258,
+  "truly_unresolved_priority_fixtures": 181,
+  "selection_sufficiency_gate_passed": false,
+  "rankings_allowed": false,
+  "real_best_xi_provisional_preserved": true,
+  "final_rankings_generated": false,
+  "window_rows_passing_before": 1934,
+  "window_rows_passing_after": 1934,
+  "canonical_residual_player_fixture_pairs": 515,
+  "canonical_residual_unique_fixtures": 181,
+  "roles": [
+    {
+      "role": "GK",
+      "eligible_candidates": 94,
+      "stable_candidates": 94,
+      "required_pool_size": 30,
+      "covered_candidates": 92,
+      "unresolved_challengers": 2,
+      "role_gate_passed": false
+    },
+    {
+      "role": "RB",
+      "eligible_candidates": 238,
+      "stable_candidates": 216,
+      "required_pool_size": 30,
+      "covered_candidates": 209,
+      "unresolved_challengers": 8,
+      "role_gate_passed": false
+    },
+    {
+      "role": "RCB",
+      "eligible_candidates": 36,
+      "stable_candidates": 29,
+      "required_pool_size": 29,
+      "covered_candidates": 29,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "LCB",
+      "eligible_candidates": 24,
+      "stable_candidates": 11,
+      "required_pool_size": 11,
+      "covered_candidates": 11,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "LB",
+      "eligible_candidates": 42,
+      "stable_candidates": 30,
+      "required_pool_size": 30,
+      "covered_candidates": 30,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "DM",
+      "eligible_candidates": 22,
+      "stable_candidates": 12,
+      "required_pool_size": 12,
+      "covered_candidates": 12,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "CM",
+      "eligible_candidates": 109,
+      "stable_candidates": 62,
+      "required_pool_size": 30,
+      "covered_candidates": 61,
+      "unresolved_challengers": 1,
+      "role_gate_passed": false
+    },
+    {
+      "role": "AM",
+      "eligible_candidates": 143,
+      "stable_candidates": 116,
+      "required_pool_size": 30,
+      "covered_candidates": 108,
+      "unresolved_challengers": 8,
+      "role_gate_passed": false
+    },
+    {
+      "role": "RW",
+      "eligible_candidates": 239,
+      "stable_candidates": 207,
+      "required_pool_size": 30,
+      "covered_candidates": 199,
+      "unresolved_challengers": 8,
+      "role_gate_passed": false
+    },
+    {
+      "role": "LW",
+      "eligible_candidates": 11,
+      "stable_candidates": 8,
+      "required_pool_size": 8,
+      "covered_candidates": 8,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "ST",
+      "eligible_candidates": 14,
+      "stable_candidates": 3,
+      "required_pool_size": 3,
+      "covered_candidates": 3,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    }
+  ]
+}

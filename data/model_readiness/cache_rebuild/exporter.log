@@ -1,5 +1,126 @@
-Traceback (most recent call last):
-  File "/home/runner/work/synthetic-xi-2026/synthetic-xi-2026/scripts/scientific/rebuild_cached_coverage_ledger.py", line 3, in <module>
-    exec(compile(zlib.decompress(base64.b64decode("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")), __file__, "exec"))
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-zlib.error: Error -3 while decompressing data: incorrect data check
+{
+  "status": "cache_only_coverage_rebuild_complete",
+  "generated_at_utc": "2026-07-20T01:09:45.584285+00:00",
+  "network_calls": 0,
+  "provider_api_calls": 0,
+  "deduplication_key": [
+    "fixture_id",
+    "player_id"
+  ],
+  "cached_player_fixture_pairs_after_deduplication": 53418,
+  "cached_detailed_minutes_after_deduplication": 3085487.0,
+  "eligible_candidates": 972,
+  "fully_covered_both_windows": 940,
+  "unresolved_players": 27,
+  "truly_unresolved_player_fixture_pairs": 258,
+  "truly_unresolved_priority_fixtures": 181,
+  "selection_sufficiency_gate_passed": false,
+  "rankings_allowed": false,
+  "real_best_xi_provisional_preserved": true,
+  "final_rankings_generated": false,
+  "window_rows_passing_before": 1934,
+  "window_rows_passing_after": 1934,
+  "canonical_residual_player_fixture_pairs": 515,
+  "canonical_residual_unique_fixtures": 181,
+  "roles": [
+    {
+      "role": "GK",
+      "eligible_candidates": 94,
+      "stable_candidates": 94,
+      "required_pool_size": 30,
+      "covered_candidates": 92,
+      "unresolved_challengers": 2,
+      "role_gate_passed": false
+    },
+    {
+      "role": "RB",
+      "eligible_candidates": 238,
+      "stable_candidates": 216,
+      "required_pool_size": 30,
+      "covered_candidates": 209,
+      "unresolved_challengers": 8,
+      "role_gate_passed": false
+    },
+    {
+      "role": "RCB",
+      "eligible_candidates": 36,
+      "stable_candidates": 29,
+      "required_pool_size": 29,
+      "covered_candidates": 29,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "LCB",
+      "eligible_candidates": 24,
+      "stable_candidates": 11,
+      "required_pool_size": 11,
+      "covered_candidates": 11,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "LB",
+      "eligible_candidates": 42,
+      "stable_candidates": 30,
+      "required_pool_size": 30,
+      "covered_candidates": 30,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "DM",
+      "eligible_candidates": 22,
+      "stable_candidates": 12,
+      "required_pool_size": 12,
+      "covered_candidates": 12,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "CM",
+      "eligible_candidates": 109,
+      "stable_candidates": 62,
+      "required_pool_size": 30,
+      "covered_candidates": 61,
+      "unresolved_challengers": 1,
+      "role_gate_passed": false
+    },
+    {
+      "role": "AM",
+      "eligible_candidates": 143,
+      "stable_candidates": 116,
+      "required_pool_size": 30,
+      "covered_candidates": 108,
+      "unresolved_challengers": 8,
+      "role_gate_passed": false
+    },
+    {
+      "role": "RW",
+      "eligible_candidates": 239,
+      "stable_candidates": 207,
+      "required_pool_size": 30,
+      "covered_candidates": 199,
+      "unresolved_challengers": 8,
+      "role_gate_passed": false
+    },
+    {
+      "role": "LW",
+      "eligible_candidates": 11,
+      "stable_candidates": 8,
+      "required_pool_size": 8,
+      "covered_candidates": 8,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "ST",
+      "eligible_candidates": 14,
+      "stable_candidates": 3,
+      "required_pool_size": 3,
+      "covered_candidates": 3,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    }
+  ]
+}

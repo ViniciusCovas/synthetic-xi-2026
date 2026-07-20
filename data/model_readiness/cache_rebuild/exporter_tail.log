@@ -1,3 +1,30 @@
-Traceback (most recent call last):
-  File "/home/runner/work/synthetic-xi-2026/synthetic-xi-2026/scripts/scientific/rebuild_cached_coverage_ledger.py", line 3, in <module>
-zlib.error: Error -3 while decompressing data: incorrect data check
+    },
+    {
+      "role": "RW",
+      "eligible_candidates": 239,
+      "stable_candidates": 207,
+      "required_pool_size": 30,
+      "covered_candidates": 199,
+      "unresolved_challengers": 8,
+      "role_gate_passed": false
+    },
+    {
+      "role": "LW",
+      "eligible_candidates": 11,
+      "stable_candidates": 8,
+      "required_pool_size": 8,
+      "covered_candidates": 8,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    },
+    {
+      "role": "ST",
+      "eligible_candidates": 14,
+      "stable_candidates": 3,
+      "required_pool_size": 3,
+      "covered_candidates": 3,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+fixture_id,player_id,player_name,team_id,team,competition_id,competition,season,match_date,primary_position,observed_position,minutes,is_starter,detail_present,coverage_status,source_player,source_lineup
+1383440,160925,T. Ali,375.0,Sweden,2.0,UEFA Champions League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1383451,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,2.0,UEFA Champions League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1383451,25341,D. Luckassen,3403.0,Ghana,2.0,UEFA Champions League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1383454,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,2.0,UEFA Champions League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1383454,25341,D. Luckassen,3403.0,Ghana,2.0,UEFA Champions League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1384111,2975,C. Blackman,656.0,Panama,332.0,Super Liga,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1384133,2975,C. Blackman,656.0,Panama,332.0,Super Liga,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1384140,2975,C. Blackman,656.0,Panama,332.0,Super Liga,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1384145,2975,C. Blackman,656.0,Panama,332.0,Super Liga,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1384163,2975,C. Blackman,656.0,Panama,332.0,Super Liga,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1388041,37435,D. Duarte,566.0,Cape Verde Islands,172.0,First League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1389594,8450,A. Seck,4195.0,Senegal,383.0,Ligat Ha'al,2025.0,,RB,,,True,False,lineup_only_startXI,,data/audits/fixture_detail_pilot_lineups.csv
+1389645,8450,A. Seck,4195.0,Senegal,383.0,Ligat Ha'al,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1389645,41627,K. Gorre,4195.0,Curaçao,383.0,Ligat Ha'al,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1389652,8450,A. Seck,4195.0,Senegal,383.0,Ligat Ha'al,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1389661,8450,A. Seck,4195.0,Senegal,383.0,Ligat Ha'al,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1389661,41627,K. Gorre,4195.0,Curaçao,383.0,Ligat Ha'al,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1389684,8450,A. Seck,4195.0,Senegal,383.0,Ligat Ha'al,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1389684,41627,K. Gorre,4195.0,Curaçao,383.0,Ligat Ha'al,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1389732,8450,A. Seck,4195.0,Senegal,383.0,Ligat Ha'al,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1389732,41627,K. Gorre,4195.0,Curaçao,383.0,Ligat Ha'al,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1389742,8450,A. Seck,4195.0,Senegal,383.0,Ligat Ha'al,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1389742,41627,K. Gorre,4195.0,Curaçao,383.0,Ligat Ha'al,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1389753,8450,A. Seck,4195.0,Senegal,383.0,Ligat Ha'al,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1389753,41627,K. Gorre,4195.0,Curaçao,383.0,Ligat Ha'al,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1393730,283174,M. Al Mannai,2916.0,Qatar,305.0,Stars League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1393731,16813,H. Fathy,2900.0,Egypt,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393732,377930,A. Al Oui,2903.0,Qatar,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393737,377930,A. Al Oui,2903.0,Qatar,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393738,283174,M. Al Mannai,2916.0,Qatar,305.0,Stars League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393741,42207,M. Abunada,2897.0,Qatar,305.0,Stars League,2025.0,,GK,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393744,16813,H. Fathy,2900.0,Egypt,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393745,283174,M. Al Mannai,2916.0,Qatar,305.0,Stars League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1393749,377930,A. Al Oui,2903.0,Qatar,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393750,42207,M. Abunada,2897.0,Qatar,305.0,Stars League,2025.0,,GK,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393752,283174,M. Al Mannai,2916.0,Qatar,305.0,Stars League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1393753,42207,M. Abunada,2897.0,Qatar,305.0,Stars League,2025.0,,GK,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393757,377930,A. Al Oui,2903.0,Qatar,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393759,42207,M. Abunada,2897.0,Qatar,305.0,Stars League,2025.0,,GK,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393759,377930,A. Al Oui,2903.0,Qatar,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393763,16813,H. Fathy,2900.0,Egypt,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393763,42288,Lucas Mendes,2900.0,Qatar,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393764,283174,M. Al Mannai,2916.0,Qatar,305.0,Stars League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1393771,377930,A. Al Oui,2903.0,Qatar,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393772,283174,M. Al Mannai,2916.0,Qatar,305.0,Stars League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393775,16813,H. Fathy,2900.0,Egypt,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393775,42207,M. Abunada,2897.0,Qatar,305.0,Stars League,2025.0,,GK,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393775,42288,Lucas Mendes,2900.0,Qatar,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393782,283174,M. Al Mannai,2916.0,Qatar,305.0,Stars League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1393790,42207,M. Abunada,2897.0,Qatar,305.0,Stars League,2025.0,,GK,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1393792,42288,Lucas Mendes,2900.0,Qatar,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1394076,535046,A. Amaimouni,9364.0,Morocco,80.0,3. Liga,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1394084,535046,A. Amaimouni,9364.0,Morocco,80.0,3. Liga,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1394096,535046,A. Amaimouni,9364.0,Morocco,80.0,3. Liga,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1394111,535046,A. Amaimouni,9364.0,Morocco,80.0,3. Liga,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1394115,535046,A. Amaimouni,9364.0,Morocco,80.0,3. Liga,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1394127,535046,A. Amaimouni,9364.0,Morocco,80.0,3. Liga,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1394165,535046,A. Amaimouni,9364.0,Morocco,80.0,3. Liga,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1394176,535046,A. Amaimouni,9364.0,Morocco,80.0,3. Liga,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1405447,160925,T. Ali,375.0,Sweden,2.0,UEFA Champions League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1405451,2975,C. Blackman,656.0,Panama,2.0,UEFA Champions League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1405458,2975,C. Blackman,656.0,Panama,2.0,UEFA Champions League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1405461,160925,T. Ali,375.0,Sweden,2.0,UEFA Champions League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1410019,113580,W. Semedo,3402.0,Cape Verde Islands,848.0,UEFA Europa Conference League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1410025,8450,A. Seck,4195.0,Senegal,848.0,UEFA Europa Conference League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29705374610_2_lineups.csv.gz
+1410049,113580,W. Semedo,685.0,Cape Verde Islands,848.0,UEFA Europa Conference League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1410056,8450,A. Seck,385.0,Senegal,848.0,UEFA Europa Conference League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29705374610_2_lineups.csv.gz
+1410072,49837,M. Gunok,549.0,Türkiye,3.0,UEFA Europa League,2025.0,,GK,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1410075,49837,M. Gunok,549.0,Türkiye,3.0,UEFA Europa League,2025.0,,GK,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415590,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415592,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415592,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415598,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415598,2860,K. Sema,3403.0,Sweden,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415598,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415603,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415603,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415607,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415609,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415609,2860,K. Sema,3403.0,Sweden,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415609,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415614,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415617,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415617,2860,K. Sema,3403.0,Sweden,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415620,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415626,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415627,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415627,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415630,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415643,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415643,2860,K. Sema,3403.0,Sweden,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415643,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415643,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415644,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415649,2860,K. Sema,3403.0,Sweden,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415649,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415657,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415668,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415668,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415679,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415685,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415685,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415692,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415695,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415697,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415697,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415701,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415708,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415708,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415717,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415721,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415724,2860,K. Sema,3403.0,Sweden,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415724,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415732,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415732,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415916,19614,S. Ezatolahi,2870.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/audits/fixture_detail_pilot_lineups.csv
+1415918,2699,S. Ghoddos,2876.0,Iran,301.0,Pro League,2025.0,,CM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_3_lineups.csv.gz
+1415918,89982,S. Moghanlou,2876.0,Iran,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_3_lineups.csv.gz
+1415919,2514,Kaku,2865.0,Paraguay,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415919,41608,D. Borges,9136.0,Cape Verde Islands,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415919,73520,A. Ganiev,9136.0,Uzbekistan,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415921,341844,M. Ghorbani,2875.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415923,2699,S. Ghoddos,2876.0,Iran,301.0,Pro League,2025.0,,CM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_3_lineups.csv.gz
+1415923,89982,S. Moghanlou,2876.0,Iran,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_3_lineups.csv.gz
+1415924,70535,I. Adel,2871.0,Egypt,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415926,2514,Kaku,2865.0,Paraguay,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1415927,341844,M. Ghorbani,2875.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415928,41608,D. Borges,9136.0,Cape Verde Islands,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1415928,73520,A. Ganiev,9136.0,Uzbekistan,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1419568,2975,C. Blackman,656.0,Panama,2.0,UEFA Champions League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1421138,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,2.0,UEFA Champions League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1421138,25341,D. Luckassen,3403.0,Ghana,2.0,UEFA Champions League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1421145,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,2.0,UEFA Champions League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1421145,25341,D. Luckassen,3403.0,Ghana,2.0,UEFA Champions League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1421175,113580,W. Semedo,3402.0,Cape Verde Islands,848.0,UEFA Europa Conference League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1421202,113580,W. Semedo,11238.0,Cape Verde Islands,848.0,UEFA Europa Conference League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1435928,542644,A. Jasim,2992.0,Iraq,307.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1435937,542644,A. Jasim,2992.0,Iraq,307.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29705374610_2_lineups.csv.gz
+1435943,542644,A. Jasim,2992.0,Iraq,307.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1435949,542644,A. Jasim,2992.0,Iraq,307.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1435960,542644,A. Jasim,2992.0,Iraq,307.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29705374610_2_lineups.csv.gz
+1436778,37435,D. Duarte,566.0,Cape Verde Islands,3.0,UEFA Europa League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1436780,160925,T. Ali,375.0,Sweden,3.0,UEFA Europa League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1436783,37435,D. Duarte,609.0,Cape Verde Islands,3.0,UEFA Europa League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1437227,160925,T. Ali,375.0,Sweden,3.0,UEFA Europa League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446895,2699,S. Ghoddos,2876.0,Iran,301.0,Pro League,2025.0,,CM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446895,341844,M. Ghorbani,2875.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446896,19614,S. Ezatolahi,2870.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446899,41608,D. Borges,9136.0,Cape Verde Islands,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446899,73520,A. Ganiev,9136.0,Uzbekistan,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446900,70535,I. Adel,2871.0,Egypt,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446901,2514,Kaku,2865.0,Paraguay,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1446901,16805,R. Rabia,2865.0,Egypt,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1446902,341844,M. Ghorbani,2875.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446903,70535,I. Adel,2871.0,Egypt,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446904,2514,Kaku,2865.0,Paraguay,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1446904,16805,R. Rabia,2865.0,Egypt,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1446906,19614,S. Ezatolahi,2870.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446907,41608,D. Borges,9136.0,Cape Verde Islands,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446907,73520,A. Ganiev,9136.0,Uzbekistan,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446909,89982,S. Moghanlou,2876.0,Iran,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29705374610_2_lineups.csv.gz
+1446910,70535,I. Adel,2871.0,Egypt,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446910,341844,M. Ghorbani,2875.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446911,2514,Kaku,2865.0,Paraguay,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1446911,16805,R. Rabia,2865.0,Egypt,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1446911,19614,S. Ezatolahi,2870.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1446913,41608,D. Borges,9136.0,Cape Verde Islands,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446913,73520,A. Ganiev,9136.0,Uzbekistan,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446917,41608,D. Borges,9136.0,Cape Verde Islands,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446917,73520,A. Ganiev,9136.0,Uzbekistan,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446917,341844,M. Ghorbani,2875.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446918,2699,S. Ghoddos,2876.0,Iran,301.0,Pro League,2025.0,,CM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446918,89982,S. Moghanlou,2876.0,Iran,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446919,70535,I. Adel,2871.0,Egypt,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446922,2514,Kaku,2865.0,Paraguay,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1446922,16805,R. Rabia,2865.0,Egypt,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1446922,36579,S. Rahimi,2865.0,Morocco,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1446923,341844,M. Ghorbani,2875.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446924,2514,Kaku,2865.0,Paraguay,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1446924,16805,R. Rabia,2865.0,Egypt,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1446924,36579,S. Rahimi,2865.0,Morocco,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1446925,19614,S. Ezatolahi,2870.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446928,2699,S. Ghoddos,2876.0,Iran,301.0,Pro League,2025.0,,CM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29705374610_2_lineups.csv.gz
+1446928,89982,S. Moghanlou,2876.0,Iran,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29705374610_2_lineups.csv.gz
+1446929,41608,D. Borges,9136.0,Cape Verde Islands,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446929,70535,I. Adel,2871.0,Egypt,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1446929,73520,A. Ganiev,9136.0,Uzbekistan,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1451486,37435,D. Duarte,566.0,Cape Verde Islands,172.0,First League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1451495,37435,D. Duarte,566.0,Cape Verde Islands,172.0,First League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1451617,37435,D. Duarte,566.0,Cape Verde Islands,172.0,First League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1485346,41608,D. Borges,9136.0,Cape Verde Islands,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1485346,73520,A. Ganiev,9136.0,Uzbekistan,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1485352,2699,S. Ghoddos,2876.0,Iran,301.0,Pro League,2025.0,,CM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29705374610_2_lineups.csv.gz
+1485352,89982,S. Moghanlou,2876.0,Iran,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29705374610_2_lineups.csv.gz
+1485353,41608,D. Borges,9136.0,Cape Verde Islands,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1485353,73520,A. Ganiev,9136.0,Uzbekistan,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1485354,19614,S. Ezatolahi,2870.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1489326,49837,M. Gunok,611.0,Türkiye,206.0,Türkiye Kupası,2025.0,,GK,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1489334,49837,M. Gunok,611.0,Türkiye,206.0,Türkiye Kupası,2025.0,,GK,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1491601,42207,M. Abunada,2897.0,Qatar,305.0,Stars League,2025.0,,GK,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1491607,377930,A. Al Oui,2903.0,Qatar,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1491631,42207,M. Abunada,2897.0,Qatar,305.0,Stars League,2025.0,,GK,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1491631,377930,A. Al Oui,2903.0,Qatar,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1491633,16813,H. Fathy,2900.0,Egypt,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1491649,16813,H. Fathy,2900.0,Egypt,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1491649,42288,Lucas Mendes,2900.0,Qatar,305.0,Stars League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1505602,19614,S. Ezatolahi,2870.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1505608,341844,M. Ghorbani,2875.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1505609,19614,S. Ezatolahi,2870.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1505611,89982,S. Moghanlou,2876.0,Iran,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29705374610_2_lineups.csv.gz
+1505612,41608,D. Borges,9136.0,Cape Verde Islands,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1505612,73520,A. Ganiev,9136.0,Uzbekistan,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1505614,36579,S. Rahimi,2865.0,Morocco,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1521238,41608,D. Borges,9136.0,Cape Verde Islands,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1521238,73520,A. Ganiev,9136.0,Uzbekistan,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1528518,2975,C. Blackman,656.0,Panama,332.0,Super Liga,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1528526,2975,C. Blackman,656.0,Panama,332.0,Super Liga,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1528532,2975,C. Blackman,656.0,Panama,332.0,Super Liga,2025.0,,RB,,,True,False,lineup_only_startXI,,data/audits/fixture_detail_pilot_lineups.csv
+1537392,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1537393,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1537393,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1537399,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1537400,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1537400,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1537625,2699,S. Ghoddos,2876.0,Iran,301.0,Pro League,2025.0,,CM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1537625,89982,S. Moghanlou,2876.0,Iran,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1537626,41608,D. Borges,9136.0,Cape Verde Islands,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1537626,73520,A. Ganiev,9136.0,Uzbekistan,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1540727,8450,A. Seck,4195.0,Senegal,383.0,Ligat Ha'al,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1540975,37435,D. Duarte,566.0,Cape Verde Islands,172.0,First League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1540978,37435,D. Duarte,566.0,Cape Verde Islands,172.0,First League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1540980,37435,D. Duarte,566.0,Cape Verde Islands,172.0,First League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1540984,37435,D. Duarte,566.0,Cape Verde Islands,172.0,First League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1542139,341844,M. Ghorbani,2875.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1542140,16805,R. Rabia,2865.0,Egypt,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1542140,36579,S. Rahimi,2865.0,Morocco,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1542141,19614,S. Ezatolahi,2870.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1542383,113580,W. Semedo,3402.0,Cape Verde Islands,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1543176,16805,R. Rabia,2865.0,Egypt,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1543176,36579,S. Rahimi,2865.0,Morocco,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1543177,41608,D. Borges,9136.0,Cape Verde Islands,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1543177,73520,A. Ganiev,9136.0,Uzbekistan,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1543178,19614,S. Ezatolahi,2870.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1543180,2699,S. Ghoddos,2876.0,Iran,301.0,Pro League,2025.0,,CM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_3_lineups.csv.gz
+1543180,89982,S. Moghanlou,2876.0,Iran,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_3_lineups.csv.gz
+1543778,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1543778,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1543779,1324,I. Sunjic,3403.0,Bosnia & Herzegovina,318.0,1. Division,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1543779,25341,D. Luckassen,3403.0,Ghana,318.0,1. Division,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1544965,2699,S. Ghoddos,2876.0,Iran,301.0,Pro League,2025.0,,CM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_3_lineups.csv.gz
+1544966,2514,Kaku,2865.0,Paraguay,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1544966,16805,R. Rabia,2865.0,Egypt,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1544966,36579,S. Rahimi,2865.0,Morocco,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_1_lineups.csv.gz
+1544967,341844,M. Ghorbani,2875.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/lake/batches/batch_bundle_29690789529_2_lineups.csv.gz
+1544969,19614,S. Ezatolahi,2870.0,Iran,301.0,Pro League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/audits/fixture_detail_pilot_lineups.csv
+1544969,41608,D. Borges,9136.0,Cape Verde Islands,301.0,Pro League,2025.0,,RB,,,True,False,lineup_only_startXI,,data/audits/fixture_detail_pilot_lineups.csv
+1544969,73520,A. Ganiev,9136.0,Uzbekistan,301.0,Pro League,2025.0,,RW,,,True,False,lineup_only_startXI,,data/audits/fixture_detail_pilot_lineups.csv
+1546530,37435,D. Duarte,566.0,Cape Verde Islands,172.0,First League,2025.0,,AM,,,True,False,lineup_only_startXI,,data/audits/fixture_detail_pilot_lineups.csv
