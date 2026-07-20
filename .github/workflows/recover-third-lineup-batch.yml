@@ -83,7 +83,7 @@ jobs:
           })
           PY
 
-      - name: Rebuild strict audit, eligibility and review readiness
+      - name: Rebuild strict evidence and non-circular review readiness
         run: |
           python -m py_compile scripts/scientific/audit_complete_lineups_v3.py
           python -m py_compile scripts/scientific/apply_definitive_eligibility_v3.py
@@ -92,35 +92,67 @@ jobs:
           python scripts/scientific/apply_definitive_eligibility_v3.py
           python scripts/scientific/build_blind_position_review_packet_v3.py
 
-      - name: Publish recovered durable state
+      - name: Stage generated state outside the checkout
+        run: |
+          rm -rf /tmp/publish_state
+          mkdir -p /tmp/publish_state
+          while IFS= read -r path; do
+            if [ -f "$path" ]; then
+              mkdir -p "/tmp/publish_state/$(dirname "$path")"
+              cp "$path" "/tmp/publish_state/$path"
+            fi
+          done <<'FILES'
+          data/lake/batches/batch_full_provider_lineups.csv.gz
+          data/lake/full_lineup_extraction_progress.csv
+          data/audits/position_ontology_v3/lineup_completeness_status.json
+          data/audits/position_ontology_v3/complete_lineup_player_role_minutes.csv
+          data/audits/position_ontology_v3/complete_lineup_primary_roles.csv
+          data/audits/position_ontology_v3/blind_review/packet_manifest.json
+          data/audits/position_ontology_v3/blind_review/reviewer_a_form.csv
+          data/audits/position_ontology_v3/blind_review/reviewer_b_form.csv
+          data/audits/position_ontology_v3/blind_review/REVIEW_INSTRUCTIONS_PT.md
+          FILES
+          find /tmp/publish_state -type f -print
+
+      - name: Publish recovered durable state against the latest branch head
         run: |
           set -euo pipefail
           git config user.name 'synthetic-xi-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add -f data/lake/batches/batch_full_provider_lineups.csv.gz
-          git add -f data/lake/full_lineup_extraction_progress.csv
-          git add -f data/audits/position_ontology_v3/lineup_completeness_status.json
-          git add -f data/audits/position_ontology_v3/complete_lineup_player_role_minutes.csv
-          git add -f data/audits/position_ontology_v3/complete_lineup_primary_roles.csv
-          git add -f data/audits/position_ontology_v3/blind_review/packet_manifest.json
-          if [ -f data/audits/position_ontology_v3/blind_review/reviewer_a_form.csv ]; then
-            git add -f data/audits/position_ontology_v3/blind_review/reviewer_a_form.csv
-            git add -f data/audits/position_ontology_v3/blind_review/reviewer_b_form.csv
-            git add -f data/audits/position_ontology_v3/blind_review/REVIEW_INSTRUCTIONS_PT.md
-          fi
-          if git diff --cached --quiet; then
-            echo 'Recovered data already present.'
-            exit 0
-          fi
-          git commit -m 'data: recover successful complete-lineup artifacts'
-          git push origin HEAD:definitive-real-vs-ai
+          for attempt in 1 2 3 4 5; do
+            git fetch origin definitive-real-vs-ai
+            git reset --hard origin/definitive-real-vs-ai
+            cp -a /tmp/publish_state/. .
+            git add -f data/lake/batches/batch_full_provider_lineups.csv.gz
+            git add -f data/lake/full_lineup_extraction_progress.csv
+            git add -f data/audits/position_ontology_v3/lineup_completeness_status.json
+            git add -f data/audits/position_ontology_v3/complete_lineup_player_role_minutes.csv
+            git add -f data/audits/position_ontology_v3/complete_lineup_primary_roles.csv
+            git add -f data/audits/position_ontology_v3/blind_review/packet_manifest.json
+            if [ -f data/audits/position_ontology_v3/blind_review/reviewer_a_form.csv ]; then
+              git add -f data/audits/position_ontology_v3/blind_review/reviewer_a_form.csv
+              git add -f data/audits/position_ontology_v3/blind_review/reviewer_b_form.csv
+              git add -f data/audits/position_ontology_v3/blind_review/REVIEW_INSTRUCTIONS_PT.md
+            fi
+            if git diff --cached --quiet; then
+              echo 'Recovered data already present.'
+              exit 0
+            fi
+            git commit -m 'data: recover latest successful complete-lineup artifacts'
+            if git push origin HEAD:definitive-real-vs-ai; then
+              exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          exit 1
 
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: recovered-full-lineup-artifacts-${{ github.run_id }}
           path: |
             data/audits/position_ontology_v3/lineup_completeness_status.json
             data/audits/position_ontology_v3/complete_lineup_primary_roles.csv
             data/audits/position_ontology_v3/blind_review/packet_manifest.json
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 90
