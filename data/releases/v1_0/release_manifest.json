@@ -1,6 +1,6 @@
 {
   "release": "v1.0-candidate",
-  "generated_at_utc": "2026-07-20T06:58:51.775407+00:00",
+  "generated_at_utc": "2026-07-20T10:21:04.193082+00:00",
   "scientific_ready": false,
   "claim_ceiling": "exploratory, calibrated and auditable simulation",
   "blocking_gates": [
@@ -59,13 +59,13 @@
     },
     {
       "path": "data/model_readiness/candidate_coverage_status.json",
-      "bytes": 799,
-      "sha256": "eb7e380441a59c6f4de8ec30756368f775f60d8f2c34b2da7004e88c77bcd5b6"
+      "bytes": 796,
+      "sha256": "437afaee9e3a48e898f04386cc2e2cd29fba7f915fd4bcd3a1e463454b9188bf"
     },
     {
       "path": "data/model_readiness/candidate_window_coverage.csv",
-      "bytes": 648252,
-      "sha256": "e179dd74a22f7f494c9b31447656f5a61811ce91ee47780efd57d86dfaf0b295"
+      "bytes": 644474,
+      "sha256": "4b81577d55376499ae1a1a29e6f1f49d605f275dbb770a765ec9269db1c32e5f"
     },
     {
       "path": "data/model_readiness/coverage_audit_summary.json",
@@ -194,18 +194,18 @@
     },
     {
       "path": "data/validation/external_pre_tournament_holdout_summary.json",
-      "bytes": 889,
-      "sha256": "68f0b06349c75f7138f8272f5c4ea9b8494bc31dc0cb171f8ab74f03e78cc365"
+      "bytes": 888,
+      "sha256": "aececa09b817d3a3176ab340fed035fe9f5b1eaa4dfb963e25da0b60d434d7d9"
     },
     {
       "path": "data/validation/external_pre_tournament_predictions.csv",
-      "bytes": 18666,
-      "sha256": "f18c66952827f62de4191202eea171b3e91e9651bb6c4a92aae828083138110f"
+      "bytes": 18688,
+      "sha256": "66964312fd219f691d9a548aaedb550f8c108e28ea3a84b44eb1f4f9dbb5e4a6"
     },
     {
       "path": "data/validation/frozen_pre_tournament_team_strengths.csv",
-      "bytes": 4266,
-      "sha256": "c22ef5fa7ee89f4f2de30f26b50e4e3e65cddc97422e95ec1b4abdd6d4c7e757"
+      "bytes": 4285,
+      "sha256": "20a352a03e1195314b9a9aa815f7c032d48b72563e9dd4c24dbcfa4b573ef92b"
     },
     {
       "path": "data/validation/nested_uncertainty_summary.json",

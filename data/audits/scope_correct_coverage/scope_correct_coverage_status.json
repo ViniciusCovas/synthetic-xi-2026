@@ -1,6 +1,6 @@
 {
   "status": "scope_correct_coverage_complete",
-  "generated_at_utc": "2026-07-20T06:58:49.370849+00:00",
+  "generated_at_utc": "2026-07-20T10:21:01.955601+00:00",
   "network_calls": 0,
   "threshold_changed": false,
   "scope_correction": "season aggregates removed; exact fixture coverage recomputed from durable progress",
