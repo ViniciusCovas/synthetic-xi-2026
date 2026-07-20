@@ -1,0 +1,122 @@
+name: Recover Third Full-Lineup Batch
+
+on:
+  push:
+    branches: [definitive-real-vs-ai]
+    paths:
+      - .github/workflows/recover-third-lineup-batch.yml
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+concurrency:
+  group: full-lineup-priority-extraction
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: .
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN_ID: '29756527227'
+      SOURCE_ARTIFACT: full-lineup-priority-29756527227
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: definitive-real-vs-ai
+          fetch-depth: 0
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Download successful data artifact from failed publish run
+        run: |
+          rm -rf /tmp/recovered
+          mkdir -p /tmp/recovered
+          gh run download "$SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" --name "$SOURCE_ARTIFACT" --dir /tmp/recovered
+          find /tmp/recovered -maxdepth 5 -type f -print
+
+      - name: Merge recovered rows with any newer durable batch
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+
+          recovered = Path('/tmp/recovered')
+          incoming_lineups = recovered / 'lake/batches/batch_full_provider_lineups.csv.gz'
+          incoming_progress = recovered / 'lake/full_lineup_extraction_progress.csv'
+          durable_lineups = Path('data/lake/batches/batch_full_provider_lineups.csv.gz')
+          durable_progress = Path('data/lake/full_lineup_extraction_progress.csv')
+          if not incoming_lineups.exists() or not incoming_progress.exists():
+              raise SystemExit('Recovered artifact lacks durable lineup files')
+
+          frames = [pd.read_csv(incoming_lineups, low_memory=False)]
+          if durable_lineups.exists():
+              frames.append(pd.read_csv(durable_lineups, low_memory=False))
+          lineups = pd.concat(frames, ignore_index=True)
+          lineups = lineups.drop_duplicates(
+              ['fixture_id', 'team_id', 'lineup_source', 'player_id'], keep='last'
+          ).sort_values(['fixture_id', 'team_id', 'lineup_source', 'player_id'])
+          durable_lineups.parent.mkdir(parents=True, exist_ok=True)
+          lineups.to_csv(durable_lineups, index=False, compression='gzip')
+
+          progress_frames = [pd.read_csv(incoming_progress, low_memory=False)]
+          if durable_progress.exists():
+              progress_frames.append(pd.read_csv(durable_progress, low_memory=False))
+          progress = pd.concat(progress_frames, ignore_index=True)
+          progress = progress.drop_duplicates('fixture_id', keep='last').sort_values('fixture_id')
+          durable_progress.parent.mkdir(parents=True, exist_ok=True)
+          progress.to_csv(durable_progress, index=False)
+          print({'lineup_rows': len(lineups), 'progress_fixtures': len(progress)})
+          PY
+
+      - name: Rebuild strict audit, eligibility and review readiness
+        run: |
+          python -m py_compile scripts/scientific/audit_complete_lineups_v3.py
+          python -m py_compile scripts/scientific/apply_definitive_eligibility_v3.py
+          python -m py_compile scripts/scientific/build_blind_position_review_packet_v3.py
+          python scripts/scientific/audit_complete_lineups_v3.py
+          python scripts/scientific/apply_definitive_eligibility_v3.py
+          python scripts/scientific/build_blind_position_review_packet_v3.py
+
+      - name: Publish recovered durable state
+        run: |
+          set -euo pipefail
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -f data/lake/batches/batch_full_provider_lineups.csv.gz
+          git add -f data/lake/full_lineup_extraction_progress.csv
+          git add -f data/audits/position_ontology_v3/lineup_completeness_status.json
+          git add -f data/audits/position_ontology_v3/complete_lineup_player_role_minutes.csv
+          git add -f data/audits/position_ontology_v3/complete_lineup_primary_roles.csv
+          git add -f data/audits/position_ontology_v3/blind_review/packet_manifest.json
+          if [ -f data/audits/position_ontology_v3/blind_review/reviewer_a_form.csv ]; then
+            git add -f data/audits/position_ontology_v3/blind_review/reviewer_a_form.csv
+            git add -f data/audits/position_ontology_v3/blind_review/reviewer_b_form.csv
+            git add -f data/audits/position_ontology_v3/blind_review/REVIEW_INSTRUCTIONS_PT.md
+          fi
+          if git diff --cached --quiet; then
+            echo 'Recovered data already present.'
+            exit 0
+          fi
+          git commit -m 'data: recover third complete-lineup batch'
+          git push origin HEAD:definitive-real-vs-ai
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: recovered-third-lineup-batch-${{ github.run_id }}
+          path: |
+            data/audits/position_ontology_v3/lineup_completeness_status.json
+            data/audits/position_ontology_v3/complete_lineup_primary_roles.csv
+            data/audits/position_ontology_v3/blind_review/packet_manifest.json
+          if-no-files-found: error
+          retention-days: 90
