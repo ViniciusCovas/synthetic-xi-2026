@@ -4,6 +4,7 @@ on:
   push:
     branches: [definitive-real-vs-ai]
     paths:
+      - scripts/scientific/recover_full_lineups_from_raw.py
       - scripts/scientific/audit_complete_lineups_v3.py
       - .github/workflows/ontology-v3-complete-lineups.yml
   pull_request:
@@ -32,9 +33,11 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Run complete-lineup audit
+      - name: Recover full raw lineups and audit
         run: |
+          python -m py_compile scripts/scientific/recover_full_lineups_from_raw.py
           python -m py_compile scripts/scientific/audit_complete_lineups_v3.py
+          python scripts/scientific/recover_full_lineups_from_raw.py
           python scripts/scientific/audit_complete_lineups_v3.py
 
       - uses: actions/upload-artifact@v4
