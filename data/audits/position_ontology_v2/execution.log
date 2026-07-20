@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-xi-2026/synthetic-xi-2026/scripts/scientific/audit_position_ontology.py", line 586, in <module>
+    main()
+  File "/home/runner/work/synthetic-xi-2026/synthetic-xi-2026/scripts/scientific/audit_position_ontology.py", line 562, in main
+    audit, rankings, populations, status = build_audit()
+                                           ^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-xi-2026/synthetic-xi-2026/scripts/scientific/audit_position_ontology.py", line 337, in build_audit
+    evidence, reconstruction = reconstruct_roles()
+                               ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-xi-2026/synthetic-xi-2026/scripts/scientific/audit_position_ontology.py", line 198, in reconstruct_roles
+    lineups["formation"] = text(lineups, ["formation"]).map(normalize_formation)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/pandas/core/series.py", line 4719, in map
+    new_values = self._map_values(arg, na_action=na_action)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/pandas/core/base.py", line 923, in _map_values
+    return arr.map(mapper, na_action=na_action)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/pandas/core/arrays/base.py", line 2322, in map
+    return map_array(self, mapper, na_action=na_action)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/pandas/core/algorithms.py", line 1743, in map_array
+    return lib.map_infer(values, mapper, convert=convert)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 2999, in pandas._libs.lib.map_infer
+  File "/home/runner/work/synthetic-xi-2026/synthetic-xi-2026/scripts/scientific/audit_position_ontology.py", line 114, in normalize_formation
+    return str(value or "").strip().replace(" ", "")
+               ^^^^^^^^^^^
+  File "pandas/_libs/missing.pyx", line 392, in pandas._libs.missing.NAType.__bool__
+TypeError: boolean value of NA is ambiguous
