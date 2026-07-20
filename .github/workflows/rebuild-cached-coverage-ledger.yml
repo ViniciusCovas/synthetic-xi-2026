@@ -51,7 +51,8 @@ jobs:
           python scripts/scientific/rebuild_cached_coverage_ledger.py > data/model_readiness/cache_rebuild/exporter.log 2>&1
           code=$?
           echo "$code" > data/model_readiness/cache_rebuild/exporter_exit_code.txt
-          cat data/model_readiness/cache_rebuild/exporter.log
+          awk 'length($0) < 1000' data/model_readiness/cache_rebuild/exporter.log | tail -n 30 > data/model_readiness/cache_rebuild/exporter_tail.log
+          cat data/model_readiness/cache_rebuild/exporter_tail.log
           exit "$code"
 
       - name: Verify protected provisional output is untouched
