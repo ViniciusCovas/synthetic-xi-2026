@@ -1,29 +1,31 @@
 {
   "status": "complete_lineup_position_evidence_audited",
-  "generated_at_utc": "2026-07-20T15:41:53.890713+00:00",
+  "generated_at_utc": "2026-07-20T15:49:37.396151+00:00",
   "network_calls": 0,
   "fixture_team_lineup_groups": 13193,
   "structurally_complete_groups": 3149,
   "complete_group_rate": 0.23868718259683167,
   "complete_role_observations": 33710,
   "players_with_complete_role_evidence": 5169,
-  "eligible_900_minutes_and_3_observations_by_role": {
+  "primary_role_eligible_players": 300,
+  "eligible_primary_candidates_by_role": {
     "GK": 34,
-    "RB": 33,
-    "RCB": 38,
-    "LCB": 36,
-    "LB": 33,
-    "DM": 53,
-    "CM": 44,
-    "AM": 23,
-    "RW": 27,
-    "LW": 32,
-    "ST": 46
+    "RB": 29,
+    "RCB": 33,
+    "LCB": 30,
+    "LB": 28,
+    "DM": 39,
+    "CM": 22,
+    "AM": 11,
+    "RW": 14,
+    "LW": 21,
+    "ST": 39
   },
-  "all_roles_have_20_candidates": true,
+  "all_roles_have_20_primary_candidates": false,
   "priority_candidate_fixture_team_pairs": 21538,
   "high_impact_priority_pairs": 3698,
   "high_impact_players_needing_more_complete_lineups": 220,
   "classification_policy": "only exact 11-player grids whose row sizes match a supported declared formation",
-  "next_action": "extract or recover complete startXI lineups for the priority fixture-team list"
+  "eligibility_policy": "one primary role per player; >=900 primary-role minutes; >=3 observations; >=60% of classified role minutes",
+  "next_action": "extract more complete lineups, prioritizing deficient primary-role pools"
 }

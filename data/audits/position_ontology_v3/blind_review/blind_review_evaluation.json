@@ -1,0 +1,13 @@
+{
+  "status": "waiting_for_completed_blind_reviews_v3",
+  "generated_at_utc": "2026-07-20T15:49:38.080741+00:00",
+  "missing_files": [
+    "data/audits/position_ontology_v3/blind_review/reviewer_a_completed.csv",
+    "data/audits/position_ontology_v3/blind_review/reviewer_b_completed.csv",
+    "data/audits/position_ontology_v3/blind_review/answer_key_do_not_share_with_reviewers.csv"
+  ],
+  "manual_blind_review_complete": false,
+  "review_gate_passed": false,
+  "final_ontology_gate_passed": false,
+  "new_final_simulation_allowed": false
+}
