@@ -2,9 +2,9 @@
   "version": "broadcast_v1.0",
   "title": "Synthetic XI vs Real Best XI",
   "probabilities": {
-    "synthetic_win": 0.2864,
-    "draw": 0.2361,
-    "real_win": 0.4775
+    "synthetic_win": 0.2866,
+    "draw": 0.2358,
+    "real_win": 0.4776
   },
   "calibration": {
     "matches": 94,
@@ -28,12 +28,12 @@
       "id": "representative",
       "label": "Partido representativo",
       "description": "Timeline directa del partido seleccionado por el motor por cercanía a las medias de 10.000 simulaciones.",
-      "scoreline_probability": 0.0958,
+      "scoreline_probability": 0.096,
       "stats": {
         "home_goals": 1,
         "away_goals": 2,
-        "home_xg": 1.283,
-        "away_xg": 1.251,
+        "home_xg": 1.282,
+        "away_xg": 1.25,
         "home_shots": 9,
         "away_shots": 9,
         "home_shots_on_target": 1,
@@ -47,7 +47,7 @@
           "type": "shot_off_target",
           "actor": "Michael Olise",
           "zone": 2,
-          "xg": 0.18
+          "xg": 0.179
         },
         {
           "minute": 12,
@@ -71,7 +71,7 @@
           "type": "goal",
           "actor": "Michael Olise",
           "zone": 2,
-          "xg": 0.18
+          "xg": 0.179
         },
         {
           "minute": 32,
@@ -79,7 +79,7 @@
           "type": "shot_off_target",
           "actor": "Michael Olise",
           "zone": 2,
-          "xg": 0.18
+          "xg": 0.179
         },
         {
           "minute": 40,
@@ -183,7 +183,7 @@
       "id": "synthetic-upset",
       "label": "Sorpresa sintética",
       "description": "Reconstrucción visual coherente con el marcador 2–1 muestreado por Monte Carlo.",
-      "scoreline_probability": 0.0706,
+      "scoreline_probability": 0.0702,
       "stats": {
         "home_goals": 2,
         "away_goals": 1,
@@ -282,7 +282,7 @@
       "id": "high-intensity",
       "label": "Alta intensidad",
       "description": "Reconstrucción visual coherente con el marcador 2–2 muestreado por Monte Carlo.",
-      "scoreline_probability": 0.0518,
+      "scoreline_probability": 0.0517,
       "stats": {
         "home_goals": 2,
         "away_goals": 2,

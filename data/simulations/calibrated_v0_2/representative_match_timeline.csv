@@ -1,9 +1,9 @@
 minute,team,type,actor,zone,xg,headline
-11,Real Best XI — exploratorio,shot_off_target,Michael Olise,2,0.18,Ocasión de Michael Olise fuera
+11,Real Best XI — exploratorio,shot_off_target,Michael Olise,2,0.179,Ocasión de Michael Olise fuera
 12,Synthetic XI — exploratorio,shot_off_target,SYN-ST20,2,0.179,Ocasión de SYN-ST20 fuera
 17,Synthetic XI — exploratorio,shot_off_target,SYN-W120,2,0.161,Ocasión de SYN-W120 fuera
-21,Real Best XI — exploratorio,goal,Michael Olise,2,0.18,GOL de Michael Olise
-32,Real Best XI — exploratorio,shot_off_target,Michael Olise,2,0.18,Ocasión de Michael Olise fuera
+21,Real Best XI — exploratorio,goal,Michael Olise,2,0.179,GOL de Michael Olise
+32,Real Best XI — exploratorio,shot_off_target,Michael Olise,2,0.179,Ocasión de Michael Olise fuera
 40,Synthetic XI — exploratorio,shot_off_target,SYN-CM20,3,0.205,Ocasión de SYN-CM20 fuera
 41,Real Best XI — exploratorio,goal,Lionel Messi,1,0.107,GOL de Lionel Messi
 42,Real Best XI — exploratorio,turnover,Pedri,3,0.0,Pedri pierde el balón bajo presión
