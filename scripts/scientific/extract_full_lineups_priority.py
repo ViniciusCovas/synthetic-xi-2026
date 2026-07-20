@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Fetch complete provider line-ups for the ontology-v3 priority fixtures.
+"""Fetch complete provider line-ups for ontology-v3 priority fixtures.
 
-One provider call recovers both complete team line-ups for a fixture. The script is
-quota-aware, resumable and stores every starter/substitute rather than filtering to the
-target players that motivated the request.
+One provider call recovers both complete team line-ups for a fixture. The extractor is
+quota-aware and resumable. After every audit it gives additional priority to CM, AM,
+RW and LW candidates that are close to the 900-minute positional threshold, because
+those are the remaining role-pool deficits. It still retains high-impact and general
+candidate coverage as secondary criteria.
 """
 from __future__ import annotations
 
@@ -19,9 +21,12 @@ import requests
 
 API_BASE = "https://v3.football.api-sports.io"
 PRIORITY = Path("data/audits/position_ontology_v3/lineup_extraction_priority.csv")
+ROLE_EVIDENCE = Path("data/audits/position_ontology_v3/complete_lineup_player_role_minutes.csv")
+FRONTIER = Path("data/model_readiness/selection_frontier_all_candidates.csv")
 BATCH = Path("data/lake/batches/batch_full_provider_lineups.csv.gz")
 PROGRESS = Path("data/lake/full_lineup_extraction_progress.csv")
 STATUS = Path("data/audits/position_ontology_v3/full_lineup_extraction_status.json")
+FOCUS_ROLES = {"CM", "AM", "RW", "LW"}
 
 
 class QuotaStop(RuntimeError):
@@ -120,27 +125,111 @@ def load_progress() -> pd.DataFrame:
     return frame.drop_duplicates("fixture_id", keep="last")
 
 
+def text_role(frame: pd.DataFrame, names: list[str]) -> pd.Series:
+    for name in names:
+        if name in frame:
+            return frame[name].astype("string").str.strip().str.upper()
+    return pd.Series(pd.NA, index=frame.index, dtype="string")
+
+
+def build_player_focus(priority: pd.DataFrame) -> pd.DataFrame:
+    """Attach preregistered, outcome-blind extraction priority features by player."""
+    player_ids = pd.to_numeric(priority.player_id, errors="coerce").dropna().astype(int).unique()
+    focus = pd.DataFrame({"player_id": player_ids})
+    focus["frontier_role"] = pd.NA
+    focus["complete_primary_role"] = pd.NA
+    focus["complete_primary_minutes"] = 0.0
+    focus["focus_role_candidate"] = False
+    focus["near_900_focus"] = False
+
+    if FRONTIER.exists():
+        frontier = pd.read_csv(FRONTIER, low_memory=False)
+        frontier["player_id"] = pd.to_numeric(frontier.get("player_id"), errors="coerce")
+        frontier = frontier.dropna(subset=["player_id"]).copy()
+        frontier["player_id"] = frontier.player_id.astype(int)
+        frontier["frontier_role"] = text_role(frontier, ["resolved_role", "role"])
+        frontier = frontier.sort_values("player_id").drop_duplicates("player_id")
+        focus = focus.drop(columns=["frontier_role"]).merge(
+            frontier[["player_id", "frontier_role"]], on="player_id", how="left"
+        )
+
+    if ROLE_EVIDENCE.exists():
+        evidence = pd.read_csv(ROLE_EVIDENCE, low_memory=False)
+        evidence["player_id"] = pd.to_numeric(evidence.get("player_id"), errors="coerce")
+        evidence["role_minutes"] = pd.to_numeric(evidence.get("role_minutes"), errors="coerce").fillna(0.0)
+        evidence["role_observations"] = pd.to_numeric(evidence.get("role_observations"), errors="coerce").fillna(0.0)
+        evidence["role"] = text_role(evidence, ["role"])
+        evidence = evidence.dropna(subset=["player_id"]).copy()
+        evidence["player_id"] = evidence.player_id.astype(int)
+        evidence = evidence.sort_values(
+            ["player_id", "role_minutes", "role_observations", "role"],
+            ascending=[True, False, False, True],
+        )
+        primary = evidence.drop_duplicates("player_id").rename(columns={
+            "role": "complete_primary_role",
+            "role_minutes": "complete_primary_minutes",
+        })
+        focus = focus.drop(columns=["complete_primary_role", "complete_primary_minutes"]).merge(
+            primary[["player_id", "complete_primary_role", "complete_primary_minutes"]],
+            on="player_id", how="left",
+        )
+        focus["complete_primary_minutes"] = pd.to_numeric(
+            focus.complete_primary_minutes, errors="coerce"
+        ).fillna(0.0)
+
+    frontier_focus = focus.frontier_role.isin(FOCUS_ROLES)
+    complete_focus = focus.complete_primary_role.isin(FOCUS_ROLES)
+    focus["focus_role_candidate"] = frontier_focus | complete_focus
+    focus["near_900_focus"] = (
+        focus.focus_role_candidate
+        & focus.complete_primary_minutes.ge(300)
+        & focus.complete_primary_minutes.lt(900)
+    )
+    return focus
+
+
 def main() -> None:
     if not PRIORITY.exists():
         raise RuntimeError("run audit_complete_lineups_v3.py before extraction")
     priority = pd.read_csv(PRIORITY, low_memory=False)
     priority["fixture_id"] = pd.to_numeric(priority.fixture_id, errors="coerce")
-    priority = priority.dropna(subset=["fixture_id"]).copy()
+    priority["player_id"] = pd.to_numeric(priority.player_id, errors="coerce")
+    priority = priority.dropna(subset=["fixture_id", "player_id"]).copy()
     priority["fixture_id"] = priority.fixture_id.astype(int)
-    priority["minutes_observed"] = pd.to_numeric(priority.get("minutes_observed"), errors="coerce").fillna(0.0)
-    priority["high_impact_current_release"] = priority.get("high_impact_current_release", False).astype(str).str.lower().isin({"true", "1", "yes"})
+    priority["player_id"] = priority.player_id.astype(int)
+    priority["minutes_observed"] = pd.to_numeric(
+        priority.get("minutes_observed"), errors="coerce"
+    ).fillna(0.0)
+    priority["high_impact_current_release"] = (
+        priority.get("high_impact_current_release", False)
+        .astype(str).str.lower().isin({"true", "1", "yes"})
+    )
+
+    player_focus = build_player_focus(priority)
+    priority = priority.merge(player_focus, on="player_id", how="left")
+    for column in ("focus_role_candidate", "near_900_focus"):
+        priority[column] = priority[column].fillna(False).astype(bool)
+
     queue = priority.groupby("fixture_id", as_index=False).agg(
+        near_900_focus_players=("near_900_focus", "sum"),
+        focus_role_players=("focus_role_candidate", "sum"),
         high_impact_players=("high_impact_current_release", "sum"),
         candidate_players=("player_id", "nunique"),
         candidate_minutes=("minutes_observed", "sum"),
     )
     queue = queue.sort_values(
-        ["high_impact_players", "candidate_players", "candidate_minutes", "fixture_id"],
-        ascending=[False, False, False, True],
+        [
+            "near_900_focus_players", "focus_role_players", "high_impact_players",
+            "candidate_players", "candidate_minutes", "fixture_id",
+        ],
+        ascending=[False, False, False, False, False, True],
     )
 
     progress = load_progress()
-    completed = set(progress.loc[progress.status.isin(["completed", "endpoint_empty"]), "fixture_id"].astype(int))
+    completed = set(
+        progress.loc[progress.status.isin(["completed", "endpoint_empty"]), "fixture_id"]
+        .astype(int)
+    )
     queue = queue.loc[~queue.fixture_id.isin(completed)].copy()
 
     client = Client()
@@ -148,6 +237,8 @@ def main() -> None:
     progress_rows: list[dict[str, Any]] = []
     errors: list[dict[str, Any]] = []
     quota_stopped = False
+    processed_focus_fixtures = 0
+    processed_near_900_fixtures = 0
     for item in queue.itertuples(index=False):
         fixture_id = int(item.fixture_id)
         try:
@@ -155,11 +246,16 @@ def main() -> None:
             rows = flatten(fixture_id, payload)
             status = "completed" if rows else "endpoint_empty"
             new_rows.extend(rows)
+            processed_focus_fixtures += int(item.focus_role_players > 0)
+            processed_near_900_fixtures += int(item.near_900_focus_players > 0)
             progress_rows.append({
                 "fixture_id": fixture_id, "status": status, "rows": len(rows),
                 "updated_at_utc": datetime.now(timezone.utc).isoformat(),
             })
-            print(f"fixture={fixture_id} rows={len(rows)} calls={client.calls} remaining={client.remaining}")
+            print(
+                f"fixture={fixture_id} rows={len(rows)} near900={item.near_900_focus_players} "
+                f"focus={item.focus_role_players} calls={client.calls} remaining={client.remaining}"
+            )
         except QuotaStop as exc:
             quota_stopped = True
             print(str(exc))
@@ -196,15 +292,26 @@ def main() -> None:
     updated_progress.to_csv(PROGRESS, index=False)
 
     starters = combined.loc[combined.lineup_source.eq("startXI")]
-    groups = starters.groupby(["fixture_id", "team_id"]).player_id.nunique() if not starters.empty else pd.Series(dtype=int)
+    groups = (
+        starters.groupby(["fixture_id", "team_id"]).player_id.nunique()
+        if not starters.empty else pd.Series(dtype=int)
+    )
     status = {
         "status": "priority_full_lineup_extraction_completed",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "priority_policy": {
+            "primary": "CM/AM/RW/LW candidates with 300-899 complete-lineup role minutes",
+            "secondary": "other CM/AM/RW/LW candidates",
+            "tertiary": "high-impact and general candidate coverage",
+            "outcome_blind": True,
+        },
         "network_calls": client.calls,
         "provider_remaining": client.remaining,
         "quota_stopped": quota_stopped,
         "queue_before_batch": int(len(queue)),
         "fixtures_processed_this_batch": int(len(progress_rows)),
+        "processed_focus_role_fixtures": int(processed_focus_fixtures),
+        "processed_near_900_focus_fixtures": int(processed_near_900_fixtures),
         "new_rows_this_batch": int(len(new)),
         "total_recovered_rows": int(len(combined)),
         "total_fixture_team_groups": int(len(groups)),
