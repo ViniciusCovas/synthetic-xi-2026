@@ -1,0 +1,24 @@
+{
+  "status": "direct_residual_player_stats_completed",
+  "generated_at_utc": "2026-07-20T01:21:04.629459+00:00",
+  "endpoint": "fixtures/players",
+  "physical_residual_pairs_at_start": 258,
+  "physical_residual_fixtures_at_start": 181,
+  "fixtures_queued_this_run": 181,
+  "network_calls_this_run": 181,
+  "quota_daily_limit_reported": 7500,
+  "quota_remaining_at_start": 7471,
+  "quota_remaining_at_end": 7378,
+  "daily_safety_reserve": 5,
+  "stopped_reason": null,
+  "player_rows_written": 0,
+  "positive_player_rows_written": 0,
+  "terminal_fixture_status_counts": {
+    "provider_endpoint_empty": 176,
+    "target_player_missing": 5
+  },
+  "terminal_fixtures": 181,
+  "remaining_unattempted_or_retryable_fixtures": 0,
+  "rankings_allowed": false,
+  "next_action": "rebuild coverage and selection gate from newly recovered player rows"
+}
