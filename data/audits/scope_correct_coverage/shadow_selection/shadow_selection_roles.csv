@@ -1,12 +1,12 @@
 role,eligible_candidates,stable_candidates,required_pool_size,covered_candidates,unresolved_challengers,role_gate_passed
-GK,94,94,30,91,3,False
-RB,238,216,30,208,9,False
+GK,94,94,30,92,2,False
+RB,238,216,30,209,8,False
 RCB,36,29,29,29,0,True
 LCB,24,11,11,11,0,True
 LB,42,30,30,30,0,True
 DM,22,12,12,12,0,True
 CM,109,62,30,61,1,False
-AM,143,116,30,106,10,False
-RW,238,206,30,198,8,False
+AM,143,116,30,108,8,False
+RW,239,207,30,199,8,False
 LW,11,8,8,8,0,True
 ST,14,3,3,3,0,True

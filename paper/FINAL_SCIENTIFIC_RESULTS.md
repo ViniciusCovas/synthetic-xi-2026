@@ -1,6 +1,6 @@
 # Synthetic XI scientific release candidate
 
-Generated: 2026-07-19T22:39:09.387983+00:00
+Generated: 2026-07-20T00:03:10.317475+00:00
 Scientific status: **BLOCKED**
 Claim ceiling: exploratory, calibrated and auditable simulation
 
@@ -10,10 +10,10 @@ Claim ceiling: exploratory, calibrated and auditable simulation
 
 ## Data-selection sufficiency
 
-- Eligible candidates: 971
-- Fully covered in both windows: 935
-- Unresolved challengers: 31
-- Remaining priority fixtures: 292
+- Eligible candidates: 972
+- Fully covered in both windows: 940
+- Unresolved challengers: 27
+- Remaining priority fixtures: 181
 
 ## Predictive validation
 

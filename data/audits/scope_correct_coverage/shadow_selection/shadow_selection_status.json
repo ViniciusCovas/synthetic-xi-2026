@@ -1,21 +1,21 @@
 {
   "status": "shadow_scope_correct_selection_complete",
-  "generated_at_utc": "2026-07-19T22:39:07.592996+00:00",
+  "generated_at_utc": "2026-07-20T00:03:08.633088+00:00",
   "network_calls": 0,
   "canonical_files_changed": false,
   "eligibility_definition": ">=900 exact-window detailed minutes",
   "coverage_definition": "exact_window_known_minutes_v2",
-  "eligible_candidates": 971,
-  "fully_covered_both_windows": 935,
-  "unresolved_players": 31,
+  "eligible_candidates": 972,
+  "fully_covered_both_windows": 940,
+  "unresolved_players": 27,
   "roles": [
     {
       "role": "GK",
       "eligible_candidates": 94,
       "stable_candidates": 94,
       "required_pool_size": 30,
-      "covered_candidates": 91,
-      "unresolved_challengers": 3,
+      "covered_candidates": 92,
+      "unresolved_challengers": 2,
       "role_gate_passed": false
     },
     {
@@ -23,8 +23,8 @@
       "eligible_candidates": 238,
       "stable_candidates": 216,
       "required_pool_size": 30,
-      "covered_candidates": 208,
-      "unresolved_challengers": 9,
+      "covered_candidates": 209,
+      "unresolved_challengers": 8,
       "role_gate_passed": false
     },
     {
@@ -77,16 +77,16 @@
       "eligible_candidates": 143,
       "stable_candidates": 116,
       "required_pool_size": 30,
-      "covered_candidates": 106,
-      "unresolved_challengers": 10,
+      "covered_candidates": 108,
+      "unresolved_challengers": 8,
       "role_gate_passed": false
     },
     {
       "role": "RW",
-      "eligible_candidates": 238,
-      "stable_candidates": 206,
+      "eligible_candidates": 239,
+      "stable_candidates": 207,
       "required_pool_size": 30,
-      "covered_candidates": 198,
+      "covered_candidates": 199,
       "unresolved_challengers": 8,
       "role_gate_passed": false
     },

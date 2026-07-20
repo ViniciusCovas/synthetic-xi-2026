@@ -5,10 +5,10 @@
   "frontier_players": 1060,
   "frontier_by_role": {
     "GK": 109,
-    "RB": 259,
+    "RB": 260,
     "RCB": 42,
     "LCB": 25,
-    "LB": 46,
+    "LB": 45,
     "DM": 25,
     "CM": 111,
     "AM": 155,
@@ -16,23 +16,23 @@
     "LW": 11,
     "ST": 19
   },
-  "unscored_or_low_role_evidence_retained": 241,
-  "priority_player_fixture_pairs": 3925,
-  "priority_unique_fixtures": 1669,
+  "unscored_or_low_role_evidence_retained": 236,
+  "priority_player_fixture_pairs": 515,
+  "priority_unique_fixtures": 181,
   "windows": [
     {
       "window": "annual_current",
       "frontier_players": 1060,
-      "players_passing_80pct": 631,
-      "pass_rate": 0.5952830188679246,
-      "missing_fixture_endpoints": 2043
+      "players_passing_80pct": 970,
+      "pass_rate": 0.9150943396226415,
+      "missing_fixture_endpoints": 1850
     },
     {
       "window": "pre_world_cup",
       "frontier_players": 1060,
-      "players_passing_80pct": 990,
-      "pass_rate": 0.9339622641509434,
-      "missing_fixture_endpoints": 2121
+      "players_passing_80pct": 964,
+      "pass_rate": 0.909433962264151,
+      "missing_fixture_endpoints": 1918
     }
   ],
   "frontier_coverage_gate_passed": false,
