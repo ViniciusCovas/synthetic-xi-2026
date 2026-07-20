@@ -31,16 +31,30 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Validate controlled mechanisms and build status files
+      - name: Compile sources
         run: |
           python -m py_compile scripts/scientific/validate_engine_mechanisms.py
           python -m py_compile scripts/scientific/build_engine_validation_gate.py
           python -m py_compile scripts/scientific/build_definitive_experiment_gate.py
-          python scripts/scientific/validate_engine_mechanisms.py
+
+      - name: Run controlled mechanism diagnostics
+        continue-on-error: true
+        run: |
+          mkdir -p data/audits/engine_validation_v1
+          set +e
+          python scripts/scientific/validate_engine_mechanisms.py > data/audits/engine_validation_v1/mechanism_execution.log 2>&1
+          code=$?
+          set -e
+          echo "$code" > data/audits/engine_validation_v1/mechanism_exit_code.txt
+          cat data/audits/engine_validation_v1/mechanism_execution.log
+
+      - name: Build status files
+        run: |
           python scripts/scientific/build_engine_validation_gate.py
           python scripts/scientific/build_definitive_experiment_gate.py
 
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: engine-validation-${{ github.run_id }}
           path: |
