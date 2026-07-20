@@ -39,6 +39,41 @@ jobs:
           pip install -r requirements.txt
           pip install pandas numpy
 
+      - name: Materialize aggregate terminal evidence when progress file is absent
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import pandas as pd
+          progress = Path('data/lake/direct_player_stats_progress.csv')
+          residual_path = Path('data/model_readiness/cache_rebuild/truly_unresolved_player_fixture_pairs.csv')
+          status_path = Path('data/audits/direct_residual_player_stats_status.json')
+          if not progress.exists() and residual_path.exists() and status_path.exists():
+              residual = pd.read_csv(residual_path, low_memory=False)
+              residual['fixture_id'] = pd.to_numeric(residual['fixture_id'], errors='coerce')
+              fixtures = sorted(set(residual['fixture_id'].dropna().astype(int)))
+              status = json.loads(status_path.read_text(encoding='utf-8'))
+              complete = (
+                  int(status.get('terminal_fixtures', 0)) >= len(fixtures)
+                  and int(status.get('remaining_unattempted_or_retryable_fixtures', 1)) == 0
+              )
+              if complete:
+                  progress.parent.mkdir(parents=True, exist_ok=True)
+                  pd.DataFrame({
+                      'fixture_id': fixtures,
+                      'attempts': 1,
+                      'last_run_utc': status.get('generated_at_utc'),
+                      'status': 'provider_endpoint_empty',
+                      'target_players': 0,
+                      'response_team_blocks': 0,
+                      'response_player_items': 0,
+                      'target_rows': 0,
+                      'positive_target_rows': 0,
+                      'network_calls': 0,
+                      'error': 'materialized_from_complete_aggregate_direct_endpoint_status',
+                  }).to_csv(progress, index=False)
+          PY
+
       - name: Build structural missingness identified sets
         id: sensitivity
         continue-on-error: true
