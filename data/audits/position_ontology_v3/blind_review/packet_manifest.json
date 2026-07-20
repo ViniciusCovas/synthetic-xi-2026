@@ -1,19 +1,19 @@
 {
   "status": "blind_review_packet_blocked",
-  "generated_at_utc": "2026-07-20T15:49:37.747249+00:00",
+  "generated_at_utc": "2026-07-20T15:59:06.522561+00:00",
   "reason": "minimum 20 stable primary candidates not reached in every role",
   "eligible_primary_candidates_by_role": {
-    "GK": 34,
-    "RB": 29,
-    "RCB": 33,
-    "LCB": 30,
-    "LB": 28,
+    "GK": 33,
+    "RB": 28,
+    "RCB": 29,
+    "LCB": 29,
+    "LB": 27,
     "DM": 39,
-    "CM": 22,
-    "AM": 11,
+    "CM": 21,
+    "AM": 10,
     "RW": 14,
-    "LW": 21,
-    "ST": 39
+    "LW": 20,
+    "ST": 34
   },
   "review_packet_ready": false,
   "next_action": "continue outcome-blind complete-lineup extraction for deficient roles"
