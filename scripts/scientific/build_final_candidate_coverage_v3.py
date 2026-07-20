@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Evaluate 90% exact-window coverage for promoted ontology-v3 candidates.
+"""Evaluate 90% exact-window coverage for promoted ontology-v3.1 candidate-role pairs.
 
-Coverage is an eligibility criterion, not a ranking adjustment. A candidate passes only
-when both fixture-endpoint coverage and the known-minute lower bound are at least 90%
-in the annual-current and pre-World-Cup windows. No missing value is treated as covered.
+Coverage is an eligibility criterion, not a ranking adjustment. A candidate-role pair
+passes only when the player has at least 90% fixture-endpoint coverage and a 90%
+known-minute lower bound in both frozen windows. Missing values never count as covered.
 """
 from __future__ import annotations
 
@@ -15,9 +15,9 @@ import pandas as pd
 
 ROOT = Path("data/audits/position_ontology_v3")
 ONTOLOGY_STATUS = ROOT / "ontology_v3_status.json"
-PROMOTED = ROOT / "promoted_player_roles_uncovered.csv"
+PROMOTED = ROOT / "promoted_candidate_roles_uncovered.csv"
 COVERAGE = Path("data/audits/scope_correct_coverage/player_window_coverage_scope_correct.csv")
-FINAL = ROOT / "final_player_roles.csv"
+FINAL = ROOT / "final_candidate_roles.csv"
 UNRESOLVED = ROOT / "final_candidate_coverage_unresolved.csv"
 STATUS = ROOT / "final_candidate_coverage_status.json"
 ROLES = ["GK", "RB", "RCB", "LCB", "LB", "DM", "CM", "AM", "RW", "LW", "ST"]
@@ -41,7 +41,7 @@ def as_bool(series: pd.Series) -> pd.Series:
 
 def write_blocked(reason: str, details: dict | None = None) -> None:
     payload = {
-        "status": "final_candidate_coverage_blocked",
+        "status": "final_candidate_role_coverage_blocked",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "reason": reason,
         "details": details or {},
@@ -56,7 +56,7 @@ def write_blocked(reason: str, details: dict | None = None) -> None:
 def main() -> None:
     ontology = load_json(ONTOLOGY_STATUS)
     if not ontology.get("final_ontology_gate_passed", False):
-        write_blocked("ontology-v3 has not passed promotion", ontology)
+        write_blocked("ontology-v3.1 candidate-role promotion has not passed", ontology)
         return
     missing = [str(path) for path in [PROMOTED, COVERAGE] if not path.exists()]
     if missing:
@@ -70,7 +70,10 @@ def main() -> None:
         frame.dropna(subset=["player_id"], inplace=True)
         frame["player_id"] = frame.player_id.astype(int)
     candidates["final_role_eligible_before_coverage"] = as_bool(
-        candidates.get("final_role_eligible_before_coverage", pd.Series(False, index=candidates.index))
+        candidates.get(
+            "final_role_eligible_before_coverage",
+            pd.Series(False, index=candidates.index),
+        )
     )
 
     for window in WINDOWS:
@@ -112,7 +115,9 @@ def main() -> None:
         ]
         candidates = candidates.merge(block[columns], on="player_id", how="left")
         candidates[f"coverage_pass_90_{window}"] = as_bool(
-            candidates.get(f"coverage_pass_90_{window}", pd.Series(False, index=candidates.index))
+            candidates.get(
+                f"coverage_pass_90_{window}", pd.Series(False, index=candidates.index)
+            )
         )
 
     candidates["coverage_pass_90pct"] = (
@@ -147,33 +152,44 @@ def main() -> None:
     high_impact = as_bool(candidates.get(
         "high_impact_current_release", pd.Series(False, index=candidates.index)
     ))
-    uncovered_high_impact = int((
-        candidates.final_role_eligible_before_coverage & high_impact & ~candidates.coverage_pass_90pct
-    ).sum())
+    uncovered_high_ids = set(
+        candidates.loc[
+            candidates.final_role_eligible_before_coverage
+            & high_impact
+            & ~candidates.coverage_pass_90pct,
+            "player_id",
+        ].astype(int)
+    )
     gate = bool(
         all(count >= 20 for count in counts.values())
-        and uncovered_high_impact == 0
+        and len(uncovered_high_ids) == 0
     )
     status = {
-        "status": "final_candidate_coverage_evaluated",
+        "status": "final_candidate_role_coverage_evaluated",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "coverage_definition": (
             ">=90% fixture endpoint coverage and >=90% known-minute lower bound "
             "in annual_current and pre_world_cup windows"
         ),
-        "promoted_candidates_before_coverage": int(candidates.final_role_eligible_before_coverage.sum()),
-        "fully_covered_final_candidates": int(len(eligible)),
-        "unresolved_coverage_candidates": int(len(unresolved)),
+        "promoted_candidate_role_pairs_before_coverage": int(
+            candidates.final_role_eligible_before_coverage.sum()
+        ),
+        "fully_covered_candidate_role_pairs": int(len(eligible)),
+        "fully_covered_unique_players": int(eligible.player_id.nunique()),
+        "unresolved_coverage_candidate_role_pairs": int(len(unresolved)),
         "covered_candidates_by_role": counts,
-        "minimum_20_covered_candidates_each_role": all(count >= 20 for count in counts.values()),
-        "uncovered_high_impact_candidates": uncovered_high_impact,
+        "minimum_20_covered_candidates_each_role": all(
+            count >= 20 for count in counts.values()
+        ),
+        "uncovered_high_impact_players": len(uncovered_high_ids),
+        "uncovered_high_impact_player_ids": sorted(uncovered_high_ids),
         "final_candidate_coverage_gate_passed": gate,
         "final_team_construction_allowed": gate,
-        "final_player_table": str(FINAL),
+        "final_candidate_role_table": str(FINAL),
         "unresolved_table": str(UNRESOLVED),
         "next_action": (
             "build and hash exactly one Real XI and one AI XI"
-            if gate else "extract only missing exact-window endpoints for unresolved promoted candidates"
+            if gate else "extract only missing exact-window endpoints for unresolved promoted players"
         ),
     }
     STATUS.write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
