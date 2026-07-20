@@ -1,0 +1,126 @@
+name: Definitive Real XI vs AI XI Gate
+
+on:
+  push:
+    branches: [definitive-real-vs-ai]
+    paths:
+      - DEFINITIVE_REAL_VS_AI_PROTOCOL.md
+      - simulator/ai_xi_generator.py
+      - tests/test_ai_xi_generator.py
+      - scripts/scientific/build_definitive_experiment_gate.py
+      - scripts/scientific/build_blind_position_review_packet.py
+      - scripts/scientific/evaluate_blind_position_review.py
+      - .github/workflows/definitive-real-vs-ai-gate.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: definitive-real-vs-ai-gate
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: .
+    steps:
+      - name: Checkout experiment branch
+        uses: actions/checkout@v4
+        with:
+          ref: definitive-real-vs-ai
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+
+      - name: Compile scientific sources
+        run: |
+          python -m py_compile simulator/ai_xi_generator.py
+          python -m py_compile scripts/scientific/build_definitive_experiment_gate.py
+          python -m py_compile scripts/scientific/build_blind_position_review_packet.py
+          python -m py_compile scripts/scientific/evaluate_blind_position_review.py
+
+      - name: Test AI player generator
+        run: pytest -q tests/test_ai_xi_generator.py
+
+      - name: Build blind review packet when source is available
+        run: |
+          if [ -f data/audits/position_ontology_v2/audited_player_roles.csv ]; then
+            python scripts/scientific/build_blind_position_review_packet.py
+            python scripts/scientific/evaluate_blind_position_review.py
+            rm -f data/audits/position_ontology_v2/blind_review/answer_key_do_not_share_with_reviewers.csv
+          fi
+
+      - name: Evaluate definitive experiment gate
+        run: python scripts/scientific/build_definitive_experiment_gate.py
+
+      - name: Enforce no premature final claim
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('data/audits/definitive_experiment_v1/gate_status.json')
+          status = json.loads(path.read_text(encoding='utf-8'))
+          assert status['partial_identification_allowed'] is False
+          if not status['final_experiment_gate_passed']:
+              assert status['final_team_files_allowed'] is False
+              assert status['final_simulation_allowed'] is False
+          PY
+          if git diff --name-only | grep -E '^data/simulations/identified_set_v1/'; then
+            echo 'Frozen diagnostic simulation changed unexpectedly.' >&2
+            exit 1
+          fi
+
+      - name: Upload reviewer forms
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blind-position-review-forms-${{ github.run_id }}
+          path: |
+            data/audits/position_ontology_v2/blind_review/reviewer_a_form.csv
+            data/audits/position_ontology_v2/blind_review/reviewer_b_form.csv
+            data/audits/position_ontology_v2/blind_review/REVIEW_INSTRUCTIONS_ES.md
+            POSITION_ONTOLOGY_CODEBOOK_ES.md
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Publish gate and public review packet
+        run: |
+          set -euo pipefail
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -f data/audits/definitive_experiment_v1/
+          for file in \
+            reviewer_a_form.csv reviewer_b_form.csv REVIEW_INSTRUCTIONS_ES.md \
+            packet_manifest.json blind_review_evaluation.json; do
+            path="data/audits/position_ontology_v2/blind_review/$file"
+            [ ! -f "$path" ] || git add -f "$path"
+          done
+          git reset -- data/audits/position_ontology_v2/blind_review/answer_key_do_not_share_with_reviewers.csv 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo 'No generated evidence to publish.'
+            exit 0
+          fi
+          git commit -m 'science: publish definitive experiment gate and blind packet'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin definitive-real-vs-ai
+            if git rebase -X theirs origin/definitive-real-vs-ai && git push origin HEAD:definitive-real-vs-ai; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 4))
+          done
+          exit 1
