@@ -17,21 +17,21 @@
     "ST": 19
   },
   "unscored_or_low_role_evidence_retained": 236,
-  "priority_player_fixture_pairs": 515,
-  "priority_unique_fixtures": 181,
+  "priority_player_fixture_pairs": 3539,
+  "priority_unique_fixtures": 1506,
   "windows": [
     {
       "window": "annual_current",
       "frontier_players": 1060,
-      "players_passing_80pct": 970,
-      "pass_rate": 0.9150943396226415,
+      "players_passing_80pct": 634,
+      "pass_rate": 0.5981132075471698,
       "missing_fixture_endpoints": 1850
     },
     {
       "window": "pre_world_cup",
       "frontier_players": 1060,
-      "players_passing_80pct": 964,
-      "pass_rate": 0.909433962264151,
+      "players_passing_80pct": 996,
+      "pass_rate": 0.939622641509434,
       "missing_fixture_endpoints": 1918
     }
   ],

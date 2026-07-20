@@ -7,19 +7,19 @@
       "window": "annual_current",
       "eligible_players": 1062,
       "players_with_expected_fixtures": 1062,
-      "players_passing_80pct": 631,
-      "pass_rate": 0.5941619585687382,
+      "players_passing_80pct": 634,
+      "pass_rate": 0.5969868173258004,
       "median_fixture_coverage": 1.0,
-      "p10_fixture_coverage": 0.9795918367346939
+      "p10_fixture_coverage": 0.9897727272727274
     },
     {
       "window": "pre_world_cup",
       "eligible_players": 1062,
       "players_with_expected_fixtures": 1058,
-      "players_passing_80pct": 990,
-      "pass_rate": 0.9322033898305084,
+      "players_passing_80pct": 996,
+      "pass_rate": 0.9378531073446328,
       "median_fixture_coverage": 1.0,
-      "p10_fixture_coverage": 0.9714285714285714
+      "p10_fixture_coverage": 0.976578073089701
     }
   ],
   "all_players_pass_current_window": false,
