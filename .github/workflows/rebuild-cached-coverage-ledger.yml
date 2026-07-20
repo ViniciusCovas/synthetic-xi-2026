@@ -1,0 +1,65 @@
+name: Rebuild Cached Coverage Ledger
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/scientific/rebuild_cached_coverage_ledger.py
+      - .github/workflows/rebuild-cached-coverage-ledger.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rebuild-cached-coverage-ledger
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout complete history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install project dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Rebuild scope-correct coverage from durable caches
+        run: python scripts/scientific/build_scope_correct_coverage.py
+
+      - name: Recalculate the shadow selection gate
+        run: python scripts/scientific/shadow_scope_correct_selection.py
+
+      - name: Export the cache-rebuild package
+        run: python scripts/scientific/rebuild_cached_coverage_ledger.py
+
+      - name: Verify protected provisional output is untouched
+        run: |
+          if git diff --name-only | grep -E '(^|/)real_best_xi_provisional\.csv$'; then
+            echo 'Protected provisional file changed unexpectedly.' >&2
+            exit 1
+          fi
+
+      - name: Commit rebuilt ledger outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/model_readiness/cache_rebuild/
+          if git diff --cached --quiet; then
+            echo "No output changes to commit."
+            exit 0
+          fi
+          git commit -m "science: rebuild cached player-fixture coverage ledger"
+          git push
