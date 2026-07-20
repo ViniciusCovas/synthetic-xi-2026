@@ -4,6 +4,7 @@ on:
   push:
     branches: [definitive-real-vs-ai]
     paths:
+      - scripts/scientific/validate_engine_mechanisms.py
       - scripts/scientific/build_engine_validation_gate.py
       - scripts/scientific/build_definitive_experiment_gate.py
       - .github/workflows/engine-validation-gate.yml
@@ -30,10 +31,12 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Build status files
+      - name: Validate controlled mechanisms and build status files
         run: |
+          python -m py_compile scripts/scientific/validate_engine_mechanisms.py
           python -m py_compile scripts/scientific/build_engine_validation_gate.py
           python -m py_compile scripts/scientific/build_definitive_experiment_gate.py
+          python scripts/scientific/validate_engine_mechanisms.py
           python scripts/scientific/build_engine_validation_gate.py
           python scripts/scientific/build_definitive_experiment_gate.py
 
