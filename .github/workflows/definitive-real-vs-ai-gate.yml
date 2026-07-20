@@ -11,13 +11,23 @@ on:
       - scripts/scientific/build_blind_position_review_packet.py
       - scripts/scientific/evaluate_blind_position_review.py
       - .github/workflows/definitive-real-vs-ai-gate.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - DEFINITIVE_REAL_VS_AI_PROTOCOL.md
+      - simulator/ai_xi_generator.py
+      - tests/test_ai_xi_generator.py
+      - scripts/scientific/build_definitive_experiment_gate.py
+      - scripts/scientific/build_blind_position_review_packet.py
+      - scripts/scientific/evaluate_blind_position_review.py
+      - .github/workflows/definitive-real-vs-ai-gate.yml
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: definitive-real-vs-ai-gate
+  group: definitive-real-vs-ai-gate-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -30,7 +40,7 @@ jobs:
       - name: Checkout experiment branch
         uses: actions/checkout@v4
         with:
-          ref: definitive-real-vs-ai
+          ref: ${{ github.head_ref || 'definitive-real-vs-ai' }}
           fetch-depth: 0
           persist-credentials: true
 
@@ -98,14 +108,13 @@ jobs:
           retention-days: 90
 
       - name: Publish gate and public review packet
+        if: github.event_name != 'pull_request'
         run: |
           set -euo pipefail
           git config user.name 'synthetic-xi-bot'
           git config user.email 'actions@users.noreply.github.com'
           git add -f data/audits/definitive_experiment_v1/
-          for file in \
-            reviewer_a_form.csv reviewer_b_form.csv REVIEW_INSTRUCTIONS_ES.md \
-            packet_manifest.json blind_review_evaluation.json; do
+          for file in reviewer_a_form.csv reviewer_b_form.csv REVIEW_INSTRUCTIONS_ES.md packet_manifest.json blind_review_evaluation.json; do
             path="data/audits/position_ontology_v2/blind_review/$file"
             [ ! -f "$path" ] || git add -f "$path"
           done
