@@ -1,0 +1,3 @@
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-xi-2026/synthetic-xi-2026/scripts/scientific/rebuild_cached_coverage_ledger.py", line 3, in <module>
+zlib.error: Error -3 while decompressing data: incorrect data check
