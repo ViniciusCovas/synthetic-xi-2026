@@ -1,4 +1,4 @@
-name: Recover Third Full-Lineup Batch
+name: Recover Successful Full-Lineup Artifacts
 
 on:
   push:
@@ -22,8 +22,6 @@ jobs:
     env:
       PYTHONPATH: .
       GH_TOKEN: ${{ github.token }}
-      SOURCE_RUN_ID: '29756527227'
-      SOURCE_ARTIFACT: full-lineup-priority-29756527227
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,12 +36,13 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Download successful data artifact from failed publish run
+      - name: Download successful data artifacts from failed publish runs
         run: |
           rm -rf /tmp/recovered
-          mkdir -p /tmp/recovered
-          gh run download "$SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" --name "$SOURCE_ARTIFACT" --dir /tmp/recovered
-          find /tmp/recovered -maxdepth 5 -type f -print
+          mkdir -p /tmp/recovered/general /tmp/recovered/deficit1
+          gh run download 29756527227 --repo "$GITHUB_REPOSITORY" --name full-lineup-priority-29756527227 --dir /tmp/recovered/general
+          gh run download 29757330507 --repo "$GITHUB_REPOSITORY" --name full-lineup-priority-29757330507 --dir /tmp/recovered/deficit1
+          find /tmp/recovered -maxdepth 6 -type f -print
 
       - name: Merge recovered rows with any newer durable batch
         run: |
@@ -52,14 +51,14 @@ jobs:
           import pandas as pd
 
           recovered = Path('/tmp/recovered')
-          incoming_lineups = recovered / 'lake/batches/batch_full_provider_lineups.csv.gz'
-          incoming_progress = recovered / 'lake/full_lineup_extraction_progress.csv'
+          incoming_lineups = sorted(recovered.glob('*/lake/batches/batch_full_provider_lineups.csv.gz'))
+          incoming_progress = sorted(recovered.glob('*/lake/full_lineup_extraction_progress.csv'))
           durable_lineups = Path('data/lake/batches/batch_full_provider_lineups.csv.gz')
           durable_progress = Path('data/lake/full_lineup_extraction_progress.csv')
-          if not incoming_lineups.exists() or not incoming_progress.exists():
-              raise SystemExit('Recovered artifact lacks durable lineup files')
+          if not incoming_lineups or not incoming_progress:
+              raise SystemExit('Recovered artifacts lack durable lineup files')
 
-          frames = [pd.read_csv(incoming_lineups, low_memory=False)]
+          frames = [pd.read_csv(path, low_memory=False) for path in incoming_lineups]
           if durable_lineups.exists():
               frames.append(pd.read_csv(durable_lineups, low_memory=False))
           lineups = pd.concat(frames, ignore_index=True)
@@ -69,14 +68,18 @@ jobs:
           durable_lineups.parent.mkdir(parents=True, exist_ok=True)
           lineups.to_csv(durable_lineups, index=False, compression='gzip')
 
-          progress_frames = [pd.read_csv(incoming_progress, low_memory=False)]
+          progress_frames = [pd.read_csv(path, low_memory=False) for path in incoming_progress]
           if durable_progress.exists():
               progress_frames.append(pd.read_csv(durable_progress, low_memory=False))
           progress = pd.concat(progress_frames, ignore_index=True)
           progress = progress.drop_duplicates('fixture_id', keep='last').sort_values('fixture_id')
           durable_progress.parent.mkdir(parents=True, exist_ok=True)
           progress.to_csv(durable_progress, index=False)
-          print({'lineup_rows': len(lineups), 'progress_fixtures': len(progress)})
+          print({
+              'source_lineup_artifacts': len(incoming_lineups),
+              'lineup_rows': len(lineups),
+              'progress_fixtures': len(progress),
+          })
           PY
 
       - name: Rebuild strict audit, eligibility and review readiness
@@ -108,12 +111,12 @@ jobs:
             echo 'Recovered data already present.'
             exit 0
           fi
-          git commit -m 'data: recover third complete-lineup batch'
+          git commit -m 'data: recover successful complete-lineup artifacts'
           git push origin HEAD:definitive-real-vs-ai
 
       - uses: actions/upload-artifact@v4
         with:
-          name: recovered-third-lineup-batch-${{ github.run_id }}
+          name: recovered-full-lineup-artifacts-${{ github.run_id }}
           path: |
             data/audits/position_ontology_v3/lineup_completeness_status.json
             data/audits/position_ontology_v3/complete_lineup_primary_roles.csv
