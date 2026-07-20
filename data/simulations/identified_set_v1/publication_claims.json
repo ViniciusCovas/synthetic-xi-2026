@@ -1,0 +1,146 @@
+{
+  "status": "identified_set_results_report_complete",
+  "generated_at_utc": "2026-07-20T02:44:29.002309+00:00",
+  "release": "v1.0-identified-set-simulation-candidate",
+  "simulated_matches": 65600,
+  "primary_result": {
+    "synthetic_win_probability_range": [
+      0.2340625,
+      0.2674999999999999
+    ],
+    "draw_probability_range": [
+      0.2321875,
+      0.2528125
+    ],
+    "real_win_probability_range": [
+      0.493125,
+      0.52125
+    ],
+    "goal_difference_range": [
+      -0.6565624999999999,
+      -0.5209374999999999
+    ],
+    "xg_difference_range": [
+      -0.6811978070516445,
+      -0.5367295823329136
+    ],
+    "calibration_bootstrap_identified_interval_for_win_margin": [
+      -0.40125,
+      -0.124375
+    ]
+  },
+  "sensitivity_result": {
+    "all_directionally_robust": true,
+    "all_favor": [
+      "real"
+    ],
+    "scenarios": [
+      "sensitivity_ability_high",
+      "sensitivity_ability_low",
+      "sensitivity_no_uncertainty_pooling",
+      "sensitivity_top10",
+      "sensitivity_top30"
+    ]
+  },
+  "weakest_real_combination": {
+    "combination_id": "real_xi_set_05",
+    "GK": "L. Hornicek",
+    "RB": "D. Raum",
+    "AM": "J. Quintero",
+    "real_win_probability": 0.493125
+  },
+  "strongest_real_combination": {
+    "combination_id": "real_xi_set_04",
+    "GK": "J. Garcia",
+    "RB": "J. Hadjam",
+    "AM": "W. Semedo",
+    "real_win_probability": 0.52125
+  },
+  "ambiguous_role_marginal_effects": [
+    {
+      "role": "GK",
+      "reference_candidate": "J. Garcia",
+      "alternative_candidate": "L. Hornicek",
+      "synthetic_win_probability": 0.001093749999999949,
+      "real_win_probability": -0.0010156249999999645,
+      "goal_difference": 0.003671875000000102
+    },
+    {
+      "role": "RB",
+      "reference_candidate": "D. Raum",
+      "alternative_candidate": "J. Hadjam",
+      "synthetic_win_probability": -0.02437499999999998,
+      "real_win_probability": 0.011484374999999991,
+      "goal_difference": -0.0744531249999999
+    },
+    {
+      "role": "AM",
+      "reference_candidate": "J. Quintero",
+      "alternative_candidate": "W. Semedo",
+      "synthetic_win_probability": -0.0078124999999999445,
+      "real_win_probability": 0.015390625000000047,
+      "goal_difference": -0.057421874999999845
+    }
+  ],
+  "largest_overall_profile_gaps": [
+    {
+      "role": "FB2",
+      "overall_gap_real_minus_synthetic": 0.15352087334342757
+    },
+    {
+      "role": "CB1",
+      "overall_gap_real_minus_synthetic": 0.14418797970891906
+    },
+    {
+      "role": "CM",
+      "overall_gap_real_minus_synthetic": 0.12149739009025073
+    },
+    {
+      "role": "CB2",
+      "overall_gap_real_minus_synthetic": 0.1104526600727066
+    },
+    {
+      "role": "W1",
+      "overall_gap_real_minus_synthetic": 0.08777562208210177
+    }
+  ],
+  "external_holdout": {
+    "status": "external_pre_tournament_holdout_complete",
+    "profile_freeze": "2026-06-10",
+    "holdout": "World Cup 2026 FT matches",
+    "matches": 91,
+    "teams_with_frozen_profiles": 48,
+    "model": "frozen squad-strength Poisson baseline",
+    "fixed_goal_prior": 2.6,
+    "brier_score": 0.5171285796514484,
+    "log_loss": 0.8832017520786613,
+    "ranked_probability_score": 0.1760209203917709,
+    "top1_accuracy": 0.6263736263736264,
+    "naive_log_loss": 1.0986122886681096,
+    "log_loss_skill_vs_naive": 0.19607512023245155,
+    "external_pre_tournament_validation_passed": true,
+    "claim_scope": "predictive information in frozen player-profile aggregation, not full validation of the event simulator",
+    "limitations": [
+      "fixed global goal prior",
+      "no betting-market comparison",
+      "club-to-national-team transfer assumption",
+      "lineup availability not known before each match"
+    ]
+  },
+  "calibration_quality": {
+    "status": "calibration_quality_evaluated",
+    "absolute_goal_error": 0.011006382978723472,
+    "absolute_shot_error": 0.46957100421420606,
+    "absolute_shot_on_target_error": 0.44874105252338303,
+    "absolute_zero_zero_error": 0.023268085106382973,
+    "engineering_gate_passed": true,
+    "final_scientific_gate_passed": false
+  },
+  "authorized_claim": "Within the preregistered calibrated event-engine family, every plausible Real XI has a higher simulated win probability than the Synthetic XI, and the direction survives all prespecified sensitivity analyses.",
+  "prohibited_claims": [
+    "The Real XI would certainly win a real match.",
+    "A unique Real Best XI was identified.",
+    "The event engine has been fully externally validated.",
+    "The representative 2-1 match is an observed or predicted exact score."
+  ]
+}
