@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - scripts/scientific/run_identified_set_simulation.py
+      - scripts/scientific/run_identified_set_simulation_precision_budget.py
       - .github/workflows/identified-set-simulation.yml
   workflow_dispatch:
 
@@ -14,12 +15,12 @@ permissions:
 
 concurrency:
   group: identified-set-simulation
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   simulate:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 120
     env:
       PYTHONPATH: .
     steps:
@@ -44,6 +45,7 @@ jobs:
       - name: Validate simulation source
         run: |
           python -m py_compile scripts/scientific/run_identified_set_simulation.py
+          python -m py_compile scripts/scientific/run_identified_set_simulation_precision_budget.py
 
       - name: Run preregistered identified-set simulation
         id: simulation
@@ -52,7 +54,7 @@ jobs:
           rm -rf data/simulations/identified_set_v1
           mkdir -p data/simulations/identified_set_v1
           set +e
-          python scripts/scientific/run_identified_set_simulation.py > data/simulations/identified_set_v1/execution.log 2>&1
+          python scripts/scientific/run_identified_set_simulation_precision_budget.py > data/simulations/identified_set_v1/execution.log 2>&1
           code=$?
           set -e
           echo "$code" > data/simulations/identified_set_v1/exit_code.txt
