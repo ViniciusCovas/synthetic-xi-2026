@@ -40,21 +40,33 @@ jobs:
           pip install pandas numpy
 
       - name: Build structural missingness identified sets
-        run: python scripts/scientific/build_structural_missingness_sensitivity.py
+        id: sensitivity
+        continue-on-error: true
+        run: |
+          mkdir -p data/audits/structural_missingness
+          set +e
+          python scripts/scientific/build_structural_missingness_sensitivity.py > data/audits/structural_missingness/execution.log 2>&1
+          code=$?
+          set -e
+          echo "$code" > data/audits/structural_missingness/exit_code.txt
+          tail -n 80 data/audits/structural_missingness/execution.log
+          exit "$code"
 
       - name: Verify no final ranking was created
+        if: always()
         run: |
           if git diff --name-only | grep -E '(^|/)(real_best_xi_provisional|final_rankings|synthetic_xi_vs_real_xi)\.csv$'; then
             echo 'Protected ranking output changed unexpectedly.' >&2
             exit 1
           fi
 
-      - name: Publish sensitivity audit
+      - name: Publish sensitivity audit or diagnostics
+        if: always()
         run: |
           set -euo pipefail
           git config user.name "synthetic-xi-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/audits/structural_missingness/
+          git add -f data/audits/structural_missingness/
           if git diff --cached --quiet; then
             echo "No sensitivity changes to publish."
             exit 0
@@ -71,3 +83,12 @@ jobs:
           done
           echo "Failed to publish sensitivity audit." >&2
           exit 1
+
+      - name: Enforce successful sensitivity analysis
+        if: always()
+        run: |
+          code=$(cat data/audits/structural_missingness/exit_code.txt 2>/dev/null || echo 1)
+          if [ "$code" != "0" ]; then
+            echo "Sensitivity analysis failed with exit code $code" >&2
+            exit "$code"
+          fi
