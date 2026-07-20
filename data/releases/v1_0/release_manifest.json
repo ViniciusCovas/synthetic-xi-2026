@@ -1,6 +1,6 @@
 {
   "release": "v1.0-candidate",
-  "generated_at_utc": "2026-07-20T00:07:28.789924+00:00",
+  "generated_at_utc": "2026-07-20T03:58:31.956894+00:00",
   "scientific_ready": false,
   "claim_ceiling": "exploratory, calibrated and auditable simulation",
   "blocking_gates": [
@@ -11,6 +11,51 @@
       "path": "data/model_readiness/annual_model_readiness.json",
       "bytes": 706,
       "sha256": "bd179318c6fbb584beeddb3450438e0d8b50ab16231aaeb2d4b172c3694b26af"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/coverage_by_player.csv",
+      "bytes": 337645,
+      "sha256": "a528ef3e51c68f3de953a6adf4223f1277a88ab9016f86ad969416a2e6a9125e"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/coverage_by_position.csv",
+      "bytes": 374,
+      "sha256": "b12db5450d62d2ac7ae9401133287fdcefcf2aa861c2cfff24b1047e5d2cdc1a"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/exporter.log",
+      "bytes": 3387,
+      "sha256": "7dbe753af95e0a237d091e02d8a48bc93badac254274d7bdc4ecd7627708ae79"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/exporter_exit_code.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/exporter_tail.log",
+      "bytes": 691,
+      "sha256": "738a66807c2e706cb67b305a50d94af47fd342559064548b24c749c11f630b0d"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/rebuilt_coverage_ledger.csv",
+      "bytes": 11286391,
+      "sha256": "16836784e210cd41b4f6d309e6d2f64cf70fdb06c43d9111d997b0299089a93b"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/selection_sufficiency_report.json",
+      "bytes": 3386,
+      "sha256": "95601c7338b44c4b9b96935ed2198a0194cb1884a67d5124476dd92715900816"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/truly_unresolved_player_fixture_pairs.csv",
+      "bytes": 42684,
+      "sha256": "597c8b6363ac4adfa54d61408dc7870baf0e967905eabdcb6cef90ebf64253ea"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/truly_unresolved_priority_fixtures.csv",
+      "bytes": 8272,
+      "sha256": "5c6b8a253a698af9c4c9306c59a44655675a32ea5bacc97da807fa73d10eb7e8"
     },
     {
       "path": "data/model_readiness/candidate_coverage_status.json",
@@ -104,13 +149,13 @@
     },
     {
       "path": "data/model_readiness/selection_frontier.csv",
-      "bytes": 477900,
-      "sha256": "b33e3571ed54c3ed514f7dfb5fdce50b925b41a23111fa2482251035ecbc23d6"
+      "bytes": 477886,
+      "sha256": "3595ae80b10acce1c5be9c794e4754ed20477db9fc4068f965b873c0caa303da"
     },
     {
       "path": "data/model_readiness/selection_frontier_all_candidates.csv",
-      "bytes": 477900,
-      "sha256": "b33e3571ed54c3ed514f7dfb5fdce50b925b41a23111fa2482251035ecbc23d6"
+      "bytes": 477886,
+      "sha256": "3595ae80b10acce1c5be9c794e4754ed20477db9fc4068f965b873c0caa303da"
     },
     {
       "path": "data/model_readiness/selection_frontier_coverage.csv",
@@ -129,8 +174,8 @@
     },
     {
       "path": "data/model_readiness/selection_sufficiency_all_players.csv",
-      "bytes": 670384,
-      "sha256": "710545dd37d567c3c87c9c6fc3b62a925fb73447368cba68a845cd53cb3473b3"
+      "bytes": 670395,
+      "sha256": "c032d4f62beda9bb174c5949ffb715538a3bba0e00f1fc72b20ff30c5270b14e"
     },
     {
       "path": "data/model_readiness/selection_sufficiency_priority_fixtures.csv",
@@ -145,7 +190,7 @@
     {
       "path": "data/model_readiness/selection_sufficiency_unresolved_players.csv",
       "bytes": 20225,
-      "sha256": "ace6397308ddf9ff9ed8b1db578d2a644485255c5159dd941fdc23465acd1981"
+      "sha256": "0f160fc37087bad22fb6a5998b0b76d7f61f30d666ed331fe7dee9a7f2b0e0b2"
     },
     {
       "path": "data/validation/external_pre_tournament_holdout_summary.json",
