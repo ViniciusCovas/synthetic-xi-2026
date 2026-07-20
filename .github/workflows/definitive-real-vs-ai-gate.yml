@@ -36,6 +36,7 @@ jobs:
     timeout-minutes: 45
     env:
       PYTHONPATH: .
+      ONTOLOGY_SNAPSHOT_SHA: 08276007a68a923294e0aea44fb2e8dbbd553021
     steps:
       - name: Checkout experiment branch
         uses: actions/checkout@v4
@@ -43,6 +44,19 @@ jobs:
           ref: ${{ github.head_ref || 'definitive-real-vs-ai' }}
           fetch-depth: 0
           persist-credentials: true
+
+      - name: Restore frozen ontology audit snapshot
+        run: |
+          set -euo pipefail
+          mkdir -p data/audits/position_ontology_v2
+          if [ ! -f data/audits/position_ontology_v2/audited_player_roles.csv ]; then
+            git show "$ONTOLOGY_SNAPSHOT_SHA:data/audits/position_ontology_v2/audited_player_roles.csv" > data/audits/position_ontology_v2/audited_player_roles.csv
+          fi
+          if [ ! -f data/audits/position_ontology_v2/ontology_audit_status.json ]; then
+            git show "$ONTOLOGY_SNAPSHOT_SHA:data/audits/position_ontology_v2/ontology_audit_status.json" > data/audits/position_ontology_v2/ontology_audit_status.json
+          fi
+          test -s data/audits/position_ontology_v2/audited_player_roles.csv
+          test -s data/audits/position_ontology_v2/ontology_audit_status.json
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -66,13 +80,11 @@ jobs:
       - name: Test AI player generator
         run: pytest -q tests/test_ai_xi_generator.py
 
-      - name: Build blind review packet when source is available
+      - name: Build blind review packet
         run: |
-          if [ -f data/audits/position_ontology_v2/audited_player_roles.csv ]; then
-            python scripts/scientific/build_blind_position_review_packet.py
-            python scripts/scientific/evaluate_blind_position_review.py
-            rm -f data/audits/position_ontology_v2/blind_review/answer_key_do_not_share_with_reviewers.csv
-          fi
+          python scripts/scientific/build_blind_position_review_packet.py
+          python scripts/scientific/evaluate_blind_position_review.py
+          rm -f data/audits/position_ontology_v2/blind_review/answer_key_do_not_share_with_reviewers.csv
 
       - name: Evaluate definitive experiment gate
         run: python scripts/scientific/build_definitive_experiment_gate.py
@@ -103,8 +115,11 @@ jobs:
             data/audits/position_ontology_v2/blind_review/reviewer_a_form.csv
             data/audits/position_ontology_v2/blind_review/reviewer_b_form.csv
             data/audits/position_ontology_v2/blind_review/REVIEW_INSTRUCTIONS_ES.md
+            data/audits/position_ontology_v2/blind_review/packet_manifest.json
+            data/audits/definitive_experiment_v1/gate_status.json
+            data/audits/definitive_experiment_v1/README.md
             POSITION_ONTOLOGY_CODEBOOK_ES.md
-          if-no-files-found: warn
+          if-no-files-found: error
           retention-days: 90
 
       - name: Publish gate and public review packet
@@ -118,6 +133,8 @@ jobs:
             path="data/audits/position_ontology_v2/blind_review/$file"
             [ ! -f "$path" ] || git add -f "$path"
           done
+          git reset -- data/audits/position_ontology_v2/audited_player_roles.csv 2>/dev/null || true
+          git reset -- data/audits/position_ontology_v2/ontology_audit_status.json 2>/dev/null || true
           git reset -- data/audits/position_ontology_v2/blind_review/answer_key_do_not_share_with_reviewers.csv 2>/dev/null || true
           if git diff --cached --quiet; then
             echo 'No generated evidence to publish.'
