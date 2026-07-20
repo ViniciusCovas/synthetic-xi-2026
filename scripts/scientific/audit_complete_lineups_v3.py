@@ -3,14 +3,14 @@
 
 The v2 audit interpreted partial team grids as full formations. This script rejects any
 fixture-team line-up unless it has exactly 11 unique starters, one goalkeeper row and
-outfield row sizes matching the declared formation. It creates extraction priorities
-for relevant candidates whose appearances lack a complete line-up.
+outfield row sizes matching the declared formation. A candidate counts in exactly one
+primary role only when that role contains at least 900 observed minutes, at least three
+observations and at least 60% of the player's classified positional minutes.
 """
 from __future__ import annotations
 
 import glob
 import json
-from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -101,6 +101,38 @@ def candidate_ids() -> tuple[set[int], set[int]]:
     return relevant, high_impact
 
 
+def primary_roles(aggregated: pd.DataFrame) -> pd.DataFrame:
+    columns = [
+        "player_id", "player_name", "primary_role", "primary_role_minutes",
+        "primary_role_observations", "classified_role_minutes", "primary_role_share",
+        "primary_role_eligible",
+    ]
+    if aggregated.empty:
+        return pd.DataFrame(columns=columns)
+    totals = aggregated.groupby("player_id", as_index=False).agg(
+        classified_role_minutes=("role_minutes", "sum")
+    )
+    ranked = aggregated.sort_values(
+        ["player_id", "role_minutes", "role_observations", "role"],
+        ascending=[True, False, False, True],
+    ).drop_duplicates("player_id")
+    ranked = ranked.merge(totals, on="player_id", how="left")
+    ranked["primary_role_share"] = (
+        ranked.role_minutes / ranked.classified_role_minutes.replace(0, pd.NA)
+    )
+    ranked["primary_role_eligible"] = (
+        ranked.role_minutes.ge(900)
+        & ranked.role_observations.ge(3)
+        & ranked.primary_role_share.ge(0.60)
+        & ranked.role.isin(ROLES)
+    )
+    return ranked.rename(columns={
+        "role": "primary_role",
+        "role_minutes": "primary_role_minutes",
+        "role_observations": "primary_role_observations",
+    })[columns]
+
+
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     lineup_cols = {"fixture_id", "team_id", "player_id", "player_name", "formation", "grid", "lineup_source"}
@@ -133,7 +165,6 @@ def main() -> None:
 
     group_status = []
     records = []
-    complete_keys: set[tuple[int, int]] = set()
     for (fixture_id, team_id), group in lineups.groupby(["fixture_id", "team_id"], sort=False):
         formation_values = group["formation_norm"].dropna()
         formation = str(formation_values.mode().iloc[0]) if not formation_values.empty else ""
@@ -167,7 +198,6 @@ def main() -> None:
         })
         if not complete:
             continue
-        complete_keys.add((int(fixture_id), int(team_id)))
         ordered_rows = sorted(row for row in row_counts if int(row) != 1)
         row_roles = {row: template[index] for index, row in enumerate(ordered_rows)}
         for row, row_group in valid_grid.groupby("grid_row", sort=True):
@@ -189,7 +219,6 @@ def main() -> None:
     status_frame.to_csv(OUT / "lineup_group_completeness.csv", index=False)
     evidence.to_csv(OUT / "complete_lineup_role_observations.csv", index=False)
 
-    role_rows = []
     if not evidence.empty:
         aggregated = evidence.groupby(["player_id", "player_name", "role"], as_index=False).agg(
             role_minutes=("minutes_observed", "sum"),
@@ -197,12 +226,13 @@ def main() -> None:
         )
         totals = aggregated.groupby("player_id").role_minutes.transform("sum")
         aggregated["role_share"] = aggregated.role_minutes / totals.replace(0, pd.NA)
-        aggregated.to_csv(OUT / "complete_lineup_player_role_minutes.csv", index=False)
-        role_rows = aggregated.to_dict("records")
     else:
-        pd.DataFrame(columns=["player_id", "player_name", "role", "role_minutes", "role_observations", "role_share"]).to_csv(
-            OUT / "complete_lineup_player_role_minutes.csv", index=False
-        )
+        aggregated = pd.DataFrame(columns=[
+            "player_id", "player_name", "role", "role_minutes", "role_observations", "role_share"
+        ])
+    aggregated.to_csv(OUT / "complete_lineup_player_role_minutes.csv", index=False)
+    primary = primary_roles(aggregated)
+    primary.to_csv(OUT / "complete_lineup_primary_roles.csv", index=False)
 
     relevant, high_impact = candidate_ids()
     candidate_appearances = players.loc[players.player_id.isin(relevant) & players.minutes_observed.gt(0)].copy()
@@ -216,11 +246,10 @@ def main() -> None:
     )
     priority.to_csv(OUT / "lineup_extraction_priority.csv", index=False)
 
-    eligible_counts = {role: 0 for role in ROLES}
-    for row in role_rows:
-        if float(row["role_minutes"]) >= 900 and int(row["role_observations"]) >= 3:
-            eligible_counts[str(row["role"])] += 1
-
+    eligible_primary = primary.loc[primary.primary_role_eligible].copy()
+    eligible_counts = (
+        eligible_primary.groupby("primary_role").player_id.nunique().reindex(ROLES, fill_value=0).astype(int).to_dict()
+    )
     complete_groups = int(status_frame.complete_lineup.sum())
     all_groups = int(len(status_frame))
     high_impact_priority = priority.loc[priority.high_impact_current_release]
@@ -233,13 +262,19 @@ def main() -> None:
         "complete_group_rate": float(complete_groups / all_groups) if all_groups else 0.0,
         "complete_role_observations": int(len(evidence)),
         "players_with_complete_role_evidence": int(evidence.player_id.nunique()) if not evidence.empty else 0,
-        "eligible_900_minutes_and_3_observations_by_role": eligible_counts,
-        "all_roles_have_20_candidates": all(count >= 20 for count in eligible_counts.values()),
+        "primary_role_eligible_players": int(len(eligible_primary)),
+        "eligible_primary_candidates_by_role": eligible_counts,
+        "all_roles_have_20_primary_candidates": all(count >= 20 for count in eligible_counts.values()),
         "priority_candidate_fixture_team_pairs": int(len(priority)),
         "high_impact_priority_pairs": int(len(high_impact_priority)),
         "high_impact_players_needing_more_complete_lineups": int(high_impact_priority.player_id.nunique()),
         "classification_policy": "only exact 11-player grids whose row sizes match a supported declared formation",
-        "next_action": "extract or recover complete startXI lineups for the priority fixture-team list",
+        "eligibility_policy": "one primary role per player; >=900 primary-role minutes; >=3 observations; >=60% of classified role minutes",
+        "next_action": (
+            "build the ontology-v3 blind-review packet"
+            if all(count >= 20 for count in eligible_counts.values())
+            else "extract more complete lineups, prioritizing deficient primary-role pools"
+        ),
     }
     (OUT / "lineup_completeness_status.json").write_text(
         json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8"
