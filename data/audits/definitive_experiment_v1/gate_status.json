@@ -1,0 +1,64 @@
+{
+  "status": "definitive_real_vs_ai_gate_evaluated",
+  "generated_at_utc": "2026-07-20T14:19:29.622352+00:00",
+  "estimand": "one deterministic Real XI versus one deterministic AI XI",
+  "partial_identification_allowed": false,
+  "formation_slots": [
+    "GK",
+    "RB",
+    "RCB",
+    "LCB",
+    "LB",
+    "DM",
+    "CM",
+    "AM",
+    "RW",
+    "LW",
+    "ST"
+  ],
+  "minimum_role_pool": 20,
+  "audited_stable_candidates_by_role": {
+    "GK": 0,
+    "RB": 0,
+    "RCB": 0,
+    "LCB": 0,
+    "LB": 0,
+    "DM": 0,
+    "CM": 0,
+    "AM": 0,
+    "RW": 0,
+    "LW": 0,
+    "ST": 0
+  },
+  "gates": {
+    "protocol_frozen": true,
+    "partial_identification_forbidden": true,
+    "single_real_xi_required": true,
+    "single_ai_xi_required": true,
+    "blind_review_gate_passed": false,
+    "ontology_v3_gate_passed": false,
+    "minimum_20_candidates_each_role": false,
+    "final_candidate_coverage_gate_passed": false,
+    "ai_generator_implemented": true,
+    "independent_engine_validation_passed": false
+  },
+  "blockers": [
+    "blind_review_gate_passed",
+    "ontology_v3_gate_passed",
+    "minimum_20_candidates_each_role",
+    "final_candidate_coverage_gate_passed",
+    "independent_engine_validation_passed"
+  ],
+  "final_experiment_gate_passed": false,
+  "final_team_files_allowed": false,
+  "final_simulation_allowed": false,
+  "next_action": "resolve blockers without producing final teams or final match claims",
+  "source_files": {
+    "ontology": "data/audits/position_ontology_v2/ontology_audit_status.json",
+    "blind_review": "data/audits/position_ontology_v2/blind_review/blind_review_evaluation.json",
+    "coverage": "data/audits/scope_correct_coverage/shadow_selection/shadow_selection_status.json",
+    "engine_validation": "data/audits/engine_validation_v1/status.json",
+    "protocol": "DEFINITIVE_REAL_VS_AI_PROTOCOL.md",
+    "ai_generator": "simulator/ai_xi_generator.py"
+  }
+}
