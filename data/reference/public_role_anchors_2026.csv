@@ -1,0 +1,27 @@
+player_id,canonical_name,allowed_roles,preferred_role,public_position,source_type,source_url,checked_at_utc,evidence_note
+9,Achraf Hakimi,RB,RB,right-back,official_club,https://www.psg.fr/en/players/achraf-hakimi,2026-07-20,PSG describes Hakimi as a right-back
+44,Rodri,DM|CM,DM,midfielder,official_club,https://www.mancity.com/players/rodri,2026-07-20,Public anchor restricts Rodri to central midfield roles
+153,Ousmane Dembele,RW|LW|ST,,forward,official_club,https://www.psg.fr/en/players/ousmane-dembele,2026-07-20,PSG classifies Dembele as a forward without forcing one exact attacking lane
+184,Harry Kane,ST,ST,forward,official_club,https://fcbayern.com/en/teams/first-team/harry-kane,2026-07-20,Bayern lists Kane in attack and he is the central number nine
+217,Lautaro Martinez,ST,ST,striker,official_club_news,https://www.inter.it/en/news/lautaro-martinez-best-striker-serie-a-2025-26,2026-07-20,Inter and Serie A identify Lautaro as Best Striker 2025-26
+226,Denzel Dumfries,RB,RB,right wing-back,official_club_news,https://www.inter.it/en/news/denzel-dumfries-birthday-2026,2026-07-20,Inter describes his work on the right flank as a wing-back
+271,Leandro Paredes,DM|CM,DM,midfielder,official_club_news,https://www.asroma.com/en/news/72982/paredes-signs-new-deal-until-30-june-2026,2026-07-20,Roma identifies Paredes as a midfielder; AM is excluded
+278,Kylian Mbappe,ST|LW,ST,forward,official_club,https://www.realmadrid.com/en-US/football/first-team/players/kylian-mbappe,2026-07-20,Real Madrid lists Mbappe as a forward; preferred central attacking role for this ontology
+502,Joshua Kimmich,RB|DM|CM,,midfielder or right-back,official_club,https://fcbayern.com/en/teams/first-team/joshua-kimmich,2026-07-20,Bayern lists Kimmich in midfield while Germany also uses him at right-back
+909,Marcus Rashford,LW|ST,,forward,public_role_anchor,https://www.englandfootball.com/england/mens-senior-team/squad/marcus-rashford,2026-07-20,Restricted to left-forward or striker roles
+1117,Kieran Tierney,LB,LB,defender,official_club,https://www.celticfc.com/players/kieran-tierney,2026-07-20,Celtic lists Tierney as a defender; career role is left-back
+1257,Jules Kounde,RB|RCB,,defender,official_club,https://www.fcbarcelona.com/en/football/first-team/jugadores/15552/jules-kounde,2026-07-20,Barcelona classifies Kounde as a defender; right-back and right centre-back allowed
+1422,Jeremy Doku,RW|LW,RW,winger,official_club_news,https://www.mancity.com/news/mens/jeremy-doku-season-overview-63853436,2026-07-20,Manchester City describes Doku as a winger
+2489,Luis Diaz,LW|ST,LW,forward or left wing,official_club,https://fcbayern.com/en/teams/first-team/luis-diaz,2026-07-20,Bayern says Diaz is a forward comfortable on the left wing and centrally
+2601,Daichi Kamada,AM|CM,AM,midfielder,official_club,https://www.cpfc.co.uk/teams/first-team/midfielder/daichi-kamada/,2026-07-20,Crystal Palace lists Kamada as a midfielder; ST is excluded
+2869,Edson Alvarez,DM|RCB,DM,deep midfielder,official_club,https://www.whufc.com/en/teams/mens-team/edson-alvarez,2026-07-20,West Ham describes Alvarez as a midfielder usually playing deep and sometimes in defence
+6002,Exequiel Palacios,CM|DM,CM,midfielder,official_club,https://www.bayer04.de/en-us/player/werkself/bayer-04-leverkusen/exequiel-palacios,2026-07-20,Bayer 04 lists Palacios in midfield; RB is excluded
+19545,Reece James,RB|RCB,RB,defender or wing-back,official_club,https://www.chelseafc.com/en/teams/men,2026-07-20,Chelsea lists James as defender or wing-back
+19617,Michael Olise,RW|AM,RW,forward or right winger,official_club,https://fcbayern.com/en/teams/first-team/michael-olise,2026-07-20,Bayern lists Olise as a forward who mostly plays on the right wing
+25158,David Raum,LB,LB,left-back,official_league_news,https://www.bundesliga.com/en/bundesliga/news/who-is-david-raum-rb-leipzig-left-back-germany-squad-hansi-flick-17085,2026-07-20,Bundesliga explicitly identifies Raum as a left-back
+39058,Fredrik Bjorkan,LB,LB,defender,official_club,https://www.glimt.no/lag/fredrik-andre-bjorkan,2026-07-20,Bodo Glimt lists Bjorkan as a defender; established role is left-back
+41552,Pathe Ciss,DM|CM,DM,midfielder,official_club,https://www.rayovallecano.es/jugadores/pathe-ciss,2026-07-20,Rayo identifies Ciss as a midfielder with defensive responsibilities
+129718,Jude Bellingham,CM|AM,CM,midfielder,official_club,https://www.realmadrid.com/en-US/football/squad/jude-bellingham,2026-07-20,Real Madrid lists Bellingham as a midfielder
+181812,Jamal Musiala,AM|CM,AM,midfielder,official_club,https://fcbayern.com/en/teams/first-team/jamal-musiala,2026-07-20,Bayern lists Musiala in midfield; ST is excluded
+263482,Nuno Mendes,LB,LB,left-back,official_club,https://www.psg.fr/en/players/nuno-mendes,2026-07-20,PSG identifies Mendes as a defender and left-back
+271539,Jaouen Hadjam,LB,LB,left defender,official_club_news,https://www.bscyb.ch/news?nid=17359,2026-07-20,Young Boys reports Hadjam on the left side of defence
