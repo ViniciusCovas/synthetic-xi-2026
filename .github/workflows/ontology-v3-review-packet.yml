@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   packet:
@@ -24,6 +24,7 @@ jobs:
         with:
           ref: definitive-real-vs-ai
           fetch-depth: 0
+          persist-credentials: true
 
       - uses: actions/setup-python@v5
         with:
@@ -70,3 +71,32 @@ jobs:
           path: data/audits/position_ontology_v3/blind_review/answer_key_do_not_share_with_reviewers.csv
           if-no-files-found: error
           retention-days: 90
+
+      - name: Publish public ontology-v3 review state
+        run: |
+          set -euo pipefail
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -f data/audits/position_ontology_v3/lineup_completeness_status.json
+          git add -f data/audits/position_ontology_v3/complete_lineup_primary_roles.csv
+          git add -f data/audits/position_ontology_v3/blind_review/packet_manifest.json
+          git add -f data/audits/position_ontology_v3/blind_review/blind_review_evaluation.json
+          if [ -f data/audits/position_ontology_v3/blind_review/reviewer_a_form.csv ]; then
+            git add -f data/audits/position_ontology_v3/blind_review/reviewer_a_form.csv
+            git add -f data/audits/position_ontology_v3/blind_review/reviewer_b_form.csv
+            git add -f data/audits/position_ontology_v3/blind_review/REVIEW_INSTRUCTIONS_PT.md
+          fi
+          if git diff --cached --quiet; then
+            echo 'No public review state changes to publish.'
+            exit 0
+          fi
+          git commit -m 'science: publish ontology-v3 review packet state'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin definitive-real-vs-ai
+            if git rebase -X theirs origin/definitive-real-vs-ai && git push origin HEAD:definitive-real-vs-ai; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          exit 1
