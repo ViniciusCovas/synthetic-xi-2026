@@ -44,9 +44,11 @@ jobs:
           test -n "$API_FOOTBALL_KEY"
           python -m py_compile scripts/scientific/audit_complete_lineups_v3.py
           python -m py_compile scripts/scientific/extract_full_lineups_priority.py
+          python -m py_compile scripts/scientific/build_blind_position_review_packet_v3.py
           python scripts/scientific/audit_complete_lineups_v3.py
           python scripts/scientific/extract_full_lineups_priority.py
           python scripts/scientific/audit_complete_lineups_v3.py
+          python scripts/scientific/build_blind_position_review_packet_v3.py
 
       - name: Protect frozen diagnostic release
         run: |
@@ -55,13 +57,30 @@ jobs:
             exit 1
           fi
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload public extraction and review package
+        uses: actions/upload-artifact@v4
         with:
           name: full-lineup-priority-${{ github.run_id }}
           path: |
             data/lake/batches/batch_full_provider_lineups.csv.gz
             data/lake/full_lineup_extraction_progress.csv
-            data/audits/position_ontology_v3/
+            data/audits/position_ontology_v3/full_lineup_extraction_status.json
+            data/audits/position_ontology_v3/lineup_completeness_status.json
+            data/audits/position_ontology_v3/complete_lineup_player_role_minutes.csv
+            data/audits/position_ontology_v3/complete_lineup_primary_roles.csv
+            data/audits/position_ontology_v3/blind_review/reviewer_a_form.csv
+            data/audits/position_ontology_v3/blind_review/reviewer_b_form.csv
+            data/audits/position_ontology_v3/blind_review/REVIEW_INSTRUCTIONS_PT.md
+            data/audits/position_ontology_v3/blind_review/packet_manifest.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Upload internal answer key
+        if: ${{ hashFiles('data/audits/position_ontology_v3/blind_review/answer_key_do_not_share_with_reviewers.csv') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ontology-v3-internal-key-${{ github.run_id }}
+          path: data/audits/position_ontology_v3/blind_review/answer_key_do_not_share_with_reviewers.csv
           if-no-files-found: error
           retention-days: 90
 
@@ -75,6 +94,7 @@ jobs:
           git add -f data/audits/position_ontology_v3/full_lineup_extraction_status.json
           git add -f data/audits/position_ontology_v3/lineup_completeness_status.json
           git add -f data/audits/position_ontology_v3/complete_lineup_player_role_minutes.csv
+          git add -f data/audits/position_ontology_v3/complete_lineup_primary_roles.csv
           if git diff --cached --quiet; then
             echo 'No new complete lineups to publish.'
             exit 0
