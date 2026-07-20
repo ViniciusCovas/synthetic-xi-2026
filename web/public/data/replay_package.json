@@ -2,9 +2,9 @@
   "version": "broadcast_v1.0",
   "title": "Synthetic XI vs Real Best XI",
   "probabilities": {
-    "synthetic_win": 0.2866,
-    "draw": 0.2358,
-    "real_win": 0.4776
+    "synthetic_win": 0.2789,
+    "draw": 0.2338,
+    "real_win": 0.4873
   },
   "calibration": {
     "matches": 94,
@@ -28,12 +28,12 @@
       "id": "representative",
       "label": "Partido representativo",
       "description": "Timeline directa del partido seleccionado por el motor por cercanía a las medias de 10.000 simulaciones.",
-      "scoreline_probability": 0.096,
+      "scoreline_probability": 0.0953,
       "stats": {
         "home_goals": 1,
         "away_goals": 2,
-        "home_xg": 1.282,
-        "away_xg": 1.25,
+        "home_xg": 1.283,
+        "away_xg": 1.211,
         "home_shots": 9,
         "away_shots": 9,
         "home_shots_on_target": 1,
@@ -55,7 +55,7 @@
           "type": "shot_off_target",
           "actor": "SYN-ST20",
           "zone": 2,
-          "xg": 0.179
+          "xg": 0.178
         },
         {
           "minute": 17,
@@ -63,7 +63,7 @@
           "type": "shot_off_target",
           "actor": "SYN-W120",
           "zone": 2,
-          "xg": 0.161
+          "xg": 0.162
         },
         {
           "minute": 21,
@@ -93,9 +93,9 @@
           "minute": 41,
           "team": "away",
           "type": "goal",
-          "actor": "Lionel Messi",
+          "actor": "Kylian Mbappé",
           "zone": 1,
-          "xg": 0.107
+          "xg": 0.108
         },
         {
           "minute": 42,
@@ -119,7 +119,7 @@
           "type": "shot_off_target",
           "actor": "SYN-W220",
           "zone": 2,
-          "xg": 0.156
+          "xg": 0.157
         },
         {
           "minute": 63,
@@ -141,15 +141,15 @@
           "minute": 76,
           "team": "away",
           "type": "shot_on_target",
-          "actor": "João Félix",
+          "actor": "Yan Diomande",
           "zone": 2,
-          "xg": 0.172
+          "xg": 0.153
         },
         {
           "minute": 78,
           "team": "away",
           "type": "turnover",
-          "actor": "João Félix",
+          "actor": "Yan Diomande",
           "zone": 3,
           "xg": 0.0
         },
@@ -159,7 +159,7 @@
           "type": "goal",
           "actor": "SYN-ST20",
           "zone": 2,
-          "xg": 0.179
+          "xg": 0.178
         },
         {
           "minute": 87,
@@ -173,7 +173,7 @@
           "minute": 89,
           "team": "away",
           "type": "turnover",
-          "actor": "Lionel Messi",
+          "actor": "Kylian Mbappé",
           "zone": 2,
           "xg": 0.0
         }
@@ -183,7 +183,7 @@
       "id": "synthetic-upset",
       "label": "Sorpresa sintética",
       "description": "Reconstrucción visual coherente con el marcador 2–1 muestreado por Monte Carlo.",
-      "scoreline_probability": 0.0702,
+      "scoreline_probability": 0.0683,
       "stats": {
         "home_goals": 2,
         "away_goals": 1,
@@ -282,7 +282,7 @@
       "id": "high-intensity",
       "label": "Alta intensidad",
       "description": "Reconstrucción visual coherente con el marcador 2–2 muestreado por Monte Carlo.",
-      "scoreline_probability": 0.0517,
+      "scoreline_probability": 0.0537,
       "stats": {
         "home_goals": 2,
         "away_goals": 2,

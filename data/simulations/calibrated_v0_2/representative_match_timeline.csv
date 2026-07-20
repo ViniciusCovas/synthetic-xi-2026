@@ -1,18 +1,18 @@
 minute,team,type,actor,zone,xg,headline
 11,Real Best XI — exploratorio,shot_off_target,Michael Olise,2,0.179,Ocasión de Michael Olise fuera
-12,Synthetic XI — exploratorio,shot_off_target,SYN-ST20,2,0.179,Ocasión de SYN-ST20 fuera
-17,Synthetic XI — exploratorio,shot_off_target,SYN-W120,2,0.161,Ocasión de SYN-W120 fuera
+12,Synthetic XI — exploratorio,shot_off_target,SYN-ST20,2,0.178,Ocasión de SYN-ST20 fuera
+17,Synthetic XI — exploratorio,shot_off_target,SYN-W120,2,0.162,Ocasión de SYN-W120 fuera
 21,Real Best XI — exploratorio,goal,Michael Olise,2,0.179,GOL de Michael Olise
 32,Real Best XI — exploratorio,shot_off_target,Michael Olise,2,0.179,Ocasión de Michael Olise fuera
 40,Synthetic XI — exploratorio,shot_off_target,SYN-CM20,3,0.205,Ocasión de SYN-CM20 fuera
-41,Real Best XI — exploratorio,goal,Lionel Messi,1,0.107,GOL de Lionel Messi
+41,Real Best XI — exploratorio,goal,Kylian Mbappé,1,0.108,GOL de Kylian Mbappé
 42,Real Best XI — exploratorio,turnover,Pedri,3,0.0,Pedri pierde el balón bajo presión
 54,Real Best XI — exploratorio,turnover,Michael Olise,2,0.0,Michael Olise pierde el balón bajo presión
-62,Synthetic XI — exploratorio,shot_off_target,SYN-W220,2,0.156,Ocasión de SYN-W220 fuera
+62,Synthetic XI — exploratorio,shot_off_target,SYN-W220,2,0.157,Ocasión de SYN-W220 fuera
 63,Synthetic XI — exploratorio,turnover,SYN-W120,2,0.0,SYN-W120 pierde el balón bajo presión
 74,Synthetic XI — exploratorio,turnover,SYN-W120,2,0.0,SYN-W120 pierde el balón bajo presión
-76,Real Best XI — exploratorio,shot_on_target,João Félix,2,0.172,Remate de João Félix detenido por el portero
-78,Real Best XI — exploratorio,turnover,João Félix,3,0.0,João Félix pierde el balón bajo presión
-79,Synthetic XI — exploratorio,goal,SYN-ST20,2,0.179,GOL de SYN-ST20
+76,Real Best XI — exploratorio,shot_on_target,Yan Diomande,2,0.153,Remate de Yan Diomande detenido por el portero
+78,Real Best XI — exploratorio,turnover,Yan Diomande,3,0.0,Yan Diomande pierde el balón bajo presión
+79,Synthetic XI — exploratorio,goal,SYN-ST20,2,0.178,GOL de SYN-ST20
 87,Synthetic XI — exploratorio,turnover,SYN-W220,2,0.0,SYN-W220 pierde el balón bajo presión
-89,Real Best XI — exploratorio,turnover,Lionel Messi,2,0.0,Lionel Messi pierde el balón bajo presión
+89,Real Best XI — exploratorio,turnover,Kylian Mbappé,2,0.0,Kylian Mbappé pierde el balón bajo presión
