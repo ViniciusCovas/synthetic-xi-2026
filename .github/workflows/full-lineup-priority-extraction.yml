@@ -5,6 +5,7 @@ on:
     branches: [definitive-real-vs-ai]
     paths:
       - scripts/scientific/extract_full_lineups_priority.py
+      - scripts/scientific/extract_full_lineups_deficit_roles.py
       - .github/workflows/full-lineup-priority-extraction.yml
   workflow_dispatch:
 
@@ -39,14 +40,15 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Build priority and extract complete lineups
+      - name: Extract complete lineups for deficient primary roles
         run: |
           test -n "$API_FOOTBALL_KEY"
           python -m py_compile scripts/scientific/audit_complete_lineups_v3.py
           python -m py_compile scripts/scientific/extract_full_lineups_priority.py
+          python -m py_compile scripts/scientific/extract_full_lineups_deficit_roles.py
           python -m py_compile scripts/scientific/build_blind_position_review_packet_v3.py
           python scripts/scientific/audit_complete_lineups_v3.py
-          python scripts/scientific/extract_full_lineups_priority.py
+          python scripts/scientific/extract_full_lineups_deficit_roles.py
           python scripts/scientific/audit_complete_lineups_v3.py
           python scripts/scientific/build_blind_position_review_packet_v3.py
 
