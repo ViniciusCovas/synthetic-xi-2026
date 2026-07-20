@@ -54,9 +54,9 @@ fixture_id,attempts,last_run_utc,player_rows,lineup_rows,event_rows,status
 1405458,2,2026-07-20T00:02:32.763690+00:00,0,1,0,rechecked_player_endpoint_empty
 1405461,2,2026-07-20T00:02:32.763690+00:00,0,1,1,rechecked_player_endpoint_empty
 1410019,2,2026-07-20T00:02:32.763690+00:00,0,1,1,rechecked_player_endpoint_empty
-1410025,1,2026-07-20T00:02:32.763690+00:00,0,1,0,rechecked_player_endpoint_empty
+1410025,2,2026-07-20T00:03:46.276365+00:00,0,1,0,rechecked_player_endpoint_empty
 1410049,2,2026-07-20T00:02:32.763690+00:00,0,1,0,rechecked_player_endpoint_empty
-1410056,1,2026-07-20T00:02:32.763690+00:00,0,1,0,rechecked_player_endpoint_empty
+1410056,2,2026-07-20T00:03:46.276365+00:00,0,1,0,rechecked_player_endpoint_empty
 1410072,2,2026-07-20T00:02:32.763690+00:00,0,4,2,rechecked_player_endpoint_empty
 1410075,2,2026-07-20T00:02:32.763690+00:00,0,4,2,rechecked_player_endpoint_empty
 1415590,2,2026-07-20T00:02:32.763690+00:00,0,1,0,rechecked_player_endpoint_empty
@@ -120,7 +120,7 @@ fixture_id,attempts,last_run_utc,player_rows,lineup_rows,event_rows,status
 1446904,2,2026-07-20T00:02:32.763690+00:00,0,2,0,rechecked_player_endpoint_empty
 1446906,2,2026-07-20T00:02:32.763690+00:00,0,1,1,rechecked_player_endpoint_empty
 1446907,2,2026-07-20T00:02:32.763690+00:00,0,2,1,rechecked_player_endpoint_empty
-1446909,1,2026-07-20T00:02:32.763690+00:00,0,2,1,rechecked_player_endpoint_empty
+1446909,2,2026-07-20T00:03:46.276365+00:00,0,2,1,rechecked_player_endpoint_empty
 1446910,2,2026-07-20T00:02:32.763690+00:00,0,2,1,rechecked_player_endpoint_empty
 1446911,2,2026-07-20T00:02:32.763690+00:00,0,3,3,rechecked_player_endpoint_empty
 1446913,2,2026-07-20T00:02:32.763690+00:00,0,2,0,rechecked_player_endpoint_empty
@@ -131,13 +131,13 @@ fixture_id,attempts,last_run_utc,player_rows,lineup_rows,event_rows,status
 1446923,2,2026-07-20T00:02:32.763690+00:00,0,1,0,rechecked_player_endpoint_empty
 1446924,2,2026-07-20T00:02:32.763690+00:00,0,3,1,rechecked_player_endpoint_empty
 1446925,2,2026-07-20T00:02:32.763690+00:00,0,1,2,rechecked_player_endpoint_empty
-1446928,1,2026-07-20T00:02:32.763690+00:00,0,2,2,rechecked_player_endpoint_empty
+1446928,2,2026-07-20T00:03:46.276365+00:00,0,2,2,rechecked_player_endpoint_empty
 1446929,2,2026-07-20T00:02:32.763690+00:00,0,3,2,rechecked_player_endpoint_empty
 1451486,2,2026-07-20T00:02:32.763690+00:00,0,1,1,rechecked_player_endpoint_empty
 1451495,2,2026-07-20T00:02:32.763690+00:00,0,1,0,rechecked_player_endpoint_empty
 1451617,2,2026-07-20T00:02:32.763690+00:00,0,1,0,rechecked_player_endpoint_empty
 1485346,2,2026-07-20T00:02:32.763690+00:00,0,2,1,rechecked_player_endpoint_empty
-1485352,1,2026-07-20T00:02:32.763690+00:00,0,2,2,rechecked_player_endpoint_empty
+1485352,2,2026-07-20T00:03:46.276365+00:00,0,2,2,rechecked_player_endpoint_empty
 1485353,2,2026-07-20T00:02:32.763690+00:00,0,2,1,rechecked_player_endpoint_empty
 1485354,2,2026-07-20T00:02:32.763690+00:00,0,1,1,rechecked_player_endpoint_empty
 1489326,2,2026-07-20T00:02:32.763690+00:00,0,5,3,rechecked_player_endpoint_empty
@@ -150,7 +150,7 @@ fixture_id,attempts,last_run_utc,player_rows,lineup_rows,event_rows,status
 1505602,2,2026-07-20T00:02:32.763690+00:00,0,1,1,rechecked_player_endpoint_empty
 1505608,2,2026-07-20T00:02:32.763690+00:00,0,1,2,rechecked_player_endpoint_empty
 1505609,2,2026-07-20T00:02:32.763690+00:00,0,1,0,rechecked_player_endpoint_empty
-1505611,1,2026-07-20T00:02:32.763690+00:00,0,2,1,rechecked_player_endpoint_empty
+1505611,2,2026-07-20T00:03:46.276365+00:00,0,2,1,rechecked_player_endpoint_empty
 1505612,2,2026-07-20T00:02:32.763690+00:00,0,2,0,rechecked_player_endpoint_empty
 1505614,2,2026-07-20T00:02:32.763690+00:00,0,1,0,rechecked_player_endpoint_empty
 1521238,2,2026-07-20T00:02:32.763690+00:00,0,2,0,rechecked_player_endpoint_empty

@@ -11,7 +11,7 @@
   "player_endpoint_empty": 313,
   "no_target_player_returned": 1134,
   "active_player_rows": 38672,
-  "lineup_rows": 45476,
+  "lineup_rows": 45486,
   "active_minutes_nonnull_rate": 0.9999741414977245,
   "active_position_nonnull_rate": 0.9999741414977245,
   "active_passes_nonnull_rate": 0.9932250724038064,

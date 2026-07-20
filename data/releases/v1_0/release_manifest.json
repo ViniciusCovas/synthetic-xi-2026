@@ -1,6 +1,6 @@
 {
   "release": "v1.0-candidate",
-  "generated_at_utc": "2026-07-20T00:03:10.317475+00:00",
+  "generated_at_utc": "2026-07-20T00:05:25.762618+00:00",
   "scientific_ready": false,
   "claim_ceiling": "exploratory, calibrated and auditable simulation",
   "blocking_gates": [
@@ -115,7 +115,7 @@
     {
       "path": "data/model_readiness/selection_frontier_coverage.csv",
       "bytes": 696199,
-      "sha256": "0fb87bedebfdaace21d199ae3abe25cec864678db0fcd443ecac0ef1a2cbb5bd"
+      "sha256": "4c3caeab673ccb6178415b8a2fd0a2dd4548e97ec1af79c12a85aacca1b9d9ff"
     },
     {
       "path": "data/model_readiness/selection_frontier_priority_fixtures.csv",
