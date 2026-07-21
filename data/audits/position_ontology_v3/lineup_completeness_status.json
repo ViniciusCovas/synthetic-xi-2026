@@ -1,0 +1,32 @@
+{
+  "status": "complete_lineup_position_evidence_and_eligibility_audited",
+  "generated_at_utc": "2026-07-20T16:48:03.301977+00:00",
+  "network_calls": 0,
+  "fixture_team_lineup_groups": 14184,
+  "structurally_complete_groups": 6786,
+  "complete_group_rate": 0.4784263959390863,
+  "complete_role_observations": 72513,
+  "players_with_complete_role_evidence": 10479,
+  "primary_role_eligible_players": 413,
+  "eligible_primary_candidates_by_role": {
+    "GK": 50,
+    "RB": 40,
+    "RCB": 40,
+    "LCB": 41,
+    "LB": 40,
+    "DM": 48,
+    "CM": 36,
+    "AM": 14,
+    "RW": 21,
+    "LW": 26,
+    "ST": 57
+  },
+  "all_roles_have_20_primary_candidates": false,
+  "priority_candidate_fixture_team_pairs": 12978,
+  "high_impact_priority_pairs": 2130,
+  "high_impact_players_needing_more_complete_lineups": 192,
+  "classification_policy": "only exact 11-player grids whose row sizes match a supported declared formation",
+  "eligibility_policy": "one primary role per player; >=1800 exact-window total minutes; >=900 primary-role minutes; >=3 observations; >=60% of classified role minutes",
+  "next_action": "extract more complete lineups for deficient roles; total-minute failures cannot be repaired by lineup extraction",
+  "eligibility_updated_at_utc": "2026-07-20T16:48:03.747167+00:00"
+}

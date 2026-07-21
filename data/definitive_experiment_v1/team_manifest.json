@@ -1,0 +1,54 @@
+{
+  "ai_agents": 11,
+  "ai_generation": {
+    "candidates_per_role": 50000,
+    "generator_has_match_engine_access": false,
+    "generator_has_opponent_access": false,
+    "method": "whole-vector empirical convex combinations",
+    "minimum_role_pool": 20,
+    "profile_metrics": [
+      "overall_final",
+      "build_up",
+      "progression",
+      "creation",
+      "finishing",
+      "defending",
+      "duels",
+      "retention",
+      "goalkeeping"
+    ]
+  },
+  "ai_xi_sha256": "a220090b5d1fa8c008086f50a8a091f667f955f14ea1b6a6d34d59a720fee117",
+  "candidate_role_table_sha256": "1d835aa769f06c4d14342ffe600ed7a5d9c59479743e6448bd66092eaa068399",
+  "generated_at_utc": "2026-07-21T01:21:13.411780+00:00",
+  "master_seed": 20260720,
+  "partial_identification": false,
+  "real_players": 11,
+  "real_selection": {
+    "method": "exact dynamic-programming maximum-weight bipartite assignment",
+    "objective": "maximum frozen total role-specific adjusted score",
+    "one_player_per_slot": true,
+    "one_slot_per_player": true,
+    "tiebreakers": [
+      "higher total conservative score",
+      "higher total annual minutes",
+      "higher total positional-family minutes",
+      "lower ordered player_id vector"
+    ]
+  },
+  "real_xi_sha256": "24368ba1b8b71c12b21e239d2fcf8d2dc34b38c9174030e9b59e0133ecdf6d33",
+  "slots": [
+    "GK",
+    "RB",
+    "RCB",
+    "LCB",
+    "LB",
+    "DM",
+    "CM",
+    "AM",
+    "RW",
+    "LW",
+    "ST"
+  ],
+  "status": "definitive_teams_frozen"
+}
