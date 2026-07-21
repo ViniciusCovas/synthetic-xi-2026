@@ -1,0 +1,128 @@
+name: Definitive External-Validity V2 Simulation
+
+on:
+  push:
+    branches: [definitive-real-vs-ai]
+    paths:
+      - scripts/scientific/run_definitive_simulation_v2.py
+      - data/audits/external_validity_v2/final_gate_status.json
+      - data/audits/external_validity_v2/validation_status.json
+      - data/audits/external_validity_v2/independent_direction_check.json
+      - data/definitive_experiment_v2/team_manifest.json
+      - data/definitive_experiment_v2/real_xi.csv
+      - data/definitive_experiment_v2/ai_xi.csv
+      - .github/workflows/definitive-v2-final-simulation.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - scripts/scientific/run_definitive_simulation_v2.py
+      - .github/workflows/definitive-v2-final-simulation.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: definitive-v2-simulation-${{ github.event_name }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: definitive-real-vs-ai
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install and compile
+        run: |
+          pip install -r requirements.txt
+          python -m py_compile scripts/scientific/run_definitive_simulation_v2.py
+          python -m py_compile simulator/calibrated_core.py
+          python -m py_compile simulator/engine.py
+      - name: Verify frozen v2 gate inputs when present
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          gate_path=Path('data/audits/external_validity_v2/final_gate_status.json')
+          if not gate_path.exists():
+              print('V2 final gate is not committed yet; simulation remains blocked.')
+              raise SystemExit(0)
+          gate=json.loads(gate_path.read_text())
+          real=Path('data/definitive_experiment_v2/real_xi.csv')
+          ai=Path('data/definitive_experiment_v2/ai_xi.csv')
+          assert gate['v2_final_gate_passed'] is True
+          assert gate['v2_simulation_allowed'] is True
+          assert hashlib.sha256(real.read_bytes()).hexdigest()==gate['real_xi_sha256']
+          assert hashlib.sha256(ai.read_bytes()).hexdigest()==gate['ai_xi_sha256']
+          print({'gate':True,'real_hash':gate['real_xi_sha256'],'ai_hash':gate['ai_xi_sha256']})
+          PY
+
+  simulate:
+    if: github.event_name != 'pull_request'
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: definitive-real-vs-ai
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Require open v2 gate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path('data/audits/external_validity_v2/final_gate_status.json')
+          if not path.exists():
+              raise SystemExit('V2 gate file is missing.')
+          gate=json.loads(path.read_text())
+          if not gate.get('v2_final_gate_passed') or not gate.get('v2_simulation_allowed'):
+              raise SystemExit(f"V2 simulation blocked: {gate.get('blockers')}")
+          PY
+      - name: Run frozen 100000-match v2 experiment
+        run: python scripts/scientific/run_definitive_simulation_v2.py
+      - name: Upload definitive v2 result
+        uses: actions/upload-artifact@v4
+        with:
+          name: definitive-v2-100000-result-${{ github.run_id }}
+          path: data/definitive_experiment_v2/final_simulation/
+          if-no-files-found: error
+          retention-days: 90
+      - name: Publish definitive v2 result
+        run: |
+          set -euo pipefail
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -f data/definitive_experiment_v2/final_simulation/
+          if git diff --cached --quiet; then
+            echo 'V2 definitive result already published.'
+            exit 0
+          fi
+          git commit -m 'result: publish externally contextualized v2 100000-match experiment'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin definitive-real-vs-ai
+            if git rebase -X theirs origin/definitive-real-vs-ai && git push origin HEAD:definitive-real-vs-ai; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          exit 1
