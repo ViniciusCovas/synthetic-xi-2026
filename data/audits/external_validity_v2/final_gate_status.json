@@ -1,6 +1,6 @@
 {
   "status": "external_validity_v2_final_gate_evaluated",
-  "generated_at_utc": "2026-07-21T17:38:20.247153+00:00",
+  "generated_at_utc": "2026-07-21T21:04:22.013349+00:00",
   "estimand": "one externally contextualized deterministic Real XI versus one role-conditioned AI XI",
   "experiment_version": "v2_external_validity",
   "gates": {

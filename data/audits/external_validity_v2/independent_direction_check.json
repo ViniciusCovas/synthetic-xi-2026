@@ -1,6 +1,6 @@
 {
   "status": "v2_independent_post_freeze_direction_evaluated",
-  "generated_at_utc": "2026-07-21T17:38:20.175483+00:00",
+  "generated_at_utc": "2026-07-21T21:04:21.942949+00:00",
   "model": "transparent role-balanced neutral-site Poisson model, separate from team selection and event simulator",
   "event_simulation_results_used": false,
   "external_validity_validation_passed": true,
