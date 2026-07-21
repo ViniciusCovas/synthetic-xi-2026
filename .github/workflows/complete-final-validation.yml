@@ -1,0 +1,108 @@
+name: Complete Final Validation
+
+on:
+  pull_request:
+    paths:
+      - simulator/complete_final.py
+      - simulator/complete_final_monte_carlo.py
+      - simulator/validation.py
+      - scripts/install_complete_final_bundle.py
+      - scripts/run_complete_final_simulation.py
+      - scripts/scientific/validate_complete_final.py
+      - tests/test_complete_final.py
+      - PROTOCOLO_FINAL_COMPLETA.md
+      - COMPLETE_FINAL_IMPLEMENTATION.md
+      - .github/workflows/complete-final-validation.yml
+  push:
+    branches: [main]
+    paths:
+      - simulator/complete_final.py
+      - simulator/complete_final_monte_carlo.py
+      - simulator/validation.py
+      - scripts/install_complete_final_bundle.py
+      - scripts/run_complete_final_simulation.py
+      - scripts/scientific/validate_complete_final.py
+      - tests/test_complete_final.py
+      - PROTOCOLO_FINAL_COMPLETA.md
+      - COMPLETE_FINAL_IMPLEMENTATION.md
+      - .github/workflows/complete-final-validation.yml
+  workflow_dispatch:
+    inputs:
+      simulations:
+        description: Monte Carlo finals for the distribution run
+        required: false
+        default: "5000"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: complete-final-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: .
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Materialize reviewed sources
+        run: python scripts/install_complete_final_bundle.py
+
+      - name: Compile complete-final modules
+        run: |
+          python -m py_compile simulator/complete_final.py
+          python -m py_compile simulator/complete_final_monte_carlo.py
+          python -m py_compile simulator/validation.py
+          python -m py_compile scripts/run_complete_final_simulation.py
+          python -m py_compile scripts/scientific/validate_complete_final.py
+
+      - name: Run focused tests
+        run: pytest -q tests/test_complete_final.py
+
+      - name: Run complete-final distribution
+        env:
+          INPUT_SIMULATIONS: ${{ inputs.simulations }}
+        run: |
+          if [ -n "${INPUT_SIMULATIONS:-}" ]; then
+            N="$INPUT_SIMULATIONS"
+          elif [ "${{ github.event_name }}" = "pull_request" ]; then
+            N=1500
+          else
+            N=5000
+          fi
+          python scripts/run_complete_final_simulation.py --simulations "$N"
+
+      - name: Validate engineering and scientific gates
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then N=800; else N=1500; fi
+          python scripts/scientific/validate_complete_final.py --simulations "$N"
+
+      - name: Verify artifacts
+        run: |
+          test -s data/simulations/complete_final_v1/simulation_summary.json
+          test -s data/simulations/complete_final_v1/representative_final_timeline.csv
+          test -s data/simulations/complete_final_v1/validation_report.json
+          test -s data/simulations/complete_final_v1/manifest.json
+
+      - name: Upload complete-final audit package
+        uses: actions/upload-artifact@v4
+        with:
+          name: complete-final-v1-${{ github.run_id }}
+          path: data/simulations/complete_final_v1/
+          retention-days: 90
