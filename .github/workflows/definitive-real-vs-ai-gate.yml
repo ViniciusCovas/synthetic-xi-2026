@@ -8,7 +8,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: definitive-real-vs-ai-gate
+  cancel-in-progress: true
 
 jobs:
   gate:
@@ -21,6 +25,7 @@ jobs:
         with:
           ref: ${{ github.head_ref || 'definitive-real-vs-ai' }}
           fetch-depth: 0
+          persist-credentials: true
 
       - uses: actions/setup-python@v5
         with:
@@ -32,6 +37,7 @@ jobs:
           pip install -r requirements.txt pytest
           python -m py_compile simulator/ai_xi_generator.py
           python -m py_compile scripts/scientific/audit_complete_lineups_v3.py
+          python -m py_compile scripts/scientific/audit_external_validity_v2.py
           python -m py_compile scripts/scientific/build_blind_position_review_packet_v3.py
           python -m py_compile scripts/scientific/evaluate_blind_position_review_v3.py
           python -m py_compile scripts/scientific/build_definitive_experiment_gate.py
@@ -41,6 +47,7 @@ jobs:
       - name: Evaluate current scientific gates
         run: |
           python scripts/scientific/evaluate_blind_position_review_v3.py
+          python scripts/scientific/audit_external_validity_v2.py
           python scripts/scientific/build_definitive_experiment_gate.py
           python - <<'PY'
           import json
@@ -52,6 +59,7 @@ jobs:
               assert not status['final_team_files_allowed']
           if not status['final_experiment_gate_passed']:
               assert not status['final_simulation_allowed']
+              assert not status['global_best_xi_publication_allowed']
           PY
 
       - name: Upload public forms and gate status
@@ -64,7 +72,33 @@ jobs:
             data/audits/position_ontology_v3/blind_review/REVIEW_INSTRUCTIONS_PT.md
             data/audits/position_ontology_v3/blind_review/packet_manifest.json
             data/audits/position_ontology_v3/blind_review/blind_review_evaluation.json
+            data/audits/external_validity_v2/
             data/audits/definitive_experiment_v1/
             POSITION_ONTOLOGY_CODEBOOK_ES.md
+            SCIENTIFIC_VALIDITY_NOTICE.md
           if-no-files-found: warn
           retention-days: 90
+
+      - name: Publish post-result validity state
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -f data/audits/external_validity_v2/
+          git add -f data/audits/definitive_experiment_v1/gate_status.json
+          git add -f data/audits/definitive_experiment_v1/README.md
+          if git diff --cached --quiet; then
+            echo 'No gate changes to publish.'
+            exit 0
+          fi
+          git commit -m 'science: close global-best-XI gate after external validity audit'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin definitive-real-vs-ai
+            if git rebase -X theirs origin/definitive-real-vs-ai && git push origin HEAD:definitive-real-vs-ai; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          exit 1
