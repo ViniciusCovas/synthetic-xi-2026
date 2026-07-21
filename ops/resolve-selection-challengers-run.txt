@@ -1,1 +1,2 @@
 Trigger the fail-closed recovery of only the 41 frozen selection challengers on 2026-07-21.
+Synchronization nonce: 2.
