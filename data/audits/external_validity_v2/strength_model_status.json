@@ -1,0 +1,133 @@
+{
+  "status": "strength_adjusted_profiles_v2_built",
+  "generated_at_utc": "2026-07-21T16:51:21.619689+00:00",
+  "candidate_role_pairs": 541,
+  "candidate_role_pairs_v2_eligible": 541,
+  "eligible_candidates_by_role": {
+    "GK": 50,
+    "RB": 47,
+    "RCB": 51,
+    "LCB": 47,
+    "LB": 43,
+    "DM": 68,
+    "CM": 60,
+    "AM": 38,
+    "RW": 35,
+    "LW": 40,
+    "ST": 62
+  },
+  "minimum_20_each_role": true,
+  "fixture_context_rows": 4794,
+  "candidate_match_context_rows": 25624,
+  "candidate_context_coverage_median": 1.0,
+  "goalkeeper_model": {
+    "method": "Bayesian save rate + Elo-adjusted concession residual + clean sheets + distribution + penalties",
+    "eligible_goalkeepers": 50,
+    "unique_goalkeeping_values": 50,
+    "standard_deviation": 0.17756248385237736,
+    "passed": true,
+    "limitations": "shots-on-target faced are proxied as saves plus goals conceded; event-level xG faced is unavailable"
+  },
+  "competition_context": {
+    "method": "results-based Elo over club and national-team networks",
+    "home_advantage_elo": {
+      "club": 45,
+      "national": 25
+    },
+    "opponent_weight": 0.7,
+    "competition_weight": 0.3,
+    "logit_adjustment_gamma": 0.18,
+    "fields_present": [
+      "club_name",
+      "competition_id",
+      "competition_name",
+      "competition_strength",
+      "opponent_strength_adjusted"
+    ]
+  },
+  "role_winners_v2": [
+    {
+      "role": "GK",
+      "player_id": 369,
+      "player_name": "D. Costa",
+      "club_name": "FC Porto",
+      "adjusted_role_score_v2": 0.7426244807301814
+    },
+    {
+      "role": "RB",
+      "player_id": 1417,
+      "player_name": "A. Saelemaekers",
+      "club_name": "AC Milan",
+      "adjusted_role_score_v2": 0.6944098036951282
+    },
+    {
+      "role": "RCB",
+      "player_id": 30776,
+      "player_name": "C. Romero",
+      "club_name": "Tottenham",
+      "adjusted_role_score_v2": 0.7890488066987938
+    },
+    {
+      "role": "LCB",
+      "player_id": 69,
+      "player_name": "B. Mechele",
+      "club_name": "Club Brugge KV",
+      "adjusted_role_score_v2": 0.7328095925565697
+    },
+    {
+      "role": "LB",
+      "player_id": 263482,
+      "player_name": "N. Mendes",
+      "club_name": "Paris Saint Germain",
+      "adjusted_role_score_v2": 0.777667375666899
+    },
+    {
+      "role": "DM",
+      "player_id": 138908,
+      "player_name": "E. Anderson",
+      "club_name": "Nottingham Forest",
+      "adjusted_role_score_v2": 0.7816469700787775
+    },
+    {
+      "role": "CM",
+      "player_id": 133609,
+      "player_name": "Pedri",
+      "club_name": "Barcelona",
+      "adjusted_role_score_v2": 0.7847658147687573
+    },
+    {
+      "role": "AM",
+      "player_id": 156477,
+      "player_name": "R. Cherki",
+      "club_name": "Manchester City",
+      "adjusted_role_score_v2": 0.8363825139869178
+    },
+    {
+      "role": "RW",
+      "player_id": 386828,
+      "player_name": "Lamine Yamal",
+      "club_name": "Barcelona",
+      "adjusted_role_score_v2": 0.8696010365281073
+    },
+    {
+      "role": "LW",
+      "player_id": 1422,
+      "player_name": "J. Doku",
+      "club_name": "Manchester City",
+      "adjusted_role_score_v2": 0.8475191186446464
+    },
+    {
+      "role": "ST",
+      "player_id": 154,
+      "player_name": "L. Messi",
+      "club_name": "Inter Miami",
+      "adjusted_role_score_v2": 0.8330583371110343
+    }
+  ],
+  "external_validity_profile_gate_passed": true,
+  "next_action": "build and inspect one v2 Real XI and AI XI",
+  "outputs": {
+    "profiles": "data/audits/external_validity_v2/strength_adjusted_candidate_roles.csv",
+    "top10": "data/audits/external_validity_v2/role_top10_plausibility.csv"
+  }
+}
