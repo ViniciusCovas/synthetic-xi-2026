@@ -1,6 +1,6 @@
 {
   "status": "v2_definitive_100000_match_simulation_completed",
-  "generated_at_utc": "2026-07-21T17:33:23.319489+00:00",
+  "generated_at_utc": "2026-07-21T17:37:29.333956+00:00",
   "experiment_version": "v2_external_validity",
   "matches": 100000,
   "paired_orientations": 50000,
@@ -16,7 +16,7 @@
   "direction_check_sha256": "5498dce2d678bccc05c53cb93b41dbe974e61a21cb59c2d3c3b13810e0fe7519",
   "calibrated_core_sha256": "03221cf9ed6f2909a2a699b975dff67926f92d0f737977af58469f4787ca32a9",
   "profile_engine_sha256": "c0c2b7db48db4cfdc1eaf1b90f997856e5f4a928d8762065509062c66a8f4099",
-  "raw_match_log_sha256": "7d21b4667689463ee08b4933e1c2aff0108f774fc00caebc96087a13eb3e2526",
+  "raw_match_log_sha256": "1f3150d97173527ecf4dcfb0a58506b613d0336d6dcabe3e276c9a1e7d1d6192",
   "outcome_counts": {
     "real_win": 39879,
     "ai_win": 37652,
