@@ -11,6 +11,16 @@ on:
       - data/definitive_experiment_v1/real_xi.csv
       - data/definitive_experiment_v1/ai_xi.csv
       - .github/workflows/definitive-final-simulation.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - scripts/scientific/run_definitive_simulation.py
+      - data/audits/engine_validation_v1/status.json
+      - data/audits/definitive_experiment_v1/gate_status.json
+      - data/definitive_experiment_v1/team_manifest.json
+      - data/definitive_experiment_v1/real_xi.csv
+      - data/definitive_experiment_v1/ai_xi.csv
+      - .github/workflows/definitive-final-simulation.yml
   workflow_dispatch:
 
 permissions:
@@ -26,7 +36,7 @@ jobs:
     timeout-minutes: 90
     env:
       PYTHONPATH: .
-      FINAL_GATE_TRIGGER: '20260721-gate-open'
+      FINAL_GATE_TRIGGER: '20260721-gate-open-pr'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -80,7 +90,7 @@ jobs:
           retention-days: 90
 
       - name: Publish definitive result
-        if: steps.gate.outputs.allowed == 'true'
+        if: steps.gate.outputs.allowed == 'true' && github.event_name != 'pull_request'
         run: |
           set -euo pipefail
           git config user.name 'synthetic-xi-bot'
