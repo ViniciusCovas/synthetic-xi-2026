@@ -1,6 +1,6 @@
 {
   "status": "external_validity_v2_validation_completed",
-  "generated_at_utc": "2026-07-21T17:17:16.774199+00:00",
+  "generated_at_utc": "2026-07-21T17:38:19.653035+00:00",
   "elo_predictive_holdout": {
     "domains": {
       "club": {
