@@ -1,12 +1,12 @@
 {
   "status": "fixture_metadata_fetch_completed",
-  "generated_at_utc": "2026-07-20T04:07:34.358217+00:00",
+  "generated_at_utc": "2026-07-21T03:49:02.044386+00:00",
   "fixtures_total": 102,
-  "fixtures_returned": 102,
-  "fixtures_already_cached": 0,
-  "network_calls": 6,
+  "fixtures_returned": 0,
+  "fixtures_already_cached": 102,
+  "network_calls": 0,
   "daily_limit_reported": 7500,
-  "quota_remaining_reported": 7275,
+  "quota_remaining_reported": 7492,
   "errors": [],
   "methodological_role": "contextual enrichment only; not an input to Synthetic XI v1.0 selection gates"
 }
