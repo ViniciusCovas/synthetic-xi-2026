@@ -2,7 +2,7 @@ name: Resolve Frozen Selection Challengers
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '35 22 21 7 *'
   pull_request_target:
     branches: [main]
     types: [opened, reopened, synchronize]
