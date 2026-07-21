@@ -1,0 +1,5 @@
+Frozen on 2026-07-21 before recovery.
+Scope: only the 41 challengers already listed in selection_sufficiency_unresolved_players.csv.
+Permitted change: deterministic exposure evidence from complete two-team lineups and substitution/red-card events.
+Forbidden changes: player ability, uncertainty, role assignment, eligibility threshold, ranking weights, selection rules, calibration parameters, and outcome-dependent tuning.
+Release policy: fail closed unless selection_sufficiency_gate_passed=true and unresolved_players=0.
