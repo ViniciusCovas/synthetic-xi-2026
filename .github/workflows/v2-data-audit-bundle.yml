@@ -1,0 +1,79 @@
+name: V2 Data Audit Bundle
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/v2-data-audit-bundle.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: definitive-real-vs-ai
+          fetch-depth: 1
+
+      - name: Build inventory
+        run: |
+          set -euo pipefail
+          mkdir -p data/audits/v2_data_inventory
+          find data -type f -printf '%p\t%s\n' | sort > data/audits/v2_data_inventory/files.tsv
+          find scripts src simulator -type f -printf '%p\t%s\n' | sort > data/audits/v2_data_inventory/code_files.tsv
+          python - <<'PY'
+          from pathlib import Path
+          import csv, gzip, json
+          roots=[Path('data')]
+          rows=[]
+          for root in roots:
+              for path in root.rglob('*'):
+                  if not path.is_file() or path.stat().st_size>200_000_000:
+                      continue
+                  suffix=''.join(path.suffixes[-2:])
+                  if path.suffix not in {'.csv','.json','.gz'}:
+                      continue
+                  header=''
+                  try:
+                      if path.name.endswith('.csv.gz'):
+                          with gzip.open(path,'rt',encoding='utf-8-sig',errors='replace') as fh:
+                              header=fh.readline().strip()
+                      elif path.suffix=='.csv':
+                          with path.open('r',encoding='utf-8-sig',errors='replace') as fh:
+                              header=fh.readline().strip()
+                      elif path.suffix=='.json':
+                          obj=json.loads(path.read_text(encoding='utf-8'))
+                          header='JSON_KEYS:'+','.join(sorted(obj.keys())) if isinstance(obj,dict) else f'JSON_TYPE:{type(obj).__name__}'
+                  except Exception as exc:
+                      header=f'ERROR:{type(exc).__name__}:{exc}'
+                  rows.append({'path':str(path),'bytes':path.stat().st_size,'schema':header[:10000]})
+          out=Path('data/audits/v2_data_inventory/schema_inventory.csv')
+          with out.open('w',encoding='utf-8',newline='') as fh:
+              writer=csv.DictWriter(fh,fieldnames=['path','bytes','schema'])
+              writer.writeheader(); writer.writerows(rows)
+          print({'inventoried':len(rows)})
+          PY
+
+      - name: Upload audit bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: v2-data-audit-${{ github.run_id }}
+          path: |
+            data/audits/v2_data_inventory/
+            data/audits/position_ontology_v3/final_candidate_roles.csv
+            data/audits/position_ontology_v3/promoted_candidate_roles_uncovered.csv
+            data/model_readiness/
+            data/lake/
+            data/processed/
+            data/snapshots/
+            data/validation/
+            scripts/scientific/
+            src/synthetic_xi_2026/
+            simulator/
+          if-no-files-found: warn
+          retention-days: 30
