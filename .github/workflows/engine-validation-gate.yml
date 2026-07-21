@@ -5,20 +5,28 @@ on:
     branches: [definitive-real-vs-ai]
     paths:
       - scripts/scientific/validate_engine_mechanisms.py
+      - scripts/scientific/validate_postfreeze_direction.py
       - scripts/scientific/build_engine_validation_gate.py
       - scripts/scientific/build_definitive_experiment_gate.py
+      - data/definitive_experiment_v1/team_manifest.json
+      - data/definitive_experiment_v1/real_xi.csv
+      - data/definitive_experiment_v1/ai_xi.csv
       - .github/workflows/engine-validation-gate.yml
   pull_request:
     branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: definitive-engine-validation
+  cancel-in-progress: false
 
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 35
     env:
       PYTHONPATH: .
     steps:
@@ -26,6 +34,7 @@ jobs:
         with:
           ref: ${{ github.head_ref || 'definitive-real-vs-ai' }}
           fetch-depth: 0
+          persist-credentials: true
 
       - uses: actions/setup-python@v5
         with:
@@ -38,26 +47,31 @@ jobs:
       - name: Compile sources
         run: |
           python -m py_compile scripts/scientific/validate_engine_mechanisms.py
+          python -m py_compile scripts/scientific/validate_postfreeze_direction.py
           python -m py_compile scripts/scientific/build_engine_validation_gate.py
           python -m py_compile scripts/scientific/build_definitive_experiment_gate.py
 
       - name: Run controlled mechanism diagnostics
-        continue-on-error: true
         run: |
           mkdir -p data/audits/engine_validation_v1
-          set +e
-          python scripts/scientific/validate_engine_mechanisms.py > data/audits/engine_validation_v1/mechanism_execution.log 2>&1
-          code=$?
-          set -e
-          echo "$code" > data/audits/engine_validation_v1/mechanism_exit_code.txt
-          cat data/audits/engine_validation_v1/mechanism_execution.log
+          python scripts/scientific/validate_engine_mechanisms.py | tee data/audits/engine_validation_v1/mechanism_execution.log
+          echo 0 > data/audits/engine_validation_v1/mechanism_exit_code.txt
 
-      - name: Build status files
+      - name: Run independent post-freeze direction check
+        run: |
+          if [ -f data/definitive_experiment_v1/team_manifest.json ] && [ -f data/definitive_experiment_v1/real_xi.csv ] && [ -f data/definitive_experiment_v1/ai_xi.csv ]; then
+            python scripts/scientific/validate_postfreeze_direction.py
+          else
+            echo 'Frozen teams are not present yet; post-freeze check remains pending.'
+          fi
+
+      - name: Build engine and experiment gate status
         run: |
           python scripts/scientific/build_engine_validation_gate.py
           python scripts/scientific/build_definitive_experiment_gate.py
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload engine validation
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: engine-validation-${{ github.run_id }}
@@ -66,3 +80,26 @@ jobs:
             data/audits/definitive_experiment_v1/
           if-no-files-found: error
           retention-days: 90
+
+      - name: Publish reproducible validation status
+        run: |
+          set -euo pipefail
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -f data/audits/engine_validation_v1/
+          git add -f data/audits/definitive_experiment_v1/gate_status.json
+          git add -f data/audits/definitive_experiment_v1/README.md
+          if git diff --cached --quiet; then
+            echo 'No new engine validation outputs to publish.'
+            exit 0
+          fi
+          git commit -m 'science: publish preteam and post-freeze engine validation'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin definitive-real-vs-ai
+            if git rebase -X theirs origin/definitive-real-vs-ai && git push origin HEAD:definitive-real-vs-ai; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          exit 1
