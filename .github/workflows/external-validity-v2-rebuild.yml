@@ -8,6 +8,8 @@ on:
       - scripts/scientific/build_strength_adjusted_profiles_v2.py
       - scripts/scientific/build_definitive_teams_v2.py
       - scripts/scientific/validate_external_validity_v2.py
+      - scripts/scientific/validate_postfreeze_direction_v2.py
+      - scripts/scientific/build_external_validity_v2_gate.py
       - .github/workflows/external-validity-v2-rebuild.yml
   pull_request:
     branches: [main]
@@ -16,6 +18,8 @@ on:
       - scripts/scientific/build_strength_adjusted_profiles_v2.py
       - scripts/scientific/build_definitive_teams_v2.py
       - scripts/scientific/validate_external_validity_v2.py
+      - scripts/scientific/validate_postfreeze_direction_v2.py
+      - scripts/scientific/build_external_validity_v2_gate.py
       - .github/workflows/external-validity-v2-rebuild.yml
   workflow_dispatch:
 
@@ -55,6 +59,8 @@ jobs:
           python -m py_compile scripts/scientific/build_strength_adjusted_profiles_v2.py
           python -m py_compile scripts/scientific/build_definitive_teams_v2.py
           python -m py_compile scripts/scientific/validate_external_validity_v2.py
+          python -m py_compile scripts/scientific/validate_postfreeze_direction_v2.py
+          python -m py_compile scripts/scientific/build_external_validity_v2_gate.py
 
       - name: Recover fixture and opponent context
         run: |
@@ -76,6 +82,11 @@ jobs:
 
       - name: Validate strength model and frozen v2 XI
         run: python scripts/scientific/validate_external_validity_v2.py
+
+      - name: Run independent post-freeze direction validation
+        run: |
+          python scripts/scientific/validate_postfreeze_direction_v2.py
+          python scripts/scientific/build_external_validity_v2_gate.py
 
       - name: Upload v2 rebuild state
         uses: actions/upload-artifact@v4
@@ -106,7 +117,7 @@ jobs:
             echo 'No new v2 state to publish.'
             exit 0
           fi
-          git commit -m 'science: publish external-validity v2 validation state'
+          git commit -m 'science: publish external-validity v2 final gate state'
           for attempt in 1 2 3 4 5; do
             git fetch origin definitive-real-vs-ai
             if git rebase -X theirs origin/definitive-real-vs-ai && git push origin HEAD:definitive-real-vs-ai; then
