@@ -1,0 +1,115 @@
+name: External Validity V2 Rebuild
+
+on:
+  push:
+    branches: [definitive-real-vs-ai]
+    paths:
+      - scripts/scientific/extract_fixture_context_v2.py
+      - scripts/scientific/build_strength_adjusted_profiles_v2.py
+      - scripts/scientific/build_definitive_teams_v2.py
+      - .github/workflows/external-validity-v2-rebuild.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: external-validity-v2-rebuild
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      PYTHONPATH: .
+      API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+      MAX_NETWORK_REQUESTS: '650'
+      MIN_DAILY_REQUESTS_REMAINING: '300'
+      API_MAX_REQUESTS_PER_MINUTE: '160'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: definitive-real-vs-ai
+          fetch-depth: 0
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install and compile
+        run: |
+          pip install -r requirements.txt
+          python -m py_compile scripts/scientific/extract_fixture_context_v2.py
+          if [ -f scripts/scientific/build_strength_adjusted_profiles_v2.py ]; then
+            python -m py_compile scripts/scientific/build_strength_adjusted_profiles_v2.py
+          fi
+          if [ -f scripts/scientific/build_definitive_teams_v2.py ]; then
+            python -m py_compile scripts/scientific/build_definitive_teams_v2.py
+          fi
+
+      - name: Recover fixture and opponent context
+        run: |
+          test -n "$API_FOOTBALL_KEY"
+          python scripts/scientific/extract_fixture_context_v2.py
+
+      - name: Build v2 strength-adjusted profiles when context is complete
+        run: |
+          if python - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path('data/audits/external_validity_v2/fixture_context_status.json')
+          status=json.loads(path.read_text()) if path.exists() else {}
+          raise SystemExit(0 if status.get('target_coverage',0) >= 0.995 else 1)
+          PY
+          then
+            if [ -f scripts/scientific/build_strength_adjusted_profiles_v2.py ]; then
+              python scripts/scientific/build_strength_adjusted_profiles_v2.py
+            fi
+            if [ -f scripts/scientific/build_definitive_teams_v2.py ]; then
+              python scripts/scientific/build_definitive_teams_v2.py
+            fi
+          else
+            echo 'Fixture context remains incomplete; v2 profile construction is deferred.'
+          fi
+
+      - name: Upload v2 rebuild state
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: external-validity-v2-${{ github.run_id }}
+          path: |
+            data/lake/v2_fixture_context.csv.gz
+            data/lake/v2_fixture_context_progress.csv
+            data/audits/external_validity_v2/
+            data/definitive_experiment_v2/
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Publish durable v2 state
+        run: |
+          set -euo pipefail
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -f data/lake/v2_fixture_context.csv.gz
+          git add -f data/lake/v2_fixture_context_progress.csv
+          git add -f data/audits/external_validity_v2/
+          if [ -d data/definitive_experiment_v2 ]; then
+            git add -f data/definitive_experiment_v2/
+          fi
+          if git diff --cached --quiet; then
+            echo 'No new v2 state to publish.'
+            exit 0
+          fi
+          git commit -m 'science: publish external-validity v2 rebuild state'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin definitive-real-vs-ai
+            if git rebase -X theirs origin/definitive-real-vs-ai && git push origin HEAD:definitive-real-vs-ai; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          exit 1
