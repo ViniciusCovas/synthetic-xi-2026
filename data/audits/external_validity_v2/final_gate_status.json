@@ -1,0 +1,29 @@
+{
+  "status": "external_validity_v2_final_gate_evaluated",
+  "generated_at_utc": "2026-07-21T17:12:53.863614+00:00",
+  "estimand": "one externally contextualized deterministic Real XI versus one role-conditioned AI XI",
+  "experiment_version": "v2_external_validity",
+  "gates": {
+    "fixture_context_complete": true,
+    "strength_adjusted_profiles_passed": true,
+    "goalkeeper_model_discriminative": true,
+    "minimum_20_candidates_each_role": true,
+    "predictive_elo_holdout_passed": true,
+    "context_gamma_sensitivity_passed": true,
+    "goalkeeper_weight_sensitivity_passed": true,
+    "selected_player_plausibility_passed": true,
+    "v2_teams_frozen_and_hashed": true,
+    "independent_post_freeze_direction_passed": true,
+    "v1_global_claim_invalidated_and_preserved": true
+  },
+  "blockers": [],
+  "v2_final_gate_passed": true,
+  "v2_simulation_allowed": true,
+  "real_xi_sha256": "cb5fce1cc56b7f5dbf22b41c76a59848fa9d1f5b61a25c3eacec2fba9a0cd585",
+  "ai_xi_sha256": "badd74b15a7bd601241dea8f8e97d89e9d9f63aa78433336ede28f2328c655fb",
+  "master_seed": 20260721,
+  "matches_required": 100000,
+  "paired_orientations_required": 50000,
+  "next_action": "run the frozen v2 100000-match simulation",
+  "claim_boundary": "Best under the frozen 2025-2026 data, role ontology, goalkeeper proxy and results-based opponent-strength model; not an absolute truth about player quality."
+}
