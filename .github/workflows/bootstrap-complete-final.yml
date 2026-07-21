@@ -1,0 +1,49 @@
+name: Bootstrap Complete Final Bundle
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/install_complete_final_bundle.py
+      - .github/workflows/bootstrap-complete-final.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bootstrap-complete-final-main
+  cancel-in-progress: true
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Materialize reviewed implementation
+        run: python scripts/install_complete_final_bundle.py
+
+      - name: Compile generated Python
+        run: |
+          python -m py_compile simulator/complete_final.py
+          python -m py_compile simulator/complete_final_monte_carlo.py
+          python -m py_compile simulator/validation.py
+          python -m py_compile scripts/run_complete_final_simulation.py
+          python -m py_compile scripts/scientific/validate_complete_final.py
+
+      - name: Commit implementation and remove bootstrap
+        run: |
+          set -euo pipefail
+          rm scripts/install_complete_final_bundle.py
+          rm .github/workflows/bootstrap-complete-final.yml
+          git config user.name "synthetic-xi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: implement complete scientifically gated final engine"
+          git push origin HEAD:main
