@@ -1,0 +1,1 @@
+Resolver installed on main. Execution requires the dedicated trigger pull request from branch ops/resolve-selection-challengers.
