@@ -2,17 +2,16 @@ name: Bootstrap Complete Final Bundle
 
 on:
   push:
-    branches: [feat/complete-final-engine-v1]
+    branches: [main]
     paths:
       - scripts/install_complete_final_bundle.py
       - .github/workflows/bootstrap-complete-final.yml
-  workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: bootstrap-complete-final-engine-v1
+  group: bootstrap-complete-final-main
   cancel-in-progress: true
 
 jobs:
@@ -20,10 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Checkout feature branch
+      - name: Checkout main
         uses: actions/checkout@v4
         with:
-          ref: feat/complete-final-engine-v1
+          ref: main
           fetch-depth: 0
           persist-credentials: true
 
@@ -47,4 +46,4 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add -A
           git commit -m "feat: implement complete scientifically gated final engine"
-          git push origin HEAD:feat/complete-final-engine-v1
+          git push origin HEAD:main
