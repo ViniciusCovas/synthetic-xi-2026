@@ -1,6 +1,6 @@
 {
   "status": "engine_validation_gate_evaluated",
-  "generated_at_utc": "2026-07-21T02:12:05.896002+00:00",
+  "generated_at_utc": "2026-07-21T15:12:25.226700+00:00",
   "claim_boundary": "The external Poisson holdout validates predictive information in frozen player profiles; it does not by itself validate the event simulator.",
   "external_holdout": {
     "source": "data/validation/external_pre_tournament_holdout_summary.json",
