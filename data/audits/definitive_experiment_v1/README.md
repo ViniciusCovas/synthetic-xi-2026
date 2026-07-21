@@ -1,7 +1,8 @@
 # Definitive Real XI vs AI XI gate
 
-Design gate: **True**
-Final simulation gate: **True**
+Design gate: **False**
+Final simulation gate: **False**
+Global-best-XI publication allowed: **False**
 
 ## Current candidate support/population
 
@@ -21,8 +22,8 @@ Final simulation gate: **True**
 
 ## Design blockers
 
-- none
+- global_best_xi_external_validity_passed
 
 ## Final-simulation blockers
 
-- none
+- global_best_xi_external_validity_passed

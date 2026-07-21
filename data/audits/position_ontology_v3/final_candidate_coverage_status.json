@@ -1,6 +1,6 @@
 {
   "status": "final_candidate_role_coverage_evaluated",
-  "generated_at_utc": "2026-07-21T01:20:48.386705+00:00",
+  "generated_at_utc": "2026-07-21T15:04:50.660326+00:00",
   "coverage_definition": ">=90% fixture endpoint coverage and >=90% known-minute lower bound in annual_current and pre_world_cup windows",
   "promoted_candidate_role_pairs_before_coverage": 548,
   "fully_covered_candidate_role_pairs": 541,
