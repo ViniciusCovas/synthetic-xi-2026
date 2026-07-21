@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Build phased gates for one definitive Real XI versus one definitive AI XI.
 
-Phase A allows deterministic team construction only after family-supported complete-
-lineup evidence, blind review, candidate-role promotion, final coverage and role-pool
-sufficiency pass. Phase B allows the final simulation only after teams are frozen,
-hashed and independently validated.
+Phase A allows deterministic team construction only after complete-lineup family support,
+independent review or explicit adjudication, candidate-role promotion, final coverage and
+role-pool sufficiency pass. Phase B allows the final simulation only after teams are
+frozen, hashed and independently validated.
 """
 from __future__ import annotations
 
@@ -60,14 +60,28 @@ def main() -> None:
 
     counts = role_counts(packet, ontology, blind, coverage)
     population_pass = all(counts[role] >= MIN_ROLE_POOL for role in ROLES)
-    family_support_pass = bool(
+    packet_family_support = bool(
         packet.get("review_packet_ready", False)
         and all(
             int(packet.get("slot_support_candidates", {}).get(role, 0) or 0) >= MIN_ROLE_POOL
             for role in ROLES
         )
     )
-    blind_pass = bool(blind.get("review_gate_passed", False))
+    adjudicated_family_support = bool(
+        ontology.get("explicit_adjudication_complete", False)
+        and ontology.get("minimum_20_candidates_each_final_role_before_coverage", False)
+    )
+    family_support_pass = packet_family_support or adjudicated_family_support
+
+    preregistered_review_pass = bool(blind.get("review_gate_passed", False))
+    explicit_adjudication_pass = bool(
+        ontology.get("protocol_deviation_recorded", False)
+        and ontology.get("explicit_adjudication_complete", False)
+        and int(ontology.get("unresolved_after_adjudication", 0) or 0) == 0
+        and ontology.get("outcome_blind_adjudication", False)
+    )
+    review_or_adjudication_pass = preregistered_review_pass or explicit_adjudication_pass
+
     ontology_pass = bool(ontology.get("final_ontology_gate_passed", False))
     coverage_pass = bool(coverage.get("final_candidate_coverage_gate_passed", False))
     protocol_pass = PROTOCOL.exists()
@@ -89,7 +103,10 @@ def main() -> None:
         "single_real_xi_required": True,
         "single_ai_xi_required": True,
         "complete_lineup_family_support_ready": family_support_pass,
-        "blind_review_gate_passed": blind_pass,
+        "preregistered_reviewer_reliability_gate_passed": preregistered_review_pass,
+        "explicit_outcome_blind_adjudication_passed": explicit_adjudication_pass,
+        "adjudication_protocol_amendment_recorded": bool(ontology.get("protocol_deviation_recorded", False)),
+        "independent_review_or_explicit_adjudication_passed": review_or_adjudication_pass,
         "ontology_v3_1_candidate_role_gate_passed": ontology_pass,
         "minimum_20_candidates_each_final_role": population_pass,
         "final_candidate_coverage_gate_passed": coverage_pass,
@@ -102,7 +119,7 @@ def main() -> None:
     design_requirements = [
         "protocol_frozen",
         "complete_lineup_family_support_ready",
-        "blind_review_gate_passed",
+        "independent_review_or_explicit_adjudication_passed",
         "ontology_v3_1_candidate_role_gate_passed",
         "minimum_20_candidates_each_final_role",
         "final_candidate_coverage_gate_passed",
@@ -120,10 +137,10 @@ def main() -> None:
     final_blockers = [name for name in final_requirements if not gates[name]]
     if not family_support_pass:
         next_action = "recover or extract complete lineups for deficient positional families"
-    elif not blind_pass:
-        next_action = "complete two independent ontology-v3.1 blind reviews and adjudicate high-impact disagreements"
+    elif not review_or_adjudication_pass:
+        next_action = "complete independent role review and explicit outcome-blind adjudication"
     elif not ontology_pass:
-        next_action = "promote reviewer-approved candidate-role pairs and apply family-experience eligibility"
+        next_action = "promote adjudicated candidate-role pairs and apply family-experience eligibility"
     elif not coverage_pass:
         next_action = "recalculate exact-window coverage for all promoted candidate-role pairs"
     elif design_gate and not teams_frozen:
@@ -140,6 +157,7 @@ def main() -> None:
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "estimand": "one deterministic Real XI versus one deterministic AI XI",
         "partial_identification_allowed": False,
+        "protocol_deviation_recorded": bool(explicit_adjudication_pass and not preregistered_review_pass),
         "formation_slots": ROLES,
         "minimum_role_pool": MIN_ROLE_POOL,
         "current_candidate_counts_by_role": counts,
