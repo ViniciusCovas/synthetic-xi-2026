@@ -1,6 +1,6 @@
 {
   "status": "definitive_real_vs_ai_gate_evaluated",
-  "generated_at_utc": "2026-07-21T01:45:48.103579+00:00",
+  "generated_at_utc": "2026-07-21T01:57:37.998054+00:00",
   "estimand": "one deterministic Real XI versus one deterministic AI XI",
   "partial_identification_allowed": false,
   "protocol_deviation_recorded": true,
