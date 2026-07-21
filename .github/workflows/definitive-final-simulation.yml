@@ -1,0 +1,101 @@
+name: Definitive 100000 Match Simulation
+
+on:
+  push:
+    branches: [definitive-real-vs-ai]
+    paths:
+      - scripts/scientific/run_definitive_simulation.py
+      - data/audits/engine_validation_v1/status.json
+      - data/audits/definitive_experiment_v1/gate_status.json
+      - data/definitive_experiment_v1/team_manifest.json
+      - data/definitive_experiment_v1/real_xi.csv
+      - data/definitive_experiment_v1/ai_xi.csv
+      - .github/workflows/definitive-final-simulation.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: definitive-100000-match-simulation
+  cancel-in-progress: false
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: definitive-real-vs-ai
+          fetch-depth: 0
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install and compile
+        run: |
+          pip install -r requirements.txt
+          python -m py_compile scripts/scientific/run_definitive_simulation.py
+          python -m py_compile simulator/calibrated_core.py
+          python -m py_compile simulator/engine.py
+
+      - name: Check final gate
+        id: gate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path('data/audits/definitive_experiment_v1/gate_status.json')
+          allowed=False
+          if path.exists():
+              status=json.loads(path.read_text())
+              allowed=bool(status.get('final_experiment_gate_passed') and status.get('final_simulation_allowed'))
+          with open(Path(__import__('os').environ['GITHUB_OUTPUT']),'a') as out:
+              out.write(f"allowed={'true' if allowed else 'false'}\n")
+          print({'final_simulation_allowed':allowed})
+          PY
+
+      - name: Run frozen experiment
+        if: steps.gate.outputs.allowed == 'true'
+        run: python scripts/scientific/run_definitive_simulation.py
+
+      - name: Record blocked state
+        if: steps.gate.outputs.allowed != 'true'
+        run: echo 'Final simulation gate remains closed; no result was generated.'
+
+      - name: Upload definitive result
+        if: steps.gate.outputs.allowed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: definitive-100000-match-result-${{ github.run_id }}
+          path: data/definitive_experiment_v1/final_simulation/
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Publish definitive result
+        if: steps.gate.outputs.allowed == 'true'
+        run: |
+          set -euo pipefail
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -f data/definitive_experiment_v1/final_simulation/
+          if git diff --cached --quiet; then
+            echo 'Definitive simulation output already published.'
+            exit 0
+          fi
+          git commit -m 'result: publish frozen 100000-match Real XI vs AI XI experiment'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin definitive-real-vs-ai
+            if git rebase -X theirs origin/definitive-real-vs-ai && git push origin HEAD:definitive-real-vs-ai; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          exit 1
