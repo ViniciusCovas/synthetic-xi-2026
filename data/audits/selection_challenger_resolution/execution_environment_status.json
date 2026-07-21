@@ -1,0 +1,27 @@
+{
+  "status": "challenger_resolution_execution_not_started",
+  "recorded_at_utc": "2026-07-21T23:07:00Z",
+  "requested_scope": "only the 41 challengers frozen in selection_sufficiency_unresolved_players.csv",
+  "implemented": {
+    "targeted_fixture_bundle_extractor": true,
+    "deterministic_lineup_event_minute_reconstruction": true,
+    "scope_correct_coverage_v3_wrapper": true,
+    "frozen_uncertainty_bound_audit": true,
+    "fail_closed_release_orchestrator": true,
+    "manual_github_actions_workflow": true
+  },
+  "execution_attempts": {
+    "pull_request_target": "no observable workflow run",
+    "recurring_schedule": "no observable workflow run or published artifact",
+    "exact_schedule": "no observable workflow run or published artifact"
+  },
+  "automatic_triggers_disabled": true,
+  "api_evidence_recovered": false,
+  "canonical_gate_changed": false,
+  "selection_sufficiency_gate_passed": false,
+  "unresolved_players": 41,
+  "model_parameters_changed": false,
+  "selection_thresholds_changed": false,
+  "scientific_policy": "The final gate remains closed unless the API-backed evidence recovery, frozen-bound audit, and canonical gate rebuild actually complete.",
+  "required_execution_surface": "GitHub Actions manual workflow: Manual Frozen Challenger Resolution"
+}
