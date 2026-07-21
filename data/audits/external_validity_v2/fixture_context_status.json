@@ -1,0 +1,14 @@
+{
+  "status": "v2_fixture_context_extraction_completed",
+  "generated_at_utc": "2026-07-21T16:47:53.912587+00:00",
+  "target_fixtures": 4794,
+  "fixture_context_rows": 4794,
+  "target_fixtures_present": 4794,
+  "target_coverage": 1.0,
+  "network_requests_used_this_run": 240,
+  "provider_remaining_last_seen": 7327,
+  "stop_reason": "queue_exhausted",
+  "errors_this_run": 0,
+  "output": "data/lake/v2_fixture_context.csv.gz",
+  "next_action": "build opponent/competition-strength profiles"
+}
