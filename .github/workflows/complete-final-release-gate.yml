@@ -1,0 +1,61 @@
+name: Complete Final Release Gate
+
+on:
+  workflow_dispatch:
+    inputs:
+      simulations:
+        description: Definitive Monte Carlo finals
+        required: false
+        default: "10000"
+      validation_simulations:
+        description: Validation simulations
+        required: false
+        default: "2000"
+  schedule:
+    - cron: "17 6 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: complete-final-release-gate
+  cancel-in-progress: true
+
+jobs:
+  evaluate-and-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      PYTHONPATH: .
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Evaluate canonical release gates
+        env:
+          INPUT_SIMULATIONS: ${{ inputs.simulations }}
+          INPUT_VALIDATION_SIMULATIONS: ${{ inputs.validation_simulations }}
+        run: |
+          N="${INPUT_SIMULATIONS:-10000}"
+          V="${INPUT_VALIDATION_SIMULATIONS:-2000}"
+          python scripts/scientific/release_complete_final_when_ready.py \
+            --simulations "$N" \
+            --validation-simulations "$V"
+
+      - name: Upload release-gate evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: complete-final-release-gate-${{ github.run_id }}
+          path: data/simulations/complete_final_v1/
+          retention-days: 90
