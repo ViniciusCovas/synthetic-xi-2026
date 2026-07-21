@@ -22,9 +22,20 @@
 
 ## Equipos
 
-- Synthetic XI replica el avatar CB, FB y W en dos plazas, pero cada instancia realiza decisiones independientes.
+- Synthetic XI replica el avatar CB, FB y W en dos plazas, pero cada instancia realiza decisiones independientes, conserva estado propio y ocupa un rol lateral específico.
 - Real Best XI selecciona a los dos mejores CB, FB y W, y al número 1 en las demás funciones.
+- La coordinación del equipo se estima separadamente de la habilidad individual y se somete a análisis de sensibilidad.
 
-## Primera simulación
+## Diseño de la simulación
 
-La primera versión será un motor por eventos, no una recreación física. Se modelarán posesiones, progresiones, duelos, pases, pérdidas, tiros y goles bajo condiciones pareadas. El protocolo completo se activa después de validar la cobertura del Estudio 1.
+El partido se modela mediante un motor por eventos y estados. Incluye circulación, progresión, duelos, pérdidas, tiros, goles, balón parado, faltas, tarjetas, VAR, lesiones, sustituciones, cambios tácticos, tiempo añadido, prórroga y tanda de penaltis.
+
+La unidad principal de análisis es una distribución Monte Carlo de partidos posibles. Una transmisión minuto a minuto representa solamente una realización seleccionada mediante una regla preregistrada y nunca sustituye los resultados agregados.
+
+El protocolo integral está definido en `PROTOCOLO_FINAL_COMPLETA.md`.
+
+## Condición de activación
+
+La comparación confirmatoria entre equipos permanece bloqueada hasta que se aprueben simultáneamente los gates de suficiencia de selección, calibración, holdout externo, cordura de eventos e incertidumbre completa.
+
+Mientras exista cualquier gate fallido, las ejecuciones deben etiquetarse como **exploratorias** y no pueden utilizarse para afirmar que Synthetic XI o Real Best XI sería superior en un partido físico real.
