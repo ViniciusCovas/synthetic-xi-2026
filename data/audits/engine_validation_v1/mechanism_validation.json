@@ -1,0 +1,50 @@
+{
+  "status": "controlled_event_mechanisms_evaluated",
+  "generated_at_utc": "2026-07-21T01:37:46.086529+00:00",
+  "simulations_per_comparison": 4000,
+  "master_seed": 20260720,
+  "common_random_numbers": true,
+  "tests": {
+    "finishing": {
+      "mean_goal_delta": 0.18075,
+      "goal_delta_se": 0.008648037726220238,
+      "mean_shot_delta": 0.17675,
+      "shot_delta_se": 0.014059757415035384,
+      "mean_xg_delta": 0.17443578751093686,
+      "xg_delta_se": 0.003047365638353426
+    },
+    "creation": {
+      "mean_goal_delta": 0.0815,
+      "goal_delta_se": 0.007752706857343697,
+      "mean_shot_delta": 0.31625,
+      "shot_delta_se": 0.017356822842899564,
+      "mean_xg_delta": 0.08535355293707195,
+      "xg_delta_se": 0.0031907304598732394
+    },
+    "goalkeeper": {
+      "mean_goal_delta": -0.35475,
+      "goal_delta_se": 0.01255049752488046,
+      "mean_shot_delta": -0.59025,
+      "shot_delta_se": 0.02458383260562509,
+      "mean_xg_delta": -0.3375138030366197,
+      "xg_delta_se": 0.004429242789686991
+    },
+    "defence": {
+      "mean_goal_delta": -0.307,
+      "goal_delta_se": 0.014203456781577384,
+      "mean_shot_delta": -1.27275,
+      "shot_delta_se": 0.032701019839595794,
+      "mean_xg_delta": -0.3169861840260879,
+      "xg_delta_se": 0.005837463609293578
+    }
+  },
+  "checks": {
+    "finishing_increases_goals": true,
+    "creation_increases_xg": true,
+    "creation_does_not_reduce_shots": true,
+    "goalkeeper_reduces_opponent_goals": true,
+    "defence_reduces_opponent_xg": true
+  },
+  "mechanism_validation_passed": true,
+  "claim_scope": "structural monotonicity of coded mechanisms; not standalone empirical validation"
+}

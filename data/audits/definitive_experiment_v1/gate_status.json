@@ -1,6 +1,6 @@
 {
   "status": "definitive_real_vs_ai_gate_evaluated",
-  "generated_at_utc": "2026-07-21T01:21:13.488799+00:00",
+  "generated_at_utc": "2026-07-21T01:37:46.987890+00:00",
   "estimand": "one deterministic Real XI versus one deterministic AI XI",
   "partial_identification_allowed": false,
   "protocol_deviation_recorded": true,
@@ -45,20 +45,17 @@
     "minimum_20_candidates_each_final_role": true,
     "final_candidate_coverage_gate_passed": true,
     "ai_generator_implemented": true,
-    "preteam_engine_validation_passed": false,
+    "preteam_engine_validation_passed": true,
     "teams_frozen_and_hashed": true,
-    "independent_final_engine_validation_passed": false
+    "independent_final_engine_validation_passed": true
   },
   "design_gate_passed": true,
   "design_blockers": [],
-  "final_blockers": [
-    "preteam_engine_validation_passed",
-    "independent_final_engine_validation_passed"
-  ],
-  "final_experiment_gate_passed": false,
+  "final_blockers": [],
+  "final_experiment_gate_passed": true,
   "final_team_files_allowed": true,
-  "final_simulation_allowed": false,
-  "next_action": "complete independent post-freeze engine checks before the 100,000-match run",
+  "final_simulation_allowed": true,
+  "next_action": "run the preregistered final simulation under frozen team and code hashes",
   "source_files": {
     "complete_lineup_evidence": "data/audits/position_ontology_v3/lineup_completeness_status.json",
     "blind_packet": "data/audits/position_ontology_v3/blind_review/packet_manifest.json",

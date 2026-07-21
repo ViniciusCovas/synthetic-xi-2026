@@ -1,0 +1,55 @@
+{
+  "status": "engine_validation_gate_evaluated",
+  "generated_at_utc": "2026-07-21T01:37:46.957460+00:00",
+  "claim_boundary": "The external Poisson holdout validates predictive information in frozen player profiles; it does not by itself validate the event simulator.",
+  "external_holdout": {
+    "source": "data/validation/external_pre_tournament_holdout_summary.json",
+    "matches": 91,
+    "log_loss": 0.8829683347709812,
+    "naive_log_loss": 1.0986122886681096,
+    "skill": 0.1962875858220755,
+    "passed": true
+  },
+  "calibration_json_files_scanned": [
+    "data/audits/engine_validation_v1/mechanism_validation.json",
+    "data/simulations/calibrated_v0_2/calibration_quality.json",
+    "data/simulations/calibrated_v0_2/simulation_audit_summary.json",
+    "data/simulations/calibrated_v0_2/simulation_summary.json",
+    "data/validation/external_pre_tournament_holdout_summary.json",
+    "data/validation/nested_uncertainty_summary.json",
+    "data/validation/predictive_backtest_summary.json",
+    "data/validation/sensitivity_summary.json"
+  ],
+  "calibration_candidates": [
+    {
+      "source": "data/simulations/calibrated_v0_2/simulation_summary.json",
+      "goals_per_match": 0.0571063829787235,
+      "shots_per_match": -0.39997100421420484,
+      "shots_on_target_per_match": 0.5154410525233821,
+      "zero_zero_rate": -0.026068085106382977
+    }
+  ],
+  "passing_calibration_candidates": [
+    {
+      "source": "data/simulations/calibrated_v0_2/simulation_summary.json",
+      "goals_per_match": 0.0571063829787235,
+      "shots_per_match": -0.39997100421420484,
+      "shots_on_target_per_match": 0.5154410525233821,
+      "zero_zero_rate": -0.026068085106382977
+    }
+  ],
+  "explicit_mechanism_evidence": [
+    {
+      "source": "data/audits/engine_validation_v1/mechanism_validation.json",
+      "key": "mechanism_validation_passed",
+      "value": true
+    }
+  ],
+  "mechanism_source_expected": "data/audits/engine_validation_v1/mechanism_validation.json",
+  "preteam_engine_gate_passed": true,
+  "teams_frozen_and_hashed": true,
+  "independent_post_freeze_direction_check_passed": true,
+  "final_engine_gate_passed": true,
+  "blockers": [],
+  "next_action": "run the final event simulation under frozen hashes"
+}

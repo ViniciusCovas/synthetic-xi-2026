@@ -1,7 +1,7 @@
 # Definitive Real XI vs AI XI gate
 
 Design gate: **True**
-Final simulation gate: **False**
+Final simulation gate: **True**
 
 ## Current candidate support/population
 
@@ -25,5 +25,4 @@ Final simulation gate: **False**
 
 ## Final-simulation blockers
 
-- preteam_engine_validation_passed
-- independent_final_engine_validation_passed
+- none
