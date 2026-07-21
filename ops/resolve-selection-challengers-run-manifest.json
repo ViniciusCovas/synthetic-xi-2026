@@ -1,0 +1,8 @@
+{
+  "scope": "41 frozen selection challengers only",
+  "model_changes_allowed": false,
+  "threshold_changes_allowed": false,
+  "release_policy": "fail_closed",
+  "requested_simulations_if_ready": 10000,
+  "requested_validation_simulations_if_ready": 2000
+}
