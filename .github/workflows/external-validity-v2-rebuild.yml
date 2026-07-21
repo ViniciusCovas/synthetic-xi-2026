@@ -9,6 +9,14 @@ on:
       - scripts/scientific/build_definitive_teams_v2.py
       - scripts/scientific/validate_external_validity_v2.py
       - .github/workflows/external-validity-v2-rebuild.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - scripts/scientific/extract_fixture_context_v2.py
+      - scripts/scientific/build_strength_adjusted_profiles_v2.py
+      - scripts/scientific/build_definitive_teams_v2.py
+      - scripts/scientific/validate_external_validity_v2.py
+      - .github/workflows/external-validity-v2-rebuild.yml
   workflow_dispatch:
 
 permissions:
@@ -83,7 +91,7 @@ jobs:
           retention-days: 90
 
       - name: Publish durable v2 state
-        if: always()
+        if: always() && github.event_name != 'pull_request'
         run: |
           set -euo pipefail
           git config user.name 'synthetic-xi-bot'
