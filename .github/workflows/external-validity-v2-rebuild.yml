@@ -27,7 +27,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: external-validity-v2-rebuild
+  group: external-validity-v2-rebuild-${{ github.event_name }}
   cancel-in-progress: true
 
 jobs:
@@ -102,7 +102,7 @@ jobs:
           retention-days: 90
 
       - name: Publish durable v2 state
-        if: always() && github.event_name != 'pull_request'
+        if: always()
         run: |
           set -euo pipefail
           git config user.name 'synthetic-xi-bot'
