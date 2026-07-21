@@ -1,0 +1,47 @@
+{
+  "status": "paired_cluster_inference_completed",
+  "method": "Pair-level cluster inference over 50,000 common-random-number orientation pairs",
+  "point_estimates_unchanged": true,
+  "real_win_probability": {
+    "mean": 0.37834,
+    "standard_error": 0.0009733426097303652,
+    "ci95_low": 0.3764322835403103,
+    "ci95_high": 0.38024771645968974,
+    "clusters": 50000
+  },
+  "draw_probability": {
+    "mean": 0.24815,
+    "standard_error": 0.0018928822493922335,
+    "ci95_low": 0.24444001896421608,
+    "ci95_high": 0.25185998103578394,
+    "clusters": 50000
+  },
+  "ai_win_probability": {
+    "mean": 0.37351,
+    "standard_error": 0.000977202484899588,
+    "ci95_low": 0.37159471832399377,
+    "ci95_high": 0.37542528167600625,
+    "clusters": 50000
+  },
+  "real_minus_ai_win_probability": {
+    "mean": 0.00483,
+    "standard_error": 0.0004707842974835665,
+    "ci95_low": 0.003907279732445219,
+    "ci95_high": 0.0057527202675547815,
+    "clusters": 50000
+  },
+  "real_minus_ai_goal_margin": {
+    "mean": 0.01203,
+    "standard_error": 0.0007681258896480752,
+    "ci95_low": 0.010524500920696985,
+    "ci95_high": 0.013535499079303017,
+    "clusters": 50000
+  },
+  "real_minus_ai_xg_margin": {
+    "mean": 0.012789862391625948,
+    "standard_error": 0.00029853502398503347,
+    "ci95_low": 0.012204744496491482,
+    "ci95_high": 0.013374980286760414,
+    "clusters": 50000
+  }
+}
