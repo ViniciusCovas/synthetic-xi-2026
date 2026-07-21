@@ -1,0 +1,20 @@
+{
+  "status": "complete_final_release_blocked",
+  "ready": false,
+  "gates": {
+    "engineering_gate_passed": true,
+    "selection_sufficiency_gate_passed": false,
+    "external_pre_tournament_validation_passed": true,
+    "eleven_role_gate_passed": true,
+    "final_team_comparison_allowed": false,
+    "preregistered_protocol_present": true
+  },
+  "blocking_gates": [
+    "selection_sufficiency_gate_passed",
+    "final_team_comparison_allowed"
+  ],
+  "unresolved_players": 41,
+  "claim_ceiling": "exploratory, calibrated and auditable simulation",
+  "policy": "No definitive result is executed or published unless every gate is affirmative.",
+  "next_action": "Resolve the remaining exact-window selection challengers, rebuild selection_sufficiency_status.json, then let the release orchestrator execute the definitive distribution automatically."
+}
