@@ -1,0 +1,202 @@
+name: Resolve Frozen Selection Challengers
+
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, reopened, synchronize]
+
+permissions:
+  contents: write
+  actions: read
+  pull-requests: read
+
+concurrency:
+  group: resolve-frozen-selection-challengers
+  cancel-in-progress: false
+
+jobs:
+  resolve:
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.head.ref == 'ops/resolve-selection-challengers'
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - name: Checkout frozen main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pandas numpy requests matplotlib pytest
+
+      - name: Freeze pre-resolution evidence and model hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p data/audits/selection_challenger_resolution
+          cp data/model_readiness/selection_sufficiency_unresolved_players.csv \
+            data/audits/selection_challenger_resolution/frozen_unresolved_before.csv
+          cp data/model_readiness/selection_sufficiency_status.json \
+            data/audits/selection_challenger_resolution/frozen_selection_status_before.json
+          sha256sum \
+            data/model_readiness/selection_frontier_all_candidates.csv \
+            scripts/build_selection_sufficiency_gate.py \
+            scripts/build_selection_frontier.py \
+            > data/audits/selection_challenger_resolution/frozen_model_inputs.sha256
+          test "$(($(wc -l < data/model_readiness/selection_sufficiency_unresolved_players.csv)-1))" -eq 41
+
+      - name: Recover full lineup and event evidence only
+        env:
+          PYTHONPATH: .
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_SAFE_REQUESTS_PER_MINUTE: '120'
+          MAX_NETWORK_REQUESTS: '50'
+          MIN_DAILY_REQUESTS_REMAINING: '50'
+          FIXTURE_BUNDLE_SIZE: '20'
+          GITHUB_RUN_ID: challengers_${{ github.run_id }}
+        run: |
+          rm -f ops/use-final-daily-calls.flag
+          python scripts/scientific/extract_selection_challenger_fixture_evidence.py
+
+      - name: Reconstruct exact exposure minutes
+        env:
+          PYTHONPATH: .
+        run: python scripts/scientific/reconstruct_selection_challenger_minutes.py
+
+      - name: Rebuild frozen coverage and selection gates
+        env:
+          PYTHONPATH: .
+        run: |
+          python scripts/scientific/build_scope_correct_coverage_v3.py
+          python scripts/scientific/shadow_scope_correct_selection.py
+          python scripts/scientific/promote_scope_correct_coverage.py
+          rm -f data/lake/batches/__selection_challenger_reconstructed_players.csv
+          python scripts/build_selection_sufficiency_gate.py
+          python scripts/scientific/audit_selection_challenger_uncertainty.py
+          python scripts/build_scientific_status.py
+
+      - name: Verify model and thresholds were not altered
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha256sum -c data/audits/selection_challenger_resolution/frozen_model_inputs.sha256
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          audit=json.loads(Path('data/audits/selection_challenger_resolution/uncertainty_bound_audit.json').read_text())
+          assert audit['audit_passed'] is True
+          assert audit['model_parameters_changed'] is False
+          assert audit['selection_thresholds_changed'] is False
+          PY
+
+      - name: Release final distribution only if every canonical gate passes
+        env:
+          PYTHONPATH: .
+        run: |
+          python scripts/scientific/release_complete_final_when_ready.py \
+            --simulations 10000 \
+            --validation-simulations 2000
+
+      - name: Record final resolver status
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          def load(path):
+              p=Path(path)
+              return json.loads(p.read_text()) if p.exists() else {}
+          selection=load('data/model_readiness/selection_sufficiency_status.json')
+          scientific=load('data/model_readiness/scientific_validation_status.json')
+          release=load('data/simulations/complete_final_v1/release_gate_status.json')
+          status={
+              'status':'selection_challenger_resolution_completed',
+              'generated_at_utc':datetime.now(timezone.utc).isoformat(),
+              'selection_sufficiency_gate_passed':bool(selection.get('selection_sufficiency_gate_passed',False)),
+              'unresolved_players':selection.get('unresolved_players'),
+              'final_team_comparison_allowed':bool(scientific.get('final_team_comparison_allowed',False)),
+              'complete_final_release_status':release.get('status'),
+              'model_parameters_changed':False,
+              'thresholds_changed':False,
+          }
+          Path('data/audits/selection_challenger_resolution/final_resolution_status.json').write_text(
+              json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8')
+          print(json.dumps(status,ensure_ascii=False,indent=2))
+          PY
+
+      - name: Upload complete audit package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: selection-challenger-resolution-${{ github.run_id }}
+          path: |
+            data/audits/selection_challenger_resolution
+            data/audits/scope_correct_coverage
+            data/model_readiness/selection_challenger_reconstructed_minutes.csv
+            data/model_readiness/selection_sufficiency_*.csv
+            data/model_readiness/selection_sufficiency_status.json
+            data/model_readiness/scientific_validation_status.json
+            data/simulations/complete_final_v1
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Publish evidence and final gates
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f data/lake/batches/__selection_challenger_reconstructed_players.csv
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/audits/selection_challenger_resolution \
+            data/audits/scope_correct_coverage \
+            data/model_readiness/player_window_coverage.csv \
+            data/model_readiness/selection_challenger_reconstructed_minutes.csv \
+            data/model_readiness/selection_sufficiency_all_players.csv \
+            data/model_readiness/selection_sufficiency_unresolved_players.csv \
+            data/model_readiness/selection_sufficiency_priority_fixtures.csv \
+            data/model_readiness/coverage_priority_fixtures.csv \
+            data/model_readiness/selection_sufficiency_status.json \
+            data/model_readiness/scientific_validation_status.json \
+            data/simulations/complete_final_v1 2>/dev/null || true
+          git add -f data/lake/selection_challenger_evidence 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo 'No challenger-resolution changes to publish.'
+          else
+            git commit -m 'science: resolve frozen selection challengers and rebuild final gate'
+            for attempt in 1 2 3 4 5; do
+              git fetch origin main
+              if git rebase -X theirs origin/main && git push origin HEAD:main; then
+                break
+              fi
+              git rebase --abort 2>/dev/null || true
+              sleep $((attempt * 4))
+            done
+          fi
+
+      - name: Enforce final resolution
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          status=json.loads(Path('data/audits/selection_challenger_resolution/final_resolution_status.json').read_text())
+          assert status['selection_sufficiency_gate_passed'] is True, status
+          assert status['unresolved_players'] == 0, status
+          assert status['final_team_comparison_allowed'] is True, status
+          PY
