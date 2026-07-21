@@ -4,7 +4,7 @@
   "candidate_role_table_sha256": "11b3496523272b2a5b87d6716dc1eba6e2d3d5d2dd5e6411a21f9d2052b711a2",
   "experiment_version": "v2_external_validity",
   "external_context_required": true,
-  "generated_at_utc": "2026-07-21T17:12:52.368783+00:00",
+  "generated_at_utc": "2026-07-21T17:12:53.929713+00:00",
   "goalkeeper_model_discriminative": true,
   "master_seed": 20260721,
   "next_action": "audit selected-player plausibility, run independent post-freeze validation, then authorize a new simulation",
@@ -25,5 +25,5 @@
     "ST"
   ],
   "status": "v2_teams_frozen_pending_independent_validation",
-  "strength_model_status_sha256": "28cfd6076d8565cf5650b765e9f7d1166192e82a332428f1a6026b02fca9b742"
+  "strength_model_status_sha256": "8efd27863cf2f671584a2490bf07031ba6226fde9e50e3c53edef4548bee1f5c"
 }
