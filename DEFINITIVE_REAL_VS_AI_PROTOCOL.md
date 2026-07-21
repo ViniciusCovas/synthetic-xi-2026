@@ -20,7 +20,7 @@ A real player may compete for a slot only when all requirements are met:
 - at least 90% relevant coverage in both frozen windows;
 - one canonical identity per `player_id`;
 - complete role-specific statistical profile;
-- no unresolved high-impact human-review conflict.
+- no unresolved high-impact review conflict.
 
 The positional families are frozen as follows:
 
@@ -41,7 +41,7 @@ Every final slot must contain at least 20 reviewed, eligible and fully covered c
 
 The blind packet is built from players with at least 1,800 annual minutes and at least 900 minutes in one positional family, plus preregistered high-impact challengers. It does not require 20 automatically assigned exact-role primaries before review.
 
-Two independent reviewers classify the packet without seeing model ranks, previous roles or simulation results. Promotion requires:
+Two independent reviewers classify the packet without seeing model ranks, previous roles or simulation results. The original reliability target is:
 
 - Cohen's kappa of at least 0.80 for primary slots;
 - at least 90% agreement for high-impact cases;
@@ -50,6 +50,20 @@ Two independent reviewers classify the packet without seeing model ranks, previo
 - at least 20 reviewed eligible candidates in every final slot.
 
 Official club, league and federation sources validate plausibility but never add ranking points.
+
+### Recorded adjudication amendment — 2026-07-21
+
+The two independent classifications produced exact agreement of 0.667 and Cohen's kappa of 0.634. These statistics remain frozen and must be reported; post-adjudication consensus does not replace them.
+
+All 221 disagreements were resolved through an outcome-blind adjudication that excluded player scores, rankings, selected teams, synthetic vectors and simulation results. Exact-slot promotion may therefore proceed through the amended adjudication pathway only when:
+
+1. every disagreement has an explicit final slot;
+2. zero cases remain unresolved;
+3. the original agreement and kappa remain reported as reliability diagnostics;
+4. each final slot has at least 20 eligible candidates before and after coverage validation;
+5. all other frozen thresholds, role weights, seeds, engine gates and simulation rules remain unchanged.
+
+Use of this pathway must be recorded as a protocol deviation. It does not imply that the original kappa threshold passed.
 
 ## Real XI selection
 
