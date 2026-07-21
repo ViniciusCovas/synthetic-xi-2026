@@ -1,0 +1,90 @@
+{
+  "status": "complete_final_engineering_validation_passed",
+  "engine_version": "complete_final_v1",
+  "validation_date": "2026-07-21",
+  "execution_context": "isolated local reproducibility run from the committed reviewed bundle",
+  "engineering_gate_passed": true,
+  "checks": {
+    "focused_test_suite": {
+      "passed": true,
+      "tests_passed": 5,
+      "tests_failed": 0
+    },
+    "deterministic_reproducibility": {
+      "passed": true,
+      "basis": "identical result dictionaries under repeated equal seeds"
+    },
+    "rules_and_state_invariants": {
+      "passed": true,
+      "simulations": 250,
+      "violations": 0,
+      "checked": [
+        "champion always resolved",
+        "penalty shootout never tied",
+        "substitution limits",
+        "substitution windows",
+        "active-player bounds",
+        "non-negative discipline",
+        "monotonic event chronology"
+      ]
+    },
+    "regulation_distribution_calibration": {
+      "passed": true,
+      "simulations": 1000,
+      "master_seed": 20260721,
+      "match_seed_ledger_sha256": "8b2b27d8d5c4b1b649b7ac6728bd2fb036160499ad5059fc1ccd36fe70694692",
+      "observed": {
+        "mean_regulation_goals": 2.642,
+        "mean_regulation_shots": 25.029,
+        "mean_regulation_shots_on_target": 8.734,
+        "regulation_zero_zero_rate": 0.061,
+        "extra_time_probability": 0.253,
+        "penalty_shootout_probability": 0.125,
+        "mean_total_fouls": 24.137,
+        "mean_total_yellows": 4.809,
+        "mean_total_reds": 0.63,
+        "mean_total_injuries": 0.341,
+        "mean_total_substitutions": 6.506
+      },
+      "targets": {
+        "mean_regulation_goals": 2.65,
+        "mean_regulation_shots": 25.0,
+        "mean_regulation_shots_on_target": 8.7,
+        "regulation_zero_zero_rate": 0.075
+      },
+      "tolerances": {
+        "absolute_goal_error_max": 0.45,
+        "absolute_shot_error_max": 3.0,
+        "absolute_shot_on_target_error_max": 1.5,
+        "absolute_zero_zero_error_max": 0.06
+      },
+      "representative_match_seed": 939585562
+    },
+    "neutral_orientation_symmetry": {
+      "passed": true,
+      "simulations_per_orientation": 400,
+      "original_orientation_probability": 0.5525,
+      "swapped_orientation_probability": 0.5175,
+      "absolute_difference": 0.035,
+      "threshold": 0.055
+    },
+    "seed_stability": {
+      "passed": true,
+      "simulations_per_seed": 250,
+      "seeds": [20260733, 20260743, 20260753, 20260763],
+      "home_champion_estimates": [0.528, 0.58, 0.504, 0.496],
+      "maximum_spread": 0.084,
+      "threshold": 0.18973665961010278
+    }
+  },
+  "scientific_publication_gate_passed": false,
+  "repository_evidence": {
+    "external_pre_tournament_validation_passed": true,
+    "eleven_role_gate_passed": true,
+    "selection_sufficiency_gate_passed": false,
+    "final_team_comparison_allowed": false,
+    "unresolved_players": 41
+  },
+  "interpretation": "The implementation behaviour is engineering-validated and reproducible. A definitive Synthetic XI versus Real Best XI claim remains prohibited until the canonical selection-sufficiency gate passes and the consolidated repository status authorizes the comparison.",
+  "claim_ceiling": "exploratory, calibrated and auditable simulation"
+}
