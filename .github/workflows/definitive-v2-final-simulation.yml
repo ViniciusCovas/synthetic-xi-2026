@@ -47,15 +47,14 @@ jobs:
           python -m py_compile scripts/scientific/run_definitive_simulation_v2.py
           python -m py_compile simulator/calibrated_core.py
           python -m py_compile simulator/engine.py
-      - name: Verify frozen v2 gate inputs when present
+      - name: Verify frozen v2 gate inputs
         run: |
           python - <<'PY'
           import hashlib, json
           from pathlib import Path
           gate_path=Path('data/audits/external_validity_v2/final_gate_status.json')
           if not gate_path.exists():
-              print('V2 final gate is not committed yet; simulation remains blocked.')
-              raise SystemExit(0)
+              raise SystemExit('V2 final gate is not committed yet.')
           gate=json.loads(gate_path.read_text())
           real=Path('data/definitive_experiment_v2/real_xi.csv')
           ai=Path('data/definitive_experiment_v2/ai_xi.csv')
@@ -67,7 +66,6 @@ jobs:
           PY
 
   simulate:
-    if: github.event_name != 'pull_request'
     needs: verify
     runs-on: ubuntu-latest
     timeout-minutes: 90
@@ -91,8 +89,6 @@ jobs:
           import json
           from pathlib import Path
           path=Path('data/audits/external_validity_v2/final_gate_status.json')
-          if not path.exists():
-              raise SystemExit('V2 gate file is missing.')
           gate=json.loads(path.read_text())
           if not gate.get('v2_final_gate_passed') or not gate.get('v2_simulation_allowed'):
               raise SystemExit(f"V2 simulation blocked: {gate.get('blockers')}")
