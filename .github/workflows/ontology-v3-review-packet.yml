@@ -1,25 +1,31 @@
-name: Ontology v3 Blind Review Packet
+name: Ontology v3 Adjudication, Coverage and Team Freeze
 
 on:
   push:
     branches: [definitive-real-vs-ai]
     paths:
-      - scripts/scientific/apply_definitive_eligibility_v3.py
-      - scripts/scientific/build_blind_position_review_packet_v3.py
-      - scripts/scientific/evaluate_blind_position_review_v3.py
+      - scripts/scientific/promote_ontology_v3.py
+      - scripts/scientific/build_final_candidate_coverage_v3.py
+      - scripts/scientific/build_definitive_experiment_gate.py
+      - scripts/scientific/build_definitive_teams.py
+      - simulator/ai_xi_generator.py
       - .github/workflows/ontology-v3-review-packet.yml
+      - DEFINITIVE_REAL_VS_AI_PROTOCOL.md
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: adjudicated-ontology-team-freeze
+  cancel-in-progress: false
+
 jobs:
-  packet:
+  freeze:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     env:
       PYTHONPATH: .
-      V2_SNAPSHOT: 08276007a68a923294e0aea44fb2e8dbbd553021
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,68 +38,79 @@ jobs:
           python-version: '3.12'
           cache: pip
 
-      - run: pip install -r requirements.txt
-
-      - name: Restore public position anchors
+      - name: Install, compile and test
         run: |
-          mkdir -p data/audits/position_ontology_v2
-          git show "$V2_SNAPSHOT:data/audits/position_ontology_v2/player_position_audit.csv" > data/audits/position_ontology_v2/audited_player_roles.csv
+          pip install -r requirements.txt pytest
+          python -m py_compile scripts/scientific/promote_ontology_v3.py
+          python -m py_compile scripts/scientific/build_final_candidate_coverage_v3.py
+          python -m py_compile scripts/scientific/build_definitive_experiment_gate.py
+          python -m py_compile scripts/scientific/build_definitive_teams.py
+          python -m py_compile simulator/ai_xi_generator.py
+          pytest -q tests/test_ai_xi_generator.py
 
-      - name: Rebuild eligibility and gated review packet
+      - name: Promote adjudicated roles and evaluate exact-window coverage
         run: |
-          python -m py_compile scripts/scientific/audit_complete_lineups_v3.py
-          python -m py_compile scripts/scientific/apply_definitive_eligibility_v3.py
-          python -m py_compile scripts/scientific/build_blind_position_review_packet_v3.py
-          python -m py_compile scripts/scientific/evaluate_blind_position_review_v3.py
-          python scripts/scientific/audit_complete_lineups_v3.py
-          python scripts/scientific/apply_definitive_eligibility_v3.py
-          python scripts/scientific/build_blind_position_review_packet_v3.py
-          python scripts/scientific/evaluate_blind_position_review_v3.py
+          python scripts/scientific/promote_ontology_v3.py
+          python scripts/scientific/build_final_candidate_coverage_v3.py
+          python scripts/scientific/build_definitive_experiment_gate.py
 
-      - name: Upload public reviewer package
+      - name: Freeze one Real XI and one AI XI when authorized
+        run: |
+          if python - <<'PY'
+          import json
+          from pathlib import Path
+          status = json.loads(Path('data/audits/definitive_experiment_v1/gate_status.json').read_text())
+          raise SystemExit(0 if status.get('design_gate_passed') else 1)
+          PY
+          then
+            python scripts/scientific/build_definitive_teams.py
+            python scripts/scientific/build_definitive_experiment_gate.py
+          else
+            echo 'Design gate remains blocked; no definitive team files were produced.'
+          fi
+
+      - name: Protect frozen exploratory release
+        run: |
+          if git diff --name-only | grep -E '^data/simulations/identified_set_v1/'; then
+            echo 'Frozen exploratory simulation changed unexpectedly.' >&2
+            exit 1
+          fi
+
+      - name: Upload scientific state
         uses: actions/upload-artifact@v4
         with:
-          name: ontology-v3-review-public-${{ github.run_id }}
+          name: adjudicated-coverage-team-freeze-${{ github.run_id }}
           path: |
-            data/audits/position_ontology_v3/lineup_completeness_status.json
-            data/audits/position_ontology_v3/complete_lineup_primary_roles.csv
-            data/audits/position_ontology_v3/blind_review/reviewer_a_form.csv
-            data/audits/position_ontology_v3/blind_review/reviewer_b_form.csv
-            data/audits/position_ontology_v3/blind_review/REVIEW_INSTRUCTIONS_PT.md
-            data/audits/position_ontology_v3/blind_review/packet_manifest.json
-            data/audits/position_ontology_v3/blind_review/blind_review_evaluation.json
-            POSITION_ONTOLOGY_CODEBOOK_ES.md
+            data/audits/position_ontology_v3/ontology_v3_status.json
+            data/audits/position_ontology_v3/promoted_candidate_roles_uncovered.csv
+            data/audits/position_ontology_v3/final_candidate_roles.csv
+            data/audits/position_ontology_v3/final_candidate_coverage_unresolved.csv
+            data/audits/position_ontology_v3/final_candidate_coverage_status.json
+            data/audits/definitive_experiment_v1/
+            data/definitive_experiment_v1/
           if-no-files-found: warn
           retention-days: 90
 
-      - name: Upload internal answer key
-        if: ${{ hashFiles('data/audits/position_ontology_v3/blind_review/answer_key_do_not_share_with_reviewers.csv') != '' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: ontology-v3-review-internal-${{ github.run_id }}
-          path: data/audits/position_ontology_v3/blind_review/answer_key_do_not_share_with_reviewers.csv
-          if-no-files-found: error
-          retention-days: 90
-
-      - name: Publish public ontology-v3 review state
+      - name: Publish reproducible gate outputs
         run: |
           set -euo pipefail
           git config user.name 'synthetic-xi-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add -f data/audits/position_ontology_v3/lineup_completeness_status.json
-          git add -f data/audits/position_ontology_v3/complete_lineup_primary_roles.csv
-          git add -f data/audits/position_ontology_v3/blind_review/packet_manifest.json
-          git add -f data/audits/position_ontology_v3/blind_review/blind_review_evaluation.json
-          if [ -f data/audits/position_ontology_v3/blind_review/reviewer_a_form.csv ]; then
-            git add -f data/audits/position_ontology_v3/blind_review/reviewer_a_form.csv
-            git add -f data/audits/position_ontology_v3/blind_review/reviewer_b_form.csv
-            git add -f data/audits/position_ontology_v3/blind_review/REVIEW_INSTRUCTIONS_PT.md
+          git add -f data/audits/position_ontology_v3/ontology_v3_status.json
+          git add -f data/audits/position_ontology_v3/promoted_candidate_roles_uncovered.csv
+          git add -f data/audits/position_ontology_v3/final_candidate_roles.csv
+          git add -f data/audits/position_ontology_v3/final_candidate_coverage_unresolved.csv
+          git add -f data/audits/position_ontology_v3/final_candidate_coverage_status.json
+          git add -f data/audits/definitive_experiment_v1/gate_status.json
+          git add -f data/audits/definitive_experiment_v1/README.md
+          if [ -d data/definitive_experiment_v1 ]; then
+            git add -f data/definitive_experiment_v1/
           fi
           if git diff --cached --quiet; then
-            echo 'No public review state changes to publish.'
+            echo 'No new gate outputs to publish.'
             exit 0
           fi
-          git commit -m 'science: publish ontology-v3 review packet state'
+          git commit -m 'science: promote adjudicated ontology and evaluate team freeze'
           for attempt in 1 2 3 4 5; do
             git fetch origin definitive-real-vs-ai
             if git rebase -X theirs origin/definitive-real-vs-ai && git push origin HEAD:definitive-real-vs-ai; then
