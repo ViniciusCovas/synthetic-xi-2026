@@ -58,3 +58,5 @@ PYTHONPATH=. python scripts/scientific/validate_complete_final.py --simulations 
 ```
 
 Os artefatos são gravados em `data/simulations/complete_final_v1/`.
+
+Esta revisão documental existe para executar o workflow completo no contexto isolado de pull request antes do fechamento da versão `v1`.
