@@ -1,6 +1,6 @@
 {
   "status": "controlled_event_mechanisms_evaluated",
-  "generated_at_utc": "2026-07-21T17:19:51.559849+00:00",
+  "generated_at_utc": "2026-07-21T17:42:50.433410+00:00",
   "simulations_per_comparison": 4000,
   "master_seed": 20260720,
   "common_random_numbers": true,
