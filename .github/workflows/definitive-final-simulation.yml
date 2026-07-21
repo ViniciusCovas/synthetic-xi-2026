@@ -18,7 +18,7 @@ permissions:
 
 concurrency:
   group: definitive-100000-match-simulation
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   simulate:
@@ -26,6 +26,7 @@ jobs:
     timeout-minutes: 90
     env:
       PYTHONPATH: .
+      FINAL_GATE_TRIGGER: '20260721-gate-open'
     steps:
       - uses: actions/checkout@v4
         with:
