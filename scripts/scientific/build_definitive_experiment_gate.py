@@ -2,9 +2,9 @@
 """Build phased gates for one definitive Real XI versus one definitive AI XI.
 
 Phase A allows deterministic team construction only after complete-lineup family support,
-independent review or explicit adjudication, candidate-role promotion, final coverage and
-role-pool sufficiency pass. Phase B allows the final simulation only after teams are
-frozen, hashed and independently validated.
+independent review or explicit adjudication, candidate-role promotion, final coverage,
+role-pool sufficiency and external-validity checks pass. Phase B allows the final
+simulation only after teams are frozen, hashed and independently validated.
 """
 from __future__ import annotations
 
@@ -18,6 +18,7 @@ PACKET = Path("data/audits/position_ontology_v3/blind_review/packet_manifest.jso
 ONTOLOGY = Path("data/audits/position_ontology_v3/ontology_v3_status.json")
 BLIND = Path("data/audits/position_ontology_v3/blind_review/blind_review_evaluation.json")
 COVERAGE = Path("data/audits/position_ontology_v3/final_candidate_coverage_status.json")
+EXTERNAL = Path("data/audits/external_validity_v2/status.json")
 ENGINE = Path("data/audits/engine_validation_v1/status.json")
 TEAM_MANIFEST = Path("data/definitive_experiment_v1/team_manifest.json")
 PROTOCOL = Path("DEFINITIVE_REAL_VS_AI_PROTOCOL.md")
@@ -55,6 +56,7 @@ def main() -> None:
     ontology = load_json(ONTOLOGY)
     blind = load_json(BLIND)
     coverage = load_json(COVERAGE)
+    external = load_json(EXTERNAL)
     engine = load_json(ENGINE)
     team_manifest = load_json(TEAM_MANIFEST)
 
@@ -84,6 +86,7 @@ def main() -> None:
 
     ontology_pass = bool(ontology.get("final_ontology_gate_passed", False))
     coverage_pass = bool(coverage.get("final_candidate_coverage_gate_passed", False))
+    external_validity_pass = bool(external.get("global_best_xi_publication_gate_passed", False))
     protocol_pass = PROTOCOL.exists()
     generator_pass = GENERATOR.exists()
     preteam_engine_pass = bool(engine.get("preteam_engine_gate_passed", False))
@@ -110,6 +113,9 @@ def main() -> None:
         "ontology_v3_1_candidate_role_gate_passed": ontology_pass,
         "minimum_20_candidates_each_final_role": population_pass,
         "final_candidate_coverage_gate_passed": coverage_pass,
+        "global_best_xi_external_validity_passed": external_validity_pass,
+        "goalkeeper_model_discriminates": bool(external.get("goalkeeper_model_passed", False)),
+        "competition_strength_adjustment_present": bool(external.get("competition_context_passed", False)),
         "ai_generator_implemented": generator_pass,
         "preteam_engine_validation_passed": preteam_engine_pass,
         "teams_frozen_and_hashed": teams_frozen,
@@ -123,6 +129,7 @@ def main() -> None:
         "ontology_v3_1_candidate_role_gate_passed",
         "minimum_20_candidates_each_final_role",
         "final_candidate_coverage_gate_passed",
+        "global_best_xi_external_validity_passed",
         "ai_generator_implemented",
     ]
     design_gate = all(bool(gates[name]) for name in design_requirements)
@@ -143,6 +150,8 @@ def main() -> None:
         next_action = "promote adjudicated candidate-role pairs and apply family-experience eligibility"
     elif not coverage_pass:
         next_action = "recalculate exact-window coverage for all promoted candidate-role pairs"
+    elif not external_validity_pass:
+        next_action = "repair goalkeeper discrimination and add competition/opponent-strength adjustment before rebuilding teams"
     elif design_gate and not teams_frozen:
         next_action = "build exactly one globally optimized Real XI and one AI XI; freeze SHA-256 hashes"
     elif design_gate and teams_frozen and not final_pass:
@@ -158,6 +167,11 @@ def main() -> None:
         "estimand": "one deterministic Real XI versus one deterministic AI XI",
         "partial_identification_allowed": False,
         "protocol_deviation_recorded": bool(explicit_adjudication_pass and not preregistered_review_pass),
+        "post_result_external_validity_failure_recorded": bool(external and not external_validity_pass),
+        "existing_100000_match_run_classification": external.get(
+            "existing_100000_match_run_classification",
+            "not_yet_external_validity_audited",
+        ),
         "formation_slots": ROLES,
         "minimum_role_pool": MIN_ROLE_POOL,
         "current_candidate_counts_by_role": counts,
@@ -168,6 +182,7 @@ def main() -> None:
         "final_experiment_gate_passed": final_pass,
         "final_team_files_allowed": design_gate,
         "final_simulation_allowed": final_pass,
+        "global_best_xi_publication_allowed": final_pass,
         "next_action": next_action,
         "source_files": {
             "complete_lineup_evidence": str(EVIDENCE),
@@ -175,6 +190,7 @@ def main() -> None:
             "ontology": str(ONTOLOGY),
             "blind_review": str(BLIND),
             "coverage": str(COVERAGE),
+            "external_validity": str(EXTERNAL),
             "engine_validation": str(ENGINE),
             "team_manifest": str(TEAM_MANIFEST),
             "protocol": str(PROTOCOL),
@@ -190,6 +206,7 @@ def main() -> None:
         "",
         f"Design gate: **{design_gate}**",
         f"Final simulation gate: **{final_pass}**",
+        f"Global-best-XI publication allowed: **{final_pass}**",
         "",
         "## Current candidate support/population",
         "",
