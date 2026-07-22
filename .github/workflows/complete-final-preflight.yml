@@ -168,6 +168,8 @@ jobs:
             'definitive_10000_executed':False,
             'model_parameters_changed':False,
             'rules_implementation_changed':True,
+            'measurement_alignment_changed':True,
+            'event_generation_changed':False,
             'selection_thresholds_changed':False,
             'event_tolerances_changed':False
           },indent=2),encoding='utf-8')
@@ -211,14 +213,17 @@ jobs:
             config/complete_final_preflight_v1.json
             config/complete_final_preflight_tolerances_v1.json
             config/complete_final_rules_fix_v1_1.json
+            config/complete_final_yellow_card_measurement_v1.json
             data/context/world_cup_2026_*
             data/context/complete_final_preflight_metric_audit.csv
             data/model_readiness/complete_final_rosters_v1.json
             data/model_readiness/complete_final_rules_fix_v1_1_status.json
+            data/model_readiness/complete_final_yellow_card_measurement_v1_status.json
             data/model_readiness/complete_final_preflight_status.json
             data/model_readiness/complete_final_validation_2000_status.json
             data/simulations/complete_final_v1_1
             COMPLETE_FINAL_RULES_FIX_V1_1.md
+            COMPLETE_FINAL_YELLOW_CARD_MEASUREMENT_V1.md
           retention-days: 90
           if-no-files-found: warn
 
@@ -239,6 +244,7 @@ jobs:
             data/context/complete_final_preflight_metric_audit.csv
             data/model_readiness/complete_final_rosters_v1.json
             data/model_readiness/complete_final_rules_fix_v1_1_status.json
+            data/model_readiness/complete_final_yellow_card_measurement_v1_status.json
             data/model_readiness/complete_final_preflight_status.json
             data/model_readiness/complete_final_validation_2000_status.json
             data/simulations/complete_final_v1_1/engineering_validation_snapshot.json
