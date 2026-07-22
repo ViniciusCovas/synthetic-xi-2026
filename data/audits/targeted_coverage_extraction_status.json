@@ -1,5 +1,4 @@
 {
-  "status": "no_unprocessed_or_requeryable_priority_fixtures",
-  "network_calls": 0,
-  "max_requery_attempts": 2
+  "status": "no_missing_coverage_fixtures",
+  "network_calls": 0
 }
