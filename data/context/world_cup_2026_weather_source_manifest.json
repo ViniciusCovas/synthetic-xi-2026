@@ -133,5 +133,23 @@
       "exposure": "open_air"
     }
   ],
-  "unresolved_venues": []
+  "unresolved_venues": [],
+  "missing_evidence_repair": {
+    "status": "complete",
+    "generated_at_utc": "2026-07-22T05:08:10.635313+00:00",
+    "method": "same-source bounded retry; missing rows only; no imputation",
+    "host_cities_attempted": [
+      "Dallas",
+      "Kansas City",
+      "Monterrey",
+      "San Francisco Bay Area"
+    ],
+    "missing_matches_before": 25,
+    "recovered_matches": 25,
+    "remaining_unavailable_matches": 0,
+    "errors": {},
+    "existing_available_rows_changed": false,
+    "model_parameters_changed": false,
+    "selection_thresholds_changed": false
+  }
 }

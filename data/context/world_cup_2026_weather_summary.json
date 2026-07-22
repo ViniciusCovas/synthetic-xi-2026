@@ -1,15 +1,15 @@
 {
-  "status": "world_cup_2026_weather_record_incomplete",
-  "generated_at_utc": "2026-07-22T04:56:27.880772+00:00",
+  "status": "world_cup_2026_weather_record_complete",
+  "generated_at_utc": "2026-07-22T05:08:10.639800+00:00",
   "fixture_source": "API-Football league fixture metadata; official schedule cross-check required",
   "official_tournament_reference": "FIFA World Cup 2026: 104 matches, 16 host cities, 11 June to 19 July 2026",
   "matches_in_record": 104,
-  "matches_with_weather": 79,
-  "weather_coverage": 0.759615,
-  "reanalysis_matches": 77,
-  "reanalysis_coverage": 0.740385,
+  "matches_with_weather": 104,
+  "weather_coverage": 1.0,
+  "reanalysis_matches": 102,
+  "reanalysis_coverage": 0.980769,
   "lower_grade_historical_forecast_matches": 2,
-  "unavailable_matches": 25,
+  "unavailable_matches": 0,
   "unresolved_fixture_venues": 0,
   "venue_exposure_counts": {
     "open_air": 65,
@@ -17,18 +17,35 @@
     "covered_open_sides": 8
   },
   "heat_band_counts_all_venues": {
-    "cool_or_mild": 27,
-    "null": 25,
-    "warm": 21,
-    "hot": 20,
-    "very_hot": 11
+    "cool_or_mild": 31,
+    "hot": 30,
+    "warm": 26,
+    "very_hot": 17
   },
   "open_air_matches": 65,
-  "open_air_temperature_mean_c": 23.877,
+  "open_air_temperature_mean_c": 23.725,
   "open_air_apparent_temperature_max_c": 38.7,
-  "open_air_matches_with_precipitation": 24,
+  "open_air_matches_with_precipitation": 26,
   "methodological_use": "paired nuisance distribution for neutral-environment sensitivity; never a team-specific advantage",
   "missing_weather_imputed": false,
   "outdoor_weather_used_as_indoor_pitch_measurement": false,
-  "output": "data/context/world_cup_2026_weather_by_match.csv"
+  "output": "data/context/world_cup_2026_weather_by_match.csv",
+  "missing_evidence_repair": {
+    "status": "complete",
+    "generated_at_utc": "2026-07-22T05:08:10.635313+00:00",
+    "method": "same-source bounded retry; missing rows only; no imputation",
+    "host_cities_attempted": [
+      "Dallas",
+      "Kansas City",
+      "Monterrey",
+      "San Francisco Bay Area"
+    ],
+    "missing_matches_before": 25,
+    "recovered_matches": 25,
+    "remaining_unavailable_matches": 0,
+    "errors": {},
+    "existing_available_rows_changed": false,
+    "model_parameters_changed": false,
+    "selection_thresholds_changed": false
+  }
 }
