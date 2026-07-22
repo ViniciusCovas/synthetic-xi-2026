@@ -2,6 +2,11 @@ name: Complete Final Preflight and World Cup Weather
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/complete-final-preflight.yml'
 
 permissions:
   contents: write
