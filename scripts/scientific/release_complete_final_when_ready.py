@@ -3,9 +3,9 @@
 
 This orchestrator is deliberately fail-closed. While evidence is incomplete it
 writes a machine-readable blocker report and does not execute or publish a
-substantive Synthetic XI versus Real Best XI result. The complete-final preflight
-is mandatory: rosters, benches, rules, neutral referee context, World Cup 2026
-weather record and event-distribution compatibility must all pass first.
+substantive Synthetic XI versus Real Best XI result. Complete Final Engine v1.1,
+its rules-fix evidence, the 2026 World Cup preflight and the isolated 2,000-match
+validation are all mandatory.
 """
 from __future__ import annotations
 
@@ -18,7 +18,9 @@ import sys
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "data" / "simulations" / "complete_final_v1"
+OUT = ROOT / "data" / "simulations" / "complete_final_v1_1"
+RULE_STATUS = ROOT / "data/model_readiness/complete_final_rules_fix_v1_1_status.json"
+VALIDATION_2000 = ROOT / "data/model_readiness/complete_final_validation_2000_status.json"
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -37,28 +39,39 @@ def evaluate() -> dict[str, Any]:
     scientific = read_json(ROOT / "data/model_readiness/scientific_validation_status.json")
     engineering = read_json(OUT / "engineering_validation_snapshot.json")
     preflight = read_json(ROOT / "data/model_readiness/complete_final_preflight_status.json")
+    rules = read_json(RULE_STATUS)
+    validation = read_json(VALIDATION_2000)
 
     gates = {
-        "engineering_gate_passed": bool(engineering.get("engineering_gate_passed", False)),
+        "engineering_v1_1_gate_passed": bool(engineering.get("engineering_gate_passed", False)),
+        "rules_fix_v1_1_applied": rules.get("status") == "complete_final_rules_fix_v1_1_applied",
         "selection_sufficiency_gate_passed": bool(selection.get("selection_sufficiency_gate_passed", False)),
         "external_pre_tournament_validation_passed": bool(holdout.get("external_pre_tournament_validation_passed", False)),
         "eleven_role_gate_passed": bool(roles.get("eleven_role_gate_passed", False)),
         "final_team_comparison_allowed": bool(scientific.get("final_team_comparison_allowed", False)),
         "preregistered_protocol_present": (ROOT / "PROTOCOLO_FINAL_COMPLETA.md").exists(),
+        "rules_fix_preregistered": (ROOT / "config/complete_final_rules_fix_v1_1.json").exists(),
+        "preflight_uses_v1_1": preflight.get("engine_version") == "complete_final_v1_1_rules_fix",
         "complete_final_preflight_passed": bool(preflight.get("complete_final_preflight_passed", False)),
+        "isolated_validation_2000_passed": (
+            validation.get("engine_version") == "complete_final_v1_1_rules_fix"
+            and validation.get("simulations") == 2000
+            and validation.get("validation_2000_passed") is True
+        ),
         "final_10000_authorized": bool(preflight.get("final_10000_authorized", False)),
     }
     blockers = [name for name, passed in gates.items() if not passed]
     return {
         "status": "complete_final_release_ready" if not blockers else "complete_final_release_blocked",
         "ready": not blockers,
+        "engine_version": "complete_final_v1_1_rules_fix",
         "gates": gates,
         "blocking_gates": blockers,
         "unresolved_players": selection.get("unresolved_players"),
         "preflight_status": preflight.get("status", "missing"),
         "preflight_blockers": preflight.get("blocking_gates", ["complete_final_preflight_status_missing"]),
         "claim_ceiling": scientific.get("current_claim_ceiling", "exploratory only"),
-        "policy": "No definitive result is executed or published unless every canonical and preflight gate is affirmative.",
+        "policy": "No definitive result is executed or published unless every canonical, v1.1 rules, preflight and isolated-validation gate is affirmative.",
     }
 
 
@@ -87,24 +100,29 @@ def main() -> int:
     if not status["ready"]:
         return 2 if args.require_ready else 0
 
-    run_checked([sys.executable, "scripts/install_complete_final_bundle.py"])
+    run_checked([sys.executable, "scripts/install_complete_final_bundle_v1_1.py"])
     run_checked([
         sys.executable,
         "scripts/run_complete_final_simulation.py",
         "--simulations",
         str(args.simulations),
+        "--output",
+        str(OUT),
     ])
     run_checked([
         sys.executable,
         "scripts/scientific/validate_complete_final.py",
         "--simulations",
         str(args.validation_simulations),
+        "--output",
+        str(OUT / "release_validation_report.json"),
     ])
 
     final_status = evaluate()
     final_status["status"] = "complete_final_release_executed"
     final_status["simulations"] = args.simulations
     final_status["validation_simulations"] = args.validation_simulations
+    final_status["definitive_10000_executed"] = args.simulations == 10000
     status_path.write_text(json.dumps(final_status, ensure_ascii=False, indent=2), encoding="utf-8")
     return 0
 
