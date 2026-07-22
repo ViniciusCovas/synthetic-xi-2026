@@ -3,7 +3,7 @@ regulation_goals,mean_regulation_goals,fulltime_goals,2.63,2.884615,0.2546150000
 regulation_shots,mean_regulation_shots,shots,24.978,24.778846,0.19915400000000005,3.0,1.0,0.8,True
 regulation_shots_on_target,mean_regulation_shots_on_target,shots_on_target,8.568,8.528846,0.03915399999999991,1.5,1.0,0.8,True
 fouls,mean_total_fouls,fouls,24.889,23.192308,1.6966919999999988,5.0,1.0,0.8,True
-yellow_cards,mean_total_yellows,yellow_cards_stat,5.09,2.87234,2.21766,2.0,0.903846,0.8,False
+yellow_cards,mean_total_yellows,yellow_cards_stat,4.569,2.87234,1.69666,2.0,0.903846,0.8,True
 red_cards,mean_total_reds,event_red_cards,0.647,0.144231,0.502769,0.55,1.0,0.8,True
 substitutions,mean_total_substitutions,substitutions,10.56,9.615385,0.9446150000000006,2.5,1.0,0.8,True
 extra_time_frequency_knockout,extra_time_probability,knockout_match_frequency,0.28,0.28125,0.0012499999999999734,0.12,32.0,20.0,True

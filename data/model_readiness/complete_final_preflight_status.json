@@ -1,6 +1,6 @@
 {
   "status": "complete_final_preflight_blocked",
-  "generated_at_utc": "2026-07-22T05:49:48.886241+00:00",
+  "generated_at_utc": "2026-07-22T06:00:56.896127+00:00",
   "preflight_version": "complete_final_preflight_v1",
   "complete_final_preflight_passed": false,
   "final_10000_authorized": false,
@@ -10,13 +10,13 @@
     "competition_rules_freeze": true,
     "neutral_referee_context": true,
     "world_cup_2026_weather_record": true,
-    "world_cup_2026_event_distribution_compatibility": false,
+    "world_cup_2026_event_distribution_compatibility": true,
     "outcome_blind_freeze": true,
     "complete_final_v1_1_engineering": true,
+    "yellow_card_measurement_alignment": true,
     "isolated_validation_2000": false
   },
   "blocking_gates": [
-    "world_cup_2026_event_distribution_compatibility",
     "isolated_validation_2000"
   ],
   "team_checks": {
@@ -81,7 +81,7 @@
     "knockout_matches": 32,
     "knockout_extra_time_matches": 9,
     "knockout_shootout_matches": 4,
-    "all_frozen_metric_checks_passed": false,
+    "all_frozen_metric_checks_passed": true,
     "audit_csv": "data/context/complete_final_preflight_metric_audit.csv"
   },
   "environment_model_use": {
@@ -100,7 +100,7 @@
   "source_hashes": {
     "config/complete_final_preflight_v1.json": "43ccda59a743b8d9cddf88cb7a840b9d466d98e9829baf8a0f26f66bda3892f2",
     "config/complete_final_preflight_tolerances_v1.json": "42986e532dabdd1fab6b48d34adc1cbd55db5ea7a89236df8ac7ec9158090c49",
-    "data/model_readiness/complete_final_rosters_v1.json": "2a2fe67f34e682e2333e73ce093d55180bd03cb8bd4c077f474c5242803512bd",
+    "data/model_readiness/complete_final_rosters_v1.json": "b92dd9d58f635dd426d9fe154d38f7d5a4dcc2705a0b6d5d4c6b52a4f31d4d61",
     "data/context/world_cup_2026_weather_summary.json": "99e309b39c19f6ef14261452143a8b58cc23279335fffd96449e8cb6003e68f7",
     "data/context/world_cup_2026_event_benchmark_summary.json": "7d5361dcc0fd8449bd03daac821c488ff7d0b029a952b65bd986d01fa7312a6c",
     "data/context/world_cup_2026_event_benchmark_by_match.csv": "08edb31f13c4cc938c685fa6c759ec2940461ee86feb94cf18921a11d404502b"
@@ -111,19 +111,24 @@
   "engine_version": "complete_final_v1_1_rules_fix",
   "engineering_evidence": {
     "path": "data/simulations/complete_final_v1_1/engineering_validation_snapshot.json",
-    "sha256": "d4df245d492b53a3555ba99949048f515539e8b7436ffea7e5b15b828f68319f",
+    "sha256": "c4f45f08057de0817d43fae7762327059a2f3d14e499adf31066ab1ba0a7e2df",
     "engineering_gate_passed": true,
     "rules_fix_status_path": "data/model_readiness/complete_final_rules_fix_v1_1_status.json",
     "rules_fix_status_sha256": "5d6a852674281a2259ded7ccd990df7e3e6146ba5f8d15236478ea55dcad658e",
-    "rules_fix_applied": true
+    "rules_fix_applied": true,
+    "yellow_measurement_status_path": "data/model_readiness/complete_final_yellow_card_measurement_v1_status.json",
+    "yellow_measurement_status_sha256": "6f2060c8b6e3cd1027d806c023414a05a516ab48305e87844ce29870045eefed",
+    "yellow_measurement_applied": true
   },
   "v1_snapshot_preserved": true,
-  "v1_1_preflight_evaluated_at_utc": "2026-07-22T05:49:48.930917+00:00",
+  "v1_1_preflight_evaluated_at_utc": "2026-07-22T06:00:56.936677+00:00",
   "rules_implementation_changed": true,
+  "measurement_alignment_changed": true,
+  "event_generation_changed": false,
   "event_tolerances_changed": false,
-  "finalized_at_utc": "2026-07-22T05:49:49.179507+00:00",
-  "core_preflight_passed_before_validation_2000": false,
+  "finalized_at_utc": "2026-07-22T06:05:00.117788+00:00",
+  "core_preflight_passed_before_validation_2000": true,
   "validation_2000_passed": false,
-  "validation_2000_status": "complete_final_validation_2000_skipped_core_preflight_blocked",
+  "validation_2000_status": "complete_final_validation_2000_failed",
   "definitive_10000_executed": false
 }

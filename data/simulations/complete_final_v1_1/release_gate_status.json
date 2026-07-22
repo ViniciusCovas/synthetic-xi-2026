@@ -2,15 +2,18 @@
   "status": "complete_final_release_blocked",
   "ready": false,
   "engine_version": "complete_final_v1_1_rules_fix",
+  "measurement_version": "complete_final_yellow_card_measurement_v1",
   "gates": {
     "engineering_v1_1_gate_passed": true,
     "rules_fix_v1_1_applied": true,
+    "yellow_card_measurement_alignment_applied": true,
     "selection_sufficiency_gate_passed": true,
     "external_pre_tournament_validation_passed": true,
     "eleven_role_gate_passed": true,
     "final_team_comparison_allowed": true,
     "preregistered_protocol_present": true,
     "rules_fix_preregistered": true,
+    "yellow_measurement_preregistered": true,
     "preflight_uses_v1_1": true,
     "complete_final_preflight_passed": false,
     "isolated_validation_2000_passed": false,
@@ -24,9 +27,8 @@
   "unresolved_players": 0,
   "preflight_status": "complete_final_preflight_blocked",
   "preflight_blockers": [
-    "world_cup_2026_event_distribution_compatibility",
     "isolated_validation_2000"
   ],
   "claim_ceiling": "validated comparative result with declared limitations",
-  "policy": "No definitive result is executed or published unless every canonical, v1.1 rules, preflight and isolated-validation gate is affirmative."
+  "policy": "No definitive result is executed or published unless every canonical, v1.1 rules, measurement, preflight and isolated-validation gate is affirmative."
 }

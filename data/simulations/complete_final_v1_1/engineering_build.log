@@ -14,8 +14,32 @@ installed 8 complete-final files
   "event_tolerances_changed": false
 }
 {
+  "status": "complete_final_yellow_card_measurement_v1_applied",
+  "version": "complete_final_yellow_card_measurement_v1",
+  "engine_source_changed": true,
+  "monte_carlo_source_changed": true,
+  "source_sha256_before_patch": {
+    "complete_final_py": "bcd94d3666698dad27b1f8aec6804c781064777cc2e41d405b7b864ae58ba140",
+    "complete_final_monte_carlo_py": "2afdf8c6614e5ce35a06dc2b996eb27b3cddca03ebbc7914160ead1e675f162a"
+  },
+  "source_sha256_after_patch": {
+    "complete_final_py": "3a63bf250c2046bd32c388631e0215dff52b5c77f2343d9b362d062040b10222",
+    "complete_final_monte_carlo_py": "1f884337e6eaca96753a1b03291e5fe2d62d252fbeab971c05abc1644dcba16c"
+  },
+  "preregistered_config_sha256": "f3a3cbd68d60c794a7227c7a4670b3c6761f6630d7e1d8e6603b61106b1add6a",
+  "raw_yellows_preserved": true,
+  "second_yellows_separately_recorded": true,
+  "benchmark_comparable_yellows_exclude_second_yellows": true,
+  "event_generation_changed": false,
+  "match_outcomes_changed": false,
+  "player_abilities_changed": false,
+  "team_strength_parameters_changed": false,
+  "selection_thresholds_changed": false,
+  "event_tolerances_changed": false
+}
+{
   "status": "complete_final_v1_1_engineering_validation_passed",
-  "generated_at_utc": "2026-07-22T05:49:48.488402+00:00",
+  "generated_at_utc": "2026-07-22T06:00:56.501540+00:00",
   "engine_version": "complete_final_v1_1_rules_fix",
   "simulations": 1000,
   "seed": 20260731,
@@ -45,7 +69,7 @@ installed 8 complete-final files
         "mean_regulation_shots_on_target": 8.568,
         "regulation_zero_zero_rate": 0.075,
         "mean_total_fouls": 24.889,
-        "mean_total_yellows": 5.09,
+        "mean_total_yellows": 4.569,
         "mean_total_reds": 0.647,
         "mean_total_injuries": 0.399,
         "mean_total_substitutions": 10.56,
@@ -65,7 +89,7 @@ installed 8 complete-final files
     }
   },
   "source_hashes": {
-    "materialized_complete_final_py": "bcd94d3666698dad27b1f8aec6804c781064777cc2e41d405b7b864ae58ba140",
+    "materialized_complete_final_py": "3a63bf250c2046bd32c388631e0215dff52b5c77f2343d9b362d062040b10222",
     "rules_fix_config": "41d3767308bf71dec20a7990b090a9993f1e4c1c5f3b5f8d2d64f6cfe7b2645c",
     "rules_fix_status": "5d6a852674281a2259ded7ccd990df7e3e6146ba5f8d15236478ea55dcad658e"
   },
