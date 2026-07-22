@@ -3,7 +3,7 @@
 
 The v1 snapshot is preserved byte-for-byte. A temporary compatibility view is
 used only while the unchanged v1 preflight metric evaluator runs; the resulting
-status is then annotated with the v1.1 source path and hash.
+status is then annotated with the v1.1 rules and measurement evidence.
 """
 from __future__ import annotations
 
@@ -22,6 +22,7 @@ V1 = ROOT / "data/simulations/complete_final_v1/engineering_validation_snapshot.
 V11 = ROOT / "data/simulations/complete_final_v1_1/engineering_validation_snapshot.json"
 STATUS = ROOT / "data/model_readiness/complete_final_preflight_status.json"
 RULE_STATUS = ROOT / "data/model_readiness/complete_final_rules_fix_v1_1_status.json"
+MEASUREMENT_STATUS = ROOT / "data/model_readiness/complete_final_yellow_card_measurement_v1_status.json"
 
 
 def sha(path: Path) -> str | None:
@@ -35,14 +36,18 @@ def load(path: Path) -> dict[str, Any]:
         return {}
 
 
-def write_blocked(reason: str, evidence: dict[str, Any], rules: dict[str, Any]) -> int:
+def write_blocked(
+    reason: str,
+    evidence: dict[str, Any],
+    rules: dict[str, Any],
+    measurement: dict[str, Any],
+) -> int:
     previous = load(STATUS)
     gates = dict(previous.get("gates") or {})
     gates["complete_final_v1_1_engineering"] = False
+    gates["yellow_card_measurement_alignment"] = False
     gates["isolated_validation_2000"] = False
     blockers = [name for name, passed in gates.items() if not passed]
-    if "complete_final_v1_1_engineering" not in blockers:
-        blockers.append("complete_final_v1_1_engineering")
     status = {
         **previous,
         "status": "complete_final_preflight_blocked",
@@ -59,6 +64,9 @@ def write_blocked(reason: str, evidence: dict[str, Any], rules: dict[str, Any]) 
             "rules_fix_status_path": str(RULE_STATUS.relative_to(ROOT)),
             "rules_fix_status_sha256": sha(RULE_STATUS),
             "rules_fix_applied": rules.get("status") == "complete_final_rules_fix_v1_1_applied",
+            "yellow_measurement_status_path": str(MEASUREMENT_STATUS.relative_to(ROOT)),
+            "yellow_measurement_status_sha256": sha(MEASUREMENT_STATUS),
+            "yellow_measurement_applied": measurement.get("status") == "complete_final_yellow_card_measurement_v1_applied",
             "failure_reason": reason,
         },
         "v1_snapshot_preserved": True,
@@ -66,6 +74,8 @@ def write_blocked(reason: str, evidence: dict[str, Any], rules: dict[str, Any]) 
         "definitive_10000_executed": False,
         "model_parameters_changed": False,
         "rules_implementation_changed": True,
+        "measurement_alignment_changed": True,
+        "event_generation_changed": False,
         "selection_thresholds_changed": False,
         "event_tolerances_changed": False,
     }
@@ -78,12 +88,15 @@ def write_blocked(reason: str, evidence: dict[str, Any], rules: dict[str, Any]) 
 def main() -> int:
     evidence = load(V11)
     rules = load(RULE_STATUS)
+    measurement = load(MEASUREMENT_STATUS)
     if not V11.exists():
-        return write_blocked("missing_v1_1_engineering_snapshot", evidence, rules)
+        return write_blocked("missing_v1_1_engineering_snapshot", evidence, rules, measurement)
     if evidence.get("engineering_gate_passed") is not True:
-        return write_blocked("v1_1_engineering_gate_not_affirmative", evidence, rules)
+        return write_blocked("v1_1_engineering_gate_not_affirmative", evidence, rules, measurement)
     if rules.get("status") != "complete_final_rules_fix_v1_1_applied":
-        return write_blocked("v1_1_rules_fix_runtime_evidence_not_affirmative", evidence, rules)
+        return write_blocked("v1_1_rules_fix_runtime_evidence_not_affirmative", evidence, rules, measurement)
+    if measurement.get("status") != "complete_final_yellow_card_measurement_v1_applied":
+        return write_blocked("yellow_card_measurement_alignment_not_affirmative", evidence, rules, measurement)
 
     V1.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="complete-final-v1-backup-") as tmp:
@@ -107,6 +120,7 @@ def main() -> int:
     status = load(STATUS)
     gates = dict(status.get("gates") or {})
     gates["complete_final_v1_1_engineering"] = True
+    gates["yellow_card_measurement_alignment"] = True
     status["gates"] = gates
     status["blocking_gates"] = [name for name, passed in gates.items() if not passed]
     status["complete_final_preflight_passed"] = not status["blocking_gates"]
@@ -124,10 +138,15 @@ def main() -> int:
         "rules_fix_status_path": str(RULE_STATUS.relative_to(ROOT)),
         "rules_fix_status_sha256": sha(RULE_STATUS),
         "rules_fix_applied": True,
+        "yellow_measurement_status_path": str(MEASUREMENT_STATUS.relative_to(ROOT)),
+        "yellow_measurement_status_sha256": sha(MEASUREMENT_STATUS),
+        "yellow_measurement_applied": True,
     }
     status["v1_snapshot_preserved"] = True
     status["v1_1_preflight_evaluated_at_utc"] = datetime.now(timezone.utc).isoformat()
     status["rules_implementation_changed"] = True
+    status["measurement_alignment_changed"] = True
+    status["event_generation_changed"] = False
     status["event_tolerances_changed"] = False
     STATUS.write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(status, ensure_ascii=False, indent=2))
