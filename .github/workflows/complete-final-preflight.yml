@@ -1,0 +1,202 @@
+name: Complete Final Preflight and World Cup Weather
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: complete-final-preflight-v1
+  cancel-in-progress: false
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - name: Checkout frozen main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pandas numpy requests matplotlib pytest
+
+      - name: Freeze 26-player rosters and match policies
+        env:
+          PYTHONPATH: .
+        run: python scripts/scientific/freeze_complete_final_rosters.py
+
+      - name: Build World Cup 2026 match-weather record
+        env:
+          PYTHONPATH: .
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          WORLD_CUP_LEAGUE_ID: '1'
+        run: python scripts/scientific/build_world_cup_2026_weather_record.py
+
+      - name: Freeze World Cup 2026 event distributions
+        env:
+          PYTHONPATH: .
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          WORLD_CUP_LEAGUE_ID: '1'
+          API_SAFE_REQUESTS_PER_MINUTE: '90'
+          MAX_NETWORK_REQUESTS: '30'
+          MIN_DAILY_REQUESTS_REMAINING: '30'
+          FIXTURE_BUNDLE_SIZE: '20'
+          GITHUB_RUN_ID: preflight_${{ github.run_id }}
+        run: python scripts/scientific/build_world_cup_2026_event_benchmark.py
+
+      - name: Evaluate core preflight without tuning
+        id: core
+        env:
+          PYTHONPATH: .
+        shell: bash
+        run: |
+          set +e
+          python scripts/scientific/validate_complete_final_preflight.py
+          code=$?
+          set -e
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          echo "Core preflight exit code: $code"
+
+      - name: Run isolated 2,000-match validation
+        if: steps.core.outputs.exit_code == '0'
+        id: validation2000
+        env:
+          PYTHONPATH: .
+        shell: bash
+        run: |
+          set +e
+          python scripts/scientific/run_complete_final_preflight_validation.py
+          code=$?
+          set -e
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          echo "Validation-2000 exit code: $code"
+
+      - name: Record skipped 2,000 validation when core is blocked
+        if: steps.core.outputs.exit_code != '0'
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          p=Path('data/model_readiness/complete_final_validation_2000_status.json')
+          p.write_text(json.dumps({
+            'status':'complete_final_validation_2000_skipped_core_preflight_blocked',
+            'generated_at_utc':datetime.now(timezone.utc).isoformat(),
+            'simulations':2000,
+            'validation_2000_passed':False,
+            'definitive_10000_executed':False,
+            'model_parameters_changed':False,
+            'selection_thresholds_changed':False
+          },indent=2),encoding='utf-8')
+          PY
+
+      - name: Restore execution-only expanded engine sources
+        if: always()
+        shell: bash
+        run: |
+          git restore --worktree -- \
+            simulator/complete_final.py \
+            simulator/complete_final_monte_carlo.py \
+            simulator/validation.py \
+            scripts/run_complete_final_simulation.py \
+            scripts/scientific/validate_complete_final.py \
+            tests/test_complete_final.py \
+            .github/workflows/complete-final-validation.yml \
+            COMPLETE_FINAL_IMPLEMENTATION.md 2>/dev/null || true
+
+      - name: Finalize preflight and refresh release gate only
+        if: always()
+        env:
+          PYTHONPATH: .
+        shell: bash
+        run: |
+          set +e
+          python scripts/scientific/finalize_complete_final_preflight.py
+          final_code=$?
+          python scripts/scientific/release_complete_final_when_ready.py --evaluate-only
+          release_code=$?
+          set -e
+          echo "Final preflight exit code: $final_code"
+          echo "Release evaluation exit code: $release_code"
+
+      - name: Upload complete preflight audit package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: complete-final-preflight-${{ github.run_id }}
+          path: |
+            config/complete_final_preflight_v1.json
+            config/complete_final_preflight_tolerances_v1.json
+            data/context/world_cup_2026_*
+            data/context/complete_final_preflight_metric_audit.csv
+            data/model_readiness/complete_final_rosters_v1.json
+            data/model_readiness/complete_final_preflight_status.json
+            data/model_readiness/complete_final_validation_2000_status.json
+            data/simulations/complete_final_v1
+          retention-days: 90
+          if-no-files-found: warn
+
+      - name: Publish frozen evidence and gates
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add \
+            data/context/world_cup_2026_fixture_schedule_raw.json \
+            data/context/world_cup_2026_weather_by_match.csv \
+            data/context/world_cup_2026_weather_summary.json \
+            data/context/world_cup_2026_weather_source_manifest.json \
+            data/context/world_cup_2026_event_benchmark_by_match.csv \
+            data/context/world_cup_2026_event_benchmark_summary.json \
+            data/context/complete_final_preflight_metric_audit.csv \
+            data/model_readiness/complete_final_rosters_v1.json \
+            data/model_readiness/complete_final_preflight_status.json \
+            data/model_readiness/complete_final_validation_2000_status.json \
+            data/simulations/complete_final_v1/release_gate_status.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo 'No preflight evidence changes to publish.'
+            exit 0
+          fi
+          git commit -m 'science: freeze complete-final preflight and World Cup 2026 context'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase -X theirs origin/main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            git reset --hard HEAD >/dev/null 2>&1 || true
+            sleep $((attempt * 4))
+          done
+          exit 1
+
+      - name: Report authorization state
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for path in [
+            'data/model_readiness/complete_final_preflight_status.json',
+            'data/simulations/complete_final_v1/release_gate_status.json'
+          ]:
+            p=Path(path)
+            print(f'--- {path} ---')
+            print(p.read_text() if p.exists() else 'missing')
+          PY
