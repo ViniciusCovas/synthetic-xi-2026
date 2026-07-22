@@ -1,5 +1,5 @@
 {
-  "status": "complete_final_release_ready",
+  "status": "complete_final_release_executed",
   "ready": true,
   "engine_version": "complete_final_v1_1_rules_fix",
   "measurement_version": "complete_final_yellow_card_measurement_v1",
@@ -24,5 +24,8 @@
   "preflight_status": "complete_final_preflight_passed",
   "preflight_blockers": [],
   "claim_ceiling": "validated comparative result with declared limitations",
-  "policy": "No definitive result is executed or published unless every canonical, v1.1 rules, measurement, preflight and isolated-validation gate is affirmative."
+  "policy": "No definitive result is executed or published unless every canonical, v1.1 rules, measurement, preflight and isolated-validation gate is affirmative.",
+  "simulations": 10000,
+  "validation_simulations": 2000,
+  "definitive_10000_executed": true
 }

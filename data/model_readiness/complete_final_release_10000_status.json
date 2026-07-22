@@ -1,0 +1,38 @@
+{
+  "status": "complete_final_release_10000_finalized",
+  "generated_at_utc": "2026-07-22T13:36:27.648564+00:00",
+  "engine_version": "complete_final_v1_1_rules_fix",
+  "simulations": 10000,
+  "release_validation_simulations": 2000,
+  "definitive_10000_executed": true,
+  "final_result_publication_allowed": true,
+  "checks": {
+    "release_executed": true,
+    "release_ready": true,
+    "ten_thousand": true,
+    "release_validation_2000": true,
+    "engineering_gate": true,
+    "publication_gate": true,
+    "release_validation_engineering": true,
+    "release_validation_publication": true,
+    "manifest": true,
+    "preflight": true,
+    "isolated_2000": true,
+    "unresolved_zero": true
+  },
+  "blocking_checks": [],
+  "source_hashes": {
+    "simulation_summary.json": "6798a45b93d900a30a835a350838b755f740e5d59a0db7f144182b8db952c8bd",
+    "manifest.json": "eff0d7ed2f258f0beb6b77ab51ecdda26633fc2337e12c19bab9e599d84c5a1f",
+    "release_validation_report.json": "0be739f9f9a0f6fb8f2500c0c7b63a62508d34935701aaf3dc68f4db196d7cd9",
+    "release_gate_status.json": "78a4014947d9fd46b6faf9a3430a45d7348fa7a276e3abe6c537ba91d412a91b",
+    "representative_final_timeline.csv": "b8d08a06264f056c293ccfb9ff1d0cbd0e460b0934e0aca492af18433fe979dd",
+    "audit_sample.csv": "82b09d907bcc5f3a66088e67b819ba4ff8e164f59649e70d7da4111717da3abc",
+    "synthetic_xi_profiles.csv": "bd908f89746054165308c0acc55d8303399f0bb5dbd58ee55f9e990d8da00a8f",
+    "real_best_xi_profiles.csv": "0e0f0bb4a3b7d6cbac0db594aa0e7af3fef096a9e614243574d1ee5dfac83aaf"
+  },
+  "model_parameters_changed_during_release": false,
+  "selection_thresholds_changed_during_release": false,
+  "event_tolerances_changed_during_release": false,
+  "post_result_tuning_performed": false
+}

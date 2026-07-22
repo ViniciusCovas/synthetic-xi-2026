@@ -1,0 +1,61 @@
+sequence,clock,minute,period,side,team,type,actor,zone,xg,score,headline
+1,4.24,5,first_half,home,Real Best XI — exploratorio,foul,SYN-CB120,2.0,,0-0,Falta de SYN-CB120
+2,4.25,5,first_half,home,Real Best XI — exploratorio,yellow_card,SYN-CB120,2.0,,0-0,Cartão amarelo para SYN-CB120
+3,7.046,8,first_half,away,Synthetic XI — exploratorio,foul,Brandon Mechele,3.0,,0-0,Falta de Brandon Mechele
+4,7.046,8,first_half,home,Synthetic XI — exploratorio,goal,SYN-W220,3.0,0.1516,1-0,GOL de SYN-W220
+5,7.928,8,first_half,home,Real Best XI — exploratorio,foul,SYN-CM20,1.0,,1-0,Falta de SYN-CM20
+6,11.845,12,first_half,away,Synthetic XI — exploratorio,foul,Jaouen Hadjam,2.0,,1-0,Falta de Jaouen Hadjam
+7,13.013,14,first_half,away,Synthetic XI — exploratorio,foul,Yan Diomande,1.0,,1-0,Falta de Yan Diomande
+8,13.612,14,first_half,away,Real Best XI — exploratorio,turnover,Yan Diomande,2.0,,1-0,Yan Diomande perde sob pressão
+9,16.983,17,first_half,home,Synthetic XI — exploratorio,shot_on_target,SYN-DM20,3.0,0.1911,1-0,Joan García defende finalização de SYN-DM20
+10,17.465,18,first_half,away,Real Best XI — exploratorio,shot_on_target,Kylian Mbappé,1.0,0.1178,1-0,SYN-GK20 defende finalização de Kylian Mbappé
+11,19.556,20,first_half,away,Synthetic XI — exploratorio,foul,Cristian Romero,2.0,,1-0,Falta de Cristian Romero
+12,19.556,20,first_half,home,Synthetic XI — exploratorio,turnover,SYN-CM20,2.0,,1-0,SYN-CM20 perde sob pressão
+13,20.738,21,first_half,home,Real Best XI — exploratorio,foul,SYN-W120,1.0,,1-0,Falta de SYN-W120
+14,22.621,23,first_half,home,Real Best XI — exploratorio,foul,SYN-FB120,2.0,,1-0,Falta de SYN-FB120
+15,22.631,23,first_half,home,Real Best XI — exploratorio,yellow_card,SYN-FB120,2.0,,1-0,Cartão amarelo para SYN-FB120
+16,25.128,26,first_half,home,Synthetic XI — exploratorio,shot_off_target,SYN-W120,2.0,0.1536,1-0,Grande chance de SYN-W120 para fora
+17,26.321,27,first_half,home,Real Best XI — exploratorio,foul,SYN-ST20,1.0,,1-0,Falta de SYN-ST20
+18,30.698,31,first_half,away,Real Best XI — exploratorio,shot_on_target,Lionel Messi,2.0,0.1652,1-0,SYN-GK20 defende finalização de Lionel Messi
+19,32.209,33,first_half,away,Synthetic XI — exploratorio,foul,Jaouen Hadjam,1.0,,1-0,Falta de Jaouen Hadjam
+20,35.003,36,first_half,home,Real Best XI — exploratorio,foul,SYN-CM20,3.0,,1-0,Falta de SYN-CM20
+21,36.122,37,first_half,away,Synthetic XI — exploratorio,foul,Kylian Mbappé,2.0,,1-0,Falta de Kylian Mbappé
+22,38.849,39,first_half,away,Real Best XI — exploratorio,shot_off_target,Kylian Mbappé,3.0,0.3024,1-0,Grande chance de Kylian Mbappé para fora
+23,48.0,49,first_half,home,Real Best XI — exploratorio,foul,SYN-DM20,1.0,,1-0,Falta de SYN-DM20
+25,48.0,49,first_half,away,Real Best XI — exploratorio,shot_on_target,Kylian Mbappé,3.0,0.3014,1-0,SYN-GK20 defende finalização de Kylian Mbappé
+26,48.0,49,match,system,,half_time,,,,1-0,Intervalo
+24,48.01,49,first_half,home,Real Best XI — exploratorio,yellow_card,SYN-DM20,1.0,,1-0,Cartão amarelo para SYN-DM20
+27,52.936,53,second_half,away,Synthetic XI — exploratorio,foul,Lionel Messi,2.0,,1-0,Falta de Lionel Messi
+28,54.458,55,second_half,home,Synthetic XI — exploratorio,shot_on_target,SYN-DM20,1.0,0.0737,1-0,Joan García defende finalização de SYN-DM20
+29,57.637,58,second_half,home,Real Best XI — exploratorio,foul,SYN-W220,2.0,,1-0,Falta de SYN-W220
+30,58.431,59,second_half,away,Synthetic XI — exploratorio,foul,Lionel Messi,2.0,,1-0,Falta de Lionel Messi
+31,59.35,60,second_half,away,Real Best XI — exploratorio,goal,Lionel Messi,3.0,0.1666,1-1,GOL de Lionel Messi
+32,62.525,63,regulation,home,Synthetic XI — exploratorio,substitution,SYN-FB120 · reserva funcional 1,,,1-1,"Substituição tática: sai SYN-FB120, entra SYN-FB120 · reserva funcional 1"
+34,62.525,63,regulation,away,Real Best XI — exploratorio,substitution,Jaouen Hadjam · reserva funcional 1,,,1-1,"Substituição tática: sai Jaouen Hadjam, entra Jaouen Hadjam · reserva funcional 1"
+36,62.525,63,second_half,away,Synthetic XI — exploratorio,foul,Lionel Messi,3.0,,1-1,Falta de Lionel Messi
+33,62.526,63,regulation,home,Synthetic XI — exploratorio,substitution,SYN-FB220 · reserva funcional 1,,,1-1,"Substituição tática: sai SYN-FB220, entra SYN-FB220 · reserva funcional 1"
+35,62.526,63,regulation,away,Real Best XI — exploratorio,substitution,Nuno Mendes · reserva funcional 1,,,1-1,"Substituição tática: sai Nuno Mendes, entra Nuno Mendes · reserva funcional 1"
+37,66.414,67,second_half,away,Real Best XI — exploratorio,shot_on_target,Lionel Messi,2.0,0.1634,1-1,SYN-GK20 defende finalização de Lionel Messi
+38,72.784,73,regulation,home,Synthetic XI — exploratorio,substitution,SYN-W120 · reserva funcional 1,,,1-1,"Substituição tática: sai SYN-W120, entra SYN-W120 · reserva funcional 1"
+40,72.784,73,regulation,away,Real Best XI — exploratorio,substitution,Lionel Messi · reserva funcional 1,,,1-1,"Substituição tática: sai Lionel Messi, entra Lionel Messi · reserva funcional 1"
+39,72.785,73,regulation,home,Synthetic XI — exploratorio,substitution,SYN-W220 · reserva funcional 1,,,1-1,"Substituição tática: sai SYN-W220, entra SYN-W220 · reserva funcional 1"
+41,72.785,73,regulation,away,Real Best XI — exploratorio,substitution,Yan Diomande · reserva funcional 1,,,1-1,"Substituição tática: sai Yan Diomande, entra Yan Diomande · reserva funcional 1"
+42,75.859,76,second_half,away,Synthetic XI — exploratorio,foul,Yan Diomande · reserva funcional 1,2.0,,1-1,Falta de Yan Diomande · reserva funcional 1
+43,76.035,77,second_half,away,Synthetic XI — exploratorio,foul,Yan Diomande · reserva funcional 1,2.0,,1-1,Falta de Yan Diomande · reserva funcional 1
+44,80.98,81,second_half,away,Synthetic XI — exploratorio,foul,Cristian Romero,3.0,,1-1,Falta de Cristian Romero
+45,80.99,81,second_half,away,Synthetic XI — exploratorio,yellow_card,Cristian Romero,3.0,,1-1,Cartão amarelo para Cristian Romero
+46,82.022,83,regulation,home,Synthetic XI — exploratorio,substitution,SYN-CM20 · reserva funcional 1,,,1-1,"Substituição tática: sai SYN-CM20, entra SYN-CM20 · reserva funcional 1"
+47,82.022,83,regulation,away,Real Best XI — exploratorio,substitution,Pedri · reserva funcional 1,,,1-1,"Substituição tática: sai Pedri, entra Pedri · reserva funcional 1"
+48,82.022,83,second_half,home,Real Best XI — exploratorio,foul,SYN-DM20,3.0,,1-1,Falta de SYN-DM20
+49,82.022,83,second_half,away,Real Best XI — exploratorio,goal,Lionel Messi · reserva funcional 1,3.0,0.1532,1-2,GOL de Lionel Messi · reserva funcional 1
+50,83.786,84,second_half,away,Real Best XI — exploratorio,shot_on_target,Kylian Mbappé,1.0,0.1149,1-2,SYN-GK20 defende finalização de Kylian Mbappé
+51,85.701,86,second_half,away,Synthetic XI — exploratorio,foul,Yan Diomande · reserva funcional 1,3.0,,1-2,Falta de Yan Diomande · reserva funcional 1
+52,86.021,87,second_half,home,Synthetic XI — exploratorio,turnover,SYN-AM20,2.0,,1-2,SYN-AM20 perde sob pressão
+53,86.913,87,second_half,home,Real Best XI — exploratorio,foul,SYN-W220 · reserva funcional 1,2.0,,1-2,Falta de SYN-W220 · reserva funcional 1
+54,89.063,90,second_half,away,Synthetic XI — exploratorio,foul,Kylian Mbappé,1.0,,1-2,Falta de Kylian Mbappé
+55,89.063,90,second_half,home,Synthetic XI — exploratorio,turnover,SYN-AM20,2.0,,1-2,SYN-AM20 perde sob pressão
+56,89.979,90,second_half,home,Synthetic XI — exploratorio,shot_off_target,SYN-AM20,2.0,0.1469,1-2,Grande chance de SYN-AM20 para fora
+57,93.592,94,second_half,away,Real Best XI — exploratorio,shot_off_target,Yan Diomande · reserva funcional 1,2.0,0.1352,1-2,Grande chance de Yan Diomande · reserva funcional 1 para fora
+58,94.33,95,second_half,away,Real Best XI — exploratorio,turnover,Pedri · reserva funcional 1,2.0,,1-2,Pedri · reserva funcional 1 perde sob pressão
+59,98.0,99,second_half,away,Real Best XI — exploratorio,shot_off_target,Yan Diomande · reserva funcional 1,3.0,0.2183,1-2,Grande chance de Yan Diomande · reserva funcional 1 para fora
+60,98.0,99,match,system,,full_time,,,,1-2,Final: Real Best XI — exploratorio campeão

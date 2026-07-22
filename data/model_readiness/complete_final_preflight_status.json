@@ -128,5 +128,8 @@
   "core_preflight_passed_before_validation_2000": true,
   "validation_2000_passed": true,
   "validation_2000_status": "complete_final_validation_2000_passed",
-  "definitive_10000_executed": false
+  "definitive_10000_executed": true,
+  "definitive_release_status": "complete_final_release_10000_finalized",
+  "definitive_release_finalized_at_utc": "2026-07-22T13:36:27.648564+00:00",
+  "definitive_release_summary_sha256": "6798a45b93d900a30a835a350838b755f740e5d59a0db7f144182b8db952c8bd"
 }
