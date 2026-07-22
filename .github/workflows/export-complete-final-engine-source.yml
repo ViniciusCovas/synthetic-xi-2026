@@ -1,0 +1,49 @@
+name: Export Complete Final Engine Source
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/engine-source-export/**'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout frozen main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Materialize reviewed source bundle
+        run: python scripts/install_complete_final_bundle.py
+
+      - name: Compile materialized source
+        run: |
+          python -m py_compile \
+            simulator/complete_final.py \
+            simulator/complete_final_monte_carlo.py \
+            simulator/validation.py \
+            scripts/run_complete_final_simulation.py \
+            scripts/scientific/validate_complete_final.py
+
+      - name: Upload materialized engine source
+        uses: actions/upload-artifact@v4
+        with:
+          name: complete-final-engine-source-${{ github.run_id }}
+          path: |
+            simulator/complete_final.py
+            simulator/complete_final_monte_carlo.py
+            simulator/validation.py
+            scripts/run_complete_final_simulation.py
+            scripts/scientific/validate_complete_final.py
+            tests/test_complete_final.py
+            COMPLETE_FINAL_IMPLEMENTATION.md
+          retention-days: 7
