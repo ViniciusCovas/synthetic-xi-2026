@@ -1,0 +1,2 @@
+Restore the frozen resolved challenger evidence from commit 469f24c283e391bfb8bf7b9f40e0af5b0681c7d4 after stale publication c0b344114259ee9bbcd2e9b364ead629e6502713.
+No model parameter, player ability, selection threshold, or preregistered tolerance may change.
