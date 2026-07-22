@@ -1,0 +1,2 @@
+Complete Final Preflight execution requested on 2026-07-21.
+This file is an internal one-shot trigger and does not change model parameters, player selection, or scientific thresholds.
