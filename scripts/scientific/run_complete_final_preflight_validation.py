@@ -19,6 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "data/model_readiness/complete_final_validation_2000_status.json"
 ENGINEERING = ROOT / "data/simulations/complete_final_v1_1/engineering_validation_snapshot.json"
+VALIDATION_REPORT = ROOT / "data/simulations/complete_final_v1_1/validation_report.json"
 RULE_STATUS = ROOT / "data/model_readiness/complete_final_rules_fix_v1_1_status.json"
 
 
@@ -41,17 +42,21 @@ def run(command: list[str]) -> int:
 
 def main() -> int:
     installed = run([sys.executable, "scripts/install_complete_final_bundle_v1_1.py"])
+    VALIDATION_REPORT.parent.mkdir(parents=True, exist_ok=True)
     validation = 99 if installed else run([
         sys.executable,
         "scripts/scientific/validate_complete_final.py",
         "--simulations",
         "2000",
+        "--output",
+        str(VALIDATION_REPORT),
     ])
     engineering = json.loads(ENGINEERING.read_text(encoding="utf-8")) if ENGINEERING.exists() else {}
     rules = json.loads(RULE_STATUS.read_text(encoding="utf-8")) if RULE_STATUS.exists() else {}
     passed = (
         installed == 0
         and validation == 0
+        and VALIDATION_REPORT.exists()
         and engineering.get("engineering_gate_passed") is True
         and rules.get("status") == "complete_final_rules_fix_v1_1_applied"
     )
@@ -65,6 +70,8 @@ def main() -> int:
         "validation_2000_passed": passed,
         "definitive_10000_executed": False,
         "engineering_snapshot_sha256": sha(ENGINEERING),
+        "validation_report_path": str(VALIDATION_REPORT.relative_to(ROOT)),
+        "validation_report_sha256": sha(VALIDATION_REPORT),
         "rules_fix_status_sha256": sha(RULE_STATUS),
         "rules_fix_applied": rules.get("status") == "complete_final_rules_fix_v1_1_applied",
         "model_parameters_changed": False,
