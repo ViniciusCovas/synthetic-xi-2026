@@ -2,14 +2,14 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 5,M. Akanji,Switzerland,Defender,RB,0.8333333333333334,48,RB:40 | LCB:7 | RCB:1,4981.0,low_is_left,1.0,True,True,True
 9,A. Hakimi,Morocco,Defender,RB,1.0,45,RB:45,4466.0,low_is_left,1.0,True,True,True
 9,Achraf Hakimi,Morocco,Defender,RB,1.0,1,RB:1,4466.0,low_is_left,1.0,True,True,True
-17,C. Pulisic,USA,Midfielder,RW,0.5217391304347826,23,RW:12 | ST:9 | LW:2,2607.0,low_is_left,1.0,True,False,False
+17,C. Pulisic,USA,Midfielder,RW,0.5217391304347826,23,RW:12 | ST:9 | LW:2,2607.0,low_is_left,1.0,False,False,False
 20,A. Witsel,Belgium,Midfielder,AM,0.5333333333333333,30,AM:16 | CM:13 | DM:1,2678.0,low_is_left,1.0,True,False,False
-30,S. Arias,Colombia,Defender,RB,1.0,29,RB:29,4115.0,low_is_left,1.0,True,True,True
-31,J. M. Gimenez,Uruguay,Defender,RCB,0.75,16,RCB:12 | LCB:4,2569.0,low_is_left,1.0,True,True,True
+30,S. Arias,Colombia,Defender,RB,1.0,29,RB:29,4115.0,low_is_left,1.0,False,True,False
+31,J. M. Gimenez,Uruguay,Defender,RCB,0.75,16,RCB:12 | LCB:4,2569.0,low_is_left,1.0,False,True,False
 33,L. Hernandez,France,Defender,LB,0.8095238095238095,21,LB:17 | RB:3 | LCB:1,2291.0,low_is_left,1.0,True,True,True
 33,L. Hernández,France,Defender,LB,1.0,1,LB:1,2291.0,low_is_left,1.0,True,True,True
 44,Rodri,Spain,Midfielder,DM,0.8235294117647058,34,DM:28 | CM:6,3076.0,low_is_left,1.0,True,True,True
-49,T. Partey,Ghana,Midfielder,CM,0.6666666666666666,15,CM:10 | DM:3 | AM:2,2722.0,low_is_left,1.0,True,True,True
+49,T. Partey,Ghana,Midfielder,CM,0.6666666666666666,15,CM:10 | DM:3 | AM:2,2722.0,low_is_left,1.0,False,True,False
 69,B. Mechele,Belgium,Defender,RCB,0.6271186440677966,59,RCB:37 | LCB:11 | RB:11,5448.0,low_is_left,1.0,True,True,True
 74,S. Amrabat,Morocco,Midfielder,DM,0.5555555555555556,27,DM:15 | CM:9 | AM:3,2721.0,low_is_left,1.0,True,False,False
 78,H. Vanaken,Belgium,Midfielder,AM,0.9454545454545454,55,AM:52 | DM:3,5007.0,low_is_left,1.0,True,True,True
@@ -18,26 +18,26 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 153,O. Dembele,France,Midfielder,ST,0.6666666666666666,30,ST:20 | RW:10,3192.0,low_is_left,1.0,True,True,True
 153,O. Dembélé,France,Midfielder,ST,1.0,2,ST:2,3192.0,low_is_left,1.0,True,True,True
 153,Ousmane Dembélé,France,Midfielder,RW,0.5,2,RW:1 | ST:1,3192.0,low_is_left,1.0,True,False,False
-154,L. Messi,Argentina,Attacker,RW,0.9791666666666666,48,RW:47 | LW:1,7195.0,low_is_left,1.0,True,True,True
-168,D. Sanchez,Colombia,Defender,RB,0.64,50,RB:32 | RCB:17 | LCB:1,5466.0,low_is_left,1.0,True,True,True
+154,L. Messi,Argentina,Attacker,RW,0.9791666666666666,48,RW:47 | LW:1,7195.0,low_is_left,1.0,False,True,False
+168,D. Sanchez,Colombia,Defender,RB,0.64,50,RB:32 | RCB:17 | LCB:1,5466.0,low_is_left,1.0,False,True,False
 184,H. Kane,England,Attacker,RW,0.9444444444444444,54,RW:51 | ST:3,5228.0,low_is_left,1.0,True,True,True
-186,Son Heung-Min,South Korea,Attacker,RW,1.0,32,RW:32,4495.0,low_is_left,1.0,True,True,True
+186,Son Heung-Min,South Korea,Attacker,RW,1.0,32,RW:32,4495.0,low_is_left,1.0,False,True,False
 207,I. Perisic,Croatia,Defender,LCB,0.45,40,LCB:18 | LB:12 | RB:10,3578.0,low_is_left,1.0,True,False,False
-217,L. Martinez,Argentina,Attacker,ST,0.55,40,ST:22 | RW:18,4844.0,low_is_left,1.0,True,False,False
-217,L. Martínez,Argentina,Attacker,RW,0.75,4,RW:3 | ST:1,4844.0,low_is_left,1.0,True,True,True
-221,E. Room,Curaçao,Goalkeeper,GK,1.0,9,GK:9,1294.0,low_is_left,1.0,True,True,True
-225,A. Behich,Australia,Midfielder,RB,0.8888888888888888,36,RB:32 | LB:2 | LCB:2,4313.0,low_is_left,1.0,True,True,True
+217,L. Martinez,Argentina,Attacker,ST,0.55,40,ST:22 | RW:18,4844.0,low_is_left,1.0,False,False,False
+217,L. Martínez,Argentina,Attacker,RW,0.75,4,RW:3 | ST:1,4844.0,low_is_left,1.0,False,True,False
+221,E. Room,Curaçao,Goalkeeper,GK,1.0,9,GK:9,1294.0,low_is_left,1.0,False,True,False
+225,A. Behich,Australia,Midfielder,RB,0.8888888888888888,36,RB:32 | LB:2 | LCB:2,4313.0,low_is_left,1.0,False,True,False
 226,D. Dumfries,Netherlands,Midfielder,CM,0.8461538461538461,26,CM:22 | RB:4,2653.0,low_is_left,1.0,True,True,True
 228,A. Obispo,Curaçao,Defender,LCB,0.5714285714285714,21,LCB:12 | RB:6 | RCB:3,2132.0,low_is_left,1.0,True,False,False
 241,M. Sadilek,Czech Republic,Midfielder,DM,0.4666666666666667,30,DM:14 | CM:12 | ST:2 | AM:1 | RW:1,2929.0,low_is_left,1.0,True,False,False
 242,R. Thomas,New Zealand,Midfielder,AM,1.0,27,AM:27,2532.0,low_is_left,1.0,True,True,True
 247,C. Gakpo,Netherlands,Attacker,LW,0.6444444444444445,45,LW:29 | RW:11 | ST:5,4345.0,low_is_left,1.0,True,True,True
 249,D. Malen,Netherlands,Attacker,RW,0.9705882352941176,34,RW:33 | ST:1,3344.0,low_is_left,1.0,True,True,True
-257,Marquinhos,Brazil,Defender,RCB,0.8,40,RCB:32 | RB:7 | LCB:1,5209.0,low_is_left,1.0,True,True,True
+257,Marquinhos,Brazil,Defender,RCB,0.8,40,RCB:32 | RB:7 | LCB:1,5209.0,low_is_left,1.0,False,True,False
 264,T. Meunier,Belgium,Defender,RB,1.0,30,RB:30,3124.0,low_is_left,1.0,True,True,True
 271,L. Paredes,Argentina,Midfielder,AM,0.8205128205128205,39,AM:32 | DM:5 | CM:2,4285.0,low_is_left,1.0,True,True,True
 272,A. Rabiot,France,Midfielder,CM,0.7105263157894737,38,CM:27 | DM:7 | AM:3 | RW:1,3658.0,low_is_left,1.0,True,True,True
-276,Neymar,Brazil,Attacker,RW,1.0,29,RW:29,3682.0,low_is_left,1.0,True,True,True
+276,Neymar,Brazil,Attacker,RW,1.0,29,RW:29,3682.0,low_is_left,1.0,False,True,False
 278,K. Mbappe,France,Attacker,RW,0.8723404255319149,47,RW:41 | ST:5 | LW:1,4582.0,low_is_left,1.0,True,True,True
 278,K. Mbappé,France,Attacker,ST,1.0,1,ST:1,4582.0,low_is_left,1.0,True,True,True
 280,Alisson,Brazil,Goalkeeper,GK,1.0,39,GK:39,4566.0,low_is_left,1.0,True,True,True
@@ -45,15 +45,15 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 289,A. Robertson,Scotland,Defender,LB,0.75,20,LB:15 | LCB:3 | RB:2,2766.0,low_is_left,1.0,True,True,True
 290,V. van Dijk,Netherlands,Defender,RCB,0.864406779661017,59,RCB:51 | RB:5 | LCB:3,5711.0,low_is_left,1.0,True,True,True
 292,J. Henderson,England,Midfielder,DM,0.75,24,DM:18 | CM:5 | AM:1,2262.0,low_is_left,1.0,True,True,True
-299,Fabinho,Brazil,Midfielder,CM,0.5,40,CM:20 | AM:13 | RB:5 | DM:2,5291.0,low_is_left,1.0,True,False,False
-304,S. Mane,Senegal,Midfielder,CM,0.5789473684210527,38,CM:22 | LW:6 | DM:6 | ST:2 | RW:2,4360.0,low_is_left,1.0,True,False,False
+299,Fabinho,Brazil,Midfielder,CM,0.5,40,CM:20 | AM:13 | RB:5 | DM:2,5291.0,low_is_left,1.0,False,False,False
+304,S. Mane,Senegal,Midfielder,CM,0.5789473684210527,38,CM:22 | LW:6 | DM:6 | ST:2 | RW:2,4360.0,low_is_left,1.0,False,False,False
 306,M. Salah,Egypt,Attacker,RW,0.9210526315789473,38,RW:35 | ST:3,4285.0,low_is_left,1.0,True,True,True
 306,Mohamed Salah,Egypt,Attacker,RW,1.0,1,RW:1,4285.0,low_is_left,1.0,True,True,True
-313,D. Ospina,Colombia,Goalkeeper,GK,1.0,34,GK:34,4820.0,low_is_left,1.0,True,True,True
-318,K. Koulibaly,Senegal,Defender,RCB,0.6176470588235294,34,RCB:21 | LCB:12 | RB:1,3136.0,low_is_left,1.0,True,True,True
+313,D. Ospina,Colombia,Goalkeeper,GK,1.0,34,GK:34,4820.0,low_is_left,1.0,False,True,False
+318,K. Koulibaly,Senegal,Defender,RCB,0.6176470588235294,34,RCB:21 | LCB:12 | RB:1,3136.0,low_is_left,1.0,False,True,False
 328,F. Ruiz,Spain,Midfielder,CM,0.9230769230769231,26,CM:24 | DM:2,2715.0,low_is_left,1.0,True,True,True
 328,Fabián Ruiz,Spain,Midfielder,CM,1.0,7,CM:7,2715.0,low_is_left,1.0,True,True,True
-369,D. Costa,Portugal,Goalkeeper,GK,1.0,54,GK:54,7705.0,low_is_left,1.0,True,True,True
+369,D. Costa,Portugal,Goalkeeper,GK,1.0,54,GK:54,7705.0,low_is_left,1.0,False,True,False
 375,C. Mbemba,Congo DR,Defender,RCB,0.68,25,RCB:17 | RB:6 | LCB:2,2621.0,low_is_left,1.0,True,True,True
 399,A. Nubel,Germany,Goalkeeper,GK,1.0,49,GK:49,4641.0,low_is_left,1.0,True,True,True
 409,N. Bentaleb,Algeria,Midfielder,CM,0.36,25,CM:9 | DM:8 | AM:6 | LCB:2,2702.0,low_is_left,1.0,True,False,False
@@ -62,28 +62,28 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 421,B. Embolo,Switzerland,Attacker,RW,0.9629629629629629,27,RW:26 | ST:1,3139.0,low_is_left,1.0,True,True,True
 427,H. Wright,USA,Attacker,RW,0.9696969696969697,33,RW:32 | ST:1,2923.0,low_is_left,1.0,True,True,True
 429,F. Muslera,Uruguay,Goalkeeper,GK,1.0,43,GK:43,4102.0,low_is_left,1.0,True,True,True
-440,Y. Nagatomo,Japan,Defender,RB,1.0,21,RB:21,2321.0,low_is_left,1.0,True,True,True
+440,Y. Nagatomo,Japan,Defender,RB,1.0,21,RB:21,2321.0,low_is_left,1.0,False,True,False
 454,Y. Akgun,Türkiye,Midfielder,AM,0.8387096774193549,31,AM:26 | CM:4 | RW:1,2658.0,low_is_left,1.0,True,True,True
 497,M. Neuer,Germany,Goalkeeper,GK,1.0,45,GK:45,4320.0,low_is_left,1.0,True,True,True
 502,J. Kimmich,Germany,Defender,RB,0.9607843137254902,51,RB:49 | LCB:1 | RCB:1,5132.0,low_is_left,1.0,True,True,True
 505,D. Alaba,Austria,Defender,LCB,0.5,10,LCB:5 | RB:4 | RCB:1,941.0,low_is_left,1.0,True,False,False
 509,A. Davies,Canada,Defender,LB,0.875,8,LB:7 | RB:1,1076.0,low_is_left,1.0,True,True,True
 511,L. Goretzka,Germany,Midfielder,DM,0.8571428571428571,28,DM:24 | CM:4,2748.0,low_is_left,1.0,True,True,True
-517,J. Rodriguez,Colombia,Attacker,RW,1.0,23,RW:23,3427.0,low_is_left,1.0,True,True,True
+517,J. Rodriguez,Colombia,Attacker,RW,1.0,23,RW:23,3427.0,low_is_left,1.0,False,True,False
 524,D. Kotarski,Croatia,Goalkeeper,GK,1.0,45,GK:45,4111.0,low_is_left,1.0,True,True,True
-529,N. Tagliafico,Argentina,Defender,LCB,0.6206896551724138,29,LCB:18 | LB:6 | RB:4 | RCB:1,3844.0,low_is_left,1.0,True,True,True
+529,N. Tagliafico,Argentina,Defender,LCB,0.6206896551724138,29,LCB:18 | LB:6 | RB:4 | RCB:1,3844.0,low_is_left,1.0,False,True,False
 538,F. de Jong,Netherlands,Midfielder,CM,0.6333333333333333,30,CM:19 | DM:10 | AM:1,3137.0,low_is_left,1.0,True,True,True
 542,R. Gravenberch,Netherlands,Midfielder,CM,0.5490196078431373,51,CM:28 | DM:22 | RB:1,4785.0,low_is_left,1.0,True,False,False
 544,N. Lang,Netherlands,Attacker,LW,0.55,20,LW:11 | RW:9,2027.0,low_is_left,1.0,True,False,False
-545,N. Mazraoui,Morocco,Defender,RB,0.5652173913043478,23,RB:13 | LB:8 | LCB:1 | RCB:1,2775.0,low_is_left,1.0,True,False,False
+545,N. Mazraoui,Morocco,Defender,RB,0.5652173913043478,23,RB:13 | LB:8 | LCB:1 | RCB:1,2775.0,low_is_left,1.0,False,False,False
 563,A. Grimaldo,Spain,Defender,LB,0.5111111111111111,45,LB:23 | RB:17 | LCB:5,4263.0,low_is_left,1.0,True,False,False
 567,R. Dias,Portugal,Defender,RCB,0.9117647058823529,34,RCB:31 | LCB:3,3579.0,low_is_left,1.0,True,True,True
 567,Rúben Dias,Portugal,Defender,RCB,1.0,2,RCB:2,3579.0,low_is_left,1.0,True,True,True
 583,Joao Felix,Portugal,Midfielder,RW,0.775,40,RW:31 | ST:6 | LW:3,3587.0,low_is_left,1.0,True,True,True
-617,Ederson,Brazil,Goalkeeper,GK,1.0,39,GK:39,4226.0,low_is_left,1.0,True,True,True
+617,Ederson,Brazil,Goalkeeper,GK,1.0,39,GK:39,4226.0,low_is_left,1.0,False,True,False
 619,E. Garcia,Spain,Defender,RB,0.5319148936170213,47,RB:25 | LCB:14 | RCB:8,3998.0,low_is_left,1.0,True,False,False
 622,A. Laporte,Spain,Defender,RB,0.8,35,RB:28 | LCB:7,3198.0,low_is_left,1.0,True,True,True
-624,N. Otamendi,Argentina,Defender,LCB,0.8490566037735849,53,LCB:45 | RB:6 | RCB:2,6580.0,low_is_left,1.0,True,True,True
+624,N. Otamendi,Argentina,Defender,LCB,0.8490566037735849,53,LCB:45 | RB:6 | RCB:2,6580.0,low_is_left,1.0,False,True,False
 626,J. Stones,England,Defender,RCB,0.6875,16,RCB:11 | RB:4 | LCB:1,1685.0,low_is_left,1.0,True,True,True
 629,K. De Bruyne,Belgium,Midfielder,AM,0.47619047619047616,21,AM:10 | RW:7 | CM:4,2036.0,low_is_left,1.0,True,False,False
 635,R. Mahrez,Algeria,Midfielder,CM,0.7555555555555555,45,CM:34 | RW:10 | AM:1,3891.0,low_is_left,1.0,True,True,True
@@ -93,9 +93,9 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 644,L. Sane,Germany,Midfielder,AM,0.6829268292682927,41,AM:28 | CM:10 | RW:2 | DM:1,3782.0,low_is_left,1.0,True,True,True
 644,L. Sané,Germany,Midfielder,AM,1.0,1,AM:1,3782.0,low_is_left,1.0,True,True,True
 658,H. Aouar,Algeria,Attacker,RW,0.84375,32,RW:27 | ST:4 | LW:1,2930.0,low_is_left,1.0,True,True,True
-667,M. Depay,Netherlands,Attacker,RW,1.0,25,RW:25,4158.0,low_is_left,1.0,True,True,True
+667,M. Depay,Netherlands,Attacker,RW,1.0,25,RW:25,4158.0,low_is_left,1.0,False,True,False
 702,O. Baumann,Germany,Goalkeeper,GK,1.0,36,GK:36,3540.0,low_is_left,1.0,True,True,True
-706,J. Brenet,Curaçao,Defender,RB,1.0,23,RB:23,2731.0,low_is_left,1.0,True,True,True
+706,J. Brenet,Curaçao,Defender,RB,1.0,23,RB:23,2731.0,low_is_left,1.0,False,True,False
 711,S. Posch,Austria,Defender,RB,1.0,28,RB:28,2744.0,low_is_left,1.0,True,True,True
 714,N. Amiri,Germany,Midfielder,AM,0.5625,32,AM:18 | CM:9 | DM:3 | RW:2,2899.0,low_is_left,1.0,True,False,False
 719,F. Grillitsch,Austria,Midfielder,CM,0.5,20,CM:10 | AM:7 | DM:3,1951.0,low_is_left,1.0,True,False,False
@@ -103,22 +103,22 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 730,T. Courtois,Belgium,Goalkeeper,GK,1.0,57,GK:57,5280.0,low_is_left,1.0,True,True,True
 732,L. Zidane,Algeria,Goalkeeper,GK,1.0,34,GK:34,3273.0,low_is_left,1.0,True,True,True
 744,B. Diaz,Morocco,Midfielder,CM,0.5333333333333333,30,CM:16 | RW:12 | AM:1 | ST:1,3132.0,low_is_left,1.0,True,False,False
-747,Casemiro,Brazil,Midfielder,CM,0.6842105263157895,38,CM:26 | DM:10 | AM:2,4863.0,low_is_left,1.0,True,True,True
-750,A. Fidalgo,Mexico,Midfielder,CM,0.7586206896551724,29,CM:22 | AM:4 | DM:3,3372.0,low_is_left,1.0,True,True,True
+747,Casemiro,Brazil,Midfielder,CM,0.6842105263157895,38,CM:26 | DM:10 | AM:2,4863.0,low_is_left,1.0,False,True,False
+750,A. Fidalgo,Mexico,Midfielder,CM,0.7586206896551724,29,CM:22 | AM:4 | DM:3,3372.0,low_is_left,1.0,False,True,False
 753,M. Llorente,Spain,Midfielder,RB,0.8043478260869565,46,RB:37 | RCB:9,4249.0,low_is_left,1.0,True,True,True
 754,L. Modric,Croatia,Midfielder,CM,0.7222222222222222,36,CM:26 | DM:7 | AM:3,3574.0,low_is_left,1.0,True,True,True
-756,F. Valverde,Uruguay,Midfielder,CM,0.5769230769230769,52,CM:30 | RB:15 | DM:6 | AM:1,5892.0,low_is_left,1.0,True,False,False
-762,Vinicius Junior,Brazil,Midfielder,ST,0.5094339622641509,53,ST:27 | LW:18 | RW:8,6562.0,low_is_left,1.0,True,False,False
-762,Vinícius Júnior,Brazil,Midfielder,RW,1.0,6,RW:6,6562.0,low_is_left,1.0,True,True,True
-790,E. Dzeko,Bosnia & Herzegovina,Attacker,RW,0.8235294117647058,17,RW:14 | ST:3,5088.0,low_is_left,1.0,True,True,True
+756,F. Valverde,Uruguay,Midfielder,CM,0.5769230769230769,52,CM:30 | RB:15 | DM:6 | AM:1,5892.0,low_is_left,1.0,False,False,False
+762,Vinicius Junior,Brazil,Midfielder,ST,0.5094339622641509,53,ST:27 | LW:18 | RW:8,6562.0,low_is_left,1.0,False,False,False
+762,Vinícius Júnior,Brazil,Midfielder,RW,1.0,6,RW:6,6562.0,low_is_left,1.0,False,True,False
+790,E. Dzeko,Bosnia & Herzegovina,Attacker,RW,0.8235294117647058,17,RW:14 | ST:3,5088.0,low_is_left,1.0,False,True,False
 792,J. Kluivert,Netherlands,Attacker,RW,0.8181818181818182,11,RW:9 | ST:2,1165.0,low_is_left,1.0,True,True,True
 794,P. Schick,Czech Republic,Attacker,RW,1.0,33,RW:33,3159.0,low_is_left,1.0,True,True,True
 818,T. Chory,Czech Republic,Attacker,RW,0.7777777777777778,27,RW:21 | ST:6,2423.0,low_is_left,1.0,True,True,True
 842,N. Vlasic,Croatia,Midfielder,RW,0.43902439024390244,41,RW:18 | CM:14 | AM:8 | ST:1,3616.0,low_is_left,1.0,True,False,False
-855,J. Cancelo,Portugal,Defender,LB,0.5714285714285714,28,LB:16 | RB:12,2865.0,low_is_left,1.0,True,False,False
-855,João Cancelo,Portugal,Defender,RB,1.0,5,RB:5,2865.0,low_is_left,1.0,True,True,True
-863,R. Bentancur,Uruguay,Midfielder,AM,0.5714285714285714,35,AM:20 | CM:14 | DM:1,3803.0,low_is_left,1.0,True,False,False
-863,Rodrigo Bentancur,Uruguay,Midfielder,AM,1.0,1,AM:1,3803.0,low_is_left,1.0,True,True,True
+855,J. Cancelo,Portugal,Defender,LB,0.5714285714285714,28,LB:16 | RB:12,2865.0,low_is_left,1.0,False,False,False
+855,João Cancelo,Portugal,Defender,RB,1.0,5,RB:5,2865.0,low_is_left,1.0,False,True,False
+863,R. Bentancur,Uruguay,Midfielder,AM,0.5714285714285714,35,AM:20 | CM:14 | DM:1,3803.0,low_is_left,1.0,False,False,False
+863,Rodrigo Bentancur,Uruguay,Midfielder,AM,1.0,1,AM:1,3803.0,low_is_left,1.0,False,True,False
 874,C. Ronaldo,Portugal,Attacker,RW,0.6756756756756757,37,RW:25 | ST:12,3861.0,low_is_left,1.0,True,True,True
 886,D. Dalot,Portugal,Defender,RB,0.7096774193548387,31,RB:22 | LB:9,3039.0,low_is_left,1.0,True,True,True
 889,V. Lindelof,Sweden,Midfielder,RB,0.56,25,RB:14 | RCB:8 | LB:2 | LCB:1,2303.0,low_is_left,1.0,True,False,False
@@ -126,30 +126,30 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 906,T. Chong,Curaçao,Midfielder,AM,0.9090909090909091,11,AM:10 | CM:1,1362.0,low_is_left,1.0,True,True,True
 909,M. Rashford,England,Attacker,LW,0.7142857142857143,28,LW:20 | RW:6 | ST:2,3099.0,low_is_left,1.0,True,True,True
 925,G. Guedes,Portugal,Attacker,RW,0.6666666666666666,27,RW:18 | LW:7 | ST:2,2411.0,low_is_left,1.0,True,True,True
-927,Lee Kang-In,South Korea,Attacker,RW,0.7894736842105263,19,RW:15 | ST:2 | LW:2,3738.0,low_is_left,1.0,True,True,True
+927,Lee Kang-In,South Korea,Attacker,RW,0.7894736842105263,19,RW:15 | ST:2 | LW:2,3738.0,low_is_left,1.0,False,True,False
 931,F. Torres,Spain,Midfielder,RW,0.65625,32,RW:21 | ST:7 | LW:4,3088.0,low_is_left,1.0,True,True,True
 951,M. Aebischer,Switzerland,Midfielder,AM,0.9444444444444444,36,AM:34 | DM:1 | CM:1,3771.0,low_is_left,1.0,True,True,True
 952,C. Fassnacht,Switzerland,Midfielder,AM,0.7419354838709677,31,AM:23 | RW:7 | CM:1,2821.0,low_is_left,1.0,True,True,True
 957,D. Sow,Switzerland,Midfielder,AM,0.8275862068965517,29,AM:24 | CM:5,2785.0,low_is_left,1.0,True,True,True
 972,J. Tah,Germany,Defender,LCB,0.66,50,LCB:33 | RCB:13 | RB:4,5066.0,low_is_left,1.0,True,True,True
 978,K. Havertz,Germany,Attacker,RW,0.625,16,RW:10 | ST:6,1652.0,low_is_left,1.0,True,True,True
-1084,M. Pongracic,Croatia,Defender,RB,0.9333333333333333,45,RB:42 | LCB:3,5594.0,low_is_left,1.0,True,True,True
+1084,M. Pongracic,Croatia,Defender,RB,0.9333333333333333,45,RB:42 | LCB:3,5594.0,low_is_left,1.0,False,True,False
 1095,X. Schlager,Austria,Midfielder,CM,0.7777777777777778,27,CM:21 | DM:4 | AM:2,2446.0,low_is_left,1.0,True,True,True
 1100,E. Haaland,Norway,Attacker,RW,0.7636363636363637,55,RW:42 | ST:13,5118.0,low_is_left,1.0,True,True,True
 1111,J. Hendry,Scotland,Defender,RB,1.0,29,RB:29,3103.0,low_is_left,1.0,True,True,True
 1115,A. Ralston,Scotland,Defender,RB,1.0,16,RB:16,1772.0,low_is_left,1.0,True,True,True
 1117,K. Tierney,Scotland,Midfielder,RB,0.7,40,RB:28 | LB:12,3708.0,low_is_left,1.0,True,True,True
 1119,K. Ajer,Norway,Defender,RB,0.7931034482758621,29,RB:23 | RCB:6,3030.0,low_is_left,1.0,True,True,True
-1125,R. Christie,Scotland,Midfielder,CM,0.9,10,CM:9 | AM:1,1956.0,low_is_left,1.0,True,True,True
+1125,R. Christie,Scotland,Midfielder,CM,0.9,10,CM:9 | AM:1,1956.0,low_is_left,1.0,False,True,False
 1138,T. Weah,USA,Attacker,RW,0.5555555555555556,36,RW:20 | RB:13 | LW:1 | LB:1 | ST:1,3633.0,low_is_left,1.0,True,False,False
 1138,Timothy Weah,USA,Attacker,RW,1.0,1,RW:1,3633.0,low_is_left,1.0,True,True,True
 1142,Y. Mvogo,Switzerland,Goalkeeper,GK,1.0,31,GK:31,3015.0,low_is_left,1.0,True,True,True
 1145,I. Konate,France,Defender,RB,1.0,48,RB:48,4547.0,low_is_left,1.0,True,True,True
 1145,I. Konaté,France,Defender,RB,1.0,1,RB:1,4547.0,low_is_left,1.0,True,True,True
 1149,D. Upamecano,France,Defender,RCB,0.8125,48,RCB:39 | RB:8 | LCB:1,4452.0,low_is_left,1.0,True,True,True
-1150,T. Adams,USA,Midfielder,CM,0.9310344827586207,29,CM:27 | DM:1 | AM:1,2773.0,low_is_left,1.0,True,True,True
+1150,T. Adams,USA,Midfielder,CM,0.9310344827586207,29,CM:27 | DM:1 | AM:1,2773.0,low_is_left,1.0,False,True,False
 1157,K. Laimer,Austria,Defender,RB,0.5813953488372093,43,RB:25 | LB:17 | RCB:1,4131.0,low_is_left,1.0,True,False,False
-1159,M. Sabitzer,Austria,Midfielder,CM,0.6363636363636364,33,CM:21 | AM:10 | DM:1 | RW:1,3419.0,low_is_left,1.0,True,True,True
+1159,M. Sabitzer,Austria,Midfielder,CM,0.6363636363636364,33,CM:21 | AM:10 | DM:1 | RW:1,3419.0,low_is_left,1.0,False,True,False
 1165,M. Cunha,Brazil,Attacker,RW,0.5428571428571428,35,RW:19 | ST:9 | LW:7,3681.0,low_is_left,1.0,True,False,False
 1231,V. Coufal,Czech Republic,Midfielder,RB,1.0,35,RB:35,3727.0,low_is_left,1.0,True,True,True
 1237,J. Zeleny,Czech Republic,Midfielder,RB,0.9642857142857143,28,RB:27 | LB:1,2496.0,low_is_left,1.0,True,True,True
@@ -157,7 +157,7 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 1257,J. Kounde,France,Defender,RB,1.0,46,RB:46,4340.0,low_is_left,1.0,True,True,True
 1271,A. Tchouameni,France,Midfielder,CM,0.66,50,CM:33 | DM:16 | RB:1,5020.0,low_is_left,1.0,True,True,True
 1271,A. Tchouaméni,France,Midfielder,CM,0.3333333333333333,6,CM:2 | DM:2 | RCB:2,5020.0,low_is_left,1.0,True,False,False
-1290,G. Varela,Uruguay,Defender,RB,1.0,38,RB:38,5704.0,low_is_left,1.0,True,True,True
+1290,G. Varela,Uruguay,Defender,RB,1.0,38,RB:38,5704.0,low_is_left,1.0,False,True,False
 1305,D. Livakovic,Croatia,Goalkeeper,GK,1.0,22,GK:22,2271.0,low_is_left,0.984375,True,True,True
 1322,N. Moro,Croatia,Midfielder,AM,0.9310344827586207,29,AM:27 | CM:2,2779.0,low_is_left,1.0,True,True,True
 1323,D. Olmo,Spain,Midfielder,CM,0.6111111111111112,36,CM:22 | AM:11 | LW:2 | RW:1,3408.0,low_is_left,1.0,True,True,True
@@ -167,72 +167,72 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 1417,A. Saelemaekers,Belgium,Attacker,RW,1.0,38,RW:38,3316.0,low_is_left,1.0,True,True,True
 1422,J. Doku,Belgium,Midfielder,CM,0.9,40,CM:36 | LW:3 | ST:1,4019.0,low_is_left,1.0,True,True,True
 1424,E. Kayembe,Congo DR,Midfielder,AM,0.45161290322580644,31,AM:14 | RW:9 | CM:7 | DM:1,2973.0,low_is_left,1.0,True,False,False
-1442,S. Kolasinac,Bosnia & Herzegovina,Defender,LB,0.37037037037037035,27,LB:10 | RB:10 | LCB:6 | RCB:1,2790.0,low_is_left,1.0,True,False,False
+1442,S. Kolasinac,Bosnia & Herzegovina,Defender,LB,0.37037037037037035,27,LB:10 | RB:10 | LCB:6 | RCB:1,2790.0,low_is_left,1.0,False,False,False
 1460,B. Saka,England,Midfielder,RW,0.9487179487179487,39,RW:37 | ST:2,3928.0,low_is_left,1.0,True,True,True
 1464,G. Xhaka,Switzerland,Midfielder,DM,0.6153846153846154,39,DM:24 | CM:15,3946.0,low_is_left,1.0,True,True,True
-1485,B. Fernandes,Portugal,Midfielder,AM,0.4634146341463415,41,AM:19 | CM:15 | DM:7,4783.0,low_is_left,1.0,True,False,False
-1494,J. Cabral,Cape Verde Islands,Midfielder,LW,1.0,2,LW:2,3320.0,low_is_left,1.0,True,True,True
-1494,Jovane,Cape Verde Islands,Midfielder,RW,1.0,17,RW:17,3320.0,low_is_left,1.0,True,True,True
-1496,Raphinha,Brazil,Midfielder,AM,0.3793103448275862,29,AM:11 | CM:10 | RW:4 | LW:4,3660.0,low_is_left,1.0,True,False,False
+1485,B. Fernandes,Portugal,Midfielder,AM,0.4634146341463415,41,AM:19 | CM:15 | DM:7,4783.0,low_is_left,1.0,False,False,False
+1494,J. Cabral,Cape Verde Islands,Midfielder,LW,1.0,2,LW:2,3320.0,low_is_left,1.0,False,True,False
+1494,Jovane,Cape Verde Islands,Midfielder,RW,1.0,17,RW:17,3320.0,low_is_left,1.0,False,True,False
+1496,Raphinha,Brazil,Midfielder,AM,0.3793103448275862,29,AM:11 | CM:10 | RW:4 | LW:4,3660.0,low_is_left,1.0,False,False,False
 1567,A. Mandi,Algeria,Defender,LCB,0.5227272727272727,44,LCB:23 | RCB:18 | RB:3,4294.0,low_is_left,1.0,True,False,False
-1578,G. Lo Celso,Argentina,Midfielder,CM,0.9047619047619048,21,CM:19 | RW:1 | AM:1,2394.0,low_is_left,1.0,True,True,True
+1578,G. Lo Celso,Argentina,Midfielder,CM,0.9047619047619048,21,CM:19 | RW:1 | AM:1,2394.0,low_is_left,1.0,False,True,False
 1590,J. Sa,Portugal,Goalkeeper,GK,1.0,24,GK:24,2248.0,low_is_left,1.0,True,True,True
 1631,R. Rodriguez,Switzerland,Defender,RB,0.8125,32,RB:26 | LB:6,3273.0,low_is_left,1.0,True,True,True
-1640,H. Calhanoglu,Türkiye,Midfielder,CM,0.896551724137931,29,CM:26 | DM:2 | AM:1,2898.0,low_is_left,1.0,True,True,True
+1640,H. Calhanoglu,Türkiye,Midfielder,CM,0.896551724137931,29,CM:26 | DM:2 | AM:1,2898.0,low_is_left,1.0,False,True,False
 1642,F. Kessie,Ivory Coast,Midfielder,CM,0.5454545454545454,44,CM:24 | DM:18 | LCB:1 | RB:1,4046.0,low_is_left,1.0,True,False,False
 1646,Lucas Paqueta,Brazil,Midfielder,CM,0.4,35,CM:14 | AM:14 | RW:6 | ST:1,3851.0,low_is_left,1.0,True,False,False
 1646,Lucas Paquetá,Brazil,Midfielder,AM,1.0,1,AM:1,3851.0,low_is_left,1.0,True,True,True
 1719,M. Muldur,Türkiye,Defender,RB,0.7272727272727273,22,RB:16 | LB:6,2516.0,low_is_left,1.0,True,True,True
 1725,D. Ljubicic,Austria,Midfielder,AM,0.7352941176470589,34,AM:25 | CM:5 | RW:4,2706.0,low_is_left,1.0,True,True,True
 1741,N. Katic,Bosnia & Herzegovina,Defender,RB,0.8620689655172413,29,RB:25 | RCB:4,3129.0,low_is_left,0.95,True,True,True
-1807,E. Ndicka,Ivory Coast,Defender,RB,0.7380952380952381,42,RB:31 | LB:5 | LCB:4 | RCB:2,7332.0,low_is_left,1.0,True,True,True
-1864,P. Neto,Portugal,Midfielder,AM,0.7916666666666666,48,AM:38 | CM:5 | RW:5,5367.0,low_is_left,1.0,True,True,True
-1864,Pedro Neto,Portugal,Midfielder,AM,0.5,6,AM:3 | RW:2 | CM:1,5367.0,low_is_left,1.0,True,False,False
+1807,E. Ndicka,Ivory Coast,Defender,RB,0.7380952380952381,42,RB:31 | LB:5 | LCB:4 | RCB:2,7332.0,low_is_left,1.0,False,True,False
+1864,P. Neto,Portugal,Midfielder,AM,0.7916666666666666,48,AM:38 | CM:5 | RW:5,5367.0,low_is_left,1.0,False,True,False
+1864,Pedro Neto,Portugal,Midfielder,AM,0.5,6,AM:3 | RW:2 | CM:1,5367.0,low_is_left,1.0,False,False,False
 1902,D. Caleta-Car,Croatia,Defender,RB,1.0,28,RB:28,2541.0,low_is_left,1.0,True,True,True
-1929,J. Lucumi,Colombia,Defender,RB,0.5106382978723404,47,RB:24 | RCB:16 | LCB:7,5780.0,low_is_left,1.0,True,False,False
+1929,J. Lucumi,Colombia,Defender,RB,0.5106382978723404,47,RB:24 | RCB:16 | LCB:7,5780.0,low_is_left,1.0,False,False,False
 1934,S. Berge,Norway,Midfielder,DM,0.65,40,DM:26 | CM:11 | AM:3,3916.0,low_is_left,1.0,True,True,True
-1942,J. Ito,Japan,Attacker,RW,0.9310344827586207,29,RW:27 | ST:2,3139.0,low_is_left,1.0,True,True,True
+1942,J. Ito,Japan,Attacker,RW,0.9310344827586207,29,RW:27 | ST:2,3139.0,low_is_left,1.0,False,True,False
 1946,L. Trossard,Belgium,Midfielder,LW,0.868421052631579,38,LW:33 | RW:4 | ST:1,3560.0,low_is_left,1.0,True,True,True
 2001,C. Larin,Canada,Attacker,ST,0.5,10,ST:5 | RW:5,2043.0,low_is_left,1.0,True,False,False
 2032,J. Larsen,Norway,Attacker,ST,1.0,1,ST:1,3340.0,low_is_left,1.0,True,True,True
 2032,J. S. Larsen,Norway,Attacker,RW,0.65625,32,RW:21 | ST:11,3340.0,low_is_left,1.0,True,True,True
-2194,R. Bensebaini,Algeria,Defender,LCB,0.6052631578947368,38,LCB:23 | LB:15,4235.0,low_is_left,1.0,True,True,True
+2194,R. Bensebaini,Algeria,Defender,LCB,0.6052631578947368,38,LCB:23 | LB:15,4235.0,low_is_left,1.0,False,True,False
 2218,I. Sarr,Senegal,Midfielder,RW,0.9574468085106383,47,RW:45 | ST:2,4521.0,low_is_left,1.0,True,True,True
 2252,T. Holes,Czech Republic,Defender,RB,0.88,25,RB:22 | RCB:3,2436.0,low_is_left,1.0,True,True,True
 2285,A. Rudiger,Germany,Defender,RB,0.7692307692307693,26,RB:20 | LCB:5 | LB:1,2847.0,low_is_left,1.0,True,True,True
 2285,A. Rüdiger,Germany,Defender,RB,1.0,4,RB:4,2847.0,low_is_left,1.0,True,True,True
 2290,N. Kante,France,Midfielder,CM,0.5,36,CM:18 | AM:14 | DM:4,4147.0,low_is_left,1.0,True,False,False
-2410,Weverton,Brazil,Goalkeeper,GK,1.0,51,GK:51,7181.0,low_is_left,1.0,True,True,True
+2410,Weverton,Brazil,Goalkeeper,GK,1.0,51,GK:51,7181.0,low_is_left,1.0,False,True,False
 2465,J. Musso,Argentina,Goalkeeper,GK,1.0,18,GK:18,1739.0,low_is_left,1.0,True,True,True
-2467,L. Martinez,Argentina,Defender,LCB,0.95,20,LCB:19 | RB:1,2534.0,low_is_left,1.0,True,True,True
-2468,G. Montiel,Argentina,Defender,RB,1.0,32,RB:32,4694.0,low_is_left,1.0,True,True,True
-2472,R. De Paul,Argentina,Midfielder,AM,0.5,2,AM:1 | CM:1,5168.0,low_is_left,1.0,True,False,False
-2472,R. de Paul,Argentina,Midfielder,CM,0.9,40,CM:36 | DM:2 | AM:2,5168.0,low_is_left,1.0,True,True,True
-2481,A. Montero,Colombia,Goalkeeper,GK,1.0,20,GK:20,4277.0,low_is_left,1.0,True,True,True
-2482,C. Vargas,Colombia,Goalkeeper,GK,1.0,40,GK:40,4992.0,low_is_left,1.0,True,True,True
-2483,D. Machado,Colombia,Defender,RB,0.8421052631578947,19,RB:16 | LB:3,2026.0,low_is_left,1.0,True,True,True
+2467,L. Martinez,Argentina,Defender,LCB,0.95,20,LCB:19 | RB:1,2534.0,low_is_left,1.0,False,True,False
+2468,G. Montiel,Argentina,Defender,RB,1.0,32,RB:32,4694.0,low_is_left,1.0,False,True,False
+2472,R. De Paul,Argentina,Midfielder,AM,0.5,2,AM:1 | CM:1,5168.0,low_is_left,1.0,False,False,False
+2472,R. de Paul,Argentina,Midfielder,CM,0.9,40,CM:36 | DM:2 | AM:2,5168.0,low_is_left,1.0,False,True,False
+2481,A. Montero,Colombia,Goalkeeper,GK,1.0,20,GK:20,4277.0,low_is_left,1.0,False,True,False
+2482,C. Vargas,Colombia,Goalkeeper,GK,1.0,40,GK:40,4992.0,low_is_left,1.0,False,True,False
+2483,D. Machado,Colombia,Defender,RB,0.8421052631578947,19,RB:16 | LB:3,2026.0,low_is_left,1.0,False,True,False
 2484,Y. Mina,Colombia,Defender,RB,0.9642857142857143,28,RB:27 | RCB:1,2834.0,low_is_left,1.0,True,True,True
-2489,L. Diaz,Colombia,Midfielder,CM,0.8490566037735849,53,CM:45 | LW:5 | ST:1 | DM:1 | AM:1,6514.0,low_is_left,1.0,True,True,True
-2490,J. Lerma,Colombia,Midfielder,DM,0.42424242424242425,33,DM:14 | CM:10 | RB:8 | LB:1,4489.0,low_is_left,1.0,True,False,False
-2499,J. Alonso,Paraguay,Defender,RB,0.7692307692307693,52,RB:40 | LB:8 | LCB:4,8456.0,low_is_left,1.0,True,True,True
-2500,Fabian Balbuena,Paraguay,Defender,RB,1.0,12,RB:12,1843.0,low_is_left,1.0,True,True,True
-2502,G. Gomez,Paraguay,Defender,RB,0.8939393939393939,66,RB:59 | RCB:7,9607.0,low_is_left,1.0,True,True,True
-2502,G. Gómez,Paraguay,Defender,RB,1.0,4,RB:4,9607.0,low_is_left,1.0,True,True,True
-2507,M. Almiron,Paraguay,Midfielder,AM,0.5333333333333333,30,AM:16 | RW:8 | CM:6,5522.0,low_is_left,1.0,True,False,False
+2489,L. Diaz,Colombia,Midfielder,CM,0.8490566037735849,53,CM:45 | LW:5 | ST:1 | DM:1 | AM:1,6514.0,low_is_left,1.0,False,True,False
+2490,J. Lerma,Colombia,Midfielder,DM,0.42424242424242425,33,DM:14 | CM:10 | RB:8 | LB:1,4489.0,low_is_left,1.0,False,False,False
+2499,J. Alonso,Paraguay,Defender,RB,0.7692307692307693,52,RB:40 | LB:8 | LCB:4,8456.0,low_is_left,1.0,False,True,False
+2500,Fabian Balbuena,Paraguay,Defender,RB,1.0,12,RB:12,1843.0,low_is_left,1.0,False,True,False
+2502,G. Gomez,Paraguay,Defender,RB,0.8939393939393939,66,RB:59 | RCB:7,9607.0,low_is_left,1.0,False,True,False
+2502,G. Gómez,Paraguay,Defender,RB,1.0,4,RB:4,9607.0,low_is_left,1.0,False,True,False
+2507,M. Almiron,Paraguay,Midfielder,AM,0.5333333333333333,30,AM:16 | RW:8 | CM:6,5522.0,low_is_left,1.0,False,False,False
 2514,A. Romero,Paraguay,Attacker,RW,1.0,2,RW:2,1595.0,low_is_left,1.0,False,True,False
 2514,Kaku,Paraguay,Attacker,RW,1.0,13,RW:13,1595.0,low_is_left,1.0,False,True,False
-2522,A. Sanabria,Paraguay,Attacker,RW,1.0,14,RW:14,1912.0,low_is_left,1.0,True,True,True
-2530,Pedro Miguel,Qatar,Defender,RB,0.8,20,RB:16 | RCB:4,2728.0,low_is_left,1.0,True,True,True
-2532,B. Khoukhi,Qatar,Defender,RCB,0.7142857142857143,21,RCB:15 | LCB:4 | RB:2,2697.0,low_is_left,1.0,True,True,True
+2522,A. Sanabria,Paraguay,Attacker,RW,1.0,14,RW:14,1912.0,low_is_left,1.0,False,True,False
+2530,Pedro Miguel,Qatar,Defender,RB,0.8,20,RB:16 | RCB:4,2728.0,low_is_left,1.0,False,True,False
+2532,B. Khoukhi,Qatar,Defender,RCB,0.7142857142857143,21,RCB:15 | LCB:4 | RB:2,2697.0,low_is_left,1.0,False,True,False
 2533,A. Hatem,Qatar,Midfielder,AM,1.0,4,AM:4,1047.0,low_is_left,1.0,False,True,False
 2535,A. O. Madibo,Qatar,Midfielder,AM,0.6,10,AM:6 | CM:3 | DM:1,1161.0,low_is_left,1.0,False,True,False
 2539,A. Fathi,Qatar,Midfielder,AM,0.9090909090909091,11,AM:10 | CM:1,2174.0,low_is_left,1.0,False,True,False
-2543,A. Ali,Qatar,Attacker,ST,0.5,2,ST:1 | RW:1,1920.0,low_is_left,1.0,True,False,False
-2544,A. Afif,Qatar,Attacker,RW,0.8076923076923077,26,RW:21 | LW:3 | ST:2,3842.0,low_is_left,1.0,True,True,True
+2543,A. Ali,Qatar,Attacker,ST,0.5,2,ST:1 | RW:1,1920.0,low_is_left,1.0,False,False,False
+2544,A. Afif,Qatar,Attacker,RW,0.8076923076923077,26,RW:21 | LW:3 | ST:2,3842.0,low_is_left,1.0,False,True,False
 2575,J. Porozo,Ecuador,Defender,RB,1.0,38,RB:38,3784.0,low_is_left,1.0,True,True,True
-2583,A. Preciado,Ecuador,Defender,RB,0.96,25,RB:24 | LCB:1,3039.0,low_is_left,1.0,True,True,True
-2598,R. Doan,Japan,Attacker,RW,0.9743589743589743,39,RW:38 | ST:1,4566.0,low_is_left,1.0,True,True,True
-2601,D. Kamada,Japan,Attacker,ST,0.7804878048780488,41,ST:32 | RW:9,4544.0,low_is_left,1.0,True,True,True
+2583,A. Preciado,Ecuador,Defender,RB,0.96,25,RB:24 | LCB:1,3039.0,low_is_left,1.0,False,True,False
+2598,R. Doan,Japan,Attacker,RW,0.9743589743589743,39,RW:38 | ST:1,4566.0,low_is_left,1.0,False,True,False
+2601,D. Kamada,Japan,Attacker,ST,0.7804878048780488,41,ST:32 | RW:9,4544.0,low_is_left,1.0,False,True,False
 2639,S. Mandash,Saudi Arabia,Midfielder,RW,1.0,17,RW:17,1627.0,low_is_left,1.0,True,True,True
 2649,A. Fatouh,Egypt,Defender,RB,0.5,20,RB:10 | LCB:7 | LB:3,2382.0,low_is_left,1.0,True,False,False
 2654,M. Hany,Egypt,Defender,RB,1.0,34,RB:34,4015.0,low_is_left,1.0,True,True,True
@@ -242,64 +242,64 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 2664,Trézéguet,Egypt,Attacker,RW,1.0,1,RW:1,3042.0,low_is_left,1.0,True,True,True
 2676,R. Neves,Portugal,Midfielder,CM,0.6410256410256411,39,CM:25 | DM:7 | RCB:5 | RB:1 | AM:1,4096.0,low_is_left,1.0,True,True,True
 2676,Rúben Neves,Portugal,Midfielder,CM,0.6,5,CM:3 | RCB:2,4096.0,low_is_left,1.0,True,True,True
-2682,A. Beiranvand,Iran,Goalkeeper,GK,1.0,12,GK:12,1946.0,low_is_left,1.0,True,True,True
-2688,M. Mohammadi,Iran,Defender,LB,1.0,2,LB:2,1372.0,low_is_left,1.0,True,True,True
+2682,A. Beiranvand,Iran,Goalkeeper,GK,1.0,12,GK:12,1946.0,low_is_left,1.0,False,True,False
+2688,M. Mohammadi,Iran,Defender,LB,1.0,2,LB:2,1372.0,low_is_left,1.0,False,True,False
 2699,S. Ghoddos,Iran,Midfielder,CM,0.75,16,CM:12 | ST:2 | DM:1 | RW:1,1842.0,low_is_left,1.0,False,True,False
-2700,A. Jahanbakhsh,Iran,Midfielder,RW,1.0,9,RW:9,1372.0,low_is_left,1.0,True,True,True
-2701,Bono,Morocco,Goalkeeper,GK,1.0,44,GK:44,5213.0,low_is_left,1.0,True,True,True
-2701,Y. Bounou,Morocco,Goalkeeper,GK,1.0,5,GK:5,5213.0,low_is_left,1.0,True,True,True
+2700,A. Jahanbakhsh,Iran,Midfielder,RW,1.0,9,RW:9,1372.0,low_is_left,1.0,False,True,False
+2701,Bono,Morocco,Goalkeeper,GK,1.0,44,GK:44,5213.0,low_is_left,1.0,False,True,False
+2701,Y. Bounou,Morocco,Goalkeeper,GK,1.0,5,GK:5,5213.0,low_is_left,1.0,False,True,False
 2703,A. Tagnaouti,Morocco,Goalkeeper,GK,1.0,11,GK:11,999.0,low_is_left,1.0,True,True,True
 2722,A. El Kaabi,Morocco,Attacker,RW,0.975,40,RW:39 | ST:1,3622.0,low_is_left,1.0,True,True,True
 2724,L. Digne,France,Defender,LB,0.9722222222222222,36,LB:35 | RB:1,3617.0,low_is_left,1.0,True,True,True
-2741,M. Ryan,Australia,Goalkeeper,GK,1.0,36,GK:36,4411.0,low_is_left,1.0,True,True,True
-2742,M. Degenek,Australia,Defender,RB,1.0,19,RB:19,2452.0,low_is_left,1.0,True,True,True
-2749,J. Irvine,Australia,Midfielder,AM,0.8571428571428571,21,AM:18 | DM:2 | CM:1,3334.0,low_is_left,1.0,True,True,True
+2741,M. Ryan,Australia,Goalkeeper,GK,1.0,36,GK:36,4411.0,low_is_left,1.0,False,True,False
+2742,M. Degenek,Australia,Defender,RB,1.0,19,RB:19,2452.0,low_is_left,1.0,False,True,False
+2749,J. Irvine,Australia,Midfielder,AM,0.8571428571428571,21,AM:18 | DM:2 | CM:1,3334.0,low_is_left,1.0,False,True,False
 2755,A. Mabil,Australia,Midfielder,AM,0.8421052631578947,19,AM:16 | RW:3,1791.0,low_is_left,0.979591836734694,True,True,True
 2763,M. Pasalic,Croatia,Midfielder,CM,0.5333333333333333,30,CM:16 | AM:7 | RW:5 | DM:1 | ST:1,2983.0,low_is_left,1.0,True,False,False
 2803,N. Elvedi,Switzerland,Defender,RCB,0.5,42,RCB:21 | RB:20 | LCB:1,4148.0,low_is_left,1.0,True,False,False
 2807,R. Freuler,Switzerland,Midfielder,AM,0.8095238095238095,42,AM:34 | DM:5 | CM:3,4049.0,low_is_left,1.0,True,True,True
-2810,D. Zakaria,Switzerland,Defender,RB,0.6944444444444444,36,RB:25 | LCB:8 | RCB:3,5608.0,low_is_left,1.0,True,True,True
-2851,K. Nordfeldt,Sweden,Goalkeeper,GK,1.0,31,GK:31,3870.0,low_is_left,1.0,True,True,True
+2810,D. Zakaria,Switzerland,Defender,RB,0.6944444444444444,36,RB:25 | LCB:8 | RCB:3,5608.0,low_is_left,1.0,False,True,False
+2851,K. Nordfeldt,Sweden,Goalkeeper,GK,1.0,31,GK:31,3870.0,low_is_left,1.0,False,True,False
 2860,K. Sema,Sweden,Midfielder,AM,0.7142857142857143,14,AM:10 | LB:2 | DM:2,1257.0,low_is_left,1.0,False,True,False
 2864,A. Isak,Sweden,Attacker,RW,0.7058823529411765,17,RW:12 | ST:4 | LW:1,1644.0,low_is_left,1.0,True,True,True
-2869,E. Alvarez,Mexico,Defender,RB,0.8666666666666667,15,RB:13 | RCB:2,2102.0,low_is_left,1.0,True,True,True
-2869,Edson Álvarez,Mexico,Defender,RB,0.4,5,RB:2 | RCB:2 | LCB:1,2102.0,low_is_left,1.0,True,False,False
-2873,C. Montes,Mexico,Defender,RB,0.7941176470588235,34,RB:27 | RCB:6 | LCB:1,3588.0,low_is_left,1.0,True,True,True
-2878,J. Sanchez,Mexico,Defender,RB,0.9666666666666667,30,RB:29 | LB:1,3941.0,low_is_left,1.0,True,True,True
-2878,J. Sánchez,Mexico,Defender,RB,1.0,3,RB:3,3941.0,low_is_left,1.0,True,True,True
-2879,R. Alvarado,Mexico,Attacker,RW,0.9736842105263158,38,RW:37 | RB:1,4012.0,low_is_left,1.0,True,True,True
-2881,J. Gallardo,Mexico,Defender,RB,0.8409090909090909,44,RB:37 | LB:7,5035.0,low_is_left,1.0,True,True,True
-2887,R. Jimenez,Mexico,Attacker,RW,0.9142857142857143,35,RW:32 | ST:3,3693.0,low_is_left,1.0,True,True,True
-2887,R. Jiménez,Mexico,Attacker,ST,0.8,5,ST:4 | RW:1,3693.0,low_is_left,1.0,True,True,True
-2889,A. Vega,Mexico,Attacker,RW,0.84,25,RW:21 | LW:4,2659.0,low_is_left,1.0,True,True,True
+2869,E. Alvarez,Mexico,Defender,RB,0.8666666666666667,15,RB:13 | RCB:2,2102.0,low_is_left,1.0,False,True,False
+2869,Edson Álvarez,Mexico,Defender,RB,0.4,5,RB:2 | RCB:2 | LCB:1,2102.0,low_is_left,1.0,False,False,False
+2873,C. Montes,Mexico,Defender,RB,0.7941176470588235,34,RB:27 | RCB:6 | LCB:1,3588.0,low_is_left,1.0,False,True,False
+2878,J. Sanchez,Mexico,Defender,RB,0.9666666666666667,30,RB:29 | LB:1,3941.0,low_is_left,1.0,False,True,False
+2878,J. Sánchez,Mexico,Defender,RB,1.0,3,RB:3,3941.0,low_is_left,1.0,False,True,False
+2879,R. Alvarado,Mexico,Attacker,RW,0.9736842105263158,38,RW:37 | RB:1,4012.0,low_is_left,1.0,False,True,False
+2881,J. Gallardo,Mexico,Defender,RB,0.8409090909090909,44,RB:37 | LB:7,5035.0,low_is_left,1.0,False,True,False
+2887,R. Jimenez,Mexico,Attacker,RW,0.9142857142857143,35,RW:32 | ST:3,3693.0,low_is_left,1.0,False,True,False
+2887,R. Jiménez,Mexico,Attacker,ST,0.8,5,ST:4 | RW:1,3693.0,low_is_left,1.0,False,True,False
+2889,A. Vega,Mexico,Attacker,RW,0.84,25,RW:21 | LW:4,2659.0,low_is_left,1.0,False,True,False
 2890,Jo Hyeon-Woo,South Korea,Goalkeeper,GK,1.0,41,GK:41,4702.0,low_is_left,1.0,False,True,False
 2892,Kim Seung-Gyu,South Korea,Goalkeeper,GK,1.0,30,GK:30,3475.0,low_is_left,1.0,True,True,True
-2897,Kim Min-Jae,South Korea,Defender,RCB,0.6521739130434783,23,RCB:15 | LCB:8,3693.0,low_is_left,1.0,True,True,True
-2901,Hwang In-Beom,South Korea,Midfielder,CM,0.5555555555555556,18,CM:10 | DM:7 | RW:1,3073.0,low_is_left,1.0,True,False,False
-2906,Lee Jae-Sung,South Korea,Attacker,ST,0.53125,32,ST:17 | RW:15,4217.0,low_is_left,1.0,True,False,False
+2897,Kim Min-Jae,South Korea,Defender,RCB,0.6521739130434783,23,RCB:15 | LCB:8,3693.0,low_is_left,1.0,False,True,False
+2901,Hwang In-Beom,South Korea,Midfielder,CM,0.5555555555555556,18,CM:10 | DM:7 | RW:1,3073.0,low_is_left,1.0,False,False,False
+2906,Lee Jae-Sung,South Korea,Attacker,ST,0.53125,32,ST:17 | RW:15,4217.0,low_is_left,1.0,False,False,False
 2909,Paik Seung-Ho,South Korea,Midfielder,AM,0.9487179487179487,39,AM:37 | DM:1 | CM:1,4329.0,low_is_left,1.0,True,True,True
 2912,Kim Moon-Hwan,South Korea,Midfielder,RB,1.0,28,RB:28,2198.0,low_is_left,1.0,False,True,False
 2920,T. Castagne,Belgium,Defender,RB,0.967741935483871,31,RB:30 | LB:1,3035.0,low_is_left,1.0,True,True,True
 2926,Y. Tielemans,Belgium,Midfielder,DM,0.7272727272727273,33,DM:24 | CM:9,3751.0,low_is_left,1.0,True,True,True
-2932,J. Pickford,England,Goalkeeper,GK,1.0,45,GK:45,5413.0,low_is_left,1.0,True,True,True
+2932,J. Pickford,England,Goalkeeper,GK,1.0,45,GK:45,5413.0,low_is_left,1.0,False,True,False
 2937,D. Rice,England,Midfielder,CM,0.509090909090909,55,CM:28 | DM:26 | RB:1,5332.0,low_is_left,1.0,True,False,False
 2945,D. Bronn,Tunisia,Defender,RB,1.0,14,RB:14,1880.0,low_is_left,0.9591836734693876,True,True,True
 2968,O. Mosquera,Panama,Goalkeeper,GK,1.0,44,GK:44,4112.0,low_is_left,1.0,True,True,True
-2971,F. Escobar,Panama,Defender,RCB,1.0,11,RCB:11,1381.0,low_is_left,1.0,True,True,True
+2971,F. Escobar,Panama,Defender,RCB,1.0,11,RCB:11,1381.0,low_is_left,1.0,False,True,False
 2973,A. Murillo,Panama,Midfielder,RB,1.0,2,RB:2,3931.0,low_is_left,0.9791666666666666,True,True,True
 2973,M. Murillo,Panama,Midfielder,RB,0.918918918918919,37,RB:34 | LCB:1 | RCB:1 | LB:1,3931.0,low_is_left,0.9791666666666666,True,True,True
-2975,C. Blackman,Panama,Midfielder,RB,0.9333333333333333,30,RB:28 | LB:2,2655.0,low_is_left,1.0,False,True,False
-2977,A. Godoy,Panama,Midfielder,AM,0.7878787878787878,33,AM:26 | CM:6 | DM:1,3987.0,low_is_left,1.0,True,True,True
+2975,C. Blackman,Panama,Midfielder,RB,0.9333333333333333,30,RB:28 | LB:2,2655.0,low_is_left,1.0,True,True,True
+2977,A. Godoy,Panama,Midfielder,AM,0.7878787878787878,33,AM:26 | CM:6 | DM:1,3987.0,low_is_left,1.0,False,True,False
 2979,J. Rodriguez,Panama,Attacker,LW,0.6666666666666666,3,LW:2 | RW:1,4088.0,low_is_left,1.0,True,True,True
 2979,J. Rodríguez,Panama,Attacker,RW,1.0,2,RW:2,4088.0,low_is_left,1.0,True,True,True
 2979,Puma,Panama,Attacker,RW,1.0,38,RW:38,4088.0,low_is_left,1.0,True,True,True
-2983,J. Fajardo,Panama,Attacker,RW,1.0,21,RW:21,3495.0,low_is_left,1.0,True,True,True
+2983,J. Fajardo,Panama,Attacker,RW,1.0,21,RW:21,3495.0,low_is_left,1.0,False,True,False
 2986,E. Mendy,Senegal,Goalkeeper,GK,1.0,44,GK:44,4203.0,low_is_left,1.0,True,True,True
 2990,I. Gueye,Senegal,Midfielder,CM,0.8888888888888888,36,CM:32 | DM:4,3395.0,low_is_left,0.9803921568627452,True,True,True
 3033,C. Bakambu,Congo DR,Attacker,RW,0.9444444444444444,18,RW:17 | ST:1,1666.0,low_is_left,1.0,True,True,True
 3034,M. Elia,Congo DR,Attacker,RW,0.8461538461538461,13,RW:11 | LW:2,1221.0,low_is_left,1.0,True,True,True
 3246,N. Pepe,Ivory Coast,Midfielder,RW,0.9473684210526315,38,RW:36 | ST:2,3709.0,low_is_left,1.0,True,True,True
-3275,R. Williams,South Africa,Goalkeeper,GK,1.0,48,GK:48,5506.0,low_is_left,1.0,True,True,True
+3275,R. Williams,South Africa,Goalkeeper,GK,1.0,48,GK:48,5506.0,low_is_left,1.0,False,True,False
 3287,T. Mokoena,South Africa,Midfielder,AM,0.7837837837837838,37,AM:29 | DM:5 | CM:3,4078.0,low_is_left,1.0,True,True,True
 3428,J. Ayew,Ghana,Attacker,RW,0.8275862068965517,29,RW:24 | LW:3 | ST:2,2952.0,low_is_left,1.0,True,True,True
 3608,K. Sibo,Ghana,Midfielder,DM,0.5909090909090909,22,DM:13 | CM:8 | AM:1,2397.0,low_is_left,1.0,True,False,False
@@ -307,31 +307,31 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 4414,O. Benbot,Algeria,Goalkeeper,GK,1.0,11,GK:11,1014.0,low_is_left,1.0,True,True,True
 4561,Z. Belaid,Algeria,Defender,RB,0.8571428571428571,7,RB:6 | RCB:1,924.0,low_is_left,1.0,True,True,True
 5994,J. Carrascal,Colombia,Midfielder,AM,0.75,32,AM:24 | CM:7 | RW:1,3100.0,low_is_left,1.0,True,True,True
-5996,E. Fernandez,Argentina,Midfielder,AM,0.5,56,AM:28 | CM:26 | RW:1 | DM:1,7468.0,low_is_left,1.0,True,False,False
-5996,E. Fernández,Argentina,Midfielder,CM,0.6666666666666666,6,CM:4 | AM:2,7468.0,low_is_left,1.0,True,True,True
+5996,E. Fernandez,Argentina,Midfielder,AM,0.5,56,AM:28 | CM:26 | RW:1 | DM:1,7468.0,low_is_left,1.0,False,False,False
+5996,E. Fernández,Argentina,Midfielder,CM,0.6666666666666666,6,CM:4 | AM:2,7468.0,low_is_left,1.0,False,True,False
 6002,E. Palacios,Argentina,Defender,RB,1.0,19,RB:19,2009.0,low_is_left,1.0,True,True,True
-6005,J. Quintero,Colombia,Midfielder,AM,0.9523809523809523,21,AM:20 | RW:1,3936.0,low_is_left,1.0,True,True,True
-6009,J. Alvarez,Argentina,Midfielder,RW,0.6041666666666666,48,RW:29 | ST:18 | LW:1,5662.0,low_is_left,1.0,True,True,True
-6067,T. Almada,Argentina,Midfielder,CM,0.7391304347826086,23,CM:17 | AM:3 | LW:1 | ST:1 | RW:1,2644.0,low_is_left,1.0,True,True,True
-6168,O. Alderete,Paraguay,Defender,RB,0.625,40,RB:25 | LCB:14 | RCB:1,4731.0,low_is_left,1.0,True,True,True
+6005,J. Quintero,Colombia,Midfielder,AM,0.9523809523809523,21,AM:20 | RW:1,3936.0,low_is_left,1.0,False,True,False
+6009,J. Alvarez,Argentina,Midfielder,RW,0.6041666666666666,48,RW:29 | ST:18 | LW:1,5662.0,low_is_left,1.0,False,True,False
+6067,T. Almada,Argentina,Midfielder,CM,0.7391304347826086,23,CM:17 | AM:3 | LW:1 | ST:1 | RW:1,2644.0,low_is_left,1.0,False,True,False
+6168,O. Alderete,Paraguay,Defender,RB,0.625,40,RB:25 | LCB:14 | RCB:1,4731.0,low_is_left,1.0,False,True,False
 6231,F. Medina,Argentina,Defender,RB,0.4444444444444444,27,RB:12 | LB:10 | LCB:5,2601.0,low_is_left,1.0,True,False,False
 6231,Facundo Medina,Argentina,Defender,RB,1.0,1,RB:1,2601.0,low_is_left,1.0,True,True,True
-6236,A. Cubas,Paraguay,Midfielder,CM,0.5945945945945946,37,CM:22 | AM:14 | DM:1,5691.0,low_is_left,1.0,True,False,False
-6503,N. Molina,Argentina,Defender,RB,1.0,31,RB:31,4360.0,low_is_left,1.0,True,True,True
+6236,A. Cubas,Paraguay,Midfielder,CM,0.5945945945945946,37,CM:22 | AM:14 | DM:1,5691.0,low_is_left,1.0,False,False,False
+6503,N. Molina,Argentina,Defender,RB,1.0,31,RB:31,4360.0,low_is_left,1.0,False,True,False
 6610,M. Senesi,Argentina,Midfielder,RB,0.9736842105263158,38,RB:37 | LCB:1,3677.0,low_is_left,1.0,True,True,True
-6716,A. Mac Allister,Argentina,Midfielder,CM,0.5882352941176471,51,CM:30 | DM:17 | AM:4,5945.0,low_is_left,1.0,True,False,False
+6716,A. Mac Allister,Argentina,Midfielder,CM,0.5882352941176471,51,CM:30 | DM:17 | AM:4,5945.0,low_is_left,1.0,False,False,False
 6808,J. Italiano,Australia,Defender,RB,1.0,26,RB:26,2476.0,low_is_left,1.0,True,True,True
 6865,K. Barbarouses,New Zealand,Attacker,RW,1.0,16,RW:16,1664.0,low_is_left,1.0,True,True,True
 6870,P. Izzo,Australia,Goalkeeper,GK,1.0,26,GK:26,2703.0,low_is_left,1.0,True,True,True
-6904,C. Metcalfe,Australia,Midfielder,RW,0.42857142857142855,7,RW:3 | ST:2 | CM:1 | AM:1,2254.0,low_is_left,1.0,True,False,False
+6904,C. Metcalfe,Australia,Midfielder,RW,0.42857142857142855,7,RW:3 | ST:2 | CM:1 | AM:1,2254.0,low_is_left,1.0,False,False,False
 6932,C. Elliot,New Zealand,Defender,RB,0.9,20,RB:18 | LCB:2,1834.0,low_is_left,1.0,True,True,True
 6934,A. Rufer,New Zealand,Midfielder,AM,0.9565217391304348,23,AM:22 | CM:1,2486.0,low_is_left,1.0,True,True,True
-6935,S. Singh,New Zealand,Midfielder,AM,1.0,11,AM:11,2011.0,low_is_left,1.0,True,True,True
+6935,S. Singh,New Zealand,Midfielder,AM,1.0,11,AM:11,2011.0,low_is_left,1.0,False,True,False
 6938,B. Waine,New Zealand,Attacker,RW,1.0,22,RW:22,2078.0,low_is_left,1.0,True,True,True
-7050,A. O'Neill,Australia,Midfielder,AM,0.8529411764705882,34,AM:29 | DM:3 | CM:2,4547.0,low_is_left,1.0,True,True,True
+7050,A. O'Neill,Australia,Midfielder,AM,0.8529411764705882,34,AM:29 | DM:3 | CM:2,4547.0,low_is_left,1.0,False,True,False
 7090,M. Svoboda,Austria,Defender,RB,1.0,28,RB:28,2613.0,low_is_left,1.0,True,True,True
 7197,A. Andrade,Panama,Defender,RB,0.7142857142857143,42,RB:30 | LCB:10 | LB:2,3958.0,low_is_left,1.0,True,True,True
-7318,A. Dedic,Bosnia & Herzegovina,Defender,RB,1.0,39,RB:39,4567.0,low_is_left,1.0,True,True,True
+7318,A. Dedic,Bosnia & Herzegovina,Defender,RB,1.0,39,RB:39,4567.0,low_is_left,1.0,False,True,False
 7327,A. Prass,Austria,Defender,RB,0.6923076923076923,13,RB:9 | LB:3 | LCB:1,1546.0,low_is_left,1.0,True,True,True
 7328,N. Seiwald,Austria,Midfielder,CM,0.7948717948717948,39,CM:31 | DM:4 | AM:2 | RB:2,3584.0,low_is_left,1.0,True,True,True
 7332,L. Sucic,Croatia,Midfielder,RW,0.4166666666666667,12,RW:5 | CM:5 | AM:2,1515.0,low_is_left,1.0,True,False,False
@@ -341,50 +341,50 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 7598,P. Pentz,Austria,Goalkeeper,GK,1.0,37,GK:37,3448.0,low_is_left,1.0,True,True,True
 7722,S. Kalajdzic,Austria,Attacker,RW,1.0,16,RW:16,1505.0,low_is_left,1.0,True,True,True
 8445,D. Batubinsika,Congo DR,Defender,RB,1.0,17,RB:17,1502.0,low_is_left,1.0,True,True,True
-8450,A. Seck,Senegal,Defender,RB,0.8421052631578947,19,RB:16 | RCB:3,2094.0,low_is_left,1.0,False,True,False
+8450,A. Seck,Senegal,Defender,RB,0.8421052631578947,19,RB:16 | RCB:3,2094.0,low_is_left,1.0,True,True,True
 8486,E. Smith,Sweden,Defender,RB,0.9655172413793104,29,RB:28 | RCB:1,2707.0,low_is_left,1.0,True,True,True
-8489,J. David,Canada,Attacker,RW,0.8611111111111112,36,RW:31 | ST:5,3667.0,low_is_left,1.0,True,True,True
+8489,J. David,Canada,Attacker,RW,0.8611111111111112,36,RW:31 | ST:5,3667.0,low_is_left,1.0,False,True,False
 8492,A. Sorloth,Norway,Attacker,RW,0.8064516129032258,31,RW:25 | ST:6,3528.0,low_is_left,1.0,True,True,True
 8492,A. Sørloth,Norway,Attacker,RW,1.0,1,RW:1,3528.0,low_is_left,1.0,True,True,True
-8601,F. Pierrot,Haiti,Attacker,RW,0.8571428571428571,21,RW:18 | ST:3,3111.0,low_is_left,1.0,True,True,True
+8601,F. Pierrot,Haiti,Attacker,RW,0.8571428571428571,21,RW:18 | ST:3,3111.0,low_is_left,1.0,False,True,False
 8794,G. Hirst,Scotland,Attacker,RW,1.0,26,RW:26,2535.0,low_is_left,1.0,True,True,True
 9026,N. Vasilj,Bosnia & Herzegovina,Goalkeeper,GK,1.0,40,GK:40,3840.0,low_is_left,1.0,True,True,True
 10097,Ederson,Brazil,Midfielder,CM,0.8378378378378378,37,CM:31 | AM:4 | DM:2,3199.0,low_is_left,1.0,True,True,True
-10135,Bruno Guimaraes,Brazil,Midfielder,CM,0.8809523809523809,42,CM:37 | AM:3 | DM:2,5540.0,low_is_left,1.0,True,True,True
-12303,R. Ade,Haiti,Defender,RB,0.8260869565217391,46,RB:38 | RCB:7 | LCB:1,7111.0,low_is_left,1.0,True,True,True
-12303,R. Adé,Haiti,Defender,RCB,1.0,3,RCB:3,7111.0,low_is_left,1.0,True,True,True
-13151,J. Portilla,Colombia,Midfielder,AM,1.0,23,AM:23,3408.0,low_is_left,1.0,True,True,True
-13376,J. Campaz,Colombia,Midfielder,AM,0.8518518518518519,27,AM:23 | RW:3 | LW:1,3722.0,low_is_left,1.0,True,True,True
+10135,Bruno Guimaraes,Brazil,Midfielder,CM,0.8809523809523809,42,CM:37 | AM:3 | DM:2,5540.0,low_is_left,1.0,False,True,False
+12303,R. Ade,Haiti,Defender,RB,0.8260869565217391,46,RB:38 | RCB:7 | LCB:1,7111.0,low_is_left,1.0,False,True,False
+12303,R. Adé,Haiti,Defender,RCB,1.0,3,RCB:3,7111.0,low_is_left,1.0,False,True,False
+13151,J. Portilla,Colombia,Midfielder,AM,1.0,23,AM:23,3408.0,low_is_left,1.0,False,True,False
+13376,J. Campaz,Colombia,Midfielder,AM,0.8518518518518519,27,AM:23 | RW:3 | LW:1,3722.0,low_is_left,1.0,False,True,False
 13571,W. Ditta,Colombia,Defender,RB,0.9411764705882353,51,RB:48 | RCB:3,5555.0,low_is_left,1.0,True,True,True
-13708,J. Arias,Colombia,Midfielder,CM,0.5416666666666666,48,CM:26 | RW:13 | ST:4 | AM:4 | DM:1,7572.0,low_is_left,1.0,True,False,False
-13736,D. Munoz,Colombia,Defender,RB,0.98,50,RB:49 | LCB:1,5749.0,low_is_left,1.0,True,True,True
-13736,D. Muñoz,Colombia,Defender,RB,1.0,1,RB:1,5749.0,low_is_left,1.0,True,True,True
+13708,J. Arias,Colombia,Midfielder,CM,0.5416666666666666,48,CM:26 | RW:13 | ST:4 | AM:4 | DM:1,7572.0,low_is_left,1.0,False,False,False
+13736,D. Munoz,Colombia,Defender,RB,0.98,50,RB:49 | LCB:1,5749.0,low_is_left,1.0,False,True,False
+13736,D. Muñoz,Colombia,Defender,RB,1.0,1,RB:1,5749.0,low_is_left,1.0,False,True,False
 14268,I. Pandur,Croatia,Goalkeeper,GK,1.0,48,GK:48,4320.0,low_is_left,1.0,True,True,True
-14301,S. Radeljic,Bosnia & Herzegovina,Defender,RB,0.9354838709677419,31,RB:29 | RCB:1 | LCB:1,3766.0,low_is_left,1.0,True,True,True
+14301,S. Radeljic,Bosnia & Herzegovina,Defender,RB,0.9354838709677419,31,RB:29 | RCB:1 | LCB:1,3766.0,low_is_left,1.0,False,True,False
 14379,C. Ndiaye,Senegal,Attacker,RW,1.0,24,RW:24,2241.0,low_is_left,1.0,True,True,True
 14395,K. Jakic,Croatia,Midfielder,CM,0.4,20,CM:8 | RB:4 | DM:4 | AM:3 | RW:1,1860.0,low_is_left,1.0,True,False,False
 14701,J. Sutalo,Croatia,Defender,RB,0.8,25,RB:20 | RCB:5,2742.0,low_is_left,1.0,True,True,True
-15286,M. Tamari,Jordan,Midfielder,CM,0.4666666666666667,30,CM:14 | RW:8 | AM:8,3584.0,low_is_left,1.0,True,False,False
+15286,M. Tamari,Jordan,Midfielder,CM,0.4666666666666667,30,CM:14 | RW:8 | AM:8,3584.0,low_is_left,1.0,False,False,False
 15304,Vozinha,Cape Verde Islands,Goalkeeper,GK,1.0,17,GK:17,1560.0,low_is_left,1.0,False,True,False
 15769,F. Putros,Iraq,Defender,RB,1.0,6,RB:6,961.0,low_is_left,1.0,False,True,False
-16360,A. Franco,Ecuador,Defender,RB,0.9636363636363636,55,RB:53 | LCB:2,8477.0,low_is_left,1.0,True,True,True
-16367,W. Pacho,Ecuador,Defender,LCB,0.8958333333333334,48,LCB:43 | RCB:2 | LB:2 | RB:1,6579.0,low_is_left,1.0,True,True,True
-16367,Willian Pacho,Ecuador,Defender,LCB,1.0,2,LCB:2,6579.0,low_is_left,1.0,True,True,True
-16369,G. Plata,Ecuador,Attacker,RW,0.9722222222222222,36,RW:35 | ST:1,5764.0,low_is_left,1.0,True,True,True
-16470,J. Alcivar,Ecuador,Midfielder,AM,0.9714285714285714,35,AM:34 | DM:1,4452.0,low_is_left,1.0,True,True,True
-16482,R. Aguirre,Uruguay,Attacker,RW,0.8787878787878788,33,RW:29 | ST:4,3664.0,low_is_left,1.0,True,True,True
-16482,Rodrigo Aguirre,Uruguay,Attacker,RW,1.0,1,RW:1,3664.0,low_is_left,1.0,True,True,True
+16360,A. Franco,Ecuador,Defender,RB,0.9636363636363636,55,RB:53 | LCB:2,8477.0,low_is_left,1.0,False,True,False
+16367,W. Pacho,Ecuador,Defender,LCB,0.8958333333333334,48,LCB:43 | RCB:2 | LB:2 | RB:1,6579.0,low_is_left,1.0,False,True,False
+16367,Willian Pacho,Ecuador,Defender,LCB,1.0,2,LCB:2,6579.0,low_is_left,1.0,False,True,False
+16369,G. Plata,Ecuador,Attacker,RW,0.9722222222222222,36,RW:35 | ST:1,5764.0,low_is_left,1.0,False,True,False
+16470,J. Alcivar,Ecuador,Midfielder,AM,0.9714285714285714,35,AM:34 | DM:1,4452.0,low_is_left,1.0,False,True,False
+16482,R. Aguirre,Uruguay,Attacker,RW,0.8787878787878788,33,RW:29 | ST:4,3664.0,low_is_left,1.0,False,True,False
+16482,Rodrigo Aguirre,Uruguay,Attacker,RW,1.0,1,RW:1,3664.0,low_is_left,1.0,False,True,False
 16590,J. Caicedo,Ecuador,Attacker,RW,1.0,18,RW:18,1886.0,low_is_left,1.0,True,True,True
-16642,G. Valle,Ecuador,Goalkeeper,GK,1.0,37,GK:37,3830.0,low_is_left,1.0,True,True,True
+16642,G. Valle,Ecuador,Goalkeeper,GK,1.0,37,GK:37,3830.0,low_is_left,1.0,False,True,False
 16797,M. El Shenawy,Egypt,Goalkeeper,GK,1.0,16,GK:16,1991.0,low_is_left,1.0,True,True,True
 16804,Y. Ibrahim,Egypt,Defender,RCB,0.7666666666666667,30,RCB:23 | LCB:6 | RB:1,3591.0,low_is_left,1.0,True,True,True
-16805,R. Rabia,Egypt,Defender,RB,0.75,12,RB:9 | LCB:2 | RCB:1,1730.0,low_is_left,1.0,False,True,False
-16813,H. Fathy,Egypt,Defender,RB,0.5833333333333334,12,RB:7 | LCB:4 | RCB:1,1853.0,low_is_left,1.0,False,False,False
+16805,R. Rabia,Egypt,Defender,RB,0.75,12,RB:9 | LCB:2 | RCB:1,1730.0,low_is_left,1.0,True,True,True
+16813,H. Fathy,Egypt,Defender,RB,0.5833333333333334,12,RB:7 | LCB:4 | RCB:1,1853.0,low_is_left,1.0,True,False,False
 16831,E. M. Soliman,Egypt,Goalkeeper,GK,1.0,16,GK:16,1406.0,low_is_left,1.0,True,True,True
 16841,M. Lasheen,Egypt,Midfielder,DM,0.5428571428571428,35,DM:19 | CM:11 | AM:5,3638.0,low_is_left,0.9814814814814816,True,False,False
 16871,Zizo,Egypt,Attacker,RW,0.8181818181818182,22,RW:18 | ST:3 | LW:1,2298.0,low_is_left,1.0,True,True,True
 17269,E. Ashour,Egypt,Midfielder,CM,0.47368421052631576,19,CM:9 | AM:8 | ST:1 | RW:1,2153.0,low_is_left,1.0,True,False,False
-18110,M. Crocombe,New Zealand,Goalkeeper,GK,1.0,26,GK:26,3338.0,low_is_left,1.0,True,True,True
+18110,M. Crocombe,New Zealand,Goalkeeper,GK,1.0,26,GK:26,3338.0,low_is_left,1.0,False,True,False
 18592,I. Ndiaye,Senegal,Midfielder,AM,0.8205128205128205,39,AM:32 | RW:5 | CM:2,3765.0,low_is_left,0.9803921568627452,True,True,True
 18776,C. Soyuncu,Türkiye,Defender,LCB,0.4,10,LCB:4 | RCB:4 | LB:1 | RB:1,1302.0,low_is_left,1.0,True,False,False
 18814,I. Diop,Morocco,Defender,RCB,0.6666666666666666,18,RCB:12 | RB:6,2064.0,low_is_left,1.0,True,True,True
@@ -393,22 +393,22 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 18846,A. Wan-Bissaka,Congo DR,Defender,RB,1.0,31,RB:31,3249.0,low_is_left,0.9607843137254902,True,True,True
 18861,N. Ake,Netherlands,Defender,LCB,0.47368421052631576,19,LCB:9 | LB:8 | RCB:2,2274.0,low_is_left,1.0,True,False,False
 18861,N. Aké,Netherlands,Defender,RB,1.0,1,RB:1,2274.0,low_is_left,1.0,True,True,True
-18931,C. Wood,New Zealand,Attacker,RW,1.0,15,RW:15,2020.0,low_is_left,1.0,True,True,True
+18931,C. Wood,New Zealand,Attacker,RW,1.0,15,RW:15,2020.0,low_is_left,1.0,False,True,False
 18938,A. Jones,Canada,Defender,RB,1.0,22,RB:22,1996.0,low_is_left,0.9818181818181818,True,True,True
 18942,Y. Valery,Tunisia,Midfielder,RB,1.0,34,RB:34,3912.0,low_is_left,1.0,True,True,True
 18961,D. Burn,England,Defender,LB,0.46153846153846156,39,LB:18 | RCB:12 | RB:7 | LCB:2,3682.0,low_is_left,1.0,True,False,False
 18967,L. Ostigard,Norway,Defender,RB,0.967741935483871,31,RB:30 | LCB:1,3041.0,low_is_left,1.0,True,True,True
-18970,P. Gross,Germany,Midfielder,CM,0.75,28,CM:21 | AM:7,3363.0,low_is_left,1.0,True,True,True
-18970,P. Groß,Germany,Midfielder,AM,1.0,5,AM:5,3363.0,low_is_left,1.0,True,True,True
+18970,P. Gross,Germany,Midfielder,CM,0.75,28,CM:21 | AM:7,3363.0,low_is_left,1.0,False,True,False
+18970,P. Groß,Germany,Midfielder,AM,1.0,5,AM:5,3363.0,low_is_left,1.0,False,True,False
 18979,V. Gyökeres,Sweden,Attacker,ST,0.5909090909090909,44,ST:26 | RW:18,4662.0,low_is_left,1.0,True,False,False
 18997,L. Bacuna,Curaçao,Midfielder,AM,0.5526315789473685,38,AM:21 | CM:9 | RW:5 | RB:2 | DM:1,4039.0,low_is_left,1.0,True,False,False
 18997,Leandro Bacuna,Curaçao,Midfielder,AM,0.6666666666666666,3,AM:2 | RB:1,4039.0,low_is_left,1.0,True,True,True
-19047,J. Bacuna,Curaçao,Midfielder,AM,0.5789473684210527,19,AM:11 | CM:5 | RW:2 | DM:1,2296.0,low_is_left,1.0,True,False,False
+19047,J. Bacuna,Curaçao,Midfielder,AM,0.5789473684210527,19,AM:11 | CM:5 | RW:2 | DM:1,2296.0,low_is_left,1.0,False,False,False
 19066,G. Hanley,Scotland,Defender,RB,1.0,23,RB:23,2385.0,low_is_left,1.0,True,True,True
 19077,K. McLean,Scotland,Midfielder,AM,0.5,42,AM:21 | CM:12 | DM:6 | RB:3,4702.0,low_is_left,1.0,True,False,False
 19088,D. Henderson,England,Goalkeeper,GK,1.0,52,GK:52,4803.0,low_is_left,1.0,True,True,True
 19170,M. Rogers,England,Midfielder,CM,0.8679245283018868,53,CM:46 | AM:4 | RW:2 | ST:1,5719.0,low_is_left,1.0,True,True,True
-19172,O. Nyland,Norway,Goalkeeper,GK,1.0,11,GK:11,1410.0,low_is_left,1.0,True,True,True
+19172,O. Nyland,Norway,Goalkeeper,GK,1.0,11,GK:11,1410.0,low_is_left,1.0,False,True,False
 19182,A. Tuanzebe,Congo DR,Defender,RB,0.6521739130434783,23,RB:15 | LCB:6 | RCB:2,2207.0,low_is_left,1.0,True,True,True
 19191,J. McGinn,Scotland,Midfielder,CM,0.8157894736842105,38,CM:31 | DM:6 | AM:1,3656.0,low_is_left,1.0,True,True,True
 19235,D. Spence,England,Defender,LB,0.75,36,LB:27 | RB:7 | LCB:2,3627.0,low_is_left,1.0,True,True,True
@@ -421,17 +421,17 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 19545,R. James,England,Defender,RB,0.9166666666666666,36,RB:33 | RCB:2 | LCB:1,3675.0,low_is_left,1.0,True,True,True
 19549,A. Robinson,USA,Midfielder,LB,0.75,24,LB:18 | RB:6,2360.0,low_is_left,1.0,True,True,True
 19586,E. Eze,England,Midfielder,CM,0.7894736842105263,38,CM:30 | LW:5 | ST:2 | RW:1,3544.0,low_is_left,1.0,True,True,True
-19599,E. Martinez,Argentina,Goalkeeper,GK,1.0,53,GK:53,6597.0,low_is_left,1.0,True,True,True
+19599,E. Martinez,Argentina,Goalkeeper,GK,1.0,53,GK:53,6597.0,low_is_left,1.0,False,True,False
 19614,S. Ezatolahi,Iran,Midfielder,AM,0.8571428571428571,21,AM:18 | CM:3,2565.0,low_is_left,1.0,False,True,False
 19617,M. Olise,France,Midfielder,CM,1.0,52,CM:52,5181.0,low_is_left,1.0,True,True,True
 19720,T. Chalobah,England,Defender,RCB,0.4666666666666667,45,RCB:21 | LCB:17 | RB:7,4219.0,low_is_left,1.0,True,False,False
 19974,I. Toney,England,Attacker,RW,0.7692307692307693,39,RW:30 | ST:9,3612.0,low_is_left,1.0,True,True,True
 19987,D. Hyam,Scotland,Defender,RB,1.0,47,RB:47,4425.0,low_is_left,1.0,True,True,True
-20079,H. Souttar,Australia,Defender,RCB,0.6666666666666666,6,RCB:4 | RB:2,1737.0,low_is_left,1.0,True,True,True
-20457,C. Burgess,Australia,Defender,RB,0.9615384615384616,52,RB:50 | LCB:2,6296.0,low_is_left,1.0,True,True,True
+20079,H. Souttar,Australia,Defender,RCB,0.6666666666666666,6,RCB:4 | RB:2,1737.0,low_is_left,1.0,False,True,False
+20457,C. Burgess,Australia,Defender,RB,0.9615384615384616,52,RB:50 | LCB:2,6296.0,low_is_left,1.0,False,True,False
 20566,Y. Diouf,Senegal,Goalkeeper,GK,1.0,38,GK:38,3784.0,low_is_left,1.0,True,True,True
 20649,Y. Wissa,Congo DR,Attacker,RW,0.7692307692307693,13,RW:10 | ST:3,1426.0,low_is_left,1.0,True,True,True
-20655,J. Duverne,Haiti,Defender,RB,0.6842105263157895,19,RB:13 | RCB:3 | LCB:3,2329.0,low_is_left,1.0,True,True,True
+20655,J. Duverne,Haiti,Defender,RB,0.6842105263157895,19,RB:13 | RCB:3 | LCB:3,2329.0,low_is_left,1.0,False,True,False
 20665,J. Bellegarde,Haiti,Midfielder,CM,0.4444444444444444,27,CM:12 | RW:5 | DM:3 | AM:3 | ST:2 | LW:2,2346.0,low_is_left,1.0,True,False,False
 20696,P. Gueye,Senegal,Midfielder,CM,0.5609756097560976,41,CM:23 | AM:15 | DM:3,3871.0,low_is_left,1.0,True,False,False
 20836,C. Operi,Ivory Coast,Defender,LCB,0.6774193548387096,31,LCB:21 | RB:8 | LB:2,2466.0,low_is_left,1.0,True,True,True
@@ -442,9 +442,9 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 21010,E. Owusu,Ghana,Midfielder,AM,0.7931034482758621,29,AM:23 | CM:5 | DM:1,2694.0,low_is_left,1.0,True,True,True
 21098,J. Kayembe,Congo DR,Defender,LB,0.7272727272727273,33,LB:24 | RB:9,3210.0,low_is_left,1.0,True,True,True
 21101,S. Moutoussamy,Congo DR,Midfielder,AM,0.7837837837837838,37,AM:29 | CM:4 | DM:4,3357.0,low_is_left,1.0,True,True,True
-21138,R. Ait Nouri,Algeria,Defender,LB,1.0,7,LB:7,2887.0,low_is_left,1.0,True,True,True
-21138,R. Ait-Nouri,Algeria,Defender,LB,0.9047619047619048,21,LB:19 | RB:2,2887.0,low_is_left,1.0,True,True,True
-21138,R. Aït-Nouri,Algeria,Defender,LB,1.0,3,LB:3,2887.0,low_is_left,1.0,True,True,True
+21138,R. Ait Nouri,Algeria,Defender,LB,1.0,7,LB:7,2887.0,low_is_left,1.0,False,True,False
+21138,R. Ait-Nouri,Algeria,Defender,LB,0.9047619047619048,21,LB:19 | RB:2,2887.0,low_is_left,1.0,False,True,False
+21138,R. Aït-Nouri,Algeria,Defender,LB,1.0,3,LB:3,2887.0,low_is_left,1.0,False,True,False
 21509,M. Thuram,France,Midfielder,RW,0.8333333333333334,36,RW:30 | ST:6,3269.0,low_is_left,1.0,True,True,True
 21587,E. Skhiri,Tunisia,Defender,RB,0.6842105263157895,19,RB:13 | LCB:3 | RCB:3,2786.0,low_is_left,1.0,True,True,True
 21613,L. Joseph,Haiti,Attacker,RW,1.0,20,RW:20,1976.0,low_is_left,1.0,True,True,True
@@ -452,23 +452,23 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 21996,A. R. Baba,Ghana,Defender,RB,0.8181818181818182,33,RB:27 | LB:6,2760.0,low_is_left,1.0,True,True,True
 22002,G. Konan,Ivory Coast,Defender,RB,0.8108108108108109,37,RB:30 | LB:7,3521.0,low_is_left,1.0,True,True,True
 22090,W. Saliba,France,Defender,RB,0.8703703703703703,54,RB:47 | LCB:6 | RCB:1,4779.0,low_is_left,1.0,True,True,True
-22139,S. Moreira,Cape Verde Islands,Defender,RB,1.0,38,RB:38,8049.0,low_is_left,1.0,True,True,True
+22139,S. Moreira,Cape Verde Islands,Defender,RB,1.0,38,RB:38,8049.0,low_is_left,1.0,False,True,False
 22147,M. Kone,France,Midfielder,AM,0.6216216216216216,37,AM:23 | DM:12 | CM:2,3182.0,low_is_left,1.0,True,True,True
 22149,I. Sangare,Ivory Coast,Midfielder,AM,0.4358974358974359,39,AM:17 | CM:13 | DM:9,3566.0,low_is_left,1.0,True,False,False
 22221,M. Maignan,France,Goalkeeper,GK,1.0,48,GK:48,4748.0,low_is_left,1.0,True,True,True
-22222,Z. Celik,Türkiye,Defender,RB,0.9555555555555556,45,RB:43 | LCB:2,5541.0,low_is_left,1.0,True,True,True
-22224,Gabriel,Brazil,Defender,RCB,0.8431372549019608,51,RCB:43 | RB:7 | LCB:1,6241.0,low_is_left,1.0,True,True,True
+22222,Z. Celik,Türkiye,Defender,RB,0.9555555555555556,45,RB:43 | LCB:2,5541.0,low_is_left,1.0,False,True,False
+22224,Gabriel,Brazil,Defender,RCB,0.8431372549019608,51,RCB:43 | RB:7 | LCB:1,6241.0,low_is_left,1.0,False,True,False
 22236,R. Leao,Portugal,Midfielder,RW,0.5769230769230769,26,RW:15 | ST:10 | LW:1,2271.0,low_is_left,1.0,True,False,False
 22265,N. Da Costa,Cape Verde Islands,Attacker,RW,0.9166666666666666,12,RW:11 | ST:1,1340.0,low_is_left,1.0,True,True,True
 24012,L. Mpasi-Nzau,Congo DR,Goalkeeper,GK,1.0,12,GK:12,1275.0,low_is_left,1.0,True,True,True
-24810,J. Cordoba,Colombia,Attacker,RW,0.9354838709677419,31,RW:29 | ST:2,3377.0,low_is_left,1.0,True,True,True
-24845,J. Ryerson,Norway,Defender,RB,0.9523809523809523,42,RB:40 | LB:2,4416.0,low_is_left,1.0,True,True,True
+24810,J. Cordoba,Colombia,Attacker,RW,0.9354838709677419,31,RW:29 | ST:2,3377.0,low_is_left,1.0,False,True,False
+24845,J. Ryerson,Norway,Defender,RB,0.9523809523809523,42,RB:40 | LB:2,4416.0,low_is_left,1.0,False,True,False
 24866,D. Santos,Brazil,Defender,RB,1.0,22,RB:22,2733.0,low_is_left,1.0,True,True,True
 24866,Douglas Santos,Brazil,Defender,LB,1.0,5,LB:5,2733.0,low_is_left,1.0,True,True,True
-24888,Hwang Hee-Chan,South Korea,Attacker,RW,0.7272727272727273,22,RW:16 | ST:3 | LW:3,2665.0,low_is_left,1.0,True,True,True
+24888,Hwang Hee-Chan,South Korea,Attacker,RW,0.7272727272727273,22,RW:16 | ST:3 | LW:3,2665.0,low_is_left,1.0,False,True,False
 25129,D. Burnic,Bosnia & Herzegovina,Midfielder,AM,1.0,24,AM:24,2366.0,low_is_left,1.0,True,True,True
 25158,D. Raum,Germany,Midfielder,RB,0.9411764705882353,34,RB:32 | LB:1 | LCB:1,3178.0,low_is_left,1.0,True,True,True
-25282,G. Kobel,Switzerland,Goalkeeper,GK,1.0,58,GK:58,6210.0,low_is_left,1.0,True,True,True
+25282,G. Kobel,Switzerland,Goalkeeper,GK,1.0,58,GK:58,6210.0,low_is_left,1.0,False,True,False
 25287,K. Danso,Austria,Defender,RCB,0.7407407407407407,27,RCB:20 | LCB:4 | RB:3,2696.0,low_is_left,1.0,True,True,True
 25287,Kevin Danso,Austria,Defender,RCB,1.0,1,RCB:1,2696.0,low_is_left,1.0,True,True,True
 25297,M. Gregoritsch,Austria,Midfielder,RW,1.0,17,RW:17,1677.0,low_is_left,1.0,True,True,True
@@ -477,7 +477,7 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 25341,D. Luckassen,Ghana,Defender,RB,0.9545454545454546,44,RB:42 | RCB:1 | LCB:1,3512.0,low_is_left,1.0,False,True,False
 25348,V. Darida,Czech Republic,Midfielder,AM,1.0,32,AM:32,2830.0,low_is_left,1.0,True,True,True
 25368,W. Anton,Germany,Defender,RB,0.9387755102040817,49,RB:46 | RCB:3,4910.0,low_is_left,1.0,True,True,True
-25414,J. Yeboah,Ecuador,Attacker,RW,1.0,33,RW:33,3950.0,low_is_left,1.0,True,True,True
+25414,J. Yeboah,Ecuador,Attacker,RW,1.0,33,RW:33,3950.0,low_is_left,1.0,False,True,False
 25416,W. Weghorst,Netherlands,Attacker,RW,1.0,23,RW:23,2332.0,low_is_left,1.0,True,True,True
 25458,D. Lukebakio,Belgium,Midfielder,RW,0.9333333333333333,15,RW:14 | LW:1,1550.0,low_is_left,1.0,True,True,True
 25915,P. Mwene,Austria,Defender,LB,0.8,35,LB:28 | RB:6 | LCB:1,3100.0,low_is_left,1.0,True,True,True
@@ -488,59 +488,59 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 26240,P. Lienhart,Austria,Defender,RB,0.9259259259259259,27,RB:25 | RCB:2,2789.0,low_is_left,0.9482758620689656,True,True,True
 26243,N. Schlotterbeck,Germany,Defender,LCB,0.5789473684210527,38,LCB:22 | RCB:11 | RB:3 | LB:2,3995.0,low_is_left,1.0,True,False,False
 26300,O. Kabak,Türkiye,Defender,RCB,0.5789473684210527,19,RCB:11 | LCB:7 | RB:1,2023.0,low_is_left,1.0,True,False,False
-26315,N. Gonzalez,Argentina,Attacker,LW,0.782608695652174,23,LW:18 | LB:3 | ST:1 | RW:1,3465.0,low_is_left,1.0,True,True,True
-26315,N. González,Argentina,Attacker,RW,1.0,1,RW:1,3465.0,low_is_left,1.0,True,True,True
+26315,N. Gonzalez,Argentina,Attacker,LW,0.782608695652174,23,LW:18 | LB:3 | ST:1 | RW:1,3465.0,low_is_left,1.0,False,True,False
+26315,N. González,Argentina,Attacker,RW,1.0,1,RW:1,3465.0,low_is_left,1.0,False,True,False
 26475,D. Undav,Germany,Attacker,RW,0.6829268292682927,41,RW:28 | ST:13,3927.0,low_is_left,1.0,True,True,True
 28382,H. Tabakovic,Bosnia & Herzegovina,Attacker,RW,0.967741935483871,31,RW:30 | ST:1,2806.0,low_is_left,1.0,True,True,True
-29704,S. Khalilzadeh,Iran,Defender,RB,0.9166666666666666,12,RB:11 | RCB:1,1850.0,low_is_left,1.0,True,True,True
+29704,S. Khalilzadeh,Iran,Defender,RB,0.9166666666666666,12,RB:11 | RCB:1,1850.0,low_is_left,1.0,False,True,False
 29781,M. Ghaedi,Iran,Attacker,RW,1.0,10,RW:10,1475.0,low_is_left,1.0,False,True,False
 30393,A. Lafont,Ivory Coast,Goalkeeper,GK,1.0,33,GK:33,3053.0,low_is_left,1.0,True,True,True
 30424,Ibanez,Brazil,Defender,LCB,0.65,40,LCB:26 | RCB:8 | RB:6,3602.0,low_is_left,1.0,True,True,True
 30432,M. De Roon,Netherlands,Midfielder,CM,0.782608695652174,46,CM:36 | AM:6 | DM:3 | RB:1,3953.0,low_is_left,1.0,True,True,True
-30484,M. Svanberg,Sweden,Midfielder,AM,0.6,10,AM:6 | CM:4,1362.0,low_is_left,1.0,True,True,True
+30484,M. Svanberg,Sweden,Midfielder,AM,0.6,10,AM:6 | CM:4,1362.0,low_is_left,1.0,False,True,False
 30497,Bremer,Brazil,Defender,RB,1.0,30,RB:30,2748.0,low_is_left,1.0,True,True,True
 30504,W. Singo,Ivory Coast,Defender,RB,0.8421052631578947,19,RB:16 | RCB:3,2053.0,low_is_left,1.0,True,True,True
 30521,M. Demiral,Türkiye,Defender,RCB,0.7037037037037037,27,RCB:19 | RB:7 | LCB:1,2392.0,low_is_left,1.0,True,True,True
-30776,C. Romero,Argentina,Defender,RCB,0.8421052631578947,38,RCB:32 | RB:4 | LCB:2,4796.0,low_is_left,1.0,True,True,True
-30776,Cristian Romero,Argentina,Defender,RCB,1.0,1,RCB:1,4796.0,low_is_left,1.0,True,True,True
+30776,C. Romero,Argentina,Defender,RCB,0.8421052631578947,38,RCB:32 | RB:4 | LCB:2,4796.0,low_is_left,1.0,False,True,False
+30776,Cristian Romero,Argentina,Defender,RCB,1.0,1,RCB:1,4796.0,low_is_left,1.0,False,True,False
 30807,S. Fofana,Ivory Coast,Midfielder,CM,0.6,15,CM:9 | AM:6,1947.0,low_is_left,1.0,True,True,True
 30827,M. Erlic,Croatia,Defender,RB,0.5925925925925926,27,RB:16 | RCB:11,2260.0,low_is_left,1.0,True,False,False
 32858,T. Watanabe,Japan,Defender,RB,1.0,38,RB:38,4127.0,low_is_left,1.0,True,True,True
-32862,T. Kubo,Japan,Attacker,RW,1.0,20,RW:20,2833.0,low_is_left,1.0,True,True,True
+32862,T. Kubo,Japan,Attacker,RW,1.0,20,RW:20,2833.0,low_is_left,1.0,False,True,False
 32887,Y. Sugawara,Japan,Midfielder,RB,1.0,31,RB:31,3238.0,low_is_left,1.0,True,True,True
-32893,H. Ito,Japan,Defender,LB,0.5333333333333333,15,LB:8 | LCB:7,4890.0,low_is_left,1.0,True,False,False
-32954,S. Taniguchi,Japan,Defender,RB,0.9705882352941176,34,RB:33 | RCB:1,4218.0,low_is_left,1.0,True,True,True
-32966,A. Tanaka,Japan,Midfielder,CM,0.5238095238095238,21,CM:11 | AM:7 | DM:3,2987.0,low_is_left,1.0,True,False,False
-33165,A. Seko,Japan,Defender,RB,1.0,30,RB:30,3442.0,low_is_left,1.0,True,True,True
+32893,H. Ito,Japan,Defender,LB,0.5333333333333333,15,LB:8 | LCB:7,4890.0,low_is_left,1.0,False,False,False
+32954,S. Taniguchi,Japan,Defender,RB,0.9705882352941176,34,RB:33 | RCB:1,4218.0,low_is_left,1.0,False,True,False
+32966,A. Tanaka,Japan,Midfielder,CM,0.5238095238095238,21,CM:11 | AM:7 | DM:3,2987.0,low_is_left,1.0,False,False,False
+33165,A. Seko,Japan,Defender,RB,1.0,30,RB:30,3442.0,low_is_left,1.0,False,True,False
 33224,D. Maeda,Japan,Attacker,RW,0.5555555555555556,45,RW:25 | ST:11 | LW:9,4394.0,low_is_left,1.0,True,False,False
-33289,K. Ogawa,Japan,Attacker,RW,1.0,18,RW:18,2004.0,low_is_left,1.0,True,True,True
-33321,K. Nakamura,Japan,Midfielder,AM,0.6060606060606061,33,AM:20 | RW:8 | DM:4 | RB:1,3648.0,low_is_left,1.0,True,True,True
-33847,J. Geria,Australia,Defender,RB,1.0,4,RB:4,2245.0,low_is_left,1.0,True,True,True
+33289,K. Ogawa,Japan,Attacker,RW,1.0,18,RW:18,2004.0,low_is_left,1.0,False,True,False
+33321,K. Nakamura,Japan,Midfielder,AM,0.6060606060606061,33,AM:20 | RW:8 | DM:4 | RB:1,3648.0,low_is_left,1.0,False,True,False
+33847,J. Geria,Australia,Defender,RB,1.0,4,RB:4,2245.0,low_is_left,1.0,False,True,False
 33889,K. Sano,Japan,Midfielder,AM,0.6122448979591837,49,AM:30 | CM:12 | DM:7,5049.0,low_is_left,1.0,True,True,True
 34168,Kim Jin-Gyu,South Korea,Midfielder,AM,1.0,1,AM:1,2665.0,low_is_left,1.0,False,True,False
 34168,Kim Jin-gyu,South Korea,Midfielder,AM,1.0,33,AM:33,2665.0,low_is_left,1.0,False,True,False
 34211,Cho Gue-Sung,South Korea,Attacker,RW,0.9545454545454546,22,RW:21 | ST:1,2327.0,low_is_left,1.0,True,True,True
-34374,Song Bum-Keun,South Korea,Goalkeeper,GK,1.0,36,GK:36,2475.0,low_is_left,1.0,False,True,False
-34418,Kim Tae-Hyeon,South Korea,Defender,RB,1.0,33,RB:33,4204.0,low_is_left,1.0,True,True,True
+34374,Song Bum-Keun,South Korea,Goalkeeper,GK,1.0,36,GK:36,2475.0,low_is_left,1.0,True,True,True
+34418,Kim Tae-Hyeon,South Korea,Defender,RB,1.0,33,RB:33,4204.0,low_is_left,1.0,False,True,False
 34431,Lee Dong-Gyeong,South Korea,Attacker,RW,1.0,28,RW:28,2714.0,low_is_left,1.0,False,True,False
 34710,Oh Hyeon-Gyu,South Korea,Attacker,RW,1.0,34,RW:34,3676.0,low_is_left,0.979591836734694,True,True,True
 35532,J. Quinones,Mexico,Midfielder,RW,0.84375,32,RW:27 | LW:5,3625.0,low_is_left,1.0,True,True,True
-35533,E. Valencia,Ecuador,Attacker,RW,1.0,19,RW:19,3881.0,low_is_left,1.0,True,True,True
-35544,J. Vasquez,Mexico,Defender,LCB,0.5813953488372093,43,LCB:25 | RB:11 | RCB:6 | LB:1,4844.0,low_is_left,1.0,True,False,False
-35544,J. Vásquez,Mexico,Defender,RCB,0.5,4,RCB:2 | LCB:2,4844.0,low_is_left,1.0,True,False,False
-35570,S. Eustaquio,Canada,Midfielder,CM,0.5333333333333333,15,CM:8 | DM:5 | AM:2,2087.0,low_is_left,1.0,True,False,False
+35533,E. Valencia,Ecuador,Attacker,RW,1.0,19,RW:19,3881.0,low_is_left,1.0,False,True,False
+35544,J. Vasquez,Mexico,Defender,LCB,0.5813953488372093,43,LCB:25 | RB:11 | RCB:6 | LB:1,4844.0,low_is_left,1.0,False,False,False
+35544,J. Vásquez,Mexico,Defender,RCB,0.5,4,RCB:2 | LCB:2,4844.0,low_is_left,1.0,False,False,False
+35570,S. Eustaquio,Canada,Midfielder,CM,0.5333333333333333,15,CM:8 | DM:5 | AM:2,2087.0,low_is_left,1.0,False,False,False
 35576,O. Pineda,Mexico,Midfielder,AM,0.7727272727272727,44,AM:34 | CM:5 | DM:5,4052.0,low_is_left,1.0,True,True,True
 35769,C. Acevedo,Mexico,Goalkeeper,GK,1.0,34,GK:34,3081.0,low_is_left,1.0,True,True,True
-35885,A. Zendejas,USA,Attacker,RW,0.9285714285714286,28,RW:26 | ST:1 | LW:1,3234.0,low_is_left,1.0,True,True,True
+35885,A. Zendejas,USA,Attacker,RW,0.9285714285714286,28,RW:26 | ST:1 | LW:1,3234.0,low_is_left,1.0,False,True,False
 35970,L. Romo,Mexico,Midfielder,RB,0.8529411764705882,34,RB:29 | LB:2 | LCB:2 | RCB:1,3586.0,low_is_left,1.0,True,True,True
-36088,G. Martinez,Mexico,Attacker,RW,0.8,15,RW:12 | ST:3,2041.0,low_is_left,1.0,True,True,True
-36111,C. S. Huerta Valera,Mexico,Midfielder,AM,0.7272727272727273,11,AM:8 | RW:1 | LW:1 | CM:1,918.0,low_is_left,1.0,True,True,True
+36088,G. Martinez,Mexico,Attacker,RW,0.8,15,RW:12 | ST:3,2041.0,low_is_left,1.0,False,True,False
+36111,C. S. Huerta Valera,Mexico,Midfielder,AM,0.7272727272727273,11,AM:8 | RW:1 | LW:1 | CM:1,918.0,low_is_left,1.0,False,True,False
 36579,S. Rahimi,Morocco,Attacker,RW,0.8571428571428571,14,RW:12 | ST:1 | LW:1,2185.0,low_is_left,1.0,False,True,False
 36777,M. Woud,New Zealand,Goalkeeper,GK,1.0,27,GK:27,2481.0,low_is_left,1.0,True,True,True
 36842,G. Roemeratoe,Curaçao,Midfielder,AM,0.967741935483871,31,AM:30 | CM:1,2769.0,low_is_left,1.0,True,True,True
-36857,J. Gaari,Curaçao,Defender,RCB,0.8333333333333334,6,RCB:5 | RB:1,1282.0,low_is_left,1.0,True,True,True
+36857,J. Gaari,Curaçao,Defender,RCB,0.8333333333333334,6,RCB:5 | RB:1,1282.0,low_is_left,1.0,False,True,False
 36899,T. Koopmeiners,Netherlands,Midfielder,CM,0.3793103448275862,29,CM:11 | RB:10 | DM:3 | RW:2 | LCB:2 | ST:1,3238.0,low_is_left,1.0,True,False,False
-36902,T. Reijnders,Netherlands,Midfielder,CM,0.7297297297297297,37,CM:27 | DM:9 | RW:1,3807.0,low_is_left,1.0,True,True,True
+36902,T. Reijnders,Netherlands,Midfielder,CM,0.7297297297297297,37,CM:27 | DM:9 | RW:1,3807.0,low_is_left,1.0,False,True,False
 36905,G. Til,Netherlands,Midfielder,CM,0.47058823529411764,34,CM:16 | RW:15 | ST:3,3050.0,low_is_left,1.0,True,False,False
 36970,S. Floranus,Curaçao,Defender,RB,0.8095238095238095,42,RB:34 | LB:7 | LCB:1,4349.0,low_is_left,1.0,True,True,True
 36980,M. Thorsby,Norway,Midfielder,AM,0.875,16,AM:14 | RW:1 | CM:1,1602.0,low_is_left,1.0,True,True,True
@@ -551,23 +551,23 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 37155,O. Kökçü,Türkiye,Midfielder,CM,1.0,2,CM:2,3582.0,low_is_left,0.9591836734693876,True,True,True
 37175,R. Bazoer,Curaçao,Defender,RB,0.9090909090909091,11,RB:10 | RCB:1,1230.0,low_is_left,1.0,True,True,True
 37272,B. Kuwas,Curaçao,Attacker,RW,1.0,25,RW:25,2376.0,low_is_left,1.0,True,True,True
-37435,D. Duarte,Cape Verde Islands,Midfielder,AM,0.9354838709677419,31,AM:29 | CM:2,3100.0,low_is_left,1.0,False,True,False
-37436,L. Duarte,Cape Verde Islands,Midfielder,AM,0.9,20,AM:18 | CM:2,4102.0,low_is_left,1.0,True,True,True
+37435,D. Duarte,Cape Verde Islands,Midfielder,AM,0.9354838709677419,31,AM:29 | CM:2,3100.0,low_is_left,1.0,True,True,True
+37436,L. Duarte,Cape Verde Islands,Midfielder,AM,0.9,20,AM:18 | CM:2,4102.0,low_is_left,1.0,False,True,False
 37461,K. Felida,Curaçao,Midfielder,AM,1.0,34,AM:34,3449.0,low_is_left,1.0,True,True,True
 37724,C. Summerville,Netherlands,Attacker,RW,0.4838709677419355,31,RW:15 | LW:11 | ST:5,3252.0,low_is_left,0.9565217391304348,True,False,False
 37892,D. Eckert Ayensa,Iran,Attacker,RW,1.0,23,RW:23,1987.0,low_is_left,1.0,True,True,True
-38114,K. Itakura,Japan,Defender,RB,0.9,20,RB:18 | RCB:2,3158.0,low_is_left,1.0,True,True,True
+38114,K. Itakura,Japan,Defender,RB,0.9,20,RB:18 | RCB:2,3158.0,low_is_left,1.0,False,True,False
 38123,A. Hrustic,Australia,Midfielder,AM,0.9629629629629629,27,AM:26 | RW:1,3042.0,low_is_left,1.0,True,True,True
 38695,J. P. van Hecke,Netherlands,Defender,RCB,0.6904761904761905,42,RCB:29 | RB:13,4093.0,low_is_left,1.0,True,True,True
 38735,S. Dest,USA,Attacker,RB,0.8974358974358975,39,RB:35 | LCB:4,3524.0,low_is_left,1.0,True,True,True
 38747,Q. Timber,Netherlands,Midfielder,CM,0.37142857142857144,35,CM:13 | DM:13 | AM:7 | RW:2,3247.0,low_is_left,1.0,True,False,False
 38750,B. Brobbey,Netherlands,Attacker,RW,0.88,25,RW:22 | ST:3,2387.0,low_is_left,1.0,True,True,True
 39043,F. Aursnes,Norway,Defender,RB,0.7755102040816326,49,RB:38 | LCB:6 | LB:5,4870.0,low_is_left,1.0,True,True,True
-39058,F. Bjorkan,Norway,Defender,RB,0.972972972972973,37,RB:36 | LB:1,4308.0,low_is_left,1.0,True,True,True
-39064,P. Berg,Norway,Midfielder,CM,0.813953488372093,43,CM:35 | AM:7 | DM:1,5174.0,low_is_left,1.0,True,True,True
-39073,J. Hauge,Norway,Midfielder,RW,0.575,40,RW:23 | AM:17,4267.0,low_is_left,1.0,True,False,False
+39058,F. Bjorkan,Norway,Defender,RB,0.972972972972973,37,RB:36 | LB:1,4308.0,low_is_left,1.0,False,True,False
+39064,P. Berg,Norway,Midfielder,CM,0.813953488372093,43,CM:35 | AM:7 | DM:1,5174.0,low_is_left,1.0,False,True,False
+39073,J. Hauge,Norway,Midfielder,RW,0.575,40,RW:23 | AM:17,4267.0,low_is_left,1.0,False,False,False
 39082,E. Selvik,Norway,Goalkeeper,GK,1.0,41,GK:41,3891.0,low_is_left,1.0,True,True,True
-39143,K. Thorstvedt,Norway,Midfielder,AM,0.6428571428571429,28,AM:18 | CM:9 | RW:1,3787.0,low_is_left,1.0,True,True,True
+39143,K. Thorstvedt,Norway,Midfielder,AM,0.6428571428571429,28,AM:18 | CM:9 | RW:1,3787.0,low_is_left,1.0,False,True,False
 39254,T. Heggem,Norway,Defender,RB,0.8157894736842105,38,RB:31 | LCB:6 | RCB:1,3666.0,low_is_left,1.0,True,True,True
 39362,M. Pedersen,Norway,Defender,RB,1.0,27,RB:27,2713.0,low_is_left,1.0,True,True,True
 41112,Trincao,Portugal,Midfielder,CM,0.8723404255319149,47,CM:41 | AM:5 | RW:1,4291.0,low_is_left,1.0,True,True,True
@@ -578,64 +578,64 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 41621,Matheus Nunes,Portugal,Midfielder,RB,1.0,3,RB:3,4364.0,low_is_left,1.0,True,True,True
 41627,K. Gorre,Curaçao,Attacker,RW,0.8461538461538461,13,RW:11 | LW:2,2007.0,low_is_left,1.0,False,True,False
 41627,K. Gorré,Curaçao,Attacker,ST,1.0,3,ST:3,2007.0,low_is_left,1.0,False,True,False
-41764,M. Rosa,Cape Verde Islands,Goalkeeper,GK,1.0,13,GK:13,1170.0,low_is_left,1.0,False,True,False
+41764,M. Rosa,Cape Verde Islands,Goalkeeper,GK,1.0,13,GK:13,1170.0,low_is_left,1.0,True,True,True
 42012,E. Achouri,Tunisia,Midfielder,AM,0.875,24,AM:21 | RW:3,2586.0,low_is_left,1.0,True,True,True
-42021,M. Barsham,Qatar,Goalkeeper,GK,1.0,20,GK:20,3149.0,low_is_left,1.0,True,True,True
+42021,M. Barsham,Qatar,Goalkeeper,GK,1.0,20,GK:20,3149.0,low_is_left,1.0,False,True,False
 42060,S. Al Brake,Qatar,Defender,RB,0.8421052631578947,19,RB:16 | LB:3,1728.0,low_is_left,1.0,True,True,True
-42075,Edmilson Junior,Qatar,Attacker,RW,0.6956521739130435,23,RW:16 | LW:6 | ST:1,2489.0,low_is_left,1.0,True,True,True
-42207,M. Abunada,Qatar,Goalkeeper,GK,1.0,16,GK:16,1665.0,low_is_left,1.0,False,True,False
+42075,Edmilson Junior,Qatar,Attacker,RW,0.6956521739130435,23,RW:16 | LW:6 | ST:1,2489.0,low_is_left,1.0,False,True,False
+42207,M. Abunada,Qatar,Goalkeeper,GK,1.0,16,GK:16,1665.0,low_is_left,1.0,True,True,True
 42261,R. Sulaka,Iraq,Defender,RB,0.8461538461538461,13,RB:11 | RCB:1 | LCB:1,1886.0,low_is_left,1.0,False,True,False
 42286,A. Al Ganehi,Qatar,Attacker,RW,1.0,7,RW:7,1262.0,low_is_left,1.0,False,True,False
 42288,Lucas Mendes,Qatar,Defender,RB,0.8181818181818182,11,RB:9 | RCB:2,2005.0,low_is_left,1.0,False,True,False
-42315,M. Taremi,Iran,Attacker,RW,0.9523809523809523,21,RW:20 | ST:1,2944.0,low_is_left,1.0,True,True,True
-44315,A. Al Khaibari,Saudi Arabia,Midfielder,DM,0.5909090909090909,22,DM:13 | CM:7 | RB:1 | AM:1,3489.0,low_is_left,1.0,True,False,False
-44324,F. Al Buraikan,Saudi Arabia,Attacker,RW,0.68,25,RW:17 | LW:4 | ST:4,4130.0,low_is_left,1.0,True,True,True
-44324,Feras Al Brikan,Saudi Arabia,Attacker,RW,1.0,2,RW:2,4130.0,low_is_left,1.0,True,True,True
-44335,H. Kadesh,Saudi Arabia,Defender,RB,0.90625,32,RB:29 | LCB:3,3617.0,low_is_left,1.0,True,True,True
-44335,Hassan Kadish,Saudi Arabia,Defender,LCB,1.0,1,LCB:1,3617.0,low_is_left,1.0,True,True,True
-44339,N. Al Dawsari,Saudi Arabia,Midfielder,CM,0.6363636363636364,22,CM:14 | DM:3 | LB:2 | AM:2 | RB:1,3505.0,low_is_left,1.0,True,True,True
-44339,Nasser Al Dawsari,Saudi Arabia,Midfielder,CM,0.6,5,CM:3 | AM:2,3505.0,low_is_left,1.0,True,True,True
-44340,S. Al Dawsari,Saudi Arabia,Midfielder,RW,0.3333333333333333,30,RW:10 | CM:9 | AM:8 | ST:3,4080.0,low_is_left,1.0,True,False,False
-44340,Salem Al Dawsari,Saudi Arabia,Midfielder,AM,1.0,3,AM:3,4080.0,low_is_left,1.0,True,True,True
-44349,M. Kanno,Saudi Arabia,Attacker,ST,0.5151515151515151,33,ST:17 | RW:16,4754.0,low_is_left,1.0,True,False,False
-44349,Mohamed Kanno,Saudi Arabia,Attacker,RW,1.0,2,RW:2,4754.0,low_is_left,1.0,True,True,True
-44362,H. Tambakti,Saudi Arabia,Defender,RB,0.5405405405405406,37,RB:20 | RCB:11 | LCB:6,5068.0,low_is_left,1.0,True,False,False
-44362,Hassan Al Tambakti,Saudi Arabia,Defender,RCB,1.0,3,RCB:3,5068.0,low_is_left,1.0,True,True,True
+42315,M. Taremi,Iran,Attacker,RW,0.9523809523809523,21,RW:20 | ST:1,2944.0,low_is_left,1.0,False,True,False
+44315,A. Al Khaibari,Saudi Arabia,Midfielder,DM,0.5909090909090909,22,DM:13 | CM:7 | RB:1 | AM:1,3489.0,low_is_left,1.0,False,False,False
+44324,F. Al Buraikan,Saudi Arabia,Attacker,RW,0.68,25,RW:17 | LW:4 | ST:4,4130.0,low_is_left,1.0,False,True,False
+44324,Feras Al Brikan,Saudi Arabia,Attacker,RW,1.0,2,RW:2,4130.0,low_is_left,1.0,False,True,False
+44335,H. Kadesh,Saudi Arabia,Defender,RB,0.90625,32,RB:29 | LCB:3,3617.0,low_is_left,1.0,False,True,False
+44335,Hassan Kadish,Saudi Arabia,Defender,LCB,1.0,1,LCB:1,3617.0,low_is_left,1.0,False,True,False
+44339,N. Al Dawsari,Saudi Arabia,Midfielder,CM,0.6363636363636364,22,CM:14 | DM:3 | LB:2 | AM:2 | RB:1,3505.0,low_is_left,1.0,False,True,False
+44339,Nasser Al Dawsari,Saudi Arabia,Midfielder,CM,0.6,5,CM:3 | AM:2,3505.0,low_is_left,1.0,False,True,False
+44340,S. Al Dawsari,Saudi Arabia,Midfielder,RW,0.3333333333333333,30,RW:10 | CM:9 | AM:8 | ST:3,4080.0,low_is_left,1.0,False,False,False
+44340,Salem Al Dawsari,Saudi Arabia,Midfielder,AM,1.0,3,AM:3,4080.0,low_is_left,1.0,False,True,False
+44349,M. Kanno,Saudi Arabia,Attacker,ST,0.5151515151515151,33,ST:17 | RW:16,4754.0,low_is_left,1.0,False,False,False
+44349,Mohamed Kanno,Saudi Arabia,Attacker,RW,1.0,2,RW:2,4754.0,low_is_left,1.0,False,True,False
+44362,H. Tambakti,Saudi Arabia,Defender,RB,0.5405405405405406,37,RB:20 | RCB:11 | LCB:6,5068.0,low_is_left,1.0,False,False,False
+44362,Hassan Al Tambakti,Saudi Arabia,Defender,RCB,1.0,3,RCB:3,5068.0,low_is_left,1.0,False,True,False
 44367,A. Majrashi,Saudi Arabia,Defender,RB,1.0,33,RB:33,3223.0,low_is_left,1.0,True,True,True
 44367,Ali Majrashi,Saudi Arabia,Defender,RB,1.0,2,RB:2,3223.0,low_is_left,1.0,True,True,True
-44382,A. Al Hamdan,Saudi Arabia,Attacker,RW,0.8571428571428571,7,RW:6 | ST:1,1611.0,low_is_left,1.0,True,True,True
-44411,M. Al Owais,Saudi Arabia,Goalkeeper,GK,1.0,3,GK:3,1213.0,low_is_left,1.0,True,True,True
+44382,A. Al Hamdan,Saudi Arabia,Attacker,RW,0.8571428571428571,7,RW:6 | ST:1,1611.0,low_is_left,1.0,False,True,False
+44411,M. Al Owais,Saudi Arabia,Goalkeeper,GK,1.0,3,GK:3,1213.0,low_is_left,1.0,False,True,False
 44475,A. Al Amri,Saudi Arabia,Defender,LCB,0.43333333333333335,30,LCB:13 | RB:13 | RCB:4,3149.0,low_is_left,1.0,True,False,False
 44475,Abdulelah Al Amri,Saudi Arabia,Defender,RCB,1.0,3,RCB:3,3149.0,low_is_left,1.0,True,True,True
-44507,A. Lajami,Saudi Arabia,Defender,RCB,0.6,10,RCB:6 | RB:3 | LCB:1,2139.0,low_is_left,1.0,True,True,True
-44551,S. Al Shehri,Saudi Arabia,Attacker,RW,1.0,5,RW:5,1179.0,low_is_left,1.0,True,True,True
-44551,Saleh Al Shehri,Saudi Arabia,Attacker,ST,0.6666666666666666,3,ST:2 | RW:1,1179.0,low_is_left,1.0,True,True,True
-44594,S. Abdulhamid,Saudi Arabia,Defender,RB,1.0,24,RB:24,6126.0,low_is_left,1.0,True,True,True
-44594,Saud Abdulhamid,Saudi Arabia,Defender,RB,0.6666666666666666,3,RB:2 | LB:1,6126.0,low_is_left,1.0,True,True,True
+44507,A. Lajami,Saudi Arabia,Defender,RCB,0.6,10,RCB:6 | RB:3 | LCB:1,2139.0,low_is_left,1.0,False,True,False
+44551,S. Al Shehri,Saudi Arabia,Attacker,RW,1.0,5,RW:5,1179.0,low_is_left,1.0,False,True,False
+44551,Saleh Al Shehri,Saudi Arabia,Attacker,ST,0.6666666666666666,3,ST:2 | RW:1,1179.0,low_is_left,1.0,False,True,False
+44594,S. Abdulhamid,Saudi Arabia,Defender,RB,1.0,24,RB:24,6126.0,low_is_left,1.0,False,True,False
+44594,Saud Abdulhamid,Saudi Arabia,Defender,RB,0.6666666666666666,3,RB:2 | LB:1,6126.0,low_is_left,1.0,False,True,False
 44701,K. Al Ghannam,Saudi Arabia,Attacker,RW,1.0,25,RW:25,2285.0,low_is_left,1.0,True,True,True
 44791,A. Tshibola,Congo DR,Midfielder,AM,0.7857142857142857,14,AM:11 | CM:3,1276.0,low_is_left,1.0,True,True,True
 44798,L. Millar,Canada,Midfielder,AM,0.7931034482758621,29,AM:23 | RW:4 | CM:2,2481.0,low_is_left,1.0,True,True,True
 44811,S. McKenna,Scotland,Defender,RB,1.0,40,RB:40,3887.0,low_is_left,1.0,True,True,True
 44814,L. Ferguson,Scotland,Midfielder,AM,0.96875,32,AM:31 | CM:1,3602.0,low_is_left,1.0,True,True,True
-44865,J. Souttar,Scotland,Defender,RB,1.0,32,RB:32,3879.0,low_is_left,1.0,True,True,True
+44865,J. Souttar,Scotland,Defender,RB,1.0,32,RB:32,3879.0,low_is_left,1.0,False,True,False
 44871,A. Hickey,Scotland,Defender,RB,0.8333333333333334,12,RB:10 | LB:2,1241.0,low_is_left,1.0,True,True,True
-45020,D. Nazon,Haiti,Attacker,RW,0.5714285714285714,7,RW:4 | ST:2 | LW:1,1807.0,low_is_left,1.0,True,False,False
+45020,D. Nazon,Haiti,Attacker,RW,0.5714285714285714,7,RW:4 | ST:2 | LW:1,1807.0,low_is_left,1.0,False,False,False
 45078,R. Stewart,Scotland,Attacker,RW,1.0,10,RW:10,1388.0,low_is_left,1.0,True,True,True
 45307,L. Dykes,Scotland,Attacker,RW,1.0,19,RW:19,2550.0,low_is_left,1.0,True,True,True
 46245,R. Goss,South Africa,Goalkeeper,GK,1.0,29,GK:29,2718.0,low_is_left,1.0,True,True,True
 46334,A. Modiba,South Africa,Defender,LB,0.8285714285714286,35,LB:29 | RB:5 | LCB:1,3891.0,low_is_left,1.0,True,True,True
 46417,S. Chaine,South Africa,Goalkeeper,GK,1.0,30,GK:30,2954.0,low_is_left,1.0,True,True,True
-46458,N. Sibisi,South Africa,Defender,LCB,0.5416666666666666,24,LCB:13 | RB:10 | RCB:1,2778.0,low_is_left,1.0,True,False,False
+46458,N. Sibisi,South Africa,Defender,LCB,0.5416666666666666,24,LCB:13 | RB:10 | RCB:1,2778.0,low_is_left,1.0,False,False,False
 46601,K. Mudau,South Africa,Defender,RB,1.0,37,RB:37,4137.0,low_is_left,1.0,True,True,True
 46672,R. Silva,Portugal,Goalkeeper,GK,1.0,46,GK:46,4350.0,low_is_left,1.0,True,True,True
-46731,P. Estupinan,Ecuador,Midfielder,LB,1.0,18,LB:18,3104.0,low_is_left,1.0,True,True,True
+46731,P. Estupinan,Ecuador,Midfielder,LB,1.0,18,LB:18,3104.0,low_is_left,1.0,False,True,False
 46746,A. Budimir,Croatia,Attacker,RW,0.8918918918918919,37,RW:33 | ST:4,3222.0,low_is_left,1.0,True,True,True
 46855,Y. Barcenas,Panama,Midfielder,AM,0.7419354838709677,31,AM:23 | CM:5 | RW:2 | RB:1,3107.0,low_is_left,1.0,True,True,True
 46930,E. Demirovic,Bosnia & Herzegovina,Attacker,RW,0.9,30,RW:27 | ST:3,3206.0,low_is_left,1.0,True,True,True
 47237,L. Suarez,Colombia,Attacker,RW,0.9387755102040817,49,RW:46 | ST:3,4787.0,low_is_left,1.0,True,True,True
-47254,M. Olivera,Uruguay,Defender,RB,0.5833333333333334,24,RB:14 | LCB:10,3348.0,low_is_left,1.0,True,False,False
+47254,M. Olivera,Uruguay,Defender,RB,0.5833333333333334,24,RB:14 | LCB:10,3348.0,low_is_left,1.0,False,False,False
 47270,U. Simon,Spain,Goalkeeper,GK,1.0,53,GK:53,5040.0,low_is_left,1.0,True,True,True
-47294,I. Williams,Ghana,Midfielder,AM,0.6857142857142857,35,AM:24 | RW:10 | CM:1,3986.0,low_is_left,1.0,True,True,True
+47294,I. Williams,Ghana,Midfielder,AM,0.6857142857142857,35,AM:24 | RW:10 | CM:1,3986.0,low_is_left,1.0,False,True,False
 47296,G. Rulli,Argentina,Goalkeeper,GK,1.0,38,GK:38,3888.0,low_is_left,1.0,True,True,True
 47296,Gerónimo Rulli,Argentina,Goalkeeper,GK,1.0,1,GK:1,3888.0,low_is_left,1.0,True,True,True
 47300,T. Hernandez,France,Defender,LB,0.8780487804878049,41,LB:36 | LCB:5,3893.0,low_is_left,1.0,True,True,True
@@ -643,8 +643,8 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 47315,M. Zubimendi,Spain,Midfielder,CM,0.6458333333333334,48,CM:31 | DM:16 | RB:1,4491.0,low_is_left,1.0,True,True,True
 47323,M. Oyarzabal,Spain,Attacker,RW,0.8333333333333334,42,RW:35 | ST:7,3787.0,low_is_left,1.0,True,True,True
 47348,B. Iglesias,Spain,Attacker,RW,1.0,31,RW:31,2791.0,low_is_left,1.0,True,True,True
-47380,M. Cucurella,Spain,Defender,LB,0.96,50,LB:48 | LCB:2,5744.0,low_is_left,1.0,True,True,True
-47380,Marc Cucurella,Spain,Defender,LB,1.0,6,LB:6,5744.0,low_is_left,1.0,True,True,True
+47380,M. Cucurella,Spain,Defender,LB,0.96,50,LB:48 | LCB:2,5744.0,low_is_left,1.0,False,True,False
+47380,Marc Cucurella,Spain,Defender,LB,1.0,6,LB:6,5744.0,low_is_left,1.0,False,True,False
 47519,P. Porro,Spain,Defender,RB,1.0,49,RB:49,4549.0,low_is_left,1.0,True,True,True
 47519,Pedro Porro,Spain,Defender,RB,1.0,1,RB:1,4549.0,low_is_left,1.0,True,True,True
 47545,G. Kakuta,Congo DR,Attacker,RW,0.9565217391304348,23,RW:22 | ST:1,2254.0,low_is_left,1.0,True,True,True
@@ -653,11 +653,11 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 47903,H. Ekdal,Sweden,Defender,RB,0.9473684210526315,19,RB:18 | RCB:1,1958.0,low_is_left,1.0,True,True,True
 47969,G. Gudmundsson,Sweden,Midfielder,RB,0.6052631578947368,38,RB:23 | LB:11 | LCB:4,3633.0,low_is_left,0.9791666666666666,True,True,True
 47988,C. Starfelt,Sweden,Defender,RB,1.0,27,RB:27,2528.0,low_is_left,1.0,True,True,True
-48002,B. Nygren,Sweden,Midfielder,CM,0.525,40,CM:21 | RW:9 | AM:8 | ST:2,4842.0,low_is_left,1.0,True,False,False
-48033,J. Widell Zetterstrom,Sweden,Goalkeeper,GK,1.0,35,GK:35,4320.0,low_is_left,1.0,True,True,True
+48002,B. Nygren,Sweden,Midfielder,CM,0.525,40,CM:21 | RW:9 | AM:8 | ST:2,4842.0,low_is_left,1.0,False,False,False
+48033,J. Widell Zetterstrom,Sweden,Goalkeeper,GK,1.0,35,GK:35,4320.0,low_is_left,1.0,False,True,False
 48047,J. Karlstrom,Sweden,Midfielder,AM,0.95,40,AM:38 | DM:2,3662.0,low_is_left,1.0,True,True,True
 48119,O. Kossounou,Ivory Coast,Defender,RB,0.7407407407407407,27,RB:20 | RCB:7,2714.0,low_is_left,1.0,True,True,True
-48129,A. Sher,Iraq,Midfielder,AM,1.0,18,AM:18,2989.0,low_is_left,1.0,True,True,True
+48129,A. Sher,Iraq,Midfielder,AM,1.0,18,AM:18,2989.0,low_is_left,1.0,False,True,False
 48372,E. Comert,Switzerland,Defender,RB,1.0,18,RB:18,1855.0,low_is_left,1.0,True,True,True
 48378,S. Widmer,Switzerland,Defender,RB,0.65625,32,RB:21 | LB:10 | LCB:1,3002.0,low_is_left,1.0,True,True,True
 48389,N. Okafor,Switzerland,Attacker,RW,0.43478260869565216,23,RW:10 | LW:8 | ST:5,2123.0,low_is_left,0.981132075471698,True,False,False
@@ -675,55 +675,55 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 50030,M. Talbi,Tunisia,Defender,RB,1.0,31,RB:31,3638.0,low_is_left,1.0,True,True,True
 50042,M. Saadane,Morocco,Defender,RB,1.0,28,RB:28,2560.0,low_is_left,1.0,True,True,True
 50057,E. Elmali,Türkiye,Midfielder,LB,0.8636363636363636,22,LB:19 | LCB:2 | RB:1,2268.0,low_is_left,1.0,True,True,True
-50077,S. Rochet,Uruguay,Goalkeeper,GK,1.0,30,GK:30,3849.0,low_is_left,1.0,True,True,True
-50270,R. Mendes,Cape Verde Islands,Midfielder,AM,0.6071428571428571,28,AM:17 | RW:7 | CM:4,3983.0,low_is_left,1.0,True,True,True
-50272,O. Shukurov,Uzbekistan,Midfielder,AM,0.8,15,AM:12 | DM:3,2075.0,low_is_left,1.0,True,True,True
-50728,M. Freese,USA,Goalkeeper,GK,1.0,46,GK:46,6119.0,low_is_left,1.0,True,True,True
+50077,S. Rochet,Uruguay,Goalkeeper,GK,1.0,30,GK:30,3849.0,low_is_left,1.0,False,True,False
+50270,R. Mendes,Cape Verde Islands,Midfielder,AM,0.6071428571428571,28,AM:17 | RW:7 | CM:4,3983.0,low_is_left,1.0,False,True,False
+50272,O. Shukurov,Uzbekistan,Midfielder,AM,0.8,15,AM:12 | DM:3,2075.0,low_is_left,1.0,False,True,False
+50728,M. Freese,USA,Goalkeeper,GK,1.0,46,GK:46,6119.0,low_is_left,1.0,False,True,False
 50735,M. McKenzie,USA,Defender,RB,0.96875,32,RB:31 | LCB:1,3388.0,low_is_left,1.0,True,True,True
 50739,B. Aaronson,USA,Attacker,RW,0.9696969696969697,33,RW:32 | ST:1,3160.0,low_is_left,0.979591836734694,True,True,True
 50745,J. Monteiro,Cape Verde Islands,Midfielder,AM,0.8571428571428571,21,AM:18 | CM:3,1738.0,low_is_left,1.0,True,True,True
 50788,M. Choiniere,Canada,Midfielder,CM,0.625,24,CM:15 | DM:7 | AM:2,2630.0,low_is_left,1.0,True,True,True
 50788,M. Choinière,Canada,Midfielder,CM,0.6666666666666666,3,CM:2 | DM:1,2630.0,low_is_left,1.0,True,True,True
-50816,R. Laryea,Canada,Defender,RB,0.7666666666666667,30,RB:23 | LB:6 | LCB:1,3421.0,low_is_left,1.0,True,True,True
-50817,J. Osorio,Canada,Midfielder,AM,0.6666666666666666,24,AM:16 | CM:5 | DM:3,3453.0,low_is_left,1.0,True,True,True
-50826,J. Shaffelburg,Canada,Midfielder,RW,0.5333333333333333,15,RW:8 | LW:4 | ST:3,2128.0,low_is_left,1.0,True,False,False
+50816,R. Laryea,Canada,Defender,RB,0.7666666666666667,30,RB:23 | LB:6 | LCB:1,3421.0,low_is_left,1.0,False,True,False
+50817,J. Osorio,Canada,Midfielder,AM,0.6666666666666666,24,AM:16 | CM:5 | DM:3,3453.0,low_is_left,1.0,False,True,False
+50826,J. Shaffelburg,Canada,Midfielder,RW,0.5333333333333333,15,RW:8 | LW:4 | ST:3,2128.0,low_is_left,1.0,False,False,False
 50852,J. Scally,USA,Defender,RB,0.96875,32,RB:31 | LB:1,3032.0,low_is_left,1.0,True,True,True
-50879,M. Robinson,USA,Defender,RB,0.9629629629629629,27,RB:26 | RCB:1,6053.0,low_is_left,1.0,True,True,True
-50958,D. Etienne,Haiti,Attacker,RW,0.8571428571428571,14,RW:12 | LW:1 | ST:1,1887.0,low_is_left,1.0,True,True,True
+50879,M. Robinson,USA,Defender,RB,0.9629629629629629,27,RB:26 | RCB:1,6053.0,low_is_left,1.0,False,True,False
+50958,D. Etienne,Haiti,Attacker,RW,0.8571428571428571,14,RW:12 | LW:1 | ST:1,1887.0,low_is_left,1.0,False,True,False
 50999,M. Turner,USA,Goalkeeper,GK,1.0,25,GK:25,2487.0,low_is_left,1.0,True,True,True
-51016,T. Buchanan,Canada,Midfielder,CM,0.7714285714285715,35,CM:27 | AM:6 | LW:1 | RW:1,3446.0,low_is_left,1.0,True,True,True
-51114,C. Roldan,USA,Midfielder,AM,1.0,36,AM:36,5309.0,low_is_left,1.0,True,True,True
-51148,D. St. Clair,Canada,Goalkeeper,GK,1.0,3,GK:3,5283.0,low_is_left,1.0,True,True,True
-51148,D. St.Clair,Canada,Goalkeeper,GK,1.0,34,GK:34,5283.0,low_is_left,1.0,True,True,True
-51149,M. Boxall,New Zealand,Defender,RB,0.7916666666666666,24,RB:19 | RCB:5,4489.0,low_is_left,1.0,True,True,True
-51466,J. Piquerez,Uruguay,Attacker,LB,0.8604651162790697,43,LB:37 | RB:3 | LCB:3,6038.0,low_is_left,1.0,True,True,True
-51494,M. Ugarte,Uruguay,Midfielder,CM,0.7857142857142857,14,CM:11 | DM:3,3203.0,low_is_left,1.0,True,True,True
+51016,T. Buchanan,Canada,Midfielder,CM,0.7714285714285715,35,CM:27 | AM:6 | LW:1 | RW:1,3446.0,low_is_left,1.0,False,True,False
+51114,C. Roldan,USA,Midfielder,AM,1.0,36,AM:36,5309.0,low_is_left,1.0,False,True,False
+51148,D. St. Clair,Canada,Goalkeeper,GK,1.0,3,GK:3,5283.0,low_is_left,1.0,False,True,False
+51148,D. St.Clair,Canada,Goalkeeper,GK,1.0,34,GK:34,5283.0,low_is_left,1.0,False,True,False
+51149,M. Boxall,New Zealand,Defender,RB,0.7916666666666666,24,RB:19 | RCB:5,4489.0,low_is_left,1.0,False,True,False
+51466,J. Piquerez,Uruguay,Attacker,LB,0.8604651162790697,43,LB:37 | RB:3 | LCB:3,6038.0,low_is_left,1.0,False,True,False
+51494,M. Ugarte,Uruguay,Midfielder,CM,0.7857142857142857,14,CM:11 | DM:3,3203.0,low_is_left,1.0,False,True,False
 51530,F. Vinas,Uruguay,Midfielder,RW,0.8928571428571429,28,RW:25 | ST:2 | LW:1,3062.0,low_is_left,1.0,True,True,True
-51535,S. Caceres,Uruguay,Defender,RCB,0.4473684210526316,38,RCB:17 | RB:17 | LCB:4,4771.0,low_is_left,1.0,True,False,False
-51572,M. Vina,Uruguay,Defender,LB,0.6428571428571429,14,LB:9 | RB:5,1680.0,low_is_left,1.0,True,True,True
-51603,A. Canobbio,Uruguay,Midfielder,AM,0.8571428571428571,56,AM:48 | RW:5 | CM:2 | LW:1,6333.0,low_is_left,1.0,True,True,True
-51617,D. Nunez,Uruguay,Attacker,RW,0.95,20,RW:19 | ST:1,2781.0,low_is_left,1.0,True,True,True
-51618,B. Rodriguez,Uruguay,Attacker,LW,0.47058823529411764,34,LW:16 | RW:15 | ST:3,3985.0,low_is_left,1.0,True,False,False
-51776,M. Araujo,Uruguay,Midfielder,LB,0.7380952380952381,42,LB:31 | LCB:11,5194.0,low_is_left,1.0,True,True,True
+51535,S. Caceres,Uruguay,Defender,RCB,0.4473684210526316,38,RCB:17 | RB:17 | LCB:4,4771.0,low_is_left,1.0,False,False,False
+51572,M. Vina,Uruguay,Defender,LB,0.6428571428571429,14,LB:9 | RB:5,1680.0,low_is_left,1.0,False,True,False
+51603,A. Canobbio,Uruguay,Midfielder,AM,0.8571428571428571,56,AM:48 | RW:5 | CM:2 | LW:1,6333.0,low_is_left,1.0,False,True,False
+51617,D. Nunez,Uruguay,Attacker,RW,0.95,20,RW:19 | ST:1,2781.0,low_is_left,1.0,False,True,False
+51618,B. Rodriguez,Uruguay,Attacker,LW,0.47058823529411764,34,LW:16 | RW:15 | ST:3,3985.0,low_is_left,1.0,False,False,False
+51776,M. Araujo,Uruguay,Midfielder,LB,0.7380952380952381,42,LB:31 | LCB:11,5194.0,low_is_left,1.0,False,True,False
 53517,D. Hadzikadunic,Bosnia & Herzegovina,Defender,RB,1.0,25,RB:25,2247.0,low_is_left,1.0,True,True,True
-53535,E. Shomurodov,Uzbekistan,Attacker,RW,0.6190476190476191,42,RW:26 | ST:15 | LW:1,4520.0,low_is_left,1.0,True,True,True
-53886,J. Hachim,Iraq,Goalkeeper,GK,1.0,3,GK:3,1834.0,low_is_left,1.0,True,True,True
-53886,J. Hassan,Iraq,Goalkeeper,GK,1.0,8,GK:8,1834.0,low_is_left,1.0,True,True,True
+53535,E. Shomurodov,Uzbekistan,Attacker,RW,0.6190476190476191,42,RW:26 | ST:15 | LW:1,4520.0,low_is_left,1.0,False,True,False
+53886,J. Hachim,Iraq,Goalkeeper,GK,1.0,3,GK:3,1834.0,low_is_left,1.0,False,True,False
+53886,J. Hassan,Iraq,Goalkeeper,GK,1.0,8,GK:8,1834.0,low_is_left,1.0,False,True,False
 53900,Y. Al Arab,Jordan,Defender,RB,0.9166666666666666,36,RB:33 | RCB:3,4090.0,low_is_left,1.0,False,True,False
-53902,E. Haddad,Jordan,Defender,RB,1.0,3,RB:3,1168.0,low_is_left,1.0,True,True,True
+53902,E. Haddad,Jordan,Defender,RB,1.0,3,RB:3,1168.0,low_is_left,1.0,False,True,False
 57739,J. Cordoba,Panama,Defender,RB,0.9,30,RB:27 | RCB:3,3236.0,low_is_left,1.0,True,True,True
 57739,J. Córdoba,Panama,Defender,LCB,1.0,1,LCB:1,3236.0,low_is_left,1.0,True,True,True
-57807,A. Carrasquilla,Panama,Midfielder,AM,0.525,40,AM:21 | CM:13 | DM:3 | RW:2 | ST:1,5388.0,low_is_left,1.0,True,False,False
-57875,C. Yanis,Panama,Midfielder,AM,0.8695652173913043,23,AM:20 | RW:3,3133.0,low_is_left,1.0,True,True,True
+57807,A. Carrasquilla,Panama,Midfielder,AM,0.525,40,AM:21 | CM:13 | DM:3 | RW:2 | ST:1,5388.0,low_is_left,1.0,False,False,False
+57875,C. Yanis,Panama,Midfielder,AM,0.8695652173913043,23,AM:20 | RW:3,3133.0,low_is_left,1.0,False,True,False
 61837,A. Bardakci,Türkiye,Defender,RCB,0.6739130434782609,46,RCB:31 | LCB:11 | LB:2 | RB:2,4365.0,low_is_left,1.0,True,True,True
-61895,S. Mele,Uruguay,Goalkeeper,GK,1.0,21,GK:21,3889.0,low_is_left,1.0,True,True,True
+61895,S. Mele,Uruguay,Goalkeeper,GK,1.0,21,GK:21,3889.0,low_is_left,1.0,False,True,False
 62490,S. Akaydin,Türkiye,Defender,RB,1.0,29,RB:29,2617.0,low_is_left,0.9069767441860463,True,True,True
 63274,B. A. Yilmaz,Türkiye,Midfielder,AM,0.775,40,AM:31 | RW:6 | CM:1 | LW:1 | ST:1,3781.0,low_is_left,1.0,True,True,True
 63274,B. Yilmaz,Türkiye,Midfielder,RW,0.5,2,RW:1 | CM:1,3781.0,low_is_left,1.0,True,False,False
-63964,F. Torres,Ecuador,Defender,RB,1.0,15,RB:15,3994.0,low_is_left,1.0,True,True,True
+63964,F. Torres,Ecuador,Defender,RB,1.0,15,RB:15,3994.0,low_is_left,1.0,False,True,False
 64190,Y. Fofana,Ivory Coast,Goalkeeper,GK,1.0,35,GK:35,3330.0,low_is_left,1.0,True,True,True
-64268,J. Mojica,Colombia,Defender,RB,0.8571428571428571,35,RB:30 | LB:5,4230.0,low_is_left,1.0,True,True,True
-66055,P. Musa,Croatia,Attacker,RW,1.0,32,RW:32,4240.0,low_is_left,1.0,True,True,True
+64268,J. Mojica,Colombia,Defender,RB,0.8571428571428571,35,RB:30 | LB:5,4230.0,low_is_left,1.0,False,True,False
+66055,P. Musa,Croatia,Attacker,RW,1.0,32,RW:32,4240.0,low_is_left,1.0,False,True,False
 66214,D. Doudera,Czech Republic,Midfielder,CM,0.5454545454545454,22,CM:12 | DM:7 | RB:3,2109.0,low_is_left,1.0,True,False,False
 66275,M. Chytil,Czech Republic,Attacker,RW,0.8125,16,RW:13 | ST:3,1677.0,low_is_left,1.0,True,True,True
 66340,J. Kuchta,Czech Republic,Attacker,RW,0.9565217391304348,23,RW:22 | ST:1,2131.0,low_is_left,1.0,True,True,True
@@ -734,59 +734,59 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 67971,M. Guehi,England,Defender,LCB,0.5272727272727272,55,LCB:29 | LB:24 | RCB:2,5364.0,low_is_left,1.0,True,False,False
 67971,M. Guéhi,England,Defender,LB,1.0,1,LB:1,5364.0,low_is_left,1.0,True,True,True
 69196,M. Saber,Egypt,Midfielder,AM,0.7272727272727273,22,AM:16 | RW:5 | DM:1,2062.0,low_is_left,1.0,True,True,True
-69260,R. Lopes,Cape Verde Islands,Defender,RB,0.9090909090909091,44,RB:40 | RCB:4,5703.0,low_is_left,1.0,True,True,True
+69260,R. Lopes,Cape Verde Islands,Defender,RB,0.9090909090909091,44,RB:40 | RCB:4,5703.0,low_is_left,1.0,False,True,False
 70078,F. Pellistri,Uruguay,Midfielder,AM,0.8333333333333334,12,AM:10 | RW:2,2011.0,low_is_left,1.0,False,True,False
 70514,A. Gigovic,Bosnia & Herzegovina,Midfielder,CM,0.4857142857142857,35,CM:17 | AM:15 | RW:2 | LW:1,3117.0,low_is_left,1.0,True,False,False
-70535,I. Adel,Egypt,Attacker,RW,1.0,9,RW:9,1016.0,low_is_left,1.0,False,True,False
-70670,I. Pitta,Paraguay,Attacker,RW,1.0,31,RW:31,3940.0,low_is_left,1.0,True,True,True
+70535,I. Adel,Egypt,Attacker,RW,1.0,9,RW:9,1016.0,low_is_left,1.0,True,True,True
+70670,I. Pitta,Paraguay,Attacker,RW,1.0,31,RW:31,3940.0,low_is_left,1.0,False,True,False
 70732,J. Canale,Paraguay,Defender,LCB,1.0,1,LCB:1,3494.0,low_is_left,1.0,True,True,True
 70732,J. Canale Dominguez,Paraguay,Defender,RB,1.0,36,RB:36,3494.0,low_is_left,1.0,True,True,True
-70747,J. Enciso,Paraguay,Attacker,RW,0.525,40,RW:21 | ST:19,4379.0,low_is_left,1.0,True,False,False
-70767,B. Ojeda,Paraguay,Midfielder,AM,0.6923076923076923,26,AM:18 | CM:7 | RB:1,4081.0,low_is_left,1.0,True,True,True
-70852,O. Gill,Paraguay,Goalkeeper,GK,1.0,27,GK:27,6090.0,low_is_left,1.0,True,True,True
-71230,C. Harvey,Panama,Midfielder,RB,0.47058823529411764,17,RB:8 | CM:5 | AM:2 | DM:2,2955.0,low_is_left,1.0,True,False,False
-72155,A. Ueda,Japan,Attacker,RW,0.6511627906976745,43,RW:28 | ST:15,4739.0,low_is_left,1.0,True,True,True
-73514,S. Nasrullaev,Uzbekistan,Midfielder,RB,0.6666666666666666,9,RB:6 | LCB:3,1915.0,low_is_left,1.0,True,True,True
-73520,A. Ganiev,Uzbekistan,Attacker,RW,1.0,11,RW:11,1142.0,low_is_left,1.0,False,True,False
-73534,U. Yusupov,Uzbekistan,Goalkeeper,GK,1.0,1,GK:1,1080.0,low_is_left,1.0,True,True,True
+70747,J. Enciso,Paraguay,Attacker,RW,0.525,40,RW:21 | ST:19,4379.0,low_is_left,1.0,False,False,False
+70767,B. Ojeda,Paraguay,Midfielder,AM,0.6923076923076923,26,AM:18 | CM:7 | RB:1,4081.0,low_is_left,1.0,False,True,False
+70852,O. Gill,Paraguay,Goalkeeper,GK,1.0,27,GK:27,6090.0,low_is_left,1.0,False,True,False
+71230,C. Harvey,Panama,Midfielder,RB,0.47058823529411764,17,RB:8 | CM:5 | AM:2 | DM:2,2955.0,low_is_left,1.0,False,False,False
+72155,A. Ueda,Japan,Attacker,RW,0.6511627906976745,43,RW:28 | ST:15,4739.0,low_is_left,1.0,False,True,False
+73514,S. Nasrullaev,Uzbekistan,Midfielder,RB,0.6666666666666666,9,RB:6 | LCB:3,1915.0,low_is_left,1.0,False,True,False
+73520,A. Ganiev,Uzbekistan,Attacker,RW,1.0,11,RW:11,1142.0,low_is_left,1.0,True,True,True
+73534,U. Yusupov,Uzbekistan,Goalkeeper,GK,1.0,1,GK:1,1080.0,low_is_left,1.0,False,True,False
 73868,R. Pepi,USA,Attacker,RW,0.75,20,RW:15 | ST:5,2082.0,low_is_left,1.0,True,True,True
 76867,N. Mujakic,Bosnia & Herzegovina,Defender,RB,1.0,24,RB:24,2210.0,low_is_left,1.0,True,True,True
 77037,J. Lukic,Bosnia & Herzegovina,Attacker,RW,0.9655172413793104,29,RW:28 | ST:1,2578.0,low_is_left,1.0,True,True,True
-78494,J. Waterman,Canada,Defender,RB,0.9130434782608695,23,RB:21 | RCB:1 | LCB:1,3791.0,low_is_left,1.0,True,True,True
-81224,M. Ramirez,Ecuador,Goalkeeper,GK,1.0,28,GK:28,3294.0,low_is_left,1.0,True,True,True
-81573,O. Marmoush,Egypt,Midfielder,RW,0.47368421052631576,19,RW:9 | ST:6 | LW:4,2892.0,low_is_left,1.0,True,False,False
-81573,Omar Marmoush,Egypt,Midfielder,RW,1.0,2,RW:2,2892.0,low_is_left,1.0,True,True,True
+78494,J. Waterman,Canada,Defender,RB,0.9130434782608695,23,RB:21 | RCB:1 | LCB:1,3791.0,low_is_left,1.0,False,True,False
+81224,M. Ramirez,Ecuador,Goalkeeper,GK,1.0,28,GK:28,3294.0,low_is_left,1.0,False,True,False
+81573,O. Marmoush,Egypt,Midfielder,RW,0.47368421052631576,19,RW:9 | ST:6 | LW:4,2892.0,low_is_left,1.0,False,False,False
+81573,Omar Marmoush,Egypt,Midfielder,RW,1.0,2,RW:2,2892.0,low_is_left,1.0,False,True,False
 82090,B. Thomas-Asante,Ghana,Attacker,RW,0.8636363636363636,22,RW:19 | ST:3,2190.0,low_is_left,1.0,True,True,True
 84087,W. Isidor,Haiti,Attacker,RW,0.8,15,RW:12 | ST:3,1613.0,low_is_left,1.0,True,True,True
 85041,A. Gouiri,Algeria,Attacker,RW,0.9545454545454546,22,RW:21 | ST:1,2187.0,low_is_left,1.0,True,True,True
 85041,Amine Gouiri,Algeria,Attacker,RW,1.0,1,RW:1,2187.0,low_is_left,1.0,True,True,True
 87789,J. Placide,Haiti,Goalkeeper,GK,1.0,33,GK:33,3224.0,low_is_left,1.0,True,True,True
-89982,S. Moghanlou,Iran,Attacker,RW,1.0,14,RW:14,1308.0,low_is_left,1.0,False,True,False
+89982,S. Moghanlou,Iran,Attacker,RW,1.0,14,RW:14,1308.0,low_is_left,1.0,True,True,True
 92993,M. Wieffer,Netherlands,Defender,RB,1.0,23,RB:23,2015.0,low_is_left,1.0,True,True,True
 94322,C. McCowatt,New Zealand,Midfielder,AM,0.9117647058823529,34,AM:31 | RW:3,3437.0,low_is_left,1.0,True,True,True
-94333,E. Just,New Zealand,Midfielder,AM,0.75,32,AM:24 | RW:8,3968.0,low_is_left,1.0,True,True,True
-94344,N. Pijnaker,New Zealand,Defender,RB,0.8,10,RB:8 | LCB:2,3483.0,low_is_left,1.0,True,True,True
-94346,T. Payne,New Zealand,Defender,RB,1.0,13,RB:13,1698.0,low_is_left,1.0,True,True,True
+94333,E. Just,New Zealand,Midfielder,AM,0.75,32,AM:24 | RW:8,3968.0,low_is_left,1.0,False,True,False
+94344,N. Pijnaker,New Zealand,Defender,RB,0.8,10,RB:8 | LCB:2,3483.0,low_is_left,1.0,False,True,False
+94346,T. Payne,New Zealand,Defender,RB,1.0,13,RB:13,1698.0,low_is_left,1.0,False,True,False
 94360,A. Paulsen,New Zealand,Goalkeeper,GK,1.0,24,GK:24,2441.0,low_is_left,1.0,True,True,True
-94405,F. De Vries,New Zealand,Defender,LB,0.5909090909090909,22,LB:13 | RB:5 | LCB:4,2698.0,low_is_left,1.0,True,False,False
-94541,J. Bell,New Zealand,Midfielder,AM,1.0,26,AM:26,4331.0,low_is_left,1.0,True,True,True
-94562,S. Gimenez,Mexico,Attacker,RW,1.0,12,RW:12,1609.0,low_is_left,1.0,True,True,True
-94562,S. Giménez,Mexico,Attacker,RW,1.0,1,RW:1,1609.0,low_is_left,1.0,True,True,True
-95460,A. Arce,Paraguay,Attacker,RW,1.0,16,RW:16,3335.0,low_is_left,1.0,True,True,True
-96512,K. Lenini,Cape Verde Islands,Midfielder,DM,0.8666666666666667,15,DM:13 | AM:2,2730.0,low_is_left,1.0,True,True,True
-96615,I. Diaz,Panama,Attacker,RW,0.75,28,RW:21 | ST:4 | LW:3,4829.0,low_is_left,1.0,True,True,True
-96615,I. Díaz,Panama,Attacker,LW,1.0,3,LW:3,4829.0,low_is_left,1.0,True,True,True
+94405,F. De Vries,New Zealand,Defender,LB,0.5909090909090909,22,LB:13 | RB:5 | LCB:4,2698.0,low_is_left,1.0,False,False,False
+94541,J. Bell,New Zealand,Midfielder,AM,1.0,26,AM:26,4331.0,low_is_left,1.0,False,True,False
+94562,S. Gimenez,Mexico,Attacker,RW,1.0,12,RW:12,1609.0,low_is_left,1.0,False,True,False
+94562,S. Giménez,Mexico,Attacker,RW,1.0,1,RW:1,1609.0,low_is_left,1.0,False,True,False
+95460,A. Arce,Paraguay,Attacker,RW,1.0,16,RW:16,3335.0,low_is_left,1.0,False,True,False
+96512,K. Lenini,Cape Verde Islands,Midfielder,DM,0.8666666666666667,15,DM:13 | AM:2,2730.0,low_is_left,1.0,False,True,False
+96615,I. Diaz,Panama,Attacker,RW,0.75,28,RW:21 | ST:4 | LW:3,4829.0,low_is_left,1.0,False,True,False
+96615,I. Díaz,Panama,Attacker,LW,1.0,3,LW:3,4829.0,low_is_left,1.0,False,True,False
 98936,L. Foster,South Africa,Attacker,RW,0.9523809523809523,21,RW:20 | ST:1,2088.0,low_is_left,1.0,True,True,True
-99211,Park Jin-Seob,South Korea,Midfielder,AM,0.59375,32,AM:19 | RB:7 | CM:6,3210.0,low_is_left,1.0,True,False,False
-101814,R. Araujo,Uruguay,Defender,RCB,0.7058823529411765,17,RCB:12 | RB:5,2593.0,low_is_left,1.0,True,True,True
-102538,M. Abualnadi,Jordan,Defender,RB,0.8,5,RB:4 | LB:1,1108.0,low_is_left,1.0,True,True,True
-106485,Mauricio,Paraguay,Midfielder,CM,0.5238095238095238,42,CM:22 | AM:15 | RW:4 | DM:1,4982.0,low_is_left,1.0,True,False,False
-106485,Maurício,Paraguay,Midfielder,RW,0.5,2,RW:1 | AM:1,4982.0,low_is_left,1.0,True,False,False
+99211,Park Jin-Seob,South Korea,Midfielder,AM,0.59375,32,AM:19 | RB:7 | CM:6,3210.0,low_is_left,1.0,False,False,False
+101814,R. Araujo,Uruguay,Defender,RCB,0.7058823529411765,17,RCB:12 | RB:5,2593.0,low_is_left,1.0,False,True,False
+102538,M. Abualnadi,Jordan,Defender,RB,0.8,5,RB:4 | LB:1,1108.0,low_is_left,1.0,False,True,False
+106485,Mauricio,Paraguay,Midfielder,CM,0.5238095238095238,42,CM:22 | AM:15 | RW:4 | DM:1,4982.0,low_is_left,1.0,False,False,False
+106485,Maurício,Paraguay,Midfielder,RW,0.5,2,RW:1 | AM:1,4982.0,low_is_left,1.0,False,False,False
 106851,S. Machino,Japan,Attacker,RW,1.0,11,RW:11,1439.0,low_is_left,1.0,True,True,True
 108370,M. Zlomislic,Bosnia & Herzegovina,Goalkeeper,GK,1.0,42,GK:42,3884.0,low_is_left,1.0,True,True,True
 108563,R. Zalazar,Uruguay,Midfielder,RW,1.0,35,RW:35,2892.0,low_is_left,1.0,True,True,True
 113580,W. Semedo,Cape Verde Islands,Midfielder,AM,0.9487179487179487,39,AM:37 | CM:1 | RW:1,2135.0,low_is_left,1.0,False,True,False
-116117,M. Caicedo,Ecuador,Midfielder,CM,0.7962962962962963,54,CM:43 | AM:6 | DM:4 | RB:1,7234.0,low_is_left,1.0,True,True,True
+116117,M. Caicedo,Ecuador,Midfielder,CM,0.7962962962962963,54,CM:43 | AM:6 | DM:4 | RB:1,7234.0,low_is_left,1.0,False,True,False
 119853,M. Diaw,Senegal,Goalkeeper,GK,1.0,32,GK:32,3076.0,low_is_left,1.0,True,True,True
 123468,M. Keller,Switzerland,Goalkeeper,GK,1.0,48,GK:48,4633.0,low_is_left,1.0,True,True,True
 123530,M. Al Mardi,Jordan,Attacker,RW,0.75,4,RW:3 | ST:1,1107.0,low_is_left,1.0,False,True,False
@@ -794,13 +794,13 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 126640,D. Affengruber,Austria,Defender,RB,1.0,34,RB:34,3065.0,low_is_left,1.0,True,True,True
 126642,P. Wimmer,Austria,Midfielder,AM,0.5238095238095238,21,AM:11 | CM:7 | RW:3,2105.0,low_is_left,1.0,True,False,False
 126949,C. Richards,USA,Defender,RB,0.7636363636363637,55,RB:42 | RCB:10 | LB:2 | LCB:1,5227.0,low_is_left,1.0,True,True,True
-127227,I. Reyes,Mexico,Defender,RB,0.925,40,RB:37 | LCB:2 | RCB:1,5036.0,low_is_left,1.0,True,True,True
+127227,I. Reyes,Mexico,Defender,RB,0.925,40,RB:37 | LCB:2 | RCB:1,5036.0,low_is_left,1.0,False,True,False
 127769,G. Martinelli,Brazil,Midfielder,LW,0.9230769230769231,26,LW:24 | RW:1 | ST:1,3133.0,low_is_left,1.0,True,True,True
-127817,P. Hincapie,Ecuador,Midfielder,LB,0.6,35,LB:21 | LCB:7 | RB:5 | RCB:2,4703.0,low_is_left,1.0,True,True,True
+127817,P. Hincapie,Ecuador,Midfielder,LB,0.6,35,LB:21 | LCB:7 | RB:5 | RCB:2,4703.0,low_is_left,1.0,False,True,False
 128007,Y. Semedo,Cape Verde Islands,Midfielder,AM,1.0,20,AM:20,1059.0,low_is_left,1.0,False,True,False
 128384,Vitinha,Portugal,Midfielder,CM,0.9122807017543859,57,CM:52 | DM:5,5026.0,low_is_left,1.0,True,True,True
 128533,J. Leweling,Germany,Attacker,RW,0.5405405405405406,37,RW:20 | ST:12 | LW:5,3606.0,low_is_left,1.0,True,False,False
-128766,L. Deedson,Haiti,Midfielder,RW,0.8888888888888888,9,RW:8 | LW:1,2887.0,low_is_left,1.0,True,True,True
+128766,L. Deedson,Haiti,Midfielder,RW,0.8888888888888888,9,RW:8 | LW:1,2887.0,low_is_left,1.0,False,True,False
 128772,D. Zima,Czech Republic,Defender,RB,0.4827586206896552,29,RB:14 | RCB:7 | LB:5 | LCB:3,2525.0,low_is_left,1.0,True,False,False
 128793,D. Jurasek,Czech Republic,Defender,RB,0.44,25,RB:11 | LCB:8 | LB:6,2285.0,low_is_left,0.9759036144578314,True,False,False
 129033,J. Gvardiol,Croatia,Defender,LCB,0.8,25,LCB:20 | LB:5,2242.0,low_is_left,1.0,True,True,True
@@ -812,14 +812,14 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 133609,Pedri,Spain,Midfielder,DM,0.5,40,DM:20 | CM:20,3719.0,low_is_left,1.0,True,False,False
 134217,M. Mohebi,Iran,Midfielder,RW,0.7368421052631579,19,RW:14 | CM:3 | AM:2,2269.0,low_is_left,1.0,True,True,True
 134590,O. Aydin,Türkiye,Attacker,RW,0.9,10,RW:9 | RB:1,1324.0,low_is_left,1.0,True,True,True
-134995,N. Boushal,Saudi Arabia,Defender,RB,0.8461538461538461,26,RB:22 | LB:4,3958.0,low_is_left,1.0,True,True,True
-134995,Nawaf Bu Washl,Saudi Arabia,Defender,LB,1.0,2,LB:2,3958.0,low_is_left,1.0,True,True,True
+134995,N. Boushal,Saudi Arabia,Defender,RB,0.8461538461538461,26,RB:22 | LB:4,3958.0,low_is_left,1.0,False,True,False
+134995,Nawaf Bu Washl,Saudi Arabia,Defender,LB,1.0,2,LB:2,3958.0,low_is_left,1.0,False,True,False
 135059,M. Ben Hamida,Tunisia,Defender,RB,1.0,10,RB:10,1169.0,low_is_left,1.0,True,True,True
 135068,E. Agbadou,Ivory Coast,Defender,RCB,0.46875,32,RCB:15 | RB:13 | LCB:4,3317.0,low_is_left,0.9777777777777776,True,False,False
 135334,S. Bueno,Uruguay,Defender,RB,0.9696969696969697,33,RB:32 | LCB:1,3480.0,low_is_left,1.0,True,True,True
 136503,S. Zakaria,Qatar,Goalkeeper,GK,1.0,14,GK:14,1405.0,low_is_left,1.0,True,True,True
-136723,N. Madueke,England,Midfielder,RW,0.9090909090909091,33,RW:30 | LW:3,3739.0,low_is_left,1.0,True,True,True
-136880,S. Hardani,Iran,Defender,RB,1.0,7,RB:7,1078.0,low_is_left,1.0,True,True,True
+136723,N. Madueke,England,Midfielder,RW,0.9090909090909091,33,RW:30 | LW:3,3739.0,low_is_left,1.0,False,True,False
+136880,S. Hardani,Iran,Defender,RB,1.0,7,RB:7,1078.0,low_is_left,1.0,False,True,False
 137210,A. Stiller,Germany,Midfielder,DM,0.9347826086956522,46,DM:43 | CM:3,4518.0,low_is_left,1.0,True,True,True
 137223,J. Opoku,Ghana,Defender,RB,0.9166666666666666,36,RB:33 | LCB:3,3330.0,low_is_left,1.0,True,True,True
 137303,E. Guessand,Ivory Coast,Attacker,RW,0.5454545454545454,22,RW:12 | ST:5 | LW:5,2285.0,low_is_left,1.0,True,False,False
@@ -831,45 +831,45 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 138908,E. Anderson,England,Midfielder,AM,0.46153846153846156,52,AM:24 | DM:15 | CM:13,5633.0,low_is_left,1.0,True,False,False
 138935,C. Chukwuemeka,Austria,Midfielder,RW,0.7,10,RW:7 | ST:2 | CM:1,1440.0,low_is_left,1.0,True,True,True
 140607,Y. Abulaila,Jordan,Goalkeeper,GK,1.0,5,GK:5,1639.0,low_is_left,1.0,False,True,False
-140609,N. Al Rawabdeh,Jordan,Midfielder,AM,0.5,6,AM:3 | DM:2 | CM:1,1279.0,low_is_left,1.0,True,False,False
+140609,N. Al Rawabdeh,Jordan,Midfielder,AM,0.5,6,AM:3 | DM:2 | CM:1,1279.0,low_is_left,1.0,False,False,False
 142016,Joao Paulo,Cape Verde Islands,Defender,RB,0.967741935483871,31,RB:30 | LB:1,2909.0,low_is_left,1.0,True,True,True
 142959,K. Akturkoglu,Türkiye,Attacker,RW,0.7894736842105263,38,RW:30 | LW:5 | ST:3,3657.0,low_is_left,1.0,True,True,True
 142959,K. Aktürkoğlu,Türkiye,Attacker,RW,1.0,1,RW:1,3657.0,low_is_left,1.0,True,True,True
-144709,J. Anang,Ghana,Goalkeeper,GK,1.0,40,GK:40,5179.0,low_is_left,1.0,True,True,True
-145465,H. Ali,Iraq,Defender,RB,1.0,11,RB:11,1618.0,low_is_left,1.0,True,True,True
-146772,Y. Belammari,Morocco,Defender,LB,0.9,10,LB:9 | LCB:1,1265.0,low_is_left,1.0,True,True,True
-147812,A. Yahya,Saudi Arabia,Midfielder,LB,0.5,18,LB:9 | CM:4 | RB:2 | DM:1 | LCB:1 | AM:1,2331.0,low_is_left,1.0,True,False,False
-147812,Aiman Yahya,Saudi Arabia,Midfielder,CM,1.0,1,CM:1,2331.0,low_is_left,1.0,True,True,True
+144709,J. Anang,Ghana,Goalkeeper,GK,1.0,40,GK:40,5179.0,low_is_left,1.0,False,True,False
+145465,H. Ali,Iraq,Defender,RB,1.0,11,RB:11,1618.0,low_is_left,1.0,False,True,False
+146772,Y. Belammari,Morocco,Defender,LB,0.9,10,LB:9 | LCB:1,1265.0,low_is_left,1.0,False,True,False
+147812,A. Yahya,Saudi Arabia,Midfielder,LB,0.5,18,LB:9 | CM:4 | RB:2 | DM:1 | LCB:1 | AM:1,2331.0,low_is_left,1.0,False,False,False
+147812,Aiman Yahya,Saudi Arabia,Midfielder,CM,1.0,1,CM:1,2331.0,low_is_left,1.0,False,True,False
 147859,C. De Ketelaere,Belgium,Attacker,RW,1.0,41,RW:41,3617.0,low_is_left,1.0,True,True,True
 152849,M. van de Ven,Netherlands,Midfielder,LCB,0.7446808510638298,47,LCB:35 | LB:8 | RB:2 | RCB:2,4584.0,low_is_left,1.0,True,True,True
 152849,Micky van de Ven,Netherlands,Midfielder,LCB,1.0,1,LCB:1,4584.0,low_is_left,1.0,True,True,True
-153083,E. Martinez,Uruguay,Midfielder,CM,0.45454545454545453,22,CM:10 | DM:9 | RB:2 | AM:1,4047.0,low_is_left,1.0,True,False,False
-153083,E. Martínez,Uruguay,Midfielder,AM,0.5,2,AM:1 | CM:1,4047.0,low_is_left,1.0,True,False,False
+153083,E. Martinez,Uruguay,Midfielder,CM,0.45454545454545453,22,CM:10 | DM:9 | RB:2 | AM:1,4047.0,low_is_left,1.0,False,False,False
+153083,E. Martínez,Uruguay,Midfielder,AM,0.5,2,AM:1 | CM:1,4047.0,low_is_left,1.0,False,False,False
 153430,A. Elanga,Sweden,Midfielder,RW,1.0,25,RW:25,2679.0,low_is_left,1.0,True,True,True
 153622,K. Trewin,Australia,Defender,RB,0.9696969696969697,33,RB:32 | LCB:1,3240.0,low_is_left,1.0,True,True,True
 156477,R. Cherki,France,Midfielder,CM,0.8709677419354839,31,CM:27 | RW:3 | AM:1,3689.0,low_is_left,1.0,True,True,True
 157997,A. Diallo,Ivory Coast,Midfielder,AM,0.38235294117647056,34,AM:13 | RW:9 | CM:7 | DM:5,3055.0,low_is_left,1.0,True,False,False
-158054,N. Woltemade,Germany,Attacker,RW,0.6756756756756757,37,RW:25 | ST:12,4346.0,low_is_left,1.0,True,True,True
+158054,N. Woltemade,Germany,Attacker,RW,0.6756756756756757,37,RW:25 | ST:12,4346.0,low_is_left,1.0,False,True,False
 158121,I. Jakobs,Senegal,Midfielder,LB,1.0,30,LB:30,2783.0,low_is_left,1.0,True,True,True
 158433,S. Sithole,South Africa,Midfielder,AM,0.8421052631578947,19,AM:16 | DM:3,2274.0,low_is_left,1.0,True,True,True
 158433,Y. Sithole,South Africa,Midfielder,DM,0.6666666666666666,3,DM:2 | CM:1,2274.0,low_is_left,1.0,True,True,True
 158644,M. Beier,Germany,Attacker,RW,0.7878787878787878,33,RW:26 | LW:5 | ST:2,3341.0,low_is_left,1.0,True,True,True
 158688,J. Randall,New Zealand,Attacker,RW,0.6333333333333333,30,RW:19 | LW:11,2621.0,low_is_left,1.0,True,True,True
-158698,J. Quansah,England,Defender,RB,1.0,42,RB:42,4935.0,low_is_left,1.0,True,True,True
-158700,V. Johansson,Sweden,Goalkeeper,GK,1.0,25,GK:25,2970.0,low_is_left,1.0,True,True,True
-160925,T. Ali,Sweden,Midfielder,AM,0.7368421052631579,19,AM:14 | RW:5,2262.0,low_is_left,1.0,True,True,True
-161504,H. Johansson,Sweden,Defender,RB,1.0,26,RB:26,3358.0,low_is_left,1.0,True,True,True
+158698,J. Quansah,England,Defender,RB,1.0,42,RB:42,4935.0,low_is_left,1.0,False,True,False
+158700,V. Johansson,Sweden,Goalkeeper,GK,1.0,25,GK:25,2970.0,low_is_left,1.0,False,True,False
+160925,T. Ali,Sweden,Midfielder,AM,0.7368421052631579,19,AM:14 | RW:5,2262.0,low_is_left,1.0,False,True,False
+161504,H. Johansson,Sweden,Defender,RB,1.0,26,RB:26,3358.0,low_is_left,1.0,False,True,False
 161585,F. Conceicao,Portugal,Midfielder,RW,1.0,33,RW:33,3227.0,low_is_left,1.0,True,True,True
 161747,G. Doue,Ivory Coast,Defender,RB,1.0,38,RB:38,3667.0,low_is_left,1.0,True,True,True
 161884,S. Hansen,Curaçao,Attacker,RW,1.0,7,RW:7,962.0,low_is_left,1.0,True,True,True
 161897,I. Saibari,Morocco,Attacker,RW,0.5106382978723404,47,RW:24 | ST:16 | LW:7,4422.0,low_is_left,1.0,True,False,False
 161904,B. Barcola,France,Midfielder,RW,0.35,40,RW:14 | LW:13 | ST:13,3814.0,low_is_left,1.0,True,False,False
 161904,Bradley Barcola,France,Midfielder,ST,1.0,1,ST:1,3814.0,low_is_left,1.0,True,True,True
-161907,M. Gusto,France,Defender,RB,0.9302325581395349,43,RB:40 | LB:2 | LCB:1,4683.0,low_is_left,1.0,True,True,True
-161921,G. Reyna,USA,Midfielder,ST,0.5,6,ST:3 | CM:2 | RW:1,935.0,low_is_left,1.0,True,False,False
-161939,T. Araujo,Portugal,Defender,RCB,0.7666666666666667,30,RCB:23 | RB:6 | LB:1,3479.0,low_is_left,1.0,True,True,True
+161907,M. Gusto,France,Defender,RB,0.9302325581395349,43,RB:40 | LB:2 | LCB:1,4683.0,low_is_left,1.0,False,True,False
+161921,G. Reyna,USA,Midfielder,ST,0.5,6,ST:3 | CM:2 | RW:1,935.0,low_is_left,1.0,False,False,False
+161939,T. Araujo,Portugal,Defender,RCB,0.7666666666666667,30,RCB:23 | RB:6 | LB:1,3479.0,low_is_left,1.0,False,True,False
 162007,M. De Cuyper,Belgium,Defender,LB,0.8260869565217391,23,LB:19 | RB:3 | LCB:1,2175.0,low_is_left,1.0,True,True,True
-162037,M. Tillman,USA,Midfielder,RW,0.5757575757575758,33,RW:19 | CM:6 | AM:5 | DM:3,3771.0,low_is_left,1.0,True,False,False
+162037,M. Tillman,USA,Midfielder,RW,0.5757575757575758,33,RW:19 | CM:6 | AM:5 | DM:3,3771.0,low_is_left,1.0,False,False,False
 162141,K. De Winter,Belgium,Defender,RB,1.0,22,RB:22,2537.0,low_is_left,1.0,True,True,True
 162194,L. Cerv,Czech Republic,Midfielder,CM,0.5227272727272727,44,CM:23 | DM:13 | AM:8,3966.0,low_is_left,1.0,True,False,False
 162199,A. Martha,Curaçao,Midfielder,RB,1.0,28,RB:28,2997.0,low_is_left,1.0,True,True,True
@@ -877,105 +877,105 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 162511,S. Lammens,Belgium,Goalkeeper,GK,1.0,37,GK:37,3799.0,low_is_left,1.0,True,True,True
 162707,E. Wahi,Ivory Coast,Attacker,RW,0.8947368421052632,19,RW:17 | ST:2,2231.0,low_is_left,1.0,True,True,True
 162714,A. Onana,Belgium,Midfielder,DM,0.9117647058823529,34,DM:31 | CM:3,3059.0,low_is_left,1.0,True,True,True
-162733,R. Providence,Haiti,Midfielder,RW,0.5789473684210527,19,RW:11 | LW:8,3201.0,low_is_left,1.0,True,False,False
+162733,R. Providence,Haiti,Midfielder,RW,0.5789473684210527,19,RW:11 | LW:8,3201.0,low_is_left,1.0,False,False,False
 162891,J. Sanabria,Uruguay,Defender,RB,0.9375,32,RB:30 | LB:2,3122.0,low_is_left,1.0,True,True,True
 162964,R. Hranac,Czech Republic,Defender,RCB,0.75,28,RCB:21 | RB:7,2783.0,low_is_left,1.0,True,True,True
-163032,F. Rieder,Switzerland,Midfielder,RW,0.5588235294117647,34,RW:19 | CM:5 | AM:5 | DM:5,3577.0,low_is_left,1.0,True,False,False
+163032,F. Rieder,Switzerland,Midfielder,RW,0.5588235294117647,34,RW:19 | CM:5 | AM:5 | DM:5,3577.0,low_is_left,1.0,False,False,False
 163041,B. Cross,South Africa,Defender,RB,1.0,21,RB:21,1873.0,low_is_left,1.0,True,True,True
 163189,M. Thiaw,Germany,Defender,RB,1.0,51,RB:51,4724.0,low_is_left,1.0,True,True,True
-163200,C. J. dos Santos,Cape Verde Islands,Goalkeeper,GK,1.0,17,GK:17,3025.0,low_is_left,1.0,True,True,True
-163220,J. Antonisse,Curaçao,Attacker,RW,0.9642857142857143,28,RW:27 | LW:1,2943.0,low_is_left,1.0,True,True,True
-164026,A. Olwan,Jordan,Attacker,RW,1.0,5,RW:5,1367.0,low_is_left,1.0,True,True,True
+163200,C. J. dos Santos,Cape Verde Islands,Goalkeeper,GK,1.0,17,GK:17,3025.0,low_is_left,1.0,False,True,False
+163220,J. Antonisse,Curaçao,Attacker,RW,0.9642857142857143,28,RW:27 | LW:1,2943.0,low_is_left,1.0,False,True,False
+164026,A. Olwan,Jordan,Attacker,RW,1.0,5,RW:5,1367.0,low_is_left,1.0,False,True,False
 174915,J. Casimir,Haiti,Midfielder,RW,0.7727272727272727,22,RW:17 | RB:4 | ST:1,2075.0,low_is_left,1.0,True,True,True
-175439,H. Al Amin,Qatar,Defender,RB,0.8125,16,RB:13 | LB:3,2525.0,low_is_left,1.0,True,True,True
+175439,H. Al Amin,Qatar,Defender,RB,0.8125,16,RB:13 | LB:3,2525.0,low_is_left,1.0,False,True,False
 179699,F. Mayele,Congo DR,Attacker,RW,1.0,29,RW:29,2744.0,low_is_left,0.9803921568627452,True,True,True
 179856,B. Old,New Zealand,Attacker,RB,0.7727272727272727,22,RB:17 | LW:4 | ST:1,2566.0,low_is_left,1.0,True,True,True
-179862,M. Stamenic,New Zealand,Midfielder,CM,0.5806451612903226,31,CM:18 | AM:13,3788.0,low_is_left,1.0,True,False,False
+179862,M. Stamenic,New Zealand,Midfielder,CM,0.5806451612903226,31,CM:18 | AM:13,3788.0,low_is_left,1.0,False,False,False
 180560,H. Mejbri,Tunisia,Attacker,RW,0.875,16,RW:14 | ST:2,2274.0,low_is_left,1.0,True,True,True
-180937,H. Falchener,Norway,Defender,RB,0.967741935483871,31,RB:30 | RCB:1,3862.0,low_is_left,1.0,True,True,True
+180937,H. Falchener,Norway,Defender,RB,0.967741935483871,31,RB:30 | RCB:1,3862.0,low_is_left,1.0,False,True,False
 181812,J. Musiala,Germany,Attacker,ST,0.625,16,ST:10 | RW:5 | LW:1,1710.0,low_is_left,1.0,True,True,True
-182219,A. Baena,Spain,Midfielder,CM,0.8529411764705882,34,CM:29 | RW:2 | LW:1 | AM:1 | ST:1,5477.0,low_is_left,1.0,True,True,True
+182219,A. Baena,Spain,Midfielder,CM,0.8529411764705882,34,CM:29 | RW:2 | LW:1 | AM:1 | ST:1,5477.0,low_is_left,1.0,False,True,False
 182718,J. Garcia,Spain,Goalkeeper,GK,1.0,45,GK:45,4240.0,low_is_left,1.0,True,True,True
 183799,N. Williams,Spain,Attacker,RW,0.5652173913043478,23,RW:13 | LW:10,2229.0,low_is_left,1.0,True,False,False
 184226,Y. Pino,Spain,Midfielder,ST,0.43902439024390244,41,ST:18 | RW:14 | LW:9,3492.0,low_is_left,1.0,True,False,False
 190485,Samu Costa,Portugal,Midfielder,AM,1.0,32,AM:32,3011.0,low_is_left,1.0,True,True,True
 190575,M. Ateya,Egypt,Midfielder,CM,0.6666666666666666,6,CM:4 | AM:2,3460.0,low_is_left,1.0,True,True,True
 190575,M. Attia,Egypt,Midfielder,CM,0.64,25,CM:16 | AM:6 | DM:3,3460.0,low_is_left,1.0,True,True,True
-190747,M. Experience,Haiti,Defender,RB,0.7894736842105263,19,RB:15 | LB:4,2622.0,low_is_left,1.0,True,True,True
-190747,M. Expérience,Haiti,Defender,LB,1.0,3,LB:3,2622.0,low_is_left,1.0,True,True,True
+190747,M. Experience,Haiti,Defender,RB,0.7894736842105263,19,RB:15 | LB:4,2622.0,low_is_left,1.0,False,True,False
+190747,M. Expérience,Haiti,Defender,LB,1.0,3,LB:3,2622.0,low_is_left,1.0,False,True,False
 191240,M. Senaya,Ghana,Defender,RB,0.84,25,RB:21 | RCB:4,2253.0,low_is_left,1.0,True,True,True
 191289,A. Sbai,Morocco,Attacker,RW,1.0,26,RW:26,2057.0,low_is_left,1.0,True,True,True
-193279,J. Nelson,Canada,Attacker,RW,1.0,14,RW:14,2455.0,low_is_left,1.0,True,True,True
-193288,N. Al Aqidi,Saudi Arabia,Goalkeeper,GK,1.0,13,GK:13,1864.0,low_is_left,1.0,True,True,True
-193288,Nawaf Al Aqidi,Saudi Arabia,Goalkeeper,GK,1.0,3,GK:3,1864.0,low_is_left,1.0,True,True,True
+193279,J. Nelson,Canada,Attacker,RW,1.0,14,RW:14,2455.0,low_is_left,1.0,False,True,False
+193288,N. Al Aqidi,Saudi Arabia,Goalkeeper,GK,1.0,13,GK:13,1864.0,low_is_left,1.0,False,True,False
+193288,Nawaf Al Aqidi,Saudi Arabia,Goalkeeper,GK,1.0,3,GK:3,1864.0,low_is_left,1.0,False,True,False
 194430,T. Mbatha,South Africa,Midfielder,CM,0.6086956521739131,23,CM:14 | DM:8 | AM:1,2154.0,low_is_left,1.0,True,True,True
 194536,R. Roefs,Netherlands,Goalkeeper,GK,1.0,37,GK:37,3692.0,low_is_left,1.0,True,True,True
 194645,S. Sambo,Curaçao,Defender,RB,1.0,23,RB:23,2316.0,low_is_left,1.0,True,True,True
-195104,R. Rios,Colombia,Midfielder,CM,0.7674418604651163,43,CM:33 | AM:9 | DM:1,7516.0,low_is_left,1.0,True,True,True
-195104,R. Ríos,Colombia,Midfielder,AM,0.4,5,AM:2 | CM:2 | DM:1,7516.0,low_is_left,1.0,True,False,False
-195107,D. Bobadilla,Paraguay,Midfielder,AM,0.9019607843137255,51,AM:46 | CM:3 | RW:2,6047.0,low_is_left,1.0,True,True,True
-195992,J. Caceres,Paraguay,Defender,RB,1.0,30,RB:30,4008.0,low_is_left,1.0,True,True,True
+195104,R. Rios,Colombia,Midfielder,CM,0.7674418604651163,43,CM:33 | AM:9 | DM:1,7516.0,low_is_left,1.0,False,True,False
+195104,R. Ríos,Colombia,Midfielder,AM,0.4,5,AM:2 | CM:2 | DM:1,7516.0,low_is_left,1.0,False,False,False
+195107,D. Bobadilla,Paraguay,Midfielder,AM,0.9019607843137255,51,AM:46 | CM:3 | RW:2,6047.0,low_is_left,1.0,False,True,False
+195992,J. Caceres,Paraguay,Defender,RB,1.0,30,RB:30,4008.0,low_is_left,1.0,False,True,False
 196156,I. Thiago,Brazil,Attacker,RW,1.0,39,RW:39,3626.0,low_is_left,1.0,True,True,True
 196187,A. Seidu,Ghana,Defender,RB,1.0,16,RB:16,1623.0,low_is_left,1.0,True,True,True
-196298,R. Sosa,Paraguay,Attacker,RW,0.5185185185185185,27,RW:14 | ST:10 | LW:3,3863.0,low_is_left,1.0,True,False,False
-197933,A. Basil,Iraq,Goalkeeper,GK,1.0,7,GK:7,990.0,low_is_left,1.0,True,True,True
-197985,Seol Young-Woo,South Korea,Midfielder,RB,1.0,43,RB:43,5624.0,low_is_left,1.0,True,True,True
+196298,R. Sosa,Paraguay,Attacker,RW,0.5185185185185185,27,RW:14 | ST:10 | LW:3,3863.0,low_is_left,1.0,False,False,False
+197933,A. Basil,Iraq,Goalkeeper,GK,1.0,7,GK:7,990.0,low_is_left,1.0,False,True,False
+197985,Seol Young-Woo,South Korea,Midfielder,RB,1.0,43,RB:43,5624.0,low_is_left,1.0,False,True,False
 198347,A. Valencia,Ecuador,Attacker,RW,1.0,12,RW:12,1526.0,low_is_left,1.0,True,True,True
-198352,M. Toure,Australia,Attacker,RW,1.0,23,RW:23,2387.0,low_is_left,1.0,True,True,True
-198654,D. Svensson,Sweden,Defender,LB,0.9318181818181818,44,LB:41 | LCB:2 | RB:1,4716.0,low_is_left,1.0,True,True,True
+198352,M. Toure,Australia,Attacker,RW,1.0,23,RW:23,2387.0,low_is_left,1.0,False,True,False
+198654,D. Svensson,Sweden,Defender,LB,0.9318181818181818,44,LB:41 | LCB:2 | RB:1,4716.0,low_is_left,1.0,False,True,False
 199143,Y. Suzuki,Japan,Midfielder,AM,0.46875,32,AM:15 | CM:15 | RW:2,3201.0,low_is_left,0.9482758620689656,True,False,False
 199310,A. Slimane,Tunisia,Attacker,RW,0.875,16,RW:14 | ST:2,1775.0,low_is_left,1.0,True,True,True
-199578,Z. Suzuki,Japan,Goalkeeper,GK,1.0,26,GK:26,3780.0,low_is_left,1.0,True,True,True
+199578,Z. Suzuki,Japan,Goalkeeper,GK,1.0,26,GK:26,3780.0,low_is_left,1.0,False,True,False
 199767,S. Kapuadi,Congo DR,Defender,RB,0.9393939393939394,33,RB:31 | LCB:2,3066.0,low_is_left,1.0,True,True,True
 199837,K. Sulemana,Ghana,Midfielder,RW,0.6428571428571429,14,RW:9 | ST:4 | LW:1,1736.0,low_is_left,1.0,True,True,True
 200139,M. Amoura,Algeria,Attacker,RW,0.75,28,RW:21 | ST:4 | LW:3,2557.0,low_is_left,1.0,True,True,True
 200981,J. Gaber,Qatar,Midfielder,RB,1.0,8,RB:8,1344.0,low_is_left,1.0,False,True,False
-201354,E. Makgopa,South Africa,Attacker,RW,1.0,13,RW:13,1763.0,low_is_left,1.0,True,True,True
-201713,S. Berhalter,USA,Midfielder,AM,0.55,40,AM:22 | CM:18,5776.0,low_is_left,1.0,True,False,False
-202381,M. Al Harbi,Saudi Arabia,Defender,RB,0.5,26,RB:13 | LB:12 | LCB:1,3373.0,low_is_left,1.0,True,False,False
-202381,Moteb Al Harbi,Saudi Arabia,Defender,LB,1.0,2,LB:2,3373.0,low_is_left,1.0,True,True,True
+201354,E. Makgopa,South Africa,Attacker,RW,1.0,13,RW:13,1763.0,low_is_left,1.0,False,True,False
+201713,S. Berhalter,USA,Midfielder,AM,0.55,40,AM:22 | CM:18,5776.0,low_is_left,1.0,False,False,False
+202381,M. Al Harbi,Saudi Arabia,Defender,RB,0.5,26,RB:13 | LB:12 | LCB:1,3373.0,low_is_left,1.0,False,False,False
+202381,Moteb Al Harbi,Saudi Arabia,Defender,LB,1.0,2,LB:2,3373.0,low_is_left,1.0,False,True,False
 202696,I. Matanovic,Croatia,Attacker,RW,1.0,25,RW:25,2901.0,low_is_left,0.9482758620689656,True,True,True
 203224,F. Wirtz,Germany,Attacker,ST,0.5,44,ST:22 | RW:15 | LW:7,4254.0,low_is_left,1.0,True,False,False
 204043,A. Theate,Belgium,Defender,RB,0.9428571428571428,35,RB:33 | LCB:2,3318.0,low_is_left,1.0,True,True,True
-210165,F. Surman,New Zealand,Defender,RB,1.0,35,RB:35,5496.0,low_is_left,1.0,True,True,True
-212233,B. Gutierrez,Mexico,Midfielder,AM,0.5925925925925926,27,AM:16 | DM:8 | CM:3,3946.0,low_is_left,1.0,True,False,False
-213980,N. Al Rashdan,Jordan,Midfielder,AM,0.8235294117647058,17,AM:14 | DM:2 | CM:1,2525.0,low_is_left,1.0,True,True,True
+210165,F. Surman,New Zealand,Defender,RB,1.0,35,RB:35,5496.0,low_is_left,1.0,False,True,False
+212233,B. Gutierrez,Mexico,Midfielder,AM,0.5925925925925926,27,AM:16 | DM:8 | CM:3,3946.0,low_is_left,1.0,False,False,False
+213980,N. Al Rashdan,Jordan,Midfielder,AM,0.8235294117647058,17,AM:14 | DM:2 | CM:1,2525.0,low_is_left,1.0,False,True,False
 214463,I. Yuksek,Türkiye,Midfielder,CM,0.6333333333333333,30,CM:19 | AM:7 | DM:4,2772.0,low_is_left,1.0,True,True,True
 221605,F. Wiegele,Austria,Goalkeeper,GK,1.0,25,GK:25,2495.0,low_is_left,1.0,True,True,True
-226765,E. Stroud,Sweden,Defender,RB,0.6,25,RB:15 | LB:10,3362.0,low_is_left,1.0,True,True,True
+226765,E. Stroud,Sweden,Defender,RB,0.6,25,RB:15 | LB:10,3362.0,low_is_left,1.0,False,True,False
 237050,J. Eom,South Korea,Attacker,RW,0.9411764705882353,34,RW:32 | ST:2,2942.0,low_is_left,1.0,True,True,True
-237078,P. Vite,Ecuador,Midfielder,AM,0.4878048780487805,41,AM:20 | CM:17 | DM:2 | RW:2,6797.0,low_is_left,1.0,True,False,False
+237078,P. Vite,Ecuador,Midfielder,AM,0.4878048780487805,41,AM:20 | CM:17 | DM:2 | RW:2,6797.0,low_is_left,1.0,False,False,False
 237129,P. M. Sarr,Senegal,Midfielder,AM,0.8181818181818182,22,AM:18 | CM:4,2461.0,low_is_left,1.0,True,True,True
 237129,Pape Matar Sarr,Senegal,Midfielder,AM,1.0,1,AM:1,2461.0,low_is_left,1.0,True,True,True
 237218,Lee Han-Beom,South Korea,Defender,RB,1.0,32,RB:32,3692.0,low_is_left,1.0,True,True,True
-237220,Lee Tae-Seok,South Korea,Midfielder,AM,0.96875,32,AM:31 | RB:1,4126.0,low_is_left,1.0,True,True,True
-260865,M. Pasalic,Croatia,Midfielder,AM,0.8076923076923077,26,AM:21 | RW:4 | CM:1,3746.0,low_is_left,1.0,True,True,True
+237220,Lee Tae-Seok,South Korea,Midfielder,AM,0.96875,32,AM:31 | RB:1,4126.0,low_is_left,1.0,False,True,False
+260865,M. Pasalic,Croatia,Midfielder,AM,0.8076923076923077,26,AM:21 | RW:4 | CM:1,3746.0,low_is_left,1.0,False,True,False
 263228,P. Guiagon,Ivory Coast,Midfielder,AM,0.9655172413793104,29,AM:28 | RW:1,2695.0,low_is_left,1.0,True,True,True
 263482,N. Mendes,Portugal,Defender,LB,1.0,36,LB:36,3471.0,low_is_left,1.0,True,True,True
 263482,Nuno Mendes,Portugal,Defender,LB,1.0,2,LB:2,3471.0,low_is_left,1.0,True,True,True
-263676,A. Fayzullaev,Uzbekistan,Attacker,RW,0.8947368421052632,19,RW:17 | ST:2,2361.0,low_is_left,1.0,True,True,True
+263676,A. Fayzullaev,Uzbekistan,Attacker,RW,0.8947368421052632,19,RW:17 | ST:2,2361.0,low_is_left,1.0,False,True,False
 264094,B. Tahirovic,Bosnia & Herzegovina,Midfielder,AM,0.631578947368421,19,AM:12 | DM:4 | CM:3,1867.0,low_is_left,1.0,True,True,True
-265444,S. Langas,Norway,Defender,RB,1.0,22,RB:22,2707.0,low_is_left,1.0,True,True,True
-265448,M. Farji,Iraq,Midfielder,AM,0.7647058823529411,17,AM:13 | RW:4,2944.0,low_is_left,1.0,True,True,True
+265444,S. Langas,Norway,Defender,RB,1.0,22,RB:22,2707.0,low_is_left,1.0,False,True,False
+265448,M. Farji,Iraq,Midfielder,AM,0.7647058823529411,17,AM:13 | RW:4,2944.0,low_is_left,1.0,False,True,False
 265556,T. Arcanjo,Cape Verde Islands,Midfielder,AM,0.9230769230769231,13,AM:12 | CM:1,1574.0,low_is_left,1.0,True,True,True
 265595,G. Inacio,Portugal,Defender,RCB,0.6818181818181818,44,RCB:30 | RB:14,3935.0,low_is_left,1.0,True,True,True
-265782,D. M. Wolfe,Norway,Defender,RB,0.5714285714285714,14,RB:8 | LB:4 | LCB:2,2408.0,low_is_left,1.0,True,False,False
-265782,D. Wolfe,Norway,Defender,LB,1.0,5,LB:5,2408.0,low_is_left,1.0,True,True,True
+265782,D. M. Wolfe,Norway,Defender,RB,0.5714285714285714,14,RB:8 | LB:4 | LCB:2,2408.0,low_is_left,1.0,False,False,False
+265782,D. Wolfe,Norway,Defender,LB,1.0,5,LB:5,2408.0,low_is_left,1.0,False,True,False
 265785,Luiz Henrique,Brazil,Attacker,RW,1.0,24,RW:24,2593.0,low_is_left,1.0,True,True,True
-265820,Y. Ayari,Sweden,Midfielder,CM,0.7916666666666666,24,CM:19 | AM:5,3301.0,low_is_left,1.0,True,True,True
-266345,E. Lira,Mexico,Midfielder,RCB,0.6808510638297872,47,RCB:32 | RB:14 | LCB:1,5966.0,low_is_left,1.0,True,True,True
-266345,É. Lira,Mexico,Midfielder,RB,0.5,2,RB:1 | RCB:1,5966.0,low_is_left,1.0,True,False,False
-266606,C. Brady,USA,Goalkeeper,GK,1.0,30,GK:30,3964.0,low_is_left,1.0,True,True,True
-268710,J. Adams,South Africa,Midfielder,AM,0.8518518518518519,27,AM:23 | CM:4,3652.0,low_is_left,1.0,True,True,True
-269172,Z. Al Johani,Saudi Arabia,Midfielder,DM,0.6086956521739131,23,DM:14 | CM:9,2697.0,low_is_left,1.0,True,True,True
-269172,Ziyad Al Johani,Saudi Arabia,Midfielder,CM,1.0,3,CM:3,2697.0,low_is_left,1.0,True,True,True
+265820,Y. Ayari,Sweden,Midfielder,CM,0.7916666666666666,24,CM:19 | AM:5,3301.0,low_is_left,1.0,False,True,False
+266345,E. Lira,Mexico,Midfielder,RCB,0.6808510638297872,47,RCB:32 | RB:14 | LCB:1,5966.0,low_is_left,1.0,False,True,False
+266345,É. Lira,Mexico,Midfielder,RB,0.5,2,RB:1 | RCB:1,5966.0,low_is_left,1.0,False,False,False
+266606,C. Brady,USA,Goalkeeper,GK,1.0,30,GK:30,3964.0,low_is_left,1.0,False,True,False
+268710,J. Adams,South Africa,Midfielder,AM,0.8518518518518519,27,AM:23 | CM:4,3652.0,low_is_left,1.0,False,True,False
+269172,Z. Al Johani,Saudi Arabia,Midfielder,DM,0.6086956521739131,23,DM:14 | CM:9,2697.0,low_is_left,1.0,False,True,False
+269172,Ziyad Al Johani,Saudi Arabia,Midfielder,CM,1.0,3,CM:3,2697.0,low_is_left,1.0,False,True,False
 269174,M. Shobeir,Egypt,Goalkeeper,GK,1.0,5,GK:5,2572.0,low_is_left,1.0,True,True,True
 269174,O. Shobeir,Egypt,Goalkeeper,GK,1.0,18,GK:18,2572.0,low_is_left,1.0,True,True,True
 269349,L. Hornicek,Czech Republic,Goalkeeper,GK,1.0,51,GK:51,4850.0,low_is_left,1.0,True,True,True
 269621,H. Abdelmaguid,Egypt,Defender,RB,0.972972972972973,37,RB:36 | LCB:1,3782.0,low_is_left,1.0,True,True,True
-270774,R. Rangel,Mexico,Goalkeeper,GK,1.0,41,GK:41,5084.0,low_is_left,1.0,True,True,True
+270774,R. Rangel,Mexico,Goalkeeper,GK,1.0,41,GK:41,5084.0,low_is_left,1.0,False,True,False
 271350,T. Muharemovic,Bosnia & Herzegovina,Defender,RB,0.9166666666666666,36,RB:33 | LCB:3,3774.0,low_is_left,1.0,True,True,True
-271444,M. Doski,Iraq,Defender,LB,0.5882352941176471,34,LB:20 | RB:13 | LCB:1,4214.0,low_is_left,1.0,True,False,False
+271444,M. Doski,Iraq,Defender,LB,0.5882352941176471,34,LB:20 | RB:13 | LCB:1,4214.0,low_is_left,1.0,False,False,False
 271539,J. Hadjam,Algeria,Defender,RB,0.875,24,RB:21 | LB:3,2357.0,low_is_left,1.0,True,True,True
 274300,M. Akliouche,France,Midfielder,RW,0.525,40,RW:21 | CM:14 | AM:5,4157.0,low_is_left,1.0,True,False,False
 275170,Danilo,Brazil,Midfielder,AM,0.9444444444444444,36,AM:34 | RB:2,3138.0,low_is_left,1.0,True,True,True
@@ -983,66 +983,66 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 275651,A. Bonny,Ivory Coast,Attacker,RW,0.6111111111111112,18,RW:11 | ST:7,1981.0,low_is_left,1.0,True,True,True
 276184,M. Sarr,Senegal,Defender,RB,0.5652173913043478,23,RB:13 | RCB:4 | LCB:3 | LB:3,2245.0,low_is_left,1.0,True,False,False
 276670,F. Chaibi,Algeria,Midfielder,AM,0.4444444444444444,36,AM:16 | CM:15 | DM:2 | RW:2 | LW:1,3353.0,low_is_left,1.0,True,False,False
-277003,N. El Aynaoui,Morocco,Midfielder,DM,0.5517241379310345,29,DM:16 | AM:9 | CM:3 | RW:1,4908.0,low_is_left,1.0,True,False,False
+277003,N. El Aynaoui,Morocco,Midfielder,DM,0.5517241379310345,29,DM:16 | AM:9 | CM:3 | RW:1,4908.0,low_is_left,1.0,False,False,False
 277046,M. Kone,Ivory Coast,Goalkeeper,GK,1.0,19,GK:19,1710.0,low_is_left,1.0,True,True,True
 277930,T. Aasgaard,Norway,Midfielder,AM,0.8888888888888888,27,AM:24 | RW:2 | CM:1,2908.0,low_is_left,1.0,True,True,True
-278133,O. Bobb,Norway,Attacker,RW,1.0,18,RW:18,2328.0,low_is_left,1.0,True,True,True
-278370,D. Gomez,Paraguay,Midfielder,AM,0.6052631578947368,38,AM:23 | CM:10 | RW:5,4025.0,low_is_left,1.0,True,True,True
+278133,O. Bobb,Norway,Attacker,RW,1.0,18,RW:18,2328.0,low_is_left,1.0,False,True,False
+278370,D. Gomez,Paraguay,Midfielder,AM,0.6052631578947368,38,AM:23 | CM:10 | RW:5,4025.0,low_is_left,1.0,False,True,False
 278898,C. Riad,Morocco,Defender,LCB,0.8333333333333334,12,LCB:10 | LB:2,1325.0,low_is_left,1.0,True,True,True
 279482,B. Cipenga,Congo DR,Attacker,RW,0.6538461538461539,26,RW:17 | LW:9,2484.0,low_is_left,1.0,True,True,True
 280074,N. Brown,Germany,Defender,LB,0.525,40,LB:21 | LCB:13 | RB:6,4655.0,low_is_left,1.0,True,False,False
 280358,J. Castrop,South Korea,Midfielder,DM,0.45,20,DM:9 | CM:7 | RW:2 | RB:1 | ST:1,1940.0,low_is_left,1.0,True,False,False
-280695,A. Minda,Ecuador,Midfielder,RW,0.9444444444444444,18,RW:17 | ST:1,2221.0,low_is_left,1.0,True,True,True
+280695,A. Minda,Ecuador,Midfielder,RW,0.9444444444444444,18,RW:17 | ST:1,2221.0,low_is_left,1.0,False,True,False
 283058,N. Jackson,Senegal,Attacker,RW,0.8260869565217391,23,RW:19 | ST:3 | LW:1,2324.0,low_is_left,1.0,True,True,True
-283174,M. Al Mannai,Qatar,Midfielder,AM,0.6666666666666666,12,AM:8 | RW:3 | RB:1,1165.0,low_is_left,1.0,False,True,False
+283174,M. Al Mannai,Qatar,Midfielder,AM,0.6666666666666666,12,AM:8 | RW:3 | RB:1,1165.0,low_is_left,1.0,True,True,True
 283252,Z. El Ouahdi,Morocco,Defender,RB,0.9767441860465116,43,RB:42 | LB:1,3977.0,low_is_left,1.0,True,True,True
 284072,B. Dieng,Senegal,Attacker,RW,1.0,18,RW:18,1470.0,low_is_left,1.0,True,True,True
-284295,Z. Iqbal,Iraq,Midfielder,AM,0.9230769230769231,13,AM:12 | CM:1,1550.0,low_is_left,1.0,True,True,True
+284295,Z. Iqbal,Iraq,Midfielder,AM,0.9230769230769231,13,AM:12 | CM:1,1550.0,low_is_left,1.0,False,True,False
 284322,K. Mainoo,England,Midfielder,CM,0.8888888888888888,18,CM:16 | DM:2,2098.0,low_is_left,1.0,True,True,True
 284554,O. Goodman,Canada,Goalkeeper,GK,1.0,33,GK:33,3011.0,low_is_left,1.0,True,True,True
 284869,T. Fruk,Croatia,Midfielder,AM,0.6666666666666666,36,AM:24 | RW:12,2904.0,low_is_left,1.0,True,True,True
-289592,K. Castano,Colombia,Midfielder,CM,0.5238095238095238,21,CM:11 | AM:10,4144.0,low_is_left,1.0,True,False,False
+289592,K. Castano,Colombia,Midfielder,CM,0.5238095238095238,21,CM:11 | AM:10,4144.0,low_is_left,1.0,False,False,False
 290212,D. Visinsky,Czech Republic,Midfielder,AM,0.6,25,AM:15 | RW:6 | DM:2 | CM:1 | ST:1,2313.0,low_is_left,1.0,True,True,True
-291024,H. Varela,Cape Verde Islands,Midfielder,AM,1.0,22,AM:22,5123.0,low_is_left,1.0,True,True,True
+291024,H. Varela,Cape Verde Islands,Midfielder,AM,1.0,22,AM:22,5123.0,low_is_left,1.0,False,True,False
 291713,A. Gonzalez,Mexico,Attacker,RW,0.9375,32,RW:30 | ST:2,2855.0,low_is_left,1.0,True,True,True
 291964,A. Guler,Türkiye,Attacker,RW,0.5116279069767442,43,RW:22 | ST:11 | LW:10,4225.0,low_is_left,1.0,True,False,False
 291964,A. Güler,Türkiye,Attacker,ST,0.6,5,ST:3 | RW:2,4225.0,low_is_left,1.0,True,True,True
-292396,A. Londono,Panama,Midfielder,RW,1.0,25,RW:25,3832.0,low_is_left,1.0,True,True,True
-292396,A. Londoño,Panama,Midfielder,RW,1.0,1,RW:1,3832.0,low_is_left,1.0,True,True,True
-292924,N. Benbouali,Algeria,Attacker,RW,1.0,13,RW:13,1327.0,low_is_left,1.0,False,True,False
-294824,N. Saliba,Canada,Midfielder,CM,0.5757575757575758,33,CM:19 | AM:12 | DM:1 | RW:1,4541.0,low_is_left,1.0,True,False,False
-295026,M. Baturina,Croatia,Attacker,ST,0.4583333333333333,24,ST:11 | RW:7 | LW:6,4021.0,low_is_left,1.0,True,False,False
-295394,M. Younis,Iraq,Defender,RB,0.75,8,RB:6 | RCB:2,1170.0,low_is_left,1.0,True,True,True
-295513,J. Lopez,Argentina,Attacker,RW,0.8518518518518519,54,RW:46 | ST:8,6255.0,low_is_left,1.0,True,True,True
-295513,J. López,Argentina,Attacker,RW,1.0,1,RW:1,6255.0,low_is_left,1.0,True,True,True
+292396,A. Londono,Panama,Midfielder,RW,1.0,25,RW:25,3832.0,low_is_left,1.0,False,True,False
+292396,A. Londoño,Panama,Midfielder,RW,1.0,1,RW:1,3832.0,low_is_left,1.0,False,True,False
+292924,N. Benbouali,Algeria,Attacker,RW,1.0,13,RW:13,1327.0,low_is_left,1.0,True,True,True
+294824,N. Saliba,Canada,Midfielder,CM,0.5757575757575758,33,CM:19 | AM:12 | DM:1 | RW:1,4541.0,low_is_left,1.0,False,False,False
+295026,M. Baturina,Croatia,Attacker,ST,0.4583333333333333,24,ST:11 | RW:7 | LW:6,4021.0,low_is_left,1.0,False,False,False
+295394,M. Younis,Iraq,Defender,RB,0.75,8,RB:6 | RCB:2,1170.0,low_is_left,1.0,False,True,False
+295513,J. Lopez,Argentina,Attacker,RW,0.8518518518518519,54,RW:46 | ST:8,6255.0,low_is_left,1.0,False,True,False
+295513,J. López,Argentina,Attacker,RW,1.0,1,RW:1,6255.0,low_is_left,1.0,False,True,False
 295793,M. Pubill,Spain,Defender,RCB,0.7931034482758621,29,RCB:23 | RB:6,3216.0,low_is_left,1.0,True,True,True
-295977,T. Moremi,South Africa,Midfielder,AM,0.6,20,AM:12 | CM:8,2575.0,low_is_left,1.0,True,True,True
-296373,Z. Tahseen,Iraq,Defender,RCB,0.75,4,RCB:3 | LCB:1,991.0,low_is_left,1.0,True,True,True
+295977,T. Moremi,South Africa,Midfielder,AM,0.6,20,AM:12 | CM:8,2575.0,low_is_left,1.0,False,True,False
+296373,Z. Tahseen,Iraq,Defender,RCB,0.75,4,RCB:3 | LCB:1,991.0,low_is_left,1.0,False,True,False
 296645,T. Yengi,Australia,Attacker,RW,1.0,29,RW:29,2855.0,low_is_left,1.0,True,True,True
 296667,Gavi,Spain,Attacker,RW,0.6666666666666666,9,RW:6 | LW:3,973.0,low_is_left,1.0,True,True,True
-301528,A. Schjelderup,Norway,Attacker,RW,0.5625,32,RW:18 | LW:14,3818.0,low_is_left,1.0,True,False,False
+301528,A. Schjelderup,Norway,Attacker,RW,0.5625,32,RW:18 | LW:14,3818.0,low_is_left,1.0,False,False,False
 301771,S. Adingra,Ivory Coast,Attacker,LW,0.6666666666666666,21,LW:14 | RW:6 | ST:1,1984.0,low_is_left,1.0,True,True,True
 303362,R. Belghali,Algeria,Defender,RB,1.0,33,RB:33,3002.0,low_is_left,1.0,True,True,True
 303467,I. Fatawu,Ghana,Midfielder,AM,0.5116279069767442,43,AM:22 | CM:20 | RW:1,3994.0,low_is_left,1.0,True,False,False
 304228,Z. Debast,Belgium,Defender,RB,0.9230769230769231,13,RB:12 | RCB:1,1531.0,low_is_left,1.0,True,True,True
-304782,T. Hayakawa,Japan,Goalkeeper,GK,1.0,36,GK:36,5324.0,low_is_left,1.0,True,True,True
+304782,T. Hayakawa,Japan,Goalkeeper,GK,1.0,36,GK:36,5324.0,low_is_left,1.0,False,True,False
 304951,Lee Gi-Hyuk,South Korea,Defender,RB,1.0,29,RB:29,2538.0,low_is_left,1.0,False,True,False
-304958,Yang Hyun-Jun,South Korea,Attacker,RW,0.8285714285714286,35,RW:29 | ST:5 | LW:1,3725.0,low_is_left,1.0,True,True,True
-305832,M. Galarza,Paraguay,Midfielder,AM,0.5294117647058824,17,AM:9 | CM:7 | RW:1,3372.0,low_is_left,1.0,True,False,False
-306380,M. Al Juwayr,Saudi Arabia,Attacker,RW,0.59375,32,RW:19 | ST:13,3922.0,low_is_left,1.0,True,False,False
+304958,Yang Hyun-Jun,South Korea,Attacker,RW,0.8285714285714286,35,RW:29 | ST:5 | LW:1,3725.0,low_is_left,1.0,False,True,False
+305832,M. Galarza,Paraguay,Midfielder,AM,0.5294117647058824,17,AM:9 | CM:7 | RW:1,3372.0,low_is_left,1.0,False,False,False
+306380,M. Al Juwayr,Saudi Arabia,Attacker,RW,0.59375,32,RW:19 | ST:13,3922.0,low_is_left,1.0,False,False,False
 306940,Y. Medina,Ecuador,Midfielder,LB,0.7083333333333334,24,LB:17 | RB:7,2397.0,low_is_left,1.0,True,True,True
 307123,N. O'Reilly,England,Defender,LB,0.88,50,LB:44 | LCB:4 | RB:2,4785.0,low_is_left,1.0,True,True,True
-308689,S. Cabral,Cape Verde Islands,Defender,RB,1.0,11,RB:11,3799.0,low_is_left,1.0,True,True,True
-308689,S. Lopes Cabral,Cape Verde Islands,Defender,RB,0.6363636363636364,11,RB:7 | LB:3 | LCB:1,3799.0,low_is_left,1.0,True,True,True
-309182,Benchimol,Cape Verde Islands,Attacker,RW,1.0,14,RW:14,1667.0,low_is_left,1.0,True,True,True
-309763,L. Comenencia,Curaçao,Midfielder,RB,0.7916666666666666,24,RB:19 | RCB:5,5109.0,low_is_left,1.0,True,True,True
-310785,M. Abu Taha,Jordan,Midfielder,DM,0.6666666666666666,3,DM:2 | LB:1,1128.0,low_is_left,1.0,True,True,True
-310835,A. Nasib,Jordan,Defender,RB,0.75,8,RB:6 | RCB:2,1965.0,low_is_left,1.0,True,True,True
+308689,S. Cabral,Cape Verde Islands,Defender,RB,1.0,11,RB:11,3799.0,low_is_left,1.0,False,True,False
+308689,S. Lopes Cabral,Cape Verde Islands,Defender,RB,0.6363636363636364,11,RB:7 | LB:3 | LCB:1,3799.0,low_is_left,1.0,False,True,False
+309182,Benchimol,Cape Verde Islands,Attacker,RW,1.0,14,RW:14,1667.0,low_is_left,1.0,False,True,False
+309763,L. Comenencia,Curaçao,Midfielder,RB,0.7916666666666666,24,RB:19 | RCB:5,5109.0,low_is_left,1.0,False,True,False
+310785,M. Abu Taha,Jordan,Midfielder,DM,0.6666666666666666,3,DM:2 | LB:1,1128.0,low_is_left,1.0,False,True,False
+310835,A. Nasib,Jordan,Defender,RB,0.75,8,RB:6 | RCB:2,1965.0,low_is_left,1.0,False,True,False
 311543,N. Angulo,Ecuador,Midfielder,AM,0.7058823529411765,34,AM:24 | CM:6 | DM:2 | RW:1 | RB:1,3509.0,low_is_left,1.0,True,True,True
-312459,N. Velupillay,Australia,Midfielder,AM,0.8421052631578947,19,AM:16 | RW:2 | CM:1,2651.0,low_is_left,1.0,True,True,True
+312459,N. Velupillay,Australia,Midfielder,AM,0.8421052631578947,19,AM:16 | RW:2 | CM:1,2651.0,low_is_left,1.0,False,True,False
 312964,N. Ngoy,Belgium,Defender,RCB,0.7435897435897436,39,RCB:29 | RB:10,4074.0,low_is_left,1.0,True,True,True
 313353,P. David,Canada,Attacker,RW,0.782608695652174,23,RW:18 | ST:5,2156.0,low_is_left,1.0,True,True,True
-313383,O. Vargas,Mexico,Midfielder,AM,0.75,28,AM:21 | CM:5 | DM:2,4641.0,low_is_left,1.0,True,True,True
+313383,O. Vargas,Mexico,Midfielder,AM,0.75,28,AM:21 | CM:5 | DM:2,4641.0,low_is_left,1.0,False,True,False
 313937,A. Mendy,Senegal,Defender,RB,0.972972972972973,37,RB:36 | RCB:1,3582.0,low_is_left,1.0,True,True,True
 314377,S. Bazdar,Bosnia & Herzegovina,Attacker,RW,1.0,6,RW:6,942.0,low_is_left,1.0,True,True,True
 314509,M. Epolo,Congo DR,Goalkeeper,GK,1.0,29,GK:29,2610.0,low_is_left,1.0,True,True,True
@@ -1066,19 +1066,19 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 329163,A. Boulbina,Algeria,Attacker,RW,0.5882352941176471,17,RW:10 | LW:7,1347.0,low_is_left,1.0,True,False,False
 329409,E. Bajraktarevic,Bosnia & Herzegovina,Midfielder,RW,1.0,14,RW:14,1704.0,low_is_left,1.0,True,True,True
 330174,T. Matuludi,South Africa,Defender,RB,1.0,3,RB:3,2074.0,low_is_left,1.0,True,True,True
-332056,W. Pina,Cape Verde Islands,Defender,RB,1.0,32,RB:32,5102.0,low_is_left,1.0,True,True,True
+332056,W. Pina,Cape Verde Islands,Defender,RB,1.0,32,RB:32,5102.0,low_is_left,1.0,False,True,False
 334429,O. Diakite,Ivory Coast,Midfielder,RW,0.9375,16,RW:15 | ST:1,1829.0,low_is_left,1.0,True,True,True
 334915,F. Ghedjemis,Algeria,Attacker,RW,1.0,37,RW:37,3099.0,low_is_left,1.0,True,True,True
 335051,J. Neves,Portugal,Midfielder,CM,0.8709677419354839,31,CM:27 | DM:4,3725.0,low_is_left,1.0,True,True,True
 335051,João Neves,Portugal,Midfielder,CM,1.0,7,CM:7,3725.0,low_is_left,1.0,True,True,True
-335056,D. Moreira,Belgium,Attacker,RW,0.65625,32,RW:21 | LW:9 | ST:2,5600.0,low_is_left,1.0,True,True,True
+335056,D. Moreira,Belgium,Attacker,RW,0.65625,32,RW:21 | LW:9 | ST:2,5600.0,low_is_left,1.0,False,True,False
 336657,W. Zaire-Emery,France,Midfielder,CM,0.5333333333333333,45,CM:24 | RB:20 | LB:1,4646.0,low_is_left,1.0,True,False,False
 336657,W. Zaïre-Emery,France,Midfielder,CM,1.0,1,CM:1,4646.0,low_is_left,1.0,True,True,True
 336657,Warren Zaïre-Emery,France,Midfielder,CM,0.5,2,CM:1 | RB:1,4646.0,low_is_left,1.0,True,False,False
 336659,C. Talbi,Morocco,Midfielder,RW,0.631578947368421,19,RW:12 | LW:6 | ST:1,2011.0,low_is_left,1.0,True,True,True
 336671,R. Veiga,Portugal,Defender,RB,0.8,40,RB:32 | LCB:8,4714.0,low_is_left,1.0,True,True,True
 337426,A. Boakye,Ghana,Midfielder,AM,0.5151515151515151,33,AM:17 | RW:16,2746.0,low_is_left,1.0,True,False,False
-337587,J. Bos,Australia,Midfielder,LCB,0.4117647058823529,34,LCB:14 | LB:12 | RB:8,3746.0,low_is_left,1.0,True,False,False
+337587,J. Bos,Australia,Midfielder,LCB,0.4117647058823529,34,LCB:14 | LB:12 | RB:8,3746.0,low_is_left,1.0,False,False,False
 338014,N. Irankunda,Australia,Midfielder,RW,0.9615384615384616,26,RW:25 | LW:1,3104.0,low_is_left,1.0,True,True,True
 338045,D. Castillo,Ecuador,Midfielder,AM,0.4375,32,AM:14 | CM:9 | RW:6 | DM:3,2521.0,low_is_left,1.0,True,False,False
 338751,V. Munoz,Spain,Attacker,RW,0.9032258064516129,31,RW:28 | ST:3,2857.0,low_is_left,1.0,True,True,True
@@ -1089,43 +1089,43 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 340151,M. Penders,Belgium,Goalkeeper,GK,1.0,52,GK:52,4639.0,low_is_left,1.0,True,True,True
 340173,E. Mahmic,Bosnia & Herzegovina,Midfielder,AM,0.9,20,AM:18 | RW:2,1631.0,low_is_left,1.0,True,True,True
 340573,B. El Khannouss,Morocco,Attacker,RW,0.7073170731707317,41,RW:29 | ST:7 | LW:5,3890.0,low_is_left,1.0,True,True,True
-341642,J. Hato,Netherlands,Defender,LB,0.4,25,LB:10 | LCB:9 | RB:6,3082.0,low_is_left,1.0,True,False,False
-341844,M. Ghorbani,Iran,Midfielder,AM,0.75,8,AM:6 | CM:1 | RB:1,995.0,low_is_left,1.0,False,True,False
+341642,J. Hato,Netherlands,Defender,LB,0.4,25,LB:10 | LCB:9 | RB:6,3082.0,low_is_left,1.0,False,False,False
+341844,M. Ghorbani,Iran,Midfielder,AM,0.75,8,AM:6 | CM:1 | RB:1,995.0,low_is_left,1.0,True,True,True
 342035,C. Volpato,Australia,Attacker,RW,1.0,14,RW:14,1486.0,low_is_left,1.0,True,True,True
 343027,D. Doue,France,Midfielder,RW,0.7666666666666667,30,RW:23 | LW:6 | ST:1,3559.0,low_is_left,1.0,True,True,True
 343027,D. Doué,France,Midfielder,RW,0.7142857142857143,7,RW:5 | ST:2,3559.0,low_is_left,1.0,True,True,True
 343027,Désiré Doué,France,Midfielder,LW,0.5,2,LW:1 | RW:1,3559.0,low_is_left,1.0,True,False,False
-343287,D. Livramento,Cape Verde Islands,Attacker,RW,1.0,7,RW:7,1696.0,low_is_left,1.0,True,True,True
-343287,D. Rocha Livramento,Cape Verde Islands,Attacker,RW,1.0,3,RW:3,1696.0,low_is_left,1.0,True,True,True
+343287,D. Livramento,Cape Verde Islands,Attacker,RW,1.0,7,RW:7,1696.0,low_is_left,1.0,False,True,False
+343287,D. Rocha Livramento,Cape Verde Islands,Attacker,RW,1.0,3,RW:3,1696.0,low_is_left,1.0,False,True,False
 344862,H. Mastouri,Tunisia,Attacker,RW,1.0,9,RW:9,1637.0,low_is_left,1.0,True,True,True
 345748,Andres Gomez,Colombia,Midfielder,AM,0.92,25,AM:23 | RW:1 | CM:1,3881.0,low_is_left,1.0,True,True,True
 345748,C. A. Gomez,Colombia,Midfielder,CM,0.6428571428571429,14,CM:9 | AM:4 | DM:1,3881.0,low_is_left,1.0,True,True,True
 347211,R. Risser,France,Goalkeeper,GK,1.0,38,GK:38,3420.0,low_is_left,1.0,True,True,True
-347316,L. Bergvall,Sweden,Midfielder,AM,0.8888888888888888,18,AM:16 | CM:2,2802.0,low_is_left,1.0,True,True,True
+347316,L. Bergvall,Sweden,Midfielder,AM,0.8888888888888888,18,AM:16 | CM:2,2802.0,low_is_left,1.0,False,True,False
 348205,P. Sucic,Croatia,Attacker,RW,0.5806451612903226,31,RW:18 | ST:13,3544.0,low_is_left,1.0,True,False,False
-348568,A. Circati,Australia,Defender,RB,0.9444444444444444,36,RB:34 | RCB:2,4058.0,low_is_left,1.0,True,True,True
+348568,A. Circati,Australia,Defender,RB,0.9444444444444444,36,RB:34 | RCB:2,4058.0,low_is_left,1.0,False,True,False
 349344,L. Jaquez,Switzerland,Defender,RB,1.0,17,RB:17,2010.0,low_is_left,1.0,True,True,True
 350037,N. Paz,Argentina,Attacker,RW,0.7894736842105263,38,RW:30 | ST:8,3700.0,low_is_left,1.0,True,True,True
-350799,Jeremy Arevalo,Ecuador,Attacker,RW,1.0,12,RW:12,1345.0,low_is_left,1.0,True,True,True
-350850,B. Zeneli,Sweden,Midfielder,AM,0.6086956521739131,23,AM:14 | RW:8 | CM:1,3667.0,low_is_left,1.0,True,True,True
-351014,J. Suzuki,Japan,Defender,RB,1.0,29,RB:29,4931.0,low_is_left,1.0,True,True,True
-351587,T. Oluwaseyi,Canada,Attacker,RW,0.6923076923076923,26,RW:18 | ST:8,4341.0,low_is_left,1.0,True,True,True
+350799,Jeremy Arevalo,Ecuador,Attacker,RW,1.0,12,RW:12,1345.0,low_is_left,1.0,False,True,False
+350850,B. Zeneli,Sweden,Midfielder,AM,0.6086956521739131,23,AM:14 | RW:8 | CM:1,3667.0,low_is_left,1.0,False,True,False
+351014,J. Suzuki,Japan,Defender,RB,1.0,29,RB:29,4931.0,low_is_left,1.0,False,True,False
+351587,T. Oluwaseyi,Canada,Attacker,RW,0.6923076923076923,26,RW:18 | ST:8,4341.0,low_is_left,1.0,False,True,False
 353808,D. Fonville,Curaçao,Defender,RB,0.8695652173913043,23,RB:20 | LB:2 | LCB:1,2423.0,low_is_left,1.0,True,True,True
 353883,P. Beach,Australia,Goalkeeper,GK,1.0,39,GK:39,3734.0,low_is_left,1.0,True,True,True
-354027,J. Ordonez,Ecuador,Defender,RB,0.9069767441860465,43,RB:39 | RCB:4,5063.0,low_is_left,1.0,True,True,True
-354753,O. Diomande,Ivory Coast,Defender,RB,0.9615384615384616,26,RB:25 | LCB:1,3177.0,low_is_left,1.0,True,True,True
-355994,A. Freeman,USA,Defender,RB,1.0,24,RB:24,4375.0,low_is_left,1.0,True,True,True
+354027,J. Ordonez,Ecuador,Defender,RB,0.9069767441860465,43,RB:39 | RCB:4,5063.0,low_is_left,1.0,False,True,False
+354753,O. Diomande,Ivory Coast,Defender,RB,0.9615384615384616,26,RB:25 | LCB:1,3177.0,low_is_left,1.0,False,True,False
+355994,A. Freeman,USA,Defender,RB,1.0,24,RB:24,4375.0,low_is_left,1.0,False,True,False
 357286,J. Bae,South Korea,Attacker,RW,1.0,33,RW:33,3567.0,low_is_left,1.0,True,True,True
-359561,K. Sebelebele,South Africa,Midfielder,RB,0.95,20,RB:19 | RCB:1,2908.0,low_is_left,1.0,True,True,True
-360114,A. Khusanov,Uzbekistan,Defender,RCB,0.5428571428571428,35,RCB:19 | RB:14 | LCB:2,3987.0,low_is_left,1.0,True,False,False
-361966,K. Rodriguez,Ecuador,Attacker,RW,0.9259259259259259,27,RW:25 | ST:2,3151.0,low_is_left,1.0,True,True,True
-362145,A. Ahmed,Canada,Midfielder,AM,0.71875,32,AM:23 | CM:8 | ST:1,4668.0,low_is_left,1.0,True,True,True
-362400,M. Arfsten,USA,Midfielder,AM,0.7368421052631579,38,AM:28 | LB:9 | DM:1,5344.0,low_is_left,1.0,True,True,True
+359561,K. Sebelebele,South Africa,Midfielder,RB,0.95,20,RB:19 | RCB:1,2908.0,low_is_left,1.0,False,True,False
+360114,A. Khusanov,Uzbekistan,Defender,RCB,0.5428571428571428,35,RCB:19 | RB:14 | LCB:2,3987.0,low_is_left,1.0,False,False,False
+361966,K. Rodriguez,Ecuador,Attacker,RW,0.9259259259259259,27,RW:25 | ST:2,3151.0,low_is_left,1.0,False,True,False
+362145,A. Ahmed,Canada,Midfielder,AM,0.71875,32,AM:23 | CM:8 | ST:1,4668.0,low_is_left,1.0,False,True,False
+362400,M. Arfsten,USA,Midfielder,AM,0.7368421052631579,38,AM:28 | LB:9 | DM:1,5344.0,low_is_left,1.0,False,True,False
 365331,N. Sadiki,Congo DR,Midfielder,CM,0.575,40,CM:23 | DM:17,4151.0,low_is_left,1.0,True,False,False
-369544,G. Yassine,Morocco,Attacker,RW,0.9473684210526315,19,RW:18 | ST:1,2392.0,low_is_left,1.0,True,True,True
+369544,G. Yassine,Morocco,Attacker,RW,0.9473684210526315,19,RW:18 | ST:1,2392.0,low_is_left,1.0,False,True,False
 374058,L. Camara,Senegal,Midfielder,DM,0.6176470588235294,34,DM:21 | CM:12 | AM:1,3285.0,low_is_left,1.0,True,True,True
 375598,N. Mukau,Congo DR,Midfielder,CM,0.5588235294117647,34,CM:19 | AM:11 | DM:3 | RW:1,3026.0,low_is_left,1.0,True,False,False
-375608,M. Neffati,Tunisia,Defender,RB,1.0,24,RB:24,2649.0,low_is_left,1.0,True,True,True
+375608,M. Neffati,Tunisia,Defender,RB,1.0,24,RB:24,2649.0,low_is_left,1.0,False,True,False
 375930,K. Goto,Japan,Attacker,RW,1.0,32,RW:32,3000.0,low_is_left,1.0,True,True,True
 375974,J. Seys,Belgium,Defender,LB,0.7021276595744681,47,LB:33 | LCB:8 | RB:6,4090.0,low_is_left,1.0,True,True,True
 377122,Endrick,Brazil,Attacker,RW,1.0,20,RW:20,2219.0,low_is_left,1.0,True,True,True
@@ -1134,45 +1134,45 @@ player_id,player_name,world_cup_team,squad_position,resolved_role,role_stability
 380978,A. Ouedraogo,Germany,Midfielder,CM,0.8461538461538461,13,CM:11 | AM:1 | RW:1,1109.0,low_is_left,1.0,True,True,True
 386828,Lamine Yamal,Spain,Midfielder,CM,0.4791666666666667,48,CM:23 | AM:13 | RW:12,4431.0,low_is_left,1.0,True,False,False
 386837,A. Sojka,Czech Republic,Midfielder,AM,0.631578947368421,19,AM:12 | RB:4 | CM:2 | LCB:1,2279.0,low_is_left,1.0,True,True,True
-387521,L. Vuskovic,Croatia,Defender,RB,0.9666666666666667,30,RB:29 | RCB:1,5517.0,low_is_left,1.0,True,True,True
+387521,L. Vuskovic,Croatia,Defender,RB,0.9666666666666667,30,RB:29 | RCB:1,5517.0,low_is_left,1.0,False,True,False
 387643,B. Toure,Ivory Coast,Attacker,LW,0.65625,32,LW:21 | RW:10 | ST:1,2755.0,low_is_left,1.0,True,True,True
-388570,D. Gul,Türkiye,Attacker,RW,1.0,17,RW:17,2174.0,low_is_left,1.0,True,True,True
-390002,M. Chavez Garcia,Mexico,Defender,RB,0.95,20,RB:19 | LB:1,2595.0,low_is_left,1.0,True,True,True
-390002,M. Chávez,Mexico,Defender,LB,1.0,2,LB:2,2595.0,low_is_left,1.0,True,True,True
-392387,O. Makhanya,South Africa,Defender,RB,1.0,34,RB:34,4022.0,low_is_left,1.0,True,True,True
+388570,D. Gul,Türkiye,Attacker,RW,1.0,17,RW:17,2174.0,low_is_left,1.0,False,True,False
+390002,M. Chavez Garcia,Mexico,Defender,RB,0.95,20,RB:19 | LB:1,2595.0,low_is_left,1.0,False,True,False
+390002,M. Chávez,Mexico,Defender,LB,1.0,2,LB:2,2595.0,low_is_left,1.0,False,True,False
+392387,O. Makhanya,South Africa,Defender,RB,1.0,34,RB:34,4022.0,low_is_left,1.0,False,True,False
 393977,A. Arous,Tunisia,Defender,RB,1.0,19,RB:19,1751.0,low_is_left,1.0,True,True,True
 395075,M. Ziko,Egypt,Midfielder,RW,0.7142857142857143,21,RW:15 | ST:4 | LW:2,2001.0,low_is_left,0.9787234042553192,True,True,True
 395559,K. Alajbegovic,Bosnia & Herzegovina,Midfielder,AM,0.7142857142857143,28,AM:20 | RW:5 | CM:2 | LW:1,2988.0,low_is_left,1.0,True,True,True
 396623,P. Cubarsi,Spain,Defender,RCB,0.8076923076923077,52,RCB:42 | LCB:9 | RB:1,4947.0,low_is_left,1.0,True,True,True
-400948,A. Diao,Senegal,Attacker,RW,0.6153846153846154,13,RW:8 | ST:5,1773.0,low_is_left,1.0,True,True,True
+400948,A. Diao,Senegal,Attacker,RW,0.6153846153846154,13,RW:8 | ST:5,1773.0,low_is_left,1.0,False,True,False
 403087,M. Abu Al Shamat,Saudi Arabia,Midfielder,CM,0.5384615384615384,26,CM:14 | RB:10 | DM:2,2694.0,low_is_left,1.0,True,False,False
-404172,K. Peprah,Ghana,Defender,RB,0.38636363636363635,44,RB:17 | LB:13 | RCB:8 | LCB:6,4957.0,low_is_left,1.0,True,False,False
+404172,K. Peprah,Ghana,Defender,RB,0.38636363636363635,44,RB:17 | LB:13 | RCB:8 | LCB:6,4957.0,low_is_left,1.0,False,False,False
 405957,L. Bayliss,New Zealand,Midfielder,AM,0.9473684210526315,19,AM:18 | RB:1,1861.0,low_is_left,1.0,True,True,True
 406244,J. Manzambi,Switzerland,Attacker,RW,0.8809523809523809,42,RW:37 | ST:5,4131.0,low_is_left,0.95,True,True,True
-406303,K. Paez,Ecuador,Attacker,RW,1.0,11,RW:11,3859.0,low_is_left,1.0,True,True,True
+406303,K. Paez,Ecuador,Attacker,RW,1.0,11,RW:11,3859.0,low_is_left,1.0,False,True,False
 406752,I. Okon,South Africa,Defender,RB,0.8260869565217391,23,RB:19 | RCB:4,2522.0,low_is_left,0.9743589743589745,True,True,True
 406846,T. Noslin,Curaçao,Midfielder,AM,1.0,29,AM:29,2673.0,low_is_left,1.0,True,True,True
-407806,Rayan,Brazil,Midfielder,AM,0.72,50,AM:36 | RW:13 | CM:1,6482.0,low_is_left,1.0,True,True,True
+407806,Rayan,Brazil,Midfielder,AM,0.72,50,AM:36 | RW:13 | CM:1,6482.0,low_is_left,1.0,False,True,False
 409303,M. Diouf,Senegal,Defender,LB,0.7105263157894737,38,LB:27 | RB:10 | LCB:1,3753.0,low_is_left,0.9629629629629628,True,True,True
 409670,A. Malic,Bosnia & Herzegovina,Defender,RB,1.0,17,RB:17,1761.0,low_is_left,1.0,True,True,True
 410016,P. Adu,Ghana,Midfielder,RW,0.8260869565217391,23,RW:19 | LW:4,2503.0,low_is_left,1.0,True,True,True
 411800,C. Bonsu Baah,Ghana,Attacker,LW,0.5714285714285714,28,LW:16 | ST:7 | RW:4 | LB:1,2823.0,low_is_left,1.0,True,False,False
 414149,R. Mofokeng,South Africa,Midfielder,AM,0.6538461538461539,26,AM:17 | CM:8 | RW:1,2718.0,low_is_left,1.0,True,True,True
 415431,S. El Mourabet,Morocco,Midfielder,CM,0.7105263157894737,38,CM:27 | DM:6 | AM:4 | RW:1,3585.0,low_is_left,1.0,True,True,True
-416901,N. Sigur,Canada,Midfielder,RB,0.5517241379310345,29,RB:16 | AM:10 | CM:2 | DM:1,3681.0,low_is_left,1.0,True,False,False
+416901,N. Sigur,Canada,Midfielder,RB,0.5517241379310345,29,RB:16 | AM:10 | CM:2 | DM:1,3681.0,low_is_left,1.0,False,False,False
 422572,K. Shiogai,Japan,Attacker,RW,1.0,5,RW:5,921.0,low_is_left,1.0,True,True,True
-430078,S. Kabini,South Africa,Defender,RB,0.9545454545454546,22,RB:21 | LB:1,2624.0,low_is_left,1.0,True,True,True
-430835,T. Bindon,New Zealand,Defender,RB,1.0,22,RB:22,2840.0,low_is_left,1.0,True,True,True
+430078,S. Kabini,South Africa,Defender,RB,0.9545454545454546,22,RB:21 | LB:1,2624.0,low_is_left,1.0,False,True,False
+430835,T. Bindon,New Zealand,Defender,RB,1.0,22,RB:22,2840.0,low_is_left,1.0,False,True,False
 433272,F. Curtis,Scotland,Attacker,RW,0.6470588235294118,17,RW:11 | ST:3 | RB:2 | LW:1,1853.0,low_is_left,1.0,True,True,True
 438688,A. Bouaddi,Morocco,Midfielder,CM,0.4523809523809524,42,CM:19 | DM:15 | AM:5 | RB:3,3641.0,low_is_left,1.0,True,False,False
-441269,P. Okon-Engstler,Australia,Midfielder,AM,0.9285714285714286,28,AM:26 | CM:2,3440.0,low_is_left,1.0,True,True,True
+441269,P. Okon-Engstler,Australia,Midfielder,AM,0.9285714285714286,28,AM:26 | CM:2,3440.0,low_is_left,1.0,False,True,False
 453073,A. Hashem,Iraq,Defender,LCB,0.5454545454545454,11,LCB:6 | RB:4 | RCB:1,1285.0,low_is_left,1.0,True,False,False
 474591,C. Inao Oulai,Ivory Coast,Midfielder,AM,0.8387096774193549,31,AM:26 | CM:5,2865.0,low_is_left,1.0,True,True,True
 474630,K. Ndamane,South Africa,Defender,RB,0.45454545454545453,33,RB:15 | LCB:15 | RCB:2 | LB:1,2868.0,low_is_left,1.0,True,False,False
 475575,C. Yirenkyi,Ghana,Midfielder,AM,0.6363636363636364,33,AM:21 | RB:10 | CM:1 | DM:1,3255.0,low_is_left,1.0,True,True,True
-482605,G. Mora,Mexico,Midfielder,AM,0.56,25,AM:14 | CM:6 | RW:5,2543.0,low_is_left,1.0,True,False,False
+482605,G. Mora,Mexico,Midfielder,AM,0.56,25,AM:14 | CM:6 | RW:5,2543.0,low_is_left,1.0,False,False,False
 510799,M. Mbokazi,South Africa,Defender,RB,0.5333333333333333,30,RB:16 | LCB:10 | RCB:4,3001.0,low_is_left,1.0,True,False,False
 513776,Y. Diomande,Ivory Coast,Midfielder,RW,0.8205128205128205,39,RW:32 | LW:7,3467.0,low_is_left,1.0,True,True,True
-535046,A. Amaimouni,Morocco,Midfielder,RW,1.0,18,RW:18,1574.0,low_is_left,1.0,False,True,False
+535046,A. Amaimouni,Morocco,Midfielder,RW,1.0,18,RW:18,1574.0,low_is_left,1.0,True,True,True
 542644,A. Jasim,Iraq,Attacker,RW,0.9545454545454546,22,RW:21 | LW:1,1566.0,low_is_left,1.0,True,True,True
 550371,T. Alaa,Egypt,Defender,RB,1.0,11,RB:11,980.0,low_is_left,1.0,True,True,True
