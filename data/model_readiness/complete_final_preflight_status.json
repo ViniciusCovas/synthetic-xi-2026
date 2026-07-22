@@ -1,14 +1,117 @@
 {
-  "status": "complete_final_preflight_pending_execution",
+  "status": "complete_final_preflight_blocked",
+  "generated_at_utc": "2026-07-22T04:56:33.615977+00:00",
+  "preflight_version": "complete_final_preflight_v1",
   "complete_final_preflight_passed": false,
   "final_10000_authorized": false,
+  "gates": {
+    "canonical_scientific_gates": true,
+    "team_and_bench_freeze": true,
+    "competition_rules_freeze": true,
+    "neutral_referee_context": true,
+    "world_cup_2026_weather_record": false,
+    "world_cup_2026_event_distribution_compatibility": false,
+    "outcome_blind_freeze": true,
+    "isolated_validation_2000": false
+  },
   "blocking_gates": [
-    "team_and_bench_freeze_not_executed",
-    "world_cup_2026_weather_record_not_built",
-    "world_cup_2026_event_benchmark_not_built",
-    "event_distribution_compatibility_not_evaluated"
+    "world_cup_2026_weather_record",
+    "world_cup_2026_event_distribution_compatibility",
+    "isolated_validation_2000"
   ],
+  "team_checks": {
+    "rosters_frozen": true,
+    "real_squad_26": true,
+    "real_unique_26": true,
+    "real_minimum_three_goalkeepers": true,
+    "synthetic_squad_26": true,
+    "synthetic_unique_26": true,
+    "synthetic_minimum_three_goalkeepers": true,
+    "penalty_orders_frozen": true,
+    "emergency_goalkeepers_frozen": true
+  },
+  "rules_checks": {
+    "squad_size_26": true,
+    "starting_xi_11": true,
+    "five_normal_substitutions": true,
+    "three_normal_windows": true,
+    "extra_time_substitution": true,
+    "two_extra_time_periods": true,
+    "shootout_sudden_death": true,
+    "hydration_breaks_recorded": true
+  },
+  "referee_checks": {
+    "neutral_primary_profile": true,
+    "paired_draw": true,
+    "three_declared_scenarios": true,
+    "weights_sum_one": true,
+    "sensitivity_only": true,
+    "named_referee_claim_forbidden": true
+  },
+  "canonical_checks": {
+    "engineering_gate": true,
+    "selection_sufficiency": true,
+    "scientific_comparison_allowed": true,
+    "arxiv_results_ready": true
+  },
+  "freeze_checks": {
+    "outcome_blind": true,
+    "no_model_weight_changes": true,
+    "no_selection_threshold_changes": true,
+    "no_post_result_tuning": true,
+    "benchmark_declares_no_parameter_update": true
+  },
+  "weather_summary": {
+    "matches_in_record": 104,
+    "matches_with_weather": 79,
+    "weather_coverage": 0.759615,
+    "reanalysis_coverage": 0.740385,
+    "heat_band_counts_all_venues": {
+      "cool_or_mild": 27,
+      "null": 25,
+      "warm": 21,
+      "hot": 20,
+      "very_hot": 11
+    },
+    "open_air_temperature_mean_c": 23.877,
+    "open_air_apparent_temperature_max_c": 38.7
+  },
+  "event_benchmark": {
+    "fixtures": 104,
+    "fixture_coverage": 1.0,
+    "knockout_matches": 32,
+    "knockout_extra_time_matches": 9,
+    "knockout_shootout_matches": 4,
+    "all_frozen_metric_checks_passed": false,
+    "audit_csv": "data/context/complete_final_preflight_metric_audit.csv"
+  },
+  "environment_model_use": {
+    "weather_recorded": true,
+    "primary_team_specific_weather_advantage": false,
+    "performance_modifier_added": false,
+    "use_in_final": "sampled paired context and sensitivity label; no unvalidated ability modifier"
+  },
+  "declared_limitations": [
+    "The referee is a neutral latent profile, not a prediction about a named official.",
+    "Weather at roofed or covered venues is outdoor context, not measured pitch climate.",
+    "Weather is not converted into a new player-performance modifier without external validation.",
+    "VAR, observable injuries and stoppage time remain descriptive where provider completeness is insufficient.",
+    "The concussion substitution rule is represented by the injury substitution policy rather than a separately estimated process."
+  ],
+  "source_hashes": {
+    "config/complete_final_preflight_v1.json": "43ccda59a743b8d9cddf88cb7a840b9d466d98e9829baf8a0f26f66bda3892f2",
+    "config/complete_final_preflight_tolerances_v1.json": "42986e532dabdd1fab6b48d34adc1cbd55db5ea7a89236df8ac7ec9158090c49",
+    "data/model_readiness/complete_final_rosters_v1.json": "e3fb490366825e3026bbd3b4d2c10c2ea7fe0bb7e39afd827d6bc76402dd2090",
+    "data/context/world_cup_2026_weather_summary.json": "80fee4d7a9f2cd05d1c17a035f86b2e79c7442999de010f6b60b1a44964b3dc9",
+    "data/context/world_cup_2026_event_benchmark_summary.json": "7d5361dcc0fd8449bd03daac821c488ff7d0b029a952b65bd986d01fa7312a6c",
+    "data/context/world_cup_2026_event_benchmark_by_match.csv": "08edb31f13c4cc938c685fa6c759ec2940461ee86feb94cf18921a11d404502b"
+  },
   "model_parameters_changed": false,
   "selection_thresholds_changed": false,
-  "policy": "The definitive 10,000-match distribution is blocked until the manual complete-final preflight passes."
+  "policy": "The definitive 10,000-match distribution is authorized only after the core preflight and isolated 2,000-match validation both pass.",
+  "finalized_at_utc": "2026-07-22T04:56:33.915286+00:00",
+  "core_preflight_passed_before_validation_2000": false,
+  "validation_2000_passed": false,
+  "validation_2000_status": "complete_final_validation_2000_skipped_core_preflight_blocked",
+  "definitive_10000_executed": false
 }

@@ -16,7 +16,12 @@
     "final_10000_authorized"
   ],
   "unresolved_players": 0,
-  "preflight_status": "complete_final_preflight_pending_execution",
-  "claim_ceiling": "validated comparative result with declared limitations; definitive complete-final distribution pending environmental and event preflight",
+  "preflight_status": "complete_final_preflight_blocked",
+  "preflight_blockers": [
+    "world_cup_2026_weather_record",
+    "world_cup_2026_event_distribution_compatibility",
+    "isolated_validation_2000"
+  ],
+  "claim_ceiling": "validated comparative result with declared limitations",
   "policy": "No definitive result is executed or published unless every canonical and preflight gate is affirmative."
 }

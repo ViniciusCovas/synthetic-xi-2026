@@ -1,0 +1,9 @@
+{
+  "status": "complete_final_validation_2000_skipped_core_preflight_blocked",
+  "generated_at_utc": "2026-07-22T04:56:33.717915+00:00",
+  "simulations": 2000,
+  "validation_2000_passed": false,
+  "definitive_10000_executed": false,
+  "model_parameters_changed": false,
+  "selection_thresholds_changed": false
+}

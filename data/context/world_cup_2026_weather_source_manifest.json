@@ -1,0 +1,137 @@
+{
+  "generated_at_utc": "2026-07-22T04:56:27.882178+00:00",
+  "schedule_reference": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/match-schedule-fixtures-results-teams-stadiums",
+  "fixture_metadata_endpoint": "https://v3.football.api-sports.io/fixtures",
+  "weather_primary_endpoint": "https://archive-api.open-meteo.com/v1/archive",
+  "weather_fallback_endpoint": "https://historical-forecast-api.open-meteo.com/v1/forecast",
+  "weather_variables": [
+    "temperature_2m",
+    "relative_humidity_2m",
+    "apparent_temperature",
+    "precipitation",
+    "wind_speed_10m",
+    "wind_gusts_10m",
+    "weather_code"
+  ],
+  "aggregation_window": "kickoff local hour through four hours after kickoff",
+  "quality_grades": {
+    "A_reanalysis": "Open-Meteo Historical Weather API gridded reanalysis",
+    "B_historical_forecast_archive": "archived numerical forecast; not an observation",
+    "unavailable": "no value; no imputation"
+  },
+  "venue_registry": [
+    {
+      "host_city": "Toronto",
+      "latitude": 43.6332,
+      "longitude": -79.4186,
+      "timezone": "America/Toronto",
+      "exposure": "open_air"
+    },
+    {
+      "host_city": "Vancouver",
+      "latitude": 49.2768,
+      "longitude": -123.1119,
+      "timezone": "America/Vancouver",
+      "exposure": "retractable_or_fixed_roof"
+    },
+    {
+      "host_city": "Mexico City",
+      "latitude": 19.3029,
+      "longitude": -99.1505,
+      "timezone": "America/Mexico_City",
+      "exposure": "open_air"
+    },
+    {
+      "host_city": "Guadalajara",
+      "latitude": 20.6818,
+      "longitude": -103.4626,
+      "timezone": "America/Mexico_City",
+      "exposure": "open_air"
+    },
+    {
+      "host_city": "Monterrey",
+      "latitude": 25.6693,
+      "longitude": -100.2446,
+      "timezone": "America/Monterrey",
+      "exposure": "open_air"
+    },
+    {
+      "host_city": "Atlanta",
+      "latitude": 33.7554,
+      "longitude": -84.4008,
+      "timezone": "America/New_York",
+      "exposure": "retractable_or_fixed_roof"
+    },
+    {
+      "host_city": "Boston",
+      "latitude": 42.0909,
+      "longitude": -71.2643,
+      "timezone": "America/New_York",
+      "exposure": "open_air"
+    },
+    {
+      "host_city": "Dallas",
+      "latitude": 32.7473,
+      "longitude": -97.0945,
+      "timezone": "America/Chicago",
+      "exposure": "retractable_or_fixed_roof"
+    },
+    {
+      "host_city": "Houston",
+      "latitude": 29.6847,
+      "longitude": -95.4107,
+      "timezone": "America/Chicago",
+      "exposure": "retractable_or_fixed_roof"
+    },
+    {
+      "host_city": "Kansas City",
+      "latitude": 39.0489,
+      "longitude": -94.4839,
+      "timezone": "America/Chicago",
+      "exposure": "open_air"
+    },
+    {
+      "host_city": "Los Angeles",
+      "latitude": 33.9535,
+      "longitude": -118.3392,
+      "timezone": "America/Los_Angeles",
+      "exposure": "covered_open_sides"
+    },
+    {
+      "host_city": "Miami",
+      "latitude": 25.958,
+      "longitude": -80.2389,
+      "timezone": "America/New_York",
+      "exposure": "open_air"
+    },
+    {
+      "host_city": "New York New Jersey",
+      "latitude": 40.8135,
+      "longitude": -74.0745,
+      "timezone": "America/New_York",
+      "exposure": "open_air"
+    },
+    {
+      "host_city": "Philadelphia",
+      "latitude": 39.9008,
+      "longitude": -75.1675,
+      "timezone": "America/New_York",
+      "exposure": "open_air"
+    },
+    {
+      "host_city": "San Francisco Bay Area",
+      "latitude": 37.403,
+      "longitude": -121.97,
+      "timezone": "America/Los_Angeles",
+      "exposure": "open_air"
+    },
+    {
+      "host_city": "Seattle",
+      "latitude": 47.5952,
+      "longitude": -122.3316,
+      "timezone": "America/Los_Angeles",
+      "exposure": "open_air"
+    }
+  ],
+  "unresolved_venues": []
+}
