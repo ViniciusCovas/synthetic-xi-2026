@@ -2,7 +2,7 @@
 """Run the isolated 2,000-match validation required before the final 10,000.
 
 This command never calls the definitive Monte Carlo runner. It materializes the
-reviewed v1 bundle, applies the preregistered v1.1 rules and measurement patches,
+reviewed v1 bundle, applies the preregistered v1.1 rules and audit-only patches,
 executes only the isolated validation suite, and persists complete diagnostics.
 No failed gate is converted into success: both the engineering and repository
 scientific-publication gates must be affirmative.
@@ -25,6 +25,8 @@ VALIDATION_REPORT = ROOT / "data/simulations/complete_final_v1_1/validation_repo
 VALIDATION_LOG = ROOT / "data/simulations/complete_final_v1_1/validation_build.log"
 RULE_STATUS = ROOT / "data/model_readiness/complete_final_rules_fix_v1_1_status.json"
 MEASUREMENT_STATUS = ROOT / "data/model_readiness/complete_final_yellow_card_measurement_v1_status.json"
+JSON_STATUS = ROOT / "data/model_readiness/complete_final_validation_json_v1_status.json"
+ROLE_GATE_STATUS = ROOT / "data/model_readiness/complete_final_validation_role_gate_v1_status.json"
 
 
 def sha(path: Path) -> str | None:
@@ -96,6 +98,8 @@ def main() -> int:
     engineering = load(ENGINEERING)
     rules = load(RULE_STATUS)
     measurement = load(MEASUREMENT_STATUS)
+    json_patch = load(JSON_STATUS)
+    role_gate = load(ROLE_GATE_STATUS)
     report = load(VALIDATION_REPORT)
     engineering_section = report.get("engineering_gate") or {}
     publication_section = report.get("scientific_publication_gate") or {}
@@ -111,6 +115,10 @@ def main() -> int:
         and engineering.get("engineering_gate_passed") is True
         and rules.get("status") == "complete_final_rules_fix_v1_1_applied"
         and measurement.get("status") == "complete_final_yellow_card_measurement_v1_applied"
+        and json_patch.get("status") == "complete_final_validation_json_v1_applied"
+        and role_gate.get("status") == "complete_final_validation_role_gate_v1_applied"
+        and role_gate.get("canonical_gate_value") is True
+        and role_gate.get("evidence_value_overridden") is False
     )
     payload = {
         "status": "complete_final_validation_2000_passed" if passed else "complete_final_validation_2000_failed",
@@ -136,13 +144,20 @@ def main() -> int:
         "rules_fix_applied": rules.get("status") == "complete_final_rules_fix_v1_1_applied",
         "yellow_measurement_status_sha256": sha(MEASUREMENT_STATUS),
         "yellow_measurement_applied": measurement.get("status") == "complete_final_yellow_card_measurement_v1_applied",
+        "json_normalization_status_sha256": sha(JSON_STATUS),
+        "json_normalization_applied": json_patch.get("status") == "complete_final_validation_json_v1_applied",
+        "role_gate_alignment_status_sha256": sha(ROLE_GATE_STATUS),
+        "role_gate_alignment_applied": role_gate.get("status") == "complete_final_validation_role_gate_v1_applied",
+        "canonical_role_gate_value": role_gate.get("canonical_gate_value"),
+        "role_evidence_value_overridden": role_gate.get("evidence_value_overridden"),
         "model_parameters_changed": False,
         "rules_implementation_changed": True,
         "measurement_alignment_changed": True,
+        "evidence_lookup_alignment_changed": True,
         "event_generation_changed": False,
         "selection_thresholds_changed": False,
         "event_tolerances_changed": False,
-        "failure_policy": "Any missing report, process error, engineering failure, or scientific-publication failure blocks the 10,000-match release.",
+        "failure_policy": "Any missing report, process error, engineering failure, scientific-publication failure, or unaudited evidence lookup blocks the 10,000-match release.",
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
