@@ -1,16 +1,22 @@
 {
-  "status": "complete_final_release_ready",
-  "ready": true,
+  "status": "complete_final_release_blocked",
+  "ready": false,
   "gates": {
     "engineering_gate_passed": true,
     "selection_sufficiency_gate_passed": true,
     "external_pre_tournament_validation_passed": true,
     "eleven_role_gate_passed": true,
     "final_team_comparison_allowed": true,
-    "preregistered_protocol_present": true
+    "preregistered_protocol_present": true,
+    "complete_final_preflight_passed": false,
+    "final_10000_authorized": false
   },
-  "blocking_gates": [],
+  "blocking_gates": [
+    "complete_final_preflight_passed",
+    "final_10000_authorized"
+  ],
   "unresolved_players": 0,
-  "claim_ceiling": "validated comparative result with declared limitations",
-  "policy": "No definitive result is executed or published unless every gate is affirmative."
+  "preflight_status": "complete_final_preflight_pending_execution",
+  "claim_ceiling": "validated comparative result with declared limitations; definitive complete-final distribution pending environmental and event preflight",
+  "policy": "No definitive result is executed or published unless every canonical and preflight gate is affirmative."
 }
