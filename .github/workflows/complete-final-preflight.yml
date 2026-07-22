@@ -50,7 +50,9 @@ jobs:
           PYTHONPATH: .
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
           WORLD_CUP_LEAGUE_ID: '1'
-        run: python scripts/scientific/build_world_cup_2026_weather_record.py
+        run: |
+          python scripts/scientific/build_world_cup_2026_weather_record.py
+          python scripts/scientific/repair_world_cup_2026_weather_record.py
 
       - name: Freeze World Cup 2026 event distributions
         env:
