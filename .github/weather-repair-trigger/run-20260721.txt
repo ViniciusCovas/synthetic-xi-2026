@@ -1,2 +1,3 @@
 Retry only the 25 unavailable World Cup 2026 weather records using the same frozen Open-Meteo sources.
 Do not impute values, alter existing available records, or change model parameters.
+Rerun nonce: 2 — data-only publication; workflow integration already committed directly to main.
