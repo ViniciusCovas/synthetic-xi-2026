@@ -2,11 +2,11 @@ name: Complete Final Preflight and World Cup Weather
 
 on:
   workflow_dispatch:
-  push:
+  pull_request:
     branches:
       - main
     paths:
-      - '.github/workflows/complete-final-preflight.yml'
+      - '.github/preflight-trigger/**'
 
 permissions:
   contents: write
@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: complete-final-preflight-v1
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   preflight:
