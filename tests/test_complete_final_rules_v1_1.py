@@ -46,13 +46,14 @@ def test_v1_1_uses_batch_substitutions_without_exceeding_windows():
             TARGETS,
             replace(FinalConfig(), seed=seed),
         ).simulate(True)
+        extra_time_played = result.decided_by in {"extra_time", "penalties"}
         for stats in (result.home_stats, result.away_stats):
-            assert stats["substitutions"] <= (6 if result.extra_time_played else 5)
+            assert stats["substitutions"] <= (6 if extra_time_played else 5)
             assert stats["substitution_windows"] <= 3
             assert stats["extra_time_windows"] <= 1
             if stats["substitutions"] > stats["substitution_windows"] + stats["extra_time_windows"]:
                 batch_examples += 1
-        if not result.extra_time_played:
+        if not extra_time_played:
             combined_regulation_substitutions.append(
                 result.home_stats["substitutions"] + result.away_stats["substitutions"]
             )
