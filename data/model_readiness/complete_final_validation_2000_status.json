@@ -1,6 +1,6 @@
 {
   "status": "complete_final_validation_2000_skipped_core_preflight_blocked",
-  "generated_at_utc": "2026-07-22T05:45:54.852591+00:00",
+  "generated_at_utc": "2026-07-22T05:49:48.983558+00:00",
   "engine_version": "complete_final_v1_1_rules_fix",
   "simulations": 2000,
   "validation_2000_passed": false,

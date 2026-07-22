@@ -13,11 +13,65 @@ installed 8 complete-final files
   "selection_thresholds_changed": false,
   "event_tolerances_changed": false
 }
-Traceback (most recent call last):
-  File "/home/runner/work/synthetic-xi-2026/synthetic-xi-2026/scripts/scientific/build_complete_final_v1_1_engineering_snapshot.py", line 199, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/synthetic-xi-2026/synthetic-xi-2026/scripts/scientific/build_complete_final_v1_1_engineering_snapshot.py", line 108, in main
-    maximum = 6 if result.extra_time_played else 5
-                   ^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'CompleteFinalResult' object has no attribute 'extra_time_played'
+{
+  "status": "complete_final_v1_1_engineering_validation_passed",
+  "generated_at_utc": "2026-07-22T05:49:48.488402+00:00",
+  "engine_version": "complete_final_v1_1_rules_fix",
+  "simulations": 1000,
+  "seed": 20260731,
+  "engineering_gate_passed": true,
+  "checks": {
+    "structural_rules_fix": {
+      "passed": true,
+      "checks": {
+        "rules_fix_applied": true,
+        "deterministic_reproducibility": true,
+        "substitution_and_window_limits": true,
+        "same_window_batching_observed": true,
+        "regulation_uses_declared_five_substitution_capacity": true,
+        "regulation_distribution_calibration": true
+      },
+      "invariant_samples": 250,
+      "violations": [],
+      "violation_count": 0,
+      "batch_window_examples": 500,
+      "mean_combined_substitutions_regulation_only": 10.0
+    },
+    "regulation_distribution_calibration": {
+      "passed": true,
+      "observed": {
+        "mean_regulation_goals": 2.63,
+        "mean_regulation_shots": 24.978,
+        "mean_regulation_shots_on_target": 8.568,
+        "regulation_zero_zero_rate": 0.075,
+        "mean_total_fouls": 24.889,
+        "mean_total_yellows": 5.09,
+        "mean_total_reds": 0.647,
+        "mean_total_injuries": 0.399,
+        "mean_total_substitutions": 10.56,
+        "extra_time_probability": 0.28,
+        "penalty_shootout_probability": 0.135
+      },
+      "original_gate": {
+        "passed": true,
+        "checks": {
+          "absolute_goal_error_le_0_45": true,
+          "absolute_shot_error_le_3": true,
+          "absolute_shot_on_target_error_le_1_5": true,
+          "absolute_zero_zero_error_le_0_06": true
+        },
+        "scope": "Engineering distribution gate for regulation-time observables. It does not by itself authorize substantive publication claims."
+      }
+    }
+  },
+  "source_hashes": {
+    "materialized_complete_final_py": "bcd94d3666698dad27b1f8aec6804c781064777cc2e41d405b7b864ae58ba140",
+    "rules_fix_config": "41d3767308bf71dec20a7990b090a9993f1e4c1c5f3b5f8d2d64f6cfe7b2645c",
+    "rules_fix_status": "5d6a852674281a2259ded7ccd990df7e3e6146ba5f8d15236478ea55dcad658e"
+  },
+  "player_abilities_changed": false,
+  "team_strength_parameters_changed": false,
+  "selection_thresholds_changed": false,
+  "event_tolerances_changed": false,
+  "definitive_10000_executed": false
+}

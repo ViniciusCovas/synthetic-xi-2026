@@ -1,6 +1,6 @@
 {
   "status": "complete_final_preflight_blocked",
-  "generated_at_utc": "2026-07-22T05:45:54.798732+00:00",
+  "generated_at_utc": "2026-07-22T05:49:48.886241+00:00",
   "preflight_version": "complete_final_preflight_v1",
   "complete_final_preflight_passed": false,
   "final_10000_authorized": false,
@@ -9,17 +9,15 @@
     "team_and_bench_freeze": true,
     "competition_rules_freeze": true,
     "neutral_referee_context": true,
-    "world_cup_2026_weather_record": false,
+    "world_cup_2026_weather_record": true,
     "world_cup_2026_event_distribution_compatibility": false,
     "outcome_blind_freeze": true,
-    "isolated_validation_2000": false,
-    "complete_final_v1_1_engineering": false
+    "complete_final_v1_1_engineering": true,
+    "isolated_validation_2000": false
   },
   "blocking_gates": [
-    "world_cup_2026_weather_record",
     "world_cup_2026_event_distribution_compatibility",
-    "isolated_validation_2000",
-    "complete_final_v1_1_engineering"
+    "isolated_validation_2000"
   ],
   "team_checks": {
     "rosters_frozen": true,
@@ -65,17 +63,16 @@
   },
   "weather_summary": {
     "matches_in_record": 104,
-    "matches_with_weather": 79,
-    "weather_coverage": 0.759615,
-    "reanalysis_coverage": 0.740385,
+    "matches_with_weather": 104,
+    "weather_coverage": 1.0,
+    "reanalysis_coverage": 0.980769,
     "heat_band_counts_all_venues": {
-      "cool_or_mild": 27,
-      "null": 25,
-      "warm": 21,
-      "hot": 20,
-      "very_hot": 11
+      "cool_or_mild": 31,
+      "hot": 30,
+      "warm": 26,
+      "very_hot": 17
     },
-    "open_air_temperature_mean_c": 23.877,
+    "open_air_temperature_mean_c": 23.725,
     "open_air_apparent_temperature_max_c": 38.7
   },
   "event_benchmark": {
@@ -103,31 +100,30 @@
   "source_hashes": {
     "config/complete_final_preflight_v1.json": "43ccda59a743b8d9cddf88cb7a840b9d466d98e9829baf8a0f26f66bda3892f2",
     "config/complete_final_preflight_tolerances_v1.json": "42986e532dabdd1fab6b48d34adc1cbd55db5ea7a89236df8ac7ec9158090c49",
-    "data/model_readiness/complete_final_rosters_v1.json": "e3fb490366825e3026bbd3b4d2c10c2ea7fe0bb7e39afd827d6bc76402dd2090",
-    "data/context/world_cup_2026_weather_summary.json": "80fee4d7a9f2cd05d1c17a035f86b2e79c7442999de010f6b60b1a44964b3dc9",
+    "data/model_readiness/complete_final_rosters_v1.json": "2a2fe67f34e682e2333e73ce093d55180bd03cb8bd4c077f474c5242803512bd",
+    "data/context/world_cup_2026_weather_summary.json": "99e309b39c19f6ef14261452143a8b58cc23279335fffd96449e8cb6003e68f7",
     "data/context/world_cup_2026_event_benchmark_summary.json": "7d5361dcc0fd8449bd03daac821c488ff7d0b029a952b65bd986d01fa7312a6c",
     "data/context/world_cup_2026_event_benchmark_by_match.csv": "08edb31f13c4cc938c685fa6c759ec2940461ee86feb94cf18921a11d404502b"
   },
   "model_parameters_changed": false,
   "selection_thresholds_changed": false,
   "policy": "The definitive 10,000-match distribution is authorized only after the core preflight and isolated 2,000-match validation both pass.",
-  "finalized_at_utc": "2026-07-22T05:45:55.049511+00:00",
-  "core_preflight_passed_before_validation_2000": false,
-  "validation_2000_passed": false,
-  "validation_2000_status": "complete_final_validation_2000_skipped_core_preflight_blocked",
-  "definitive_10000_executed": false,
   "engine_version": "complete_final_v1_1_rules_fix",
   "engineering_evidence": {
     "path": "data/simulations/complete_final_v1_1/engineering_validation_snapshot.json",
-    "sha256": "80a9e0c29b665c2d4951df5680bf5a69500c50b9e4bb504e943c193e651776ab",
-    "engineering_gate_passed": false,
+    "sha256": "d4df245d492b53a3555ba99949048f515539e8b7436ffea7e5b15b828f68319f",
+    "engineering_gate_passed": true,
     "rules_fix_status_path": "data/model_readiness/complete_final_rules_fix_v1_1_status.json",
     "rules_fix_status_sha256": "5d6a852674281a2259ded7ccd990df7e3e6146ba5f8d15236478ea55dcad658e",
-    "rules_fix_applied": true,
-    "failure_reason": "v1_1_engineering_gate_not_affirmative"
+    "rules_fix_applied": true
   },
   "v1_snapshot_preserved": true,
-  "v1_1_preflight_evaluated_at_utc": "2026-07-22T05:45:54.799009+00:00",
+  "v1_1_preflight_evaluated_at_utc": "2026-07-22T05:49:48.930917+00:00",
   "rules_implementation_changed": true,
-  "event_tolerances_changed": false
+  "event_tolerances_changed": false,
+  "finalized_at_utc": "2026-07-22T05:49:49.179507+00:00",
+  "core_preflight_passed_before_validation_2000": false,
+  "validation_2000_passed": false,
+  "validation_2000_status": "complete_final_validation_2000_skipped_core_preflight_blocked",
+  "definitive_10000_executed": false
 }
