@@ -1,0 +1,50 @@
+ M .github/workflows/complete-final-validation.yml
+ M COMPLETE_FINAL_IMPLEMENTATION.md
+M  data/audits/scope_correct_coverage/exact_window_minute_eligibility_audit.csv
+M  data/audits/scope_correct_coverage/player_window_coverage_scope_correct.csv
+M  data/audits/scope_correct_coverage/scope_correct_coverage_status.json
+M  data/audits/scope_correct_coverage/scope_correct_promotion_status.json
+M  data/audits/scope_correct_coverage/scope_correct_residual_priority_fixtures.csv
+M  data/audits/scope_correct_coverage/shadow_selection/coverage_correction_review.json
+M  data/audits/scope_correct_coverage/shadow_selection/shadow_selection_all_players.csv
+M  data/audits/scope_correct_coverage/shadow_selection/shadow_selection_roles.csv
+M  data/audits/scope_correct_coverage/shadow_selection/shadow_selection_status.json
+M  data/audits/scope_correct_coverage/shadow_selection/shadow_selection_unresolved_players.csv
+A  data/audits/selection_challenger_resolution/coverage_v3_integration_status.json
+A  data/audits/selection_challenger_resolution/final_resolution_status.json
+A  data/audits/selection_challenger_resolution/fixture_evidence_extraction_status.json
+A  data/audits/selection_challenger_resolution/frozen_model_inputs.sha256
+A  data/audits/selection_challenger_resolution/frozen_selection_status_before.json
+A  data/audits/selection_challenger_resolution/frozen_unresolved_before.csv
+A  data/audits/selection_challenger_resolution/minute_reconstruction_status.json
+A  data/audits/selection_challenger_resolution/minute_reconstruction_unresolved_pairs.csv
+A  data/audits/selection_challenger_resolution/uncertainty_bound_audit.json
+A  data/audits/selection_challenger_resolution/uncertainty_bound_recalculation.csv
+A  data/lake/selection_challenger_evidence/challenger_fixture_metadata_29878699745.csv
+A  data/lake/selection_challenger_evidence/challenger_full_events_29878699745.csv.gz
+A  data/lake/selection_challenger_evidence/challenger_full_lineups_29878699745.csv.gz
+M  data/model_readiness/coverage_priority_fixtures.csv
+M  data/model_readiness/player_window_coverage.csv
+M  data/model_readiness/scientific_validation_status.json
+A  data/model_readiness/selection_challenger_reconstructed_minutes.csv
+M  data/model_readiness/selection_sufficiency_all_players.csv
+M  data/model_readiness/selection_sufficiency_priority_fixtures.csv
+M  data/model_readiness/selection_sufficiency_status.json
+M  data/model_readiness/selection_sufficiency_unresolved_players.csv
+A  data/simulations/complete_final_v1/audit_sample.csv
+A  data/simulations/complete_final_v1/manifest.json
+A  data/simulations/complete_final_v1/real_best_xi_profiles.csv
+A  data/simulations/complete_final_v1/real_best_xi_selection.csv
+M  data/simulations/complete_final_v1/release_gate_status.json
+A  data/simulations/complete_final_v1/representative_final_timeline.csv
+A  data/simulations/complete_final_v1/simulation_summary.json
+A  data/simulations/complete_final_v1/synthetic_xi_membership.csv
+A  data/simulations/complete_final_v1/synthetic_xi_profiles.csv
+ D ops/use-final-daily-calls.flag
+ M scripts/run_complete_final_simulation.py
+ M scripts/scientific/validate_complete_final.py
+ M simulator/complete_final.py
+ M simulator/complete_final_monte_carlo.py
+ M simulator/validation.py
+ M tests/test_complete_final.py
+?? data/audits/selection_challenger_resolution/pre_publish_git_status.txt

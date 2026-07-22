@@ -4,28 +4,28 @@
   "eligibility_definition": ">=900 exact-window detailed minutes",
   "screening_interval": "90% ability interval; final estimates retain 95% intervals",
   "eligible_candidates": 1019,
-  "fully_covered_both_windows": 1019,
-  "unresolved_players": 0,
-  "priority_player_fixture_pairs": 0,
-  "priority_unique_fixtures": 0,
+  "fully_covered_both_windows": 978,
+  "unresolved_players": 41,
+  "priority_player_fixture_pairs": 784,
+  "priority_unique_fixtures": 291,
   "roles": [
     {
       "role": "GK",
       "eligible_candidates": 104,
       "stable_candidates": 104,
       "required_pool_size": 30,
-      "covered_candidates": 104,
-      "unresolved_challengers": 0,
-      "role_gate_passed": true
+      "covered_candidates": 98,
+      "unresolved_challengers": 6,
+      "role_gate_passed": false
     },
     {
       "role": "RB",
       "eligible_candidates": 255,
       "stable_candidates": 233,
       "required_pool_size": 30,
-      "covered_candidates": 233,
-      "unresolved_challengers": 0,
-      "role_gate_passed": true
+      "covered_candidates": 222,
+      "unresolved_challengers": 12,
+      "role_gate_passed": false
     },
     {
       "role": "RCB",
@@ -68,27 +68,27 @@
       "eligible_candidates": 107,
       "stable_candidates": 62,
       "required_pool_size": 30,
-      "covered_candidates": 62,
-      "unresolved_challengers": 0,
-      "role_gate_passed": true
+      "covered_candidates": 61,
+      "unresolved_challengers": 1,
+      "role_gate_passed": false
     },
     {
       "role": "AM",
       "eligible_candidates": 155,
       "stable_candidates": 126,
       "required_pool_size": 30,
-      "covered_candidates": 126,
-      "unresolved_challengers": 0,
-      "role_gate_passed": true
+      "covered_candidates": 115,
+      "unresolved_challengers": 11,
+      "role_gate_passed": false
     },
     {
       "role": "RW",
       "eligible_candidates": 250,
       "stable_candidates": 218,
       "required_pool_size": 30,
-      "covered_candidates": 218,
-      "unresolved_challengers": 0,
-      "role_gate_passed": true
+      "covered_candidates": 207,
+      "unresolved_challengers": 11,
+      "role_gate_passed": false
     },
     {
       "role": "LW",
@@ -109,7 +109,7 @@
       "role_gate_passed": true
     }
   ],
-  "selection_sufficiency_gate_passed": true,
-  "rankings_allowed": true,
+  "selection_sufficiency_gate_passed": false,
+  "rankings_allowed": false,
   "policy": "Exclude a sub-covered player only when its 90% upper bound cannot alter the covered Top-30 or best-XI set and it is outside declared guardrails."
 }

@@ -1,0 +1,28 @@
+{
+  "status": "selection_challenger_uncertainty_audited",
+  "generated_at_utc": "2026-07-22T00:49:56.866020+00:00",
+  "frozen_challengers": 41,
+  "checks": {
+    "all_41_present_after": true,
+    "overall_unchanged": true,
+    "uncertainty_unchanged": true,
+    "top30_thresholds_unchanged": true,
+    "best_xi_thresholds_unchanged": true,
+    "lo90_formula_exact": true,
+    "hi90_formula_exact": true
+  },
+  "audit_passed": true,
+  "model_parameters_changed": false,
+  "selection_thresholds_changed": false,
+  "maximum_absolute_deltas": {
+    "overall": 0.0,
+    "uncertainty": 0.0,
+    "top30_lower_threshold": 0.0,
+    "best_lower_threshold": 0.0,
+    "lo90_formula_error": 8.326672684688674e-17,
+    "hi90_formula_error": 1.1102230246251565e-16
+  },
+  "selection_sufficiency_gate_passed": true,
+  "unresolved_players_after": 0,
+  "output": "data/audits/selection_challenger_resolution/uncertainty_bound_recalculation.csv"
+}

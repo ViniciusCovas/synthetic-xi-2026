@@ -1,13 +1,13 @@
 {
   "status": "scope_correct_coverage_promoted",
-  "generated_at_utc": "2026-07-20T10:21:03.552368+00:00",
+  "generated_at_utc": "2026-07-22T00:49:55.615254+00:00",
   "network_calls": 0,
   "canonical_ledger": "data/model_readiness/player_window_coverage.csv",
   "former_ledger_backup": "data/model_readiness/player_window_coverage_v1_season_denominator.csv",
-  "unresolved_players_before_canonical_rerun": 41,
-  "residual_player_fixture_pairs": 784,
-  "residual_unique_fixtures": 291,
+  "unresolved_players_before_canonical_rerun": 0,
+  "residual_player_fixture_pairs": 0,
+  "residual_unique_fixtures": 0,
   "missing_endpoint_pairs": 0,
-  "missing_startXI_detail_pairs": 784,
+  "missing_startXI_detail_pairs": 0,
   "next_action": "run canonical selection, scientific status and release builders"
 }

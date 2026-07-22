@@ -1,0 +1,11 @@
+{
+  "status": "challenger_reconstruction_integrated_into_coverage",
+  "generated_at_utc": "2026-07-22T00:49:53.929269+00:00",
+  "model_parameters_changed": false,
+  "thresholds_changed": false,
+  "source": "data/model_readiness/selection_challenger_reconstructed_minutes.csv",
+  "temporary_batch": "data/lake/batches/__selection_challenger_reconstructed_players.csv",
+  "ledger": "data/audits/scope_correct_coverage/player_window_coverage_scope_correct.csv",
+  "affected_window_rows": 82,
+  "affected_players": 41
+}

@@ -1,0 +1,12 @@
+{
+  "status": "selection_challenger_resolution_completed",
+  "generated_at_utc": "2026-07-22T01:00:29.139602+00:00",
+  "pipeline_exit_code": 1,
+  "selection_sufficiency_gate_passed": true,
+  "unresolved_players": 0,
+  "final_team_comparison_allowed": true,
+  "complete_final_release_status": "complete_final_release_ready",
+  "uncertainty_audit_passed": true,
+  "model_parameters_changed": false,
+  "thresholds_changed": false
+}

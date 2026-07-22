@@ -1,0 +1,251 @@
+simulation_id,match_seed,winner,decided_by,regulation_home_goals,regulation_away_goals,regulation_total_goals,regulation_draw,extra_time_home_goals,extra_time_away_goals,home_penalties,away_penalties,total_shots,total_shots_on_target,total_fouls,total_yellows,total_reds,total_injuries,total_substitutions
+0,725017161,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,14,5,14,3,0,0,6
+1,3010690006,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,21,12,13,2,0,0,6
+2,3538199013,Real Best XI — exploratorio,penalties,2,2,4,True,1,1,4.0,5.0,19,10,28,4,0,2,8
+3,1108111915,Real Best XI — exploratorio,regulation,1,3,4,False,0,0,,,14,8,28,4,1,0,6
+4,2443223768,Real Best XI — exploratorio,regulation,1,3,4,False,0,0,,,15,12,20,6,2,0,6
+5,1824140492,Synthetic XI — exploratorio,regulation,3,2,5,False,0,0,,,22,11,27,8,2,0,6
+6,1177009516,Synthetic XI — exploratorio,regulation,3,2,5,False,0,0,,,29,14,17,3,0,0,6
+7,2373962907,Real Best XI — exploratorio,regulation,1,3,4,False,0,0,,,20,12,31,5,2,1,6
+8,1646904902,Synthetic XI — exploratorio,regulation,4,3,7,False,0,0,,,29,18,29,4,0,0,6
+9,2014159961,Synthetic XI — exploratorio,regulation,2,0,2,False,0,0,,,25,15,19,8,0,1,6
+10,1048503718,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,21,15,31,5,0,0,6
+11,2677129096,Real Best XI — exploratorio,regulation,0,4,4,False,0,0,,,19,8,34,7,3,0,6
+12,2607688704,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,21,9,25,5,1,2,6
+13,3837832099,Synthetic XI — exploratorio,regulation,3,1,4,False,0,0,,,28,15,22,4,0,0,6
+14,70494617,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,26,10,21,3,0,0,6
+15,3028516100,Real Best XI — exploratorio,regulation,2,3,5,False,0,0,,,20,10,17,3,1,0,6
+16,1855058519,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,17,10,27,3,0,0,6
+17,279080945,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,16,7,17,3,0,0,6
+18,745526036,Real Best XI — exploratorio,regulation,2,4,6,False,0,0,,,18,13,23,5,0,1,6
+19,2629925947,Synthetic XI — exploratorio,regulation,3,0,3,False,0,0,,,21,14,36,8,2,1,6
+20,2442039896,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,11,5,19,7,0,0,6
+21,3612324068,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,28,10,21,4,0,0,6
+22,3491319937,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,14,5,21,4,0,1,6
+23,569006047,Synthetic XI — exploratorio,penalties,2,2,4,True,0,0,4.0,3.0,21,10,24,5,1,1,8
+24,3345269992,Synthetic XI — exploratorio,regulation,2,0,2,False,0,0,,,14,5,25,7,1,0,6
+25,3474043224,Synthetic XI — exploratorio,regulation,2,1,3,False,0,0,,,13,7,16,4,0,0,6
+26,880599917,Synthetic XI — exploratorio,penalties,1,1,2,True,1,1,2.0,1.0,19,6,25,9,2,0,8
+27,2346292844,Synthetic XI — exploratorio,extra_time,0,0,0,True,1,0,,,10,3,38,7,0,0,8
+28,1930240553,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,14,10,25,6,0,1,6
+29,3944713814,Real Best XI — exploratorio,regulation,1,4,5,False,0,0,,,22,15,24,4,0,0,6
+30,3053320015,Real Best XI — exploratorio,penalties,2,2,4,True,0,0,4.0,5.0,23,12,36,8,2,1,8
+31,4009460698,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,16,8,17,3,0,0,6
+32,3855195633,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,18,11,31,7,2,0,6
+33,765491271,Synthetic XI — exploratorio,regulation,3,0,3,False,0,0,,,15,7,26,4,0,1,6
+34,1264906959,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,19,9,30,12,2,1,6
+35,1728378126,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,14,6,28,4,2,1,6
+36,2614278374,Real Best XI — exploratorio,regulation,0,5,5,False,0,0,,,26,10,18,3,0,0,6
+37,3155383482,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,13,6,27,4,0,1,6
+38,3059522360,Real Best XI — exploratorio,penalties,1,1,2,True,0,0,4.0,5.0,17,8,33,9,0,0,8
+39,401364280,Synthetic XI — exploratorio,regulation,2,1,3,False,0,0,,,21,10,15,3,0,0,6
+40,48134167,Synthetic XI — exploratorio,regulation,3,2,5,False,0,0,,,19,11,16,4,0,0,6
+41,1494797581,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,19,8,32,6,1,0,6
+42,2549071758,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,23,13,16,1,0,0,6
+43,1330026112,Real Best XI — exploratorio,regulation,0,3,3,False,0,0,,,24,13,24,5,0,0,6
+44,3478989632,Synthetic XI — exploratorio,regulation,3,1,4,False,0,0,,,17,13,14,3,0,0,6
+45,2046728640,Real Best XI — exploratorio,penalties,1,1,2,True,0,0,3.0,5.0,20,11,36,8,1,0,8
+46,3743398296,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,16,7,28,8,0,0,6
+47,397333815,Synthetic XI — exploratorio,extra_time,1,1,2,True,1,0,,,25,12,29,6,1,1,8
+48,876204293,Real Best XI — exploratorio,regulation,1,5,6,False,0,0,,,26,14,19,3,0,0,6
+49,1436572587,Synthetic XI — exploratorio,regulation,2,1,3,False,0,0,,,14,5,16,2,0,0,6
+50,692474312,Real Best XI — exploratorio,regulation,0,4,4,False,0,0,,,21,10,31,5,2,0,6
+51,484257685,Real Best XI — exploratorio,penalties,0,0,0,True,1,1,3.0,4.0,19,7,16,3,0,0,8
+52,2177379863,Synthetic XI — exploratorio,regulation,2,0,2,False,0,0,,,19,9,29,12,3,0,6
+53,182251706,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,10,6,17,7,0,0,6
+54,894267828,Real Best XI — exploratorio,extra_time,1,1,2,True,1,2,,,21,12,37,5,1,1,8
+55,1397721966,Synthetic XI — exploratorio,extra_time,1,1,2,True,1,0,,,15,7,19,4,0,1,8
+56,2794969157,Real Best XI — exploratorio,regulation,3,4,7,False,0,0,,,24,14,27,4,0,1,6
+57,999968518,Real Best XI — exploratorio,regulation,0,3,3,False,0,0,,,13,7,16,2,0,1,6
+58,1757175834,Synthetic XI — exploratorio,regulation,2,1,3,False,0,0,,,19,6,24,3,0,0,6
+59,2870741391,Real Best XI — exploratorio,regulation,0,3,3,False,0,0,,,13,7,31,6,0,0,6
+60,3169665795,Real Best XI — exploratorio,regulation,3,4,7,False,0,0,,,25,10,22,2,0,0,6
+61,3275238155,Real Best XI — exploratorio,regulation,1,5,6,False,0,0,,,28,17,25,6,0,0,6
+62,2188308460,Real Best XI — exploratorio,regulation,2,4,6,False,0,0,,,15,11,27,5,0,0,6
+63,2861142210,Real Best XI — exploratorio,regulation,1,5,6,False,0,0,,,26,10,18,3,0,0,6
+64,619233535,Synthetic XI — exploratorio,regulation,2,1,3,False,0,0,,,19,9,19,4,0,0,6
+65,4178784412,Synthetic XI — exploratorio,regulation,3,0,3,False,0,0,,,27,10,28,5,0,1,6
+66,3675851131,Synthetic XI — exploratorio,extra_time,1,1,2,True,1,0,,,15,8,21,2,0,0,8
+67,1720182095,Real Best XI — exploratorio,extra_time,1,1,2,True,0,2,,,18,11,22,6,0,1,8
+68,226465188,Synthetic XI — exploratorio,penalties,1,1,2,True,0,0,4.0,3.0,17,8,35,5,2,0,8
+69,1094536781,Real Best XI — exploratorio,extra_time,1,1,2,True,0,1,,,15,7,23,2,0,0,8
+70,2491985701,Synthetic XI — exploratorio,penalties,1,1,2,True,0,0,7.0,6.0,15,8,29,9,2,0,8
+71,356375288,Real Best XI — exploratorio,regulation,3,4,7,False,0,0,,,21,12,23,3,0,1,6
+72,3341598236,Real Best XI — exploratorio,regulation,1,4,5,False,0,0,,,21,12,19,2,0,1,6
+73,3193173197,Real Best XI — exploratorio,regulation,2,3,5,False,0,0,,,24,13,20,4,0,1,6
+74,4040999293,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,20,6,20,4,1,0,6
+75,958785089,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,21,6,18,1,0,1,6
+76,1267798578,Real Best XI — exploratorio,extra_time,2,2,4,True,0,2,,,16,7,37,8,2,1,8
+77,214409455,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,14,8,19,6,0,0,6
+78,2019799840,Real Best XI — exploratorio,penalties,2,2,4,True,0,0,3.0,4.0,17,11,31,4,0,0,8
+79,3088125633,Synthetic XI — exploratorio,regulation,3,2,5,False,0,0,,,14,7,17,3,0,0,6
+80,12552694,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,16,6,28,3,0,0,6
+81,4291584464,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,18,8,23,5,0,0,6
+82,2287914585,Synthetic XI — exploratorio,extra_time,3,3,6,True,1,0,,,19,13,29,6,1,1,8
+83,2312343456,Real Best XI — exploratorio,regulation,1,3,4,False,0,0,,,15,10,26,3,0,0,6
+84,3991291827,Real Best XI — exploratorio,regulation,2,3,5,False,0,0,,,24,7,24,7,1,0,6
+85,1893378847,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,20,12,28,5,0,0,6
+86,112586047,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,12,6,14,3,0,0,6
+87,3965604289,Real Best XI — exploratorio,regulation,1,3,4,False,0,0,,,17,12,8,1,0,1,6
+88,2024508609,Real Best XI — exploratorio,regulation,0,3,3,False,0,0,,,14,10,14,3,0,0,6
+89,1798954604,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,18,10,33,6,0,0,6
+90,3650335085,Real Best XI — exploratorio,regulation,0,6,6,False,0,0,,,20,10,33,12,4,1,6
+91,2319518163,Synthetic XI — exploratorio,regulation,6,5,11,False,0,0,,,20,18,21,5,1,0,6
+92,3802394240,Real Best XI — exploratorio,penalties,0,0,0,True,0,0,4.0,5.0,16,8,30,3,0,0,8
+93,1931966281,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,20,8,23,6,0,1,6
+94,1331804836,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,21,14,25,6,0,0,6
+95,1864259293,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,8,3,12,1,0,0,6
+96,2113814071,Real Best XI — exploratorio,regulation,2,4,6,False,0,0,,,23,13,19,4,1,0,6
+97,4224321692,Real Best XI — exploratorio,regulation,0,3,3,False,0,0,,,18,7,19,1,0,1,6
+98,3732690119,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,18,8,22,3,0,2,6
+99,1809484217,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,11,5,15,6,1,0,6
+100,1853842047,Real Best XI — exploratorio,regulation,1,3,4,False,0,0,,,17,9,25,6,0,1,6
+101,2543975469,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,14,7,20,5,1,0,6
+102,2701404943,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,17,8,28,5,0,2,6
+103,1435651189,Synthetic XI — exploratorio,extra_time,1,1,2,True,1,0,,,12,9,26,3,0,1,8
+104,665313655,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,10,4,15,2,0,0,6
+105,4275912206,Synthetic XI — exploratorio,regulation,2,0,2,False,0,0,,,15,8,28,5,0,0,6
+106,1959643154,Synthetic XI — exploratorio,regulation,3,2,5,False,0,0,,,19,14,17,0,0,0,6
+107,1201501567,Synthetic XI — exploratorio,regulation,2,0,2,False,0,0,,,14,6,21,5,0,1,6
+108,3174560855,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,21,8,14,4,0,0,6
+109,2760461732,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,16,12,26,6,0,0,6
+110,2667763184,Real Best XI — exploratorio,extra_time,0,0,0,True,1,3,,,6,3,29,1,0,0,8
+111,2699070053,Real Best XI — exploratorio,extra_time,3,3,6,True,0,1,,,20,14,24,7,1,1,8
+112,3934443878,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,14,3,22,5,0,0,6
+113,2826146501,Synthetic XI — exploratorio,regulation,4,2,6,False,0,0,,,24,13,16,1,0,0,6
+114,448366279,Real Best XI — exploratorio,regulation,2,3,5,False,0,0,,,19,7,20,4,0,0,6
+115,2668556498,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,17,8,24,2,0,1,6
+116,3705464669,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,15,8,22,4,0,0,6
+117,1981155004,Synthetic XI — exploratorio,regulation,2,0,2,False,0,0,,,21,7,27,6,1,0,6
+118,3763302793,Real Best XI — exploratorio,regulation,1,3,4,False,0,0,,,12,7,27,8,2,0,6
+119,1038517335,Synthetic XI — exploratorio,regulation,2,1,3,False,0,0,,,20,12,19,2,0,0,6
+120,1709241678,Real Best XI — exploratorio,regulation,1,3,4,False,0,0,,,23,10,16,2,0,0,6
+121,766217839,Synthetic XI — exploratorio,extra_time,3,3,6,True,1,0,,,17,8,35,12,1,0,8
+122,2840130107,Real Best XI — exploratorio,regulation,2,3,5,False,0,0,,,15,11,32,5,1,2,6
+123,3204963326,Real Best XI — exploratorio,regulation,3,4,7,False,0,0,,,18,10,21,3,0,2,6
+124,2237738504,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,20,9,23,9,2,1,6
+125,2759153133,Real Best XI — exploratorio,penalties,1,1,2,True,0,0,4.0,5.0,17,7,29,7,0,0,8
+126,2028855968,Synthetic XI — exploratorio,penalties,0,0,0,True,0,0,4.0,2.0,14,11,29,2,0,1,8
+127,2650766727,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,13,4,29,9,0,1,6
+128,1878245622,Real Best XI — exploratorio,regulation,1,4,5,False,0,0,,,16,12,21,7,1,0,6
+129,1338618618,Synthetic XI — exploratorio,regulation,3,2,5,False,0,0,,,18,12,30,7,2,0,6
+130,1376483346,Real Best XI — exploratorio,regulation,0,3,3,False,0,0,,,23,8,27,7,1,1,6
+131,656587913,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,16,5,21,6,1,0,6
+132,2207077115,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,17,10,24,5,1,0,6
+133,973133658,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,13,6,16,3,0,0,6
+134,1194878748,Synthetic XI — exploratorio,regulation,2,1,3,False,0,0,,,16,10,24,2,0,0,6
+135,4235033342,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,17,8,24,6,2,0,6
+136,318226065,Real Best XI — exploratorio,regulation,1,3,4,False,0,0,,,19,8,25,5,0,0,6
+137,2004388571,Real Best XI — exploratorio,penalties,1,1,2,True,0,0,4.0,5.0,19,8,35,6,0,2,8
+138,1968998710,Real Best XI — exploratorio,regulation,0,4,4,False,0,0,,,16,8,16,4,0,0,6
+139,3354414727,Real Best XI — exploratorio,regulation,0,4,4,False,0,0,,,19,9,30,7,2,1,6
+140,2333495525,Synthetic XI — exploratorio,penalties,0,0,0,True,0,0,5.0,3.0,17,8,34,10,4,0,8
+141,1890810144,Synthetic XI — exploratorio,regulation,3,2,5,False,0,0,,,20,11,33,12,3,1,6
+142,1517742512,Real Best XI — exploratorio,regulation,0,3,3,False,0,0,,,15,5,24,2,0,0,6
+143,3774780042,Real Best XI — exploratorio,regulation,1,3,4,False,0,0,,,21,11,17,4,0,0,6
+144,3532251770,Synthetic XI — exploratorio,regulation,4,3,7,False,0,0,,,20,14,16,4,0,1,6
+145,666898401,Real Best XI — exploratorio,extra_time,1,1,2,True,0,1,,,11,5,30,3,0,2,8
+146,548542268,Real Best XI — exploratorio,extra_time,1,1,2,True,0,2,,,21,12,35,3,0,1,8
+147,3780493938,Real Best XI — exploratorio,regulation,1,3,4,False,0,0,,,26,11,22,0,0,0,6
+148,61732867,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,11,5,18,3,0,1,6
+149,973953220,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,22,8,28,7,0,1,6
+150,3306385755,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,13,9,24,4,1,0,6
+151,2485673124,Synthetic XI — exploratorio,regulation,2,1,3,False,0,0,,,20,8,28,10,3,2,6
+152,3045885096,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,20,7,27,8,1,2,6
+153,1133760178,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,14,5,22,3,0,0,6
+154,3608702580,Real Best XI — exploratorio,penalties,1,1,2,True,0,0,4.0,5.0,13,6,28,9,2,0,8
+155,1091461677,Real Best XI — exploratorio,regulation,2,3,5,False,0,0,,,26,13,30,6,1,0,6
+156,1425348574,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,13,7,21,5,2,0,6
+157,1687740472,Real Best XI — exploratorio,penalties,2,2,4,True,1,1,2.0,4.0,21,12,31,7,1,1,8
+158,1815111853,Synthetic XI — exploratorio,regulation,3,1,4,False,0,0,,,15,8,18,0,0,0,6
+159,174580792,Synthetic XI — exploratorio,regulation,2,0,2,False,0,0,,,14,7,21,3,0,1,6
+160,865277964,Synthetic XI — exploratorio,penalties,1,1,2,True,0,0,4.0,3.0,17,8,24,2,0,0,8
+161,623478883,Real Best XI — exploratorio,penalties,2,2,4,True,0,0,4.0,5.0,23,14,34,12,1,0,8
+162,3489821161,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,15,8,20,2,0,0,6
+163,3626792345,Real Best XI — exploratorio,extra_time,1,1,2,True,0,1,,,19,9,26,4,0,3,8
+164,9501799,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,15,5,24,6,1,1,6
+165,507176541,Synthetic XI — exploratorio,regulation,2,1,3,False,0,0,,,26,10,27,2,0,0,6
+166,1141072191,Synthetic XI — exploratorio,extra_time,1,1,2,True,1,0,,,21,13,41,10,2,0,8
+167,2741971714,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,19,8,20,4,0,0,6
+168,2057505208,Synthetic XI — exploratorio,regulation,3,1,4,False,0,0,,,16,10,16,5,1,1,6
+169,2945343761,Synthetic XI — exploratorio,penalties,1,1,2,True,0,0,4.0,3.0,18,9,33,7,0,0,8
+170,3413411071,Real Best XI — exploratorio,penalties,1,1,2,True,0,0,2.0,4.0,17,8,31,7,2,0,8
+171,3496263723,Real Best XI — exploratorio,regulation,0,4,4,False,0,0,,,20,13,23,6,2,0,6
+172,72429295,Real Best XI — exploratorio,regulation,1,3,4,False,0,0,,,18,9,22,3,1,0,6
+173,4283723018,Synthetic XI — exploratorio,regulation,2,1,3,False,0,0,,,21,9,17,2,1,0,6
+174,2670770990,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,21,7,21,6,0,0,6
+175,1084685857,Synthetic XI — exploratorio,regulation,2,0,2,False,0,0,,,19,11,18,3,0,2,6
+176,3312325717,Real Best XI — exploratorio,penalties,1,1,2,True,0,0,4.0,5.0,17,6,28,10,2,1,8
+177,2940544108,Synthetic XI — exploratorio,regulation,3,2,5,False,0,0,,,25,14,26,4,0,1,6
+178,4283181129,Real Best XI — exploratorio,regulation,2,3,5,False,0,0,,,21,12,22,7,0,1,6
+179,3325089590,Real Best XI — exploratorio,regulation,2,3,5,False,0,0,,,20,9,16,3,0,0,6
+180,1699689581,Synthetic XI — exploratorio,extra_time,1,1,2,True,2,0,,,14,4,28,10,1,0,8
+181,1450341721,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,13,7,23,6,1,1,6
+182,3424589247,Synthetic XI — exploratorio,penalties,1,1,2,True,1,1,4.0,3.0,21,12,34,10,2,0,8
+183,2538227725,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,15,7,22,2,0,0,6
+184,758684058,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,20,12,26,3,0,0,6
+185,4210655459,Real Best XI — exploratorio,penalties,1,1,2,True,0,0,2.0,4.0,15,7,39,7,0,1,8
+186,1648667451,Real Best XI — exploratorio,penalties,1,1,2,True,0,0,3.0,4.0,16,9,26,4,0,1,8
+187,4271741747,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,15,4,24,2,0,0,6
+188,3055192863,Real Best XI — exploratorio,regulation,2,3,5,False,0,0,,,16,9,18,3,0,1,6
+189,2449044669,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,16,7,22,5,0,0,6
+190,3920992519,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,19,4,28,5,1,0,6
+191,2258601789,Synthetic XI — exploratorio,regulation,3,1,4,False,0,0,,,26,18,27,4,1,1,6
+192,1724063694,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,20,7,11,2,0,0,6
+193,1081353181,Synthetic XI — exploratorio,regulation,2,1,3,False,0,0,,,17,9,30,2,1,1,6
+194,3053987214,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,21,9,18,3,0,0,6
+195,2479531451,Real Best XI — exploratorio,regulation,0,5,5,False,0,0,,,22,9,23,6,0,0,6
+196,2291730887,Real Best XI — exploratorio,regulation,0,3,3,False,0,0,,,18,8,23,7,0,0,6
+197,358455139,Synthetic XI — exploratorio,penalties,3,3,6,True,0,0,4.0,3.0,22,14,28,6,0,1,8
+198,3728809591,Synthetic XI — exploratorio,regulation,2,0,2,False,0,0,,,19,5,23,5,1,0,6
+199,3079572692,Synthetic XI — exploratorio,penalties,1,1,2,True,0,0,4.0,2.0,16,10,32,5,1,3,8
+200,1703832617,Real Best XI — exploratorio,extra_time,0,0,0,True,0,1,,,17,4,35,5,0,0,8
+201,4186024850,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,21,13,23,6,1,1,6
+202,3596066451,Synthetic XI — exploratorio,regulation,2,0,2,False,0,0,,,15,8,15,2,0,0,6
+203,4231342269,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,15,6,10,1,0,0,6
+204,1675968243,Real Best XI — exploratorio,extra_time,0,0,0,True,0,1,,,19,7,35,9,2,1,8
+205,2697535702,Real Best XI — exploratorio,regulation,2,3,5,False,0,0,,,17,10,17,2,0,0,6
+206,685853788,Synthetic XI — exploratorio,regulation,3,0,3,False,0,0,,,20,11,32,6,2,0,6
+207,825281692,Synthetic XI — exploratorio,regulation,2,1,3,False,0,0,,,17,7,31,2,0,1,6
+208,292162177,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,17,5,34,5,0,0,6
+209,1057383633,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,14,8,21,4,1,0,6
+210,1544058312,Synthetic XI — exploratorio,regulation,4,0,4,False,0,0,,,23,12,29,7,1,0,6
+211,601911653,Real Best XI — exploratorio,regulation,0,3,3,False,0,0,,,22,12,19,2,2,1,6
+212,3440489946,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,13,7,12,3,0,1,6
+213,1662279929,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,14,6,24,7,1,0,6
+214,2434970789,Real Best XI — exploratorio,regulation,0,3,3,False,0,0,,,23,14,22,5,0,1,6
+215,2430081385,Real Best XI — exploratorio,extra_time,2,2,4,True,1,2,,,14,6,22,2,1,1,8
+216,1672308840,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,15,7,25,9,4,1,6
+217,457928604,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,12,5,17,4,0,1,6
+218,1526046789,Synthetic XI — exploratorio,regulation,3,2,5,False,0,0,,,23,16,21,9,1,0,6
+219,1640440649,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,16,7,18,4,1,0,6
+220,3940087061,Real Best XI — exploratorio,regulation,0,3,3,False,0,0,,,18,8,19,4,0,0,6
+221,3993679929,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,18,9,22,4,0,1,6
+222,4143707290,Synthetic XI — exploratorio,penalties,1,1,2,True,0,0,3.0,1.0,16,7,32,4,0,0,8
+223,1793259577,Real Best XI — exploratorio,regulation,1,3,4,False,0,0,,,15,9,20,5,1,2,6
+224,3180499494,Real Best XI — exploratorio,penalties,1,1,2,True,0,0,3.0,4.0,17,8,29,7,1,0,8
+225,1184707799,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,18,11,24,5,1,0,6
+226,845928468,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,14,6,14,1,0,1,6
+227,1598154283,Real Best XI — exploratorio,regulation,1,4,5,False,0,0,,,20,10,18,7,1,0,6
+228,2591175652,Synthetic XI — exploratorio,regulation,1,0,1,False,0,0,,,14,7,12,6,1,0,6
+229,2309801071,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,15,6,16,6,0,0,6
+230,2280757043,Real Best XI — exploratorio,regulation,0,6,6,False,0,0,,,19,9,38,15,4,0,6
+231,1867168894,Real Best XI — exploratorio,regulation,1,2,3,False,0,0,,,20,8,25,2,0,1,6
+232,1828529763,Real Best XI — exploratorio,regulation,1,4,5,False,0,0,,,15,9,26,5,1,1,6
+233,1213593974,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,19,12,11,1,0,0,6
+234,4234684160,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,20,9,27,10,2,1,6
+235,2145222808,Synthetic XI — exploratorio,regulation,3,2,5,False,0,0,,,18,14,30,5,1,1,6
+236,2090745397,Real Best XI — exploratorio,regulation,0,3,3,False,0,0,,,15,7,16,3,0,0,6
+237,4269129566,Real Best XI — exploratorio,penalties,1,1,2,True,0,0,3.0,4.0,17,9,26,5,0,1,8
+238,196571853,Real Best XI — exploratorio,regulation,2,3,5,False,0,0,,,23,14,20,3,0,0,6
+239,2281620772,Synthetic XI — exploratorio,regulation,2,0,2,False,0,0,,,15,5,21,4,1,0,6
+240,2697678748,Synthetic XI — exploratorio,penalties,2,2,4,True,0,0,5.0,3.0,22,11,27,7,1,0,8
+241,524919530,Real Best XI — exploratorio,penalties,0,0,0,True,0,0,2.0,4.0,13,5,32,9,1,0,8
+242,423333661,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,14,8,19,2,0,0,6
+243,2837907004,Real Best XI — exploratorio,regulation,0,1,1,False,0,0,,,13,6,28,7,0,0,6
+244,1376665817,Real Best XI — exploratorio,extra_time,1,1,2,True,0,1,,,25,14,25,1,0,0,8
+245,3766973023,Real Best XI — exploratorio,regulation,0,5,5,False,0,0,,,21,12,15,2,0,0,6
+246,2139350850,Real Best XI — exploratorio,extra_time,0,0,0,True,0,1,,,18,8,23,1,0,0,8
+247,2117072425,Real Best XI — exploratorio,regulation,0,2,2,False,0,0,,,21,8,27,3,0,0,6
+248,3661108130,Synthetic XI — exploratorio,regulation,3,0,3,False,0,0,,,18,10,37,8,2,0,6
+249,605275170,Real Best XI — exploratorio,extra_time,1,1,2,True,0,1,,,15,6,24,6,1,1,8

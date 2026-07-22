@@ -1,0 +1,18 @@
+{
+  "status": "selection_challenger_minutes_reconstructed",
+  "generated_at_utc": "2026-07-22T00:49:30.324865+00:00",
+  "methodological_effect": "exposure_data_reconstruction_only",
+  "frozen_challengers": 41,
+  "priority_player_fixture_window_pairs": 784,
+  "reconstructed_player_fixture_window_pairs": 784,
+  "reconstructed_unique_physical_pairs": 402,
+  "challengers_with_at_least_one_reconstructed_pair": 41,
+  "unresolved_evidence_pairs": 0,
+  "evidence_grade_counts": {
+    "B": 526,
+    "A": 258
+  },
+  "model_parameters_changed": false,
+  "selection_thresholds_changed": false,
+  "output": "data/model_readiness/selection_challenger_reconstructed_minutes.csv"
+}

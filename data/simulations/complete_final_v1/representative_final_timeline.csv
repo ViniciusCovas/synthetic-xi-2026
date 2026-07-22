@@ -1,0 +1,60 @@
+sequence,clock,minute,period,side,team,type,actor,zone,xg,score,headline
+1,1.665,2,first_half,away,Real Best XI — exploratorio,shot_off_target,Kylian Mbappé,3.0,0.2774,0-0,Grande chance de Kylian Mbappé para fora
+2,4.54,5,first_half,home,Real Best XI — exploratorio,foul,SYN-W220,1.0,,0-0,Falta de SYN-W220
+3,7.086,8,first_half,home,Real Best XI — exploratorio,foul,SYN-ST20,2.0,,0-0,Falta de SYN-ST20
+4,7.086,8,first_half,away,Real Best XI — exploratorio,turnover,Lionel Messi,2.0,,0-0,Lionel Messi perde sob pressão
+5,10.11,11,first_half,home,Synthetic XI — exploratorio,shot_on_target,SYN-W120,2.0,0.1474,0-0,Joan García defende finalização de SYN-W120
+6,10.434,11,first_half,away,Real Best XI — exploratorio,shot_on_target,Kylian Mbappé,1.0,0.107,0-0,SYN-GK20 defende finalização de Kylian Mbappé
+7,11.034,12,first_half,home,Real Best XI — exploratorio,foul,SYN-W220,3.0,,0-0,Falta de SYN-W220
+8,14.598,15,first_half,away,Synthetic XI — exploratorio,foul,Cristian Romero,2.0,,0-0,Falta de Cristian Romero
+9,14.598,15,first_half,home,Synthetic XI — exploratorio,goal,SYN-CM20,3.0,0.1953,1-0,GOL de SYN-CM20
+10,15.085,16,first_half,home,Synthetic XI — exploratorio,turnover,SYN-W120,2.0,,1-0,SYN-W120 perde sob pressão
+11,15.431,16,first_half,away,Real Best XI — exploratorio,shot_off_target,Kylian Mbappé,2.0,0.171,1-0,Grande chance de Kylian Mbappé para fora
+12,15.594,16,first_half,away,Real Best XI — exploratorio,shot_on_target,Lionel Messi,3.0,0.2889,1-0,SYN-GK20 defende finalização de Lionel Messi
+13,16.751,17,first_half,home,Real Best XI — exploratorio,foul,SYN-ST20,1.0,,1-0,Falta de SYN-ST20
+14,16.761,17,first_half,home,Real Best XI — exploratorio,yellow_card,SYN-ST20,1.0,,1-0,Cartão amarelo para SYN-ST20
+15,21.116,22,first_half,home,Real Best XI — exploratorio,foul,SYN-DM20,2.0,,1-0,Falta de SYN-DM20
+16,21.126,22,first_half,home,Real Best XI — exploratorio,yellow_card,SYN-DM20,2.0,,1-0,Cartão amarelo para SYN-DM20
+17,21.858,22,first_half,away,Real Best XI — exploratorio,shot_off_target,Michael Olise,2.0,0.1737,1-0,Grande chance de Michael Olise para fora
+18,23.081,24,first_half,home,Real Best XI — exploratorio,foul,SYN-ST20,1.0,,1-0,Falta de SYN-ST20
+19,23.081,24,first_half,away,Real Best XI — exploratorio,turnover,Michael Olise,2.0,,1-0,Michael Olise perde sob pressão
+20,25.256,26,first_half,home,Real Best XI — exploratorio,foul,SYN-W120,3.0,,1-0,Falta de SYN-W120
+21,26.034,27,first_half,home,Synthetic XI — exploratorio,shot_off_target,SYN-ST20,2.0,0.1715,1-0,Grande chance de SYN-ST20 para fora
+22,27.435,28,first_half,home,Real Best XI — exploratorio,foul,SYN-W220,1.0,,1-0,Falta de SYN-W220
+23,28.701,29,first_half,home,Synthetic XI — exploratorio,turnover,SYN-AM20,2.0,,1-0,SYN-AM20 perde sob pressão
+24,35.359,36,first_half,away,Real Best XI — exploratorio,goal,Lionel Messi,3.0,0.2867,1-1,GOL de Lionel Messi
+25,36.166,37,first_half,away,Synthetic XI — exploratorio,foul,Pedri,2.0,,1-1,Falta de Pedri
+26,38.102,39,first_half,home,Real Best XI — exploratorio,foul,SYN-CB220,2.0,,1-1,Falta de SYN-CB220
+27,38.495,39,first_half,home,Real Best XI — exploratorio,foul,SYN-CB220,2.0,,1-1,Falta de SYN-CB220
+28,40.556,41,first_half,home,Real Best XI — exploratorio,foul,SYN-ST20,2.0,,1-1,Falta de SYN-ST20
+29,40.556,41,first_half,away,Real Best XI — exploratorio,shot_on_target,Michael Olise,2.0,0.1726,1-1,SYN-GK20 defende finalização de Michael Olise
+30,42.434,43,first_half,home,Real Best XI — exploratorio,foul,SYN-W120,2.0,,1-1,Falta de SYN-W120
+31,42.444,43,first_half,home,Real Best XI — exploratorio,yellow_card,SYN-W120,2.0,,1-1,Cartão amarelo para SYN-W120
+32,42.944,43,first_half,home,Real Best XI — exploratorio,foul,SYN-FB120,2.0,,1-1,Falta de SYN-FB120
+33,47.0,48,match,system,,half_time,,,,1-1,Intervalo
+34,50.208,51,second_half,home,Real Best XI — exploratorio,foul,SYN-CB120,1.0,,1-1,Falta de SYN-CB120
+35,50.218,51,second_half,home,Real Best XI — exploratorio,yellow_card,SYN-CB120,1.0,,1-1,Cartão amarelo para SYN-CB120
+36,53.227,54,second_half,away,Real Best XI — exploratorio,shot_on_target,Yan Diomande,3.0,0.2777,1-1,SYN-GK20 defende finalização de Yan Diomande
+37,58.78,59,second_half,home,Real Best XI — exploratorio,foul,SYN-FB120,3.0,,1-1,Falta de SYN-FB120
+39,58.78,59,second_half,away,Real Best XI — exploratorio,shot_on_target,Yan Diomande,2.0,0.1715,1-1,SYN-GK20 defende finalização de Yan Diomande
+38,58.79,59,second_half,home,Real Best XI — exploratorio,yellow_card,SYN-FB120,3.0,,1-1,Cartão amarelo para SYN-FB120
+40,61.132,62,regulation,home,Synthetic XI — exploratorio,substitution,SYN-FB120 · reserva funcional 1,,,1-1,"Substituição tática: sai SYN-FB120, entra SYN-FB120 · reserva funcional 1"
+41,61.132,62,regulation,away,Real Best XI — exploratorio,substitution,Jaouen Hadjam · reserva funcional 1,,,1-1,"Substituição tática: sai Jaouen Hadjam, entra Jaouen Hadjam · reserva funcional 1"
+42,63.066,64,second_half,away,Synthetic XI — exploratorio,foul,Brandon Mechele,2.0,,1-1,Falta de Brandon Mechele
+43,63.686,64,second_half,away,Synthetic XI — exploratorio,foul,Pedri,1.0,,1-1,Falta de Pedri
+44,65.009,66,second_half,home,Synthetic XI — exploratorio,goal,SYN-CM20,3.0,0.1944,2-1,GOL de SYN-CM20
+45,67.954,68,second_half,away,Real Best XI — exploratorio,turnover,Kylian Mbappé,2.0,,2-1,Kylian Mbappé perde sob pressão
+46,71.442,72,second_half,away,Synthetic XI — exploratorio,foul,Cristian Romero,1.0,,2-1,Falta de Cristian Romero
+47,72.22,73,regulation,home,Synthetic XI — exploratorio,substitution,SYN-FB220 · reserva funcional 1,,,2-1,"Substituição tática: sai SYN-FB220, entra SYN-FB220 · reserva funcional 1"
+48,72.22,73,regulation,away,Real Best XI — exploratorio,substitution,Nuno Mendes · reserva funcional 1,,,2-1,"Substituição tática: sai Nuno Mendes, entra Nuno Mendes · reserva funcional 1"
+49,72.22,73,second_half,away,Real Best XI — exploratorio,turnover,Pedri,2.0,,2-1,Pedri perde sob pressão
+50,73.255,74,second_half,away,Synthetic XI — exploratorio,foul,Brandon Mechele,1.0,,2-1,Falta de Brandon Mechele
+51,82.459,83,regulation,home,Synthetic XI — exploratorio,substitution,SYN-W120 · reserva funcional 1,,,2-1,"Substituição tática: sai SYN-W120, entra SYN-W120 · reserva funcional 1"
+52,82.459,83,regulation,away,Real Best XI — exploratorio,substitution,Lionel Messi · reserva funcional 1,,,2-1,"Substituição tática: sai Lionel Messi, entra Lionel Messi · reserva funcional 1"
+53,82.459,83,second_half,home,Real Best XI — exploratorio,foul,SYN-CM20,2.0,,2-1,Falta de SYN-CM20
+54,82.798,83,second_half,home,Synthetic XI — exploratorio,shot_off_target,SYN-AM20,2.0,0.143,2-1,Grande chance de SYN-AM20 para fora
+55,94.532,95,second_half,away,Real Best XI — exploratorio,shot_on_target,Pedri,1.0,0.0747,2-1,SYN-GK20 defende finalização de Pedri
+56,96.195,97,second_half,home,Real Best XI — exploratorio,foul,SYN-DM20,2.0,,2-1,Falta de SYN-DM20
+57,98.644,99,second_half,away,Real Best XI — exploratorio,turnover,Michael Olise,2.0,,2-1,Michael Olise perde sob pressão
+58,102.0,103,second_half,home,Synthetic XI — exploratorio,shot_off_target,SYN-W220,2.0,0.1496,2-1,Grande chance de SYN-W220 para fora
+59,102.0,103,match,system,,full_time,,,,2-1,Final: Synthetic XI — exploratorio campeão

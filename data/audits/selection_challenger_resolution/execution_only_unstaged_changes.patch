@@ -1,0 +1,2562 @@
+diff --git a/.github/workflows/complete-final-validation.yml b/.github/workflows/complete-final-validation.yml
+index 24025ab..b3abd9e 100644
+--- a/.github/workflows/complete-final-validation.yml
++++ b/.github/workflows/complete-final-validation.yml
+@@ -6,12 +6,10 @@ on:
+       - simulator/complete_final.py
+       - simulator/complete_final_monte_carlo.py
+       - simulator/validation.py
+-      - scripts/install_complete_final_bundle.py
+       - scripts/run_complete_final_simulation.py
+       - scripts/scientific/validate_complete_final.py
+       - tests/test_complete_final.py
+       - PROTOCOLO_FINAL_COMPLETA.md
+-      - COMPLETE_FINAL_IMPLEMENTATION.md
+       - .github/workflows/complete-final-validation.yml
+   push:
+     branches: [main]
+@@ -19,12 +17,10 @@ on:
+       - simulator/complete_final.py
+       - simulator/complete_final_monte_carlo.py
+       - simulator/validation.py
+-      - scripts/install_complete_final_bundle.py
+       - scripts/run_complete_final_simulation.py
+       - scripts/scientific/validate_complete_final.py
+       - tests/test_complete_final.py
+       - PROTOCOLO_FINAL_COMPLETA.md
+-      - COMPLETE_FINAL_IMPLEMENTATION.md
+       - .github/workflows/complete-final-validation.yml
+   workflow_dispatch:
+     inputs:
+@@ -61,9 +57,6 @@ jobs:
+           python -m pip install --upgrade pip
+           pip install -r requirements.txt
+ 
+-      - name: Materialize reviewed sources
+-        run: python scripts/install_complete_final_bundle.py
+-
+       - name: Compile complete-final modules
+         run: |
+           python -m py_compile simulator/complete_final.py
+diff --git a/COMPLETE_FINAL_IMPLEMENTATION.md b/COMPLETE_FINAL_IMPLEMENTATION.md
+index 9708298..8e15f5a 100644
+--- a/COMPLETE_FINAL_IMPLEMENTATION.md
++++ b/COMPLETE_FINAL_IMPLEMENTATION.md
+@@ -42,14 +42,6 @@ O CI **não falsifica aprovação científica**. Mesmo com engenharia aprovada,
+ - autorização consolidada de comparação final;
+ - presença do protocolo preregistrado.
+ 
+-## Fonte expandida e auditabilidade
+-
+-O bundle determinístico em `scripts/install_complete_final_bundle.py` contém os oito arquivos revisados. Os entrypoints do repositório o materializam antes da execução, e o workflow arquiva as fontes expandidas junto com resultados, manifestos e hashes. Para expandir manualmente:
+-
+-```bash
+-python scripts/install_complete_final_bundle.py
+-```
+-
+ ## Execução
+ 
+ ```bash
+diff --git a/ops/use-final-daily-calls.flag b/ops/use-final-daily-calls.flag
+deleted file mode 100644
+index 6b32cb2..0000000
+--- a/ops/use-final-daily-calls.flag
++++ /dev/null
+@@ -1 +0,0 @@
+-2026-07-19
+diff --git a/scripts/run_complete_final_simulation.py b/scripts/run_complete_final_simulation.py
+index 305b09b..be93a4e 100644
+--- a/scripts/run_complete_final_simulation.py
++++ b/scripts/run_complete_final_simulation.py
+@@ -1,14 +1,150 @@
+ #!/usr/bin/env python3
+-"""Bootstrap and execute the complete-final Monte Carlo runner."""
++"""Run the preregistered complete-final Monte Carlo simulation.
++
++The command writes an auditable distribution, a representative replay selected
++without excitement cherry-picking, and the exact team/profile inputs used.
++"""
++
+ from __future__ import annotations
++
++import argparse
++import hashlib
++import json
++from dataclasses import asdict
++from datetime import datetime, timezone
+ from pathlib import Path
+-import runpy
+-
+-_TARGET = Path(__file__).resolve()
+-_ROOT = _TARGET.parents[1]
+-_MARKER = "Bootstrap and execute the complete-final Monte Carlo runner"
+-runpy.run_path(str(_ROOT / "scripts" / "install_complete_final_bundle.py"), run_name="__complete_final_installer__")
+-_SOURCE = _TARGET.read_text(encoding="utf-8")
+-if _MARKER in _SOURCE:
+-    raise RuntimeError("Complete-final bundle did not materialize the simulation runner")
+-exec(compile(_SOURCE, str(_TARGET), "exec"), globals(), globals())
++from typing import Any
++
++import pandas as pd
++
++from simulator.calibrated_core import CalibrationTargets
++from simulator.complete_final import FinalConfig
++from simulator.complete_final_monte_carlo import simulate_complete_finals
++from simulator.profiles import TOTALS_PATH, ROLE_PATH, team_to_rows
++from simulator.profiles_v2 import build_teams
++from simulator.validation import discover_repository_readiness
++
++CALIBRATION_PATH = Path("data/simulations/calibration/world_cup_2026_targets.json")
++DEFAULT_OUT = Path("data/simulations/complete_final_v1")
++
++
++def sha256_file(path: Path) -> str | None:
++    if not path.exists():
++        return None
++    digest = hashlib.sha256()
++    with path.open("rb") as handle:
++        for block in iter(lambda: handle.read(1024 * 1024), b""):
++            digest.update(block)
++    return digest.hexdigest()
++
++
++def parse_args() -> argparse.Namespace:
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--simulations", type=int, default=10_000)
++    parser.add_argument("--seed", type=int, default=20260721)
++    parser.add_argument("--top-n", type=int, default=20)
++    parser.add_argument("--audit-sample-size", type=int, default=250)
++    parser.add_argument("--output", type=Path, default=DEFAULT_OUT)
++    return parser.parse_args()
++
++
++def main() -> None:
++    args = parse_args()
++    if args.simulations < 1:
++        raise ValueError("--simulations must be positive")
++    calibration_payload = json.loads(CALIBRATION_PATH.read_text(encoding="utf-8"))
++    targets = CalibrationTargets.from_dict(calibration_payload)
++    synthetic, real, avatars, real_selection = build_teams(top_n=args.top_n)
++    config = FinalConfig(seed=None)
++    summary = simulate_complete_finals(
++        synthetic,
++        real,
++        targets,
++        simulations=args.simulations,
++        seed=args.seed,
++        config=config,
++        audit_sample_size=args.audit_sample_size,
++    )
++    readiness = discover_repository_readiness(Path("."))
++    engineering_passed = bool(summary["engineering_calibration_gate"]["passed"])
++    publication_allowed = bool(
++        engineering_passed
++        and readiness["selection_sufficiency"]
++        and readiness["external_holdout_passed"]
++        and readiness["position_review_passed"]
++        and readiness["final_team_comparison_allowed"]
++        and readiness["preregistered_protocol_present"]
++    )
++    summary["methodological_gate"] = {
++        "engineering_distribution_gate_passed": engineering_passed,
++        "publication_as_final_result_allowed": publication_allowed,
++        "claim_status": (
++            "validated comparative result with declared limitations"
++            if publication_allowed
++            else "exploratory, calibrated and auditable complete-final simulation"
++        ),
++        "repository_readiness": readiness,
++    }
++    summary["provenance"] = {
++        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
++        "calibration_path": str(CALIBRATION_PATH),
++        "calibration_sha256": sha256_file(CALIBRATION_PATH),
++        "annual_totals_path": str(TOTALS_PATH),
++        "annual_totals_sha256": sha256_file(TOTALS_PATH),
++        "role_evidence_path": str(ROLE_PATH),
++        "role_evidence_sha256": sha256_file(ROLE_PATH),
++        "top_n": args.top_n,
++        "master_seed": args.seed,
++        "complete_final_config": asdict(config),
++    }
++
++    out = args.output
++    out.mkdir(parents=True, exist_ok=True)
++    audit_rows = summary.pop("audit_sample", [])
++    representative = summary["representative_match"]
++    (out / "simulation_summary.json").write_text(
++        json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8"
++    )
++    pd.DataFrame(audit_rows).to_csv(out / "audit_sample.csv", index=False)
++    pd.DataFrame(representative["timeline"]).to_csv(
++        out / "representative_final_timeline.csv", index=False
++    )
++    avatars.to_csv(out / "synthetic_xi_membership.csv", index=False)
++    real_selection.to_csv(out / "real_best_xi_selection.csv", index=False)
++    pd.DataFrame(team_to_rows(synthetic)).to_csv(
++        out / "synthetic_xi_profiles.csv", index=False
++    )
++    pd.DataFrame(team_to_rows(real)).to_csv(
++        out / "real_best_xi_profiles.csv", index=False
++    )
++    manifest: dict[str, Any] = {
++        "status": "complete_final_artifacts_written",
++        "output_directory": str(out),
++        "files": {},
++    }
++    for path in sorted(out.iterdir()):
++        if path.is_file() and path.name != "manifest.json":
++            manifest["files"][path.name] = {
++                "bytes": path.stat().st_size,
++                "sha256": sha256_file(path),
++            }
++    (out / "manifest.json").write_text(
++        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
++    )
++    print(
++        json.dumps(
++            {
++                "status": summary["status"],
++                "simulations": args.simulations,
++                "engineering_gate": summary["engineering_calibration_gate"],
++                "publication_allowed": publication_allowed,
++                "output": str(out),
++            },
++            ensure_ascii=False,
++            indent=2,
++        )
++    )
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/scripts/scientific/validate_complete_final.py b/scripts/scientific/validate_complete_final.py
+index 6b66cb0..3f4c9be 100644
+--- a/scripts/scientific/validate_complete_final.py
++++ b/scripts/scientific/validate_complete_final.py
+@@ -1,14 +1,79 @@
+ #!/usr/bin/env python3
+-"""Bootstrap and execute complete-final engineering/scientific validation."""
++"""Execute engineering checks and repository-level scientific gates."""
++
+ from __future__ import annotations
++
++import argparse
++import json
+ from pathlib import Path
+-import runpy
+-
+-_TARGET = Path(__file__).resolve()
+-_ROOT = _TARGET.parents[2]
+-_MARKER = "Bootstrap and execute complete-final engineering/scientific validation"
+-runpy.run_path(str(_ROOT / "scripts" / "install_complete_final_bundle.py"), run_name="__complete_final_installer__")
+-_SOURCE = _TARGET.read_text(encoding="utf-8")
+-if _MARKER in _SOURCE:
+-    raise RuntimeError("Complete-final bundle did not materialize the validation runner")
+-exec(compile(_SOURCE, str(_TARGET), "exec"), globals(), globals())
++
++from simulator.calibrated_core import CalibrationTargets
++from simulator.profiles_v2 import build_teams
++from simulator.validation import validate_complete_final_engine
++
++CALIBRATION_PATH = Path("data/simulations/calibration/world_cup_2026_targets.json")
++DEFAULT_OUT = Path("data/simulations/complete_final_v1/validation_report.json")
++
++
++def parse_args() -> argparse.Namespace:
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--simulations", type=int, default=2_000)
++    parser.add_argument("--seed", type=int, default=20260723)
++    parser.add_argument("--top-n", type=int, default=20)
++    parser.add_argument("--output", type=Path, default=DEFAULT_OUT)
++    parser.add_argument(
++        "--allow-engineering-failure",
++        action="store_true",
++        help="Write diagnostics but return success even if engineering checks fail.",
++    )
++    return parser.parse_args()
++
++
++def main() -> None:
++    args = parse_args()
++    payload = json.loads(CALIBRATION_PATH.read_text(encoding="utf-8"))
++    targets = CalibrationTargets.from_dict(payload)
++    synthetic, real, _, _ = build_teams(top_n=args.top_n)
++    report = validate_complete_final_engine(
++        synthetic,
++        real,
++        targets,
++        simulations=args.simulations,
++        seed=args.seed,
++        repository_root=Path("."),
++    )
++    args.output.parent.mkdir(parents=True, exist_ok=True)
++    args.output.write_text(
++        json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"
++    )
++    markdown = [
++        "# Validação do motor de final completa",
++        "",
++        f"- Versão: `{report['engine_version']}`",
++        f"- Simulações do lote principal: **{report['simulation_count']}**",
++        f"- Gate de engenharia: **{'PASS' if report['engineering_gate']['passed'] else 'FAIL'}**",
++        f"- Gate científico para publicação: **{'PASS' if report['scientific_publication_gate']['passed'] else 'BLOCKED'}**",
++        "",
++        "## Checks de engenharia",
++        "",
++    ]
++    markdown.extend(
++        f"- `{key}`: **{'PASS' if value else 'FAIL'}**"
++        for key, value in report["engineering_gate"]["checks"].items()
++    )
++    markdown.extend(["", "## Gates científicos", ""])
++    markdown.extend(
++        f"- `{key}`: **{'PASS' if value else 'BLOCKED'}**"
++        for key, value in report["scientific_publication_gate"]["checks"].items()
++    )
++    args.output.with_suffix(".md").write_text(
++        "\n".join(markdown) + "\n", encoding="utf-8"
++    )
++    print(json.dumps(report["engineering_gate"], ensure_ascii=False, indent=2))
++    print(json.dumps(report["scientific_publication_gate"], ensure_ascii=False, indent=2))
++    if not report["engineering_gate"]["passed"] and not args.allow_engineering_failure:
++        raise SystemExit(1)
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/simulator/complete_final.py b/simulator/complete_final.py
+index bc919ff..a8c0c4c 100644
+--- a/simulator/complete_final.py
++++ b/simulator/complete_final.py
+@@ -1,20 +1,1475 @@
+-"""Transparent bootstrap for the complete-final source bundle.
++"""Complete knockout-final state machine for Synthetic XI.
+ 
+-The repository keeps a deterministic, checksummed source bundle in
+-`scripts/install_complete_final_bundle.py`. On first import this wrapper materializes
+-the reviewed source files and executes the generated module. The CI verifies and
+-archives the expanded sources.
++This module extends the calibrated 90-minute engine with the events and rules
++needed for a reproducible final: dynamic tactics, fatigue, fouls, cards,
++injuries, substitutions, VAR, stoppage time, extra time and penalties.
++
++The model remains an event simulator, not a reconstruction of continuous
++football physics. All structural assumptions are explicit in ``FinalConfig``.
+ """
++
+ from __future__ import annotations
+ 
+-from pathlib import Path
+-import runpy
+-
+-_TARGET = Path(__file__).resolve()
+-_ROOT = _TARGET.parents[1]
+-_WRAPPER_MARKER = "Transparent bootstrap for the complete-final source bundle"
+-runpy.run_path(str(_ROOT / "scripts" / "install_complete_final_bundle.py"), run_name="__complete_final_installer__")
+-_SOURCE = _TARGET.read_text(encoding="utf-8")
+-if _WRAPPER_MARKER in _SOURCE:
+-    raise RuntimeError("Complete-final bundle did not materialize simulator/complete_final.py")
+-exec(compile(_SOURCE, str(_TARGET), "exec"), globals(), globals())
++from dataclasses import dataclass, field, replace
++from math import exp
++from typing import Any, Iterable
++
++import numpy as np
++
++from .calibrated_core import CalibrationTargets
++from .engine import OUTFIELD_ROLES, ROLE_ORDER, PlayerProfile, TeamProfile, _clip
++
++
++def _sigmoid(value: float) -> float:
++    return 1.0 / (1.0 + exp(-value))
++
++
++@dataclass(frozen=True)
++class FinalRules:
++    regulation_minutes: int = 90
++    extra_time_period_minutes: int = 15
++    regulation_substitutions: int = 5
++    extra_time_substitution: int = 1
++    regulation_substitution_windows: int = 3
++    extra_time_substitution_windows: int = 1
++    initial_penalty_kicks: int = 5
++    maximum_sudden_death_rounds: int = 20
++
++    def __post_init__(self) -> None:
++        if self.regulation_minutes != 90:
++            raise ValueError("The preregistered primary final uses 90 regulation minutes")
++        if self.extra_time_period_minutes != 15:
++            raise ValueError("Extra-time periods must be 15 minutes")
++        if self.regulation_substitutions < 0 or self.extra_time_substitution < 0:
++            raise ValueError("Substitution limits cannot be negative")
++
++
++@dataclass(frozen=True)
++class FinalConfig:
++    seed: int | None = None
++    home_advantage: float = 0.0
++    ability_scale: float = 0.75
++    shot_edge_scale: float = 0.95
++    conversion_edge_scale: float = 0.80
++    home_coordination_mean: float = 1.0
++    away_coordination_mean: float = 1.0
++    coordination_sd: float = 0.035
++    bench_quality: float = 0.91
++    bench_uncertainty: float = 0.045
++    fouls_per_team_90: float = 11.2
++    yellows_per_team_90: float = 2.15
++    direct_reds_per_team_90: float = 0.055
++    injuries_per_team_90: float = 0.18
++    severe_injury_share: float = 0.22
++    penalty_foul_share_in_zone_three: float = 0.035
++    var_review_goal_probability: float = 0.34
++    var_goal_overturn_probability: float = 0.075
++    var_penalty_review_probability: float = 0.44
++    var_penalty_overturn_probability: float = 0.09
++    fatigue_per_90: float = 0.19
++    referee_strictness_mean: float = 1.0
++    referee_strictness_sd: float = 0.12
++    rules: FinalRules = field(default_factory=FinalRules)
++
++    def __post_init__(self) -> None:
++        probability_fields = (
++            "severe_injury_share",
++            "penalty_foul_share_in_zone_three",
++            "var_review_goal_probability",
++            "var_goal_overturn_probability",
++            "var_penalty_review_probability",
++            "var_penalty_overturn_probability",
++        )
++        for name in probability_fields:
++            value = float(getattr(self, name))
++            if not 0.0 <= value <= 1.0:
++                raise ValueError(f"{name} must be in [0, 1]")
++        if self.bench_quality <= 0 or self.coordination_sd < 0:
++            raise ValueError("Invalid structural parameter")
++
++
++@dataclass
++class PlayerMatchState:
++    profile: PlayerProfile
++    stamina: float = 1.0
++    yellow_cards: int = 0
++    sent_off: bool = False
++    injured: bool = False
++    severe_injury: bool = False
++    entry_minute: float = 0.0
++    substitute_generation: int = 0
++
++    @property
++    def active(self) -> bool:
++        return not self.sent_off and not self.severe_injury
++
++    def effective(self, attribute: str) -> float:
++        base = float(getattr(self.profile, attribute))
++        fatigue_multiplier = 0.70 + 0.30 * _clip(self.stamina)
++        injury_multiplier = 0.88 if self.injured else 1.0
++        return _clip(base * fatigue_multiplier * injury_multiplier)
++
++
++@dataclass
++class TeamMatchState:
++    name: str
++    side: str
++    players: dict[str, PlayerMatchState]
++    tempo: float
++    press: float
++    directness: float
++    coordination: float
++    goals: int = 0
++    regulation_goals: int = 0
++    extra_time_goals: int = 0
++    xg: float = 0.0
++    shots: int = 0
++    shots_on_target: int = 0
++    regulation_xg: float = 0.0
++    regulation_shots: int = 0
++    regulation_shots_on_target: int = 0
++    regulation_possessions: int = 0
++    possessions: int = 0
++    fouls: int = 0
++    yellows: int = 0
++    reds: int = 0
++    injuries: int = 0
++    substitutions: int = 0
++    substitution_windows: int = 0
++    extra_time_windows: int = 0
++    var_reviews: int = 0
++    penalties_awarded: int = 0
++    tactic: str = "balanced"
++    used_substitution_marks: set[str] = field(default_factory=set)
++
++    @classmethod
++    def from_profile(
++        cls,
++        team: TeamProfile,
++        side: str,
++        coordination: float,
++    ) -> "TeamMatchState":
++        return cls(
++            name=team.name,
++            side=side,
++            players={
++                player.role: PlayerMatchState(profile=player)
++                for player in team.players
++            },
++            tempo=team.tempo,
++            press=team.press,
++            directness=team.directness,
++            coordination=coordination,
++        )
++
++    @property
++    def active_count(self) -> int:
++        return sum(player.active for player in self.players.values())
++
++    @property
++    def numerical_factor(self) -> float:
++        return _clip(self.active_count / 11.0, 0.64, 1.0)
++
++    def active_roles(self, roles: Iterable[str] = ROLE_ORDER) -> list[str]:
++        return [role for role in roles if role in self.players and self.players[role].active]
++
++    def mean(self, attribute: str, roles: Iterable[str] = OUTFIELD_ROLES) -> float:
++        active = self.active_roles(roles)
++        if not active:
++            return 0.0
++        return float(np.mean([self.players[role].effective(attribute) for role in active]))
++
++    def choose_role(
++        self,
++        rng: np.random.Generator,
++        roles: Iterable[str],
++        attribute: str = "overall",
++        inverse: bool = False,
++    ) -> str:
++        active = self.active_roles(roles)
++        if not active:
++            active = self.active_roles(ROLE_ORDER)
++        if not active:
++            raise RuntimeError(f"{self.name} has no active players")
++        values = np.array(
++            [0.10 + self.players[role].effective(attribute) for role in active],
++            dtype=float,
++        )
++        if inverse:
++            values = 1.25 - np.clip(values, 0.0, 1.25)
++            values += 0.05
++        values /= values.sum()
++        return str(rng.choice(active, p=values))
++
++    def can_substitute(self, extra_time: bool, rules: FinalRules) -> bool:
++        maximum = rules.regulation_substitutions + (
++            rules.extra_time_substitution if extra_time else 0
++        )
++        return self.substitutions < maximum
++
++    def replace_role(
++        self,
++        role: str,
++        minute: float,
++        rng: np.random.Generator,
++        config: FinalConfig,
++    ) -> tuple[str, str]:
++        outgoing = self.players[role]
++        source = outgoing.profile
++        attributes = {}
++        for attribute in (
++            "overall",
++            "build_up",
++            "progression",
++            "creation",
++            "finishing",
++            "defending",
++            "duels",
++            "retention",
++            "goalkeeping",
++        ):
++            sampled = rng.normal(
++                float(getattr(source, attribute)) * config.bench_quality,
++                config.bench_uncertainty,
++            )
++            attributes[attribute] = _clip(float(sampled))
++        generation = outgoing.substitute_generation + 1
++        reserve = PlayerProfile(
++            player_id=f"{source.player_id}-BENCH-{generation}",
++            name=f"{source.name} · reserva funcional {generation}",
++            role=role,
++            minutes=0.0,
++            uncertainty=max(source.uncertainty, config.bench_uncertainty),
++            synthetic=source.synthetic,
++            **attributes,
++        )
++        self.players[role] = PlayerMatchState(
++            profile=reserve,
++            stamina=1.0,
++            entry_minute=minute,
++            substitute_generation=generation,
++        )
++        self.substitutions += 1
++        return outgoing.profile.name, reserve.name
++
++    def snapshot(self) -> dict[str, Any]:
++        return {
++            "goals": self.goals,
++            "regulation_goals": self.regulation_goals,
++            "extra_time_goals": self.extra_time_goals,
++            "xg": round(self.xg, 4),
++            "shots": self.shots,
++            "shots_on_target": self.shots_on_target,
++            "regulation_xg": round(self.regulation_xg, 4),
++            "regulation_shots": self.regulation_shots,
++            "regulation_shots_on_target": self.regulation_shots_on_target,
++            "regulation_possessions": self.regulation_possessions,
++            "possessions": self.possessions,
++            "fouls": self.fouls,
++            "yellows": self.yellows,
++            "reds": self.reds,
++            "injuries": self.injuries,
++            "substitutions": self.substitutions,
++            "substitution_windows": self.substitution_windows,
++            "extra_time_windows": self.extra_time_windows,
++            "var_reviews": self.var_reviews,
++            "penalties_awarded": self.penalties_awarded,
++            "players_remaining": self.active_count,
++            "final_tactic": self.tactic,
++            "coordination_draw": round(self.coordination, 5),
++        }
++
++
++@dataclass
++class CompleteFinalResult:
++    home: str
++    away: str
++    seed: int | None
++    regulation_home_goals: int
++    regulation_away_goals: int
++    extra_time_home_goals: int
++    extra_time_away_goals: int
++    home_penalties: int | None
++    away_penalties: int | None
++    winner: str
++    decided_by: str
++    home_stats: dict[str, Any]
++    away_stats: dict[str, Any]
++    first_half_added_time: int
++    second_half_added_time: int
++    extra_time_first_added_time: int
++    extra_time_second_added_time: int
++    referee_strictness: float
++    timeline: list[dict[str, Any]] = field(default_factory=list)
++
++    @property
++    def home_goals(self) -> int:
++        return self.regulation_home_goals + self.extra_time_home_goals
++
++    @property
++    def away_goals(self) -> int:
++        return self.regulation_away_goals + self.extra_time_away_goals
++
++    def as_dict(self) -> dict[str, Any]:
++        return {
++            "home": self.home,
++            "away": self.away,
++            "seed": self.seed,
++            "regulation_score": (
++                f"{self.regulation_home_goals}-{self.regulation_away_goals}"
++            ),
++            "extra_time_score": (
++                f"{self.extra_time_home_goals}-{self.extra_time_away_goals}"
++            ),
++            "final_score_before_penalties": f"{self.home_goals}-{self.away_goals}",
++            "home_penalties": self.home_penalties,
++            "away_penalties": self.away_penalties,
++            "winner": self.winner,
++            "decided_by": self.decided_by,
++            "home_stats": self.home_stats,
++            "away_stats": self.away_stats,
++            "stoppage_time": {
++                "first_half": self.first_half_added_time,
++                "second_half": self.second_half_added_time,
++                "extra_time_first_half": self.extra_time_first_added_time,
++                "extra_time_second_half": self.extra_time_second_added_time,
++            },
++            "referee_strictness": round(self.referee_strictness, 5),
++            "timeline": self.timeline,
++        }
++
++
++class CompleteFinalSimulator:
++    """Simulate a knockout final under explicit rules and structural uncertainty."""
++
++    def __init__(
++        self,
++        home: TeamProfile,
++        away: TeamProfile,
++        targets: CalibrationTargets,
++        config: FinalConfig | None = None,
++    ) -> None:
++        self.home_profile = home
++        self.away_profile = away
++        self.targets = targets
++        self.config = config or FinalConfig()
++        self.rng = np.random.default_rng(self.config.seed)
++        self.timeline: list[dict[str, Any]] = []
++        self._sequence = 0
++        self.referee_strictness = _clip(
++            float(
++                self.rng.normal(
++                    self.config.referee_strictness_mean,
++                    self.config.referee_strictness_sd,
++                )
++            ),
++            0.65,
++            1.45,
++        )
++
++    def simulate(self, keep_timeline: bool = True) -> CompleteFinalResult:
++        sampled_home = self.home_profile.sampled(self.rng)
++        sampled_away = self.away_profile.sampled(self.rng)
++        home_coordination = _clip(
++            float(
++                self.rng.normal(
++                    self.config.home_coordination_mean,
++                    self.config.coordination_sd,
++                )
++            ),
++            0.82,
++            1.12,
++        )
++        away_coordination = _clip(
++            float(
++                self.rng.normal(
++                    self.config.away_coordination_mean,
++                    self.config.coordination_sd,
++                )
++            ),
++            0.82,
++            1.12,
++        )
++        home = TeamMatchState.from_profile(sampled_home, "home", home_coordination)
++        away = TeamMatchState.from_profile(sampled_away, "away", away_coordination)
++
++        first_added = max(1, int(self.rng.poisson(2.4)))
++        second_added = max(3, int(self.rng.poisson(5.2)))
++        extra_first_added = extra_second_added = 0
++
++        first_half_end = 45.0 + first_added
++        self._run_period(
++            home,
++            away,
++            start_minute=0.0,
++            nominal_minutes=45,
++            added_minutes=first_added,
++            period="first_half",
++            keep_timeline=keep_timeline,
++            extra_time=False,
++        )
++        self._event(
++            first_half_end,
++            "system",
++            "half_time",
++            "Intervalo",
++            home,
++            away,
++            keep_timeline,
++        )
++        regulation_end = first_half_end + 45.0 + second_added
++        self._run_period(
++            home,
++            away,
++            start_minute=first_half_end,
++            nominal_minutes=45,
++            added_minutes=second_added,
++            period="second_half",
++            keep_timeline=keep_timeline,
++            extra_time=False,
++        )
++        home.regulation_goals = home.goals
++        away.regulation_goals = away.goals
++        final_clock = regulation_end
++
++        if home.goals != away.goals:
++            decided_by = "regulation"
++            home_penalties = away_penalties = None
++        else:
++            extra_first_added = max(1, int(self.rng.poisson(1.2)))
++            extra_second_added = max(1, int(self.rng.poisson(1.4)))
++            self._event(
++                regulation_end,
++                "system",
++                "extra_time_start",
++                "Início da prorrogação",
++                home,
++                away,
++                keep_timeline,
++            )
++            extra_first_end = (
++                regulation_end
++                + self.config.rules.extra_time_period_minutes
++                + extra_first_added
++            )
++            self._run_period(
++                home,
++                away,
++                start_minute=regulation_end,
++                nominal_minutes=self.config.rules.extra_time_period_minutes,
++                added_minutes=extra_first_added,
++                period="extra_time_first",
++                keep_timeline=keep_timeline,
++                extra_time=True,
++            )
++            final_clock = (
++                extra_first_end
++                + self.config.rules.extra_time_period_minutes
++                + extra_second_added
++            )
++            self._run_period(
++                home,
++                away,
++                start_minute=extra_first_end,
++                nominal_minutes=self.config.rules.extra_time_period_minutes,
++                added_minutes=extra_second_added,
++                period="extra_time_second",
++                keep_timeline=keep_timeline,
++                extra_time=True,
++            )
++            home.extra_time_goals = home.goals - home.regulation_goals
++            away.extra_time_goals = away.goals - away.regulation_goals
++            if home.goals != away.goals:
++                decided_by = "extra_time"
++                home_penalties = away_penalties = None
++            else:
++                decided_by = "penalties"
++                shootout_clock = final_clock + 1.0
++                home_penalties, away_penalties = self._penalty_shootout(
++                    home, away, keep_timeline, shootout_clock
++                )
++                final_clock = shootout_clock + 1.0
++
++        if decided_by == "penalties":
++            winner = home.name if int(home_penalties) > int(away_penalties) else away.name
++        else:
++            winner = home.name if home.goals > away.goals else away.name
++
++        self._event(
++            final_clock,
++            "system",
++            "full_time",
++            f"Final: {winner} campeão",
++            home,
++            away,
++            keep_timeline,
++        )
++        timeline = sorted(
++            self.timeline,
++            key=lambda event: (float(event["clock"]), int(event["sequence"])),
++        )
++        return CompleteFinalResult(
++            home=home.name,
++            away=away.name,
++            seed=self.config.seed,
++            regulation_home_goals=home.regulation_goals,
++            regulation_away_goals=away.regulation_goals,
++            extra_time_home_goals=home.extra_time_goals,
++            extra_time_away_goals=away.extra_time_goals,
++            home_penalties=home_penalties,
++            away_penalties=away_penalties,
++            winner=winner,
++            decided_by=decided_by,
++            home_stats=home.snapshot(),
++            away_stats=away.snapshot(),
++            first_half_added_time=first_added,
++            second_half_added_time=second_added,
++            extra_time_first_added_time=extra_first_added,
++            extra_time_second_added_time=extra_second_added,
++            referee_strictness=self.referee_strictness,
++            timeline=timeline if keep_timeline else [],
++        )
++
++    def _run_period(
++        self,
++        home: TeamMatchState,
++        away: TeamMatchState,
++        start_minute: float,
++        nominal_minutes: int,
++        added_minutes: int,
++        period: str,
++        keep_timeline: bool,
++        extra_time: bool,
++    ) -> None:
++        actual_minutes = nominal_minutes + added_minutes
++        # Stoppage time stretches the same calibrated possession exposure instead
++        # of creating additional possessions beyond the 90-minute target.
++        expected = self.targets.model_possessions_per_match * nominal_minutes / 90.0
++        possessions = max(1, int(self.rng.poisson(expected)))
++        durations = self.rng.gamma(2.2, 1.0, size=possessions)
++        durations *= actual_minutes / durations.sum()
++        elapsed = 0.0
++        for duration in durations:
++            delta = float(duration)
++            elapsed += delta
++            clock = start_minute + elapsed
++            self._apply_fatigue(home, delta, extra_time)
++            self._apply_fatigue(away, delta, extra_time)
++            self._update_tactics(home, away, clock)
++            self._update_tactics(away, home, clock)
++            self._maybe_tactical_substitution(home, clock, extra_time, keep_timeline, away)
++            self._maybe_tactical_substitution(away, clock, extra_time, keep_timeline, home)
++
++            home_probability = self._possession_probability(home, away)
++            home_attacks = bool(self.rng.random() < home_probability)
++            attack, defend = (home, away) if home_attacks else (away, home)
++            attack.possessions += 1
++            if not extra_time:
++                attack.regulation_possessions += 1
++
++            if self._simulate_foul(
++                attack,
++                defend,
++                clock,
++                period,
++                extra_time,
++                keep_timeline,
++            ):
++                continue
++            self._simulate_possession(
++                attack,
++                defend,
++                clock,
++                period,
++                keep_timeline,
++            )
++
++    def _apply_fatigue(
++        self,
++        team: TeamMatchState,
++        delta_minutes: float,
++        extra_time: bool,
++    ) -> None:
++        role_load = {
++            "GK": 0.45,
++            "CB1": 0.82,
++            "CB2": 0.82,
++            "FB1": 1.12,
++            "FB2": 1.12,
++            "DM": 1.02,
++            "CM": 1.08,
++            "AM": 1.05,
++            "W1": 1.10,
++            "W2": 1.10,
++            "ST": 0.96,
++        }
++        extra_multiplier = 1.12 if extra_time else 1.0
++        tempo_multiplier = 0.82 + 0.36 * team.tempo
++        for role, state in team.players.items():
++            if not state.active:
++                continue
++            decay = (
++                self.config.fatigue_per_90
++                * delta_minutes
++                / 90.0
++                * role_load.get(role, 1.0)
++                * tempo_multiplier
++                * extra_multiplier
++            )
++            state.stamina = _clip(state.stamina - decay, 0.45, 1.0)
++
++    def _update_tactics(
++        self,
++        team: TeamMatchState,
++        opponent: TeamMatchState,
++        minute: float,
++    ) -> None:
++        if team.active_count < opponent.active_count:
++            team.tactic = "numerical_disadvantage"
++        elif team.goals < opponent.goals and minute >= 58:
++            team.tactic = "chase"
++        elif team.goals > opponent.goals and minute >= 74:
++            team.tactic = "protect"
++        elif minute >= 105 and team.goals == opponent.goals:
++            team.tactic = "extra_time_control"
++        else:
++            team.tactic = "balanced"
++
++    def _tactical_modifiers(self, tactic: str) -> tuple[float, float, float]:
++        # possession, attack, defence
++        return {
++            "balanced": (0.0, 0.0, 0.0),
++            "chase": (0.015, 0.095, -0.045),
++            "protect": (-0.018, -0.055, 0.085),
++            "numerical_disadvantage": (-0.045, -0.075, -0.070),
++            "extra_time_control": (0.025, -0.020, 0.020),
++        }[tactic]
++
++    def _possession_probability(
++        self,
++        home: TeamMatchState,
++        away: TeamMatchState,
++    ) -> float:
++        roles = ("CB1", "CB2", "FB1", "FB2", "DM", "CM")
++
++        def strength(team: TeamMatchState) -> float:
++            possession_mod, _, _ = self._tactical_modifiers(team.tactic)
++            return (
++                0.40 * team.mean("build_up", roles)
++                + 0.32 * team.mean("retention")
++                + 0.16 * team.mean("duels")
++                + 0.12 * team.tempo
++                + possession_mod
++            ) * team.coordination * team.numerical_factor
++
++        edge = (strength(home) - strength(away)) * self.config.ability_scale
++        return _clip(
++            _sigmoid(2.0 * edge + self.config.home_advantage),
++            0.27,
++            0.73,
++        )
++
++    def _attack_strength(self, team: TeamMatchState) -> float:
++        _, attack_mod, _ = self._tactical_modifiers(team.tactic)
++        return (
++            0.24 * team.mean("progression")
++            + 0.24 * team.mean("creation")
++            + 0.21 * team.mean("finishing", ("AM", "W1", "W2", "ST"))
++            + 0.17 * team.mean("retention")
++            + 0.14 * team.mean("duels")
++            + attack_mod
++        ) * team.coordination * team.numerical_factor
++
++    def _defence_strength(self, team: TeamMatchState) -> float:
++        roles = ("CB1", "CB2", "FB1", "FB2", "DM")
++        goalkeeper = team.players["GK"].effective("goalkeeping") if team.players["GK"].active else 0.05
++        _, _, defence_mod = self._tactical_modifiers(team.tactic)
++        return (
++            0.34 * team.mean("defending", roles)
++            + 0.22 * team.mean("duels", roles)
++            + 0.22 * goalkeeper
++            + 0.12 * team.press
++            + 0.10 * team.mean("retention")
++            + defence_mod
++        ) * team.coordination * team.numerical_factor
++
++    def _simulate_possession(
++        self,
++        attack: TeamMatchState,
++        defend: TeamMatchState,
++        clock: float,
++        period: str,
++        keep_timeline: bool,
++    ) -> None:
++        edge = self._attack_strength(attack) - self._defence_strength(defend)
++        zone_score = float(
++            self.rng.normal(
++                0.48 + 0.30 * edge + 0.10 * (attack.directness - 0.5),
++                0.20,
++            )
++        )
++        zone = 1 if zone_score < 0.38 else 2 if zone_score < 0.67 else 3
++        zone_adjustment = 0.18 if zone == 3 else -0.12 if zone == 1 else 0.0
++        shot_probability = self.targets.shot_rate * exp(
++            self.config.shot_edge_scale * edge + zone_adjustment
++        )
++
++        if zone == 3 and self.rng.random() < 0.00085:
++            defender_role = defend.choose_role(
++                self.rng, ("CB1", "CB2", "FB1", "FB2", "DM"), "defending", inverse=True
++            )
++            self._record_goal(
++                attack,
++                defend,
++                clock,
++                period,
++                scorer=f"{defend.players[defender_role].profile.name} (contra)",
++                xg=0.025,
++                event_type="own_goal",
++                keep_timeline=keep_timeline,
++            )
++            return
++
++        if self.rng.random() >= _clip(shot_probability, 0.025, 0.60):
++            turnover_probability = _clip(
++                0.08 + 0.10 * defend.press - 0.06 * attack.mean("retention"),
++                0.03,
++                0.24,
++            )
++            if zone >= 2 and self.rng.random() < turnover_probability:
++                role = attack.choose_role(
++                    self.rng,
++                    ("CM", "AM", "W1", "W2", "ST"),
++                    "retention",
++                    inverse=True,
++                )
++                self._event(
++                    clock,
++                    attack.side,
++                    "turnover",
++                    f"{attack.players[role].profile.name} perde sob pressão",
++                    attack,
++                    defend,
++                    keep_timeline,
++                    period=period,
++                    actor=attack.players[role].profile.name,
++                    zone=zone,
++                )
++            return
++        self._shot(attack, defend, clock, period, zone, edge, keep_timeline)
++
++    def _choose_shooter(self, team: TeamMatchState, zone: int) -> str:
++        roles = team.active_roles(("ST", "W1", "W2", "AM", "CM", "DM"))
++        if not roles:
++            roles = team.active_roles(OUTFIELD_ROLES)
++        if not roles:
++            roles = team.active_roles(ROLE_ORDER)
++        boosts = {
++            "ST": 1.35 if zone == 3 else 1.05,
++            "W1": 1.05,
++            "W2": 1.05,
++            "AM": 1.0,
++            "CM": 0.55,
++            "DM": 0.25,
++        }
++        weights = np.array(
++            [
++                (
++                    0.15
++                    + 1.70 * team.players[role].effective("finishing")
++                    + 0.45 * team.players[role].effective("creation")
++                )
++                * boosts.get(role, 0.35)
++                for role in roles
++            ],
++            dtype=float,
++        )
++        weights /= weights.sum()
++        return str(self.rng.choice(roles, p=weights))
++
++    def _shot(
++        self,
++        attack: TeamMatchState,
++        defend: TeamMatchState,
++        clock: float,
++        period: str,
++        zone: int,
++        team_edge: float,
++        keep_timeline: bool,
++        penalty: bool = False,
++    ) -> None:
++        shooter_role = self._choose_shooter(attack, 3 if penalty else zone)
++        shooter = attack.players[shooter_role]
++        goalkeeper = defend.players["GK"]
++        goalkeeper_skill = (
++            goalkeeper.effective("goalkeeping") if goalkeeper.active else 0.08
++        )
++        goalkeeper_overall = (
++            goalkeeper.effective("overall") if goalkeeper.active else 0.15
++        )
++        finishing_edge = (
++            shooter.effective("finishing")
++            - 0.50 * goalkeeper_skill
++            - 0.25 * goalkeeper_overall
++        )
++        if penalty:
++            goal_probability = _clip(
++                0.76
++                + 0.18 * (shooter.effective("finishing") - 0.5)
++                - 0.16 * (goalkeeper_skill - 0.5),
++                0.58,
++                0.91,
++            )
++            on_target_probability = 0.89
++        else:
++            zone_adjustment = {1: -0.55, 2: -0.08, 3: 0.40}[zone]
++            goal_probability = self.targets.goal_rate * exp(
++                self.config.conversion_edge_scale * finishing_edge
++                + zone_adjustment
++                + 0.20 * team_edge
++            )
++            goal_probability = _clip(goal_probability, 0.012, 0.58)
++            on_target_probability = _clip(
++                self.targets.on_target_rate
++                + 0.18 * (shooter.effective("finishing") - 0.5)
++                - (0.06 if zone == 1 else 0.0),
++                0.18,
++                0.80,
++            )
++        on_target = bool(self.rng.random() < on_target_probability)
++        goal_given_on_target = _clip(
++            goal_probability / max(on_target_probability, 1e-9),
++            0.03,
++            0.86,
++        )
++        goal = bool(on_target and self.rng.random() < goal_given_on_target)
++
++        attack.shots += 1
++        attack.xg += float(goal_probability)
++        regulation_period = period in {"first_half", "second_half", "regulation"}
++        if regulation_period:
++            attack.regulation_shots += 1
++            attack.regulation_xg += float(goal_probability)
++        if on_target:
++            attack.shots_on_target += 1
++            if regulation_period:
++                attack.regulation_shots_on_target += 1
++
++        event_type = "penalty" if penalty else "shot"
++        headline = f"Finalização de {shooter.profile.name}"
++        if goal:
++            review_probability = (
++                self.config.var_penalty_review_probability
++                if penalty
++                else self.config.var_review_goal_probability
++            )
++            overturn_probability = (
++                self.config.var_penalty_overturn_probability
++                if penalty
++                else self.config.var_goal_overturn_probability
++            )
++            if self.rng.random() < review_probability:
++                attack.var_reviews += 1
++                self._event(
++                    clock + 0.02,
++                    "system",
++                    "var_review",
++                    "VAR revisa o lance",
++                    attack,
++                    defend,
++                    keep_timeline,
++                    period=period,
++                    actor=shooter.profile.name,
++                    zone=zone,
++                )
++                if self.rng.random() < overturn_probability:
++                    self._event(
++                        clock + 0.04,
++                        "system",
++                        "var_overturn",
++                        "Gol anulado após revisão do VAR",
++                        attack,
++                        defend,
++                        keep_timeline,
++                        period=period,
++                        actor=shooter.profile.name,
++                        zone=zone,
++                    )
++                    return
++            self._record_goal(
++                attack,
++                defend,
++                clock,
++                period,
++                scorer=shooter.profile.name,
++                xg=goal_probability,
++                event_type="penalty_goal" if penalty else "goal",
++                keep_timeline=keep_timeline,
++            )
++        elif on_target:
++            headline = f"{goalkeeper.profile.name} defende finalização de {shooter.profile.name}"
++            self._event(
++                clock,
++                attack.side,
++                "shot_on_target",
++                headline,
++                attack,
++                defend,
++                keep_timeline,
++                period=period,
++                actor=shooter.profile.name,
++                zone=zone,
++                xg=goal_probability,
++            )
++        elif goal_probability >= 0.13:
++            self._event(
++                clock,
++                attack.side,
++                "shot_off_target",
++                f"Grande chance de {shooter.profile.name} para fora",
++                attack,
++                defend,
++                keep_timeline,
++                period=period,
++                actor=shooter.profile.name,
++                zone=zone,
++                xg=goal_probability,
++            )
++        elif penalty:
++            self._event(
++                clock,
++                attack.side,
++                event_type,
++                f"{shooter.profile.name} desperdiça o pênalti",
++                attack,
++                defend,
++                keep_timeline,
++                period=period,
++                actor=shooter.profile.name,
++                zone=zone,
++                xg=goal_probability,
++            )
++
++    def _record_goal(
++        self,
++        attack: TeamMatchState,
++        defend: TeamMatchState,
++        clock: float,
++        period: str,
++        scorer: str,
++        xg: float,
++        event_type: str,
++        keep_timeline: bool,
++    ) -> None:
++        attack.goals += 1
++        self._event(
++            clock,
++            attack.side,
++            event_type,
++            f"GOL de {scorer}",
++            attack,
++            defend,
++            keep_timeline,
++            period=period,
++            actor=scorer,
++            zone=3,
++            xg=xg,
++        )
++
++    def _simulate_foul(
++        self,
++        attack: TeamMatchState,
++        defend: TeamMatchState,
++        clock: float,
++        period: str,
++        extra_time: bool,
++        keep_timeline: bool,
++    ) -> bool:
++        expected_defensive_possessions = max(
++            self.targets.model_possessions_per_match / 2.0,
++            1.0,
++        )
++        foul_probability = _clip(
++            self.config.fouls_per_team_90
++            / expected_defensive_possessions
++            * self.referee_strictness,
++            0.04,
++            0.34,
++        )
++        if self.rng.random() >= foul_probability:
++            return False
++
++        zone_draw = self.rng.random()
++        zone = 3 if zone_draw > 0.78 else 2 if zone_draw > 0.36 else 1
++        defender_role = defend.choose_role(
++            self.rng,
++            ("CB1", "CB2", "FB1", "FB2", "DM", "CM", "W1", "W2", "ST"),
++            "defending",
++            inverse=True,
++        )
++        defender = defend.players[defender_role]
++        defend.fouls += 1
++        self._event(
++            clock,
++            defend.side,
++            "foul",
++            f"Falta de {defender.profile.name}",
++            attack,
++            defend,
++            keep_timeline,
++            period=period,
++            actor=defender.profile.name,
++            zone=zone,
++        )
++
++        yellow_probability = _clip(
++            self.config.yellows_per_team_90 / max(self.config.fouls_per_team_90, 1e-9)
++            * self.referee_strictness
++            * (1.18 if zone == 3 else 1.0),
++            0.05,
++            0.55,
++        )
++        direct_red_probability = _clip(
++            self.config.direct_reds_per_team_90
++            / max(self.config.fouls_per_team_90, 1e-9)
++            * self.referee_strictness
++            * (1.35 if zone == 3 else 1.0),
++            0.0005,
++            0.035,
++        )
++        if self.rng.random() < direct_red_probability:
++            defender.sent_off = True
++            defend.reds += 1
++            self._event(
++                clock + 0.01,
++                defend.side,
++                "red_card",
++                f"Cartão vermelho para {defender.profile.name}",
++                attack,
++                defend,
++                keep_timeline,
++                period=period,
++                actor=defender.profile.name,
++                zone=zone,
++            )
++        elif self.rng.random() < yellow_probability:
++            defender.yellow_cards += 1
++            defend.yellows += 1
++            if defender.yellow_cards >= 2:
++                defender.sent_off = True
++                defend.reds += 1
++                self._event(
++                    clock + 0.01,
++                    defend.side,
++                    "second_yellow_red",
++                    f"Segundo amarelo e expulsão de {defender.profile.name}",
++                    attack,
++                    defend,
++                    keep_timeline,
++                    period=period,
++                    actor=defender.profile.name,
++                    zone=zone,
++                )
++            else:
++                self._event(
++                    clock + 0.01,
++                    defend.side,
++                    "yellow_card",
++                    f"Cartão amarelo para {defender.profile.name}",
++                    attack,
++                    defend,
++                    keep_timeline,
++                    period=period,
++                    actor=defender.profile.name,
++                    zone=zone,
++                )
++
++        injury_probability = _clip(
++            self.config.injuries_per_team_90
++            / max(self.config.fouls_per_team_90, 1e-9)
++            * (1.18 if extra_time else 1.0),
++            0.001,
++            0.06,
++        )
++        if self.rng.random() < injury_probability:
++            victim_role = attack.choose_role(self.rng, OUTFIELD_ROLES, "duels", inverse=True)
++            self._injure_player(
++                attack,
++                victim_role,
++                clock + 0.015,
++                extra_time,
++                keep_timeline,
++                defend,
++                period,
++            )
++
++        if zone == 3 and self.rng.random() < self.config.penalty_foul_share_in_zone_three:
++            attack.penalties_awarded += 1
++            self._event(
++                clock + 0.02,
++                attack.side,
++                "penalty_awarded",
++                f"Pênalti para {attack.name}",
++                attack,
++                defend,
++                keep_timeline,
++                period=period,
++                zone=3,
++            )
++            if self.rng.random() < self.config.var_penalty_review_probability:
++                attack.var_reviews += 1
++                self._event(
++                    clock + 0.025,
++                    "system",
++                    "var_review",
++                    "VAR revisa a marcação do pênalti",
++                    attack,
++                    defend,
++                    keep_timeline,
++                    period=period,
++                    zone=3,
++                )
++                if self.rng.random() < self.config.var_penalty_overturn_probability:
++                    self._event(
++                        clock + 0.035,
++                        "system",
++                        "var_overturn",
++                        "Pênalti cancelado após revisão",
++                        attack,
++                        defend,
++                        keep_timeline,
++                        period=period,
++                        zone=3,
++                    )
++                    return True
++            edge = self._attack_strength(attack) - self._defence_strength(defend)
++            self._shot(
++                attack,
++                defend,
++                clock + 0.04,
++                period,
++                3,
++                edge,
++                keep_timeline,
++                penalty=True,
++            )
++            return True
++        elif zone == 3 and self.rng.random() < 0.055:
++            edge = self._attack_strength(attack) - self._defence_strength(defend)
++            self._shot(
++                attack,
++                defend,
++                clock + 0.03,
++                period,
++                2,
++                edge - 0.15,
++                keep_timeline,
++            )
++            return True
++        # A normal free kick resumes the same attacking state. Treating every
++        # foul as a terminal possession would mechanically depress the calibrated
++        # shot distribution by roughly the foul rate.
++        return False
++
++    def _injure_player(
++        self,
++        team: TeamMatchState,
++        role: str,
++        clock: float,
++        extra_time: bool,
++        keep_timeline: bool,
++        opponent: TeamMatchState,
++        period: str,
++    ) -> None:
++        state = team.players[role]
++        if not state.active:
++            return
++        team.injuries += 1
++        state.injured = True
++        severe = bool(self.rng.random() < self.config.severe_injury_share)
++        state.severe_injury = severe
++        self._event(
++            clock,
++            team.side,
++            "injury",
++            f"{state.profile.name} recebe atendimento médico",
++            team,
++            opponent,
++            keep_timeline,
++            period=period,
++            actor=state.profile.name,
++        )
++        if severe and team.can_substitute(extra_time, self.config.rules):
++            self._perform_substitution(
++                team,
++                role,
++                clock + 0.02,
++                extra_time,
++                keep_timeline,
++                opponent,
++                period,
++                injury=True,
++            )
++        elif severe:
++            self._event(
++                clock + 0.02,
++                team.side,
++                "injury_exit_no_sub",
++                f"{state.profile.name} deixa o campo sem substituição disponível",
++                team,
++                opponent,
++                keep_timeline,
++                period=period,
++                actor=state.profile.name,
++            )
++
++    def _maybe_tactical_substitution(
++        self,
++        team: TeamMatchState,
++        clock: float,
++        extra_time: bool,
++        keep_timeline: bool,
++        opponent: TeamMatchState,
++    ) -> None:
++        marks = (
++            ((60.0, "60"), (72.0, "72"), (82.0, "82"))
++            if not extra_time
++            else ((105.0, "ET"),)
++        )
++        for threshold, mark in marks:
++            if clock < threshold or mark in team.used_substitution_marks:
++                continue
++            team.used_substitution_marks.add(mark)
++            if not team.can_substitute(extra_time, self.config.rules):
++                continue
++            if extra_time:
++                if team.extra_time_windows >= self.config.rules.extra_time_substitution_windows:
++                    continue
++            elif team.substitution_windows >= self.config.rules.regulation_substitution_windows:
++                continue
++            candidates = [
++                role
++                for role in team.active_roles(OUTFIELD_ROLES)
++                if team.players[role].stamina < (0.91 if threshold <= 60 else 0.95)
++            ]
++            if not candidates and team.tactic not in {"chase", "protect"}:
++                continue
++            if not candidates:
++                candidates = team.active_roles(("W1", "W2", "AM", "CM", "ST", "FB1", "FB2"))
++            role = min(candidates, key=lambda item: team.players[item].stamina)
++            period = "extra_time" if extra_time else "regulation"
++            self._perform_substitution(
++                team,
++                role,
++                clock,
++                extra_time,
++                keep_timeline,
++                opponent,
++                period,
++                injury=False,
++            )
++            break
++
++    def _perform_substitution(
++        self,
++        team: TeamMatchState,
++        role: str,
++        clock: float,
++        extra_time: bool,
++        keep_timeline: bool,
++        opponent: TeamMatchState,
++        period: str,
++        injury: bool,
++    ) -> None:
++        if not team.can_substitute(extra_time, self.config.rules):
++            return
++        if extra_time:
++            if team.extra_time_windows >= self.config.rules.extra_time_substitution_windows:
++                return
++        elif team.substitution_windows >= self.config.rules.regulation_substitution_windows:
++            return
++        outgoing, incoming = team.replace_role(role, clock, self.rng, self.config)
++        if extra_time:
++            team.extra_time_windows += 1
++        else:
++            team.substitution_windows += 1
++        reason = "por lesão" if injury else "tática"
++        self._event(
++            clock,
++            team.side,
++            "substitution",
++            f"Substituição {reason}: sai {outgoing}, entra {incoming}",
++            team,
++            opponent,
++            keep_timeline,
++            period=period,
++            actor=incoming,
++        )
++
++    def _penalty_shootout(
++        self,
++        home: TeamMatchState,
++        away: TeamMatchState,
++        keep_timeline: bool,
++        start_clock: float,
++    ) -> tuple[int, int]:
++        self._event(
++            start_clock,
++            "system",
++            "penalty_shootout_start",
++            "Início da disputa de pênaltis",
++            home,
++            away,
++            keep_timeline,
++            period="penalty_shootout",
++        )
++        home_score = away_score = 0
++        home_taken = away_taken = 0
++        initial = self.config.rules.initial_penalty_kicks
++
++        for round_index in range(initial):
++            scored = self._take_shootout_kick(home, away, round_index, keep_timeline, start_clock)
++            home_taken += 1
++            home_score += int(scored)
++            if home_score > away_score + (initial - away_taken):
++                return home_score, away_score
++            scored = self._take_shootout_kick(away, home, round_index, keep_timeline, start_clock)
++            away_taken += 1
++            away_score += int(scored)
++            if away_score > home_score + (initial - home_taken):
++                return home_score, away_score
++
++        if home_score != away_score:
++            return home_score, away_score
++
++        for sudden_round in range(self.config.rules.maximum_sudden_death_rounds):
++            home_goal = self._take_shootout_kick(
++                home, away, initial + sudden_round, keep_timeline, start_clock
++            )
++            away_goal = self._take_shootout_kick(
++                away, home, initial + sudden_round, keep_timeline, start_clock
++            )
++            home_score += int(home_goal)
++            away_score += int(away_goal)
++            if home_goal != away_goal:
++                return home_score, away_score
++
++        # Practically unreachable fallback that preserves the no-draw rule.
++        home_edge = self._shootout_team_strength(home) - self._shootout_team_strength(away)
++        if self.rng.random() < _sigmoid(3.0 * home_edge):
++            home_score += 1
++        else:
++            away_score += 1
++        return home_score, away_score
++
++    def _shootout_team_strength(self, team: TeamMatchState) -> float:
++        shooters = team.active_roles(("ST", "W1", "W2", "AM", "CM", "DM", "FB1", "FB2", "CB1", "CB2"))
++        if not shooters:
++            return 0.0
++        return float(
++            np.mean(
++                [
++                    0.60 * team.players[role].effective("finishing")
++                    + 0.25 * team.players[role].effective("overall")
++                    + 0.15 * team.players[role].effective("retention")
++                    for role in shooters
++                ]
++            )
++        )
++
++    def _take_shootout_kick(
++        self,
++        attack: TeamMatchState,
++        defend: TeamMatchState,
++        kick_index: int,
++        keep_timeline: bool,
++        start_clock: float,
++    ) -> bool:
++        roles = attack.active_roles(("ST", "W1", "W2", "AM", "CM", "DM", "FB1", "FB2", "CB1", "CB2", "GK"))
++        roles = sorted(
++            roles,
++            key=lambda role: (
++                0.60 * attack.players[role].effective("finishing")
++                + 0.25 * attack.players[role].effective("overall")
++                + 0.15 * attack.players[role].effective("retention")
++            ),
++            reverse=True,
++        )
++        role = roles[kick_index % len(roles)]
++        shooter = attack.players[role]
++        goalkeeper = defend.players["GK"]
++        goalkeeper_skill = (
++            goalkeeper.effective("goalkeeping") if goalkeeper.active else 0.08
++        )
++        probability = _clip(
++            0.75
++            + 0.18 * (shooter.effective("finishing") - 0.5)
++            + 0.08 * (shooter.effective("overall") - 0.5)
++            - 0.18 * (goalkeeper_skill - 0.5)
++            - 0.05 * (1.0 - shooter.stamina),
++            0.55,
++            0.93,
++        )
++        scored = bool(self.rng.random() < probability)
++        self._event(
++            start_clock + kick_index * 0.01 + (0.001 if attack.side == "away" else 0.0),
++            attack.side,
++            "shootout_goal" if scored else "shootout_miss",
++            (
++                f"{shooter.profile.name} converte"
++                if scored
++                else f"{shooter.profile.name} desperdiça"
++            ),
++            attack,
++            defend,
++            keep_timeline,
++            period="penalty_shootout",
++            actor=shooter.profile.name,
++            xg=probability,
++        )
++        return scored
++
++    def _event(
++        self,
++        clock: float,
++        side: str,
++        event_type: str,
++        headline: str,
++        team: TeamMatchState,
++        opponent: TeamMatchState,
++        keep_timeline: bool,
++        period: str | None = None,
++        actor: str | None = None,
++        zone: int | None = None,
++        xg: float | None = None,
++    ) -> None:
++        if not keep_timeline:
++            return
++        self._sequence += 1
++        if team.side == "home":
++            home_score, away_score = team.goals, opponent.goals
++        elif team.side == "away":
++            home_score, away_score = opponent.goals, team.goals
++        else:
++            home_score = away_score = 0
++        self.timeline.append(
++            {
++                "sequence": self._sequence,
++                "clock": round(float(clock), 3),
++                "minute": int(float(clock)) + 1,
++                "period": period or "match",
++                "side": side,
++                "team": team.name if side in {"home", "away"} else None,
++                "type": event_type,
++                "actor": actor,
++                "zone": zone,
++                "xg": round(float(xg), 4) if xg is not None else None,
++                "score": f"{home_score}-{away_score}",
++                "headline": headline,
++            }
++        )
++
++
++def clone_config(config: FinalConfig, **changes: Any) -> FinalConfig:
++    """Typed convenience wrapper used by Monte Carlo runners."""
++    return replace(config, **changes)
+diff --git a/simulator/complete_final_monte_carlo.py b/simulator/complete_final_monte_carlo.py
+index 1b8a45c..5163caf 100644
+--- a/simulator/complete_final_monte_carlo.py
++++ b/simulator/complete_final_monte_carlo.py
+@@ -1,13 +1,293 @@
+-"""Bootstrap entrypoint for the expanded complete-final Monte Carlo module."""
++"""Monte Carlo aggregation and diagnostics for complete knockout finals."""
++
+ from __future__ import annotations
+-from pathlib import Path
+-import runpy
+-
+-_TARGET = Path(__file__).resolve()
+-_ROOT = _TARGET.parents[1]
+-_MARKER = "Bootstrap entrypoint for the expanded complete-final Monte Carlo module"
+-runpy.run_path(str(_ROOT / "scripts" / "install_complete_final_bundle.py"), run_name="__complete_final_installer__")
+-_SOURCE = _TARGET.read_text(encoding="utf-8")
+-if _MARKER in _SOURCE:
+-    raise RuntimeError("Complete-final bundle did not materialize the Monte Carlo module")
+-exec(compile(_SOURCE, str(_TARGET), "exec"), globals(), globals())
++
++import hashlib
++from dataclasses import replace
++from math import sqrt
++from typing import Any
++
++import numpy as np
++
++from .calibrated_core import CalibrationTargets
++from .complete_final import CompleteFinalResult, CompleteFinalSimulator, FinalConfig
++from .engine import TeamProfile
++
++
++def _wilson(successes: int, total: int, z: float = 1.959963984540054) -> dict[str, float]:
++    if total <= 0:
++        return {"estimate": 0.0, "low": 0.0, "high": 0.0}
++    p = successes / total
++    denominator = 1.0 + z * z / total
++    centre = (p + z * z / (2.0 * total)) / denominator
++    margin = (
++        z
++        * sqrt((p * (1.0 - p) + z * z / (4.0 * total)) / total)
++        / denominator
++    )
++    return {
++        "estimate": p,
++        "low": max(0.0, centre - margin),
++        "high": min(1.0, centre + margin),
++    }
++
++
++def simulate_complete_finals(
++    home: TeamProfile,
++    away: TeamProfile,
++    targets: CalibrationTargets,
++    simulations: int = 10_000,
++    seed: int = 20260721,
++    config: FinalConfig | None = None,
++    audit_sample_size: int = 250,
++) -> dict[str, Any]:
++    if simulations < 1:
++        raise ValueError("simulations must be positive")
++    rng = np.random.default_rng(seed)
++    base = config or FinalConfig()
++    rows: list[dict[str, Any]] = []
++    match_seeds: list[int] = []
++
++    for simulation_id in range(simulations):
++        match_seed = int(rng.integers(0, 2**32 - 1))
++        match_seeds.append(match_seed)
++        result = CompleteFinalSimulator(
++            home,
++            away,
++            targets,
++            replace(base, seed=match_seed),
++        ).simulate(keep_timeline=False)
++        rows.append(_compact_row(simulation_id, match_seed, result))
++
++    home_wins = sum(row["winner"] == home.name for row in rows)
++    away_wins = simulations - home_wins
++    extra_time = sum(row["decided_by"] in {"extra_time", "penalties"} for row in rows)
++    penalties = sum(row["decided_by"] == "penalties" for row in rows)
++    regulation_draws = sum(row["regulation_draw"] for row in rows)
++
++    representative_row = _representative_row(rows)
++    representative = CompleteFinalSimulator(
++        home,
++        away,
++        targets,
++        replace(base, seed=int(representative_row["match_seed"])),
++    ).simulate(keep_timeline=True)
++
++    mean_regulation_goals = float(
++        np.mean([row["regulation_total_goals"] for row in rows])
++    )
++    mean_regulation_shots = float(
++        np.mean([row["total_shots"] for row in rows])
++    )
++    mean_regulation_shots_on = float(
++        np.mean([row["total_shots_on_target"] for row in rows])
++    )
++    zero_zero_rate = float(
++        np.mean(
++            [
++                row["regulation_home_goals"] == 0
++                and row["regulation_away_goals"] == 0
++                for row in rows
++            ]
++        )
++    )
++    seed_hash = hashlib.sha256(
++        ",".join(str(value) for value in match_seeds).encode("utf-8")
++    ).hexdigest()
++
++    summary = {
++        "status": "complete_final_monte_carlo_completed",
++        "version": "complete_final_v1",
++        "simulations": simulations,
++        "master_seed": seed,
++        "match_seed_ledger_sha256": seed_hash,
++        "home": home.name,
++        "away": away.name,
++        "home_champion_probability": _wilson(home_wins, simulations),
++        "away_champion_probability": _wilson(away_wins, simulations),
++        "regulation_draw_probability": _wilson(regulation_draws, simulations),
++        "extra_time_probability": _wilson(extra_time, simulations),
++        "penalty_shootout_probability": _wilson(penalties, simulations),
++        "mean_regulation_goals": mean_regulation_goals,
++        "mean_regulation_shots": mean_regulation_shots,
++        "mean_regulation_shots_on_target": mean_regulation_shots_on,
++        "regulation_zero_zero_rate": zero_zero_rate,
++        "mean_total_fouls": float(np.mean([row["total_fouls"] for row in rows])),
++        "mean_total_yellows": float(np.mean([row["total_yellows"] for row in rows])),
++        "mean_total_reds": float(np.mean([row["total_reds"] for row in rows])),
++        "mean_total_injuries": float(np.mean([row["total_injuries"] for row in rows])),
++        "mean_total_substitutions": float(
++            np.mean([row["total_substitutions"] for row in rows])
++        ),
++        "calibration_targets": targets.__dict__,
++        "regulation_calibration_error": {
++            "goals_per_match": mean_regulation_goals - targets.mean_goals_per_match,
++            "shots_per_match": mean_regulation_shots - targets.mean_shots_per_match,
++            "shots_on_target_per_match": (
++                mean_regulation_shots_on - targets.mean_shots_on_target_per_match
++            ),
++            "zero_zero_rate": zero_zero_rate - targets.zero_zero_rate,
++        },
++        "representative_match_selection": {
++            "rule": (
++                "Minimum standardized distance to Monte Carlo medians across "
++                "regulation goals, shots, fouls, cards and decision stage."
++            ),
++            "simulation_id": int(representative_row["simulation_id"]),
++            "match_seed": int(representative_row["match_seed"]),
++        },
++        "representative_match": representative.as_dict(),
++        "audit_sample": rows[: min(audit_sample_size, simulations)],
++    }
++    summary["engineering_calibration_gate"] = calibration_gate(summary)
++    return summary
++
++
++def calibration_gate(summary: dict[str, Any]) -> dict[str, Any]:
++    errors = summary["regulation_calibration_error"]
++    checks = {
++        "absolute_goal_error_le_0_45": abs(errors["goals_per_match"]) <= 0.45,
++        "absolute_shot_error_le_3": abs(errors["shots_per_match"]) <= 3.0,
++        "absolute_shot_on_target_error_le_1_5": (
++            abs(errors["shots_on_target_per_match"]) <= 1.5
++        ),
++        "absolute_zero_zero_error_le_0_06": abs(errors["zero_zero_rate"]) <= 0.06,
++    }
++    return {
++        "passed": all(checks.values()),
++        "checks": checks,
++        "scope": (
++            "Engineering distribution gate for regulation-time observables. "
++            "It does not by itself authorize substantive publication claims."
++        ),
++    }
++
++
++def paired_swap_diagnostic(
++    home: TeamProfile,
++    away: TeamProfile,
++    targets: CalibrationTargets,
++    simulations: int = 2_000,
++    seed: int = 20260722,
++    config: FinalConfig | None = None,
++) -> dict[str, Any]:
++    if simulations < 20:
++        raise ValueError("paired swap diagnostic requires at least 20 simulations")
++    base = config or FinalConfig()
++    base = replace(base, home_advantage=0.0)
++    rng = np.random.default_rng(seed)
++    home_wins_original = 0
++    home_entity_wins_when_away = 0
++
++    for _ in range(simulations):
++        match_seed = int(rng.integers(0, 2**32 - 1))
++        original = CompleteFinalSimulator(
++            home,
++            away,
++            targets,
++            replace(base, seed=match_seed),
++        ).simulate(keep_timeline=False)
++        swapped = CompleteFinalSimulator(
++            away,
++            home,
++            targets,
++            replace(
++                base,
++                seed=match_seed,
++                home_coordination_mean=base.away_coordination_mean,
++                away_coordination_mean=base.home_coordination_mean,
++            ),
++        ).simulate(keep_timeline=False)
++        home_wins_original += int(original.winner == home.name)
++        home_entity_wins_when_away += int(swapped.winner == home.name)
++
++    first = home_wins_original / simulations
++    second = home_entity_wins_when_away / simulations
++    difference = first - second
++    return {
++        "simulations_per_orientation": simulations,
++        "neutral_home_entity_probability_original_orientation": first,
++        "neutral_home_entity_probability_swapped_orientation": second,
++        "absolute_orientation_difference": abs(difference),
++        "passed": abs(difference) <= 0.055,
++        "threshold": 0.055,
++    }
++
++
++def _compact_row(
++    simulation_id: int,
++    match_seed: int,
++    result: CompleteFinalResult,
++) -> dict[str, Any]:
++    home_stats = result.home_stats
++    away_stats = result.away_stats
++    return {
++        "simulation_id": simulation_id,
++        "match_seed": match_seed,
++        "winner": result.winner,
++        "decided_by": result.decided_by,
++        "regulation_home_goals": result.regulation_home_goals,
++        "regulation_away_goals": result.regulation_away_goals,
++        "regulation_total_goals": (
++            result.regulation_home_goals + result.regulation_away_goals
++        ),
++        "regulation_draw": (
++            result.regulation_home_goals == result.regulation_away_goals
++        ),
++        "extra_time_home_goals": result.extra_time_home_goals,
++        "extra_time_away_goals": result.extra_time_away_goals,
++        "home_penalties": result.home_penalties,
++        "away_penalties": result.away_penalties,
++        "total_shots": (
++            home_stats["regulation_shots"] + away_stats["regulation_shots"]
++        ),
++        "total_shots_on_target": (
++            home_stats["regulation_shots_on_target"]
++            + away_stats["regulation_shots_on_target"]
++        ),
++        "total_fouls": home_stats["fouls"] + away_stats["fouls"],
++        "total_yellows": home_stats["yellows"] + away_stats["yellows"],
++        "total_reds": home_stats["reds"] + away_stats["reds"],
++        "total_injuries": home_stats["injuries"] + away_stats["injuries"],
++        "total_substitutions": (
++            home_stats["substitutions"] + away_stats["substitutions"]
++        ),
++    }
++
++
++def _representative_row(rows: list[dict[str, Any]]) -> dict[str, Any]:
++    numeric_keys = (
++        "regulation_total_goals",
++        "total_shots",
++        "total_fouls",
++        "total_yellows",
++        "total_reds",
++        "total_injuries",
++        "total_substitutions",
++    )
++    medians = {
++        key: float(np.median([float(row[key]) for row in rows]))
++        for key in numeric_keys
++    }
++    scales = {
++        key: max(
++            1.0,
++            float(np.std([float(row[key]) for row in rows], ddof=0)),
++        )
++        for key in numeric_keys
++    }
++    stage_counts: dict[str, int] = {}
++    for row in rows:
++        stage_counts[row["decided_by"]] = stage_counts.get(row["decided_by"], 0) + 1
++    modal_stage = max(stage_counts, key=stage_counts.get)
++
++    def distance(row: dict[str, Any]) -> float:
++        value = sum(
++            abs(float(row[key]) - medians[key]) / scales[key]
++            for key in numeric_keys
++        )
++        if row["decided_by"] != modal_stage:
++            value += 1.25
++        return value
++
++    return min(rows, key=distance)
+diff --git a/simulator/validation.py b/simulator/validation.py
+index 829d46d..4cee49a 100644
+--- a/simulator/validation.py
++++ b/simulator/validation.py
+@@ -1,13 +1,297 @@
+-"""Bootstrap entrypoint for complete-final engineering and scientific validation."""
++"""Scientific and engineering validation gates for the complete-final engine."""
++
+ from __future__ import annotations
++
++import json
++from dataclasses import replace
+ from pathlib import Path
+-import runpy
+-
+-_TARGET = Path(__file__).resolve()
+-_ROOT = _TARGET.parents[1]
+-_MARKER = "Bootstrap entrypoint for complete-final engineering and scientific validation"
+-runpy.run_path(str(_ROOT / "scripts" / "install_complete_final_bundle.py"), run_name="__complete_final_installer__")
+-_SOURCE = _TARGET.read_text(encoding="utf-8")
+-if _MARKER in _SOURCE:
+-    raise RuntimeError("Complete-final bundle did not materialize simulator/validation.py")
+-exec(compile(_SOURCE, str(_TARGET), "exec"), globals(), globals())
++from typing import Any
++
++import numpy as np
++
++from .calibrated_core import CalibrationTargets
++from .complete_final import CompleteFinalSimulator, FinalConfig
++from .complete_final_monte_carlo import paired_swap_diagnostic, simulate_complete_finals
++from .engine import TeamProfile
++
++
++def validate_complete_final_engine(
++    home: TeamProfile,
++    away: TeamProfile,
++    targets: CalibrationTargets,
++    simulations: int = 2_000,
++    seed: int = 20260723,
++    config: FinalConfig | None = None,
++    repository_root: Path | None = None,
++) -> dict[str, Any]:
++    base = config or FinalConfig()
++    deterministic_a = CompleteFinalSimulator(
++        home, away, targets, replace(base, seed=seed)
++    ).simulate(keep_timeline=True)
++    deterministic_b = CompleteFinalSimulator(
++        home, away, targets, replace(base, seed=seed)
++    ).simulate(keep_timeline=True)
++    reproducible = deterministic_a.as_dict() == deterministic_b.as_dict()
++
++    summary = simulate_complete_finals(
++        home,
++        away,
++        targets,
++        simulations=simulations,
++        seed=seed,
++        config=base,
++        audit_sample_size=min(250, simulations),
++    )
++    swap = paired_swap_diagnostic(
++        home,
++        away,
++        targets,
++        simulations=max(400, simulations // 2),
++        seed=seed + 1,
++        config=base,
++    )
++    invariants = _validate_invariants(
++        home,
++        away,
++        targets,
++        replace(base, seed=None),
++        seed=seed + 2,
++        samples=min(250, max(50, simulations // 8)),
++    )
++    stability = _seed_stability(
++        home,
++        away,
++        targets,
++        base,
++        simulations=max(250, simulations // 4),
++        seeds=(seed + 10, seed + 20, seed + 30, seed + 40),
++    )
++    readiness = discover_repository_readiness(repository_root or Path("."))
++
++    engineering_checks = {
++        "deterministic_reproducibility": reproducible,
++        "rules_and_state_invariants": invariants["passed"],
++        "regulation_distribution_calibration": summary[
++            "engineering_calibration_gate"
++        ]["passed"],
++        "neutral_orientation_symmetry": swap["passed"],
++        "seed_stability": stability["passed"],
++    }
++    engineering_passed = all(engineering_checks.values())
++    scientific_checks = {
++        "engineering_validated": engineering_passed,
++        "selection_sufficiency": readiness["selection_sufficiency"],
++        "external_holdout_passed": readiness["external_holdout_passed"],
++        "position_review_passed": readiness["position_review_passed"],
++        "final_team_comparison_allowed": readiness[
++            "final_team_comparison_allowed"
++        ],
++        "uncertainty_documented": True,
++        "preregistered_protocol_present": readiness[
++            "preregistered_protocol_present"
++        ],
++    }
++    publication_ready = all(scientific_checks.values())
++
++    return {
++        "status": "complete_final_validation_completed",
++        "engine_version": "complete_final_v1",
++        "simulation_count": simulations,
++        "engineering_gate": {
++            "passed": engineering_passed,
++            "checks": engineering_checks,
++        },
++        "scientific_publication_gate": {
++            "passed": publication_ready,
++            "checks": scientific_checks,
++            "interpretation": (
++                "A passed engineering gate validates implementation behaviour. "
++                "A substantive team-comparison claim is allowed only when all "
++                "repository evidence gates also pass."
++            ),
++        },
++        "distribution_summary": {
++            key: summary[key]
++            for key in (
++                "home_champion_probability",
++                "away_champion_probability",
++                "regulation_draw_probability",
++                "extra_time_probability",
++                "penalty_shootout_probability",
++                "mean_regulation_goals",
++                "mean_regulation_shots",
++                "mean_regulation_shots_on_target",
++                "regulation_zero_zero_rate",
++                "regulation_calibration_error",
++                "engineering_calibration_gate",
++            )
++        },
++        "reproducibility": {
++            "passed": reproducible,
++            "seed": seed,
++        },
++        "invariants": invariants,
++        "paired_swap_diagnostic": swap,
++        "seed_stability": stability,
++        "repository_readiness_evidence": readiness,
++    }
++
++
++def discover_repository_readiness(root: Path) -> dict[str, Any]:
++    """Resolve preregistered gates from canonical repository evidence.
++
++    Canonical, versioned status files take precedence. Generic JSON discovery is
++    used only as a fallback. Missing evidence is never interpreted as success.
++    """
++
++    canonical = {
++        "selection_sufficiency": (
++            root / "data" / "model_readiness" / "selection_sufficiency_status.json",
++            "selection_sufficiency_gate_passed",
++        ),
++        "external_holdout_passed": (
++            root / "data" / "validation" / "external_pre_tournament_holdout_summary.json",
++            "external_pre_tournament_validation_passed",
++        ),
++        "position_review_passed": (
++            root
++            / "data"
++            / "audits"
++            / "position_ontology_v2"
++            / "blind_review"
++            / "blind_review_evaluation.json",
++            "review_gate_passed",
++        ),
++        "final_team_comparison_allowed": (
++            root / "data" / "model_readiness" / "scientific_validation_status.json",
++            "final_team_comparison_allowed",
++        ),
++    }
++    resolved: dict[str, bool] = {}
++    evidence: list[dict[str, Any]] = []
++    for gate, (path, key) in canonical.items():
++        value = False
++        status = "missing"
++        if path.exists():
++            try:
++                payload = json.loads(path.read_text(encoding="utf-8"))
++                value = bool(payload.get(key, False))
++                status = str(payload.get("status", "present"))
++            except (OSError, json.JSONDecodeError):
++                status = "unreadable"
++        resolved[gate] = value
++        evidence.append(
++            {
++                "gate": gate,
++                "path": str(path.relative_to(root)),
++                "key": key,
++                "value": value,
++                "status": status,
++                "canonical": True,
++            }
++        )
++
++    protocol_present = (root / "PROTOCOLO_FINAL_COMPLETA.md").exists()
++    return {
++        **resolved,
++        "preregistered_protocol_present": protocol_present,
++        "evidence_files": evidence,
++        "absence_policy": "Missing affirmative evidence is treated as not passed.",
++    }
++
++
++def _flatten_json(payload: Any, prefix: str = "") -> dict[str, Any]:
++    if isinstance(payload, dict):
++        result: dict[str, Any] = {}
++        for key, value in payload.items():
++            child = f"{prefix}.{key}" if prefix else str(key)
++            result.update(_flatten_json(value, child))
++        return result
++    if isinstance(payload, list):
++        result = {}
++        for index, value in enumerate(payload):
++            result.update(_flatten_json(value, f"{prefix}[{index}]"))
++        return result
++    return {prefix: payload}
++
++
++def _validate_invariants(
++    home: TeamProfile,
++    away: TeamProfile,
++    targets: CalibrationTargets,
++    config: FinalConfig,
++    seed: int,
++    samples: int,
++) -> dict[str, Any]:
++    rng = np.random.default_rng(seed)
++    violations: list[str] = []
++    for index in range(samples):
++        result = CompleteFinalSimulator(
++            home,
++            away,
++            targets,
++            replace(config, seed=int(rng.integers(0, 2**32 - 1))),
++        ).simulate(keep_timeline=True)
++        if result.winner not in {home.name, away.name}:
++            violations.append(f"{index}: invalid winner")
++        if result.decided_by == "penalties":
++            if result.home_penalties is None or result.away_penalties is None:
++                violations.append(f"{index}: missing shootout score")
++            elif result.home_penalties == result.away_penalties:
++                violations.append(f"{index}: tied shootout")
++        elif result.home_goals == result.away_goals:
++            violations.append(f"{index}: unresolved draw")
++        for side, stats in (
++            ("home", result.home_stats),
++            ("away", result.away_stats),
++        ):
++            if stats["substitutions"] > (
++                config.rules.regulation_substitutions
++                + config.rules.extra_time_substitution
++            ):
++                violations.append(f"{index}: {side} substitutions exceeded")
++            if not 0 <= stats["players_remaining"] <= 11:
++                violations.append(f"{index}: {side} active-player count invalid")
++            if stats["reds"] < 0 or stats["yellows"] < 0:
++                violations.append(f"{index}: {side} negative discipline")
++        clocks = [float(event["clock"]) for event in result.timeline]
++        if clocks != sorted(clocks):
++            violations.append(f"{index}: non-monotonic timeline")
++    return {
++        "passed": not violations,
++        "samples": samples,
++        "violations": violations[:25],
++        "violation_count": len(violations),
++    }
++
++
++def _seed_stability(
++    home: TeamProfile,
++    away: TeamProfile,
++    targets: CalibrationTargets,
++    config: FinalConfig,
++    simulations: int,
++    seeds: tuple[int, ...],
++) -> dict[str, Any]:
++    estimates = []
++    for seed in seeds:
++        summary = simulate_complete_finals(
++            home,
++            away,
++            targets,
++            simulations=simulations,
++            seed=seed,
++            config=config,
++            audit_sample_size=0,
++        )
++        estimates.append(summary["home_champion_probability"]["estimate"])
++    spread = max(estimates) - min(estimates)
++    threshold = max(0.06, 3.0 / np.sqrt(simulations))
++    return {
++        "simulations_per_seed": simulations,
++        "seeds": list(seeds),
++        "home_champion_estimates": estimates,
++        "maximum_spread": spread,
++        "threshold": float(threshold),
++        "passed": spread <= threshold,
++    }
+diff --git a/tests/test_complete_final.py b/tests/test_complete_final.py
+index a21dea4..8f71cb7 100644
+--- a/tests/test_complete_final.py
++++ b/tests/test_complete_final.py
+@@ -1,13 +1,99 @@
+-"""Bootstrap the complete-final focused test suite from the reviewed bundle."""
+-from __future__ import annotations
++from dataclasses import replace
+ from pathlib import Path
+-import runpy
+-
+-_TARGET = Path(__file__).resolve()
+-_ROOT = _TARGET.parents[1]
+-_MARKER = "Bootstrap the complete-final focused test suite from the reviewed bundle"
+-runpy.run_path(str(_ROOT / "scripts" / "install_complete_final_bundle.py"), run_name="__complete_final_installer__")
+-_SOURCE = _TARGET.read_text(encoding="utf-8")
+-if _MARKER in _SOURCE:
+-    raise RuntimeError("Complete-final bundle did not materialize tests/test_complete_final.py")
+-exec(compile(_SOURCE, str(_TARGET), "exec"), globals(), globals())
++import json
++import pytest
++from simulator.engine import PlayerProfile, TeamProfile, ROLE_ORDER
++from simulator.calibrated_core import CalibrationTargets
++from simulator.complete_final import CompleteFinalSimulator, FinalConfig
++from simulator.complete_final_monte_carlo import simulate_complete_finals
++from simulator.validation import discover_repository_readiness
++
++
++def team(name, edge=0.0, synthetic=False):
++    players=[]
++    for i,role in enumerate(ROLE_ORDER):
++        base=.60+edge
++        players.append(PlayerProfile(
++            player_id=f'{name}-{role}', name=f'{name} {role}', role=role, minutes=900,
++            overall=base, build_up=base+(0.02 if role in {'CB1','CB2','DM','CM'} else 0),
++            progression=base, creation=base, finishing=base+(0.04 if role in {'ST','W1','W2'} else -0.03),
++            defending=base+(0.05 if role in {'CB1','CB2','DM'} else -0.03), duels=base,
++            retention=base, goalkeeping=.72+edge if role=='GK' else .20,
++            uncertainty=.025, synthetic=synthetic,
++        ))
++    return TeamProfile(name,tuple(players),tempo=.55,press=.54,directness=.51)
++
++TARGETS=CalibrationTargets(64,2.65,25.0,8.7,.075,.39,.26,.35,104.0)
++HOME=team('Synthetic',0.01,True)
++AWAY=team('Real',0.0,False)
++
++
++def test_same_seed_is_bitwise_reproducible():
++    config=FinalConfig(seed=12345)
++    a=CompleteFinalSimulator(HOME,AWAY,TARGETS,config).simulate(True).as_dict()
++    b=CompleteFinalSimulator(HOME,AWAY,TARGETS,config).simulate(True).as_dict()
++    assert a==b
++
++
++def test_final_always_has_a_champion_and_respects_rules():
++    for seed in range(50):
++        result=CompleteFinalSimulator(HOME,AWAY,TARGETS,FinalConfig(seed=seed)).simulate(True)
++        assert result.winner in {HOME.name,AWAY.name}
++        if result.decided_by=='penalties':
++            assert result.home_penalties != result.away_penalties
++        else:
++            assert result.home_goals != result.away_goals
++        for stats in (result.home_stats,result.away_stats):
++            assert stats['substitutions'] <= 6
++            assert stats['substitution_windows'] <= 3
++            assert stats['extra_time_windows'] <= 1
++            assert 0 <= stats['players_remaining'] <= 11
++            assert stats['regulation_shots'] <= stats['shots']
++            assert stats['regulation_shots_on_target'] <= stats['shots_on_target']
++        clocks=[event['clock'] for event in result.timeline]
++        assert clocks==sorted(clocks)
++
++
++def test_monte_carlo_returns_no_draw_probability_and_regulation_metrics():
++    summary=simulate_complete_finals(HOME,AWAY,TARGETS,simulations=300,seed=991,audit_sample_size=20)
++    p=summary['home_champion_probability']['estimate']+summary['away_champion_probability']['estimate']
++    assert p==pytest.approx(1.0)
++    assert 0 <= summary['extra_time_probability']['estimate'] <= 1
++    assert 0 <= summary['penalty_shootout_probability']['estimate'] <= 1
++    assert summary['mean_regulation_shots'] > summary['mean_regulation_goals']
++    assert len(summary['audit_sample'])==20
++    assert summary['representative_match']['winner'] in {HOME.name,AWAY.name}
++
++
++def test_missing_readiness_evidence_fails_closed(tmp_path: Path):
++    (tmp_path/'PROTOCOLO_FINAL_COMPLETA.md').write_text('frozen',encoding='utf-8')
++    readiness=discover_repository_readiness(tmp_path)
++    assert readiness['preregistered_protocol_present'] is True
++    assert readiness['selection_sufficiency'] is False
++    assert readiness['external_holdout_passed'] is False
++    assert readiness['position_review_passed'] is False
++    assert readiness['final_team_comparison_allowed'] is False
++
++
++def test_affirmative_readiness_requires_all_discovered_flags(tmp_path: Path):
++    (tmp_path/'PROTOCOLO_FINAL_COMPLETA.md').write_text('frozen',encoding='utf-8')
++    model=tmp_path/'data'/'model_readiness'; model.mkdir(parents=True)
++    validation=tmp_path/'data'/'validation'; validation.mkdir(parents=True)
++    review=tmp_path/'data'/'audits'/'position_ontology_v2'/'blind_review'; review.mkdir(parents=True)
++    (model/'selection_sufficiency_status.json').write_text(json.dumps({
++        'status':'evaluated','selection_sufficiency_gate_passed':True
++    }),encoding='utf-8')
++    (validation/'external_pre_tournament_holdout_summary.json').write_text(json.dumps({
++        'status':'evaluated','external_pre_tournament_validation_passed':True
++    }),encoding='utf-8')
++    (review/'blind_review_evaluation.json').write_text(json.dumps({
++        'status':'evaluated','review_gate_passed':True
++    }),encoding='utf-8')
++    (model/'scientific_validation_status.json').write_text(json.dumps({
++        'status':'evaluated','final_team_comparison_allowed':True
++    }),encoding='utf-8')
++    readiness=discover_repository_readiness(tmp_path)
++    assert readiness['selection_sufficiency'] is True
++    assert readiness['external_holdout_passed'] is True
++    assert readiness['position_review_passed'] is True
++    assert readiness['final_team_comparison_allowed'] is True

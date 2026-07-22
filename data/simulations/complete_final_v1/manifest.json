@@ -1,0 +1,42 @@
+{
+  "status": "complete_final_artifacts_written",
+  "output_directory": "data/simulations/complete_final_v1",
+  "files": {
+    "audit_sample.csv": {
+      "bytes": 22856,
+      "sha256": "9741d632e82bda7b015273cf25b75fb619a71ee1b3e44062f1ce3ea58817a0a8"
+    },
+    "engineering_validation_snapshot.json": {
+      "bytes": 3275,
+      "sha256": "b2da9112f4cee290d08691946cf44baf1973a10c514814694f1146e22c43c8b8"
+    },
+    "real_best_xi_profiles.csv": {
+      "bytes": 2634,
+      "sha256": "0e0f0bb4a3b7d6cbac0db594aa0e7af3fef096a9e614243574d1ee5dfac83aaf"
+    },
+    "real_best_xi_selection.csv": {
+      "bytes": 915,
+      "sha256": "9c7e40515e9e6ec68ef155611a93899320e9eba07ac9e4ad8484807f87f31960"
+    },
+    "release_gate_status.json": {
+      "bytes": 566,
+      "sha256": "289bf342d096b34553dd15998c2716058a651eb5f758bac2fed1ca503686f092"
+    },
+    "representative_final_timeline.csv": {
+      "bytes": 7356,
+      "sha256": "6af5376eec277a69a9e80a8097cce1576a5f218084a621e5cf7f57cafc7356be"
+    },
+    "simulation_summary.json": {
+      "bytes": 30067,
+      "sha256": "489bc934b20813e7a1b9a15864ba43e205d778cf6b9f52d5491262149c3bdf14"
+    },
+    "synthetic_xi_membership.csv": {
+      "bytes": 4401,
+      "sha256": "f5a9c542bd74cc1ef6d85809227da1bab8afc92b9eefab61fdd63dc121561569"
+    },
+    "synthetic_xi_profiles.csv": {
+      "bytes": 2464,
+      "sha256": "700fcf945d8b9c7977fa74b0779e571e534cd87f4ac6df5ea6c25b1132bc0bfd"
+    }
+  }
+}

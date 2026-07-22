@@ -1,0 +1,24 @@
+{
+  "status": "selection_challenger_fixture_evidence_extracted",
+  "generated_at_utc": "2026-07-22T00:49:20.197753+00:00",
+  "methodological_effect": "data_recovery_only_no_model_or_threshold_changes",
+  "unresolved_players_at_start": 41,
+  "priority_player_fixture_pairs": 784,
+  "priority_unique_fixtures": 291,
+  "fixtures_requested": 291,
+  "fixtures_returned": 291,
+  "complete_two_team_lineups": 291,
+  "fixtures_with_event_feed_key": 291,
+  "network_calls": 15,
+  "quota_remaining_at_start": 7500,
+  "quota_remaining_at_end": 7484,
+  "stopped_reason": null,
+  "errors": 0,
+  "lineup_rows": 12472,
+  "event_rows": 4772,
+  "outputs": {
+    "lineups": "data/lake/selection_challenger_evidence/challenger_full_lineups_29878699745.csv.gz",
+    "events": "data/lake/selection_challenger_evidence/challenger_full_events_29878699745.csv.gz",
+    "metadata": "data/lake/selection_challenger_evidence/challenger_fixture_metadata_29878699745.csv"
+  }
+}
