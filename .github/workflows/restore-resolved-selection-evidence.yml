@@ -1,0 +1,121 @@
+name: Restore Resolved Selection Evidence
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/selection-evidence-repair/**'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: restore-resolved-selection-evidence
+  cancel-in-progress: true
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout current main with history
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Verify frozen source and stale publication commits
+        shell: bash
+        run: |
+          set -euo pipefail
+          git cat-file -e 469f24c283e391bfb8bf7b9f40e0af5b0681c7d4^{commit}
+          git cat-file -e c0b344114259ee9bbcd2e9b364ead629e6502713^{commit}
+          git merge-base --is-ancestor 469f24c283e391bfb8bf7b9f40e0af5b0681c7d4 main
+          git merge-base --is-ancestor c0b344114259ee9bbcd2e9b364ead629e6502713 main
+
+      - name: Restore only the resolved frozen evidence set
+        shell: bash
+        run: |
+          set -euo pipefail
+          git checkout 469f24c283e391bfb8bf7b9f40e0af5b0681c7d4 -- \
+            data/audits/scope_correct_coverage/exact_window_minute_eligibility_audit.csv \
+            data/audits/scope_correct_coverage/player_window_coverage_scope_correct.csv \
+            data/audits/scope_correct_coverage/scope_correct_coverage_status.json \
+            data/audits/scope_correct_coverage/scope_correct_promotion_status.json \
+            data/audits/scope_correct_coverage/scope_correct_residual_priority_fixtures.csv \
+            data/audits/scope_correct_coverage/shadow_selection/coverage_correction_review.json \
+            data/audits/scope_correct_coverage/shadow_selection/shadow_selection_all_players.csv \
+            data/audits/scope_correct_coverage/shadow_selection/shadow_selection_roles.csv \
+            data/audits/scope_correct_coverage/shadow_selection/shadow_selection_status.json \
+            data/audits/scope_correct_coverage/shadow_selection/shadow_selection_unresolved_players.csv \
+            data/model_readiness/coverage_priority_fixtures.csv \
+            data/model_readiness/eleven_role_candidate_counts.csv \
+            data/model_readiness/eleven_role_evidence.csv \
+            data/model_readiness/eleven_role_readiness.json \
+            data/model_readiness/player_window_coverage.csv \
+            data/model_readiness/scientific_validation_status.json \
+            data/model_readiness/selection_frontier.csv \
+            data/model_readiness/selection_frontier_all_candidates.csv \
+            data/model_readiness/selection_frontier_coverage.csv \
+            data/model_readiness/selection_sufficiency_all_players.csv \
+            data/model_readiness/selection_sufficiency_priority_fixtures.csv \
+            data/model_readiness/selection_sufficiency_status.json \
+            data/model_readiness/selection_sufficiency_unresolved_players.csv \
+            data/releases/v1_0/release_manifest.json \
+            data/releases/v1_0/release_status.json \
+            paper/FINAL_SCIENTIFIC_RESULTS.md
+
+      - name: Assert restoration without scientific tuning
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          selection = json.loads(Path('data/model_readiness/selection_sufficiency_status.json').read_text())
+          scientific = json.loads(Path('data/model_readiness/scientific_validation_status.json').read_text())
+          assert selection['unresolved_players'] == 0, selection
+          assert selection['selection_sufficiency_gate_passed'] is True, selection
+          assert selection['rankings_allowed'] is True, selection
+          assert all(role['role_gate_passed'] for role in selection['roles']), selection['roles']
+          assert scientific['gates']['selection_sufficiency'] is True, scientific
+          assert scientific['final_team_comparison_allowed'] is True, scientific
+          assert scientific['blocking_gates'] == [], scientific
+          print(json.dumps({
+              'selection_sufficiency_gate_passed': True,
+              'unresolved_players': 0,
+              'final_team_comparison_allowed': True,
+              'source_commit': '469f24c283e391bfb8bf7b9f40e0af5b0681c7d4',
+              'stale_publication_reversed': 'c0b344114259ee9bbcd2e9b364ead629e6502713',
+              'model_parameters_changed': False,
+              'selection_thresholds_changed': False
+          }, indent=2))
+          PY
+
+          changed=$(git diff --cached --name-only | wc -l)
+          test "$changed" -eq 26
+
+      - name: Commit and publish repaired canonical evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          if git diff --cached --quiet; then
+            echo 'Canonical evidence is already restored.'
+            exit 0
+          fi
+          git commit -m 'science: restore resolved challenger evidence after stale coverage publish'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase -X ours origin/main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 3))
+          done
+          exit 1
