@@ -14,6 +14,8 @@ cleanup_and_publish() {
     ops/resolve-selection-challengers-trigger-branch.txt 2>/dev/null || true
   git config user.name "synthetic-xi-bot"
   git config user.email "actions@users.noreply.github.com"
+
+  # Stage only the preregistered evidence, gate and simulation outputs.
   git add "$AUDIT" data/audits/scope_correct_coverage \
     data/model_readiness/player_window_coverage.csv \
     data/model_readiness/selection_challenger_reconstructed_minutes.csv \
@@ -25,18 +27,42 @@ cleanup_and_publish() {
     data/model_readiness/scientific_validation_status.json \
     data/simulations/complete_final_v1 2>/dev/null || true
   git add -f data/lake/selection_challenger_evidence 2>/dev/null || true
+
+  # The final-engine installer materializes tracked wrapper files while running.
+  # Those execution-only changes must never enter the scientific commit and must
+  # not be allowed to dirty the worktree before rebase/push.
+  git status --porcelain=v1 > "$AUDIT/pre_publish_git_status.txt"
+  mapfile -t unstaged_tracked < <(git diff --name-only)
+  if [[ "${#unstaged_tracked[@]}" -gt 0 ]]; then
+    git diff --binary > "$AUDIT/execution_only_unstaged_changes.patch"
+    git restore --worktree -- "${unstaged_tracked[@]}"
+  else
+    : > "$AUDIT/execution_only_unstaged_changes.patch"
+  fi
+  git add "$AUDIT/pre_publish_git_status.txt" \
+    "$AUDIT/execution_only_unstaged_changes.patch" 2>/dev/null || true
+
   if ! git diff --cached --quiet; then
     git commit -m "science: resolve frozen selection challengers and rebuild final gate"
-    for attempt in 1 2 3 4 5; do
-      git fetch origin main
-      if git rebase -X theirs origin/main && git push origin HEAD:main; then
-        return 0
-      fi
-      git rebase --abort 2>/dev/null || true
-      sleep $((attempt * 4))
-    done
-    return 1
   fi
+
+  # Rebase requires a clean tree. Preserve any remaining transient/untracked
+  # runner files in a local stash; they are execution artifacts, not evidence.
+  if [[ -n "$(git status --porcelain=v1)" ]]; then
+    git status --porcelain=v1 > /tmp/challenger_transient_status.txt
+    git stash push --include-untracked -m "challenger-runner-transient-${GITHUB_RUN_ID:-local}" >/dev/null || true
+  fi
+
+  for attempt in 1 2 3 4 5; do
+    git fetch origin main
+    if git rebase -X theirs origin/main && git push origin HEAD:main; then
+      return 0
+    fi
+    git rebase --abort 2>/dev/null || true
+    git reset --hard HEAD >/dev/null 2>&1 || true
+    sleep $((attempt * 4))
+  done
+  return 1
 }
 
 unresolved_count=$(($(wc -l < data/model_readiness/selection_sufficiency_unresolved_players.csv)-1))
