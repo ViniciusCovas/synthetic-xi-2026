@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Materialize Complete Final Engine v1 and apply the frozen v1.1 rules fix."""
+"""Materialize Complete Final Engine v1 and apply frozen v1.1 audit patches."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -10,10 +10,18 @@ runpy.run_path(
     str(ROOT / "scripts" / "install_complete_final_bundle.py"),
     run_name="__complete_final_v1_installer__",
 )
-patch_namespace = runpy.run_path(
+rules_namespace = runpy.run_path(
     str(ROOT / "scripts" / "patch_complete_final_rules_v1_1.py"),
-    run_name="__complete_final_v1_1_patch__",
+    run_name="__complete_final_v1_1_rules_patch__",
 )
-exit_code = int(patch_namespace["main"]())
-if exit_code:
-    raise SystemExit(exit_code)
+rules_exit_code = int(rules_namespace["main"]())
+if rules_exit_code:
+    raise SystemExit(rules_exit_code)
+
+measurement_namespace = runpy.run_path(
+    str(ROOT / "scripts" / "patch_complete_final_yellow_measurement_v1.py"),
+    run_name="__complete_final_yellow_measurement_patch__",
+)
+measurement_exit_code = int(measurement_namespace["main"]())
+if measurement_exit_code:
+    raise SystemExit(measurement_exit_code)
