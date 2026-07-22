@@ -1,0 +1,115 @@
+{
+  "preflight_version": "complete_final_preflight_v1",
+  "frozen_at_utc": "2026-07-22T00:00:00Z",
+  "methodological_policy": {
+    "outcome_blind": true,
+    "no_model_weight_changes": true,
+    "no_selection_threshold_changes": true,
+    "no_post_result_tuning": true,
+    "environment_and_referee_are_paired_between_teams": true
+  },
+  "competition_rules": {
+    "reference_competition": "FIFA World Cup 2026 knockout match",
+    "registered_squad_size": 26,
+    "minimum_goalkeepers_in_squad": 3,
+    "starting_players": 11,
+    "normal_time_substitutions": 5,
+    "normal_time_substitution_windows": 3,
+    "extra_time_additional_substitution": 1,
+    "extra_time_additional_window": 1,
+    "extra_time_periods": 2,
+    "extra_time_period_minutes": 15,
+    "shootout_initial_kicks_per_team": 5,
+    "shootout_sudden_death": true,
+    "mandatory_hydration_breaks": {
+      "enabled": true,
+      "duration_minutes": 3,
+      "first_half_target_minute": 22,
+      "second_half_target_minute": 67,
+      "applies_independent_of_weather": true
+    },
+    "concussion_substitution": {
+      "recorded_in_rules": true,
+      "engine_representation": "injury_substitution_policy",
+      "separate_additional_slot_required_for_confirmatory_claim": false,
+      "limitation_must_be_reported": true
+    }
+  },
+  "team_freeze": {
+    "formation_slots": ["GK", "RB", "RCB", "LCB", "LB", "DM", "CM", "AM", "RW", "LW", "ST"],
+    "registered_players_per_team": 26,
+    "named_bench_players_per_team": 15,
+    "minimum_bench_goalkeepers": 2,
+    "real_xi_policy": "best eligible real player per frozen role; second-best distinct player for duplicated CB, FB and W archetypes according to the preregistered conservative score",
+    "synthetic_xi_policy": "frozen positional archetype instances; duplicated CB, FB and W instances have independent state and lateral role",
+    "emergency_goalkeeper_policy_required": true,
+    "penalty_order_policy_required": true,
+    "duplicate_real_player_ids_forbidden": true
+  },
+  "referee_context": {
+    "primary_profile": "median_neutral",
+    "identity": "latent neutral referee rather than a named official",
+    "paired_draw": true,
+    "scenario_sensitivity": [
+      {"name": "permissive", "weight": 0.2, "foul_multiplier": 0.85, "card_multiplier": 0.75, "penalty_multiplier": 0.9},
+      {"name": "median_neutral", "weight": 0.6, "foul_multiplier": 1.0, "card_multiplier": 1.0, "penalty_multiplier": 1.0},
+      {"name": "strict", "weight": 0.2, "foul_multiplier": 1.15, "card_multiplier": 1.3, "penalty_multiplier": 1.1}
+    ],
+    "scenario_parameters_are_sensitivity_only": true,
+    "named_referee_claim_forbidden": true
+  },
+  "environment_context": {
+    "primary_design": "neutral venue sampled from the empirical FIFA World Cup 2026 match-weather record",
+    "same_environment_for_both_teams": true,
+    "team_acclimatisation_effect": "disabled_without_external_validation",
+    "weather_source_priority": [
+      "Open-Meteo Historical Weather API reanalysis",
+      "Open-Meteo Historical Forecast API for recent matches when reanalysis is unavailable"
+    ],
+    "weather_variables": [
+      "temperature_2m",
+      "relative_humidity_2m",
+      "apparent_temperature",
+      "precipitation",
+      "wind_speed_10m",
+      "wind_gusts_10m",
+      "weather_code"
+    ],
+    "minimum_match_weather_coverage": 0.9,
+    "minimum_high_quality_reanalysis_coverage": 0.85,
+    "roofed_or_climate_controlled_venues": "outdoor weather retained as context but not treated as direct pitch exposure",
+    "missing_weather_imputation": "forbidden_in_observed_record"
+  },
+  "event_calibration_preflight": {
+    "required_metrics": [
+      "regulation_goals",
+      "regulation_shots",
+      "regulation_shots_on_target",
+      "fouls",
+      "yellow_cards",
+      "red_cards",
+      "penalties_awarded",
+      "substitutions",
+      "extra_time_frequency",
+      "shootout_frequency"
+    ],
+    "descriptive_only_metrics": ["VAR reviews", "observable injuries", "stoppage time"],
+    "benchmark_population": "all 104 FIFA World Cup 2026 matches where provider evidence is available",
+    "minimum_fixture_coverage": 0.9,
+    "distribution_checks_required": true,
+    "mean_only_approval_forbidden": true
+  },
+  "final_authorisation": {
+    "validation_run_size": 2000,
+    "confirmatory_run_size": 10000,
+    "require_preflight_pass": true,
+    "require_convergence_check": true,
+    "release_only_after_all_gates": true
+  },
+  "source_notes": [
+    "FIFA confirmed 26-player squads for World Cup 2026.",
+    "FIFA describes five substitutions in normal time plus one additional substitution in extra time for the modern World Cup framework.",
+    "FIFA mandated three-minute hydration breaks in every half of every World Cup 2026 match, irrespective of weather or roof conditions.",
+    "The official FIFA schedule contains 104 matches across 16 host cities from 11 June through 19 July 2026."
+  ]
+}
