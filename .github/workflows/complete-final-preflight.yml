@@ -45,16 +45,38 @@ jobs:
           PYTHONPATH: .
         run: python scripts/scientific/freeze_complete_final_rosters.py
 
-      - name: Build World Cup 2026 match-weather record
+      - name: Reuse or build World Cup 2026 match-weather record
         env:
           PYTHONPATH: .
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
           WORLD_CUP_LEAGUE_ID: '1'
+        shell: bash
         run: |
-          python scripts/scientific/build_world_cup_2026_weather_record.py
-          python scripts/scientific/repair_world_cup_2026_weather_record.py
+          set -euo pipefail
+          if python - <<'PY'
+          import json
+          from pathlib import Path
+          required = [
+              Path('data/context/world_cup_2026_weather_by_match.csv'),
+              Path('data/context/world_cup_2026_weather_source_manifest.json'),
+          ]
+          p=Path('data/context/world_cup_2026_weather_summary.json')
+          d=json.loads(p.read_text()) if p.exists() else {}
+          assert d.get('status') == 'world_cup_2026_weather_record_complete'
+          assert d.get('matches_in_record') == 104
+          assert float(d.get('weather_coverage', 0)) >= 0.90
+          assert float(d.get('reanalysis_coverage', 0)) >= 0.85
+          assert d.get('missing_weather_imputed') is False
+          assert all(item.exists() and item.stat().st_size > 0 for item in required)
+          PY
+          then
+            echo 'Reusing frozen complete 104-match weather record.'
+          else
+            python scripts/scientific/build_world_cup_2026_weather_record.py
+            python scripts/scientific/repair_world_cup_2026_weather_record.py
+          fi
 
-      - name: Freeze World Cup 2026 event distributions
+      - name: Reuse or freeze World Cup 2026 event distributions
         env:
           PYTHONPATH: .
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
@@ -64,9 +86,28 @@ jobs:
           MIN_DAILY_REQUESTS_REMAINING: '30'
           FIXTURE_BUNDLE_SIZE: '20'
           GITHUB_RUN_ID: preflight_${{ github.run_id }}
+        shell: bash
         run: |
-          python scripts/scientific/build_world_cup_2026_event_benchmark.py
-          python scripts/scientific/normalize_world_cup_2026_event_benchmark.py
+          set -euo pipefail
+          if python - <<'PY'
+          import json
+          from pathlib import Path
+          csv=Path('data/context/world_cup_2026_event_benchmark_by_match.csv')
+          p=Path('data/context/world_cup_2026_event_benchmark_summary.json')
+          d=json.loads(p.read_text()) if p.exists() else {}
+          assert d.get('status') == 'world_cup_2026_event_benchmark_complete'
+          assert d.get('scheduled_fixtures') == 104
+          assert d.get('fixtures_returned_with_bundle') == 104
+          assert float(d.get('fixture_coverage', 0)) == 1.0
+          assert d.get('model_parameters_changed') is False
+          assert csv.exists() and csv.stat().st_size > 0
+          PY
+          then
+            echo 'Reusing frozen complete 104-match event benchmark.'
+          else
+            python scripts/scientific/build_world_cup_2026_event_benchmark.py
+            python scripts/scientific/normalize_world_cup_2026_event_benchmark.py
+          fi
 
       - name: Build neutral Complete Final Engine v1.1 engineering evidence
         if: always()
@@ -204,8 +245,6 @@ jobs:
             data/simulations/complete_final_v1_1/validation_report.json \
             data/simulations/complete_final_v1_1/release_gate_status.json 2>/dev/null || true
 
-          # Materialized engine files or provider caches must not block rebase and
-          # must never enter the scientific evidence commit.
           mapfile -t unstaged_tracked < <(git diff --name-only)
           if [[ "${#unstaged_tracked[@]}" -gt 0 ]]; then
             git restore --worktree -- "${unstaged_tracked[@]}"
