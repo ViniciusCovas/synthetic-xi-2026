@@ -1,0 +1,1 @@
+Execute the isolated 2,000-match validation against the frozen Complete Final Engine v1.1 evidence. Preserve full diagnostics and keep the 10,000-match release fail-closed unless both validation gates pass.
