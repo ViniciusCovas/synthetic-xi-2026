@@ -33,3 +33,11 @@ json_namespace = runpy.run_path(
 json_exit_code = int(json_namespace["main"]())
 if json_exit_code:
     raise SystemExit(json_exit_code)
+
+role_namespace = runpy.run_path(
+    str(ROOT / "scripts" / "patch_complete_final_validation_role_gate_v1.py"),
+    run_name="__complete_final_validation_role_gate_patch__",
+)
+role_exit_code = int(role_namespace["main"]())
+if role_exit_code:
+    raise SystemExit(role_exit_code)
