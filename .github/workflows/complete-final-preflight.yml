@@ -57,7 +57,9 @@ jobs:
           MIN_DAILY_REQUESTS_REMAINING: '30'
           FIXTURE_BUNDLE_SIZE: '20'
           GITHUB_RUN_ID: preflight_${{ github.run_id }}
-        run: python scripts/scientific/build_world_cup_2026_event_benchmark.py
+        run: |
+          python scripts/scientific/build_world_cup_2026_event_benchmark.py
+          python scripts/scientific/normalize_world_cup_2026_event_benchmark.py
 
       - name: Evaluate core preflight without tuning
         id: core
@@ -170,11 +172,23 @@ jobs:
             data/model_readiness/complete_final_preflight_status.json \
             data/model_readiness/complete_final_validation_2000_status.json \
             data/simulations/complete_final_v1/release_gate_status.json 2>/dev/null || true
+
+          # Materialized engine files or provider caches must not block rebase and
+          # must never enter the scientific evidence commit.
+          mapfile -t unstaged_tracked < <(git diff --name-only)
+          if [[ "${#unstaged_tracked[@]}" -gt 0 ]]; then
+            git restore --worktree -- "${unstaged_tracked[@]}"
+          fi
+
           if git diff --cached --quiet; then
             echo 'No preflight evidence changes to publish.'
             exit 0
           fi
           git commit -m 'science: freeze complete-final preflight and World Cup 2026 context'
+
+          if [[ -n "$(git status --porcelain=v1)" ]]; then
+            git stash push --include-untracked -m "complete-final-preflight-transient-${GITHUB_RUN_ID}" >/dev/null || true
+          fi
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             if git rebase -X theirs origin/main && git push origin HEAD:main; then
@@ -190,7 +204,6 @@ jobs:
         if: always()
         run: |
           python - <<'PY'
-          import json
           from pathlib import Path
           for path in [
             'data/model_readiness/complete_final_preflight_status.json',
