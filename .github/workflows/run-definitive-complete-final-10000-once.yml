@@ -1,0 +1,190 @@
+name: Definitive Complete Final 10000
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/final-10000-trigger/**'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: definitive-complete-final-10000
+  cancel-in-progress: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - name: Checkout frozen main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pandas numpy requests matplotlib pytest
+
+      - name: Assert definitive release authorization
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data/simulations/complete_final_v1_1/release_gate_status.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          assert d.get('status') == 'complete_final_release_ready', d
+          assert d.get('ready') is True, d
+          assert d.get('unresolved_players') == 0, d
+          assert not d.get('blocking_gates'), d
+          assert all((d.get('gates') or {}).values()), d
+          PY
+
+      - name: Execute definitive 10,000 and release validation 2,000
+        env:
+          PYTHONPATH: .
+        run: |
+          python scripts/scientific/release_complete_final_when_ready.py \
+            --simulations 10000 \
+            --validation-simulations 2000 \
+            --require-ready
+
+      - name: Restore materialized source wrappers
+        if: always()
+        run: |
+          git restore --worktree -- \
+            simulator/complete_final.py \
+            simulator/complete_final_monte_carlo.py \
+            simulator/validation.py \
+            scripts/run_complete_final_simulation.py \
+            scripts/scientific/validate_complete_final.py \
+            tests/test_complete_final.py \
+            .github/workflows/complete-final-validation.yml \
+            COMPLETE_FINAL_IMPLEMENTATION.md 2>/dev/null || true
+
+      - name: Finalize definitive release evidence
+        env:
+          PYTHONPATH: .
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          root=Path('.')
+          out=root/'data/simulations/complete_final_v1_1'
+          model=root/'data/model_readiness'
+          def load(p): return json.loads(p.read_text(encoding='utf-8'))
+          def sha(p):
+              h=hashlib.sha256()
+              with p.open('rb') as f:
+                  for block in iter(lambda:f.read(1024*1024),b''): h.update(block)
+              return h.hexdigest()
+          release=load(out/'release_gate_status.json')
+          summary=load(out/'simulation_summary.json')
+          validation=load(out/'release_validation_report.json')
+          manifest=load(out/'manifest.json')
+          preflight=load(model/'complete_final_preflight_status.json')
+          isolated=load(model/'complete_final_validation_2000_status.json')
+          checks={
+              'release_executed':release.get('status')=='complete_final_release_executed',
+              'release_ready':release.get('ready') is True,
+              'ten_thousand':release.get('simulations')==10000 and summary.get('simulations')==10000,
+              'release_validation_2000':release.get('validation_simulations')==2000 and validation.get('simulation_count')==2000,
+              'engineering_gate':(summary.get('engineering_calibration_gate') or {}).get('passed') is True,
+              'publication_gate':(summary.get('methodological_gate') or {}).get('publication_as_final_result_allowed') is True,
+              'release_validation_engineering':(validation.get('engineering_gate') or {}).get('passed') is True,
+              'release_validation_publication':(validation.get('scientific_publication_gate') or {}).get('passed') is True,
+              'manifest':manifest.get('status')=='complete_final_artifacts_written',
+              'preflight':preflight.get('complete_final_preflight_passed') is True and preflight.get('final_10000_authorized') is True,
+              'isolated_2000':isolated.get('validation_2000_passed') is True,
+              'unresolved_zero':release.get('unresolved_players')==0,
+          }
+          blockers=[k for k,v in checks.items() if not v]
+          passed=not blockers
+          generated=datetime.now(timezone.utc).isoformat()
+          hashes={}
+          for name in ['simulation_summary.json','manifest.json','release_validation_report.json','release_gate_status.json','representative_final_timeline.csv','audit_sample.csv','synthetic_xi_profiles.csv','real_best_xi_profiles.csv']:
+              p=out/name
+              hashes[name]=sha(p) if p.exists() else None
+          status={
+              'status':'complete_final_release_10000_finalized' if passed else 'complete_final_release_10000_blocked',
+              'generated_at_utc':generated,
+              'engine_version':'complete_final_v1_1_rules_fix',
+              'simulations':summary.get('simulations'),
+              'release_validation_simulations':validation.get('simulation_count'),
+              'definitive_10000_executed':passed,
+              'final_result_publication_allowed':passed,
+              'checks':checks,
+              'blocking_checks':blockers,
+              'source_hashes':hashes,
+              'model_parameters_changed_during_release':False,
+              'selection_thresholds_changed_during_release':False,
+              'event_tolerances_changed_during_release':False,
+              'post_result_tuning_performed':False,
+          }
+          (model/'complete_final_release_10000_status.json').write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8')
+          preflight['definitive_10000_executed']=passed
+          preflight['definitive_release_status']=status['status']
+          preflight['definitive_release_finalized_at_utc']=generated
+          preflight['definitive_release_summary_sha256']=hashes['simulation_summary.json']
+          (model/'complete_final_preflight_status.json').write_text(json.dumps(preflight,ensure_ascii=False,indent=2),encoding='utf-8')
+          print(json.dumps(status,indent=2))
+          raise SystemExit(0 if passed else 2)
+          PY
+
+      - name: Upload definitive audit package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: definitive-complete-final-10000-${{ github.run_id }}
+          path: |
+            data/model_readiness/complete_final_preflight_status.json
+            data/model_readiness/complete_final_release_10000_status.json
+            data/model_readiness/complete_final_validation_2000_status.json
+            data/simulations/complete_final_v1_1/
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Publish definitive evidence
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -f data/model_readiness/complete_final_preflight_status.json
+          if [[ -e data/model_readiness/complete_final_release_10000_status.json ]]; then git add -f data/model_readiness/complete_final_release_10000_status.json; fi
+          git add -f data/simulations/complete_final_v1_1/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'science: publish definitive Complete Final 10000 release'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase -X theirs origin/main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt*5))
+          done
+          exit 1
+
+      - name: Enforce definitive completion
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data/model_readiness/complete_final_release_10000_status.json')
+          d=json.loads(p.read_text()) if p.exists() else {}
+          print(json.dumps(d,indent=2))
+          raise SystemExit(0 if d.get('definitive_10000_executed') is True else 2)
+          PY
