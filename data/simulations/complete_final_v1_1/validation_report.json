@@ -1,0 +1,153 @@
+{
+  "status": "complete_final_validation_completed",
+  "engine_version": "complete_final_v1",
+  "simulation_count": 2000,
+  "engineering_gate": {
+    "passed": true,
+    "checks": {
+      "deterministic_reproducibility": true,
+      "rules_and_state_invariants": true,
+      "regulation_distribution_calibration": true,
+      "neutral_orientation_symmetry": true,
+      "seed_stability": true
+    }
+  },
+  "scientific_publication_gate": {
+    "passed": false,
+    "checks": {
+      "engineering_validated": true,
+      "selection_sufficiency": true,
+      "external_holdout_passed": true,
+      "position_review_passed": false,
+      "final_team_comparison_allowed": true,
+      "uncertainty_documented": true,
+      "preregistered_protocol_present": true
+    },
+    "interpretation": "A passed engineering gate validates implementation behaviour. A substantive team-comparison claim is allowed only when all repository evidence gates also pass."
+  },
+  "distribution_summary": {
+    "home_champion_probability": {
+      "estimate": 0.3965,
+      "low": 0.3752796072642146,
+      "high": 0.4181172215230047
+    },
+    "away_champion_probability": {
+      "estimate": 0.6035,
+      "low": 0.5818827784769953,
+      "high": 0.6247203927357854
+    },
+    "regulation_draw_probability": {
+      "estimate": 0.2395,
+      "low": 0.22130661403712606,
+      "high": 0.2586921675964067
+    },
+    "extra_time_probability": {
+      "estimate": 0.2395,
+      "low": 0.22130661403712606,
+      "high": 0.2586921675964067
+    },
+    "penalty_shootout_probability": {
+      "estimate": 0.11,
+      "low": 0.09702766640529693,
+      "high": 0.12446763047408034
+    },
+    "mean_regulation_goals": 3.027,
+    "mean_regulation_shots": 18.206,
+    "mean_regulation_shots_on_target": 9.17,
+    "regulation_zero_zero_rate": 0.054,
+    "regulation_calibration_error": {
+      "goals_per_match": 0.11210638297872366,
+      "shots_per_match": 0.11112899578579416,
+      "shots_on_target_per_match": 0.7914410525233819,
+      "zero_zero_rate": -0.020468085106382976
+    },
+    "engineering_calibration_gate": {
+      "passed": true,
+      "checks": {
+        "absolute_goal_error_le_0_45": true,
+        "absolute_shot_error_le_3": true,
+        "absolute_shot_on_target_error_le_1_5": true,
+        "absolute_zero_zero_error_le_0_06": true
+      },
+      "scope": "Engineering distribution gate for regulation-time observables. It does not by itself authorize substantive publication claims."
+    }
+  },
+  "reproducibility": {
+    "passed": true,
+    "seed": 20260723
+  },
+  "invariants": {
+    "passed": true,
+    "samples": 250,
+    "violations": [],
+    "violation_count": 0
+  },
+  "paired_swap_diagnostic": {
+    "simulations_per_orientation": 1000,
+    "neutral_home_entity_probability_original_orientation": 0.37,
+    "neutral_home_entity_probability_swapped_orientation": 0.417,
+    "absolute_orientation_difference": 0.046999999999999986,
+    "passed": true,
+    "threshold": 0.055
+  },
+  "seed_stability": {
+    "simulations_per_seed": 500,
+    "seeds": [
+      20260733,
+      20260743,
+      20260753,
+      20260763
+    ],
+    "home_champion_estimates": [
+      0.394,
+      0.404,
+      0.39,
+      0.378
+    ],
+    "maximum_spread": 0.026000000000000023,
+    "threshold": 0.13416407864998736,
+    "passed": true
+  },
+  "repository_readiness_evidence": {
+    "selection_sufficiency": true,
+    "external_holdout_passed": true,
+    "position_review_passed": false,
+    "final_team_comparison_allowed": true,
+    "preregistered_protocol_present": true,
+    "evidence_files": [
+      {
+        "gate": "selection_sufficiency",
+        "path": "data/model_readiness/selection_sufficiency_status.json",
+        "key": "selection_sufficiency_gate_passed",
+        "value": true,
+        "status": "selection_sufficiency_evaluated",
+        "canonical": true
+      },
+      {
+        "gate": "external_holdout_passed",
+        "path": "data/validation/external_pre_tournament_holdout_summary.json",
+        "key": "external_pre_tournament_validation_passed",
+        "value": true,
+        "status": "external_pre_tournament_holdout_complete",
+        "canonical": true
+      },
+      {
+        "gate": "position_review_passed",
+        "path": "data/audits/position_ontology_v2/blind_review/blind_review_evaluation.json",
+        "key": "review_gate_passed",
+        "value": false,
+        "status": "missing",
+        "canonical": true
+      },
+      {
+        "gate": "final_team_comparison_allowed",
+        "path": "data/model_readiness/scientific_validation_status.json",
+        "key": "final_team_comparison_allowed",
+        "value": true,
+        "status": "scientific_validation_gates_evaluated",
+        "canonical": true
+      }
+    ],
+    "absence_policy": "Missing affirmative evidence is treated as not passed."
+  }
+}

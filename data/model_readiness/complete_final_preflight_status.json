@@ -1,6 +1,6 @@
 {
   "status": "complete_final_preflight_blocked",
-  "generated_at_utc": "2026-07-22T13:05:14.368692+00:00",
+  "generated_at_utc": "2026-07-22T13:11:54.403993+00:00",
   "preflight_version": "complete_final_preflight_v1",
   "complete_final_preflight_passed": false,
   "final_10000_authorized": false,
@@ -121,12 +121,12 @@
     "yellow_measurement_applied": true
   },
   "v1_snapshot_preserved": true,
-  "v1_1_preflight_evaluated_at_utc": "2026-07-22T13:05:14.425263+00:00",
+  "v1_1_preflight_evaluated_at_utc": "2026-07-22T13:11:54.451235+00:00",
   "rules_implementation_changed": true,
   "measurement_alignment_changed": true,
   "event_generation_changed": false,
   "event_tolerances_changed": false,
-  "finalized_at_utc": "2026-07-22T13:09:12.863512+00:00",
+  "finalized_at_utc": "2026-07-22T13:15:56.281521+00:00",
   "core_preflight_passed_before_validation_2000": true,
   "validation_2000_passed": false,
   "validation_2000_status": "complete_final_validation_2000_failed",
