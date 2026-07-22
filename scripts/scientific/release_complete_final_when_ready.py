@@ -73,6 +73,7 @@ def main() -> int:
     parser.add_argument("--simulations", type=int, default=10000)
     parser.add_argument("--validation-simulations", type=int, default=2000)
     parser.add_argument("--require-ready", action="store_true")
+    parser.add_argument("--evaluate-only", action="store_true", help="Refresh the release gate without executing simulations")
     args = parser.parse_args()
 
     OUT.mkdir(parents=True, exist_ok=True)
@@ -81,6 +82,8 @@ def main() -> int:
     status_path.write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(status, ensure_ascii=False, indent=2))
 
+    if args.evaluate_only:
+        return 2 if args.require_ready and not status["ready"] else 0
     if not status["ready"]:
         return 2 if args.require_ready else 0
 
