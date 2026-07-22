@@ -104,8 +104,9 @@ def main() -> int:
             targets,
             replace(config, seed=int(rng.integers(0, 2**32 - 1))),
         ).simulate(True)
+        extra_time_played = result.decided_by in {"extra_time", "penalties"}
         for side, stats in (("home", result.home_stats), ("away", result.away_stats)):
-            maximum = 6 if result.extra_time_played else 5
+            maximum = 6 if extra_time_played else 5
             if stats["substitutions"] > maximum:
                 violations.append(f"{index}:{side}:substitution_limit")
             if stats["substitution_windows"] > 3:
@@ -114,7 +115,7 @@ def main() -> int:
                 violations.append(f"{index}:{side}:extra_time_window_limit")
             if stats["substitutions"] > stats["substitution_windows"] + stats["extra_time_windows"]:
                 batch_window_examples += 1
-        if not result.extra_time_played:
+        if not extra_time_played:
             regulation_combined_substitutions.append(
                 int(result.home_stats["substitutions"] + result.away_stats["substitutions"])
             )
