@@ -3,7 +3,9 @@
 
 This orchestrator is deliberately fail-closed. While evidence is incomplete it
 writes a machine-readable blocker report and does not execute or publish a
-substantive Synthetic XI versus Real Best XI result.
+substantive Synthetic XI versus Real Best XI result. The complete-final preflight
+is mandatory: rosters, benches, rules, neutral referee context, World Cup 2026
+weather record and event-distribution compatibility must all pass first.
 """
 from __future__ import annotations
 
@@ -34,6 +36,7 @@ def evaluate() -> dict[str, Any]:
     roles = read_json(ROOT / "data/model_readiness/eleven_role_readiness.json")
     scientific = read_json(ROOT / "data/model_readiness/scientific_validation_status.json")
     engineering = read_json(OUT / "engineering_validation_snapshot.json")
+    preflight = read_json(ROOT / "data/model_readiness/complete_final_preflight_status.json")
 
     gates = {
         "engineering_gate_passed": bool(engineering.get("engineering_gate_passed", False)),
@@ -42,6 +45,8 @@ def evaluate() -> dict[str, Any]:
         "eleven_role_gate_passed": bool(roles.get("eleven_role_gate_passed", False)),
         "final_team_comparison_allowed": bool(scientific.get("final_team_comparison_allowed", False)),
         "preregistered_protocol_present": (ROOT / "PROTOCOLO_FINAL_COMPLETA.md").exists(),
+        "complete_final_preflight_passed": bool(preflight.get("complete_final_preflight_passed", False)),
+        "final_10000_authorized": bool(preflight.get("final_10000_authorized", False)),
     }
     blockers = [name for name, passed in gates.items() if not passed]
     return {
@@ -50,8 +55,10 @@ def evaluate() -> dict[str, Any]:
         "gates": gates,
         "blocking_gates": blockers,
         "unresolved_players": selection.get("unresolved_players"),
+        "preflight_status": preflight.get("status", "missing"),
+        "preflight_blockers": preflight.get("blocking_gates", ["complete_final_preflight_status_missing"]),
         "claim_ceiling": scientific.get("current_claim_ceiling", "exploratory only"),
-        "policy": "No definitive result is executed or published unless every gate is affirmative.",
+        "policy": "No definitive result is executed or published unless every canonical and preflight gate is affirmative.",
     }
 
 
