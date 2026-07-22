@@ -13,7 +13,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: complete-final-preflight-v1
+  group: complete-final-preflight-v1-1
   cancel-in-progress: true
 
 jobs:
@@ -68,14 +68,29 @@ jobs:
           python scripts/scientific/build_world_cup_2026_event_benchmark.py
           python scripts/scientific/normalize_world_cup_2026_event_benchmark.py
 
+      - name: Build neutral Complete Final Engine v1.1 engineering evidence
+        if: always()
+        id: engineering
+        env:
+          PYTHONPATH: .
+        shell: bash
+        run: |
+          set +e
+          python scripts/scientific/build_complete_final_v1_1_engineering_snapshot.py --simulations 1000
+          code=$?
+          set -e
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          echo "v1.1 engineering exit code: $code"
+
       - name: Evaluate core preflight without tuning
+        if: always()
         id: core
         env:
           PYTHONPATH: .
         shell: bash
         run: |
           set +e
-          python scripts/scientific/validate_complete_final_preflight.py
+          python scripts/scientific/validate_complete_final_preflight_v1_1.py
           code=$?
           set -e
           echo "exit_code=$code" >> "$GITHUB_OUTPUT"
@@ -106,11 +121,14 @@ jobs:
           p.write_text(json.dumps({
             'status':'complete_final_validation_2000_skipped_core_preflight_blocked',
             'generated_at_utc':datetime.now(timezone.utc).isoformat(),
+            'engine_version':'complete_final_v1_1_rules_fix',
             'simulations':2000,
             'validation_2000_passed':False,
             'definitive_10000_executed':False,
             'model_parameters_changed':False,
-            'selection_thresholds_changed':False
+            'rules_implementation_changed':True,
+            'selection_thresholds_changed':False,
+            'event_tolerances_changed':False
           },indent=2),encoding='utf-8')
           PY
 
@@ -147,16 +165,19 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: complete-final-preflight-${{ github.run_id }}
+          name: complete-final-preflight-v1-1-${{ github.run_id }}
           path: |
             config/complete_final_preflight_v1.json
             config/complete_final_preflight_tolerances_v1.json
+            config/complete_final_rules_fix_v1_1.json
             data/context/world_cup_2026_*
             data/context/complete_final_preflight_metric_audit.csv
             data/model_readiness/complete_final_rosters_v1.json
+            data/model_readiness/complete_final_rules_fix_v1_1_status.json
             data/model_readiness/complete_final_preflight_status.json
             data/model_readiness/complete_final_validation_2000_status.json
-            data/simulations/complete_final_v1
+            data/simulations/complete_final_v1_1
+            COMPLETE_FINAL_RULES_FIX_V1_1.md
           retention-days: 90
           if-no-files-found: warn
 
@@ -176,9 +197,12 @@ jobs:
             data/context/world_cup_2026_event_benchmark_summary.json \
             data/context/complete_final_preflight_metric_audit.csv \
             data/model_readiness/complete_final_rosters_v1.json \
+            data/model_readiness/complete_final_rules_fix_v1_1_status.json \
             data/model_readiness/complete_final_preflight_status.json \
             data/model_readiness/complete_final_validation_2000_status.json \
-            data/simulations/complete_final_v1/release_gate_status.json 2>/dev/null || true
+            data/simulations/complete_final_v1_1/engineering_validation_snapshot.json \
+            data/simulations/complete_final_v1_1/validation_report.json \
+            data/simulations/complete_final_v1_1/release_gate_status.json 2>/dev/null || true
 
           # Materialized engine files or provider caches must not block rebase and
           # must never enter the scientific evidence commit.
@@ -191,10 +215,10 @@ jobs:
             echo 'No preflight evidence changes to publish.'
             exit 0
           fi
-          git commit -m 'science: freeze complete-final preflight and World Cup 2026 context'
+          git commit -m 'science: freeze Complete Final Engine v1.1 preflight evidence'
 
           if [[ -n "$(git status --porcelain=v1)" ]]; then
-            git stash push --include-untracked -m "complete-final-preflight-transient-${GITHUB_RUN_ID}" >/dev/null || true
+            git stash push --include-untracked -m "complete-final-preflight-v1-1-transient-${GITHUB_RUN_ID}" >/dev/null || true
           fi
           for attempt in 1 2 3 4 5; do
             git fetch origin main
@@ -214,7 +238,8 @@ jobs:
           from pathlib import Path
           for path in [
             'data/model_readiness/complete_final_preflight_status.json',
-            'data/simulations/complete_final_v1/release_gate_status.json'
+            'data/model_readiness/complete_final_validation_2000_status.json',
+            'data/simulations/complete_final_v1_1/release_gate_status.json'
           ]:
             p=Path(path)
             print(f'--- {path} ---')
