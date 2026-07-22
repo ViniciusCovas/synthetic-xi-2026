@@ -6,5 +6,14 @@ from pathlib import Path
 import runpy
 
 ROOT = Path(__file__).resolve().parents[1]
-runpy.run_path(str(ROOT / "scripts" / "install_complete_final_bundle.py"), run_name="__complete_final_v1_installer__")
-runpy.run_path(str(ROOT / "scripts" / "patch_complete_final_rules_v1_1.py"), run_name="__complete_final_v1_1_patch__")
+runpy.run_path(
+    str(ROOT / "scripts" / "install_complete_final_bundle.py"),
+    run_name="__complete_final_v1_installer__",
+)
+patch_namespace = runpy.run_path(
+    str(ROOT / "scripts" / "patch_complete_final_rules_v1_1.py"),
+    run_name="__complete_final_v1_1_patch__",
+)
+exit_code = int(patch_namespace["main"]())
+if exit_code:
+    raise SystemExit(exit_code)
