@@ -1,0 +1,29 @@
+{
+  "version": "complete_final_preflight_tolerances_v1",
+  "frozen_before_world_cup_2026_benchmark_execution": true,
+  "parameter_update_allowed_after_benchmark": false,
+  "absolute_mean_error_limits": {
+    "regulation_goals": 0.45,
+    "regulation_shots": 3.0,
+    "regulation_shots_on_target": 1.5,
+    "fouls": 5.0,
+    "yellow_cards": 2.0,
+    "red_cards": 0.55,
+    "substitutions": 2.5,
+    "extra_time_frequency_knockout": 0.12,
+    "shootout_frequency_knockout": 0.1
+  },
+  "coverage_requirements": {
+    "world_cup_fixtures": 0.9,
+    "core_event_metric": 0.8,
+    "weather_any_grade": 0.9,
+    "weather_reanalysis_grade_a": 0.85
+  },
+  "descriptive_not_gating_due_provider_coverage": [
+    "penalties_awarded",
+    "VAR reviews",
+    "observable injuries",
+    "stoppage time"
+  ],
+  "decision_rule": "Every gating metric must be within its frozen absolute error limit. No tolerance may be widened after reading the benchmark or the team-comparison result."
+}
