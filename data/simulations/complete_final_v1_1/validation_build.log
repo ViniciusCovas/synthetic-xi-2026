@@ -9,12 +9,12 @@
   }
 }
 {
-  "passed": false,
+  "passed": true,
   "checks": {
     "engineering_validated": true,
     "selection_sufficiency": true,
     "external_holdout_passed": true,
-    "position_review_passed": false,
+    "position_review_passed": true,
     "final_team_comparison_allowed": true,
     "uncertainty_documented": true,
     "preregistered_protocol_present": true

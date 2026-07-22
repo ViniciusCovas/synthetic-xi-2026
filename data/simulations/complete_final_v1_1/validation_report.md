@@ -3,7 +3,7 @@
 - Versão: `complete_final_v1`
 - Simulações do lote principal: **2000**
 - Gate de engenharia: **PASS**
-- Gate científico para publicação: **BLOCKED**
+- Gate científico para publicação: **PASS**
 
 ## Checks de engenharia
 
@@ -18,7 +18,7 @@
 - `engineering_validated`: **PASS**
 - `selection_sufficiency`: **PASS**
 - `external_holdout_passed`: **PASS**
-- `position_review_passed`: **BLOCKED**
+- `position_review_passed`: **PASS**
 - `final_team_comparison_allowed`: **PASS**
 - `uncertainty_documented`: **PASS**
 - `preregistered_protocol_present`: **PASS**

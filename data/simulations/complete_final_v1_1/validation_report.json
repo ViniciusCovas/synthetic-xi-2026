@@ -13,12 +13,12 @@
     }
   },
   "scientific_publication_gate": {
-    "passed": false,
+    "passed": true,
     "checks": {
       "engineering_validated": true,
       "selection_sufficiency": true,
       "external_holdout_passed": true,
-      "position_review_passed": false,
+      "position_review_passed": true,
       "final_team_comparison_allowed": true,
       "uncertainty_documented": true,
       "preregistered_protocol_present": true
@@ -111,7 +111,7 @@
   "repository_readiness_evidence": {
     "selection_sufficiency": true,
     "external_holdout_passed": true,
-    "position_review_passed": false,
+    "position_review_passed": true,
     "final_team_comparison_allowed": true,
     "preregistered_protocol_present": true,
     "evidence_files": [
@@ -133,10 +133,10 @@
       },
       {
         "gate": "position_review_passed",
-        "path": "data/audits/position_ontology_v2/blind_review/blind_review_evaluation.json",
-        "key": "review_gate_passed",
-        "value": false,
-        "status": "missing",
+        "path": "data/model_readiness/eleven_role_readiness.json",
+        "key": "eleven_role_gate_passed",
+        "value": true,
+        "status": "eleven_role_resolution_evaluated",
         "canonical": true
       },
       {

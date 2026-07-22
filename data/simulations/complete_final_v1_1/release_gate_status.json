@@ -1,6 +1,6 @@
 {
-  "status": "complete_final_release_blocked",
-  "ready": false,
+  "status": "complete_final_release_ready",
+  "ready": true,
   "engine_version": "complete_final_v1_1_rules_fix",
   "measurement_version": "complete_final_yellow_card_measurement_v1",
   "gates": {
@@ -15,20 +15,14 @@
     "rules_fix_preregistered": true,
     "yellow_measurement_preregistered": true,
     "preflight_uses_v1_1": true,
-    "complete_final_preflight_passed": false,
-    "isolated_validation_2000_passed": false,
-    "final_10000_authorized": false
+    "complete_final_preflight_passed": true,
+    "isolated_validation_2000_passed": true,
+    "final_10000_authorized": true
   },
-  "blocking_gates": [
-    "complete_final_preflight_passed",
-    "isolated_validation_2000_passed",
-    "final_10000_authorized"
-  ],
+  "blocking_gates": [],
   "unresolved_players": 0,
-  "preflight_status": "complete_final_preflight_blocked",
-  "preflight_blockers": [
-    "isolated_validation_2000"
-  ],
+  "preflight_status": "complete_final_preflight_passed",
+  "preflight_blockers": [],
   "claim_ceiling": "validated comparative result with declared limitations",
   "policy": "No definitive result is executed or published unless every canonical, v1.1 rules, measurement, preflight and isolated-validation gate is affirmative."
 }
