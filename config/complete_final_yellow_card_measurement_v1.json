@@ -1,0 +1,28 @@
+{
+  "version": "complete_final_yellow_card_measurement_v1",
+  "frozen_before_confirmatory_run": true,
+  "triggering_evidence": {
+    "engine_raw_yellow_mean": 5.09,
+    "world_cup_selected_yellow_metric": "yellow_cards_stat",
+    "world_cup_selected_yellow_mean": 2.87234,
+    "absolute_error": 2.21766,
+    "pre_registered_error_limit": 2.0,
+    "red_card_gate_uses": "event_red_cards",
+    "event_feed_second_yellow_treatment": "second-yellow events are classified with red-card events and excluded from ordinary-yellow events"
+  },
+  "measurement_alignment": {
+    "raw_yellow_cautions_preserved": true,
+    "second_yellow_red_events_preserved": true,
+    "benchmark_comparable_yellows": "raw yellow cautions minus second-yellow red events",
+    "benchmark_comparable_reds": "direct red plus second-yellow red events",
+    "double_count_across_yellow_and_red_gates": false,
+    "event_generation_changed": false,
+    "match_outcomes_changed": false,
+    "player_abilities_changed": false,
+    "team_strength_parameters_changed": false,
+    "selection_thresholds_changed": false,
+    "event_tolerances_changed": false
+  },
+  "authorization_policy": "All engineering, event-compatibility and isolated-validation gates must be rerun after measurement alignment. No prior team-comparison probability is reused.",
+  "scientific_interpretation": "Semantic measurement alignment between simulator and provider event taxonomy; not parameter fitting."
+}
