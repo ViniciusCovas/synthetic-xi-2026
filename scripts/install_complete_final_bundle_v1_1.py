@@ -25,3 +25,11 @@ measurement_namespace = runpy.run_path(
 measurement_exit_code = int(measurement_namespace["main"]())
 if measurement_exit_code:
     raise SystemExit(measurement_exit_code)
+
+json_namespace = runpy.run_path(
+    str(ROOT / "scripts" / "patch_complete_final_validation_json_v1.py"),
+    run_name="__complete_final_validation_json_patch__",
+)
+json_exit_code = int(json_namespace["main"]())
+if json_exit_code:
+    raise SystemExit(json_exit_code)
