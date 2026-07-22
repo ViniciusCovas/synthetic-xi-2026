@@ -1,10 +1,10 @@
 {
   "status": "final_release_package_built",
-  "generated_at_utc": "2026-07-20T10:21:04.193082+00:00",
+  "generated_at_utc": "2026-07-22T03:38:58.436580+00:00",
   "scientific_ready": false,
   "release_label": "v1.0-candidate",
   "blocking_gates": [
     "selection_sufficiency"
   ],
-  "manifest_files": 79
+  "manifest_files": 80
 }

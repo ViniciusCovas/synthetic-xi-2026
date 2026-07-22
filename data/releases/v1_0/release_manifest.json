@@ -1,6 +1,6 @@
 {
   "release": "v1.0-candidate",
-  "generated_at_utc": "2026-07-20T10:21:04.193082+00:00",
+  "generated_at_utc": "2026-07-22T03:38:58.436580+00:00",
   "scientific_ready": false,
   "claim_ceiling": "exploratory, calibrated and auditable simulation",
   "blocking_gates": [
@@ -60,17 +60,17 @@
     {
       "path": "data/model_readiness/candidate_coverage_status.json",
       "bytes": 796,
-      "sha256": "437afaee9e3a48e898f04386cc2e2cd29fba7f915fd4bcd3a1e463454b9188bf"
+      "sha256": "6392664af67073b7b1b28815b61102a0d945b2c111675977ce67ac65a896f106"
     },
     {
       "path": "data/model_readiness/candidate_window_coverage.csv",
-      "bytes": 644474,
-      "sha256": "4b81577d55376499ae1a1a29e6f1f49d605f275dbb770a765ec9269db1c32e5f"
+      "bytes": 358401,
+      "sha256": "d1791d591129dbc35e359bc9436be70020cfff14066382e290accde1e988cb8b"
     },
     {
       "path": "data/model_readiness/coverage_audit_summary.json",
-      "bytes": 1001,
-      "sha256": "279054c818836915f13cd8141ad43825d9e5381a8d68ae24951da2c2c119012b"
+      "bytes": 972,
+      "sha256": "91de2eb787cafb4ae052cc7dfe7396c1b090ddebe7cd98f5272ae09071ffc4e9"
     },
     {
       "path": "data/model_readiness/coverage_priority_fixtures.csv",
@@ -84,8 +84,8 @@
     },
     {
       "path": "data/model_readiness/coverage_summary_by_window.csv",
-      "bytes": 272,
-      "sha256": "1c718803fe0659b1791c9205dd094433931cb27680817a8b364084940dca006e"
+      "bytes": 243,
+      "sha256": "c06c2db5e45992b7ceb81d98d9d1994a5b72c55b67c5e45478c1ce6960d87e4c"
     },
     {
       "path": "data/model_readiness/eleven_role_candidate_counts.csv",
@@ -134,8 +134,8 @@
     },
     {
       "path": "data/model_readiness/player_window_coverage.csv",
-      "bytes": 697701,
-      "sha256": "b2057f5bf4730560eb8766bb1ec5009aff643682d248c06e0e4104690046fd51"
+      "bytes": 725501,
+      "sha256": "72732054dc92345e88468d9bca2950e6e056879dedd982935003efc49f457425"
     },
     {
       "path": "data/model_readiness/player_window_coverage_v1_season_denominator.csv",
@@ -146,6 +146,11 @@
       "path": "data/model_readiness/scientific_validation_status.json",
       "bytes": 1233,
       "sha256": "95025db242706383131f6589fd1c4108f4f4e32437ea91525efb5173db320e7b"
+    },
+    {
+      "path": "data/model_readiness/selection_challenger_reconstructed_minutes.csv",
+      "bytes": 129729,
+      "sha256": "eeba8acc44638cc1aa7fc7dd9f1809ac24e28275a022e737fc939500a55e3852"
     },
     {
       "path": "data/model_readiness/selection_frontier.csv",
@@ -159,8 +164,8 @@
     },
     {
       "path": "data/model_readiness/selection_frontier_coverage.csv",
-      "bytes": 697628,
-      "sha256": "5eb12f748a69c7ee62c7a6a543653e103d0b4706c5f71c89bc3bd34bddfb3fb6"
+      "bytes": 725428,
+      "sha256": "34c1c298070269885b0274b521af74d2aa44e02b692b99221822f24107e964cf"
     },
     {
       "path": "data/model_readiness/selection_frontier_priority_fixtures.csv",
@@ -205,7 +210,7 @@
     {
       "path": "data/validation/frozen_pre_tournament_team_strengths.csv",
       "bytes": 4285,
-      "sha256": "20a352a03e1195314b9a9aa815f7c032d48b72563e9dd4c24dbcfa4b573ef92b"
+      "sha256": "66c1d2367b3ace7a079f606d6b6019d1aaa54a3c6b4186af10ff34931c845d5d"
     },
     {
       "path": "data/validation/nested_uncertainty_summary.json",
