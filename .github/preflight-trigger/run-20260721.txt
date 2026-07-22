@@ -1,3 +1,3 @@
 Complete Final Preflight execution requested on 2026-07-21.
 This file is an internal one-shot trigger and does not change model parameters, player selection, or scientific thresholds.
-Rerun nonce: 4 — reuse hash-frozen weather and event records; execute v1.1 engineering and isolated validation.
+Rerun nonce: 5 — capture v1.1 engineering failure evidence and publish every existing audit artifact independently.
