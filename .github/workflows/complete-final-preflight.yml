@@ -117,7 +117,7 @@ jobs:
         shell: bash
         run: |
           set +e
-          python scripts/scientific/build_complete_final_v1_1_engineering_snapshot.py --simulations 1000
+          python scripts/scientific/run_complete_final_v1_1_engineering_snapshot.py --simulations 1000
           code=$?
           set -e
           echo "exit_code=$code" >> "$GITHUB_OUTPUT"
@@ -229,21 +229,28 @@ jobs:
           set -euo pipefail
           git config user.name 'synthetic-xi-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add \
-            data/context/world_cup_2026_fixture_schedule_raw.json \
-            data/context/world_cup_2026_weather_by_match.csv \
-            data/context/world_cup_2026_weather_summary.json \
-            data/context/world_cup_2026_weather_source_manifest.json \
-            data/context/world_cup_2026_event_benchmark_by_match.csv \
-            data/context/world_cup_2026_event_benchmark_summary.json \
-            data/context/complete_final_preflight_metric_audit.csv \
-            data/model_readiness/complete_final_rosters_v1.json \
-            data/model_readiness/complete_final_rules_fix_v1_1_status.json \
-            data/model_readiness/complete_final_preflight_status.json \
-            data/model_readiness/complete_final_validation_2000_status.json \
-            data/simulations/complete_final_v1_1/engineering_validation_snapshot.json \
-            data/simulations/complete_final_v1_1/validation_report.json \
-            data/simulations/complete_final_v1_1/release_gate_status.json 2>/dev/null || true
+          evidence_paths=(
+            data/context/world_cup_2026_fixture_schedule_raw.json
+            data/context/world_cup_2026_weather_by_match.csv
+            data/context/world_cup_2026_weather_summary.json
+            data/context/world_cup_2026_weather_source_manifest.json
+            data/context/world_cup_2026_event_benchmark_by_match.csv
+            data/context/world_cup_2026_event_benchmark_summary.json
+            data/context/complete_final_preflight_metric_audit.csv
+            data/model_readiness/complete_final_rosters_v1.json
+            data/model_readiness/complete_final_rules_fix_v1_1_status.json
+            data/model_readiness/complete_final_preflight_status.json
+            data/model_readiness/complete_final_validation_2000_status.json
+            data/simulations/complete_final_v1_1/engineering_validation_snapshot.json
+            data/simulations/complete_final_v1_1/engineering_build.log
+            data/simulations/complete_final_v1_1/validation_report.json
+            data/simulations/complete_final_v1_1/release_gate_status.json
+          )
+          for path in "${evidence_paths[@]}"; do
+            if [[ -e "$path" ]]; then
+              git add -- "$path"
+            fi
+          done
 
           mapfile -t unstaged_tracked < <(git diff --name-only)
           if [[ "${#unstaged_tracked[@]}" -gt 0 ]]; then
