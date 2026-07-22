@@ -1,6 +1,6 @@
 {
   "status": "complete_final_preflight_blocked",
-  "generated_at_utc": "2026-07-22T04:56:33.615977+00:00",
+  "generated_at_utc": "2026-07-22T05:45:54.798732+00:00",
   "preflight_version": "complete_final_preflight_v1",
   "complete_final_preflight_passed": false,
   "final_10000_authorized": false,
@@ -12,12 +12,14 @@
     "world_cup_2026_weather_record": false,
     "world_cup_2026_event_distribution_compatibility": false,
     "outcome_blind_freeze": true,
-    "isolated_validation_2000": false
+    "isolated_validation_2000": false,
+    "complete_final_v1_1_engineering": false
   },
   "blocking_gates": [
     "world_cup_2026_weather_record",
     "world_cup_2026_event_distribution_compatibility",
-    "isolated_validation_2000"
+    "isolated_validation_2000",
+    "complete_final_v1_1_engineering"
   ],
   "team_checks": {
     "rosters_frozen": true,
@@ -109,9 +111,23 @@
   "model_parameters_changed": false,
   "selection_thresholds_changed": false,
   "policy": "The definitive 10,000-match distribution is authorized only after the core preflight and isolated 2,000-match validation both pass.",
-  "finalized_at_utc": "2026-07-22T04:56:33.915286+00:00",
+  "finalized_at_utc": "2026-07-22T05:45:55.049511+00:00",
   "core_preflight_passed_before_validation_2000": false,
   "validation_2000_passed": false,
   "validation_2000_status": "complete_final_validation_2000_skipped_core_preflight_blocked",
-  "definitive_10000_executed": false
+  "definitive_10000_executed": false,
+  "engine_version": "complete_final_v1_1_rules_fix",
+  "engineering_evidence": {
+    "path": "data/simulations/complete_final_v1_1/engineering_validation_snapshot.json",
+    "sha256": "80a9e0c29b665c2d4951df5680bf5a69500c50b9e4bb504e943c193e651776ab",
+    "engineering_gate_passed": false,
+    "rules_fix_status_path": "data/model_readiness/complete_final_rules_fix_v1_1_status.json",
+    "rules_fix_status_sha256": "5d6a852674281a2259ded7ccd990df7e3e6146ba5f8d15236478ea55dcad658e",
+    "rules_fix_applied": true,
+    "failure_reason": "v1_1_engineering_gate_not_affirmative"
+  },
+  "v1_snapshot_preserved": true,
+  "v1_1_preflight_evaluated_at_utc": "2026-07-22T05:45:54.799009+00:00",
+  "rules_implementation_changed": true,
+  "event_tolerances_changed": false
 }

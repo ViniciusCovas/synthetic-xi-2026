@@ -1,0 +1,23 @@
+installed 8 complete-final files
+{
+  "status": "complete_final_rules_fix_v1_1_applied",
+  "version": "complete_final_v1_1_rules_fix",
+  "patch_changed_materialized_source": true,
+  "source_sha256_before_patch": "04e50e1548f590a141166387d4504c30b286f2b317c7dc87de0c65c07b747e36",
+  "source_sha256_after_patch": "bcd94d3666698dad27b1f8aec6804c781064777cc2e41d405b7b864ae58ba140",
+  "preregistered_config_sha256": "41d3767308bf71dec20a7990b090a9993f1e4c1c5f3b5f8d2d64f6cfe7b2645c",
+  "batch_rule": "ceil(remaining substitutions / remaining windows)",
+  "same_clock_batch_consumes_one_window": true,
+  "player_abilities_changed": false,
+  "team_strength_parameters_changed": false,
+  "selection_thresholds_changed": false,
+  "event_tolerances_changed": false
+}
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-xi-2026/synthetic-xi-2026/scripts/scientific/build_complete_final_v1_1_engineering_snapshot.py", line 199, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/synthetic-xi-2026/synthetic-xi-2026/scripts/scientific/build_complete_final_v1_1_engineering_snapshot.py", line 108, in main
+    maximum = 6 if result.extra_time_played else 5
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CompleteFinalResult' object has no attribute 'extra_time_played'

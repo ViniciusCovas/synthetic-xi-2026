@@ -1,0 +1,35 @@
+{
+  "status": "complete_final_release_blocked",
+  "ready": false,
+  "engine_version": "complete_final_v1_1_rules_fix",
+  "gates": {
+    "engineering_v1_1_gate_passed": false,
+    "rules_fix_v1_1_applied": true,
+    "selection_sufficiency_gate_passed": true,
+    "external_pre_tournament_validation_passed": true,
+    "eleven_role_gate_passed": true,
+    "final_team_comparison_allowed": true,
+    "preregistered_protocol_present": true,
+    "rules_fix_preregistered": true,
+    "preflight_uses_v1_1": true,
+    "complete_final_preflight_passed": false,
+    "isolated_validation_2000_passed": false,
+    "final_10000_authorized": false
+  },
+  "blocking_gates": [
+    "engineering_v1_1_gate_passed",
+    "complete_final_preflight_passed",
+    "isolated_validation_2000_passed",
+    "final_10000_authorized"
+  ],
+  "unresolved_players": 0,
+  "preflight_status": "complete_final_preflight_blocked",
+  "preflight_blockers": [
+    "world_cup_2026_weather_record",
+    "world_cup_2026_event_distribution_compatibility",
+    "isolated_validation_2000",
+    "complete_final_v1_1_engineering"
+  ],
+  "claim_ceiling": "validated comparative result with declared limitations",
+  "policy": "No definitive result is executed or published unless every canonical, v1.1 rules, preflight and isolated-validation gate is affirmative."
+}
