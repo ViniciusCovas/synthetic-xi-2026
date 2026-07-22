@@ -1,0 +1,29 @@
+{
+  "version": "complete_final_v1_1_rules_fix",
+  "frozen_before_confirmatory_run": true,
+  "triggering_evidence": {
+    "benchmark": "FIFA World Cup 2026 event record",
+    "matches": 104,
+    "observed_mean_total_substitutions": 9.615385,
+    "engine_v1_mean_total_substitutions": 6.506,
+    "absolute_error": 3.109385,
+    "pre_registered_error_limit": 2.5,
+    "gate_passed": false
+  },
+  "diagnosis": "The v1 engine consumed one substitution window for each individual replacement and scheduled only one replacement at each of three regulation marks, making the declared five-substitution rule operationally unreachable in ordinary matches.",
+  "correction": {
+    "regulation_substitution_limit_per_team": 5,
+    "regulation_window_limit_per_team": 3,
+    "window_allocation_rule": "At each remaining tactical window, replace ceil(remaining substitutions / remaining windows) distinct active outfield players; this produces 2+2+1 when no injury window has already been consumed.",
+    "same_clock_batch_consumes_one_window": true,
+    "injury_substitution_consumes_a_window": true,
+    "extra_time_additional_substitution_limit": 1,
+    "extra_time_additional_window_limit": 1,
+    "team_specific_parameters_added": false,
+    "player_abilities_changed": false,
+    "selection_thresholds_changed": false,
+    "event_tolerances_changed": false
+  },
+  "authorization_policy": "The exploratory v1 comparison is not reused. The corrected engine must repeat engineering tests, external event compatibility, the isolated 2,000-match validation and all release gates before any definitive 10,000-match execution.",
+  "scientific_interpretation": "Rules implementation correction applied symmetrically and before the confirmatory result; not an outcome-directed ability or team-strength adjustment."
+}
