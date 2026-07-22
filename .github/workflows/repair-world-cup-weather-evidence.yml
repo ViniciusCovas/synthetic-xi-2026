@@ -1,0 +1,106 @@
+name: Repair World Cup Weather Evidence
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/weather-repair-trigger/**'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: repair-world-cup-weather-evidence
+  cancel-in-progress: true
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install repair dependencies
+        run: pip install pandas requests
+
+      - name: Retry only missing weather evidence
+        env:
+          PYTHONPATH: .
+        run: python scripts/scientific/repair_world_cup_2026_weather_record.py
+
+      - name: Make future preflights execute the same non-imputing retry
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('.github/workflows/complete-final-preflight.yml')
+          text = path.read_text(encoding='utf-8')
+          repair = 'python scripts/scientific/repair_world_cup_2026_weather_record.py'
+          if repair not in text:
+              needle = '        run: python scripts/scientific/build_world_cup_2026_weather_record.py\n'
+              replacement = (
+                  '        run: |\n'
+                  '          python scripts/scientific/build_world_cup_2026_weather_record.py\n'
+                  '          python scripts/scientific/repair_world_cup_2026_weather_record.py\n'
+              )
+              if needle not in text:
+                  raise SystemExit('Could not locate frozen weather step')
+              path.write_text(text.replace(needle, replacement, 1), encoding='utf-8')
+          PY
+
+      - name: Assert weather gate evidence
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          summary = json.loads(Path('data/context/world_cup_2026_weather_summary.json').read_text())
+          assert summary['matches_in_record'] == 104, summary
+          assert summary['weather_coverage'] >= 0.90, summary
+          assert summary['missing_weather_imputed'] is False, summary
+          assert summary['outdoor_weather_used_as_indoor_pitch_measurement'] is False, summary
+          repair = summary['missing_evidence_repair']
+          assert repair['existing_available_rows_changed'] is False, repair
+          assert repair['model_parameters_changed'] is False, repair
+          print(json.dumps(summary, indent=2))
+          PY
+
+      - name: Commit repaired evidence and resilient preflight
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add \
+            data/context/world_cup_2026_weather_by_match.csv \
+            data/context/world_cup_2026_weather_summary.json \
+            data/context/world_cup_2026_weather_source_manifest.json \
+            .github/workflows/complete-final-preflight.yml
+          if git diff --cached --quiet; then
+            echo 'No missing weather evidence remains.'
+            exit 0
+          fi
+          git commit -m 'science: recover missing World Cup weather evidence without imputation'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase -X ours origin/main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 3))
+          done
+          exit 1
