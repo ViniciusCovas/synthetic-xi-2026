@@ -9,7 +9,7 @@ from simulator.official_complete_final import (
     OfficialCompleteFinalSimulator,
     OfficialFinalConfig,
 )
-from simulator.official_monte_carlo import event_sanity_gate, simulate_official_finals
+from simulator.official_monte_carlo import simulate_official_finals
 from simulator.official_profiles import ROSTER_PATH, build_official_bundles, team_rows
 
 
@@ -45,12 +45,24 @@ def test_official_runtime_matches_frozen_rosters() -> None:
     assert "explor" not in real.team.name.lower()
 
 
-def test_top_n_uses_real_n_when_pool_is_smaller() -> None:
-    synthetic, _ = build_official_bundles(top_n=30, minimum_minutes=900)
+def test_top_n_uses_real_n_when_requested_n_exceeds_role_universe() -> None:
+    requested = 1_000
+    synthetic, _ = build_official_bundles(
+        top_n=requested,
+        minimum_minutes=900,
+    )
     membership = list(synthetic.membership_rows)
     assert membership
-    assert all(1 <= int(row["top_n_real"]) <= 30 for row in membership)
-    assert any(int(row["top_n_real"]) < 30 for row in membership)
+    role_sizes: dict[str, int] = {}
+    declared_sizes: dict[str, int] = {}
+    for row in membership:
+        role = str(row["engine_role"])
+        role_sizes[role] = role_sizes.get(role, 0) + 1
+        declared_sizes[role] = int(row["top_n_real"])
+        assert 1 <= int(row["top_n_real"]) <= requested
+    assert set(role_sizes) == set(declared_sizes)
+    assert all(role_sizes[role] == declared_sizes[role] for role in role_sizes)
+    assert all(size < requested for size in role_sizes.values())
 
 
 def test_official_config_uses_stricter_discipline_defaults() -> None:
