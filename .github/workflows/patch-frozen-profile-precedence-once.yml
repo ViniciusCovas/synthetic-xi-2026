@@ -1,0 +1,92 @@
+name: Patch Frozen Profile Precedence Once
+
+on:
+  push:
+    branches:
+      - science/official-experiment-v1
+    paths:
+      - '.github/workflows/patch-frozen-profile-precedence-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch runtime and literal gate
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import re
+
+          profiles = Path('simulator/official_profiles.py')
+          text = profiles.read_text(encoding='utf-8')
+          pattern = r'def _real_profile\(entry: dict\[str, Any\], engine_role: str, frame_by_id: dict\[str, pd\.Series\]\) -> PlayerProfile:.*?(?=\n\ndef _compatible_engine_roles)'
+          replacement = '''def _real_profile(entry: dict[str, Any], engine_role: str, frame_by_id: dict[str, pd.Series]) -> PlayerProfile:\n    key = str(entry["player_id"])\n    if key not in frame_by_id:\n        raise RuntimeError(\n            f"Frozen real player {key} ({entry.get('name')}) is absent from the official eligible feature frame"\n        )\n    profile = _to_profile(frame_by_id[key], engine_role)\n    frozen_overrides = {\n        metric: float(entry[metric])\n        for metric in (\n            "overall",\n            "uncertainty",\n            "finishing",\n            "creation",\n            "goalkeeping",\n        )\n        if metric in entry and entry[metric] is not None\n    }\n    return replace(\n        profile,\n        player_id=key,\n        name=str(entry.get("name") or profile.name),\n        role=engine_role,\n        synthetic=False,\n        **frozen_overrides,\n    )'''
+          text, count = re.subn(pattern, replacement, text, count=1, flags=re.S)
+          if count != 1:
+              raise SystemExit(f'Could not patch _real_profile: {count}')
+          profiles.write_text(text, encoding='utf-8')
+
+          validator = Path('scripts/scientific/validate_official_release.py')
+          text = validator.read_text(encoding='utf-8')
+          helper_marker = '\n\ndef _canonical_structural_checks(config: dict[str, Any]) -> tuple[dict[str, bool], dict[str, Any]]:'
+          helper = '''\n\ndef _frozen_profile_mismatches(real: Any, frozen_team: dict[str, Any]) -> list[dict[str, Any]]:\n    runtime = {player.player_id: player for player in real.team.players}\n    for profiles in real.bench_by_role.values():\n        for player in profiles:\n            runtime.setdefault(player.player_id, player)\n    mismatches: list[dict[str, Any]] = []\n    for entry in list(frozen_team.get("starters", [])) + list(frozen_team.get("bench", [])):\n        player_id = str(entry["player_id"])\n        profile = runtime.get(player_id)\n        if profile is None:\n            mismatches.append({"player_id": player_id, "metric": "profile", "reason": "missing"})\n            continue\n        for metric in ("overall", "uncertainty", "finishing", "creation", "goalkeeping"):\n            if metric not in entry or entry[metric] is None:\n                continue\n            runtime_value = float(getattr(profile, metric))\n            frozen_value = float(entry[metric])\n            if abs(runtime_value - frozen_value) > 1e-12:\n                mismatches.append(\n                    {\n                        "player_id": player_id,\n                        "metric": metric,\n                        "runtime": runtime_value,\n                        "frozen": frozen_value,\n                    }\n                )\n    return mismatches\n\n\ndef _canonical_structural_checks(config: dict[str, Any]) -> tuple[dict[str, bool], dict[str, Any]]:'''
+          if 'def _frozen_profile_mismatches' not in text:
+              if helper_marker not in text:
+                  raise SystemExit('Validator helper marker missing')
+              text = text.replace(helper_marker, helper, 1)
+          checks_marker = '    checks = {\n        "canonical_rosters_match_runtime": runtime_ids == frozen_ids,'
+          checks_replacement = '    profile_mismatches = _frozen_profile_mismatches(\n        real, rosters["teams"]["real_best_xi"]\n    )\n    checks = {\n        "canonical_rosters_match_runtime": runtime_ids == frozen_ids,\n        "canonical_frozen_profile_values_match_runtime": not profile_mismatches,'
+          if '"canonical_frozen_profile_values_match_runtime"' not in text:
+              if checks_marker not in text:
+                  raise SystemExit('Validator checks marker missing')
+              text = text.replace(checks_marker, checks_replacement, 1)
+          evidence_marker = '        "real_registered_ids": sorted(runtime_ids["real"]),\n'
+          if '"frozen_profile_mismatches"' not in text:
+              if evidence_marker not in text:
+                  raise SystemExit('Validator evidence marker missing')
+              text = text.replace(
+                  evidence_marker,
+                  evidence_marker + '        "frozen_profile_mismatches": profile_mismatches,\n',
+                  1,
+              )
+          validator.write_text(text, encoding='utf-8')
+
+          config_path = Path('config/official_experiment_v1.json')
+          config = json.loads(config_path.read_text(encoding='utf-8'))
+          gates = config['mandatory_release_gates']
+          gate = 'canonical_frozen_profile_values_match_runtime'
+          if gate not in gates:
+              gates.insert(gates.index('no_provisional_profiles'), gate)
+          config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          protocol = Path('PROTOCOL_AMENDMENT_OFFICIAL_V1.md')
+          text = protocol.read_text(encoding='utf-8')
+          bullet = '- `canonical_frozen_profile_values_match_runtime = true`\n'
+          marker = '- `canonical_rosters_match_runtime = true`\n'
+          if bullet not in text:
+              if marker not in text:
+                  raise SystemExit('Protocol gate marker missing')
+              text = text.replace(marker, marker + bullet, 1)
+          protocol.write_text(text, encoding='utf-8')
+          PY
+      - name: Compile, test and commit
+        run: |
+          python -m py_compile \
+            simulator/official_profiles.py \
+            scripts/scientific/validate_official_release.py \
+            tests/test_official_experiment.py
+          PYTHONPATH=. pytest -q tests/test_official_experiment.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            simulator/official_profiles.py \
+            scripts/scientific/validate_official_release.py \
+            config/official_experiment_v1.json \
+            PROTOCOL_AMENDMENT_OFFICIAL_V1.md
+          git commit -m 'science: enforce frozen profile values at runtime'
+          git push
