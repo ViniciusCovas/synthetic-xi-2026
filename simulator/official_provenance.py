@@ -22,6 +22,9 @@ def critical_source_paths(config: dict[str, Any]) -> dict[str, Path]:
     return {
         "experiment_config": CONFIG_PATH,
         "protocol_amendment": Path(config["protocol_amendment"]),
+        "protocol_addendum_emergency_substitution": Path(
+            "PROTOCOL_AMENDMENT_OFFICIAL_V1_ADDENDUM_01.md"
+        ),
         "canonical_rosters": ROSTER_PATH,
         "rankings_authorization": Path(
             config["canonical_inputs"]["rankings_authorization"]
