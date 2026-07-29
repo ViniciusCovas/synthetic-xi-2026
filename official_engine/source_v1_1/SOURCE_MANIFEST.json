@@ -1,0 +1,34 @@
+{
+  "status": "materialized_complete_final_v1_1_source",
+  "source_bundle": "scripts/install_complete_final_bundle_v1_1.py",
+  "files": {
+    "COMPLETE_FINAL_IMPLEMENTATION.md": {
+      "bytes": 2547,
+      "sha256": "bf520e69081a8f0aa092fd3f2946ce1b96794540b6681800c15db16497b61bd7"
+    },
+    "scripts/run_complete_final_simulation.py": {
+      "bytes": 5574,
+      "sha256": "11967843181b8904ea60776fff056a20a0dea3ed6f13640e6b170822d24178ec"
+    },
+    "scripts/scientific/validate_complete_final.py": {
+      "bytes": 3489,
+      "sha256": "a741cf9de5ec5c3b71b273f353079a703ad9350be47ba82e17de1be97740b59c"
+    },
+    "simulator/complete_final.py": {
+      "bytes": 52656,
+      "sha256": "3a63bf250c2046bd32c388631e0215dff52b5c77f2343d9b362d062040b10222"
+    },
+    "simulator/complete_final_monte_carlo.py": {
+      "bytes": 11237,
+      "sha256": "1f884337e6eaca96753a1b03291e5fe2d62d252fbeab971c05abc1644dcba16c"
+    },
+    "simulator/validation.py": {
+      "bytes": 10199,
+      "sha256": "930f66b151f4d35f7360a32c744976f82778d1b98f5e55efb4935283984ffc89"
+    },
+    "tests/test_complete_final.py": {
+      "bytes": 5005,
+      "sha256": "9a33fc9a54b2a2c37ea30824fcefb2a7898a39ffe49ea005f9e2b2626e7bd992"
+    }
+  }
+}
