@@ -51,6 +51,25 @@
     "LW": "W2",
     "ST": "ST"
   },
+  "substitution_policy": {
+    "exact_role_reserve_first": true,
+    "emergency_cover_uses_only_unused_frozen_squad_member": true,
+    "emergency_cover_for_goalkeeper": false,
+    "out_of_role_ability_multiplier": 0.9,
+    "out_of_role_uncertainty_increment": 0.03,
+    "preference_matrix": {
+      "CB1": ["CB2", "FB1", "FB2", "DM"],
+      "CB2": ["CB1", "FB2", "FB1", "DM"],
+      "FB1": ["FB2", "W1", "CB1", "DM", "CM"],
+      "FB2": ["FB1", "W2", "CB2", "DM", "CM"],
+      "DM": ["CM", "CB1", "CB2", "AM", "FB1", "FB2"],
+      "CM": ["DM", "AM", "W1", "W2", "FB1", "FB2"],
+      "AM": ["CM", "W1", "W2", "ST", "DM"],
+      "W1": ["W2", "AM", "ST", "FB1", "CM"],
+      "W2": ["W1", "AM", "ST", "FB2", "CM"],
+      "ST": ["W1", "W2", "AM", "CM"]
+    }
+  },
   "discipline": {
     "fouls_per_team_90": 11.596154,
     "yellows_per_team_90": 1.43617,
@@ -118,6 +137,7 @@
   },
   "mandatory_release_gates": [
     "canonical_rosters_match_runtime",
+    "canonical_frozen_profile_values_match_runtime",
     "no_provisional_profiles",
     "no_exploratory_labels",
     "selection_sufficiency",
