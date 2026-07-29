@@ -20,6 +20,7 @@ from simulator.official_monte_carlo import (
     seed_stability_diagnostic,
     simulate_official_finals,
 )
+from simulator.official_provenance import critical_source_hashes
 from simulator.official_profiles import (
     CONFIG_PATH,
     ROSTER_PATH,
@@ -62,18 +63,7 @@ def _load() -> tuple[dict[str, Any], CalibrationTargets]:
 
 
 def _source_hashes(config: dict[str, Any]) -> dict[str, str | None]:
-    paths = {
-        "experiment_config": CONFIG_PATH,
-        "protocol_amendment": Path(config["protocol_amendment"]),
-        "canonical_rosters": ROSTER_PATH,
-        "official_profiles_source": Path("simulator/official_profiles.py"),
-        "official_engine_source": Path("simulator/official_complete_final.py"),
-        "official_monte_carlo_source": Path("simulator/official_monte_carlo.py"),
-        "official_runner_source": Path("scripts/run_official_experiment.py"),
-        "hypothesis_source": Path("scripts/scientific/analyze_official_hypotheses.py"),
-    }
-    return {name: sha256_file(path) for name, path in paths.items()}
-
+    return critical_source_hashes(config)
 
 def _require_authorization(config: dict[str, Any], hashes: dict[str, str | None]) -> dict[str, Any]:
     if not AUTHORIZATION_PATH.exists():

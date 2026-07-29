@@ -10,6 +10,7 @@ from typing import Any
 
 from simulator.official_complete_final import OFFICIAL_ENGINE_VERSION
 from simulator.official_profiles import CONFIG_PATH, ROSTER_PATH, build_official_bundles, team_rows
+from simulator.official_provenance import critical_source_hashes
 
 DEFAULT_VALIDATION = Path("data/experiments/official_v1/validation")
 DEFAULT_ROBUSTNESS = Path("data/experiments/official_v1/robustness")
@@ -44,18 +45,7 @@ def _sha(path: Path) -> str | None:
 
 
 def _source_hashes(config: dict[str, Any]) -> dict[str, str | None]:
-    paths = {
-        "experiment_config": CONFIG_PATH,
-        "protocol_amendment": Path(config["protocol_amendment"]),
-        "canonical_rosters": ROSTER_PATH,
-        "official_profiles_source": Path("simulator/official_profiles.py"),
-        "official_engine_source": Path("simulator/official_complete_final.py"),
-        "official_monte_carlo_source": Path("simulator/official_monte_carlo.py"),
-        "official_runner_source": Path("scripts/run_official_experiment.py"),
-        "hypothesis_source": Path("scripts/scientific/analyze_official_hypotheses.py"),
-    }
-    return {name: _sha(path) for name, path in paths.items()}
-
+    return critical_source_hashes(config)
 
 def _canonical_structural_checks(config: dict[str, Any]) -> tuple[dict[str, bool], dict[str, Any]]:
     inputs = config["canonical_inputs"]
