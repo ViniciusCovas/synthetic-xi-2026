@@ -27,10 +27,14 @@ def critical_source_paths(config: dict[str, Any]) -> dict[str, Path]:
             config["canonical_inputs"]["rankings_authorization"]
         ),
         "requirements": Path("requirements.txt"),
+        "simulator_package_policy": Path("simulator/__init__.py"),
         "official_features_source": Path("simulator/official_features.py"),
         "official_profiles_source": Path("simulator/official_profiles.py"),
         "official_profile_sensitivity_source": Path(
             "simulator/official_profile_sensitivity.py"
+        ),
+        "official_frozen_runtime_source": Path(
+            "simulator/official_frozen_runtime.py"
         ),
         "official_engine_source": Path("simulator/official_complete_final.py"),
         "official_monte_carlo_source": Path("simulator/official_monte_carlo.py"),
