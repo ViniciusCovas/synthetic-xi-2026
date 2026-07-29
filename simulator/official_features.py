@@ -1,13 +1,12 @@
 """Configurable feature construction for official minute-threshold analyses.
 
-The historical ``profiles.load_feature_table`` intentionally freezes a 450-minute
-exploratory floor.  Official v1 requires genuine 180, 450 and 900-minute runs,
-so this module reconstructs the same transparent features while applying the
-requested threshold exactly.
+The historical profile scale was estimated on players with at least 450 minutes.
+Official v1 keeps that scale fixed and changes only the eligibility threshold in
+180/450/900-minute sensitivity runs.  This preserves the frozen real-player
+values while allowing genuinely lower-minute candidates to enter sensitivity
+pools without redefining every player's ability scale.
 """
 from __future__ import annotations
-
-from typing import Any
 
 import numpy as np
 import pandas as pd
@@ -18,15 +17,33 @@ from .profiles import (
     TOTALS_PATH,
     _canonicalize,
     _infer_role,
-    _robust_unit,
     _role_score,
     _safe_div,
 )
 
+REFERENCE_MINUTES = 450
+LOWEST_SUPPORTED_MINUTES = 180
+
+
+def _reference_unit(series: pd.Series, reference: pd.Series) -> pd.Series:
+    numeric = pd.to_numeric(series, errors="coerce")
+    reference_numeric = pd.to_numeric(reference, errors="coerce")
+    median = reference_numeric.median()
+    scale = max(
+        float(reference_numeric.quantile(0.75) - reference_numeric.quantile(0.25)),
+        1e-9,
+    )
+    z = (numeric - median) / scale
+    return (1.0 / (1.0 + np.exp(-z.clip(-8, 8)))).fillna(0.5)
+
 
 def load_official_feature_table(minimum_minutes: int) -> pd.DataFrame:
-    if int(minimum_minutes) < 1:
-        raise ValueError("minimum_minutes must be positive")
+    minimum_minutes = int(minimum_minutes)
+    if minimum_minutes < LOWEST_SUPPORTED_MINUTES:
+        raise ValueError(
+            f"minimum_minutes must be >= {LOWEST_SUPPORTED_MINUTES} for official_v1"
+        )
+
     totals = pd.read_csv(TOTALS_PATH)
     roles = pd.read_csv(ROLE_PATH)
     for column in NUMERIC_METRICS:
@@ -60,13 +77,13 @@ def load_official_feature_table(minimum_minutes: int) -> pd.DataFrame:
     frame["minutes_num"] = pd.to_numeric(
         frame["minutes_num"], errors="coerce"
     ).fillna(0.0)
-    frame = frame.loc[frame["minutes_num"] >= float(minimum_minutes)].copy()
+    frame = frame.loc[
+        frame["minutes_num"] >= float(LOWEST_SUPPORTED_MINUTES)
+    ].copy()
     if frame.empty:
-        raise RuntimeError(
-            f"No players satisfy exact minimum_minutes={minimum_minutes}"
-        )
-    minutes_factor = frame["minutes_num"] / 90.0
+        raise RuntimeError("No players satisfy the official lower reference floor")
 
+    minutes_factor = frame["minutes_num"] / 90.0
     count_cols = [
         "shots_total",
         "shots_on",
@@ -134,6 +151,9 @@ def load_official_feature_table(minimum_minutes: int) -> pd.DataFrame:
         1.5 * frame["saves_p90"] + 0.2 * frame["pass_completion"]
     )
 
+    reference_mask = frame["minutes_num"] >= float(REFERENCE_MINUTES)
+    if not reference_mask.any():
+        raise RuntimeError("The frozen 450-minute reference cohort is empty")
     for dimension in (
         "build_up",
         "progression",
@@ -144,17 +164,30 @@ def load_official_feature_table(minimum_minutes: int) -> pd.DataFrame:
         "retention",
         "goalkeeping",
     ):
-        frame[dimension] = _robust_unit(frame[f"{dimension}_raw"])
+        raw = f"{dimension}_raw"
+        frame[dimension] = _reference_unit(
+            frame[raw],
+            frame.loc[reference_mask, raw],
+        )
 
     frame["exploratory_role"] = frame.apply(_infer_role, axis=1)
     frame["overall"] = frame.apply(_role_score, axis=1)
     frame["uncertainty"] = (
         0.22
         / np.sqrt(
-            (frame["minutes_num"] / float(minimum_minutes)).clip(lower=1.0)
+            (frame["minutes_num"] / float(REFERENCE_MINUTES)).clip(lower=1.0)
         )
     ).clip(0.035, 0.18)
     frame["conservative_score"] = frame["overall"] - frame["uncertainty"]
-    frame["official_minimum_minutes"] = int(minimum_minutes)
+    frame["official_minimum_minutes"] = minimum_minutes
+    frame["feature_reference_minutes"] = REFERENCE_MINUTES
     frame["player_id_key"] = frame["player_id"].astype(str)
-    return frame
+
+    eligible = frame.loc[
+        frame["minutes_num"] >= float(minimum_minutes)
+    ].copy()
+    if eligible.empty:
+        raise RuntimeError(
+            f"No players satisfy exact minimum_minutes={minimum_minutes}"
+        )
+    return eligible
