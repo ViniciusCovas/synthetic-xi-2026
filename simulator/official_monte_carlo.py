@@ -358,7 +358,7 @@ def paired_orientation_diagnostic(
     return {
         "engine_version": OFFICIAL_ENGINE_VERSION,
         "simulations_per_orientation": int(simulations),
-        "common_random_numbers": true,
+        "common_random_numbers": True,
         "synthetic_probability_as_home": first_probability,
         "synthetic_probability_as_away": second_probability,
         "absolute_orientation_difference": difference,
