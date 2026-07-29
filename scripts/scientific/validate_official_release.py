@@ -249,14 +249,21 @@ def main() -> None:
         )
 
     all_checks = {**structural_checks, **release_checks}
-    missing_or_failed_mandatory = [
-        gate
-        for gate in config["mandatory_release_gates"]
-        if gate not in all_checks or not bool(all_checks[gate])
-    ]
-    all_checks["mandatory_release_gates_all_present_and_true"] = (
-        not missing_or_failed_mandatory
-    )
+    if args.mode == "release":
+        missing_or_failed_mandatory = [
+            gate
+            for gate in config["mandatory_release_gates"]
+            if gate not in all_checks or not bool(all_checks[gate])
+        ]
+        all_checks["mandatory_release_gates_all_present_and_true"] = (
+            not missing_or_failed_mandatory
+        )
+    else:
+        missing_or_failed_mandatory = []
+        all_checks["structural_gate_set_passed"] = all(
+            structural_checks.values()
+        )
+
     blockers = [name for name, passed in all_checks.items() if not passed]
     passed = not blockers
 
