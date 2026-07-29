@@ -1,0 +1,92 @@
+name: Run Official v1 Final Validation
+
+on:
+  push:
+    branches:
+      - science/official-experiment-v1
+    paths:
+      - '.github/workflows/run-official-validation-final.yml'
+
+permissions:
+  contents: write
+
+env:
+  PYTHONHASHSEED: '0'
+  PIP_DISABLE_PIP_VERSION_CHECK: '1'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Compile, preflight and test frozen source
+        run: |
+          python -m py_compile \
+            simulator/official_features.py \
+            simulator/official_profiles.py \
+            simulator/official_profile_sensitivity.py \
+            simulator/official_complete_final.py \
+            simulator/official_monte_carlo.py \
+            simulator/official_provenance.py \
+            scripts/run_official_experiment.py \
+            scripts/scientific/analyze_official_hypotheses.py \
+            scripts/scientific/run_official_robustness.py \
+            scripts/scientific/validate_official_release.py \
+            tests/test_official_experiment.py
+          PYTHONPATH=. python scripts/scientific/validate_official_release.py \
+            --mode structural \
+            --status-output /tmp/official_structural_preflight.json
+          PYTHONPATH=. pytest -q tests/test_official_experiment.py
+      - name: Run isolated 2000-final validation
+        run: |
+          PYTHONPATH=. python scripts/run_official_experiment.py \
+            --mode validation \
+            --output data/experiments/official_v1
+      - name: Run exact-engine sensitivity and nested uncertainty
+        run: |
+          PYTHONPATH=. python scripts/scientific/run_official_robustness.py \
+            --output data/experiments/official_v1/robustness
+      - name: Evaluate literal release gates
+        run: |
+          PYTHONPATH=. python scripts/scientific/validate_official_release.py \
+            --mode release \
+            --validation data/experiments/official_v1/validation \
+            --robustness data/experiments/official_v1/robustness
+      - name: Commit compact authorization evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            data/model_readiness/official_experiment_v1_preflight_status.json \
+            data/model_readiness/official_release_authorization_v1.json \
+            data/experiments/official_v1/validation/simulation_summary.json \
+            data/experiments/official_v1/validation/manifest.json \
+            data/experiments/official_v1/validation/official_hypotheses_summary.json \
+            data/experiments/official_v1/validation/official_h7_state_rates.csv \
+            data/experiments/official_v1/validation/official_h7_interactions.csv \
+            data/experiments/official_v1/robustness/official_sensitivity_summary.json \
+            data/experiments/official_v1/robustness/official_sensitivity_scenarios.csv \
+            data/experiments/official_v1/robustness/official_nested_uncertainty_summary.json
+          git commit -m 'science: authorize official experiment v1 release'
+          git push
+      - name: Upload complete validation package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-v1-final-validation-${{ github.run_id }}
+          path: |
+            data/experiments/official_v1
+            data/model_readiness/official_experiment_v1_preflight_status.json
+            data/model_readiness/official_release_authorization_v1.json
+            /tmp/official_structural_preflight.json
+          if-no-files-found: warn
+          retention-days: 90
