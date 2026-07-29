@@ -1,21 +1,23 @@
-"""Canonical runtime wrappers that enforce all explicitly frozen real values.
+"""Canonical runtime wrappers for official_experiment_v1.
 
-The roster freeze contains a subset of profile dimensions reviewed for each real
-player.  Those values take precedence over auxiliary feature reconstruction.
-Dimensions not present in the freeze remain sourced from the audited feature
-frame.  The historical profile builders are preserved unchanged.
+The roster freeze contains reviewed real-player dimensions that take precedence
+over auxiliary reconstruction.  This module also defines the preregistered
+emergency substitution policy used only when all unused exact-role reserves are
+exhausted: another unused member of the frozen 26-player squad may cover a
+compatible role with an explicit ability penalty and increased uncertainty.
 """
 from __future__ import annotations
 
 from dataclasses import replace
 import json
-from typing import Any
+from typing import Any, Iterable
 
 from .engine import PlayerProfile, TeamProfile
 from .official_profiles import (
     ROSTER_PATH,
     OfficialTeamBundle,
     build_official_bundles as _build_official_bundles,
+    compatible_reserves as _exact_compatible_reserves,
 )
 from .official_profile_sensitivity import (
     RoleVariant,
@@ -27,6 +29,32 @@ FROZEN_PROFILE_METRICS = (
     "uncertainty",
     "finishing",
     "creation",
+    "goalkeeping",
+)
+OUT_OF_ROLE_ABILITY_MULTIPLIER = 0.90
+OUT_OF_ROLE_UNCERTAINTY_INCREMENT = 0.03
+EMERGENCY_ROLE_PREFERENCE: dict[str, tuple[str, ...]] = {
+    "GK": (),
+    "CB1": ("CB2", "FB1", "FB2", "DM"),
+    "CB2": ("CB1", "FB2", "FB1", "DM"),
+    "FB1": ("FB2", "W1", "CB1", "DM", "CM"),
+    "FB2": ("FB1", "W2", "CB2", "DM", "CM"),
+    "DM": ("CM", "CB1", "CB2", "AM", "FB1", "FB2"),
+    "CM": ("DM", "AM", "W1", "W2", "FB1", "FB2"),
+    "AM": ("CM", "W1", "W2", "ST", "DM"),
+    "W1": ("W2", "AM", "ST", "FB1", "CM"),
+    "W2": ("W1", "AM", "ST", "FB2", "CM"),
+    "ST": ("W1", "W2", "AM", "CM"),
+}
+ABILITY_FIELDS = (
+    "overall",
+    "build_up",
+    "progression",
+    "creation",
+    "finishing",
+    "defending",
+    "duels",
+    "retention",
     "goalkeeping",
 )
 
@@ -73,9 +101,7 @@ def enforce_frozen_real_values(bundle: OfficialTeamBundle) -> OfficialTeamBundle
         role: tuple(_patch_profile(player, entries) for player in players)
         for role, players in bundle.bench_by_role.items()
     }
-    runtime_ids = {
-        player.player_id for player in team.players
-    } | {
+    runtime_ids = {player.player_id for player in team.players} | {
         player.player_id
         for players in bench_by_role.values()
         for player in players
@@ -144,3 +170,58 @@ def frozen_profile_mismatches(bundle: OfficialTeamBundle) -> list[dict[str, Any]
                     }
                 )
     return mismatches
+
+
+def _penalize_out_of_role(profile: PlayerProfile, target_role: str) -> PlayerProfile:
+    overrides = {
+        field: max(0.0, min(1.0, float(getattr(profile, field)) * OUT_OF_ROLE_ABILITY_MULTIPLIER))
+        for field in ABILITY_FIELDS
+    }
+    return replace(
+        profile,
+        role=target_role,
+        uncertainty=min(
+            0.30,
+            float(profile.uncertainty) + OUT_OF_ROLE_UNCERTAINTY_INCREMENT,
+        ),
+        **overrides,
+    )
+
+
+def compatible_reserves(
+    bundle: OfficialTeamBundle,
+    role: str,
+    used_ids: Iterable[str],
+) -> list[PlayerProfile]:
+    """Return exact reserves, then deterministic emergency frozen-squad cover.
+
+    Emergency cover never creates a new identity and never reuses a player.  It
+    is unavailable for goalkeeper because each frozen squad already contains the
+    required emergency goalkeeper order.
+    """
+    exact = _exact_compatible_reserves(bundle, role, used_ids)
+    if exact:
+        return exact
+    if role == "GK":
+        return []
+
+    used = {str(value) for value in used_ids}
+    seen: set[str] = set()
+    candidates: list[tuple[int, float, PlayerProfile]] = []
+    preferences = EMERGENCY_ROLE_PREFERENCE.get(role, ())
+    for preference_rank, source_role in enumerate(preferences):
+        for profile in bundle.bench_by_role.get(source_role, ()):
+            player_id = str(profile.player_id)
+            if player_id in used or player_id in seen:
+                continue
+            seen.add(player_id)
+            conservative = float(profile.overall) - float(profile.uncertainty)
+            candidates.append(
+                (
+                    preference_rank,
+                    -conservative,
+                    _penalize_out_of_role(profile, role),
+                )
+            )
+    candidates.sort(key=lambda item: (item[0], item[1], item[2].player_id))
+    return [item[2] for item in candidates]
