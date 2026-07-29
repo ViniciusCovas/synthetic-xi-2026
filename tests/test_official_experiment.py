@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import numpy as np
+
 from simulator.calibrated_core import CalibrationTargets
 from simulator.official_complete_final import (
     OFFICIAL_ENGINE_VERSION,
@@ -12,6 +14,7 @@ from simulator.official_complete_final import (
 from simulator.official_features import load_official_feature_table
 from simulator.official_monte_carlo import simulate_official_finals
 from simulator.official_profiles import ROSTER_PATH, build_official_bundles, team_rows
+from simulator.profiles import load_feature_table
 
 
 def targets() -> CalibrationTargets:
@@ -23,7 +26,7 @@ def targets() -> CalibrationTargets:
     return CalibrationTargets.from_dict(payload)
 
 
-def test_official_runtime_matches_frozen_rosters() -> None:
+def test_official_runtime_matches_frozen_rosters_and_profile_values() -> None:
     roster = json.loads(ROSTER_PATH.read_text(encoding="utf-8"))
     synthetic, real = build_official_bundles(top_n=20, minimum_minutes=900)
     frozen_synthetic = {
@@ -45,8 +48,33 @@ def test_official_runtime_matches_frozen_rosters() -> None:
     assert "explor" not in synthetic.team.name.lower()
     assert "explor" not in real.team.name.lower()
 
+    runtime_profiles = {player.player_id: player for player in real.team.players}
+    for profiles in real.bench_by_role.values():
+        for player in profiles:
+            runtime_profiles.setdefault(player.player_id, player)
+    frozen_entries = (
+        roster["teams"]["real_best_xi"]["starters"]
+        + roster["teams"]["real_best_xi"]["bench"]
+    )
+    assert set(runtime_profiles) == frozen_real
+    for entry in frozen_entries:
+        profile = runtime_profiles[str(entry["player_id"])]
+        for metric in (
+            "overall",
+            "uncertainty",
+            "finishing",
+            "creation",
+            "goalkeeping",
+        ):
+            assert np.isclose(
+                float(getattr(profile, metric)),
+                float(entry[metric]),
+                atol=1e-12,
+                rtol=0.0,
+            ), (entry["player_id"], metric, getattr(profile, metric), entry[metric])
 
-def test_minimum_minutes_sensitivity_is_exact() -> None:
+
+def test_minimum_minutes_sensitivity_is_exact_and_scale_is_fixed() -> None:
     frame_180 = load_official_feature_table(180)
     frame_450 = load_official_feature_table(450)
     frame_900 = load_official_feature_table(900)
@@ -55,6 +83,30 @@ def test_minimum_minutes_sensitivity_is_exact() -> None:
     assert frame_900.minutes_num.min() >= 900
     assert len(frame_180) >= len(frame_450) >= len(frame_900)
     assert (frame_180.minutes_num < 450).any()
+
+    historical = load_feature_table().set_index("player_id").sort_index()
+    official = frame_450.set_index("player_id").sort_index()
+    common = historical.index.intersection(official.index)
+    assert len(common) == len(historical)
+    for metric in (
+        "build_up",
+        "progression",
+        "creation",
+        "finishing",
+        "defending",
+        "duels",
+        "retention",
+        "goalkeeping",
+        "overall",
+        "uncertainty",
+        "conservative_score",
+    ):
+        assert np.allclose(
+            historical.loc[common, metric].to_numpy(dtype=float),
+            official.loc[common, metric].to_numpy(dtype=float),
+            atol=1e-12,
+            rtol=0.0,
+        ), metric
 
 
 def test_top_n_uses_real_n_when_requested_n_exceeds_role_universe() -> None:
