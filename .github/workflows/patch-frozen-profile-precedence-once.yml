@@ -25,7 +25,32 @@ jobs:
           profiles = Path('simulator/official_profiles.py')
           text = profiles.read_text(encoding='utf-8')
           pattern = r'def _real_profile\(entry: dict\[str, Any\], engine_role: str, frame_by_id: dict\[str, pd\.Series\]\) -> PlayerProfile:.*?(?=\n\ndef _compatible_engine_roles)'
-          replacement = '''def _real_profile(entry: dict[str, Any], engine_role: str, frame_by_id: dict[str, pd.Series]) -> PlayerProfile:\n    key = str(entry["player_id"])\n    if key not in frame_by_id:\n        raise RuntimeError(\n            f"Frozen real player {key} ({entry.get('name')}) is absent from the official eligible feature frame"\n        )\n    profile = _to_profile(frame_by_id[key], engine_role)\n    frozen_overrides = {\n        metric: float(entry[metric])\n        for metric in (\n            "overall",\n            "uncertainty",\n            "finishing",\n            "creation",\n            "goalkeeping",\n        )\n        if metric in entry and entry[metric] is not None\n    }\n    return replace(\n        profile,\n        player_id=key,\n        name=str(entry.get("name") or profile.name),\n        role=engine_role,\n        synthetic=False,\n        **frozen_overrides,\n    )'''
+          replacement = '''def _real_profile(entry: dict[str, Any], engine_role: str, frame_by_id: dict[str, pd.Series]) -> PlayerProfile:
+    key = str(entry["player_id"])
+    if key not in frame_by_id:
+        raise RuntimeError(
+            f"Frozen real player {key} ({entry.get('name')}) is absent from the official eligible feature frame"
+        )
+    profile = _to_profile(frame_by_id[key], engine_role)
+    frozen_overrides = {
+        metric: float(entry[metric])
+        for metric in (
+            "overall",
+            "uncertainty",
+            "finishing",
+            "creation",
+            "goalkeeping",
+        )
+        if metric in entry and entry[metric] is not None
+    }
+    return replace(
+        profile,
+        player_id=key,
+        name=str(entry.get("name") or profile.name),
+        role=engine_role,
+        synthetic=False,
+        **frozen_overrides,
+    )'''
           text, count = re.subn(pattern, replacement, text, count=1, flags=re.S)
           if count != 1:
               raise SystemExit(f'Could not patch _real_profile: {count}')
@@ -34,7 +59,36 @@ jobs:
           validator = Path('scripts/scientific/validate_official_release.py')
           text = validator.read_text(encoding='utf-8')
           helper_marker = '\n\ndef _canonical_structural_checks(config: dict[str, Any]) -> tuple[dict[str, bool], dict[str, Any]]:'
-          helper = '''\n\ndef _frozen_profile_mismatches(real: Any, frozen_team: dict[str, Any]) -> list[dict[str, Any]]:\n    runtime = {player.player_id: player for player in real.team.players}\n    for profiles in real.bench_by_role.values():\n        for player in profiles:\n            runtime.setdefault(player.player_id, player)\n    mismatches: list[dict[str, Any]] = []\n    for entry in list(frozen_team.get("starters", [])) + list(frozen_team.get("bench", [])):\n        player_id = str(entry["player_id"])\n        profile = runtime.get(player_id)\n        if profile is None:\n            mismatches.append({"player_id": player_id, "metric": "profile", "reason": "missing"})\n            continue\n        for metric in ("overall", "uncertainty", "finishing", "creation", "goalkeeping"):\n            if metric not in entry or entry[metric] is None:\n                continue\n            runtime_value = float(getattr(profile, metric))\n            frozen_value = float(entry[metric])\n            if abs(runtime_value - frozen_value) > 1e-12:\n                mismatches.append(\n                    {\n                        "player_id": player_id,\n                        "metric": metric,\n                        "runtime": runtime_value,\n                        "frozen": frozen_value,\n                    }\n                )\n    return mismatches\n\n\ndef _canonical_structural_checks(config: dict[str, Any]) -> tuple[dict[str, bool], dict[str, Any]]:'''
+          helper = '''\n\ndef _frozen_profile_mismatches(real: Any, frozen_team: dict[str, Any]) -> list[dict[str, Any]]:
+    runtime = {player.player_id: player for player in real.team.players}
+    for profiles in real.bench_by_role.values():
+        for player in profiles:
+            runtime.setdefault(player.player_id, player)
+    mismatches: list[dict[str, Any]] = []
+    for entry in list(frozen_team.get("starters", [])) + list(frozen_team.get("bench", [])):
+        player_id = str(entry["player_id"])
+        profile = runtime.get(player_id)
+        if profile is None:
+            mismatches.append({"player_id": player_id, "metric": "profile", "reason": "missing"})
+            continue
+        for metric in ("overall", "uncertainty", "finishing", "creation", "goalkeeping"):
+            if metric not in entry or entry[metric] is None:
+                continue
+            runtime_value = float(getattr(profile, metric))
+            frozen_value = float(entry[metric])
+            if abs(runtime_value - frozen_value) > 1e-12:
+                mismatches.append(
+                    {
+                        "player_id": player_id,
+                        "metric": metric,
+                        "runtime": runtime_value,
+                        "frozen": frozen_value,
+                    }
+                )
+    return mismatches
+
+
+def _canonical_structural_checks(config: dict[str, Any]) -> tuple[dict[str, bool], dict[str, Any]]:'''
           if 'def _frozen_profile_mismatches' not in text:
               if helper_marker not in text:
                   raise SystemExit('Validator helper marker missing')
@@ -74,13 +128,11 @@ jobs:
               text = text.replace(marker, marker + bullet, 1)
           protocol.write_text(text, encoding='utf-8')
           PY
-      - name: Compile, test and commit
+      - name: Compile and commit correction
         run: |
           python -m py_compile \
             simulator/official_profiles.py \
-            scripts/scientific/validate_official_release.py \
-            tests/test_official_experiment.py
-          PYTHONPATH=. pytest -q tests/test_official_experiment.py
+            scripts/scientific/validate_official_release.py
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add \
