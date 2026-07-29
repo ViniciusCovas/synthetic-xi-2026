@@ -1,0 +1,25 @@
+{
+  "status": "official_rankings_authorization_v1_evaluated",
+  "version": "official_rankings_authorization_v1",
+  "historical_role_file_preserved": "data/model_readiness/eleven_role_readiness.json",
+  "historical_rankings_allowed_value": false,
+  "official_rankings_allowed": true,
+  "scope": "Only the frozen official_v1 roster and role mapping; this does not rewrite historical exploratory authorization.",
+  "basis": {
+    "eleven_role_gate_passed": true,
+    "orientation_validated": true,
+    "selection_sufficiency_gate_passed": true,
+    "unresolved_players": 0,
+    "canonical_rosters_frozen": true,
+    "distinct_real_players_required": true,
+    "deterministic_tie_breakers_required": true,
+    "runtime_roster_hash_match_required": true
+  },
+  "conditions": [
+    "The runtime must load complete_final_rosters_v1.json directly.",
+    "All eleven starter IDs and all 26 registered squad IDs must match the frozen roster.",
+    "No provisional profile or exploratory label is permitted.",
+    "Any mismatch makes official_rankings_allowed false at runtime."
+  ],
+  "claim_ceiling": "ranking and team comparison under the official_v1 model, data and declared limitations"
+}
