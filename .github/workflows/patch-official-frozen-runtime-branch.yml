@@ -1,0 +1,153 @@
+name: Patch Official Branch to Frozen Runtime
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/patch-official-frozen-runtime-branch.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout scientific branch
+        uses: actions/checkout@v4
+        with:
+          ref: science/official-experiment-v1
+          fetch-depth: 1
+
+      - name: Route every official consumer through frozen runtime
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+
+          def replace_once(path: str, old: str, new: str) -> None:
+              file = Path(path)
+              text = file.read_text(encoding='utf-8')
+              if old not in text:
+                  if new in text:
+                      return
+                  raise SystemExit(f'Marker missing in {path}: {old!r}')
+              file.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          replace_once(
+              'scripts/run_official_experiment.py',
+              'from simulator.official_provenance import critical_source_hashes\nfrom simulator.official_profiles import (\n    CONFIG_PATH,\n    ROSTER_PATH,\n    bench_rows,\n    build_official_bundles,\n    team_rows,\n)',
+              'from simulator.official_frozen_runtime import build_official_bundles\nfrom simulator.official_provenance import critical_source_hashes\nfrom simulator.official_profiles import (\n    CONFIG_PATH,\n    ROSTER_PATH,\n    bench_rows,\n    team_rows,\n)',
+          )
+
+          replace_once(
+              'scripts/scientific/validate_official_release.py',
+              'from simulator.official_complete_final import OFFICIAL_ENGINE_VERSION\nfrom simulator.official_profiles import CONFIG_PATH, ROSTER_PATH, build_official_bundles, team_rows\nfrom simulator.official_provenance import critical_source_hashes',
+              'from simulator.official_complete_final import OFFICIAL_ENGINE_VERSION\nfrom simulator.official_frozen_runtime import (\n    build_official_bundles,\n    frozen_profile_mismatches,\n)\nfrom simulator.official_profiles import CONFIG_PATH, ROSTER_PATH, team_rows\nfrom simulator.official_provenance import critical_source_hashes',
+          )
+
+          validator = Path('scripts/scientific/validate_official_release.py')
+          text = validator.read_text(encoding='utf-8')
+          old = '    checks = {\n        "canonical_rosters_match_runtime": runtime_ids == frozen_ids,'
+          new = '    profile_mismatches = frozen_profile_mismatches(real)\n    checks = {\n        "canonical_rosters_match_runtime": runtime_ids == frozen_ids,\n        "canonical_frozen_profile_values_match_runtime": not profile_mismatches,'
+          if '"canonical_frozen_profile_values_match_runtime"' not in text:
+              if old not in text:
+                  raise SystemExit('Validator structural check marker missing')
+              text = text.replace(old, new, 1)
+          evidence_old = '        "real_registered_ids": sorted(runtime_ids["real"]),\n'
+          evidence_new = evidence_old + '        "frozen_profile_mismatches": profile_mismatches,\n'
+          if '"frozen_profile_mismatches"' not in text:
+              if evidence_old not in text:
+                  raise SystemExit('Validator evidence marker missing')
+              text = text.replace(evidence_old, evidence_new, 1)
+          validator.write_text(text, encoding='utf-8')
+
+          replace_once(
+              'tests/test_official_experiment.py',
+              'from simulator.official_monte_carlo import simulate_official_finals\nfrom simulator.official_profiles import ROSTER_PATH, build_official_bundles, team_rows',
+              'from simulator.official_frozen_runtime import build_official_bundles\nfrom simulator.official_monte_carlo import simulate_official_finals\nfrom simulator.official_profiles import ROSTER_PATH, team_rows',
+          )
+
+          replace_once(
+              'scripts/scientific/run_official_robustness.py',
+              'from simulator.official_profile_sensitivity import build_official_bundles_with_role_variant',
+              'from simulator.official_frozen_runtime import build_official_bundles_with_role_variant',
+          )
+
+          provenance = Path('simulator/official_provenance.py')
+          text = provenance.read_text(encoding='utf-8')
+          marker = '        "official_features_source": Path("simulator/official_features.py"),\n'
+          insertion = marker + '        "official_frozen_runtime_source": Path("simulator/official_frozen_runtime.py"),\n'
+          if '"official_frozen_runtime_source"' not in text:
+              if marker not in text:
+                  raise SystemExit('Provenance feature marker missing')
+              text = text.replace(marker, insertion, 1)
+          provenance.write_text(text, encoding='utf-8')
+
+          config_path = Path('config/official_experiment_v1.json')
+          config = json.loads(config_path.read_text(encoding='utf-8'))
+          gate = 'canonical_frozen_profile_values_match_runtime'
+          gates = config['mandatory_release_gates']
+          if gate not in gates:
+              gates.insert(gates.index('no_provisional_profiles'), gate)
+          config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          protocol = Path('PROTOCOL_AMENDMENT_OFFICIAL_V1.md')
+          text = protocol.read_text(encoding='utf-8')
+          marker = '- `canonical_rosters_match_runtime = true`\n'
+          bullet = '- `canonical_frozen_profile_values_match_runtime = true`\n'
+          if bullet not in text:
+              if marker not in text:
+                  raise SystemExit('Protocol canonical roster gate missing')
+              text = text.replace(marker, marker + bullet, 1)
+          protocol.write_text(text, encoding='utf-8')
+
+          for workflow_path in (
+              '.github/workflows/official-experiment-v1.yml',
+              '.github/workflows/official-pr-smoke.yml',
+          ):
+              workflow = Path(workflow_path)
+              text = workflow.read_text(encoding='utf-8')
+              marker = '            simulator/official_profiles.py \\\n'
+              insert = '            simulator/official_frozen_runtime.py \\\n' + marker
+              if 'simulator/official_frozen_runtime.py' not in text:
+                  if marker not in text:
+                      raise SystemExit(f'Compile marker missing in {workflow_path}')
+                  text = text.replace(marker, insert, 1)
+              workflow.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Compile patched branch
+        run: |
+          python -m py_compile \
+            simulator/official_features.py \
+            simulator/official_profiles.py \
+            simulator/official_profile_sensitivity.py \
+            simulator/official_frozen_runtime.py \
+            simulator/official_complete_final.py \
+            simulator/official_monte_carlo.py \
+            simulator/official_provenance.py \
+            scripts/run_official_experiment.py \
+            scripts/scientific/analyze_official_hypotheses.py \
+            scripts/scientific/run_official_robustness.py \
+            scripts/scientific/validate_official_release.py \
+            tests/test_official_experiment.py
+
+      - name: Commit branch correction
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            simulator/official_frozen_runtime.py \
+            simulator/official_provenance.py \
+            scripts/run_official_experiment.py \
+            scripts/scientific/run_official_robustness.py \
+            scripts/scientific/validate_official_release.py \
+            tests/test_official_experiment.py \
+            config/official_experiment_v1.json \
+            PROTOCOL_AMENDMENT_OFFICIAL_V1.md \
+            .github/workflows/official-experiment-v1.yml \
+            .github/workflows/official-pr-smoke.yml
+          git commit -m 'science: route official v1 through frozen runtime values'
+          git push origin HEAD:science/official-experiment-v1
