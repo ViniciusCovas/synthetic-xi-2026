@@ -1,72 +1,136 @@
 # Synthetic XI 2026 Lab
 
-Laboratorio científico reproducible para construir avatares sintéticos por posición con datos acumulados de la Copa Mundial de 2026 y compararlos con los mejores futbolistas reales del mismo corte.
+Laboratorio científico reproducible para construir avatares sintéticos por posición y compararlos con futbolistas y equipos reales bajo datos, supuestos y límites de afirmación explícitos.
 
-## Dos estudios
+## Estudios
 
 ### Estudio 1 — Avatares posicionales vs élite individual
 
-Compara ocho avatares (`GK`, `CB`, `FB`, `DM`, `CM`, `AM`, `W`, `ST`) con el jugador real número 1 de cada posición. El avatar principal es el centroide robusto de los **Top 20** elegibles.
+Compara ocho arquetipos (`GK`, `CB`, `FB`, `DM`, `CM`, `AM`, `W`, `ST`) con benchmarks reales de la misma función. El análisis principal utiliza un centro robusto Top 20; Top 10 y Top 30 son sensibilidades y siempre se informa el N real disponible.
 
 ### Estudio 2 — Synthetic XI vs Real Best XI
 
-Construye dos equipos de once integrantes:
+Compara distribuciones de finales eliminatorias entre:
 
-- **Synthetic XI:** 1 GK, 2 CB, 2 FB, 1 DM, 1 CM, 1 AM, 2 W y 1 ST.
-- **Real Best XI:** los mejores jugadores reales necesarios para cubrir esas mismas once plazas.
+- **Synthetic XI:** instancias independientes de arquetipos posicionales congelados;
+- **Real Best XI:** once futbolistas reales distintos seleccionados para `GK, RB, RCB, LCB, LB, DM, CM, AM, RW, LW, ST`.
 
-El segundo estudio reutiliza los perfiles del primero y añade un motor de simulación por eventos. No confunde una comparación estadística con un partido físico real.
+El motor es un simulador probabilístico por eventos y estados. No equivale a un partido físico ni permite afirmar que un equipo “ganaría realmente”.
 
-## Alcance temporal
+## Estado científico actual
 
-La Copa de 2026 está en curso. Cada salida es un snapshot acumulado con fecha de corte, partidos incluidos, versión del método, semilla, tamaño solicitado y tamaño real de cada muestra.
+La ejecución histórica de 10.000 finales del 22 de julio de 2026 se conserva sin modificación como **piloto final / release candidate**. No es la ejecución confirmatoria oficial.
 
-## Decisiones pre-registradas
+La nueva ruta confirmatoria es `official_experiment_v1`, preparada en la rama:
 
-- Top 20 como análisis principal.
-- Top 10 y Top 30 como sensibilidad.
-- Mínimo de 180 minutos.
-- Retracción hacia la media de la posición con prior de 180 minutos.
-- Media recortada al 10% para construir cada avatar.
-- La calificación opaca del proveedor no entra en el ranking.
-- Ningún jugador se mezcla entre posiciones.
-- Si no existen 20 elegibles, se informa el N real.
+```text
+science/official-experiment-v1
+```
+
+Sus decisiones previas a resultados están congeladas en:
+
+- `PROTOCOL_AMENDMENT_OFFICIAL_V1.md`;
+- `config/official_experiment_v1.json`;
+- `data/model_readiness/official_rankings_authorization_v1.json`.
+
+El modo `official` permanece bloqueado hasta que una validación aislada del mismo motor, roster y configuración produzca una autorización con hashes coincidentes.
+
+## Decisiones del experimento oficial v1
+
+- Top 20 como análisis principal; Top 10 y Top 30 como sensibilidad.
+- Mínimo principal de 900 minutos exactos; 450 y 180 como sensibilidades.
+- Media recortada al 10% para cada arquetipo.
+- La calificación opaca del proveedor no entra directamente en probabilidades de éxito.
+- Si no existen 20 o 30 elegibles, se informa y utiliza el N real.
+- Planteles de 26 integrantes y once inicial congelados.
+- Sustituciones exclusivamente desde el banquillo congelado.
+- Condiciones, árbitro y ambiente pareados cuando el diseño lo permite.
+- Sensibilidad e incertidumbre anidada ejecutadas sobre el mismo motor oficial.
+- H5, H6 y H7 operacionalizadas antes de la nueva ejecución.
+- Ausencia de evidencia afirmativa = gate fallido.
 
 ## Arquitectura
 
 ```text
-API-FOOTBALL (clave privada)
+Datos y cachés auditables
           ↓
-GitHub Actions (cálculo y pruebas)
+Construcción de perfiles y roster canónico
           ↓
-Snapshots CSV/JSON fechados
+Preflight estructural fail-closed
           ↓
-Vite + Cloudflare Pages
+Smoke → validación aislada → autorización con hashes
+          ↓
+Distribución oficial de 10.000 finales
+          ↓
+H5–H7, sensibilidad, incertidumbre y replay representativo
 ```
 
-## Ejecución local
+## Despliegues
+
+La guía completa está en `EXPERIMENT_DEPLOYMENT.md`.
+
+### Smoke local
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-export API_FOOTBALL_KEY="tu_clave"
-python scripts/refresh_2026.py --cutoff-utc 2026-07-18T05:59:59Z
 
+PYTHONPATH=. python scripts/scientific/validate_official_release.py \
+  --mode structural \
+  --status-output /tmp/official_structural_preflight.json
+
+PYTHONPATH=. pytest -q tests/test_official_experiment.py
+
+PYTHONPATH=. python scripts/run_official_experiment.py --mode smoke
+```
+
+### Validación aislada
+
+```bash
+PYTHONPATH=. python scripts/run_official_experiment.py --mode validation
+
+PYTHONPATH=. python scripts/scientific/run_official_robustness.py \
+  --output data/experiments/official_v1/robustness
+
+PYTHONPATH=. python scripts/scientific/validate_official_release.py \
+  --mode release \
+  --validation data/experiments/official_v1/validation \
+  --robustness data/experiments/official_v1/robustness
+```
+
+### Ejecución oficial
+
+```bash
+PYTHONPATH=. python scripts/run_official_experiment.py --mode official
+```
+
+El comando anterior falla cuando falta autorización o cambió cualquier fuente crítica, protocolo, configuración o roster respecto de la validación.
+
+## GitHub Actions
+
+- `Official v1 PR Smoke`: compilación, preflight, pruebas y smoke observable en cada PR.
+- `Official Experiment v1`: despliegues manuales `smoke`, `validation` y `official`.
+- Los paquetes completos se conservan como artifacts con manifest SHA-256 y ledger de semillas.
+
+## Documentación científica
+
+- `PRERREGISTRO.md`: preregistro histórico.
+- `PROTOCOL_AMENDMENT_OFFICIAL_V1.md`: enmienda previa al nuevo experimento oficial.
+- `METHODS.md`: metodología consolidada histórica.
+- `PROTOCOLO_FINAL_COMPLETA.md`: arquitectura general de la final.
+- `EXPERIMENT_DEPLOYMENT.md`: operación y gates de despliegue.
+- `ESTUDIO_1_POSICIONES.md`: manuscrito del estudio posicional.
+- `ESTUDIO_2_ONCE.md`: protocolo/manuscrito del estudio de equipos.
+
+## Aplicación web
+
+La interfaz Vite permanece separada de la autorización científica del experimento:
+
+```bash
 cd web
 npm install
 npm run dev
 ```
 
-## Acción necesaria del propietario
-
-1. Crear en GitHub el repositorio `synthetic-xi-2026` con README.
-2. Añadir el secret `API_FOOTBALL_KEY` en `Settings → Secrets and variables → Actions`.
-3. Cuando los datos reales estén validados, conectar el repositorio a Cloudflare Pages con raíz `web`, comando `npm run build` y salida `dist`.
-
-## Documentos del estudio
-
-- `METHODS.md`: metodología consolidada.
-- `PRERREGISTRO.md`: decisiones fijadas antes de observar resultados.
-- `ESTUDIO_1_POSICIONES.md`: borrador del primer artículo.
-- `ESTUDIO_2_ONCE.md`: protocolo del segundo artículo.
+Un deploy visual nunca transforma por sí mismo una corrida exploratoria en resultado confirmatorio.
