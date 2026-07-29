@@ -1,0 +1,85 @@
+name: Materialize Official Engine Source
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/materialize-official-engine-source.yml'
+      - '.github/materialize-official-engine/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Materialize frozen v1.1 bundle
+        run: python scripts/install_complete_final_bundle_v1_1.py
+
+      - name: Publish expanded source without changing runtime wrappers
+        run: |
+          set -euo pipefail
+          target='official_engine/source_v1_1'
+          mkdir -p "$target/simulator" "$target/scripts/scientific" "$target/tests"
+          cp simulator/complete_final.py "$target/simulator/complete_final.py"
+          cp simulator/complete_final_monte_carlo.py "$target/simulator/complete_final_monte_carlo.py"
+          cp simulator/validation.py "$target/simulator/validation.py"
+          cp scripts/run_complete_final_simulation.py "$target/scripts/run_complete_final_simulation.py"
+          cp scripts/scientific/validate_complete_final.py "$target/scripts/scientific/validate_complete_final.py"
+          cp tests/test_complete_final.py "$target/tests/test_complete_final.py"
+          if [ -f COMPLETE_FINAL_IMPLEMENTATION.md ]; then
+            cp COMPLETE_FINAL_IMPLEMENTATION.md "$target/COMPLETE_FINAL_IMPLEMENTATION.md"
+          fi
+          python - <<'PY'
+          from __future__ import annotations
+          import hashlib
+          import json
+          from pathlib import Path
+
+          root = Path('official_engine/source_v1_1')
+          files = {}
+          for path in sorted(p for p in root.rglob('*') if p.is_file()):
+              data = path.read_bytes()
+              files[str(path.relative_to(root))] = {
+                  'bytes': len(data),
+                  'sha256': hashlib.sha256(data).hexdigest(),
+              }
+          (root / 'SOURCE_MANIFEST.json').write_text(
+              json.dumps(
+                  {
+                      'status': 'materialized_complete_final_v1_1_source',
+                      'source_bundle': 'scripts/install_complete_final_bundle_v1_1.py',
+                      'files': files,
+                  },
+                  indent=2,
+                  ensure_ascii=False,
+              ) + '\n',
+              encoding='utf-8',
+          )
+          PY
+          git checkout -- simulator/complete_final.py simulator/complete_final_monte_carlo.py simulator/validation.py scripts/run_complete_final_simulation.py scripts/scientific/validate_complete_final.py tests/test_complete_final.py
+
+      - name: Commit expanded source
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add official_engine/source_v1_1
+          if git diff --cached --quiet; then
+            echo 'Expanded source already published.'
+            exit 0
+          fi
+          git commit -m 'science: publish expanded Complete Final v1.1 source'
+          git push
