@@ -27,6 +27,7 @@ def critical_source_paths(config: dict[str, Any]) -> dict[str, Path]:
             config["canonical_inputs"]["rankings_authorization"]
         ),
         "requirements": Path("requirements.txt"),
+        "official_features_source": Path("simulator/official_features.py"),
         "official_profiles_source": Path("simulator/official_profiles.py"),
         "official_profile_sensitivity_source": Path(
             "simulator/official_profile_sensitivity.py"

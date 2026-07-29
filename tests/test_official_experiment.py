@@ -9,6 +9,7 @@ from simulator.official_complete_final import (
     OfficialCompleteFinalSimulator,
     OfficialFinalConfig,
 )
+from simulator.official_features import load_official_feature_table
 from simulator.official_monte_carlo import simulate_official_finals
 from simulator.official_profiles import ROSTER_PATH, build_official_bundles, team_rows
 
@@ -43,6 +44,17 @@ def test_official_runtime_matches_frozen_rosters() -> None:
     assert all(row["provisional"] is False for row in team_rows(real))
     assert "explor" not in synthetic.team.name.lower()
     assert "explor" not in real.team.name.lower()
+
+
+def test_minimum_minutes_sensitivity_is_exact() -> None:
+    frame_180 = load_official_feature_table(180)
+    frame_450 = load_official_feature_table(450)
+    frame_900 = load_official_feature_table(900)
+    assert frame_180.minutes_num.min() >= 180
+    assert frame_450.minutes_num.min() >= 450
+    assert frame_900.minutes_num.min() >= 900
+    assert len(frame_180) >= len(frame_450) >= len(frame_900)
+    assert (frame_180.minutes_num < 450).any()
 
 
 def test_top_n_uses_real_n_when_requested_n_exceeds_role_universe() -> None:

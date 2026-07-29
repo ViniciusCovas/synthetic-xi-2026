@@ -16,7 +16,8 @@ import numpy as np
 import pandas as pd
 
 from .engine import PlayerProfile, ROLE_ORDER, TeamProfile
-from .profiles import _to_profile, load_feature_table
+from .official_features import load_official_feature_table
+from .profiles import _to_profile
 from .profiles_v2 import resolve_exploratory_roles
 
 CONFIG_PATH = Path("config/official_experiment_v1.json")
@@ -108,14 +109,16 @@ def _canonical_role(entry: dict[str, Any]) -> str:
 
 
 def _feature_frame(minimum_minutes: int) -> pd.DataFrame:
-    frame = resolve_exploratory_roles(load_feature_table()).copy()
+    frame = resolve_exploratory_roles(
+        load_official_feature_table(minimum_minutes)
+    ).copy()
     frame["player_id_key"] = frame["player_id"].astype(str)
-    frame["minutes_num"] = pd.to_numeric(frame["minutes_num"], errors="coerce").fillna(0.0)
-    eligible = frame.loc[frame["minutes_num"] >= float(minimum_minutes)].copy()
-    if eligible.empty:
+    frame["minutes_num"] = pd.to_numeric(
+        frame["minutes_num"], errors="coerce"
+    ).fillna(0.0)
+    if frame.empty:
         raise RuntimeError("No players satisfy the official minimum-minutes rule")
-    return eligible
-
+    return frame
 
 def _trimmed_profile(members: pd.DataFrame, engine_role: str, synthetic_id: str, name: str) -> PlayerProfile:
     if members.empty:

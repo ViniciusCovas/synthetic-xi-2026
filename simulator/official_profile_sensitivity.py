@@ -13,7 +13,7 @@ from .official_profiles import (
     _synthetic_archetypes,
     build_official_bundles,
 )
-from .profiles import load_feature_table
+from .official_features import load_official_feature_table
 
 RoleVariant = Literal["cohort_relative", "provider_grid"]
 
@@ -43,7 +43,7 @@ def build_official_bundles_with_role_variant(
     )
     roster = _read_json(ROSTER_PATH)
     teams = roster["teams"]
-    frame = load_feature_table().copy()
+    frame = load_official_feature_table(minimum_minutes).copy()
     frame["player_id_key"] = frame["player_id"].astype(str)
     frame = frame.loc[frame["minutes_num"] >= float(minimum_minutes)].copy()
     if frame.empty:
