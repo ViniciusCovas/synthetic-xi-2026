@@ -1,4 +1,5 @@
 name: Patch Official Branch to Frozen Runtime
+# Retrigger after the workflow exists on the default branch.
 
 on:
   push:
