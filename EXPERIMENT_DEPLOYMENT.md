@@ -16,14 +16,18 @@ El código oficial está separado del motor histórico:
 - `simulator/official_profile_sensitivity.py`
 - `simulator/official_complete_final.py`
 - `simulator/official_monte_carlo.py`
+- `simulator/official_orientation.py`
 - `scripts/run_official_experiment.py`
+- `scripts/run_official_experiment_v1_1.py`
 - `scripts/scientific/run_official_robustness.py`
 - `scripts/scientific/analyze_official_hypotheses.py`
 - `scripts/scientific/validate_official_release.py`
 
+El lanzador canónico es `scripts/run_official_experiment_v1_1.py`. Conserva el runner auditado y sustituye únicamente la prueba de orientación por la implementación de equivalencia pareada congelada en `config/official_orientation_equivalence_v1.json`.
+
 ## Principio fail-closed
 
-Ningún despliegue `official` puede comenzar si falta una autorización generada por la validación oficial o si cualquier hash de código, protocolo, roster o configuración difiere del autorizado.
+Ningún despliegue `official` puede comenzar si falta una autorización generada por la validación oficial o si cualquier hash de código, protocolo, roster, contrato estadístico o configuración difiere del autorizado.
 
 La ausencia de evidencia afirmativa equivale a fallo.
 
@@ -36,9 +40,11 @@ PYTHONPATH=. python scripts/scientific/validate_official_release.py \
   --mode structural \
   --status-output /tmp/official_structural_preflight.json
 
-PYTHONPATH=. pytest -q tests/test_official_experiment.py
+PYTHONPATH=. pytest -q \
+  tests/test_official_experiment.py \
+  tests/test_official_orientation.py
 
-PYTHONPATH=. python scripts/run_official_experiment.py \
+PYTHONPATH=. python scripts/run_official_experiment_v1_1.py \
   --mode smoke \
   --simulations 200
 ```
@@ -51,9 +57,10 @@ Objetivo:
 - comprobar que no existen etiquetas provisionales o exploratorias;
 - comprobar sustituciones desde el banquillo congelado;
 - comprobar semántica y pertenencia de actores;
-- detectar errores lógicos antes de consumir cómputo.
+- detectar errores lógicos antes de consumir cómputo;
+- detectar asimetrías gruesas mediante 200 pares neutrales.
 
-El smoke nunca autoriza resultados confirmatorios.
+El smoke nunca autoriza resultados confirmatorios. Sus 200 pares se etiquetan como `diagnostic_only_insufficient_sample`, aunque la diferencia puntual quede dentro del margen.
 
 ## Despliegue 2 — Validación aislada
 
@@ -69,7 +76,9 @@ Desde GitHub Actions:
 Equivalente local:
 
 ```bash
-PYTHONPATH=. python scripts/run_official_experiment.py --mode validation
+PYTHONPATH=. python scripts/run_official_experiment_v1_1.py \
+  --mode validation \
+  --simulations 2000
 
 PYTHONPATH=. python scripts/scientific/run_official_robustness.py \
   --output data/experiments/official_v1/robustness
@@ -83,9 +92,10 @@ PYTHONPATH=. python scripts/scientific/validate_official_release.py \
 La validación incluye:
 
 - 2.000 finales aisladas;
+- 2.000 pares neutrales de orientación con números aleatorios comunes;
+- prueba de equivalencia: todo el intervalo de confianza del 95% debe quedar dentro de ±0,04;
 - calibración disciplinaria estricta;
 - invariantes de eventos y actores;
-- equivalencia de orientación con números aleatorios comunes;
 - estabilidad entre semillas;
 - sensibilidad Top 10/20/30;
 - sensibilidad 180/450/900 minutos;
@@ -107,7 +117,7 @@ Desde GitHub Actions seleccionar `official`, sin sobrescribir las 10.000 simulac
 Equivalente local:
 
 ```bash
-PYTHONPATH=. python scripts/run_official_experiment.py --mode official
+PYTHONPATH=. python scripts/run_official_experiment_v1_1.py --mode official
 ```
 
 La ejecución aborta cuando:
@@ -117,6 +127,7 @@ La ejecución aborta cuando:
 - cambió el constructor de perfiles;
 - cambió el roster;
 - cambió el protocolo;
+- cambió el contrato estadístico;
 - cambió la configuración;
 - se registró tuning posterior a resultados.
 
@@ -143,6 +154,7 @@ Los artefactos completos se conservan como GitHub Actions artifacts durante 90 d
 
 - No editar parámetros después de observar el resultado oficial.
 - No promover manualmente un smoke a resultado confirmatorio.
+- No interpretar el intervalo del smoke como prueba de equivalencia.
 - No reemplazar el roster congelado mediante CSV provisional.
 - No ejecutar directamente el motor histórico para el paper confirmatorio.
 - No elegir manualmente el replay más dramático.
