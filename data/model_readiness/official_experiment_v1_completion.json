@@ -1,0 +1,18 @@
+{
+  "status": "official_experiment_v1_confirmatory_complete",
+  "engine_version": "complete_final_official_v1",
+  "authorized_source_sha": "06c750cfef3246d3c6112f6bd86d25a83287308f",
+  "simulations": 10000,
+  "master_seed": 2026073001,
+  "match_seed_ledger_sha256": "8634ca05a94b3c031746058c894279428af818fcff91d5cffaf86cf84b4b0a20",
+  "summary_sha256": "e870f3e4e4b871bc8e06a1a07942427b3a54b32005c01c77c6927e73618566be",
+  "manifest_sha256": "cf81e04eadd82a0067a50cbbc0a1bb6725e2528528e0c129674d64644034aa42",
+  "release_authorization_used": true,
+  "event_sanity_passed": true,
+  "discipline_calibration_passed": true,
+  "orientation_equivalence_passed": true,
+  "seed_stability_passed": true,
+  "post_result_tuning_performed": false,
+  "full_package_storage": "GitHub Actions immutable artifact",
+  "result_interpretation_policy": "Confirmatory result; no parameter or code changes permitted after observation."
+}
