@@ -1,0 +1,118 @@
+name: Run official v1 validation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/official-v1-validation-trigger/**'
+
+permissions:
+  contents: write
+
+env:
+  PYTHONHASHSEED: '0'
+  PIP_DISABLE_PIP_VERSION_CHECK: '1'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    concurrency:
+      group: official-v1-validation
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: science/official-experiment-v1
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Compile and test frozen validation source
+        run: |
+          python -m py_compile \
+            simulator/official_orientation.py \
+            simulator/official_provenance.py \
+            scripts/run_official_experiment.py \
+            scripts/run_official_experiment_v1_1.py \
+            scripts/scientific/run_official_robustness.py \
+            scripts/scientific/validate_official_release.py \
+            tests/test_official_experiment.py \
+            tests/test_official_orientation.py
+          PYTHONPATH=. pytest -q \
+            tests/test_official_experiment.py \
+            tests/test_official_orientation.py
+      - name: Structural fail-closed preflight
+        run: |
+          PYTHONPATH=. python scripts/scientific/validate_official_release.py \
+            --mode structural \
+            --status-output /tmp/official_structural_preflight.json
+      - name: Run 2000-final isolated validation
+        run: |
+          PYTHONPATH=. python scripts/run_official_experiment_v1_1.py \
+            --mode validation \
+            --simulations 2000 \
+            --output data/experiments/official_v1
+      - name: Assert paired orientation sample and CI gate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('data/experiments/official_v1/validation/simulation_summary.json')
+          summary = json.loads(path.read_text())
+          orientation = summary['orientation_equivalence']
+          assert orientation['paired_observations'] == 2000
+          assert orientation['release_eligible'] is True
+          assert orientation['confidence_level'] == 0.95
+          assert 'confidence_interval' in orientation
+          print(json.dumps(orientation, indent=2))
+          PY
+      - name: Run exact-engine robustness and nested uncertainty
+        run: |
+          PYTHONPATH=. python scripts/scientific/run_official_robustness.py \
+            --output data/experiments/official_v1/robustness
+      - name: Evaluate all release gates
+        run: |
+          PYTHONPATH=. python scripts/scientific/validate_official_release.py \
+            --mode release \
+            --validation data/experiments/official_v1/validation \
+            --robustness data/experiments/official_v1/robustness
+      - name: Commit compact affirmative evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            data/model_readiness/official_experiment_v1_preflight_status.json \
+            data/model_readiness/official_release_authorization_v1.json \
+            data/experiments/official_v1/validation/simulation_summary.json \
+            data/experiments/official_v1/validation/manifest.json \
+            data/experiments/official_v1/validation/official_hypotheses_summary.json \
+            data/experiments/official_v1/validation/official_h7_state_rates.csv \
+            data/experiments/official_v1/validation/official_h7_interactions.csv \
+            data/experiments/official_v1/robustness/official_sensitivity_summary.json \
+            data/experiments/official_v1/robustness/official_sensitivity_scenarios.csv \
+            data/experiments/official_v1/robustness/official_nested_uncertainty_summary.json
+          if git diff --cached --quiet; then
+            echo 'No validation evidence changed.'
+          else
+            git commit -m 'science: authorize official experiment v1 release'
+            git push origin HEAD:science/official-experiment-v1
+          fi
+      - name: Upload immutable validation package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-v1-validation-${{ github.run_id }}
+          path: |
+            /tmp/official_structural_preflight.json
+            data/experiments/official_v1/validation
+            data/experiments/official_v1/robustness
+            data/model_readiness/official_experiment_v1_preflight_status.json
+            data/model_readiness/official_release_authorization_v1.json
+          if-no-files-found: warn
+          retention-days: 90
