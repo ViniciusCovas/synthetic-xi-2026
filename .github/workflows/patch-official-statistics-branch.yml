@@ -1,0 +1,51 @@
+name: Patch official statistics branch
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/patch-official-statistics-trigger/**'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: science/official-experiment-v1
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Apply deterministic statistical patch
+        run: python ops/apply_official_statistical_patch.py
+      - name: Install and verify
+        run: |
+          python -m pip install -r requirements.txt
+          python -m py_compile \
+            simulator/official_orientation.py \
+            simulator/official_provenance.py \
+            scripts/run_official_experiment.py \
+            tests/test_official_orientation.py
+          PYTHONPATH=. pytest -q tests/test_official_experiment.py tests/test_official_orientation.py
+      - name: Commit verified branch changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            simulator/official_provenance.py \
+            scripts/run_official_experiment.py \
+            config/official_experiment_v1.json \
+            .github/workflows/official-pr-smoke.yml \
+            .github/workflows/official-experiment-v1.yml \
+            EXPERIMENT_DEPLOYMENT_OFFICIAL_V1.md
+          git rm ops/apply_official_statistical_patch.py
+          git rm .github/workflows/apply-official-statistical-patch.yml
+          git commit -m 'science: strengthen smoke and orientation equivalence validation'
+          git push origin HEAD:science/official-experiment-v1
