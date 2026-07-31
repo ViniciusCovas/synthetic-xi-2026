@@ -13,19 +13,23 @@ permissions:
 env:
   PYTHONHASHSEED: '0'
   PIP_DISABLE_PIP_VERSION_CHECK: '1'
+  OFFICIAL_REVIEWED_SHA: '1549fc4af0c2ea3a461baef903f219156667ff52'
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 300
     concurrency:
-      group: official-v1-validation
+      group: official-v1-validation-frozen
       cancel-in-progress: false
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout exact reviewed science revision
+        uses: actions/checkout@v4
         with:
-          ref: science/official-experiment-v1
+          ref: ${{ env.OFFICIAL_REVIEWED_SHA }}
           fetch-depth: 1
+      - name: Verify exact checkout
+        run: test "$(git rev-parse HEAD)" = "$OFFICIAL_REVIEWED_SHA"
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -81,9 +85,11 @@ jobs:
             --mode release \
             --validation data/experiments/official_v1/validation \
             --robustness data/experiments/official_v1/robustness
-      - name: Commit compact affirmative evidence
+      - name: Commit compact affirmative evidence only on unchanged branch
         run: |
           set -euo pipefail
+          git fetch origin science/official-experiment-v1
+          test "$(git rev-parse FETCH_HEAD)" = "$OFFICIAL_REVIEWED_SHA"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add \
