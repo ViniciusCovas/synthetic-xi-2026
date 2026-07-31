@@ -1,0 +1,43 @@
+{
+  "status": "official_v1_precision_replication_consistent",
+  "baseline": {
+    "simulations": 10000,
+    "master_seed": 2026073001,
+    "synthetic_champion_probability": 0.4459,
+    "confidence_interval": {
+      "estimate": 0.4459,
+      "low": 0.43618033623290137,
+      "high": 0.45566121239080576
+    }
+  },
+  "replication": {
+    "simulations": 50000,
+    "master_seed": 2026073102,
+    "synthetic_champion_probability": 0.44696,
+    "real_champion_probability": 0.55304,
+    "confidence_interval": {
+      "estimate": 0.44696,
+      "low": 0.44260635595592035,
+      "high": 0.45132179345700085
+    },
+    "interval_half_width": 0.0043577187505402515
+  },
+  "comparison": {
+    "signed_difference_replication_minus_baseline": 0.0010600000000000054,
+    "absolute_difference": 0.0010600000000000054,
+    "maximum_difference_under_preregistered_mc_consistency_rule": 0.010672745180682841,
+    "direction_matches": true,
+    "precision_passed": true,
+    "monte_carlo_consistency_passed": true
+  },
+  "secondary_pooled_precision_summary": {
+    "simulations": 60000,
+    "synthetic_champion_probability": 0.4467833333333333,
+    "wilson_95_interval": {
+      "low": 0.44280875841203704,
+      "high": 0.45076472238989873
+    },
+    "role": "secondary only; baseline 10000 remains the primary confirmatory result"
+  },
+  "post_result_tuning_performed": false
+}

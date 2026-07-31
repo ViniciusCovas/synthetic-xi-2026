@@ -1,0 +1,22 @@
+{
+  "status": "official_v1_precision_replication_50000_complete",
+  "engine_version": "complete_final_official_v1",
+  "preregistered_revision": "72e73714d7c413bd543b5c56ee5cdc505a8a7bac",
+  "simulations": 50000,
+  "master_seed": 2026073102,
+  "summary_sha256": "70f87a197c4ae484aa7e280f24a12e0f3e6960b26c1451b9b09d38e3809a0bef",
+  "manifest_sha256": "7260b5e112ce5d5d6bde0f0d7b9a6d4181a899a47dafe9685877d698d367c53e",
+  "comparison_sha256": "79d4c77813cc99c6ed3609bba8878ffd7250d2b676dffdb7988bb72eb207459a",
+  "source_hashes_equal_baseline": true,
+  "release_authorization_used": true,
+  "event_sanity_passed": true,
+  "discipline_calibration_passed": true,
+  "orientation_equivalence_passed": true,
+  "seed_stability_passed": true,
+  "h5_h6_h7_estimands_present": true,
+  "precision_passed": true,
+  "monte_carlo_consistency_passed": true,
+  "direction_matches_baseline": true,
+  "post_result_tuning_performed": false,
+  "full_package_storage": "GitHub Actions immutable artifact"
+}

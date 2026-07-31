@@ -1,0 +1,62 @@
+sequence,clock,minute,period,side,team,acting_team,affected_team,possession_team,benefiting_team,actor,actor_team,actor_membership_valid,zone,xg,home_score_before_context,away_score_before_context,score_state_before,numerical_state_before,score,headline
+1,1.794,2,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Synthetic XI,,N. Otamendi,Real Best XI,True,1.0,,0,0,tied,equal,0-0,Falta de N. Otamendi
+2,2.88,3,first_half,home,Synthetic XI,Synthetic XI,Real Best XI,Real Best XI,,Synthetic Rb 1,Synthetic XI,True,1.0,,0,0,tied,equal,0-0,Falta de Synthetic Rb 1
+3,5.379,6,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Synthetic XI,,N. Otamendi,Real Best XI,True,3.0,,0,0,tied,equal,0-0,Falta de N. Otamendi
+4,5.964,6,first_half,home,Synthetic XI,Synthetic XI,Real Best XI,Real Best XI,,Synthetic Lw 1,Synthetic XI,True,3.0,,0,0,tied,equal,0-0,Falta de Synthetic Lw 1
+5,5.964,6,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Real Best XI,,L. Messi,Real Best XI,True,2.0,0.1739,0,0,tied,equal,0-0,Synthetic Gk 1 defende finalização de L. Messi
+6,6.98,7,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Real Best XI,Real Best XI,O. Dembele,Real Best XI,True,3.0,0.1874,0,0,tied,equal,0-1,GOL de O. Dembele
+7,8.755,9,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Synthetic XI,,L. Messi,Real Best XI,True,2.0,,0,1,trailing,equal,0-1,Falta de L. Messi
+8,8.755,9,first_half,home,Synthetic XI,Synthetic XI,Real Best XI,Synthetic XI,,Synthetic Lw 1,Synthetic XI,True,2.0,0.1559,0,1,trailing,equal,0-1,Grande chance de Synthetic Lw 1 para fora
+9,10.231,11,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Real Best XI,,M. Rashford,Real Best XI,True,2.0,,0,1,leading,equal,0-1,M. Rashford perde sob pressão
+10,12.389,13,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Real Best XI,,M. Rashford,Real Best XI,True,2.0,0.1657,0,1,leading,equal,0-1,Synthetic Gk 1 defende finalização de M. Rashford
+11,13.358,14,first_half,home,Synthetic XI,Synthetic XI,Real Best XI,Real Best XI,,Synthetic Rb 1,Synthetic XI,True,2.0,,0,1,leading,equal,0-1,Falta de Synthetic Rb 1
+12,14.447,15,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Synthetic XI,,M. Olise,Real Best XI,True,2.0,,0,1,trailing,equal,0-1,Falta de M. Olise
+13,14.772,15,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Synthetic XI,,Rodri,Real Best XI,True,1.0,,0,1,trailing,equal,0-1,Falta de Rodri
+15,14.772,15,first_half,home,Synthetic XI,Synthetic XI,Real Best XI,Synthetic XI,,Synthetic Rw 1,Synthetic XI,True,2.0,0.1439,0,1,trailing,equal,0-1,J. Garcia defende finalização de Synthetic Rw 1
+14,14.787,15,first_half,home,Synthetic XI,Synthetic XI,Synthetic XI,,,Synthetic Rw 1,Synthetic XI,True,,,0,1,trailing,equal,0-1,Synthetic Rw 1 recebe atendimento médico
+16,18.378,19,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Real Best XI,,L. Messi,Real Best XI,True,2.0,0.1731,0,1,leading,equal,0-1,Synthetic Gk 1 defende finalização de L. Messi
+17,18.849,19,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Synthetic XI,,N. Mendes,Real Best XI,True,2.0,,0,1,trailing,equal,0-1,Falta de N. Mendes
+18,18.859,19,first_half,away,Real Best XI,Real Best XI,Real Best XI,Synthetic XI,,N. Mendes,Real Best XI,True,2.0,,0,1,trailing,equal,0-1,Cartão amarelo para N. Mendes
+19,21.175,22,first_half,home,Synthetic XI,Synthetic XI,Real Best XI,Real Best XI,,Synthetic Lb 1,Synthetic XI,True,1.0,,0,1,leading,equal,0-1,Falta de Synthetic Lb 1
+20,22.855,23,first_half,home,Synthetic XI,Synthetic XI,Real Best XI,Synthetic XI,,Synthetic Rw 1,Synthetic XI,True,2.0,0.1436,0,1,trailing,equal,0-1,J. Garcia defende finalização de Synthetic Rw 1
+22,24.862,25,first_half,home,Synthetic XI,Synthetic XI,Real Best XI,Synthetic XI,Synthetic XI,Synthetic Lw 1,Synthetic XI,True,3.0,0.2502,0,1,trailing,equal,1-1,GOL de Synthetic Lw 1
+21,24.882,25,first_half,system,,,,,,Synthetic Lw 1,,,3.0,,0,1,trailing,equal,0-1,VAR revisa o lance
+23,26.478,27,first_half,home,Synthetic XI,Synthetic XI,Real Best XI,Real Best XI,,Synthetic Rb 1,Synthetic XI,True,3.0,,1,1,tied,equal,1-1,Falta de Synthetic Rb 1
+24,26.478,27,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Real Best XI,,M. Rashford,Real Best XI,True,2.0,0.1649,1,1,tied,equal,1-1,Synthetic Gk 1 defende finalização de M. Rashford
+25,27.688,28,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Synthetic XI,,Rodri,Real Best XI,True,3.0,,1,1,tied,equal,1-1,Falta de Rodri
+26,31.016,32,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Synthetic XI,,Rodri,Real Best XI,True,3.0,,1,1,tied,equal,1-1,Falta de Rodri
+27,33.505,34,first_half,home,Synthetic XI,Synthetic XI,Real Best XI,Real Best XI,,Synthetic St 1,Synthetic XI,True,2.0,,1,1,tied,equal,1-1,Falta de Synthetic St 1
+28,33.505,34,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Real Best XI,,L. Messi,Real Best XI,True,1.0,0.1076,1,1,tied,equal,1-1,Synthetic Gk 1 defende finalização de L. Messi
+29,37.429,38,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Real Best XI,,L. Messi,Real Best XI,True,2.0,,1,1,tied,equal,1-1,L. Messi perde sob pressão
+30,40.161,41,first_half,home,Synthetic XI,Synthetic XI,Real Best XI,Synthetic XI,,Synthetic Rw 1,Synthetic XI,True,2.0,,1,1,tied,equal,1-1,Synthetic Rw 1 perde sob pressão
+31,43.238,44,first_half,away,Real Best XI,Real Best XI,Synthetic XI,Synthetic XI,,M. Rashford,Real Best XI,True,2.0,,1,1,tied,equal,1-1,Falta de M. Rashford
+32,48.0,49,match,system,,,,,,,,,,,1,1,tied,equal,1-1,Intervalo
+33,54.783,55,second_half,home,Synthetic XI,Synthetic XI,Real Best XI,Real Best XI,,Synthetic St 1,Synthetic XI,True,2.0,,1,1,tied,equal,1-1,Falta de Synthetic St 1
+34,60.972,61,regulation,home,Synthetic XI,Synthetic XI,Synthetic XI,,,Synthetic Rb Reserve,Synthetic XI,True,,,1,1,tied,equal,1-1,"Substituição tática: sai Synthetic Rb 1, entra Synthetic Rb Reserve"
+36,60.972,61,regulation,away,Real Best XI,Real Best XI,Real Best XI,,,D. Raum,Real Best XI,True,,,1,1,tied,equal,1-1,"Substituição tática: sai J. Hadjam, entra D. Raum"
+35,60.973,61,regulation,home,Synthetic XI,Synthetic XI,Synthetic XI,,,Synthetic Lb Reserve,Synthetic XI,True,,,1,1,tied,equal,1-1,"Substituição tática: sai Synthetic Lb 1, entra Synthetic Lb Reserve"
+37,60.973,61,regulation,away,Real Best XI,Real Best XI,Real Best XI,,,R. Ait-Nouri,Real Best XI,True,,,1,1,tied,equal,1-1,"Substituição tática: sai N. Mendes, entra R. Ait-Nouri"
+38,61.134,62,second_half,away,Real Best XI,Real Best XI,Synthetic XI,Real Best XI,,L. Messi,Real Best XI,True,3.0,0.2751,1,1,tied,equal,1-1,Grande chance de L. Messi para fora
+39,67.86,68,second_half,away,Real Best XI,Real Best XI,Synthetic XI,Synthetic XI,,M. Olise,Real Best XI,True,3.0,,1,1,tied,equal,1-1,Falta de M. Olise
+40,72.518,73,regulation,home,Synthetic XI,Synthetic XI,Synthetic XI,,,Synthetic W Utility,Synthetic XI,True,,,1,1,tied,equal,1-1,"Substituição tática: sai Synthetic Rw 1, entra Synthetic W Utility"
+42,72.518,73,regulation,away,Real Best XI,Real Best XI,Real Best XI,,,Y. Diomande,Real Best XI,True,,,1,1,tied,equal,1-1,"Substituição tática: sai L. Messi, entra Y. Diomande"
+41,72.519,73,regulation,home,Synthetic XI,Synthetic XI,Synthetic XI,,,Synthetic Lw Reserve,Synthetic XI,True,,,1,1,tied,equal,1-1,"Substituição tática: sai Synthetic Lw 1, entra Synthetic Lw Reserve"
+43,72.519,73,regulation,away,Real Best XI,Real Best XI,Real Best XI,,,A. Nusa,Real Best XI,True,,,1,1,tied,equal,1-1,"Substituição tática: sai M. Rashford, entra A. Nusa"
+44,74.697,75,second_half,away,Real Best XI,Real Best XI,Synthetic XI,Real Best XI,Real Best XI,J. Quintero,Real Best XI,True,3.0,0.2144,1,1,tied,equal,1-2,GOL de J. Quintero
+45,76.981,77,second_half,home,Synthetic XI,Synthetic XI,Real Best XI,Real Best XI,,Synthetic Rb Reserve,Synthetic XI,True,1.0,,1,2,leading,equal,1-2,Falta de Synthetic Rb Reserve
+46,78.31,79,second_half,home,Synthetic XI,Synthetic XI,Real Best XI,Real Best XI,,Synthetic Lw Reserve,Synthetic XI,True,1.0,,1,2,leading,equal,1-2,Falta de Synthetic Lw Reserve
+47,78.31,79,second_half,away,Real Best XI,Real Best XI,Synthetic XI,Real Best XI,,M. Olise,Real Best XI,True,2.0,0.1551,1,2,leading,equal,1-2,Grande chance de M. Olise para fora
+48,82.177,83,regulation,home,Synthetic XI,Synthetic XI,Synthetic XI,,,Synthetic Cm Reserve,Synthetic XI,True,,,1,2,leading,equal,1-2,"Substituição tática: sai Synthetic Cm 1, entra Synthetic Cm Reserve"
+49,82.177,83,regulation,away,Real Best XI,Real Best XI,Real Best XI,,,R. Cherki,Real Best XI,True,,,1,2,leading,equal,1-2,"Substituição tática: sai M. Olise, entra R. Cherki"
+50,82.177,83,second_half,away,Real Best XI,Real Best XI,Synthetic XI,Real Best XI,,J. Quintero,Real Best XI,True,3.0,,1,2,leading,equal,1-2,J. Quintero perde sob pressão
+51,83.09,84,second_half,away,Real Best XI,Real Best XI,Synthetic XI,Real Best XI,,A. Nusa,Real Best XI,True,2.0,,1,2,leading,equal,1-2,A. Nusa perde sob pressão
+52,84.218,85,second_half,away,Real Best XI,Real Best XI,Synthetic XI,Real Best XI,,J. Quintero,Real Best XI,True,2.0,0.1321,1,2,leading,equal,1-2,Grande chance de J. Quintero para fora
+53,84.955,85,second_half,away,Real Best XI,Real Best XI,Synthetic XI,Synthetic XI,,O. Dembele,Real Best XI,True,2.0,,1,2,trailing,equal,1-2,Falta de O. Dembele
+54,86.181,87,second_half,home,Synthetic XI,Synthetic XI,Real Best XI,Real Best XI,,Synthetic Lb Reserve,Synthetic XI,True,2.0,,1,2,leading,equal,1-2,Falta de Synthetic Lb Reserve
+55,86.862,87,second_half,home,Synthetic XI,Synthetic XI,Real Best XI,Real Best XI,,Synthetic Rcb 1,Synthetic XI,True,3.0,,1,2,leading,equal,1-2,Falta de Synthetic Rcb 1
+56,87.511,88,second_half,home,Synthetic XI,Synthetic XI,Real Best XI,Synthetic XI,,Synthetic St 1,Synthetic XI,True,1.0,0.1033,1,2,trailing,equal,1-2,J. Garcia defende finalização de Synthetic St 1
+57,89.446,90,second_half,away,Real Best XI,Real Best XI,Synthetic XI,Synthetic XI,,A. Nusa,Real Best XI,True,2.0,,1,2,trailing,equal,1-2,Falta de A. Nusa
+58,89.766,90,second_half,home,Synthetic XI,Synthetic XI,Real Best XI,Real Best XI,,Synthetic Rb Reserve,Synthetic XI,True,3.0,,1,2,leading,equal,1-2,Falta de Synthetic Rb Reserve
+59,89.776,90,second_half,home,Synthetic XI,Synthetic XI,Synthetic XI,Real Best XI,,Synthetic Rb Reserve,Synthetic XI,True,3.0,,1,2,leading,equal,1-2,Cartão amarelo para Synthetic Rb Reserve
+60,96.0,97,second_half,home,Synthetic XI,Synthetic XI,Real Best XI,Synthetic XI,,Synthetic Lw Reserve,Synthetic XI,True,2.0,,1,2,trailing,equal,1-2,Synthetic Lw Reserve perde sob pressão
+61,96.0,97,match,system,,,,,,,,,,,1,2,trailing,equal,1-2,Final: Real Best XI campeão
