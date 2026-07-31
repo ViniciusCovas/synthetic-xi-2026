@@ -7,10 +7,12 @@ on:
     paths:
       - 'simulator/official_*.py'
       - 'scripts/run_official_experiment.py'
+      - 'scripts/run_official_experiment_v1_1.py'
       - 'scripts/scientific/analyze_official_hypotheses.py'
       - 'scripts/scientific/run_official_robustness.py'
       - 'scripts/scientific/validate_official_release.py'
       - 'tests/test_official_experiment.py'
+      - 'tests/test_official_orientation.py'
       - 'config/official_experiment_v1.json'
       - 'PROTOCOL_AMENDMENT_OFFICIAL_V1.md'
       - '.github/workflows/official-experiment-v1.yml'
@@ -45,7 +47,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 240
     concurrency:
       group: official-experiment-v1-${{ github.ref }}
       cancel-in-progress: false
@@ -74,7 +76,7 @@ jobs:
             promote='${{ inputs.promote_validation_evidence }}'
           else
             mode='smoke'
-            simulations='48'
+            simulations='200'
             promote='false'
           fi
           echo "mode=$mode" >> "$GITHUB_OUTPUT"
@@ -88,11 +90,14 @@ jobs:
             simulator/official_profile_sensitivity.py \
             simulator/official_complete_final.py \
             simulator/official_monte_carlo.py \
+            simulator/official_orientation.py \
             scripts/run_official_experiment.py \
+            scripts/run_official_experiment_v1_1.py \
             scripts/scientific/analyze_official_hypotheses.py \
             scripts/scientific/run_official_robustness.py \
             scripts/scientific/validate_official_release.py \
-            tests/test_official_experiment.py
+            tests/test_official_experiment.py \
+            tests/test_official_orientation.py
 
       - name: Structural fail-closed preflight
         run: |
@@ -101,7 +106,10 @@ jobs:
             --status-output /tmp/official_structural_preflight.json
 
       - name: Run focused official tests
-        run: PYTHONPATH=. pytest -q tests/test_official_experiment.py
+        run: |
+          PYTHONPATH=. pytest -q \
+            tests/test_official_experiment.py \
+            tests/test_official_orientation.py
 
       - name: Execute experiment stage
         shell: bash
@@ -110,7 +118,7 @@ jobs:
           if [[ -n '${{ steps.deploy.outputs.simulations }}' ]]; then
             args+=(--simulations '${{ steps.deploy.outputs.simulations }}')
           fi
-          PYTHONPATH=. python scripts/run_official_experiment.py "${args[@]}"
+          PYTHONPATH=. python scripts/run_official_experiment_v1_1.py "${args[@]}"
 
       - name: Run exact-engine robustness deployment
         if: steps.deploy.outputs.mode == 'validation'
