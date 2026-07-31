@@ -1,0 +1,274 @@
+name: Run official v1 precision replication 50k
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/official-v1-precision-replication-50k-trigger/**'
+
+permissions:
+  contents: write
+
+env:
+  PYTHONHASHSEED: '0'
+  PIP_DISABLE_PIP_VERSION_CHECK: '1'
+  REPLICATION_PREREG_SHA: '72e73714d7c413bd543b5c56ee5cdc505a8a7bac'
+  REPLICATION_BRANCH: 'science/official-v1-precision-replication-50k'
+  REPLICATION_SEED: '2026073102'
+  REPLICATION_SIMULATIONS: '50000'
+  REPLICATION_OUTPUT_ROOT: 'data/experiments/official_v1_precision_replication_50000'
+
+jobs:
+  precision-replication:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    concurrency:
+      group: official-v1-precision-replication-50k-frozen
+      cancel-in-progress: false
+    steps:
+      - name: Checkout exact preregistered replication revision
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.REPLICATION_PREREG_SHA }}
+          fetch-depth: 1
+
+      - name: Verify exact checkout and unchanged replication branch
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$REPLICATION_PREREG_SHA"
+          git fetch origin "$REPLICATION_BRANCH"
+          test "$(git rev-parse FETCH_HEAD)" = "$REPLICATION_PREREG_SHA"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install frozen dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Compile and test frozen source
+        run: |
+          python -m py_compile \
+            simulator/official_orientation.py \
+            simulator/official_provenance.py \
+            scripts/run_official_experiment.py \
+            scripts/run_official_experiment_v1_1.py \
+            scripts/scientific/analyze_official_hypotheses.py \
+            scripts/scientific/validate_official_release.py \
+            tests/test_official_experiment.py \
+            tests/test_official_orientation.py
+          PYTHONPATH=. pytest -q \
+            tests/test_official_experiment.py \
+            tests/test_official_orientation.py
+
+      - name: Verify preregistration and release authorization
+        run: |
+          PYTHONPATH=. python scripts/scientific/validate_official_release.py \
+            --mode structural \
+            --status-output /tmp/precision_replication_structural_preflight.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          prereg = json.loads(Path('protocol/official_v1_precision_replication_50000_preregistration.json').read_text())
+          authorization = json.loads(Path('data/model_readiness/official_release_authorization_v1.json').read_text())
+          baseline_completion = json.loads(Path('data/model_readiness/official_experiment_v1_completion.json').read_text())
+
+          assert prereg['status'] == 'preregistered_before_replication_execution'
+          assert prereg['replication_design']['simulations'] == 50000
+          assert prereg['replication_design']['master_seed'] == 2026073102
+          assert prereg['replication_design']['fixed_sample_size'] is True
+          assert prereg['replication_design']['early_stopping'] is False
+          assert prereg['replication_design']['parameter_changes_permitted'] is False
+          assert prereg['replication_design']['code_changes_permitted'] is False
+          assert prereg['replication_design']['post_result_tuning_permitted'] is False
+          assert authorization['official_release_authorized'] is True
+          assert authorization['passed'] is True
+          assert authorization['blocking_checks'] == []
+          assert baseline_completion['simulations'] == 10000
+          assert baseline_completion['post_result_tuning_performed'] is False
+          print('preregistration and authorization verified')
+          PY
+
+      - name: Run frozen 50000-final precision replication
+        run: |
+          PYTHONPATH=. python scripts/run_official_experiment_v1_1.py \
+            --mode official \
+            --simulations "$REPLICATION_SIMULATIONS" \
+            --seed "$REPLICATION_SEED" \
+            --output "$REPLICATION_OUTPUT_ROOT"
+
+      - name: Assert integrity and compare with 10000-run baseline
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import math
+          from pathlib import Path
+
+          base_path = Path('data/experiments/official_v1/official/simulation_summary.json')
+          replication_dir = Path('data/experiments/official_v1_precision_replication_50000/official')
+          replication_path = replication_dir / 'simulation_summary.json'
+          manifest_path = replication_dir / 'manifest.json'
+          hypotheses_path = replication_dir / 'official_hypotheses_summary.json'
+
+          baseline = json.loads(base_path.read_text())
+          replication = json.loads(replication_path.read_text())
+          manifest = json.loads(manifest_path.read_text())
+          hypotheses = json.loads(hypotheses_path.read_text())
+
+          assert baseline['mode'] == 'official'
+          assert baseline['simulations'] == 10000
+          assert replication['mode'] == 'official'
+          assert replication['simulations'] == 50000
+          assert replication['master_seed'] == 2026073102
+          assert replication['version'] == 'complete_final_official_v1'
+          assert replication['source_hashes'] == baseline['source_hashes']
+          assert replication['official_release_authorization_used']['official_release_authorized'] is True
+          assert replication['event_sanity_gate']['passed'] is True
+          assert replication['discipline_calibration_gate']['passed'] is True
+          assert replication['orientation_equivalence']['passed'] is True
+          assert replication['seed_stability']['passed'] is True
+          assert hypotheses['h5_h6_h7_estimands_present'] is True
+          assert manifest['simulations'] == 50000
+          assert manifest['master_seed'] == 2026073102
+          assert manifest['source_hashes'] == replication['source_hashes']
+
+          p_base = float(baseline['home_champion_probability']['estimate'])
+          p_rep = float(replication['home_champion_probability']['estimate'])
+          p_real_rep = float(replication['away_champion_probability']['estimate'])
+          n_base = int(baseline['simulations'])
+          n_rep = int(replication['simulations'])
+          low_rep = float(replication['home_champion_probability']['low'])
+          high_rep = float(replication['home_champion_probability']['high'])
+          half_width = (high_rep - low_rep) / 2.0
+          consistency_threshold = 1.96 * math.sqrt(
+              p_base * (1.0 - p_base) / n_base + p_rep * (1.0 - p_rep) / n_rep
+          )
+          absolute_difference = abs(p_rep - p_base)
+          direction_matches = p_real_rep > p_rep
+          precision_passed = half_width <= 0.0045
+          monte_carlo_consistency_passed = absolute_difference <= consistency_threshold
+
+          total_n = n_base + n_rep
+          pooled = (p_base * n_base + p_rep * n_rep) / total_n
+          z = 1.96
+          denominator = 1.0 + z * z / total_n
+          center = (pooled + z * z / (2.0 * total_n)) / denominator
+          radius = z * math.sqrt(
+              pooled * (1.0 - pooled) / total_n + z * z / (4.0 * total_n * total_n)
+          ) / denominator
+
+          assert direction_matches is True
+          assert precision_passed is True
+          assert monte_carlo_consistency_passed is True
+
+          comparison = {
+              'status': 'official_v1_precision_replication_consistent',
+              'baseline': {
+                  'simulations': n_base,
+                  'master_seed': baseline['master_seed'],
+                  'synthetic_champion_probability': p_base,
+                  'confidence_interval': baseline['home_champion_probability'],
+              },
+              'replication': {
+                  'simulations': n_rep,
+                  'master_seed': replication['master_seed'],
+                  'synthetic_champion_probability': p_rep,
+                  'real_champion_probability': p_real_rep,
+                  'confidence_interval': replication['home_champion_probability'],
+                  'interval_half_width': half_width,
+              },
+              'comparison': {
+                  'signed_difference_replication_minus_baseline': p_rep - p_base,
+                  'absolute_difference': absolute_difference,
+                  'maximum_difference_under_preregistered_mc_consistency_rule': consistency_threshold,
+                  'direction_matches': direction_matches,
+                  'precision_passed': precision_passed,
+                  'monte_carlo_consistency_passed': monte_carlo_consistency_passed,
+              },
+              'secondary_pooled_precision_summary': {
+                  'simulations': total_n,
+                  'synthetic_champion_probability': pooled,
+                  'wilson_95_interval': {'low': center - radius, 'high': center + radius},
+                  'role': 'secondary only; baseline 10000 remains the primary confirmatory result',
+              },
+              'post_result_tuning_performed': False,
+          }
+          comparison_path = Path('data/model_readiness/official_v1_precision_replication_50000_comparison.json')
+          comparison_path.write_text(json.dumps(comparison, ensure_ascii=False, indent=2) + '\n')
+
+          def sha256(path: Path) -> str:
+              digest = hashlib.sha256()
+              with path.open('rb') as handle:
+                  for block in iter(lambda: handle.read(1024 * 1024), b''):
+                      digest.update(block)
+              return digest.hexdigest()
+
+          completion = {
+              'status': 'official_v1_precision_replication_50000_complete',
+              'engine_version': replication['version'],
+              'preregistered_revision': '${{ env.REPLICATION_PREREG_SHA }}',
+              'simulations': n_rep,
+              'master_seed': replication['master_seed'],
+              'summary_sha256': sha256(replication_path),
+              'manifest_sha256': sha256(manifest_path),
+              'comparison_sha256': sha256(comparison_path),
+              'source_hashes_equal_baseline': True,
+              'release_authorization_used': True,
+              'event_sanity_passed': True,
+              'discipline_calibration_passed': True,
+              'orientation_equivalence_passed': True,
+              'seed_stability_passed': True,
+              'h5_h6_h7_estimands_present': True,
+              'precision_passed': precision_passed,
+              'monte_carlo_consistency_passed': monte_carlo_consistency_passed,
+              'direction_matches_baseline': direction_matches,
+              'post_result_tuning_performed': False,
+              'full_package_storage': 'GitHub Actions immutable artifact',
+          }
+          Path('data/model_readiness/official_v1_precision_replication_50000_completion.json').write_text(
+              json.dumps(completion, ensure_ascii=False, indent=2) + '\n'
+          )
+          print(json.dumps(comparison, indent=2))
+          print(json.dumps(completion, indent=2))
+          PY
+
+      - name: Commit compact replication evidence only on unchanged branch
+        run: |
+          set -euo pipefail
+          git fetch origin "$REPLICATION_BRANCH"
+          test "$(git rev-parse FETCH_HEAD)" = "$REPLICATION_PREREG_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            protocol/official_v1_precision_replication_50000_preregistration.json \
+            data/model_readiness/official_v1_precision_replication_50000_completion.json \
+            data/model_readiness/official_v1_precision_replication_50000_comparison.json \
+            data/experiments/official_v1_precision_replication_50000/official/simulation_summary.json \
+            data/experiments/official_v1_precision_replication_50000/official/manifest.json \
+            data/experiments/official_v1_precision_replication_50000/official/official_hypotheses_summary.json \
+            data/experiments/official_v1_precision_replication_50000/official/official_h7_state_rates.csv \
+            data/experiments/official_v1_precision_replication_50000/official/official_h7_interactions.csv \
+            data/experiments/official_v1_precision_replication_50000/official/representative_final_timeline.csv \
+            data/experiments/official_v1_precision_replication_50000/official/synthetic_starting_xi.csv \
+            data/experiments/official_v1_precision_replication_50000/official/real_starting_xi.csv
+          git commit -m 'results: publish official v1 precision replication 50000 evidence'
+          git push origin HEAD:"$REPLICATION_BRANCH"
+
+      - name: Upload immutable full precision replication package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-v1-precision-replication-50000-${{ github.run_id }}
+          path: |
+            /tmp/precision_replication_structural_preflight.json
+            protocol/official_v1_precision_replication_50000_preregistration.json
+            data/experiments/official_v1_precision_replication_50000/official
+            data/model_readiness/official_release_authorization_v1.json
+            data/model_readiness/official_v1_precision_replication_50000_completion.json
+            data/model_readiness/official_v1_precision_replication_50000_comparison.json
+          if-no-files-found: warn
+          retention-days: 90
