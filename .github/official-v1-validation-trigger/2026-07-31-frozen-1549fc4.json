@@ -1,0 +1,8 @@
+{
+  "requested_at": "2026-07-31T08:12:00-06:00",
+  "reviewed_science_sha": "1549fc4af0c2ea3a461baef903f219156667ff52",
+  "smoke_run_id": 30636651397,
+  "validation_simulations": 2000,
+  "orientation_paired_observations": 2000,
+  "release_policy": "Commit affirmative evidence only if every release gate passes and the science branch remains at the reviewed SHA."
+}
