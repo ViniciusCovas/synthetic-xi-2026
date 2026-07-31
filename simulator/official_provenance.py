@@ -21,6 +21,9 @@ def sha256_file(path: Path) -> str | None:
 def critical_source_paths(config: dict[str, Any]) -> dict[str, Path]:
     return {
         "experiment_config": CONFIG_PATH,
+        "orientation_equivalence_contract": Path(
+            "config/official_orientation_equivalence_v1.json"
+        ),
         "protocol_amendment": Path(config["protocol_amendment"]),
         "protocol_addendum_emergency_substitution": Path(
             "PROTOCOL_AMENDMENT_OFFICIAL_V1_ADDENDUM_01.md"
