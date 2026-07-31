@@ -41,8 +41,12 @@ def critical_source_paths(config: dict[str, Any]) -> dict[str, Path]:
         ),
         "official_engine_source": Path("simulator/official_complete_final.py"),
         "official_monte_carlo_source": Path("simulator/official_monte_carlo.py"),
+        "official_orientation_source": Path("simulator/official_orientation.py"),
         "official_provenance_source": Path("simulator/official_provenance.py"),
         "official_runner_source": Path("scripts/run_official_experiment.py"),
+        "official_statistical_launcher_source": Path(
+            "scripts/run_official_experiment_v1_1.py"
+        ),
         "hypothesis_source": Path(
             "scripts/scientific/analyze_official_hypotheses.py"
         ),
@@ -53,6 +57,9 @@ def critical_source_paths(config: dict[str, Any]) -> dict[str, Path]:
             "scripts/scientific/validate_official_release.py"
         ),
         "official_test_source": Path("tests/test_official_experiment.py"),
+        "official_orientation_test_source": Path(
+            "tests/test_official_orientation.py"
+        ),
     }
 
 
