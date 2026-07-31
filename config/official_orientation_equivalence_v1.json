@@ -1,0 +1,13 @@
+{
+  "status": "official_orientation_equivalence_v1_preresult_freeze",
+  "version": "official_orientation_equivalence_v1",
+  "confidence_level": 0.95,
+  "maximum_absolute_probability_difference": 0.04,
+  "minimum_paired_observations_for_release": 2000,
+  "smoke_paired_observations": 200,
+  "common_random_numbers": true,
+  "home_advantage_for_test": 0.0,
+  "decision_rule": "The release gate passes only when the complete paired 95% confidence interval for the signed difference in Synthetic XI championship probability between neutral home and neutral away orientations is contained within [-0.04, +0.04], using at least 2000 paired observations.",
+  "smoke_policy": "The 200-pair smoke result is diagnostic only. It may detect gross asymmetry but cannot authorize orientation equivalence, even when its point estimate lies inside the equivalence margin.",
+  "post_result_tuning_allowed": false
+}
