@@ -1,0 +1,76 @@
+{
+  "status": "official_nested_uncertainty_complete",
+  "engine_version": "complete_final_official_v1",
+  "outer_parameter_worlds": 160,
+  "inner_matches_per_world": 100,
+  "total_matches": 16000,
+  "intervals": {
+    "synthetic_champion_probability": {
+      "mean": 0.45143750000000005,
+      "median": 0.45,
+      "p025": 0.27975000000000005,
+      "p10": 0.35,
+      "p90": 0.58,
+      "p975": 0.6402500000000001
+    },
+    "real_champion_probability": {
+      "mean": 0.5485625000000001,
+      "median": 0.55,
+      "p025": 0.35975,
+      "p10": 0.42,
+      "p90": 0.65,
+      "p975": 0.7202500000000001
+    },
+    "regulation_draw_probability": {
+      "mean": 0.255,
+      "median": 0.25,
+      "p025": 0.18,
+      "p10": 0.2,
+      "p90": 0.32,
+      "p975": 0.34025000000000005
+    },
+    "synthetic_mean_goals": {
+      "mean": 1.4836874999999998,
+      "median": 1.4649999999999999,
+      "p025": 1.1395,
+      "p10": 1.25,
+      "p90": 1.78,
+      "p975": 1.9207500000000002
+    },
+    "real_mean_goals": {
+      "mean": 1.7014375000000002,
+      "median": 1.7,
+      "p025": 1.3395000000000001,
+      "p10": 1.449,
+      "p90": 1.9309999999999998,
+      "p975": 2.11
+    }
+  },
+  "probability_real_more_likely_than_synthetic": 0.71875,
+  "components_included": [
+    "player_profile_uncertainty",
+    "role_classification_sensitivity",
+    "top_n_sensitivity",
+    "minimum_minutes_sensitivity",
+    "coordination",
+    "engine_parameters",
+    "paired_referee_context",
+    "paired_environment_context",
+    "match_randomness"
+  ],
+  "required_components": [
+    "player_profile_uncertainty",
+    "role_classification_sensitivity",
+    "top_n_sensitivity",
+    "minimum_minutes_sensitivity",
+    "coordination",
+    "engine_parameters",
+    "paired_referee_context",
+    "paired_environment_context",
+    "match_randomness"
+  ],
+  "all_required_components_included": true,
+  "actor_membership_failures": 0,
+  "environment_policy": "Paired context label; no unvalidated player-performance modifier.",
+  "official_nested_uncertainty_complete": true
+}
