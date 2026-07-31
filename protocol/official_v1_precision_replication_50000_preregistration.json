@@ -1,0 +1,64 @@
+{
+  "status": "preregistered_before_replication_execution",
+  "registered_at": "2026-07-31T11:35:00-06:00",
+  "study": "Synthetic XI official_v1 precision replication",
+  "epistemic_role": "Independent precision replication; does not replace or retroactively modify the confirmatory 10000-run result.",
+  "frozen_engine_version": "complete_final_official_v1",
+  "authorized_source_sha": "06c750cfef3246d3c6112f6bd86d25a83287308f",
+  "baseline_evidence_commit": "0461ed7b5cf796cd4ab484eeca4ceb5a8075e41b",
+  "baseline": {
+    "simulations": 10000,
+    "master_seed": 2026073001,
+    "synthetic_champion_probability": 0.4459,
+    "real_champion_probability": 0.5541
+  },
+  "replication_design": {
+    "simulations": 50000,
+    "master_seed": 2026073102,
+    "fixed_sample_size": true,
+    "early_stopping": false,
+    "parameter_changes_permitted": false,
+    "code_changes_permitted": false,
+    "post_result_tuning_permitted": false,
+    "home_advantage": 0.0,
+    "output_root": "data/experiments/official_v1_precision_replication_50000",
+    "full_package_storage": "GitHub Actions immutable artifact"
+  },
+  "primary_estimand": "Synthetic XI champion probability",
+  "secondary_estimands": [
+    "Real Best XI champion probability",
+    "regulation win-draw-loss probabilities",
+    "H5 outcome variability estimands",
+    "H6 extreme-impact estimands",
+    "H7 score-state by numerical-state by phase interactions"
+  ],
+  "precision_rule": {
+    "confidence_level": 0.95,
+    "maximum_primary_interval_half_width": 0.0045,
+    "rationale": "At n=50000 the worst-case binomial 95% half-width is approximately 0.00438."
+  },
+  "replication_consistency_rule": {
+    "direction_must_match": "Real Best XI champion probability greater than Synthetic XI champion probability",
+    "difference_test": "absolute difference between baseline and replication Synthetic XI estimates must not exceed 1.96 times the square root of the sum of their binomial Monte Carlo variances",
+    "formula": "abs(p_rep-p_base) <= 1.96*sqrt(p_base*(1-p_base)/10000 + p_rep*(1-p_rep)/50000)",
+    "interpretation": "This is a Monte Carlo consistency check, not a test of real-world truth."
+  },
+  "mandatory_integrity_gates": [
+    "release authorization remains affirmative",
+    "critical source hashes equal the authorized hashes",
+    "simulation count equals 50000",
+    "master seed equals 2026073102",
+    "event sanity passes",
+    "discipline calibration passes",
+    "orientation equivalence passes",
+    "seed stability passes",
+    "H5 H6 H7 estimands are present",
+    "post-result tuning remains false"
+  ],
+  "reporting_policy": {
+    "baseline_10000_result_remains_primary_confirmatory_result": true,
+    "replication_50000_result_reported_separately": true,
+    "pooled_60000_estimate_allowed_as_secondary_precision_summary": true,
+    "all_discrepancies_reported_without selective omission": true
+  }
+}
