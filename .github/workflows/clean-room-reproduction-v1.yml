@@ -21,7 +21,7 @@ jobs:
     timeout-minutes: 240
     concurrency:
       group: clean-room-reproduction-official-v1
-      cancel-in-progress: false
+      cancel-in-progress: true
 
     steps:
       - name: Checkout reproduction branch
