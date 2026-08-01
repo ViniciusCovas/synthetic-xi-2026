@@ -1,0 +1,8 @@
+{
+  "status": "clean_room_reproduction_started",
+  "workflow_run_id": "30684737411",
+  "workflow_attempt": "1",
+  "source_sha": "4d72c0af036aec869fdcae370f520efee1301e07",
+  "branch": "repro/clean-room-and-anonymous-package-v1",
+  "started_at_utc": "2026-08-01T04:52:10Z"
+}
