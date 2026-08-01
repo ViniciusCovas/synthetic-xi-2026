@@ -1,0 +1,1 @@
+Build the complete JASSS submission package: blinded manuscript, ODD supplement, title page, cover letter, DOCX/PDF versions, high-resolution figures, anonymous reproducibility ZIP, rendered page images, and checksum reports.
