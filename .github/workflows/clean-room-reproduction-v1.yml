@@ -1,0 +1,174 @@
+name: Clean-room reproduction and blinded package v1
+
+on:
+  push:
+    branches:
+      - repro/clean-room-and-anonymous-package-v1
+    paths:
+      - '.github/clean-room-reproduction-v1-trigger/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  PYTHONHASHSEED: '0'
+  PIP_DISABLE_PIP_VERSION_CHECK: '1'
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    concurrency:
+      group: clean-room-reproduction-official-v1
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout reproduction branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Record observable audit start
+        run: |
+          mkdir -p reproduction
+          cat > reproduction/clean_room_run_started.json <<EOF
+          {
+            "status": "clean_room_reproduction_started",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "workflow_attempt": "${GITHUB_RUN_ATTEMPT}",
+            "source_sha": "${GITHUB_SHA}",
+            "branch": "${GITHUB_REF_NAME}",
+            "started_at_utc": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          }
+          EOF
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reproduction/clean_room_run_started.json
+          git commit -m 'repro: record clean-room audit start'
+          git push origin HEAD:${GITHUB_REF_NAME}
+
+      - name: Set up clean Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies without cache
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --no-cache-dir -r requirements.txt
+          python -m pip check
+          python -m pip freeze --all | sort > /tmp/clean-room-pip-freeze.txt
+          python --version > /tmp/clean-room-system.txt
+          uname -a >> /tmp/clean-room-system.txt
+
+      - name: Compile frozen scientific sources
+        run: |
+          python -m py_compile \
+            simulator/official_profiles.py \
+            simulator/official_profile_sensitivity.py \
+            simulator/official_complete_final.py \
+            simulator/official_monte_carlo.py \
+            simulator/official_orientation.py \
+            scripts/run_official_experiment.py \
+            scripts/run_official_experiment_v1_1.py \
+            scripts/scientific/analyze_official_hypotheses.py \
+            scripts/scientific/validate_official_release.py \
+            scripts/scientific/verify_clean_room_reproduction.py \
+            scripts/scientific/build_anonymous_review_bundle.py
+
+      - name: Structural fail-closed preflight
+        run: |
+          PYTHONPATH=. python scripts/scientific/validate_official_release.py \
+            --mode structural \
+            --status-output /tmp/clean-room-structural-preflight.json
+
+      - name: Run focused official tests
+        run: |
+          PYTHONPATH=. pytest -q \
+            tests/test_official_experiment.py \
+            tests/test_official_orientation.py
+
+      - name: Regenerate the 10,000-run confirmatory experiment
+        run: |
+          rm -rf /tmp/official-v1-clean-room
+          PYTHONPATH=. python scripts/run_official_experiment_v1_1.py \
+            --mode official \
+            --simulations 10000 \
+            --seed 2026073001 \
+            --output /tmp/official-v1-clean-room
+
+      - name: Compare regenerated evidence with frozen evidence
+        id: verify
+        continue-on-error: true
+        run: |
+          PYTHONPATH=. python scripts/scientific/verify_clean_room_reproduction.py \
+            --reference data/experiments/official_v1/official \
+            --candidate /tmp/official-v1-clean-room/official \
+            --environment /tmp/clean-room-pip-freeze.txt \
+            --output reproduction/clean_room_official_v1.json \
+            --markdown reproduction/clean_room_official_v1.md \
+            --environment-copy reproduction/clean_room_environment.txt
+
+      - name: Build double-blind reviewer package
+        id: anonymous
+        continue-on-error: true
+        run: |
+          PYTHONPATH=. python scripts/scientific/build_anonymous_review_bundle.py \
+            --root . \
+            --output-dir /tmp/jasss-double-blind-review-package \
+            --archive /tmp/jasss-double-blind-review-package.zip \
+            --manifest reproduction/anonymous_review_package_manifest.json
+
+      - name: Record compact audit evidence
+        if: always()
+        run: |
+          mkdir -p reproduction
+          cp /tmp/clean-room-system.txt reproduction/clean_room_system.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reproduction/
+          if git diff --cached --quiet; then
+            echo 'No compact audit evidence changed.'
+          else
+            git commit -m 'repro: publish clean-room audit evidence'
+            git push origin HEAD:${GITHUB_REF_NAME}
+          fi
+
+      - name: Upload clean-room evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-v1-clean-room-reproduction-${{ github.run_id }}
+          path: |
+            /tmp/official-v1-clean-room/official
+            /tmp/clean-room-pip-freeze.txt
+            /tmp/clean-room-system.txt
+            /tmp/clean-room-structural-preflight.json
+            reproduction/clean_room_official_v1.json
+            reproduction/clean_room_official_v1.md
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Upload anonymous reviewer package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jasss-double-blind-review-package-${{ github.run_id }}
+          path: |
+            /tmp/jasss-double-blind-review-package.zip
+            reproduction/anonymous_review_package_manifest.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Enforce audit gates
+        if: always()
+        run: |
+          if [[ '${{ steps.verify.outcome }}' != 'success' ]]; then
+            echo 'Clean-room reproduction did not pass.' >&2
+            exit 1
+          fi
+          if [[ '${{ steps.anonymous.outcome }}' != 'success' ]]; then
+            echo 'Anonymous reviewer package did not pass identity scanning.' >&2
+            exit 1
+          fi

@@ -1,0 +1,1095 @@
+{
+  "status": "anonymous_double_blind_package_built",
+  "identity_scan_passed": true,
+  "identity_scan_policy": "Unambiguous author, repository, institution, domain, and ORCID identifiers; standalone player first names are not identity signals.",
+  "excluded_identity_surfaces": [
+    "Git history",
+    "repository owner and URL",
+    "title page",
+    "cover letter",
+    "author names and affiliations",
+    "workflow metadata",
+    "audit-only helper scripts containing deny-list terms"
+  ],
+  "files": [
+    {
+      "path": "MANUSCRIPT_ANONYMIZED.md",
+      "bytes": 50703,
+      "sha256": "ad5d84162ca2803763fc10827fa22de4e25cf9790b51790cb4698518634cc166"
+    },
+    {
+      "path": "METHODS_OFFICIAL_V1.md",
+      "bytes": 6655,
+      "sha256": "e5e68a90fd8429dfa2ab3c85e535b4733f354022ae9edc78ddc510019b7d3792"
+    },
+    {
+      "path": "PROTOCOL_AMENDMENT_OFFICIAL_V1.md",
+      "bytes": 7275,
+      "sha256": "6f73fbeb6e1ff009e72fcccd532a4613868991335315fe3ea6dfeb24c604a91c"
+    },
+    {
+      "path": "README_REVIEWERS.md",
+      "bytes": 1150,
+      "sha256": "1f615ae36b236004b2825c18dacc98bf66555ff0704b09221e18ad033b404e8c"
+    },
+    {
+      "path": "SCIENTIFIC_RELEASE_OFFICIAL_V1.md",
+      "bytes": 4285,
+      "sha256": "72d06026eb4527b9e67d4aacbf722a72b0a75355fbf61af22f53576570c98044"
+    },
+    {
+      "path": "SUPPLEMENT_ODD_ANONYMIZED.md",
+      "bytes": 22751,
+      "sha256": "089e89018c3bae6defc79cb0e922961703f164dd13bade15586daaf92e6cab30"
+    },
+    {
+      "path": "config/complete_final_preflight_tolerances_v1.json",
+      "bytes": 971,
+      "sha256": "42986e532dabdd1fab6b48d34adc1cbd55db5ea7a89236df8ac7ec9158090c49"
+    },
+    {
+      "path": "config/complete_final_preflight_v1.json",
+      "bytes": 4936,
+      "sha256": "43ccda59a743b8d9cddf88cb7a840b9d466d98e9829baf8a0f26f66bda3892f2"
+    },
+    {
+      "path": "config/complete_final_rules_fix_v1_1.json",
+      "bytes": 1800,
+      "sha256": "41d3767308bf71dec20a7990b090a9993f1e4c1c5f3b5f8d2d64f6cfe7b2645c"
+    },
+    {
+      "path": "config/complete_final_yellow_card_measurement_v1.json",
+      "bytes": 1448,
+      "sha256": "f3a3cbd68d60c794a7227c7a4670b3c6761f6630d7e1d8e6603b61106b1add6a"
+    },
+    {
+      "path": "config/official_experiment_v1.json",
+      "bytes": 5066,
+      "sha256": "87dc59551f6815cf0e6b23ef63f856d49c8aa21367e33344985eedda8869bcad"
+    },
+    {
+      "path": "config/official_orientation_equivalence_v1.json",
+      "bytes": 898,
+      "sha256": "0ca6af89414b493d4d22ce77f0731cebeef8c6cb8a72a92de3c68b158c52bc23"
+    },
+    {
+      "path": "data/experiments/official_v1/official/manifest.json",
+      "bytes": 6049,
+      "sha256": "cf81e04eadd82a0067a50cbbc0a1bb6725e2528528e0c129674d64644034aa42"
+    },
+    {
+      "path": "data/experiments/official_v1/official/official_h7_interactions.csv",
+      "bytes": 8642,
+      "sha256": "f168c92bda8cf03a40641313258f65c8fa054c607e6a6be0676442fe1687b540"
+    },
+    {
+      "path": "data/experiments/official_v1/official/official_h7_state_rates.csv",
+      "bytes": 7787,
+      "sha256": "1846820a0ffe1ecf391553a51f490d0264c1bdee27a452cc4c21e958940781c5"
+    },
+    {
+      "path": "data/experiments/official_v1/official/official_hypotheses_summary.json",
+      "bytes": 3582,
+      "sha256": "0fb43ddac7ab9db0962bc386244a92dee2b87d81f408e102b25bba5cbf8c8b33"
+    },
+    {
+      "path": "data/experiments/official_v1/official/real_starting_xi.csv",
+      "bytes": 2427,
+      "sha256": "6b9e36b5a0a5618fab14635e76470d30c2680f55ce35fe36037f0d9ae2088109"
+    },
+    {
+      "path": "data/experiments/official_v1/official/representative_final_timeline.csv",
+      "bytes": 11495,
+      "sha256": "c940fb5f839d6a520a4f2ec0edf6bda1df0bf6586555d52a1bee8bcc046b5724"
+    },
+    {
+      "path": "data/experiments/official_v1/official/simulation_summary.json",
+      "bytes": 77188,
+      "sha256": "e870f3e4e4b871bc8e06a1a07942427b3a54b32005c01c77c6927e73618566be"
+    },
+    {
+      "path": "data/experiments/official_v1/official/synthetic_starting_xi.csv",
+      "bytes": 2662,
+      "sha256": "7704b49056c64ae39861ebf1f8541125e6b7311feedaf1a3aed4f2b3323c64ae"
+    },
+    {
+      "path": "data/experiments/official_v1/robustness/official_nested_uncertainty_summary.json",
+      "bytes": 2063,
+      "sha256": "eae4fa550d34f179cfea95191d0ec610d443729e6fb2c29ae9002b65e5c17a7e"
+    },
+    {
+      "path": "data/experiments/official_v1/robustness/official_sensitivity_scenarios.csv",
+      "bytes": 1903,
+      "sha256": "bb226b7119d0ea35ba1552f6f30b9a00ee7f6d92341b7b6e15b1e0879205d019"
+    },
+    {
+      "path": "data/experiments/official_v1/robustness/official_sensitivity_summary.json",
+      "bytes": 1177,
+      "sha256": "0b84134f6ea7e95eeaf271f4d578ca33f9fd03f750b0754722c320537fd22aae"
+    },
+    {
+      "path": "data/experiments/official_v1_precision_replication_50000/official/manifest.json",
+      "bytes": 6051,
+      "sha256": "7260b5e112ce5d5d6bde0f0d7b9a6d4181a899a47dafe9685877d698d367c53e"
+    },
+    {
+      "path": "data/experiments/official_v1_precision_replication_50000/official/official_h7_interactions.csv",
+      "bytes": 8654,
+      "sha256": "b1df98083a87225964400547ae31a58d9ffe6e9280d5c557f01bb33b1059d000"
+    },
+    {
+      "path": "data/experiments/official_v1_precision_replication_50000/official/official_h7_state_rates.csv",
+      "bytes": 7941,
+      "sha256": "eaa2804558d70f68fd61f226c02ceb20ff7660baa816b6452bc5b9ba0a453fad"
+    },
+    {
+      "path": "data/experiments/official_v1_precision_replication_50000/official/official_hypotheses_summary.json",
+      "bytes": 3517,
+      "sha256": "a18d1aa1895c3c71967b8f544db1edb21b86716475f40866acb956c3bb7bda34"
+    },
+    {
+      "path": "data/experiments/official_v1_precision_replication_50000/official/real_starting_xi.csv",
+      "bytes": 2427,
+      "sha256": "6b9e36b5a0a5618fab14635e76470d30c2680f55ce35fe36037f0d9ae2088109"
+    },
+    {
+      "path": "data/experiments/official_v1_precision_replication_50000/official/representative_final_timeline.csv",
+      "bytes": 10620,
+      "sha256": "c8ed53b415d08302876332d92b492f37641e68c91f5d2d56592cb2f3d6f7a127"
+    },
+    {
+      "path": "data/experiments/official_v1_precision_replication_50000/official/simulation_summary.json",
+      "bytes": 73952,
+      "sha256": "70f87a197c4ae484aa7e280f24a12e0f3e6960b26c1451b9b09d38e3809a0bef"
+    },
+    {
+      "path": "data/experiments/official_v1_precision_replication_50000/official/synthetic_starting_xi.csv",
+      "bytes": 2661,
+      "sha256": "b0e4f94d26b8d352285fdc3bf62ecb5cb29cab56fc81c7ea22a86d57be0081e4"
+    },
+    {
+      "path": "data/model_readiness/annual_model_readiness.json",
+      "bytes": 706,
+      "sha256": "cbb12551b8a445b081c6b346ac0abcedba08f5352c35f6bb98c929b45b2aa72f"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/coverage_by_player.csv",
+      "bytes": 337645,
+      "sha256": "a528ef3e51c68f3de953a6adf4223f1277a88ab9016f86ad969416a2e6a9125e"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/coverage_by_position.csv",
+      "bytes": 374,
+      "sha256": "b12db5450d62d2ac7ae9401133287fdcefcf2aa861c2cfff24b1047e5d2cdc1a"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/exporter.log",
+      "bytes": 3387,
+      "sha256": "7dbe753af95e0a237d091e02d8a48bc93badac254274d7bdc4ecd7627708ae79"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/exporter_exit_code.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/exporter_tail.log",
+      "bytes": 691,
+      "sha256": "738a66807c2e706cb67b305a50d94af47fd342559064548b24c749c11f630b0d"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/rebuilt_coverage_ledger.csv",
+      "bytes": 11286391,
+      "sha256": "16836784e210cd41b4f6d309e6d2f64cf70fdb06c43d9111d997b0299089a93b"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/selection_sufficiency_report.json",
+      "bytes": 3386,
+      "sha256": "95601c7338b44c4b9b96935ed2198a0194cb1884a67d5124476dd92715900816"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/truly_unresolved_player_fixture_pairs.csv",
+      "bytes": 42684,
+      "sha256": "597c8b6363ac4adfa54d61408dc7870baf0e967905eabdcb6cef90ebf64253ea"
+    },
+    {
+      "path": "data/model_readiness/cache_rebuild/truly_unresolved_priority_fixtures.csv",
+      "bytes": 8272,
+      "sha256": "5c6b8a253a698af9c4c9306c59a44655675a32ea5bacc97da807fa73d10eb7e8"
+    },
+    {
+      "path": "data/model_readiness/candidate_coverage_status.json",
+      "bytes": 796,
+      "sha256": "6392664af67073b7b1b28815b61102a0d945b2c111675977ce67ac65a896f106"
+    },
+    {
+      "path": "data/model_readiness/candidate_window_coverage.csv",
+      "bytes": 358401,
+      "sha256": "d1791d591129dbc35e359bc9436be70020cfff14066382e290accde1e988cb8b"
+    },
+    {
+      "path": "data/model_readiness/complete_final_preflight_status.json",
+      "bytes": 6005,
+      "sha256": "797da193d5c8ea789993d50bef9ef17c84c7be33dfab51997b5efc381c27c3d0"
+    },
+    {
+      "path": "data/model_readiness/complete_final_release_10000_status.json",
+      "bytes": 1749,
+      "sha256": "3c45cbb68f4c52f7ec419daa687236447cb8eab8eef20aefcbaba873dbd7f654"
+    },
+    {
+      "path": "data/model_readiness/complete_final_rosters_v1.json",
+      "bytes": 45896,
+      "sha256": "b92dd9d58f635dd426d9fe154d38f7d5a4dcc2705a0b6d5d4c6b52a4f31d4d61"
+    },
+    {
+      "path": "data/model_readiness/complete_final_rules_fix_v1_1_status.json",
+      "bytes": 723,
+      "sha256": "5d6a852674281a2259ded7ccd990df7e3e6146ba5f8d15236478ea55dcad658e"
+    },
+    {
+      "path": "data/model_readiness/complete_final_v1_1_reclassification.json",
+      "bytes": 1128,
+      "sha256": "52cf9a84e7fda3bab681076fd78e643aa8bc784e7c7e63159151eaad19e290e9"
+    },
+    {
+      "path": "data/model_readiness/complete_final_validation_2000_status.json",
+      "bytes": 2951,
+      "sha256": "35ec6421455676211f794b14ae2d52c7a82ea029bff3adcc650b821a2d987c17"
+    },
+    {
+      "path": "data/model_readiness/complete_final_yellow_card_measurement_v1_status.json",
+      "bytes": 1142,
+      "sha256": "6f2060c8b6e3cd1027d806c023414a05a516ab48305e87844ce29870045eefed"
+    },
+    {
+      "path": "data/model_readiness/coverage_audit_summary.json",
+      "bytes": 972,
+      "sha256": "91de2eb787cafb4ae052cc7dfe7396c1b090ddebe7cd98f5272ae09071ffc4e9"
+    },
+    {
+      "path": "data/model_readiness/coverage_priority_fixtures.csv",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "data/model_readiness/coverage_priority_fixtures_all.csv",
+      "bytes": 82037,
+      "sha256": "e4c266e2cce7f689333dae6526d56dcfe7a3f0128ae89556591acdf1255faa97"
+    },
+    {
+      "path": "data/model_readiness/coverage_summary_by_window.csv",
+      "bytes": 243,
+      "sha256": "c06c2db5e45992b7ceb81d98d9d1994a5b72c55b67c5e45478c1ce6960d87e4c"
+    },
+    {
+      "path": "data/model_readiness/eleven_role_candidate_counts.csv",
+      "bytes": 89,
+      "sha256": "eb6b3e91065630c5f792b7b0cf83c4ba93d198ac69ee697b43aa2077dede2784"
+    },
+    {
+      "path": "data/model_readiness/eleven_role_evidence.csv",
+      "bytes": 126330,
+      "sha256": "1910844611f2d49465a79bfdf14409070f8d80304218127af86fcdd6d4ea2a03"
+    },
+    {
+      "path": "data/model_readiness/eleven_role_readiness.json",
+      "bytes": 482,
+      "sha256": "7f9306067c48c23417a32ea693adbab6dc44e12cde580d58c0d739935ecc67d5"
+    },
+    {
+      "path": "data/model_readiness/lateral_grid_anchor_evidence.csv",
+      "bytes": 27552,
+      "sha256": "68982685dece4626207002f4e33d5848e873c998b2192c028e39145e72615758"
+    },
+    {
+      "path": "data/model_readiness/lateral_grid_mapping_comparison.csv",
+      "bytes": 128,
+      "sha256": "86024a24ba006cbc0fb2459fbce7f29718ec24c5de75077f340b5bd143aa028a"
+    },
+    {
+      "path": "data/model_readiness/lateral_grid_validation.json",
+      "bytes": 614,
+      "sha256": "ab70c1eb66410aafc98303eda5c87c747ba1a0e1e2f5fa95fd3f28f57944349c"
+    },
+    {
+      "path": "data/model_readiness/official_experiment_v1_completion.json",
+      "bytes": 917,
+      "sha256": "170d6e9433f930e72ff4ce6bcf625eb884914c0d1bb409859a9ab7283978bdc1"
+    },
+    {
+      "path": "data/model_readiness/official_experiment_v1_preflight_status.json",
+      "bytes": 9568,
+      "sha256": "35d547ac75ada455bdb01dc6cad54eb023faba5a2ed5b94fababd0b59a4b1c1e"
+    },
+    {
+      "path": "data/model_readiness/official_rankings_authorization_v1.json",
+      "bytes": 1183,
+      "sha256": "257de63d35fcc65e43871e8baa300031171060854dcdc27c8cc919e27123096b"
+    },
+    {
+      "path": "data/model_readiness/official_release_authorization_v1.json",
+      "bytes": 10335,
+      "sha256": "c0e9e4391e80786543bcdca8186c98686a6cc8c4c52cf184d6dab46b03c4fcf9"
+    },
+    {
+      "path": "data/model_readiness/official_v1_precision_replication_50000_comparison.json",
+      "bytes": 1366,
+      "sha256": "79d4c77813cc99c6ed3609bba8878ffd7250d2b676dffdb7988bb72eb207459a"
+    },
+    {
+      "path": "data/model_readiness/official_v1_precision_replication_50000_completion.json",
+      "bytes": 985,
+      "sha256": "cde6b6ad99c10670f17718edf3014fa8093ce8e30111d76755e95473797f74a0"
+    },
+    {
+      "path": "data/model_readiness/partial_annual_current_totals.csv",
+      "bytes": 181224,
+      "sha256": "8e823677962fb622b1c1dd0094fd96532819c7842e53b6036149a7a106f37255"
+    },
+    {
+      "path": "data/model_readiness/partial_pre_world_cup_totals.csv",
+      "bytes": 176702,
+      "sha256": "b929b33444f2ce89fa1763463af593b243fed9c07a5fefcafa016c83bf848634"
+    },
+    {
+      "path": "data/model_readiness/partial_role_evidence.csv",
+      "bytes": 153002,
+      "sha256": "d1ff71392a682f6746b072fd9a06277b9f12190403ff46587594922e9acbf659"
+    },
+    {
+      "path": "data/model_readiness/player_window_coverage.csv",
+      "bytes": 375226,
+      "sha256": "c4ad9e326e2d028b53c3526e0aee29ca811e48bc37c018e36148e4e57210ad63"
+    },
+    {
+      "path": "data/model_readiness/player_window_coverage_v1_season_denominator.csv",
+      "bytes": 377619,
+      "sha256": "67652b129600c8e62076c75e45c0b8253ba68c639ea8fe7e667843ed92732de0"
+    },
+    {
+      "path": "data/model_readiness/scientific_validation_status.json",
+      "bytes": 1166,
+      "sha256": "81dd5f5c1ac502d07b6ebab22bdefec8c33cc8d64fe33aafe9e8d074a02946f7"
+    },
+    {
+      "path": "data/model_readiness/selection_challenger_reconstructed_minutes.csv",
+      "bytes": 129729,
+      "sha256": "eeba8acc44638cc1aa7fc7dd9f1809ac24e28275a022e737fc939500a55e3852"
+    },
+    {
+      "path": "data/model_readiness/selection_frontier.csv",
+      "bytes": 485830,
+      "sha256": "a290710072651e31fc81ea3835934dee88d5596e6dc61c6c80daeafe53467816"
+    },
+    {
+      "path": "data/model_readiness/selection_frontier_all_candidates.csv",
+      "bytes": 485830,
+      "sha256": "a290710072651e31fc81ea3835934dee88d5596e6dc61c6c80daeafe53467816"
+    },
+    {
+      "path": "data/model_readiness/selection_frontier_coverage.csv",
+      "bytes": 375073,
+      "sha256": "84a5ab00e973eedd4a965307cdc611002d22f86edf2d5b3d986c6f89e9fd24df"
+    },
+    {
+      "path": "data/model_readiness/selection_frontier_priority_fixtures.csv",
+      "bytes": 56,
+      "sha256": "6b436bafb792882c955cdd8f49e833d6a3ff94d505a2be7aed50dc296adae696"
+    },
+    {
+      "path": "data/model_readiness/selection_frontier_status.json",
+      "bytes": 1118,
+      "sha256": "bd69a0d2df7168a4212549f93205c28970d1ffc5d33e6157578531a9dd53b46d"
+    },
+    {
+      "path": "data/model_readiness/selection_sufficiency_all_players.csv",
+      "bytes": 702719,
+      "sha256": "fe3601dee951296d6ed1c733ad7e12e23859e4b7568b6d1190b64fad51a6e1e6"
+    },
+    {
+      "path": "data/model_readiness/selection_sufficiency_priority_fixtures.csv",
+      "bytes": 56,
+      "sha256": "6b436bafb792882c955cdd8f49e833d6a3ff94d505a2be7aed50dc296adae696"
+    },
+    {
+      "path": "data/model_readiness/selection_sufficiency_status.json",
+      "bytes": 3183,
+      "sha256": "8f048b51d2f99192b14c4fe5137110eb136a7d642e88aa5bcecc3b854c008934"
+    },
+    {
+      "path": "data/model_readiness/selection_sufficiency_unresolved_players.csv",
+      "bytes": 1000,
+      "sha256": "2d194e65c93264dc0f8feb89cdb9c32cb7f1adbbf6cd024d1644db4f98728624"
+    },
+    {
+      "path": "paper/FIGURE_CAPTIONS.md",
+      "bytes": 2150,
+      "sha256": "432faf4c97821e3e538546ea8579e0ef93e0bf83df0731ff856ad962812b4615"
+    },
+    {
+      "path": "paper/PROVENANCE_MATRIX.md",
+      "bytes": 2613,
+      "sha256": "a053f064e60c8d7b103078216d9045d180e52efbaae820a0cab280c22b323c7b"
+    },
+    {
+      "path": "paper/figures/figure_1_replication_consistency.svg",
+      "bytes": 2964,
+      "sha256": "81c501f208d2dfd8ccbaab196b7cd04a3e74ceef6f5d971025f5e68a6a678ee2"
+    },
+    {
+      "path": "paper/figures/figure_2_h5_variability.svg",
+      "bytes": 4026,
+      "sha256": "d6f82c4fdab82a3c7430a68938d5193b497fedbeff785be1b8824c8d7b8c28c5"
+    },
+    {
+      "path": "paper/figures/figure_3_h6_extreme_outcomes.svg",
+      "bytes": 2523,
+      "sha256": "719a103b7270eb6c74e321490c116c8c5271e3258709a8d0b1cc4eb88f0fc3f6"
+    },
+    {
+      "path": "paper/figures/figure_4_precision_vs_structural_uncertainty.svg",
+      "bytes": 2538,
+      "sha256": "ab7b701362dd402f3272181dfa17661df8d812f3565e3aadb3cf2ab18695a419"
+    },
+    {
+      "path": "paper/figures/figure_5_h7_context_dependence.svg",
+      "bytes": 6201,
+      "sha256": "e469a2fe43c3159bff5a64d11803a0db32b717d0e340c8471dba6ddecf660d12"
+    },
+    {
+      "path": "protocol/official_v1_precision_replication_50000_preregistration.json",
+      "bytes": 2897,
+      "sha256": "2609522f41225678d38403dd3ff8000394912fe74ea3abcedff5b522748e298f"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 61,
+      "sha256": "63c86ec99443d99a8cb2e92c0c5f0e3c4e1bce1d05059b2932cecc29c42e64e2"
+    },
+    {
+      "path": "scripts/analyze_adaptive_extraction.py",
+      "bytes": 7854,
+      "sha256": "bec8c9fbc03322a3974e4f1cb847cfe61849e8fe688b99eb8933a8bf2560420a"
+    },
+    {
+      "path": "scripts/analyze_annual_coverage.py",
+      "bytes": 11820,
+      "sha256": "0afdf08ba2e8b4cf2d3d2cd3daac8ad13443f54ce239818cf608d4a32a1dfe1d"
+    },
+    {
+      "path": "scripts/api_football_batch_client.py",
+      "bytes": 5329,
+      "sha256": "81e2095af36be920c8c6693f02b201785fd05c55a1bbf4e16a0ab38d35b5f7c2"
+    },
+    {
+      "path": "scripts/audit_annual_coverage.py",
+      "bytes": 11807,
+      "sha256": "d8705325d7cf16f8f8f6ba5b65a8f14ca0aa50faafbb8703daeb3d600ac1d7e9"
+    },
+    {
+      "path": "scripts/audit_annual_coverage_v2.py",
+      "bytes": 16871,
+      "sha256": "a0c67afba73240896a2fc045b6fe4fed69f59bf184ecf26b7920239a9293feaa"
+    },
+    {
+      "path": "scripts/build_candidate_coverage_gate.py",
+      "bytes": 3727,
+      "sha256": "f1c57af8369c3e0a84b0fc95a6fc5b2397fd671c772b1666f582e9ff68ed8050"
+    },
+    {
+      "path": "scripts/build_exact_coverage_audit.py",
+      "bytes": 11928,
+      "sha256": "52a02d63e44ab5233c25ee4ce11b7092ab3cc604127440709eb34aadb2e01809"
+    },
+    {
+      "path": "scripts/build_exact_fixture_inventory.py",
+      "bytes": 9777,
+      "sha256": "5f71bb81641983fcde62edf3649fd1c7ac8f745d13e912c91552e100ad9557af"
+    },
+    {
+      "path": "scripts/build_final_release_package.py",
+      "bytes": 6041,
+      "sha256": "56f31f99aa6fe71486295a0a40dd96db088c43767cf9062e14ab8722a9df0e9c"
+    },
+    {
+      "path": "scripts/build_paper_exhibits.py",
+      "bytes": 7596,
+      "sha256": "d6e5874ec970edd67d15114f9e89d89420a763660f776c843229a41a947bb16a"
+    },
+    {
+      "path": "scripts/build_partial_window_artifacts.py",
+      "bytes": 8634,
+      "sha256": "a6111e319f2a815851e637dad25abe28294647c44035d92ec50638e61adfcffe"
+    },
+    {
+      "path": "scripts/build_replay_broadcast.py",
+      "bytes": 7071,
+      "sha256": "89b2094fe7b9bb95692d369f21bb1f772f72e6ae646fb7d1307a6ad48aff3667"
+    },
+    {
+      "path": "scripts/build_scientific_exhibits.py",
+      "bytes": 6114,
+      "sha256": "65301c7c27650e4487be7f0a3416076cfc48db6c00c52e4d4e67393ff324c026"
+    },
+    {
+      "path": "scripts/build_scientific_status.py",
+      "bytes": 3020,
+      "sha256": "06df62166877aec66b664f095a5ff9609a63b89c6575a45974cd76711c04372a"
+    },
+    {
+      "path": "scripts/build_selection_frontier.py",
+      "bytes": 9134,
+      "sha256": "b77fc0a709bf2ff604b9179b4948a2cdaf5e9a17b485a39160a3140cc53ad44d"
+    },
+    {
+      "path": "scripts/build_selection_sufficiency_gate.py",
+      "bytes": 9890,
+      "sha256": "37fa7e74f7471dc3d3f05e4a3f58d1fd7fe7ac5514c3c87e83019641a37f8ed9"
+    },
+    {
+      "path": "scripts/build_simulator_calibration.py",
+      "bytes": 6626,
+      "sha256": "ede74a937f6f51f0e63283d983941b058017209fd40a1bb325d883ea2c0b59ce"
+    },
+    {
+      "path": "scripts/enrichment/__init__.py",
+      "bytes": 78,
+      "sha256": "6cc8f02d5aef4311e3d8a7cee964ca415a95f20b8113c37cc61b78b887371d33"
+    },
+    {
+      "path": "scripts/enrichment/build_fixture_context_catalog.py",
+      "bytes": 3828,
+      "sha256": "708e22fb28ac9774cab5f90140b76253dfa07847e6b0eb5b20dfc5ea9e051336"
+    },
+    {
+      "path": "scripts/enrichment/common.py",
+      "bytes": 2116,
+      "sha256": "83cde1fb64a7a517612b7eb4145cef45dd54a264b44cb25190b888f4998396d1"
+    },
+    {
+      "path": "scripts/enrichment/fetch_open_meteo_weather.py",
+      "bytes": 6499,
+      "sha256": "7d7880e657e5667aa4133c8f7b3e24cce8e45504639f15532461ff8d7b043a86"
+    },
+    {
+      "path": "scripts/enrichment/fetch_world_cup_fixture_metadata.py",
+      "bytes": 4568,
+      "sha256": "a8af19dae82115ff806bfac9bb8763635aa60b4b324152b51ab03a96b246e43d"
+    },
+    {
+      "path": "scripts/enrichment/statsbomb_open.py",
+      "bytes": 4719,
+      "sha256": "3dafde22aedfa356ff14e4540b8ea87f6e7d724c52f8dbb350b421f0620f661a"
+    },
+    {
+      "path": "scripts/enrichment/sync_statsbomb_open_data.py",
+      "bytes": 4709,
+      "sha256": "7e730d943444b11e10160f4a125d073463cf02e60ea6cf1ac6e23fdb135f842e"
+    },
+    {
+      "path": "scripts/export_simulation_audit.py",
+      "bytes": 10535,
+      "sha256": "6c69bce25bee2544ae543a6c44ebb3218c387305daf443aac8dfb6a8f7111daa"
+    },
+    {
+      "path": "scripts/install_complete_final_bundle.py",
+      "bytes": 25361,
+      "sha256": "1d31fb3e6fc0be73204ea718e7150777006bc133a8614462e2214e9cc901abb1"
+    },
+    {
+      "path": "scripts/install_complete_final_bundle_v1_1.py",
+      "bytes": 1473,
+      "sha256": "bb27656fcc6ccf0f933f2e3482d3536997918704b77929a07afd265563966c93"
+    },
+    {
+      "path": "scripts/patch_complete_final_rules_v1_1.py",
+      "bytes": 8148,
+      "sha256": "d6bc8d9a7c2030acea1eda84b3e640822e5b453a0cde16d3fe23336410ac01fc"
+    },
+    {
+      "path": "scripts/patch_complete_final_validation_json_v1.py",
+      "bytes": 4112,
+      "sha256": "cd1a0eee31f181ed146d537c083298457bddf51ebd5f490f9d5ef91719bcb280"
+    },
+    {
+      "path": "scripts/patch_complete_final_validation_role_gate_v1.py",
+      "bytes": 3217,
+      "sha256": "1b103fe650e8e8123180ead7fb979c4f7d6807a19314d2abbcd2b283f350e8e5"
+    },
+    {
+      "path": "scripts/patch_complete_final_yellow_measurement_v1.py",
+      "bytes": 5690,
+      "sha256": "9b9cbc8be5f936b86c97b43676fdeab3192240a815b39e80dc061d7df06588a1"
+    },
+    {
+      "path": "scripts/pilot_fixture_detail_extraction.py",
+      "bytes": 14974,
+      "sha256": "caa0f86a0301a858ccf285d359f6c5e356a96634a4459434433fc7716223260b"
+    },
+    {
+      "path": "scripts/reassess_fixture_detail_pilot.py",
+      "bytes": 8203,
+      "sha256": "9c15a3f50e9d625e22308853c0f20128a1e8d816fe849b95125892916f5f00c5"
+    },
+    {
+      "path": "scripts/refresh_2026.py",
+      "bytes": 1494,
+      "sha256": "67c1f1a128720b3c89ae0cfcc7a2c49029d7e9eff38b3d66bc2a2d9ca6e86ed4"
+    },
+    {
+      "path": "scripts/refresh_2026_v04.py",
+      "bytes": 1433,
+      "sha256": "f38d75ac001f679bf0160fced524f5dafd37688ebf2de241609ed7cfb4e837c3"
+    },
+    {
+      "path": "scripts/resolve_eleven_roles.py",
+      "bytes": 5424,
+      "sha256": "0c027a362da4c08d7f721528bf80530148569bd6823681dcbbb0f3998a9492d1"
+    },
+    {
+      "path": "scripts/run_adaptive_annual_extraction.py",
+      "bytes": 18712,
+      "sha256": "9cc060b0a3b90847af90c2b7c237f9d8b969518c7b7e8fad24f1a74cf55aa78a"
+    },
+    {
+      "path": "scripts/run_batched_selection_extraction.py",
+      "bytes": 14025,
+      "sha256": "7fe2313bec30531f0a947093f258356b41d17d2534ff8a605b29abe8acab9e04"
+    },
+    {
+      "path": "scripts/run_batched_selection_extraction_safe.py",
+      "bytes": 1088,
+      "sha256": "8f248fbb6be3c1dce6e710abe218edc96fecbc312704aba0d720cab406427a2d"
+    },
+    {
+      "path": "scripts/run_calibrated_match_simulation.py",
+      "bytes": 3097,
+      "sha256": "2dde3f30044423826ceb49461de23e02041c07a64b2d12d8701fd1670e1daf62"
+    },
+    {
+      "path": "scripts/run_complete_final_simulation.py",
+      "bytes": 651,
+      "sha256": "9986c9814b12c6fdfebb37939a0cb3e637eb47f2f082806c765e8c6690913ee2"
+    },
+    {
+      "path": "scripts/run_direct_residual_player_stats.py",
+      "bytes": 13847,
+      "sha256": "74146646927a4981191eeec4b1bcb79cb27537cae25e70f0dc6f20e35ba055a2"
+    },
+    {
+      "path": "scripts/run_exploratory_match_simulation.py",
+      "bytes": 1912,
+      "sha256": "8e17d1d2e93d72e9f15d298e651a944054650f59c4b1598a848579b1fe23e3f8"
+    },
+    {
+      "path": "scripts/run_external_pre_tournament_holdout.py",
+      "bytes": 6048,
+      "sha256": "5f8b8628331bda6a900b6da71915f9afea3833986f931e5a22f200e9730ac830"
+    },
+    {
+      "path": "scripts/run_frontier_coverage_extraction.py",
+      "bytes": 384,
+      "sha256": "a9a3f20dbf4e868353dd4cf1e273329a68dc93cf1639fb05364f1bd65c56828b"
+    },
+    {
+      "path": "scripts/run_nested_uncertainty.py",
+      "bytes": 3611,
+      "sha256": "ea015b118e463f4f70b043145bb4c3256b2520427f5e996938f341bbb9e4d423"
+    },
+    {
+      "path": "scripts/run_official_experiment.py",
+      "bytes": 10634,
+      "sha256": "ab987caa7dfdbe0392158fb120ab4a22bff21fb36eb62edcc7ba235b231d888e"
+    },
+    {
+      "path": "scripts/run_official_experiment_v1_1.py",
+      "bytes": 599,
+      "sha256": "c1f37b7afbfddd6b0284771d6e18783a1864d8f320fba1492d7298f770e7609c"
+    },
+    {
+      "path": "scripts/run_predictive_backtest.py",
+      "bytes": 7599,
+      "sha256": "e01ec0985808263b29755d087045d144cbdeb09ef32a32c3389e3667600b38fd"
+    },
+    {
+      "path": "scripts/run_selection_sufficiency_extraction.py",
+      "bytes": 248,
+      "sha256": "973e55c3178ab717b7b2b54892749436b396ae11e1c7b32d248bf03b47efddcf"
+    },
+    {
+      "path": "scripts/run_sensitivity_analysis.py",
+      "bytes": 3589,
+      "sha256": "c2238cab1e93eac6534f8068b18db4dc9820f168560ca4b13951c76904d0a80d"
+    },
+    {
+      "path": "scripts/run_targeted_coverage_extraction.py",
+      "bytes": 7886,
+      "sha256": "d53caaee173e15cec401d7c6a3b43be7b57c3e2f253fcc899c00a9080e320b7c"
+    },
+    {
+      "path": "scripts/scientific/analyze_official_hypotheses.py",
+      "bytes": 11754,
+      "sha256": "c7a53b0ad9a2c2fad3827377ea733fbd56b97bdf0bdd71c41393a21234a0b466"
+    },
+    {
+      "path": "scripts/scientific/audit_position_ontology.py",
+      "bytes": 29424,
+      "sha256": "e2c52c68f2270665233acea96a6911f10b153e77bc1647618c226d2763c3e382"
+    },
+    {
+      "path": "scripts/scientific/audit_position_ontology_v2.py",
+      "bytes": 27058,
+      "sha256": "d9f6b71e4ff6952dc97dccb8d38013ede3a33fadda4ec4bc6378fd277525e318"
+    },
+    {
+      "path": "scripts/scientific/audit_residual_provider_coverage.py",
+      "bytes": 5882,
+      "sha256": "544435eeb4804a61c6059a4fa3c76f7f93486ad62b60e40dbc3122fe11b56478"
+    },
+    {
+      "path": "scripts/scientific/audit_selection_challenger_uncertainty.py",
+      "bytes": 5593,
+      "sha256": "68dc2fbc398c56d3c828fb779667138466ed9b1803357ff8c1cfbb7e3ff7019a"
+    },
+    {
+      "path": "scripts/scientific/build_blind_position_review_packet.py",
+      "bytes": 8017,
+      "sha256": "a6138a21f9d4e216b3f189665be059eac918d87ad2167a984c15ac1bf0d5ac3a"
+    },
+    {
+      "path": "scripts/scientific/build_complete_final_v1_1_engineering_snapshot.py",
+      "bytes": 8879,
+      "sha256": "00f492b0637012958eadef56f9967d53f9fd12ca16f32e4be7e9f1396bbd2962"
+    },
+    {
+      "path": "scripts/scientific/build_identified_set_release.py",
+      "bytes": 5558,
+      "sha256": "347a85754d3342eb6b76ad8ea67eff633a27bee32d98751e434f6f51ebbd2e2b"
+    },
+    {
+      "path": "scripts/scientific/build_identified_set_results_report.py",
+      "bytes": 13039,
+      "sha256": "bce049514da8c83c60cdf68b006085c9acf8b119eb7b2df1d421b662f78728ac"
+    },
+    {
+      "path": "scripts/scientific/build_scope_correct_coverage.py",
+      "bytes": 17826,
+      "sha256": "37a665cc230e5e75a422679b6ea89c6d41394aefa0f27ec2cc4eb8b3135ec016"
+    },
+    {
+      "path": "scripts/scientific/build_scope_correct_coverage_v3.py",
+      "bytes": 5678,
+      "sha256": "5e88d3c5c7184653fdc3f7ea33a5678e72a2b4c69a9f4f373bd9fb84d6d92382"
+    },
+    {
+      "path": "scripts/scientific/build_structural_missingness_sensitivity.py",
+      "bytes": 13956,
+      "sha256": "4c6a62b29eedc828070a72fb927211bc4e6ae268704f1cbd96a62cc1011679b1"
+    },
+    {
+      "path": "scripts/scientific/build_world_cup_2026_event_benchmark.py",
+      "bytes": 12040,
+      "sha256": "cc91ac2dbead495a3648b8493b8d1c402a4c162a1fdebe70b609380c71addadb"
+    },
+    {
+      "path": "scripts/scientific/build_world_cup_2026_weather_record.py",
+      "bytes": 17618,
+      "sha256": "681f11c9731289fbb77aae86e2dbc549bdb492c7e9205e56cc1edfbd012d1090"
+    },
+    {
+      "path": "scripts/scientific/cached_lake_inventory.py",
+      "bytes": 9702,
+      "sha256": "ad751722feb2d0e5ae50c0e24eba635247c793fb559c1dea40ecfb74a3061dae"
+    },
+    {
+      "path": "scripts/scientific/evaluate_blind_position_review.py",
+      "bytes": 7214,
+      "sha256": "9361d5739bd79a831be0da1d14f61f0305ea70f0a7d192eea59b81eb17f9ef16"
+    },
+    {
+      "path": "scripts/scientific/extract_selection_challenger_fixture_evidence.py",
+      "bytes": 11234,
+      "sha256": "b1360744586f9398e97bab3dcb6748067ca3fae7053d5d9cc9708a4f7dc18d7e"
+    },
+    {
+      "path": "scripts/scientific/finalize_complete_final_preflight.py",
+      "bytes": 2400,
+      "sha256": "b41b04ca9c2b04a4d623af22df7e1100ba07b7352cdb152dba3756d3afdc3b52"
+    },
+    {
+      "path": "scripts/scientific/freeze_complete_final_rosters.py",
+      "bytes": 10386,
+      "sha256": "468e2f2fc9e38f5bdf97fba3b176be574e7b0239a77752388b546bff95dc411b"
+    },
+    {
+      "path": "scripts/scientific/minute_reconciliation_audit.py",
+      "bytes": 5340,
+      "sha256": "652c98d6d06dbb108d5ca8b3c093b745cca82a434bb426a84abb81638dd459df"
+    },
+    {
+      "path": "scripts/scientific/normalize_world_cup_2026_event_benchmark.py",
+      "bytes": 3468,
+      "sha256": "d34463826029f206b0ae976307c1125371f3a8407720431e0ad6f8db0378e44e"
+    },
+    {
+      "path": "scripts/scientific/offline_readiness_audit.py",
+      "bytes": 10135,
+      "sha256": "1e7a7e0b99c162cf4a12fd371c5322f4bb5920f573ca69f4ad61eb5c1b317748"
+    },
+    {
+      "path": "scripts/scientific/promote_scope_correct_coverage.py",
+      "bytes": 11008,
+      "sha256": "7fc728c92622aadd6ce3822dcc61dfcb04f7aa2cbc93fed704a633a2b345e359"
+    },
+    {
+      "path": "scripts/scientific/rebuild_cached_coverage_ledger.py",
+      "bytes": 7948,
+      "sha256": "3c08e5ca29acc9347959973bb8035508367b8a0e181ce40e76d511e4e5a57c4c"
+    },
+    {
+      "path": "scripts/scientific/reconcile_cached_player_minutes.py",
+      "bytes": 10739,
+      "sha256": "bccb9626f5946f45bc75e453aa818e9363c0b1b2319f9c699b96a3203f5a6776"
+    },
+    {
+      "path": "scripts/scientific/reconstruct_selection_challenger_minutes.py",
+      "bytes": 11952,
+      "sha256": "42345d4b7664c6bc230608fe3da1a9f2720b08a28bad7fed1ae7ce8db7327136"
+    },
+    {
+      "path": "scripts/scientific/release_complete_final_when_ready.py",
+      "bytes": 6559,
+      "sha256": "bd2d60f8340ef029fd5545c544889c7d77cafd99b849d40a4d943aec9cf9c10a"
+    },
+    {
+      "path": "scripts/scientific/repair_world_cup_2026_weather_record.py",
+      "bytes": 11394,
+      "sha256": "24339d9ce0068339b1810e978fb51e6a709ffc3d0a48aa9908a79d1e01217cc7"
+    },
+    {
+      "path": "scripts/scientific/run_complete_final_preflight_validation.py",
+      "bytes": 7607,
+      "sha256": "106a2e75d39a1c5607f0656665cb11b3a26d01aa8582d18744976938ea1363b5"
+    },
+    {
+      "path": "scripts/scientific/run_complete_final_v1_1_engineering_snapshot.py",
+      "bytes": 2306,
+      "sha256": "cf98faa3a5e27bed98825d53bdfae118779fc690b7b6804495a728f1a13388be"
+    },
+    {
+      "path": "scripts/scientific/run_frozen_challenger_resolution.sh",
+      "bytes": 6996,
+      "sha256": "880508a306a345e4cf7fe5ef921347ed74f0b414a6636c09ed0df773f224191a"
+    },
+    {
+      "path": "scripts/scientific/run_identified_set_simulation.py",
+      "bytes": 37194,
+      "sha256": "5dbc8280c86d6dfc69746cfc2b39986bbf3d6e93f62257c9745557aa5c653d2e"
+    },
+    {
+      "path": "scripts/scientific/run_identified_set_simulation_precision_budget.py",
+      "bytes": 995,
+      "sha256": "3a1305a47db246b27cc220e004c27b556306e1f80c131f148a03f457668716db"
+    },
+    {
+      "path": "scripts/scientific/run_official_robustness.py",
+      "bytes": 16948,
+      "sha256": "f25624ba8785d19a16faae0fa2f4661c39a04a09ea2cf8176e5ec254519bd673"
+    },
+    {
+      "path": "scripts/scientific/run_structural_missingness_sensitivity_safe.py",
+      "bytes": 637,
+      "sha256": "4023f8e645d46e49941197b691880fccb7c7d6400b99df056df4429c87ba4cb0"
+    },
+    {
+      "path": "scripts/scientific/shadow_scope_correct_selection.py",
+      "bytes": 9405,
+      "sha256": "8d08d3607420e00ed001dc109085dee6bfdaa54978012530f4dfbd60e0316442"
+    },
+    {
+      "path": "scripts/scientific/validate_complete_final.py",
+      "bytes": 673,
+      "sha256": "9d806ef2196597c809cf34430cff1065d6a03538e231bfc86e49593f680ecbc3"
+    },
+    {
+      "path": "scripts/scientific/validate_complete_final_preflight.py",
+      "bytes": 15104,
+      "sha256": "16fd96ec35006683af933e9cab69b28944b4bea760c1dd99ffe32532fb8606ef"
+    },
+    {
+      "path": "scripts/scientific/validate_complete_final_preflight_v1_1.py",
+      "bytes": 6787,
+      "sha256": "49a9a866aec51cf45ae154e7fbaf6a8230f6c073e5d57f4e78c59e21105717fc"
+    },
+    {
+      "path": "scripts/scientific/validate_official_release.py",
+      "bytes": 12208,
+      "sha256": "9e622608fe6f5d560ae5a9fc9c9e7aeb87ed239766999a7e375eb7b92cef878c"
+    },
+    {
+      "path": "scripts/tune_shared_tempo_and_run_v3.py",
+      "bytes": 4878,
+      "sha256": "2394ffbc409cbd16afcb765c029c79eee930546869bcd8c185c05fd6b7495cdb"
+    },
+    {
+      "path": "scripts/validate_lateral_grid.py",
+      "bytes": 7038,
+      "sha256": "640188fa76413f11e686efc46d8a6f743d1c556f71fc9d96019c302d5d27133d"
+    },
+    {
+      "path": "simulator/__init__.py",
+      "bytes": 1005,
+      "sha256": "95c6cd6fb7183ac82e4ec43f68691ab6c6b07601988baf51bddff604fa130ade"
+    },
+    {
+      "path": "simulator/calibrated_core.py",
+      "bytes": 11915,
+      "sha256": "03221cf9ed6f2909a2a699b975dff67926f92d0f737977af58469f4787ca32a9"
+    },
+    {
+      "path": "simulator/calibrated_monte_carlo.py",
+      "bytes": 5610,
+      "sha256": "61ad70f1868a717c3390bcc44e97aaec1cbacd41b9752aa0bf2bd7381a11f8a8"
+    },
+    {
+      "path": "simulator/complete_final.py",
+      "bytes": 965,
+      "sha256": "c1aeb406c956f055303fe6b4c1c11504eb38997675082fc18fdc8c8aff70ff8b"
+    },
+    {
+      "path": "simulator/complete_final_monte_carlo.py",
+      "bytes": 653,
+      "sha256": "8bcc77afb9bfe2ec65755a4ab97dbb36aa06ab0c4802d81e998a1f342d67d56a"
+    },
+    {
+      "path": "simulator/engine.py",
+      "bytes": 18556,
+      "sha256": "c0c2b7db48db4cfdc1eaf1b90f997856e5f4a928d8762065509062c66a8f4099"
+    },
+    {
+      "path": "simulator/official_complete_final.py",
+      "bytes": 23490,
+      "sha256": "2fe8e0b3839a3a3b589c6a46edcb4002ac084dbe4c460e895b378fe449738e99"
+    },
+    {
+      "path": "simulator/official_features.py",
+      "bytes": 6237,
+      "sha256": "592cc10b49a114b395427b66c07954539559e8be9699593ca22c4bff4a3c197b"
+    },
+    {
+      "path": "simulator/official_frozen_runtime.py",
+      "bytes": 7704,
+      "sha256": "a3fcee87ec5805d9c67f873f9f304666a5343fcd98b2d0ed03dabeaf5030636c"
+    },
+    {
+      "path": "simulator/official_monte_carlo.py",
+      "bytes": 17265,
+      "sha256": "7ebeb23ab8040267c5514c76d5414134a9f9ddf6e8e3e5a796a1da78a22e6800"
+    },
+    {
+      "path": "simulator/official_orientation.py",
+      "bytes": 5508,
+      "sha256": "33b871b42213bb4d3d1661ffff320dbca95301cdb111db0e69ac092066fbf382"
+    },
+    {
+      "path": "simulator/official_profile_sensitivity.py",
+      "bytes": 2530,
+      "sha256": "5fc041474e9f34f8fe4c36288514bb6f3613b94079a086b8621904dd7dd8ac81"
+    },
+    {
+      "path": "simulator/official_profiles.py",
+      "bytes": 14340,
+      "sha256": "e51b848ce8cfa80da1922c53810403ec825386bdf4b7c57aa3cdfd3113400c34"
+    },
+    {
+      "path": "simulator/official_provenance.py",
+      "bytes": 3036,
+      "sha256": "e34f41ef70e9a5c3d08fa6e5c2ed58ccd7fc9b306b28aa46e610ade04b9195d4"
+    },
+    {
+      "path": "simulator/profiles.py",
+      "bytes": 12017,
+      "sha256": "5964b82c8ea80161a385b7137dc6c5eb2d7fdfae4d23ec4cbf59e97c8bd0e211"
+    },
+    {
+      "path": "simulator/profiles_v2.py",
+      "bytes": 6892,
+      "sha256": "e25abd4a7538bede82629559b9abe7e8ffe755f190f48789f22e4332d621e4c8"
+    },
+    {
+      "path": "simulator/shared_tempo.py",
+      "bytes": 5292,
+      "sha256": "ab7b36dc480108e99ecbe91b5aba5bf2d4b3d695511b4495cce46d17b3786d03"
+    },
+    {
+      "path": "simulator/validation.py",
+      "bytes": 666,
+      "sha256": "aeda5eb12c4ae25429186cc0ac52b79691c81709bc788944812f206fabb8b5db"
+    },
+    {
+      "path": "tests/test_calibrated_simulator.py",
+      "bytes": 2681,
+      "sha256": "f2ca80387aa5746026e423c73783543cd9fb0aeaee7e5fc8a062dd45da880fcd"
+    },
+    {
+      "path": "tests/test_complete_final.py",
+      "bytes": 661,
+      "sha256": "8bc38da4a6c8325a35eb2f3b40552177aa21794972eddade2af5186805d12228"
+    },
+    {
+      "path": "tests/test_complete_final_rules_v1_1.py",
+      "bytes": 2437,
+      "sha256": "909d39386c6ba6240a37e3a20d72d1d2579d45a265183c64fb61280948812487"
+    },
+    {
+      "path": "tests/test_complete_final_yellow_measurement_v1.py",
+      "bytes": 2365,
+      "sha256": "5854254cb310409b79eed02fef6bebf2a198c91132ff156145b39d5855488a2c"
+    },
+    {
+      "path": "tests/test_enrichment.py",
+      "bytes": 794,
+      "sha256": "5d80d5b3e378035a8e2ca14f354728ba1274a8c5330fb07a8eda4da411e5d374"
+    },
+    {
+      "path": "tests/test_features_ranking.py",
+      "bytes": 2825,
+      "sha256": "e28d2c93a013932b3130068dd7ff54b48a3b73e55bad4648ee62fea6d13f27d3"
+    },
+    {
+      "path": "tests/test_official_experiment.py",
+      "bytes": 7182,
+      "sha256": "000341b5c534677f2046833a3dd5e867dcc176515db4a4c27442192e1762e15e"
+    },
+    {
+      "path": "tests/test_official_orientation.py",
+      "bytes": 1234,
+      "sha256": "76c17d2846e0968b672694fb4e7e2358ddb7eef2d4fb7ad575156edb69950e82"
+    },
+    {
+      "path": "tests/test_roles.py",
+      "bytes": 3388,
+      "sha256": "4f4f6090b38de19dd562c1333d42a1fe07d34cc9d8ad84e6716c64069c02d5cc"
+    },
+    {
+      "path": "tests/test_scientific_validation.py",
+      "bytes": 2513,
+      "sha256": "c16e0c8d353c19d11177b05554d54cb26640e384021079eee2d3644042dd16c1"
+    },
+    {
+      "path": "tests/test_simulator.py",
+      "bytes": 1942,
+      "sha256": "7b6cf2408c519001c5425ada5310ca1f376b47ff4e6881d2d5b036dd792fb668"
+    },
+    {
+      "path": "tests/test_v04_data_quality.py",
+      "bytes": 2356,
+      "sha256": "705e2b51ab59af9390094f9ac558c48cdd29f0b5110d992f190781ff861c666f"
+    }
+  ],
+  "archive": "jasss-double-blind-review-package.zip",
+  "archive_bytes": 2129564,
+  "archive_sha256": "1904ad92715bdd8c35bec24338ad4a76fc5aa6e82f5dfc6b4f9c9a20b8ad28aa",
+  "file_count": 215
+}

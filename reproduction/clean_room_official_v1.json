@@ -1,0 +1,662 @@
+{
+  "status": "clean_room_reproduction_passed",
+  "passed": true,
+  "all_manifest_artifacts_byte_identical": true,
+  "manifest_artifact_count": 15,
+  "reference_directory": "data/experiments/official_v1/official",
+  "candidate_directory": "/tmp/official-v1-clean-room/official",
+  "python": "3.12.13 (main, Jun 16 2026, 22:05:08) [GCC 13.3.0]",
+  "platform": "Linux-6.17.0-1020-azure-x86_64-with-glibc2.39",
+  "environment_sha256": "b81cdd2b578f8d60cef6971f2eeaa02fa8b159d72e1c557ee6daf26772e21f7f",
+  "summary_checks": [
+    {
+      "path": "status",
+      "passed": true,
+      "reference": "official_final_monte_carlo_completed",
+      "candidate": "official_final_monte_carlo_completed"
+    },
+    {
+      "path": "version",
+      "passed": true,
+      "reference": "complete_final_official_v1",
+      "candidate": "complete_final_official_v1"
+    },
+    {
+      "path": "simulations",
+      "passed": true,
+      "reference": 10000,
+      "candidate": 10000
+    },
+    {
+      "path": "master_seed",
+      "passed": true,
+      "reference": 2026073001,
+      "candidate": 2026073001
+    },
+    {
+      "path": "match_seed_ledger_sha256",
+      "passed": true,
+      "reference": "8634ca05a94b3c031746058c894279428af818fcff91d5cffaf86cf84b4b0a20",
+      "candidate": "8634ca05a94b3c031746058c894279428af818fcff91d5cffaf86cf84b4b0a20"
+    },
+    {
+      "path": "home",
+      "passed": true,
+      "reference": "Synthetic XI",
+      "candidate": "Synthetic XI"
+    },
+    {
+      "path": "away",
+      "passed": true,
+      "reference": "Real Best XI",
+      "candidate": "Real Best XI"
+    },
+    {
+      "path": "home_champion_probability.estimate",
+      "passed": true,
+      "reference": 0.4459,
+      "candidate": 0.4459
+    },
+    {
+      "path": "home_champion_probability.low",
+      "passed": true,
+      "reference": 0.43618033623290137,
+      "candidate": 0.43618033623290137
+    },
+    {
+      "path": "home_champion_probability.high",
+      "passed": true,
+      "reference": 0.45566121239080576,
+      "candidate": 0.45566121239080576
+    },
+    {
+      "path": "away_champion_probability.estimate",
+      "passed": true,
+      "reference": 0.5541,
+      "candidate": 0.5541
+    },
+    {
+      "path": "away_champion_probability.low",
+      "passed": true,
+      "reference": 0.5443387876091942,
+      "candidate": 0.5443387876091942
+    },
+    {
+      "path": "away_champion_probability.high",
+      "passed": true,
+      "reference": 0.5638196637670986,
+      "candidate": 0.5638196637670986
+    },
+    {
+      "path": "regulation_home_win_probability.estimate",
+      "passed": true,
+      "reference": 0.3207,
+      "candidate": 0.3207
+    },
+    {
+      "path": "regulation_draw_probability.estimate",
+      "passed": true,
+      "reference": 0.2553,
+      "candidate": 0.2553
+    },
+    {
+      "path": "regulation_away_win_probability.estimate",
+      "passed": true,
+      "reference": 0.424,
+      "candidate": 0.424
+    },
+    {
+      "path": "extra_time_probability.estimate",
+      "passed": true,
+      "reference": 0.2553,
+      "candidate": 0.2553
+    },
+    {
+      "path": "penalty_shootout_probability.estimate",
+      "passed": true,
+      "reference": 0.1274,
+      "candidate": 0.1274
+    },
+    {
+      "path": "mean_regulation_goals",
+      "passed": true,
+      "reference": 2.9138,
+      "candidate": 2.9138
+    },
+    {
+      "path": "mean_total_goals",
+      "passed": true,
+      "reference": 3.1451,
+      "candidate": 3.1451
+    },
+    {
+      "path": "mean_total_shots",
+      "passed": true,
+      "reference": 19.4174,
+      "candidate": 19.4174
+    },
+    {
+      "path": "mean_total_shots_on_target",
+      "passed": true,
+      "reference": 9.6745,
+      "candidate": 9.6745
+    },
+    {
+      "path": "mean_total_fouls",
+      "passed": true,
+      "reference": 25.2087,
+      "candidate": 25.2087
+    },
+    {
+      "path": "mean_total_yellows",
+      "passed": true,
+      "reference": 3.1865,
+      "candidate": 3.1865
+    },
+    {
+      "path": "mean_total_reds",
+      "passed": true,
+      "reference": 0.1493,
+      "candidate": 0.1493
+    },
+    {
+      "path": "source_hashes",
+      "passed": true,
+      "reference": {
+        "experiment_config": "87dc59551f6815cf0e6b23ef63f856d49c8aa21367e33344985eedda8869bcad",
+        "orientation_equivalence_contract": "0ca6af89414b493d4d22ce77f0731cebeef8c6cb8a72a92de3c68b158c52bc23",
+        "protocol_amendment": "6f73fbeb6e1ff009e72fcccd532a4613868991335315fe3ea6dfeb24c604a91c",
+        "protocol_addendum_emergency_substitution": "bc2d4420c3b85cb3e32d2f261fbc77b021048adbafec20cb6856c5f593531cc1",
+        "canonical_rosters": "b92dd9d58f635dd426d9fe154d38f7d5a4dcc2705a0b6d5d4c6b52a4f31d4d61",
+        "rankings_authorization": "257de63d35fcc65e43871e8baa300031171060854dcdc27c8cc919e27123096b",
+        "requirements": "63c86ec99443d99a8cb2e92c0c5f0e3c4e1bce1d05059b2932cecc29c42e64e2",
+        "simulator_package_policy": "95c6cd6fb7183ac82e4ec43f68691ab6c6b07601988baf51bddff604fa130ade",
+        "official_features_source": "592cc10b49a114b395427b66c07954539559e8be9699593ca22c4bff4a3c197b",
+        "official_profiles_source": "e51b848ce8cfa80da1922c53810403ec825386bdf4b7c57aa3cdfd3113400c34",
+        "official_profile_sensitivity_source": "5fc041474e9f34f8fe4c36288514bb6f3613b94079a086b8621904dd7dd8ac81",
+        "official_frozen_runtime_source": "a3fcee87ec5805d9c67f873f9f304666a5343fcd98b2d0ed03dabeaf5030636c",
+        "official_engine_source": "2fe8e0b3839a3a3b589c6a46edcb4002ac084dbe4c460e895b378fe449738e99",
+        "official_monte_carlo_source": "7ebeb23ab8040267c5514c76d5414134a9f9ddf6e8e3e5a796a1da78a22e6800",
+        "official_orientation_source": "33b871b42213bb4d3d1661ffff320dbca95301cdb111db0e69ac092066fbf382",
+        "official_provenance_source": "e34f41ef70e9a5c3d08fa6e5c2ed58ccd7fc9b306b28aa46e610ade04b9195d4",
+        "official_runner_source": "ab987caa7dfdbe0392158fb120ab4a22bff21fb36eb62edcc7ba235b231d888e",
+        "official_statistical_launcher_source": "c1f37b7afbfddd6b0284771d6e18783a1864d8f320fba1492d7298f770e7609c",
+        "hypothesis_source": "c7a53b0ad9a2c2fad3827377ea733fbd56b97bdf0bdd71c41393a21234a0b466",
+        "robustness_source": "f25624ba8785d19a16faae0fa2f4661c39a04a09ea2cf8176e5ec254519bd673",
+        "release_validator_source": "9e622608fe6f5d560ae5a9fc9c9e7aeb87ed239766999a7e375eb7b92cef878c",
+        "official_test_source": "000341b5c534677f2046833a3dd5e867dcc176515db4a4c27442192e1762e15e",
+        "official_orientation_test_source": "76c17d2846e0968b672694fb4e7e2358ddb7eef2d4fb7ad575156edb69950e82"
+      },
+      "candidate": {
+        "experiment_config": "87dc59551f6815cf0e6b23ef63f856d49c8aa21367e33344985eedda8869bcad",
+        "orientation_equivalence_contract": "0ca6af89414b493d4d22ce77f0731cebeef8c6cb8a72a92de3c68b158c52bc23",
+        "protocol_amendment": "6f73fbeb6e1ff009e72fcccd532a4613868991335315fe3ea6dfeb24c604a91c",
+        "protocol_addendum_emergency_substitution": "bc2d4420c3b85cb3e32d2f261fbc77b021048adbafec20cb6856c5f593531cc1",
+        "canonical_rosters": "b92dd9d58f635dd426d9fe154d38f7d5a4dcc2705a0b6d5d4c6b52a4f31d4d61",
+        "rankings_authorization": "257de63d35fcc65e43871e8baa300031171060854dcdc27c8cc919e27123096b",
+        "requirements": "63c86ec99443d99a8cb2e92c0c5f0e3c4e1bce1d05059b2932cecc29c42e64e2",
+        "simulator_package_policy": "95c6cd6fb7183ac82e4ec43f68691ab6c6b07601988baf51bddff604fa130ade",
+        "official_features_source": "592cc10b49a114b395427b66c07954539559e8be9699593ca22c4bff4a3c197b",
+        "official_profiles_source": "e51b848ce8cfa80da1922c53810403ec825386bdf4b7c57aa3cdfd3113400c34",
+        "official_profile_sensitivity_source": "5fc041474e9f34f8fe4c36288514bb6f3613b94079a086b8621904dd7dd8ac81",
+        "official_frozen_runtime_source": "a3fcee87ec5805d9c67f873f9f304666a5343fcd98b2d0ed03dabeaf5030636c",
+        "official_engine_source": "2fe8e0b3839a3a3b589c6a46edcb4002ac084dbe4c460e895b378fe449738e99",
+        "official_monte_carlo_source": "7ebeb23ab8040267c5514c76d5414134a9f9ddf6e8e3e5a796a1da78a22e6800",
+        "official_orientation_source": "33b871b42213bb4d3d1661ffff320dbca95301cdb111db0e69ac092066fbf382",
+        "official_provenance_source": "e34f41ef70e9a5c3d08fa6e5c2ed58ccd7fc9b306b28aa46e610ade04b9195d4",
+        "official_runner_source": "ab987caa7dfdbe0392158fb120ab4a22bff21fb36eb62edcc7ba235b231d888e",
+        "official_statistical_launcher_source": "c1f37b7afbfddd6b0284771d6e18783a1864d8f320fba1492d7298f770e7609c",
+        "hypothesis_source": "c7a53b0ad9a2c2fad3827377ea733fbd56b97bdf0bdd71c41393a21234a0b466",
+        "robustness_source": "f25624ba8785d19a16faae0fa2f4661c39a04a09ea2cf8176e5ec254519bd673",
+        "release_validator_source": "9e622608fe6f5d560ae5a9fc9c9e7aeb87ed239766999a7e375eb7b92cef878c",
+        "official_test_source": "000341b5c534677f2046833a3dd5e867dcc176515db4a4c27442192e1762e15e",
+        "official_orientation_test_source": "76c17d2846e0968b672694fb4e7e2358ddb7eef2d4fb7ad575156edb69950e82"
+      }
+    },
+    {
+      "path": "canonical_runtime",
+      "passed": true,
+      "reference": {
+        "synthetic_registered_ids": [
+          "synthetic_gk_1",
+          "synthetic_rb_1",
+          "synthetic_rcb_1",
+          "synthetic_lcb_1",
+          "synthetic_lb_1",
+          "synthetic_dm_1",
+          "synthetic_cm_1",
+          "synthetic_am_1",
+          "synthetic_rw_1",
+          "synthetic_lw_1",
+          "synthetic_st_1",
+          "synthetic_gk_reserve_1",
+          "synthetic_gk_reserve_2",
+          "synthetic_rb_reserve",
+          "synthetic_lb_reserve",
+          "synthetic_rcb_reserve",
+          "synthetic_lcb_reserve",
+          "synthetic_dm_reserve",
+          "synthetic_cm_reserve",
+          "synthetic_am_reserve",
+          "synthetic_rw_reserve",
+          "synthetic_lw_reserve",
+          "synthetic_st_reserve_1",
+          "synthetic_st_reserve_2",
+          "synthetic_fb_utility",
+          "synthetic_w_utility"
+        ],
+        "real_registered_ids": [
+          "182718",
+          "271539",
+          "69",
+          "624",
+          "263482",
+          "44",
+          "19617",
+          "6005",
+          "154",
+          "909",
+          "153",
+          "49866",
+          "129058",
+          "25158",
+          "265595",
+          "2194",
+          "21138",
+          "137210",
+          "156477",
+          "414149",
+          "513776",
+          "314511",
+          "181812",
+          "732",
+          "138804",
+          "22221"
+        ],
+        "synthetic_starter_ids": [
+          "synthetic_gk_1",
+          "synthetic_rb_1",
+          "synthetic_rcb_1",
+          "synthetic_lcb_1",
+          "synthetic_lb_1",
+          "synthetic_dm_1",
+          "synthetic_cm_1",
+          "synthetic_am_1",
+          "synthetic_rw_1",
+          "synthetic_lw_1",
+          "synthetic_st_1"
+        ],
+        "real_starter_ids": [
+          "182718",
+          "271539",
+          "69",
+          "624",
+          "263482",
+          "44",
+          "19617",
+          "6005",
+          "154",
+          "909",
+          "153"
+        ],
+        "no_provisional_profiles": true,
+        "no_exploratory_labels": true
+      },
+      "candidate": {
+        "synthetic_registered_ids": [
+          "synthetic_gk_1",
+          "synthetic_rb_1",
+          "synthetic_rcb_1",
+          "synthetic_lcb_1",
+          "synthetic_lb_1",
+          "synthetic_dm_1",
+          "synthetic_cm_1",
+          "synthetic_am_1",
+          "synthetic_rw_1",
+          "synthetic_lw_1",
+          "synthetic_st_1",
+          "synthetic_gk_reserve_1",
+          "synthetic_gk_reserve_2",
+          "synthetic_rb_reserve",
+          "synthetic_lb_reserve",
+          "synthetic_rcb_reserve",
+          "synthetic_lcb_reserve",
+          "synthetic_dm_reserve",
+          "synthetic_cm_reserve",
+          "synthetic_am_reserve",
+          "synthetic_rw_reserve",
+          "synthetic_lw_reserve",
+          "synthetic_st_reserve_1",
+          "synthetic_st_reserve_2",
+          "synthetic_fb_utility",
+          "synthetic_w_utility"
+        ],
+        "real_registered_ids": [
+          "182718",
+          "271539",
+          "69",
+          "624",
+          "263482",
+          "44",
+          "19617",
+          "6005",
+          "154",
+          "909",
+          "153",
+          "49866",
+          "129058",
+          "25158",
+          "265595",
+          "2194",
+          "21138",
+          "137210",
+          "156477",
+          "414149",
+          "513776",
+          "314511",
+          "181812",
+          "732",
+          "138804",
+          "22221"
+        ],
+        "synthetic_starter_ids": [
+          "synthetic_gk_1",
+          "synthetic_rb_1",
+          "synthetic_rcb_1",
+          "synthetic_lcb_1",
+          "synthetic_lb_1",
+          "synthetic_dm_1",
+          "synthetic_cm_1",
+          "synthetic_am_1",
+          "synthetic_rw_1",
+          "synthetic_lw_1",
+          "synthetic_st_1"
+        ],
+        "real_starter_ids": [
+          "182718",
+          "271539",
+          "69",
+          "624",
+          "263482",
+          "44",
+          "19617",
+          "6005",
+          "154",
+          "909",
+          "153"
+        ],
+        "no_provisional_profiles": true,
+        "no_exploratory_labels": true
+      }
+    }
+  ],
+  "json_checks": [
+    {
+      "file": "simulation_summary.json",
+      "passed": true,
+      "reference_sha256": "e870f3e4e4b871bc8e06a1a07942427b3a54b32005c01c77c6927e73618566be",
+      "candidate_sha256": "e870f3e4e4b871bc8e06a1a07942427b3a54b32005c01c77c6927e73618566be",
+      "byte_identical": true
+    },
+    {
+      "file": "official_hypotheses_summary.json",
+      "passed": true,
+      "reference_sha256": "0fb43ddac7ab9db0962bc386244a92dee2b87d81f408e102b25bba5cbf8c8b33",
+      "candidate_sha256": "0fb43ddac7ab9db0962bc386244a92dee2b87d81f408e102b25bba5cbf8c8b33",
+      "byte_identical": true
+    }
+  ],
+  "versioned_table_checks": [
+    {
+      "file": "official_h7_state_rates.csv",
+      "passed": true,
+      "rows": 54,
+      "columns": [
+        "team",
+        "score_state",
+        "numerical_state",
+        "phase",
+        "simulations",
+        "possessions",
+        "shots",
+        "goals",
+        "xg",
+        "shots_per_possession",
+        "goals_per_possession",
+        "xg_per_possession"
+      ],
+      "reference_sha256": "1846820a0ffe1ecf391553a51f490d0264c1bdee27a452cc4c21e958940781c5",
+      "candidate_sha256": "1846820a0ffe1ecf391553a51f490d0264c1bdee27a452cc4c21e958940781c5",
+      "byte_identical": true,
+      "error": null
+    },
+    {
+      "file": "official_h7_interactions.csv",
+      "passed": true,
+      "rows": 81,
+      "columns": [
+        "score_state",
+        "numerical_state",
+        "phase",
+        "outcome",
+        "synthetic_minus_real_rate",
+        "low",
+        "high",
+        "simulation_count"
+      ],
+      "reference_sha256": "f168c92bda8cf03a40641313258f65c8fa054c607e6a6be0676442fe1687b540",
+      "candidate_sha256": "f168c92bda8cf03a40641313258f65c8fa054c607e6a6be0676442fe1687b540",
+      "byte_identical": true,
+      "error": null
+    },
+    {
+      "file": "representative_final_timeline.csv",
+      "passed": true,
+      "rows": 66,
+      "columns": [
+        "sequence",
+        "clock",
+        "minute",
+        "period",
+        "side",
+        "team",
+        "acting_team",
+        "affected_team",
+        "possession_team",
+        "benefiting_team",
+        "actor",
+        "actor_team",
+        "actor_membership_valid",
+        "zone",
+        "xg",
+        "home_score_before_context",
+        "away_score_before_context",
+        "score_state_before",
+        "numerical_state_before",
+        "score",
+        "headline"
+      ],
+      "reference_sha256": "c940fb5f839d6a520a4f2ec0edf6bda1df0bf6586555d52a1bee8bcc046b5724",
+      "candidate_sha256": "c940fb5f839d6a520a4f2ec0edf6bda1df0bf6586555d52a1bee8bcc046b5724",
+      "byte_identical": true,
+      "error": null
+    },
+    {
+      "file": "synthetic_starting_xi.csv",
+      "passed": true,
+      "rows": 11,
+      "columns": [
+        "player_id",
+        "name",
+        "role",
+        "minutes",
+        "overall",
+        "build_up",
+        "progression",
+        "creation",
+        "finishing",
+        "defending",
+        "duels",
+        "retention",
+        "goalkeeping",
+        "uncertainty",
+        "synthetic",
+        "provisional"
+      ],
+      "reference_sha256": "7704b49056c64ae39861ebf1f8541125e6b7311feedaf1a3aed4f2b3323c64ae",
+      "candidate_sha256": "7704b49056c64ae39861ebf1f8541125e6b7311feedaf1a3aed4f2b3323c64ae",
+      "byte_identical": true,
+      "error": null
+    },
+    {
+      "file": "real_starting_xi.csv",
+      "passed": true,
+      "rows": 11,
+      "columns": [
+        "player_id",
+        "name",
+        "role",
+        "minutes",
+        "overall",
+        "build_up",
+        "progression",
+        "creation",
+        "finishing",
+        "defending",
+        "duels",
+        "retention",
+        "goalkeeping",
+        "uncertainty",
+        "synthetic",
+        "provisional"
+      ],
+      "reference_sha256": "6b9e36b5a0a5618fab14635e76470d30c2680f55ce35fe36037f0d9ae2088109",
+      "candidate_sha256": "6b9e36b5a0a5618fab14635e76470d30c2680f55ce35fe36037f0d9ae2088109",
+      "byte_identical": true,
+      "error": null
+    }
+  ],
+  "manifest_checks": [
+    {
+      "file": "audit_sample.csv",
+      "passed": true,
+      "expected_sha256": "e7542c946cc19844a4da2ced729d573badfa8805d4a7d86c374fbcee3b990ad6",
+      "candidate_sha256": "e7542c946cc19844a4da2ced729d573badfa8805d4a7d86c374fbcee3b990ad6",
+      "expected_bytes": 66973,
+      "candidate_bytes": 66973
+    },
+    {
+      "file": "official_h7_interactions.csv",
+      "passed": true,
+      "expected_sha256": "f168c92bda8cf03a40641313258f65c8fa054c607e6a6be0676442fe1687b540",
+      "candidate_sha256": "f168c92bda8cf03a40641313258f65c8fa054c607e6a6be0676442fe1687b540",
+      "expected_bytes": 8642,
+      "candidate_bytes": 8642
+    },
+    {
+      "file": "official_h7_state_rates.csv",
+      "passed": true,
+      "expected_sha256": "1846820a0ffe1ecf391553a51f490d0264c1bdee27a452cc4c21e958940781c5",
+      "candidate_sha256": "1846820a0ffe1ecf391553a51f490d0264c1bdee27a452cc4c21e958940781c5",
+      "expected_bytes": 7787,
+      "candidate_bytes": 7787
+    },
+    {
+      "file": "official_hypotheses_summary.json",
+      "passed": true,
+      "expected_sha256": "0fb43ddac7ab9db0962bc386244a92dee2b87d81f408e102b25bba5cbf8c8b33",
+      "candidate_sha256": "0fb43ddac7ab9db0962bc386244a92dee2b87d81f408e102b25bba5cbf8c8b33",
+      "expected_bytes": 3582,
+      "candidate_bytes": 3582
+    },
+    {
+      "file": "official_matches.csv",
+      "passed": true,
+      "expected_sha256": "4a6636b7a4ca0e963a2e1c5ad8a981b6866cb0afa08f24d21f2a24d451706b0c",
+      "candidate_sha256": "4a6636b7a4ca0e963a2e1c5ad8a981b6866cb0afa08f24d21f2a24d451706b0c",
+      "expected_bytes": 2670661,
+      "candidate_bytes": 2670661
+    },
+    {
+      "file": "official_state_conditions.csv",
+      "passed": true,
+      "expected_sha256": "e10e5868370cb214da3b23bb8b7092ce2ca5add0991fd990c796e415697ba5d0",
+      "candidate_sha256": "e10e5868370cb214da3b23bb8b7092ce2ca5add0991fd990c796e415697ba5d0",
+      "expected_bytes": 5520462,
+      "candidate_bytes": 5520462
+    },
+    {
+      "file": "real_bench_compatibility.csv",
+      "passed": true,
+      "expected_sha256": "98ae8b7fdd51ea90c28e0377f23443ec95f227e0c5d4a6464c750e3cc7403067",
+      "candidate_sha256": "98ae8b7fdd51ea90c28e0377f23443ec95f227e0c5d4a6464c750e3cc7403067",
+      "expected_bytes": 1015,
+      "candidate_bytes": 1015
+    },
+    {
+      "file": "real_runtime_roster.csv",
+      "passed": true,
+      "expected_sha256": "f3bb25d76de162ea495a6ee6edd565fda598d6ed3bd0cc7641a2bdfbc580937e",
+      "candidate_sha256": "f3bb25d76de162ea495a6ee6edd565fda598d6ed3bd0cc7641a2bdfbc580937e",
+      "expected_bytes": 5444,
+      "candidate_bytes": 5444
+    },
+    {
+      "file": "real_starting_xi.csv",
+      "passed": true,
+      "expected_sha256": "6b9e36b5a0a5618fab14635e76470d30c2680f55ce35fe36037f0d9ae2088109",
+      "candidate_sha256": "6b9e36b5a0a5618fab14635e76470d30c2680f55ce35fe36037f0d9ae2088109",
+      "expected_bytes": 2427,
+      "candidate_bytes": 2427
+    },
+    {
+      "file": "representative_final_timeline.csv",
+      "passed": true,
+      "expected_sha256": "c940fb5f839d6a520a4f2ec0edf6bda1df0bf6586555d52a1bee8bcc046b5724",
+      "candidate_sha256": "c940fb5f839d6a520a4f2ec0edf6bda1df0bf6586555d52a1bee8bcc046b5724",
+      "expected_bytes": 11495,
+      "candidate_bytes": 11495
+    },
+    {
+      "file": "simulation_summary.json",
+      "passed": true,
+      "expected_sha256": "e870f3e4e4b871bc8e06a1a07942427b3a54b32005c01c77c6927e73618566be",
+      "candidate_sha256": "e870f3e4e4b871bc8e06a1a07942427b3a54b32005c01c77c6927e73618566be",
+      "expected_bytes": 77188,
+      "candidate_bytes": 77188
+    },
+    {
+      "file": "synthetic_archetype_membership.csv",
+      "passed": true,
+      "expected_sha256": "7e3e8ee0e4589348c409fc7c3a7f521a2a3ea433a042df335f8727f901817836",
+      "candidate_sha256": "7e3e8ee0e4589348c409fc7c3a7f521a2a3ea433a042df335f8727f901817836",
+      "expected_bytes": 10774,
+      "candidate_bytes": 10774
+    },
+    {
+      "file": "synthetic_bench_compatibility.csv",
+      "passed": true,
+      "expected_sha256": "d20fe1ba8cadefa5059990edd41dbe534444f3fa270066ab281b48a3d950bb26",
+      "candidate_sha256": "d20fe1ba8cadefa5059990edd41dbe534444f3fa270066ab281b48a3d950bb26",
+      "expected_bytes": 1475,
+      "candidate_bytes": 1475
+    },
+    {
+      "file": "synthetic_runtime_roster.csv",
+      "passed": true,
+      "expected_sha256": "1503fadbe12bd968f18cc269e7aef8157d33e3635d3a78a88abe68543b68c0b3",
+      "candidate_sha256": "1503fadbe12bd968f18cc269e7aef8157d33e3635d3a78a88abe68543b68c0b3",
+      "expected_bytes": 3858,
+      "candidate_bytes": 3858
+    },
+    {
+      "file": "synthetic_starting_xi.csv",
+      "passed": true,
+      "expected_sha256": "7704b49056c64ae39861ebf1f8541125e6b7311feedaf1a3aed4f2b3323c64ae",
+      "candidate_sha256": "7704b49056c64ae39861ebf1f8541125e6b7311feedaf1a3aed4f2b3323c64ae",
+      "expected_bytes": 2662,
+      "candidate_bytes": 2662
+    }
+  ],
+  "interpretation": "The independently regenerated 10,000-run official experiment reproduced every artifact hash recorded in the frozen manifest, together with the primary estimands and H5-H7 outputs."
+}
