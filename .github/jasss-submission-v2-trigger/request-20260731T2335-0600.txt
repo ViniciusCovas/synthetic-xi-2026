@@ -1,0 +1,1 @@
+Build the complete JASSS submission package with the locale-independent DOCX formatter, double-blind checks, page rendering, checksums, and uploaded deliverables.
