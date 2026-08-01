@@ -1,15 +1,10 @@
-name: Build JASSS submission files v3
+name: Build JASSS submission files
 
 on:
-  push:
-    branches:
-      - submission/jasss-files-v1
-    paths:
-      - '.github/jasss-submission-v3-trigger/**'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 env:
   PYTHONHASHSEED: '0'
@@ -19,29 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
-      - name: Checkout submission branch
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-
-      - name: Record observable build start
-        run: |
-          mkdir -p submission/jasss_v1
-          cat > submission/jasss_v1/build_v3_started.json <<EOF
-          {
-            "status": "jasss_submission_build_v3_started",
-            "workflow_run_id": "${GITHUB_RUN_ID}",
-            "workflow_attempt": "${GITHUB_RUN_ATTEMPT}",
-            "source_sha": "${GITHUB_SHA}",
-            "branch": "${GITHUB_REF_NAME}",
-            "started_at_utc": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          }
-          EOF
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add submission/jasss_v1/build_v3_started.json
-          git commit -m 'paper: record JASSS v3 build start'
-          git push origin HEAD:${GITHUB_REF_NAME}
 
       - name: Install document toolchain
         run: |
@@ -134,7 +110,7 @@ jobs:
               'document_font': manifest['document_font'],
               'open_items': manifest['open_items'],
           }
-          target = Path('submission/jasss_v1')
+          target = Path('/tmp/jasss-build-evidence')
           target.mkdir(parents=True, exist_ok=True)
           (target / 'BUILD_REPORT.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
           (target / 'PACKAGE_MANIFEST.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
@@ -167,22 +143,10 @@ jobs:
             echo "$stem: $count rendered pages"
           done
 
-      - name: Publish compact build evidence
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add submission/jasss_v1/
-          if git diff --cached --quiet; then
-            echo 'Build evidence is unchanged.'
-          else
-            git commit -m 'paper: publish JASSS submission build evidence'
-            git push origin HEAD:${GITHUB_REF_NAME}
-          fi
-
       - name: Upload complete submission package
         uses: actions/upload-artifact@v4
         with:
-          name: jasss-submission-files-v1-${{ github.run_id }}
+          name: jasss-submission-files-${{ github.run_id }}
           path: |
             /tmp/jasss-submission-v1/JASSS_Submission_Package_v1.zip
             /tmp/jasss-submission-v1/01_Blinded_Manuscript.docx
@@ -197,8 +161,8 @@ jobs:
             /tmp/jasss-submission-v1/06_Figures_PNG
             /tmp/jasss-submission-v1/07_Anonymous_Reproducibility_Package.zip
             /tmp/jasss-submission-v1/08_SUBMISSION_OPEN_ITEMS.md
-            submission/jasss_v1/BUILD_REPORT.json
-            submission/jasss_v1/PACKAGE_MANIFEST.json
+            /tmp/jasss-build-evidence/BUILD_REPORT.json
+            /tmp/jasss-build-evidence/PACKAGE_MANIFEST.json
             /tmp/jasss-renders
           if-no-files-found: error
           retention-days: 90
