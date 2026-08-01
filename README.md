@@ -19,21 +19,27 @@ El motor es un simulador probabilístico por eventos y estados. No equivale a un
 
 ## Estado científico actual
 
-La ejecución histórica de 10.000 finales del 22 de julio de 2026 se conserva sin modificación como **piloto final / release candidate**. No es la ejecución confirmatoria oficial.
+El experimento oficial v1 y su replicación independiente están **completos, validados e integrados**.
 
-La nueva ruta confirmatoria es `official_experiment_v1`, preparada en la rama:
+### Corrida confirmatoria principal
 
-```text
-science/official-experiment-v1
-```
+- 10.000 finales, seed `2026073001`.
+- Synthetic XI campeón: **44,590%** (IC 95%: 43,618%–45,566%).
+- Real Best XI campeón: **55,410%** (IC 95%: 54,434%–56,382%).
 
-Sus decisiones previas a resultados están congeladas en:
+### Replicación pre-registrada de precisión
 
-- `PROTOCOL_AMENDMENT_OFFICIAL_V1.md`;
-- `config/official_experiment_v1.json`;
-- `data/model_readiness/official_rankings_authorization_v1.json`.
+- 50.000 finales, seed independiente `2026073102`.
+- Synthetic XI campeón: **44,696%** (IC 95%: 44,261%–45,132%).
+- Real Best XI campeón: **55,304%** (IC 95%: 54,868%–55,739%).
+- Diferencia frente a la corrida confirmatoria: **0,106 punto porcentual**.
+- Consistencia de Monte Carlo, precisión y dirección: **PASS**.
 
-El modo `official` permanece bloqueado hasta que una validación aislada del mismo motor, roster y configuración produzca una autorización con hashes coincidentes.
+La corrida de 10.000 permanece como resultado confirmatorio principal. La corrida de 50.000 se reporta separadamente como replicación de precisión. La síntesis ponderada de 60.000 —Synthetic XI **44,678%**, IC 95% 44,281%–45,076%— es únicamente secundaria.
+
+El release científico consolidado está documentado en `SCIENTIFIC_RELEASE_OFFICIAL_V1.md`.
+
+La ejecución histórica de 10.000 finales del 22 de julio de 2026 permanece conservada, sin modificación, como **piloto final / release candidate** y no se confunde con la corrida confirmatoria oficial.
 
 ## Decisiones del experimento oficial v1
 
@@ -46,8 +52,9 @@ El modo `official` permanece bloqueado hasta que una validación aislada del mis
 - Sustituciones exclusivamente desde el banquillo congelado.
 - Condiciones, árbitro y ambiente pareados cuando el diseño lo permite.
 - Sensibilidad e incertidumbre anidada ejecutadas sobre el mismo motor oficial.
-- H5, H6 y H7 operacionalizadas antes de la nueva ejecución.
+- H5, H6 y H7 operacionalizadas antes de la ejecución confirmatoria.
 - Ausencia de evidencia afirmativa = gate fallido.
+- Ningún ajuste de parámetros, jugadores o código después de observar resultados.
 
 ## Arquitectura
 
@@ -60,12 +67,16 @@ Preflight estructural fail-closed
           ↓
 Smoke → validación aislada → autorización con hashes
           ↓
-Distribución oficial de 10.000 finales
+Corrida confirmatoria de 10.000 finales
           ↓
-H5–H7, sensibilidad, incertidumbre y replay representativo
+H5–H7, sensibilidad e incertidumbre anidada
+          ↓
+Replicación independiente de 50.000 finales
+          ↓
+Release científico congelado
 ```
 
-## Despliegues
+## Reproducibilidad
 
 La guía completa está en `EXPERIMENT_DEPLOYMENT.md`.
 
@@ -80,15 +91,21 @@ PYTHONPATH=. python scripts/scientific/validate_official_release.py \
   --mode structural \
   --status-output /tmp/official_structural_preflight.json
 
-PYTHONPATH=. pytest -q tests/test_official_experiment.py
+PYTHONPATH=. pytest -q \
+  tests/test_official_experiment.py \
+  tests/test_official_orientation.py
 
-PYTHONPATH=. python scripts/run_official_experiment.py --mode smoke
+PYTHONPATH=. python scripts/run_official_experiment_v1_1.py \
+  --mode smoke \
+  --simulations 200
 ```
 
 ### Validación aislada
 
 ```bash
-PYTHONPATH=. python scripts/run_official_experiment.py --mode validation
+PYTHONPATH=. python scripts/run_official_experiment_v1_1.py \
+  --mode validation \
+  --simulations 2000
 
 PYTHONPATH=. python scripts/scientific/run_official_robustness.py \
   --output data/experiments/official_v1/robustness
@@ -99,24 +116,34 @@ PYTHONPATH=. python scripts/scientific/validate_official_release.py \
   --robustness data/experiments/official_v1/robustness
 ```
 
-### Ejecución oficial
+### Corrida confirmatoria
 
 ```bash
-PYTHONPATH=. python scripts/run_official_experiment.py --mode official
+PYTHONPATH=. python scripts/run_official_experiment_v1_1.py \
+  --mode official \
+  --simulations 10000 \
+  --seed 2026073001 \
+  --output data/experiments/official_v1
 ```
 
-El comando anterior falla cuando falta autorización o cambió cualquier fuente crítica, protocolo, configuración o roster respecto de la validación.
+El modo `official` falla si falta autorización o si cualquier fuente crítica, protocolo, configuración, roster o hash difiere de la validación autorizada.
 
-## GitHub Actions
+## GitHub Actions permanentes
 
-- `Official v1 PR Smoke`: compilación, preflight, pruebas y smoke observable en cada PR.
-- `Official Experiment v1`: despliegues manuales `smoke`, `validation` y `official`.
-- Los paquetes completos se conservan como artifacts con manifest SHA-256 y ledger de semillas.
+- `Official v1 PR Smoke`: compilación, preflight, pruebas y smoke observable.
+- `Official Experiment v1`: despliegues controlados de smoke, validación y ejecución oficial.
+- Los paquetes completos se conservan como artifacts con manifest SHA-256 y ledger de seeds.
+
+Los workflows one-shot utilizados para validar, autorizar, ejecutar e integrar las corridas se eliminan después del congelamiento.
 
 ## Documentación científica
 
-- `PRERREGISTRO.md`: preregistro histórico.
-- `PROTOCOL_AMENDMENT_OFFICIAL_V1.md`: enmienda previa al nuevo experimento oficial.
+- `SCIENTIFIC_RELEASE_OFFICIAL_V1.md`: registro consolidado del resultado congelado.
+- `METHODS_OFFICIAL_V1.md`: método del experimento oficial.
+- `PROTOCOL_AMENDMENT_OFFICIAL_V1.md`: enmienda previa al experimento oficial.
+- `PROTOCOL_AMENDMENT_OFFICIAL_V1_ADDENDUM_01.md`: política de sustituciones de emergencia.
+- `protocol/official_v1_precision_replication_50000_preregistration.json`: pre-registro de la replicación.
+- `PRERREGISTRO.md`: pre-registro histórico.
 - `METHODS.md`: metodología consolidada histórica.
 - `PROTOCOLO_FINAL_COMPLETA.md`: arquitectura general de la final.
 - `EXPERIMENT_DEPLOYMENT.md`: operación y gates de despliegue.
