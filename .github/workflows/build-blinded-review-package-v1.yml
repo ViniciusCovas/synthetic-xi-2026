@@ -1,0 +1,97 @@
+name: Build blinded review package v1
+
+on:
+  push:
+    branches:
+      - repro/clean-room-and-anonymous-package-v1
+    paths:
+      - '.github/blinded-review-package-v1-trigger/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout reproduction branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Require passed clean-room evidence
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report_path = Path('reproduction/clean_room_official_v1.json')
+          if not report_path.is_file():
+              raise SystemExit('Clean-room reproduction report is missing')
+          report = json.loads(report_path.read_text(encoding='utf-8'))
+          if report.get('passed') is not True:
+              raise SystemExit('Clean-room reproduction report is not affirmative')
+          if report.get('all_manifest_artifacts_byte_identical') is not True:
+              raise SystemExit('Frozen manifest artifacts were not byte-identical')
+          print(f"Clean-room evidence accepted: {report.get('manifest_artifact_count')} artifacts")
+          PY
+
+      - name: Compile package builder
+        run: python -m py_compile scripts/scientific/build_anonymous_review_bundle.py
+
+      - name: Build and identity-scan double-blind package
+        run: |
+          rm -rf /tmp/jasss-double-blind-review-package /tmp/jasss-double-blind-review-package.zip
+          PYTHONPATH=. python scripts/scientific/build_anonymous_review_bundle.py \
+            --root . \
+            --output-dir /tmp/jasss-double-blind-review-package \
+            --archive /tmp/jasss-double-blind-review-package.zip \
+            --manifest reproduction/anonymous_review_package_manifest.json
+
+      - name: Validate package manifest
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('reproduction/anonymous_review_package_manifest.json').read_text(encoding='utf-8'))
+          assert report.get('status') == 'anonymous_double_blind_package_built'
+          assert report.get('identity_scan_passed') is True
+          assert int(report.get('file_count', 0)) > 0
+          assert len(report.get('archive_sha256', '')) == 64
+          print(json.dumps({
+              'identity_scan_passed': report['identity_scan_passed'],
+              'file_count': report['file_count'],
+              'archive_sha256': report['archive_sha256'],
+          }, indent=2))
+          PY
+
+      - name: Publish compact package evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reproduction/anonymous_review_package_manifest.json
+          if git diff --cached --quiet; then
+            echo 'Package evidence is unchanged.'
+          else
+            git commit -m 'repro: publish blinded review package evidence'
+            git push origin HEAD:${GITHUB_REF_NAME}
+          fi
+
+      - name: Upload blinded reviewer package
+        uses: actions/upload-artifact@v4
+        with:
+          name: jasss-double-blind-review-package-${{ github.run_id }}
+          path: |
+            /tmp/jasss-double-blind-review-package.zip
+            reproduction/anonymous_review_package_manifest.json
+          if-no-files-found: error
+          retention-days: 90
