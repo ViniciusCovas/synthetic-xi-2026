@@ -1,1 +1,0 @@
-Run the preregistered 50000-final precision replication from revision 72e73714d7c413bd543b5c56ee5cdc505a8a7bac with seed 2026073102.

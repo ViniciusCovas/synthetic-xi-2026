@@ -1,8 +1,0 @@
-{
-  "requested_at": "2026-07-31T07:47:00-06:00",
-  "target_branch": "science/official-experiment-v1",
-  "smoke_run_id": 30636651397,
-  "validation_simulations": 2000,
-  "orientation_paired_observations": 2000,
-  "promote_affirmative_evidence_only": true
-}

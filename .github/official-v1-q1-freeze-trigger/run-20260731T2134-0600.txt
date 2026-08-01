@@ -1,1 +1,0 @@
-Integrate the frozen 10000-run confirmatory experiment and preregistered 50000-run precision replication into integration/official-v1-q1-freeze, validate all gates, remove one-shot workflows, and prepare the final scientific release PR.
