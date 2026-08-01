@@ -1,0 +1,117 @@
+{
+  "status": "official_h5_h6_h7_analysis_complete",
+  "engine_version": "complete_final_official_v1",
+  "simulations": 50000,
+  "bootstrap_draws": 2000,
+  "bootstrap_seed": 2026072906,
+  "h5": {
+    "hypothesis": "H5 Synthetic XI shows lower outcome variability",
+    "interpretation_rule": "Negative variance differences favor lower Synthetic XI variability; lower variability is not automatically superiority.",
+    "estimands": {
+      "goals_variance_difference_synthetic_minus_real": {
+        "estimate": -0.180492765455309,
+        "low": -0.2102643113662274,
+        "high": -0.15065003270065466
+      },
+      "xg_variance_difference_synthetic_minus_real": {
+        "estimate": -0.058473430416807914,
+        "low": -0.0656171106374542,
+        "high": -0.05120026479248011
+      },
+      "shots_variance_difference_synthetic_minus_real": {
+        "estimate": -0.560687039740797,
+        "low": -0.7611741376327539,
+        "high": -0.3515290789315777
+      },
+      "zero_goal_probability_difference_synthetic_minus_real": {
+        "estimate": 0.05604,
+        "low": 0.0506185,
+        "high": 0.061080999999999996
+      },
+      "offensive_lower_tail_difference_synthetic_minus_real": {
+        "estimate": 0.07764,
+        "low": 0.0721795,
+        "high": 0.0831
+      }
+    },
+    "variance_estimands_favor_synthetic": 3,
+    "variance_estimands_total": 3
+  },
+  "h6": {
+    "hypothesis": "H6 Real Best XI produces more extreme impact actions",
+    "interpretation_rule": "Negative Synthetic-minus-Real tail differences favor H6.",
+    "threshold_estimands": {
+      "three_plus_goals_probability_difference_synthetic_minus_real": {
+        "estimate": -0.05908,
+        "low": -0.06416,
+        "high": -0.05408
+      },
+      "xg_over_threshold_probability_difference_synthetic_minus_real": {
+        "estimate": -0.12538,
+        "low": -0.1304825,
+        "high": -0.1202
+      },
+      "shots_over_threshold_probability_difference_synthetic_minus_real": {
+        "estimate": -0.03378,
+        "low": -0.03706,
+        "high": -0.03034
+      },
+      "win_by_margin_probability_difference_synthetic_minus_real": {
+        "estimate": -0.0729,
+        "low": -0.078381,
+        "high": -0.0676595
+      }
+    },
+    "quantiles": [
+      {
+        "metric": "goals",
+        "quantile": 0.9,
+        "synthetic": 3.0,
+        "real": 3.0,
+        "synthetic_minus_real": 0.0
+      },
+      {
+        "metric": "xg",
+        "quantile": 0.9,
+        "synthetic": 2.2884,
+        "real": 2.5921,
+        "synthetic_minus_real": -0.30369999999999964
+      },
+      {
+        "metric": "shots",
+        "quantile": 0.9,
+        "synthetic": 14.0,
+        "real": 15.0,
+        "synthetic_minus_real": -1.0
+      },
+      {
+        "metric": "goals",
+        "quantile": 0.95,
+        "synthetic": 4.0,
+        "real": 4.0,
+        "synthetic_minus_real": 0.0
+      },
+      {
+        "metric": "xg",
+        "quantile": 0.95,
+        "synthetic": 2.565609999999999,
+        "real": 2.8877049999999995,
+        "synthetic_minus_real": -0.32209500000000046
+      },
+      {
+        "metric": "shots",
+        "quantile": 0.95,
+        "synthetic": 15.0,
+        "real": 16.0,
+        "synthetic_minus_real": -1.0
+      }
+    ]
+  },
+  "h7": {
+    "hypothesis": "H7 relative advantage depends on score, numerical state and match phase",
+    "unit_of_uncertainty": "simulation, not individual event",
+    "interaction_cells": 81,
+    "estimands_present": true
+  },
+  "h5_h6_h7_estimands_present": true
+}
