@@ -1,0 +1,160 @@
+name: Build JASSS submission files v3
+
+on:
+  push:
+    branches:
+      - submission/jasss-files-v1
+    paths:
+      - '.github/jasss-submission-v3-trigger/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout submission branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Record observable build start
+        run: |
+          mkdir -p submission/jasss_v1
+          cat > submission/jasss_v1/build_v3_started.json <<EOF
+          {
+            "status": "jasss_submission_build_v3_started",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "workflow_attempt": "${GITHUB_RUN_ATTEMPT}",
+            "source_sha": "${GITHUB_SHA}",
+            "branch": "${GITHUB_REF_NAME}",
+            "started_at_utc": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          }
+          EOF
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add submission/jasss_v1/build_v3_started.json
+          git commit -m 'paper: record JASSS v3 build start'
+          git push origin HEAD:${GITHUB_REF_NAME}
+
+      - name: Install document toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            pandoc libreoffice librsvg2-bin poppler-utils unzip fonts-liberation
+          python -m pip install --upgrade pip
+          python -m pip install python-docx
+
+      - name: Isolate author-facing builder from blinded source tree
+        run: |
+          cp scripts/scientific/build_jasss_submission_files_v2.py /tmp/build_jasss_submission_files_v2.py
+          python -m py_compile /tmp/build_jasss_submission_files_v2.py
+          rm -f scripts/scientific/build_jasss_submission_files.py
+          rm -f scripts/scientific/build_jasss_submission_files_v2.py
+
+      - name: Build submission files
+        run: |
+          rm -rf /tmp/jasss-submission-v1
+          PYTHONPATH=. python /tmp/build_jasss_submission_files_v2.py \
+            --root . \
+            --output /tmp/jasss-submission-v1
+
+      - name: Create build report
+        run: |
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          output = Path('/tmp/jasss-submission-v1')
+          bundle = output / 'JASSS_Submission_Package_v1.zip'
+          manifest = json.loads((output / 'PACKAGE_MANIFEST.json').read_text(encoding='utf-8'))
+          def sha256(path):
+              digest = hashlib.sha256()
+              with path.open('rb') as handle:
+                  for block in iter(lambda: handle.read(1024 * 1024), b''):
+                      digest.update(block)
+              return digest.hexdigest()
+          report = {
+              'status': 'jasss_submission_package_v1_built',
+              'workflow_run_id': os.environ['GITHUB_RUN_ID'],
+              'source_sha': os.environ['GITHUB_SHA'],
+              'bundle': bundle.name,
+              'bundle_bytes': bundle.stat().st_size,
+              'bundle_sha256': sha256(bundle),
+              'pdf_pages': manifest['pdf_pages'],
+              'document_font': manifest['document_font'],
+              'open_items': manifest['open_items'],
+          }
+          target = Path('submission/jasss_v1')
+          target.mkdir(parents=True, exist_ok=True)
+          (target / 'BUILD_REPORT.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          (target / 'PACKAGE_MANIFEST.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print(json.dumps(report, indent=2))
+          PY
+
+      - name: Enforce double-blind identity checks
+        run: |
+          mkdir -p /tmp/blind-check
+          unzip -p /tmp/jasss-submission-v1/01_Blinded_Manuscript.docx word/document.xml > /tmp/blind-check/manuscript.xml
+          pdftotext /tmp/jasss-submission-v1/01_Blinded_Manuscript.pdf /tmp/blind-check/manuscript.txt
+          unzip -p /tmp/jasss-submission-v1/02_Supplement_ODD.docx word/document.xml > /tmp/blind-check/supplement.xml
+          pdftotext /tmp/jasss-submission-v1/02_Supplement_ODD.pdf /tmp/blind-check/supplement.txt
+          if grep -Eai 'Covas|An[aá]huac|0000-0001-9948-2940|vinicius\.covas@|ViniciusCovas' \
+            /tmp/blind-check/manuscript.xml /tmp/blind-check/manuscript.txt \
+            /tmp/blind-check/supplement.xml /tmp/blind-check/supplement.txt; then
+            echo 'Identity leakage detected in blinded submission files.' >&2
+            exit 1
+          fi
+
+      - name: Render every PDF page for visual QA
+        run: |
+          mkdir -p /tmp/jasss-renders
+          for pdf in /tmp/jasss-submission-v1/*.pdf; do
+            stem=$(basename "${pdf%.pdf}")
+            mkdir -p "/tmp/jasss-renders/$stem"
+            pdftoppm -png -r 130 "$pdf" "/tmp/jasss-renders/$stem/page" >/dev/null 2>&1
+            count=$(find "/tmp/jasss-renders/$stem" -name 'page-*.png' | wc -l)
+            test "$count" -gt 0
+            echo "$stem: $count rendered pages"
+          done
+
+      - name: Publish compact build evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add submission/jasss_v1/
+          if git diff --cached --quiet; then
+            echo 'Build evidence is unchanged.'
+          else
+            git commit -m 'paper: publish JASSS submission build evidence'
+            git push origin HEAD:${GITHUB_REF_NAME}
+          fi
+
+      - name: Upload complete submission package
+        uses: actions/upload-artifact@v4
+        with:
+          name: jasss-submission-files-v1-${{ github.run_id }}
+          path: |
+            /tmp/jasss-submission-v1/JASSS_Submission_Package_v1.zip
+            /tmp/jasss-submission-v1/01_Blinded_Manuscript.docx
+            /tmp/jasss-submission-v1/01_Blinded_Manuscript.pdf
+            /tmp/jasss-submission-v1/02_Supplement_ODD.docx
+            /tmp/jasss-submission-v1/02_Supplement_ODD.pdf
+            /tmp/jasss-submission-v1/03_Title_Page.docx
+            /tmp/jasss-submission-v1/03_Title_Page.pdf
+            /tmp/jasss-submission-v1/04_Cover_Letter.docx
+            /tmp/jasss-submission-v1/04_Cover_Letter.pdf
+            /tmp/jasss-submission-v1/05_Figures_SVG
+            /tmp/jasss-submission-v1/06_Figures_PNG
+            /tmp/jasss-submission-v1/07_Anonymous_Reproducibility_Package.zip
+            /tmp/jasss-submission-v1/08_SUBMISSION_OPEN_ITEMS.md
+            submission/jasss_v1/BUILD_REPORT.json
+            submission/jasss_v1/PACKAGE_MANIFEST.json
+            /tmp/jasss-renders
+          if-no-files-found: error
+          retention-days: 90
