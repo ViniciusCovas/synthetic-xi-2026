@@ -1,1 +1,0 @@
-Run the observable clean-room reproduction. Record a start marker immediately, regenerate all 10,000 official finals, verify every artifact against the frozen manifest, and build the fail-closed anonymous reviewer package.
