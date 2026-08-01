@@ -58,6 +58,50 @@ jobs:
           rm -f scripts/scientific/build_jasss_submission_files.py
           rm -f scripts/scientific/build_jasss_submission_files_v2.py
 
+      - name: Create temporary blinded manuscript sources
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          paths = [
+              Path('paper/MANUSCRIPT_JASSS_V1.md'),
+              Path('paper/SUPPLEMENT_ODD_OFFICIAL_V1.md'),
+          ]
+          replacement = (
+              "## Data and Code Availability\n\n"
+              "An anonymized reproducibility package containing the frozen code, inputs, "
+              "preregistration materials, validation evidence, manifests, confirmatory and "
+              "replication outputs, figures, and provenance documentation accompanies this "
+              "submission. The permanent public repository and archival DOI are withheld from "
+              "the blinded manuscript, disclosed confidentially to the editor, and will be added "
+              "to the accepted version. The 10,000-run experiment remains the primary confirmatory "
+              "result; the 50,000-run experiment remains an independent precision replication.\n"
+          )
+          for path in paths:
+              text = path.read_text(encoding='utf-8')
+              text = re.sub(
+                  r'https?://github\.com/ViniciusCovas/synthetic-xi-2026(?:/[^\s)\]]*)?',
+                  '[permanent repository withheld during double-blind review]',
+                  text,
+                  flags=re.IGNORECASE,
+              )
+              text = text.replace(
+                  'ViniciusCovas/synthetic-xi-2026',
+                  '[repository withheld during double-blind review]',
+              )
+              if path.name == 'MANUSCRIPT_JASSS_V1.md':
+                  text, count = re.subn(
+                      r'## Data and Code Availability\n.*?(?=\n## Ethics Statement)',
+                      replacement.rstrip(),
+                      text,
+                      flags=re.DOTALL,
+                  )
+                  if count != 1:
+                      raise SystemExit(f'Expected one Data and Code Availability section, found {count}')
+              path.write_text(text, encoding='utf-8')
+          PY
+
       - name: Build submission files
         run: |
           rm -rf /tmp/jasss-submission-v1
