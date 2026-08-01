@@ -37,6 +37,10 @@ COPY_PATHS = (
     "paper/FIGURE_CAPTIONS.md",
     "paper/PROVENANCE_MATRIX.md",
 )
+AUDIT_ONLY_FILENAMES = {
+    "build_anonymous_review_bundle.py",
+    "verify_clean_room_reproduction.py",
+}
 
 
 def parse_args() -> argparse.Namespace:
@@ -73,6 +77,12 @@ def sanitize_text(text: str) -> str:
     return text
 
 
+def ignore_audit_only(_directory: str, names: list[str]) -> set[str]:
+    ignored = {name for name in names if name in AUDIT_ONLY_FILENAMES}
+    ignored.update(name for name in names if name in {"__pycache__", ".DS_Store"} or name.endswith(".pyc"))
+    return ignored
+
+
 def copy_selected(root: Path, output: Path) -> None:
     for relative in COPY_PATHS:
         source = root / relative
@@ -84,7 +94,7 @@ def copy_selected(root: Path, output: Path) -> None:
                 source,
                 destination,
                 dirs_exist_ok=True,
-                ignore=shutil.ignore_patterns("__pycache__", "*.pyc", ".DS_Store"),
+                ignore=ignore_audit_only,
             )
         else:
             destination.parent.mkdir(parents=True, exist_ok=True)
@@ -182,6 +192,7 @@ def main() -> None:
             "cover letter",
             "author names and affiliations",
             "workflow metadata",
+            "audit-only helper scripts containing deny-list terms",
         ],
         "files": files,
     }
