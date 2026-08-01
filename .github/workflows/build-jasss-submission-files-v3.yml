@@ -1,0 +1,168 @@
+name: Build JASSS submission files
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Install document toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            pandoc libreoffice librsvg2-bin poppler-utils unzip fonts-liberation
+          python -m pip install --upgrade pip
+          python -m pip install python-docx
+
+      - name: Isolate author-facing builder from blinded source tree
+        run: |
+          cp scripts/scientific/build_jasss_submission_files_v2.py /tmp/build_jasss_submission_files_v2.py
+          python -m py_compile /tmp/build_jasss_submission_files_v2.py
+          rm -f scripts/scientific/build_jasss_submission_files.py
+          rm -f scripts/scientific/build_jasss_submission_files_v2.py
+
+      - name: Create temporary blinded manuscript sources
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          paths = [
+              Path('paper/MANUSCRIPT_JASSS_V1.md'),
+              Path('paper/SUPPLEMENT_ODD_OFFICIAL_V1.md'),
+          ]
+          replacement = (
+              "## Data and Code Availability\n\n"
+              "An anonymized reproducibility package containing the frozen code, inputs, "
+              "preregistration materials, validation evidence, manifests, confirmatory and "
+              "replication outputs, figures, and provenance documentation accompanies this "
+              "submission. The permanent public repository and archival DOI are withheld from "
+              "the blinded manuscript, disclosed confidentially to the editor, and will be added "
+              "to the accepted version. The 10,000-run experiment remains the primary confirmatory "
+              "result; the 50,000-run experiment remains an independent precision replication.\n"
+          )
+          for path in paths:
+              text = path.read_text(encoding='utf-8')
+              text = re.sub(
+                  r'https?://github\.com/ViniciusCovas/synthetic-xi-2026(?:/[^\s)\]]*)?',
+                  '[permanent repository withheld during double-blind review]',
+                  text,
+                  flags=re.IGNORECASE,
+              )
+              text = text.replace(
+                  'ViniciusCovas/synthetic-xi-2026',
+                  '[repository withheld during double-blind review]',
+              )
+              if path.name == 'MANUSCRIPT_JASSS_V1.md':
+                  text, count = re.subn(
+                      r'## Data and Code Availability\n.*?(?=\n## Ethics Statement)',
+                      replacement.rstrip(),
+                      text,
+                      flags=re.DOTALL,
+                  )
+                  if count != 1:
+                      raise SystemExit(f'Expected one Data and Code Availability section, found {count}')
+              path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Build submission files
+        run: |
+          rm -rf /tmp/jasss-submission-v1
+          PYTHONPATH=. python /tmp/build_jasss_submission_files_v2.py \
+            --root . \
+            --output /tmp/jasss-submission-v1
+
+      - name: Create build report
+        run: |
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          output = Path('/tmp/jasss-submission-v1')
+          bundle = output / 'JASSS_Submission_Package_v1.zip'
+          manifest = json.loads((output / 'PACKAGE_MANIFEST.json').read_text(encoding='utf-8'))
+          def sha256(path):
+              digest = hashlib.sha256()
+              with path.open('rb') as handle:
+                  for block in iter(lambda: handle.read(1024 * 1024), b''):
+                      digest.update(block)
+              return digest.hexdigest()
+          report = {
+              'status': 'jasss_submission_package_v1_built',
+              'workflow_run_id': os.environ['GITHUB_RUN_ID'],
+              'source_sha': os.environ['GITHUB_SHA'],
+              'bundle': bundle.name,
+              'bundle_bytes': bundle.stat().st_size,
+              'bundle_sha256': sha256(bundle),
+              'pdf_pages': manifest['pdf_pages'],
+              'document_font': manifest['document_font'],
+              'open_items': manifest['open_items'],
+          }
+          target = Path('/tmp/jasss-build-evidence')
+          target.mkdir(parents=True, exist_ok=True)
+          (target / 'BUILD_REPORT.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          (target / 'PACKAGE_MANIFEST.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print(json.dumps(report, indent=2))
+          PY
+
+      - name: Enforce double-blind identity checks
+        run: |
+          mkdir -p /tmp/blind-check
+          unzip -p /tmp/jasss-submission-v1/01_Blinded_Manuscript.docx word/document.xml > /tmp/blind-check/manuscript.xml
+          pdftotext /tmp/jasss-submission-v1/01_Blinded_Manuscript.pdf /tmp/blind-check/manuscript.txt
+          unzip -p /tmp/jasss-submission-v1/02_Supplement_ODD.docx word/document.xml > /tmp/blind-check/supplement.xml
+          pdftotext /tmp/jasss-submission-v1/02_Supplement_ODD.pdf /tmp/blind-check/supplement.txt
+          if grep -Eai 'Covas|An[aá]huac|0000-0001-9948-2940|vinicius\.covas@|ViniciusCovas' \
+            /tmp/blind-check/manuscript.xml /tmp/blind-check/manuscript.txt \
+            /tmp/blind-check/supplement.xml /tmp/blind-check/supplement.txt; then
+            echo 'Identity leakage detected in blinded submission files.' >&2
+            exit 1
+          fi
+
+      - name: Render every PDF page for visual QA
+        run: |
+          mkdir -p /tmp/jasss-renders
+          for pdf in /tmp/jasss-submission-v1/*.pdf; do
+            stem=$(basename "${pdf%.pdf}")
+            mkdir -p "/tmp/jasss-renders/$stem"
+            pdftoppm -png -r 130 "$pdf" "/tmp/jasss-renders/$stem/page" >/dev/null 2>&1
+            count=$(find "/tmp/jasss-renders/$stem" -name 'page-*.png' | wc -l)
+            test "$count" -gt 0
+            echo "$stem: $count rendered pages"
+          done
+
+      - name: Upload complete submission package
+        uses: actions/upload-artifact@v4
+        with:
+          name: jasss-submission-files-${{ github.run_id }}
+          path: |
+            /tmp/jasss-submission-v1/JASSS_Submission_Package_v1.zip
+            /tmp/jasss-submission-v1/01_Blinded_Manuscript.docx
+            /tmp/jasss-submission-v1/01_Blinded_Manuscript.pdf
+            /tmp/jasss-submission-v1/02_Supplement_ODD.docx
+            /tmp/jasss-submission-v1/02_Supplement_ODD.pdf
+            /tmp/jasss-submission-v1/03_Title_Page.docx
+            /tmp/jasss-submission-v1/03_Title_Page.pdf
+            /tmp/jasss-submission-v1/04_Cover_Letter.docx
+            /tmp/jasss-submission-v1/04_Cover_Letter.pdf
+            /tmp/jasss-submission-v1/05_Figures_SVG
+            /tmp/jasss-submission-v1/06_Figures_PNG
+            /tmp/jasss-submission-v1/07_Anonymous_Reproducibility_Package.zip
+            /tmp/jasss-submission-v1/08_SUBMISSION_OPEN_ITEMS.md
+            /tmp/jasss-build-evidence/BUILD_REPORT.json
+            /tmp/jasss-build-evidence/PACKAGE_MANIFEST.json
+            /tmp/jasss-renders
+          if-no-files-found: error
+          retention-days: 90

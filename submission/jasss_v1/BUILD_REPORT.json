@@ -1,0 +1,20 @@
+{
+  "status": "jasss_submission_package_v1_built",
+  "workflow_run_id": "30686136302",
+  "source_sha": "c731feb19b390df3327c5e3d236a50dfbae000f0",
+  "bundle": "JASSS_Submission_Package_v1.zip",
+  "bundle_bytes": 4041705,
+  "bundle_sha256": "a2c47f1828d7b5c29a4511a1f9dcb2b9f89e8040e319ec150fcc5ac20fab0bd7",
+  "pdf_pages": {
+    "01_Blinded_Manuscript.pdf": 35,
+    "02_Supplement_ODD.pdf": 20,
+    "03_Title_Page.pdf": 2,
+    "04_Cover_Letter.pdf": 2
+  },
+  "document_font": "Liberation Serif",
+  "open_items": [
+    "funding declaration",
+    "competing-interests declaration",
+    "permanent archival DOI"
+  ]
+}
