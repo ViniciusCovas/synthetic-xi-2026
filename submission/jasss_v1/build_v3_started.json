@@ -1,8 +1,8 @@
 {
   "status": "jasss_submission_build_v3_started",
-  "workflow_run_id": "30686136302",
+  "workflow_run_id": "30686546147",
   "workflow_attempt": "1",
-  "source_sha": "c731feb19b390df3327c5e3d236a50dfbae000f0",
+  "source_sha": "c72d6d9a918ed33ce3d9c0b04f1d43f942213a77",
   "branch": "submission/jasss-files-v1",
-  "started_at_utc": "2026-08-01T05:36:03Z"
+  "started_at_utc": "2026-08-01T05:49:00Z"
 }
