@@ -17,19 +17,12 @@ CORE_JSON_FILES = (
     "simulation_summary.json",
     "official_hypotheses_summary.json",
 )
-CORE_TABLE_FILES = (
-    "official_matches.csv",
-    "official_state_conditions.csv",
+VERSIONED_TABLE_FILES = (
     "official_h7_state_rates.csv",
     "official_h7_interactions.csv",
     "representative_final_timeline.csv",
     "synthetic_starting_xi.csv",
     "real_starting_xi.csv",
-    "synthetic_bench_compatibility.csv",
-    "real_bench_compatibility.csv",
-    "synthetic_runtime_roster.csv",
-    "real_runtime_roster.csv",
-    "synthetic_archetype_membership.csv",
 )
 SUMMARY_PATHS = (
     "status",
@@ -148,6 +141,25 @@ def compare_table(reference: Path, candidate: Path) -> dict[str, Any]:
     }
 
 
+def compare_manifest(reference_dir: Path, candidate_dir: Path) -> list[dict[str, Any]]:
+    reference_manifest = load_json(reference_dir / "manifest.json")
+    expected_files = reference_manifest.get("files", {})
+    checks: list[dict[str, Any]] = []
+    for relative_path, metadata in sorted(expected_files.items()):
+        candidate = candidate_dir / relative_path
+        expected_sha = metadata.get("sha256")
+        actual_sha = sha256(candidate) if candidate.is_file() else None
+        checks.append({
+            "file": relative_path,
+            "passed": actual_sha == expected_sha,
+            "expected_sha256": expected_sha,
+            "candidate_sha256": actual_sha,
+            "expected_bytes": metadata.get("bytes"),
+            "candidate_bytes": candidate.stat().st_size if candidate.is_file() else None,
+        })
+    return checks
+
+
 def main() -> None:
     args = parse_args()
     for directory in (args.reference, args.candidate):
@@ -170,7 +182,7 @@ def main() -> None:
             json_checks.append(compare_json_file(ref, cand))
 
     table_checks = []
-    for filename in CORE_TABLE_FILES:
+    for filename in VERSIONED_TABLE_FILES:
         ref = args.reference / filename
         cand = args.candidate / filename
         if not ref.is_file() or not cand.is_file():
@@ -178,16 +190,15 @@ def main() -> None:
         else:
             table_checks.append(compare_table(ref, cand))
 
+    manifest_checks = compare_manifest(args.reference, args.candidate)
     passed = (
         all(item["passed"] for item in summary_checks)
         and all(item["passed"] for item in json_checks)
         and all(item["passed"] for item in table_checks)
+        and bool(manifest_checks)
+        and all(item["passed"] for item in manifest_checks)
     )
-    byte_identity = all(
-        item.get("byte_identical", False)
-        for item in [*json_checks, *table_checks]
-        if "byte_identical" in item
-    )
+    byte_identity = bool(manifest_checks) and all(item["passed"] for item in manifest_checks)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.environment_copy.parent.mkdir(parents=True, exist_ok=True)
@@ -195,7 +206,8 @@ def main() -> None:
     report = {
         "status": "clean_room_reproduction_passed" if passed else "clean_room_reproduction_failed",
         "passed": passed,
-        "byte_identity_across_core_files": byte_identity,
+        "all_manifest_artifacts_byte_identical": byte_identity,
+        "manifest_artifact_count": len(manifest_checks),
         "reference_directory": str(args.reference),
         "candidate_directory": str(args.candidate),
         "python": sys.version,
@@ -203,22 +215,28 @@ def main() -> None:
         "environment_sha256": sha256(args.environment_copy),
         "summary_checks": summary_checks,
         "json_checks": json_checks,
-        "table_checks": table_checks,
+        "versioned_table_checks": table_checks,
+        "manifest_checks": manifest_checks,
         "interpretation": (
-            "The independently regenerated 10,000-run official experiment reproduced the frozen "
-            "design identifiers, estimands, hypothesis outputs, and core event tables."
+            "The independently regenerated 10,000-run official experiment reproduced every artifact "
+            "hash recorded in the frozen manifest, together with the primary estimands and H5-H7 outputs."
             if passed
-            else "At least one frozen design identifier, estimand, hypothesis output, or core table did not reproduce."
+            else "At least one frozen identifier, estimand, H5-H7 output, versioned table, or manifest artifact did not reproduce."
         ),
     }
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     failed_summary = [item["path"] for item in summary_checks if not item["passed"]]
-    failed_files = [item["file"] for item in [*json_checks, *table_checks] if not item["passed"]]
+    failed_files = [
+        item["file"]
+        for item in [*json_checks, *table_checks, *manifest_checks]
+        if not item["passed"]
+    ]
     markdown = f"""# Clean-room reproduction — Official Experiment v1
 
 - Status: **{'PASS' if passed else 'FAIL'}**
-- Core files byte-identical: **{'yes' if byte_identity else 'no'}**
+- All frozen manifest artifacts byte-identical: **{'yes' if byte_identity else 'no'}**
+- Manifest artifacts checked: **{len(manifest_checks)}**
 - Candidate simulations: **{candidate_summary.get('simulations')}**
 - Candidate master seed: **`{candidate_summary.get('master_seed')}`**
 - Synthetic XI champion probability: **{candidate_summary['home_champion_probability']['estimate']:.4%}**
@@ -227,7 +245,7 @@ def main() -> None:
 
 ## Audit scope
 
-The audit was executed in a fresh GitHub-hosted Ubuntu environment with a new Python 3.12 installation and dependencies installed without a pip cache. It regenerated the preregistered 10,000-run official experiment from the frozen code and seed, then compared design identifiers, primary outcomes, H5–H7 outputs, and core event tables against the published evidence.
+The audit was executed in a fresh GitHub-hosted Ubuntu environment with a new Python 3.12 installation and dependencies installed without a pip cache. It regenerated the preregistered 10,000-run official experiment from the frozen code and seed. Every candidate artifact was checked against the SHA-256 recorded in the frozen manifest, including full match and state tables that are retained in the immutable experiment package rather than versioned individually in Git.
 
 ## Failed summary checks
 
