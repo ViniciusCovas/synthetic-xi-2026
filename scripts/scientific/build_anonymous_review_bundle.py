@@ -11,8 +11,10 @@ import shutil
 import zipfile
 
 TEXT_SUFFIXES = {".md", ".txt", ".py", ".json", ".csv", ".yml", ".yaml", ".toml"}
+# A first name alone is not a safe identity signal in a football dataset because
+# it can legitimately identify players. The scan therefore uses author-specific
+# and institutional identifiers that are unambiguous in this repository.
 DENY_PATTERNS = {
-    "author_first_name": re.compile(r"\bvinicius\b", re.IGNORECASE),
     "author_last_name": re.compile(r"\bcovas\b", re.IGNORECASE),
     "github_owner": re.compile(r"ViniciusCovas", re.IGNORECASE),
     "institution": re.compile(r"an[aá]huac", re.IGNORECASE),
@@ -185,6 +187,7 @@ def main() -> None:
     package_manifest = {
         "status": "anonymous_double_blind_package_built",
         "identity_scan_passed": True,
+        "identity_scan_policy": "Unambiguous author, repository, institution, domain, and ORCID identifiers; standalone player first names are not identity signals.",
         "excluded_identity_surfaces": [
             "Git history",
             "repository owner and URL",
