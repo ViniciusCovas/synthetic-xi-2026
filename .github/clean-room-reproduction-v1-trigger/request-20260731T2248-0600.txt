@@ -1,0 +1,1 @@
+Run the corrected audit that verifies every regenerated file against the SHA-256 values recorded in the frozen official manifest and builds the identity-scanned reviewer package.
