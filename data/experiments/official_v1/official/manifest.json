@@ -1,0 +1,133 @@
+{
+  "status": "official_experiment_artifacts_written",
+  "engine_version": "complete_final_official_v1",
+  "mode": "official",
+  "simulations": 10000,
+  "master_seed": 2026073001,
+  "top_n": 20,
+  "minimum_minutes": 900,
+  "source_hashes": {
+    "experiment_config": "87dc59551f6815cf0e6b23ef63f856d49c8aa21367e33344985eedda8869bcad",
+    "orientation_equivalence_contract": "0ca6af89414b493d4d22ce77f0731cebeef8c6cb8a72a92de3c68b158c52bc23",
+    "protocol_amendment": "6f73fbeb6e1ff009e72fcccd532a4613868991335315fe3ea6dfeb24c604a91c",
+    "protocol_addendum_emergency_substitution": "bc2d4420c3b85cb3e32d2f261fbc77b021048adbafec20cb6856c5f593531cc1",
+    "canonical_rosters": "b92dd9d58f635dd426d9fe154d38f7d5a4dcc2705a0b6d5d4c6b52a4f31d4d61",
+    "rankings_authorization": "257de63d35fcc65e43871e8baa300031171060854dcdc27c8cc919e27123096b",
+    "requirements": "63c86ec99443d99a8cb2e92c0c5f0e3c4e1bce1d05059b2932cecc29c42e64e2",
+    "simulator_package_policy": "95c6cd6fb7183ac82e4ec43f68691ab6c6b07601988baf51bddff604fa130ade",
+    "official_features_source": "592cc10b49a114b395427b66c07954539559e8be9699593ca22c4bff4a3c197b",
+    "official_profiles_source": "e51b848ce8cfa80da1922c53810403ec825386bdf4b7c57aa3cdfd3113400c34",
+    "official_profile_sensitivity_source": "5fc041474e9f34f8fe4c36288514bb6f3613b94079a086b8621904dd7dd8ac81",
+    "official_frozen_runtime_source": "a3fcee87ec5805d9c67f873f9f304666a5343fcd98b2d0ed03dabeaf5030636c",
+    "official_engine_source": "2fe8e0b3839a3a3b589c6a46edcb4002ac084dbe4c460e895b378fe449738e99",
+    "official_monte_carlo_source": "7ebeb23ab8040267c5514c76d5414134a9f9ddf6e8e3e5a796a1da78a22e6800",
+    "official_orientation_source": "33b871b42213bb4d3d1661ffff320dbca95301cdb111db0e69ac092066fbf382",
+    "official_provenance_source": "e34f41ef70e9a5c3d08fa6e5c2ed58ccd7fc9b306b28aa46e610ade04b9195d4",
+    "official_runner_source": "ab987caa7dfdbe0392158fb120ab4a22bff21fb36eb62edcc7ba235b231d888e",
+    "official_statistical_launcher_source": "c1f37b7afbfddd6b0284771d6e18783a1864d8f320fba1492d7298f770e7609c",
+    "hypothesis_source": "c7a53b0ad9a2c2fad3827377ea733fbd56b97bdf0bdd71c41393a21234a0b466",
+    "robustness_source": "f25624ba8785d19a16faae0fa2f4661c39a04a09ea2cf8176e5ec254519bd673",
+    "release_validator_source": "9e622608fe6f5d560ae5a9fc9c9e7aeb87ed239766999a7e375eb7b92cef878c",
+    "official_test_source": "000341b5c534677f2046833a3dd5e867dcc176515db4a4c27442192e1762e15e",
+    "official_orientation_test_source": "76c17d2846e0968b672694fb4e7e2358ddb7eef2d4fb7ad575156edb69950e82"
+  },
+  "final_config": {
+    "seed": null,
+    "home_advantage": 0.0,
+    "ability_scale": 0.75,
+    "shot_edge_scale": 0.95,
+    "conversion_edge_scale": 0.8,
+    "home_coordination_mean": 1.0,
+    "away_coordination_mean": 1.0,
+    "coordination_sd": 0.035,
+    "bench_quality": 0.91,
+    "bench_uncertainty": 0.045,
+    "fouls_per_team_90": 11.596154,
+    "yellows_per_team_90": 1.43617,
+    "direct_reds_per_team_90": 0.018,
+    "injuries_per_team_90": 0.18,
+    "severe_injury_share": 0.22,
+    "penalty_foul_share_in_zone_three": 0.035,
+    "var_review_goal_probability": 0.34,
+    "var_goal_overturn_probability": 0.075,
+    "var_penalty_review_probability": 0.44,
+    "var_penalty_overturn_probability": 0.09,
+    "fatigue_per_90": 0.19,
+    "referee_strictness_mean": 1.0,
+    "referee_strictness_sd": 0.12,
+    "rules": {
+      "regulation_minutes": 90,
+      "extra_time_period_minutes": 15,
+      "regulation_substitutions": 5,
+      "extra_time_substitution": 1,
+      "regulation_substitution_windows": 3,
+      "extra_time_substitution_windows": 1,
+      "initial_penalty_kicks": 5,
+      "maximum_sudden_death_rounds": 20
+    },
+    "booked_player_foul_multiplier": 0.35,
+    "official_engine_version": "complete_final_official_v1"
+  },
+  "files": {
+    "audit_sample.csv": {
+      "bytes": 66973,
+      "sha256": "e7542c946cc19844a4da2ced729d573badfa8805d4a7d86c374fbcee3b990ad6"
+    },
+    "official_h7_interactions.csv": {
+      "bytes": 8642,
+      "sha256": "f168c92bda8cf03a40641313258f65c8fa054c607e6a6be0676442fe1687b540"
+    },
+    "official_h7_state_rates.csv": {
+      "bytes": 7787,
+      "sha256": "1846820a0ffe1ecf391553a51f490d0264c1bdee27a452cc4c21e958940781c5"
+    },
+    "official_hypotheses_summary.json": {
+      "bytes": 3582,
+      "sha256": "0fb43ddac7ab9db0962bc386244a92dee2b87d81f408e102b25bba5cbf8c8b33"
+    },
+    "official_matches.csv": {
+      "bytes": 2670661,
+      "sha256": "4a6636b7a4ca0e963a2e1c5ad8a981b6866cb0afa08f24d21f2a24d451706b0c"
+    },
+    "official_state_conditions.csv": {
+      "bytes": 5520462,
+      "sha256": "e10e5868370cb214da3b23bb8b7092ce2ca5add0991fd990c796e415697ba5d0"
+    },
+    "real_bench_compatibility.csv": {
+      "bytes": 1015,
+      "sha256": "98ae8b7fdd51ea90c28e0377f23443ec95f227e0c5d4a6464c750e3cc7403067"
+    },
+    "real_runtime_roster.csv": {
+      "bytes": 5444,
+      "sha256": "f3bb25d76de162ea495a6ee6edd565fda598d6ed3bd0cc7641a2bdfbc580937e"
+    },
+    "real_starting_xi.csv": {
+      "bytes": 2427,
+      "sha256": "6b9e36b5a0a5618fab14635e76470d30c2680f55ce35fe36037f0d9ae2088109"
+    },
+    "representative_final_timeline.csv": {
+      "bytes": 11495,
+      "sha256": "c940fb5f839d6a520a4f2ec0edf6bda1df0bf6586555d52a1bee8bcc046b5724"
+    },
+    "simulation_summary.json": {
+      "bytes": 77188,
+      "sha256": "e870f3e4e4b871bc8e06a1a07942427b3a54b32005c01c77c6927e73618566be"
+    },
+    "synthetic_archetype_membership.csv": {
+      "bytes": 10774,
+      "sha256": "7e3e8ee0e4589348c409fc7c3a7f521a2a3ea433a042df335f8727f901817836"
+    },
+    "synthetic_bench_compatibility.csv": {
+      "bytes": 1475,
+      "sha256": "d20fe1ba8cadefa5059990edd41dbe534444f3fa270066ab281b48a3d950bb26"
+    },
+    "synthetic_runtime_roster.csv": {
+      "bytes": 3858,
+      "sha256": "1503fadbe12bd968f18cc269e7aef8157d33e3635d3a78a88abe68543b68c0b3"
+    },
+    "synthetic_starting_xi.csv": {
+      "bytes": 2662,
+      "sha256": "7704b49056c64ae39861ebf1f8541125e6b7311feedaf1a3aed4f2b3323c64ae"
+    }
+  }
+}

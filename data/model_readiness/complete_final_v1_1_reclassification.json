@@ -1,0 +1,21 @@
+{
+  "status": "complete_final_v1_1_reclassified",
+  "historical_release_path": "data/simulations/complete_final_v1_1",
+  "historical_release_date_utc": "2026-07-22T13:36:27.648564+00:00",
+  "previous_label": "definitive_release",
+  "current_label": "pilot_final_release_candidate",
+  "historical_artifacts_modified": false,
+  "historical_results_deleted": false,
+  "historical_results_used_to_select_official_direction": false,
+  "reasons": [
+    "runtime roster was not proven identical to the frozen canonical 26-player roster",
+    "historical role gate preserved rankings_allowed=false",
+    "discipline calibration was substantively loose despite passing frozen tolerances",
+    "sensitivity and nested uncertainty used a predecessor engine",
+    "event semantics did not explicitly separate acting, affected and possession teams",
+    "H5-H7 estimands were not fully operationalized"
+  ],
+  "replacement_route": "official_experiment_v1",
+  "protocol_amendment": "PROTOCOL_AMENDMENT_OFFICIAL_V1.md",
+  "claim_policy": "Historical outputs may be reported as development evidence, not as the confirmatory official result."
+}

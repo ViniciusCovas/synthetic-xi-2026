@@ -1,0 +1,92 @@
+name: Official v1 PR Smoke
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'simulator/official_*.py'
+      - 'scripts/run_official_experiment.py'
+      - 'scripts/run_official_experiment_v1_1.py'
+      - 'scripts/scientific/analyze_official_hypotheses.py'
+      - 'scripts/scientific/run_official_robustness.py'
+      - 'scripts/scientific/validate_official_release.py'
+      - 'tests/test_official_experiment.py'
+      - 'tests/test_official_orientation.py'
+      - 'config/official_experiment_v1.json'
+      - 'PROTOCOL_AMENDMENT_OFFICIAL_V1.md'
+      - '.github/workflows/official-pr-smoke.yml'
+
+permissions:
+  contents: read
+
+env:
+  PYTHONHASHSEED: '0'
+  PIP_DISABLE_PIP_VERSION_CHECK: '1'
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Compile official source
+        run: |
+          python -m py_compile \
+            simulator/official_profiles.py \
+            simulator/official_profile_sensitivity.py \
+            simulator/official_complete_final.py \
+            simulator/official_monte_carlo.py \
+            simulator/official_orientation.py \
+            scripts/run_official_experiment.py \
+            scripts/run_official_experiment_v1_1.py \
+            scripts/scientific/analyze_official_hypotheses.py \
+            scripts/scientific/run_official_robustness.py \
+            scripts/scientific/validate_official_release.py \
+            tests/test_official_experiment.py \
+            tests/test_official_orientation.py
+      - name: Structural preflight
+        run: |
+          PYTHONPATH=. python scripts/scientific/validate_official_release.py \
+            --mode structural \
+            --status-output /tmp/official_structural_preflight.json
+      - name: Focused tests
+        run: |
+          PYTHONPATH=. pytest -q \
+            tests/test_official_experiment.py \
+            tests/test_official_orientation.py
+      - name: Smoke simulation
+        run: |
+          PYTHONPATH=. python scripts/run_official_experiment_v1_1.py \
+            --mode smoke \
+            --simulations 200 \
+            --output /tmp/official_v1
+      - name: Assert smoke is diagnostic, not a release authorization
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          summary = json.loads(Path('/tmp/official_v1/smoke/simulation_summary.json').read_text())
+          orientation = summary['orientation_equivalence']
+          assert orientation['paired_observations'] == 200
+          assert orientation['release_eligible'] is False
+          assert orientation['status'] == 'diagnostic_only_insufficient_sample'
+          assert summary['discipline_calibration_gate']['passed']
+          assert summary['event_sanity_gate']['passed']
+          print(json.dumps(orientation, indent=2))
+          PY
+      - name: Upload smoke evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-v1-pr-smoke-${{ github.run_id }}
+          path: |
+            /tmp/official_structural_preflight.json
+            /tmp/official_v1
+          if-no-files-found: warn
+          retention-days: 30

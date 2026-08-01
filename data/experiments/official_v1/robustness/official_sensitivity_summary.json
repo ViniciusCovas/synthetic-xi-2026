@@ -1,0 +1,35 @@
+{
+  "status": "official_sensitivity_complete",
+  "engine_version": "complete_final_official_v1",
+  "scenarios": 9,
+  "simulations_per_scenario": 750,
+  "primary": {
+    "scenario": "primary",
+    "top_n": 20,
+    "minimum_minutes": 900,
+    "role_variant": "cohort_relative",
+    "synthetic_coordination": 1.0,
+    "real_coordination": 1.0,
+    "engine_version": "complete_final_official_v1",
+    "simulations": 750,
+    "synthetic_champion_probability": 0.452,
+    "real_champion_probability": 0.548,
+    "regulation_draw_probability": 0.23733333333333334,
+    "mean_total_goals": 3.296,
+    "mean_total_yellows": 3.2,
+    "mean_total_reds": 0.14666666666666667,
+    "discipline_gate_passed": true,
+    "event_sanity_passed": true
+  },
+  "ranges": {
+    "synthetic_champion_min": 0.3546666666666667,
+    "synthetic_champion_max": 0.588,
+    "real_champion_min": 0.412,
+    "real_champion_max": 0.6453333333333333
+  },
+  "direction_consistent_across_scenarios": false,
+  "all_event_sanity_gates_passed": true,
+  "all_discipline_gates_passed": true,
+  "official_sensitivity_complete": true,
+  "note": "Direction consistency is reported, not required as a validity condition."
+}

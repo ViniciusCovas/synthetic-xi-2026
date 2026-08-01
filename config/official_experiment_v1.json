@@ -1,0 +1,158 @@
+{
+  "status": "official_experiment_v1_preresult_freeze",
+  "version": "official_experiment_v1",
+  "engine_version": "complete_final_official_v1",
+  "protocol_amendment": "PROTOCOL_AMENDMENT_OFFICIAL_V1.md",
+  "pilot_release": {
+    "path": "data/simulations/complete_final_v1_1",
+    "classification": "pilot_final_release_candidate",
+    "may_tune_official_result_direction": false
+  },
+  "analysis": {
+    "top_n_primary": 20,
+    "top_n_sensitivity": [10, 30],
+    "minutes_primary": 900,
+    "minutes_sensitivity": [180, 450],
+    "validation_simulations": 2000,
+    "official_simulations": 10000,
+    "smoke_simulations": 200,
+    "audit_sample_size": 250
+  },
+  "seeds": {
+    "smoke": 2026072901,
+    "validation": 2026072902,
+    "orientation": 2026072903,
+    "stability": [2026072911, 2026072921, 2026072931, 2026072941],
+    "sensitivity": 2026072904,
+    "nested_uncertainty": 2026072905,
+    "official": 2026073001
+  },
+  "canonical_inputs": {
+    "rosters": "data/model_readiness/complete_final_rosters_v1.json",
+    "selection_sufficiency": "data/model_readiness/selection_sufficiency_status.json",
+    "role_readiness": "data/model_readiness/eleven_role_readiness.json",
+    "rankings_authorization": "data/model_readiness/official_rankings_authorization_v1.json",
+    "scientific_validation": "data/model_readiness/scientific_validation_status.json",
+    "external_holdout": "data/validation/external_pre_tournament_holdout_summary.json",
+    "calibration_targets": "data/simulations/calibration/world_cup_2026_targets.json",
+    "event_benchmark": "data/context/world_cup_2026_event_benchmark_summary.json",
+    "synthetic_pilot_profiles": "data/simulations/complete_final_v1_1/synthetic_xi_profiles.csv"
+  },
+  "role_map": {
+    "GK": "GK",
+    "RB": "FB1",
+    "RCB": "CB1",
+    "LCB": "CB2",
+    "LB": "FB2",
+    "DM": "DM",
+    "CM": "CM",
+    "AM": "AM",
+    "RW": "W1",
+    "LW": "W2",
+    "ST": "ST"
+  },
+  "substitution_policy": {
+    "exact_role_reserve_first": true,
+    "emergency_cover_uses_only_unused_frozen_squad_member": true,
+    "emergency_cover_for_goalkeeper": false,
+    "out_of_role_ability_multiplier": 0.9,
+    "out_of_role_uncertainty_increment": 0.03,
+    "preference_matrix": {
+      "CB1": ["CB2", "FB1", "FB2", "DM"],
+      "CB2": ["CB1", "FB2", "FB1", "DM"],
+      "FB1": ["FB2", "W1", "CB1", "DM", "CM"],
+      "FB2": ["FB1", "W2", "CB2", "DM", "CM"],
+      "DM": ["CM", "CB1", "CB2", "AM", "FB1", "FB2"],
+      "CM": ["DM", "AM", "W1", "W2", "FB1", "FB2"],
+      "AM": ["CM", "W1", "W2", "ST", "DM"],
+      "W1": ["W2", "AM", "ST", "FB1", "CM"],
+      "W2": ["W1", "AM", "ST", "FB2", "CM"],
+      "ST": ["W1", "W2", "AM", "CM"]
+    }
+  },
+  "discipline": {
+    "fouls_per_team_90": 11.596154,
+    "yellows_per_team_90": 1.43617,
+    "direct_reds_per_team_90": 0.018,
+    "booked_player_foul_multiplier": 0.35,
+    "targets": {
+      "mean_total_fouls": 23.192308,
+      "mean_total_yellows": 2.87234,
+      "mean_total_reds": 0.144231
+    },
+    "release_limits": {
+      "absolute_foul_error": 3.0,
+      "absolute_yellow_error": 0.75,
+      "absolute_red_error": 0.2,
+      "red_ratio_min": 0.5,
+      "red_ratio_max": 2.0
+    }
+  },
+  "orientation_equivalence": {
+    "maximum_absolute_difference": 0.04,
+    "minimum_simulations_per_orientation": 2000,
+    "common_random_numbers": true
+  },
+  "seed_stability": {
+    "simulations_per_seed": 1000,
+    "maximum_probability_spread": 0.05
+  },
+  "nested_uncertainty": {
+    "outer_parameter_worlds": 160,
+    "inner_matches_per_world": 100,
+    "required_components": [
+      "player_profile_uncertainty",
+      "role_classification_sensitivity",
+      "top_n_sensitivity",
+      "minimum_minutes_sensitivity",
+      "coordination",
+      "engine_parameters",
+      "paired_referee_context",
+      "paired_environment_context",
+      "match_randomness"
+    ]
+  },
+  "h5": {
+    "metrics": [
+      "goal_variance",
+      "xg_variance",
+      "shot_variance",
+      "zero_goal_probability",
+      "offensive_lower_tail"
+    ]
+  },
+  "h6": {
+    "thresholds": {
+      "goals": 3,
+      "xg": 2.0,
+      "shots": 15,
+      "goal_margin": 2
+    },
+    "quantiles": [0.9, 0.95]
+  },
+  "h7": {
+    "score_states": ["trailing", "tied", "leading"],
+    "numerical_states": ["inferior", "equal", "superior"],
+    "phases": ["first_half", "second_half", "extra_time"]
+  },
+  "mandatory_release_gates": [
+    "canonical_rosters_match_runtime",
+    "canonical_frozen_profile_values_match_runtime",
+    "no_provisional_profiles",
+    "no_exploratory_labels",
+    "selection_sufficiency",
+    "rankings_allowed",
+    "external_holdout_passed",
+    "event_sanity_passed",
+    "discipline_calibration_passed",
+    "orientation_equivalence_passed",
+    "seed_stability_passed",
+    "official_sensitivity_complete",
+    "official_nested_uncertainty_complete",
+    "h5_h6_h7_estimands_present",
+    "final_team_comparison_allowed",
+    "post_result_tuning_performed_false"
+  ],
+  "absence_policy": "Missing affirmative evidence is failure.",
+  "post_result_tuning_performed": false
+}

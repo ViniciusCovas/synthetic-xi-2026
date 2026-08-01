@@ -1,0 +1,173 @@
+name: Official Experiment v1
+
+on:
+  push:
+    branches:
+      - science/official-experiment-v1
+    paths:
+      - 'simulator/official_*.py'
+      - 'scripts/run_official_experiment.py'
+      - 'scripts/run_official_experiment_v1_1.py'
+      - 'scripts/scientific/analyze_official_hypotheses.py'
+      - 'scripts/scientific/run_official_robustness.py'
+      - 'scripts/scientific/validate_official_release.py'
+      - 'tests/test_official_experiment.py'
+      - 'tests/test_official_orientation.py'
+      - 'config/official_experiment_v1.json'
+      - 'PROTOCOL_AMENDMENT_OFFICIAL_V1.md'
+      - '.github/workflows/official-experiment-v1.yml'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Deployment stage'
+        required: true
+        type: choice
+        options:
+          - smoke
+          - validation
+          - official
+        default: smoke
+      simulations:
+        description: 'Optional simulation override; leave blank for frozen defaults'
+        required: false
+        type: string
+      promote_validation_evidence:
+        description: 'Commit release authorization and compact validation evidence'
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+env:
+  PYTHONHASHSEED: '0'
+  PIP_DISABLE_PIP_VERSION_CHECK: '1'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    concurrency:
+      group: official-experiment-v1-${{ github.ref }}
+      cancel-in-progress: false
+    steps:
+      - name: Checkout requested revision
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Resolve deployment mode
+        id: deploy
+        shell: bash
+        run: |
+          if [[ '${{ github.event_name }}' == 'workflow_dispatch' ]]; then
+            mode='${{ inputs.mode }}'
+            simulations='${{ inputs.simulations }}'
+            promote='${{ inputs.promote_validation_evidence }}'
+          else
+            mode='smoke'
+            simulations='200'
+            promote='false'
+          fi
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+          echo "simulations=$simulations" >> "$GITHUB_OUTPUT"
+          echo "promote=$promote" >> "$GITHUB_OUTPUT"
+
+      - name: Compile official sources
+        run: |
+          python -m py_compile \
+            simulator/official_profiles.py \
+            simulator/official_profile_sensitivity.py \
+            simulator/official_complete_final.py \
+            simulator/official_monte_carlo.py \
+            simulator/official_orientation.py \
+            scripts/run_official_experiment.py \
+            scripts/run_official_experiment_v1_1.py \
+            scripts/scientific/analyze_official_hypotheses.py \
+            scripts/scientific/run_official_robustness.py \
+            scripts/scientific/validate_official_release.py \
+            tests/test_official_experiment.py \
+            tests/test_official_orientation.py
+
+      - name: Structural fail-closed preflight
+        run: |
+          PYTHONPATH=. python scripts/scientific/validate_official_release.py \
+            --mode structural \
+            --status-output /tmp/official_structural_preflight.json
+
+      - name: Run focused official tests
+        run: |
+          PYTHONPATH=. pytest -q \
+            tests/test_official_experiment.py \
+            tests/test_official_orientation.py
+
+      - name: Execute experiment stage
+        shell: bash
+        run: |
+          args=(--mode '${{ steps.deploy.outputs.mode }}' --output data/experiments/official_v1)
+          if [[ -n '${{ steps.deploy.outputs.simulations }}' ]]; then
+            args+=(--simulations '${{ steps.deploy.outputs.simulations }}')
+          fi
+          PYTHONPATH=. python scripts/run_official_experiment_v1_1.py "${args[@]}"
+
+      - name: Run exact-engine robustness deployment
+        if: steps.deploy.outputs.mode == 'validation'
+        run: |
+          PYTHONPATH=. python scripts/scientific/run_official_robustness.py \
+            --output data/experiments/official_v1/robustness
+
+      - name: Authorize release only after all official gates pass
+        if: steps.deploy.outputs.mode == 'validation'
+        run: |
+          PYTHONPATH=. python scripts/scientific/validate_official_release.py \
+            --mode release \
+            --validation data/experiments/official_v1/validation \
+            --robustness data/experiments/official_v1/robustness
+
+      - name: Commit compact validation evidence
+        if: steps.deploy.outputs.mode == 'validation' && steps.deploy.outputs.promote == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            data/model_readiness/official_experiment_v1_preflight_status.json \
+            data/model_readiness/official_release_authorization_v1.json \
+            data/experiments/official_v1/validation/simulation_summary.json \
+            data/experiments/official_v1/validation/manifest.json \
+            data/experiments/official_v1/validation/official_hypotheses_summary.json \
+            data/experiments/official_v1/validation/official_h7_state_rates.csv \
+            data/experiments/official_v1/validation/official_h7_interactions.csv \
+            data/experiments/official_v1/robustness/official_sensitivity_summary.json \
+            data/experiments/official_v1/robustness/official_sensitivity_scenarios.csv \
+            data/experiments/official_v1/robustness/official_nested_uncertainty_summary.json
+          if git diff --cached --quiet; then
+            echo 'No validation evidence changed.'
+          else
+            git commit -m 'science: authorize official experiment v1 release'
+            git push
+          fi
+
+      - name: Upload immutable experiment package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-experiment-v1-${{ steps.deploy.outputs.mode }}-${{ github.run_id }}
+          path: |
+            data/experiments/official_v1
+            data/model_readiness/official_experiment_v1_preflight_status.json
+            data/model_readiness/official_release_authorization_v1.json
+            /tmp/official_structural_preflight.json
+          if-no-files-found: warn
+          retention-days: 90
