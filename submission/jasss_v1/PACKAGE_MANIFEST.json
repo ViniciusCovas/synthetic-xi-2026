@@ -1,0 +1,362 @@
+{
+  "status": "jasss_submission_package_v1_built",
+  "scientific_release": "official_v1",
+  "clean_room_reproduction": "passed_byte_identical",
+  "double_blind_identity_scan": "passed",
+  "document_font": "Liberation Serif",
+  "pdf_pages": {
+    "01_Blinded_Manuscript.pdf": 35,
+    "02_Supplement_ODD.pdf": 20,
+    "03_Title_Page.pdf": 2,
+    "04_Cover_Letter.pdf": 2
+  },
+  "files": [
+    {
+      "path": ".lo-profile/user/GraphicsRenderTests.log",
+      "bytes": 1570,
+      "sha256": "957f9051655b6f5b840fed86a02a05bb291994989193256af188e8a4cccdae32",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/autotext/mytexts.bau",
+      "bytes": 557,
+      "sha256": "d9606d2669fb667c077b3a5b393a53dde906c74c0563162351ac34431c3ab9b9",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/basic/Standard/Module1.xba",
+      "bytes": 1124,
+      "sha256": "b434faf21386064e2e81af758f307ae8bea72c0cb6c8510d55b1bc1bb38f8612",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/basic/Standard/dialog.xlb",
+      "bytes": 288,
+      "sha256": "85c83411f1285a0d0d9b511a7ea7dd06d5ac9b97f90d286adaca084212e3fe80",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/basic/Standard/script.xlb",
+      "bytes": 349,
+      "sha256": "80cb10b100053f6e0b26bb009a2b8ccbdedb761901680500a4736f7afbf1f959",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/basic/dialog.xlc",
+      "bytes": 339,
+      "sha256": "5b72c4cc5130eccab44cbfb91270befaeaf8ee7ab97cf205ee2abb582fa4a9e5",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/basic/script.xlc",
+      "bytes": 339,
+      "sha256": "5b72c4cc5130eccab44cbfb91270befaeaf8ee7ab97cf205ee2abb582fa4a9e5",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/config/autotbl.fmt",
+      "bytes": 35313,
+      "sha256": "713229151490c66f043cb4865147c97458b4f33e4eb5f2bb4133c58cbe77041e",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/database/biblio/biblio.dbf",
+      "bytes": 75798,
+      "sha256": "aefc2bb614c2e307870405e0fd72f4a22cf794c396a73ce0551f18a478e80ed2",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/database/biblio/biblio.dbt",
+      "bytes": 46601,
+      "sha256": "3ab142231d8075fdd02c95a691ddce590e0f81450744cb87ca610fd06d75cac1",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/database/biblio.odb",
+      "bytes": 2892,
+      "sha256": "c3dd4e9008be33cdede3abf822e9b748a201704adf95aad92ab894dd98b3fe85",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/extensions/buildid",
+      "bytes": 12,
+      "sha256": "cdb9096cabbbc8f1173d4bc11fa77c6c998ce022c3e1655e3cab373735e715ff",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/extensions/bundled/lastsynchronized",
+      "bytes": 1,
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/backenddb.xml",
+      "bytes": 135,
+      "sha256": "ac6f585621eb04b34549a95c99e015ad5810a4156e021df46c46731e7a087698",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/backenddb.xml",
+      "bytes": 117,
+      "sha256": "845041424286d5b794c11ff0a59d3df289dcb1567fb448ef0b85297108675b46",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/extensions/shared/lastsynchronized",
+      "bytes": 1,
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/extensions/shared/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/backenddb.xml",
+      "bytes": 135,
+      "sha256": "ac6f585621eb04b34549a95c99e015ad5810a4156e021df46c46731e7a087698",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/extensions/shared/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/backenddb.xml",
+      "bytes": 117,
+      "sha256": "845041424286d5b794c11ff0a59d3df289dcb1567fb448ef0b85297108675b46",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/extensions/tmp/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/backenddb.xml",
+      "bytes": 135,
+      "sha256": "ac6f585621eb04b34549a95c99e015ad5810a4156e021df46c46731e7a087698",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/extensions/tmp/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/backenddb.xml",
+      "bytes": 117,
+      "sha256": "845041424286d5b794c11ff0a59d3df289dcb1567fb448ef0b85297108675b46",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/gallery/sg30.sdv",
+      "bytes": 2048,
+      "sha256": "65365530165a871772e21962a5d7dda107d8d010f329bf59c878eabc3465bbe4",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/gallery/sg30.thm",
+      "bytes": 565,
+      "sha256": "f1f24dff4f58a716033bcf96ad175d3436bff0e0a233ab09f6215973ed843fed",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/pack/ExtensionInfo.pack",
+      "bytes": 32,
+      "sha256": "8f94c7bcb2083a786f6e479c41c0b6b9edea5ef8d6c7afb767b1424ec2e1186f",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/pack/autotext/mytexts.pack",
+      "bytes": 402,
+      "sha256": "3bc7ad4ef5a75a65e2c4a69ec709bbf6c60ef5a0cd15b92c0da2fb21fa4270ee",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/pack/basic/Standard/Module1.pack",
+      "bytes": 644,
+      "sha256": "fe0861e0d877fa3649f03890b80a99adb2a0625e158c4dd1d932515d339bca5a",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/pack/basic/Standard/dialog.pack",
+      "bytes": 220,
+      "sha256": "48f7e1fdd8661f0be6e676f55c9e0d0ccdfffbee9c67dd977d951129e45648fb",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/pack/basic/Standard/script.pack",
+      "bytes": 241,
+      "sha256": "6961af566352be513bb45dbcc2b92151b0833b59cb65bee346919d31a69d788a",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/pack/basic/dialog.pack",
+      "bytes": 238,
+      "sha256": "9a896cbae1ca92f439535587209ff596b14177401358c935227fd1af1efff9ee",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/pack/basic/script.pack",
+      "bytes": 238,
+      "sha256": "9a896cbae1ca92f439535587209ff596b14177401358c935227fd1af1efff9ee",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/pack/config/autotbl.pack",
+      "bytes": 1780,
+      "sha256": "1d3e419163e832bfba4c7f8424dd268cca313564ae87b1ede785b6488db6238a",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/pack/database/biblio/biblio.pack",
+      "bytes": 2147,
+      "sha256": "d0db6a1f5a456ffe7ec476e6dda13eef51628deafea9f80d23e6cdc366776d4e",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/pack/database/biblio.pack",
+      "bytes": 2432,
+      "sha256": "093d969bcb085884376e2c69353852e5a57fe7614de2257097984dcc29043b2e",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/pack/registrymodifications.pack",
+      "bytes": 752,
+      "sha256": "55dcd1e2a84fbb429ea77fb9462d45537390e4fcc52f981b9f17e3eb06f31362",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/registrymodifications.xcu",
+      "bytes": 3639,
+      "sha256": "fba0c9302325b719d339d61799363ca193f9084ef67018bf50febd157f21e42b",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/uno_packages/cache/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/backenddb.xml",
+      "bytes": 135,
+      "sha256": "ac6f585621eb04b34549a95c99e015ad5810a4156e021df46c46731e7a087698",
+      "pdf_pages": null
+    },
+    {
+      "path": ".lo-profile/user/uno_packages/cache/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/backenddb.xml",
+      "bytes": 117,
+      "sha256": "845041424286d5b794c11ff0a59d3df289dcb1567fb448ef0b85297108675b46",
+      "pdf_pages": null
+    },
+    {
+      "path": "01_Blinded_Manuscript.docx",
+      "bytes": 558454,
+      "sha256": "25d1c4c47eaf71bd39b36a1d15769ddb7f8c84060e18d5ae8c998a0a850375bf",
+      "pdf_pages": null
+    },
+    {
+      "path": "01_Blinded_Manuscript.pdf",
+      "bytes": 711433,
+      "sha256": "7b5298a8066d708374f9428a1b1c0451ee9338c96682501548351fbfc02883e0",
+      "pdf_pages": 35
+    },
+    {
+      "path": "02_Supplement_ODD.docx",
+      "bytes": 23425,
+      "sha256": "4e4fd61d332fb2f4cd432b67ab7d23633fd1263038f0c6b6ef5bf89c59fe8fd0",
+      "pdf_pages": null
+    },
+    {
+      "path": "02_Supplement_ODD.pdf",
+      "bytes": 208277,
+      "sha256": "9112aceca4bb0548ff549bcc1085ea7535e1f989016e280dd62167ef79d34689",
+      "pdf_pages": 20
+    },
+    {
+      "path": "03_Title_Page.docx",
+      "bytes": 12601,
+      "sha256": "beef70041d61b34fe15695074903f93eaaa78b4e741511e4c408f55284b21cd7",
+      "pdf_pages": null
+    },
+    {
+      "path": "03_Title_Page.pdf",
+      "bytes": 51300,
+      "sha256": "d8f8d5a1a43b2cbe62bf4b8688c2930dac8abd0a54dfa637921986657789ddff",
+      "pdf_pages": 2
+    },
+    {
+      "path": "04_Cover_Letter.docx",
+      "bytes": 13212,
+      "sha256": "9aa282dc93bb03d320e4606f8057487f8e197b54a7eca250f18e841f7ebc2b76",
+      "pdf_pages": null
+    },
+    {
+      "path": "04_Cover_Letter.pdf",
+      "bytes": 56613,
+      "sha256": "f43f6f8cb1c2a9bb0a1b14850a810ddff97261b0ee8e04c73f2bffc3a3ab4311",
+      "pdf_pages": 2
+    },
+    {
+      "path": "05_Figures_SVG/figure_1_replication_consistency.svg",
+      "bytes": 2964,
+      "sha256": "81c501f208d2dfd8ccbaab196b7cd04a3e74ceef6f5d971025f5e68a6a678ee2",
+      "pdf_pages": null
+    },
+    {
+      "path": "05_Figures_SVG/figure_2_h5_variability.svg",
+      "bytes": 4026,
+      "sha256": "d6f82c4fdab82a3c7430a68938d5193b497fedbeff785be1b8824c8d7b8c28c5",
+      "pdf_pages": null
+    },
+    {
+      "path": "05_Figures_SVG/figure_3_h6_extreme_outcomes.svg",
+      "bytes": 2523,
+      "sha256": "719a103b7270eb6c74e321490c116c8c5271e3258709a8d0b1cc4eb88f0fc3f6",
+      "pdf_pages": null
+    },
+    {
+      "path": "05_Figures_SVG/figure_4_precision_vs_structural_uncertainty.svg",
+      "bytes": 2538,
+      "sha256": "ab7b701362dd402f3272181dfa17661df8d812f3565e3aadb3cf2ab18695a419",
+      "pdf_pages": null
+    },
+    {
+      "path": "05_Figures_SVG/figure_5_h7_context_dependence.svg",
+      "bytes": 6201,
+      "sha256": "e469a2fe43c3159bff5a64d11803a0db32b717d0e340c8471dba6ddecf660d12",
+      "pdf_pages": null
+    },
+    {
+      "path": "06_Figures_PNG/figure_1_replication_consistency.png",
+      "bytes": 106825,
+      "sha256": "eb260da4d1c4baf1f960d34ea0cf2c2adcc8081a1c2ddf523e664a7b82db0d50",
+      "pdf_pages": null
+    },
+    {
+      "path": "06_Figures_PNG/figure_2_h5_variability.png",
+      "bytes": 109837,
+      "sha256": "e58f16246e772d4fb5bab279c2552e78b1f0560a8975abb211a11cd1048c0f1d",
+      "pdf_pages": null
+    },
+    {
+      "path": "06_Figures_PNG/figure_3_h6_extreme_outcomes.png",
+      "bytes": 107386,
+      "sha256": "c45d4e29ea732d1cfce77e721bb06ea67bab0d2740f1ffbd86213e7656db6b82",
+      "pdf_pages": null
+    },
+    {
+      "path": "06_Figures_PNG/figure_4_precision_vs_structural_uncertainty.png",
+      "bytes": 110698,
+      "sha256": "67ff81b5935ad3b2825446c2e9379998cc90edacf31a1e874670bbe7e65ccede",
+      "pdf_pages": null
+    },
+    {
+      "path": "06_Figures_PNG/figure_5_h7_context_dependence.png",
+      "bytes": 174649,
+      "sha256": "1b385b247a250f1e6557fd7eaa90b0a64cfccd58f8680215043b91d8a263ec6d",
+      "pdf_pages": null
+    },
+    {
+      "path": "07_Anonymous_Reproducibility_Package.zip",
+      "bytes": 2129564,
+      "sha256": "1904ad92715bdd8c35bec24338ad4a76fc5aa6e82f5dfc6b4f9c9a20b8ad28aa",
+      "pdf_pages": null
+    },
+    {
+      "path": "07_Anonymous_Reproducibility_Package_manifest.json",
+      "bytes": 40186,
+      "sha256": "4aaec655e391c5009c7f90c32f46dbe0f6578ef8829ab3536508858f0e1e66c8",
+      "pdf_pages": null
+    },
+    {
+      "path": "08_SUBMISSION_OPEN_ITEMS.md",
+      "bytes": 383,
+      "sha256": "213ede589ebe1db42284db9f41e6eb0000bbceb76c8475b2b9dafeace6b0af64",
+      "pdf_pages": null
+    }
+  ],
+  "open_items": [
+    "funding declaration",
+    "competing-interests declaration",
+    "permanent archival DOI"
+  ]
+}
