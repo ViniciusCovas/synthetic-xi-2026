@@ -1,0 +1,1 @@
+Rerun the clean-room reproduction and blinded package build using the corrected package builder that excludes audit-only scripts containing deny-list literals.
