@@ -1,0 +1,85 @@
+name: Publish Definitive Simulation Artifact
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/publish-definitive-artifact.yml
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+concurrency:
+  group: publish-definitive-simulation-artifact
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ARTIFACT_ID: '8481557159'
+      EXPECTED_ARTIFACT_DIGEST: 'sha256:0338771caeb325a5f57a2ec54d9f57018b7943d8b90383be6fc0c76dc4a8c032'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: definitive-real-vs-ai
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Download completed 100000-match artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          curl --fail --location \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" \
+            --output /tmp/definitive-result.zip
+          rm -rf data/definitive_experiment_v1/final_simulation
+          mkdir -p data/definitive_experiment_v1/final_simulation
+          unzip -q /tmp/definitive-result.zip -d data/definitive_experiment_v1/final_simulation
+
+      - name: Verify definitive result
+        run: |
+          python - <<'PY'
+          import gzip, hashlib, json
+          from pathlib import Path
+          root=Path('data/definitive_experiment_v1/final_simulation')
+          summary=json.loads((root/'summary.json').read_text())
+          assert summary['status']=='definitive_100000_match_simulation_completed'
+          assert summary['matches']==100000
+          assert summary['paired_orientations']==50000
+          raw=root/'matches.csv.gz'
+          digest=hashlib.sha256(raw.read_bytes()).hexdigest()
+          assert digest==summary['raw_match_log_sha256']
+          with gzip.open(raw,'rt',encoding='utf-8') as handle:
+              rows=sum(1 for _ in handle)-1
+          assert rows==100000
+          print({'rows':rows,'raw_sha256':digest})
+          PY
+
+      - name: Commit durable definitive result
+        run: |
+          set -euo pipefail
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -f data/definitive_experiment_v1/final_simulation/
+          if git diff --cached --quiet; then
+            echo 'Definitive result is already committed.'
+            exit 0
+          fi
+          git commit -m 'result: publish frozen 100000-match Real XI vs AI XI experiment'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin definitive-real-vs-ai
+            if git rebase -X theirs origin/definitive-real-vs-ai && git push origin HEAD:definitive-real-vs-ai; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          exit 1
