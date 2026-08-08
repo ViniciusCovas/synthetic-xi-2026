@@ -1,0 +1,21 @@
+name: Fetch Cloudflare Agent Setup Prompt
+
+# Utilitário de sessão: o ambiente de desenvolvimento bloqueia egress para
+# domínios da Cloudflare; este workflow busca o prompt de configuração e o
+# imprime no log para leitura. Sem secrets, sem escrita no repositório.
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch prompt.md
+        run: |
+          echo '===BEGIN CLOUDFLARE PROMPT==='
+          curl -sSL --max-time 60 https://developers.cloudflare.com/agent-setup/prompt.md
+          echo
+          echo '===END CLOUDFLARE PROMPT==='
