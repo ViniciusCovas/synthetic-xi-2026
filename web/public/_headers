@@ -1,0 +1,24 @@
+# Cloudflare Pages headers.
+# Os assets do laboratório (motor Python e dados dos elencos) são regenerados
+# por script e versionados no repositório: cada deploy publica o conteúdo novo
+# numa URL nova de deploy, então podem ser cacheados agressivamente.
+
+/lab/py/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/lab/data/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/data/*
+  Cache-Control: public, max-age=3600
+
+# HTML sempre revalidado para que uma nova publicação apareça de imediato.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/lab/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

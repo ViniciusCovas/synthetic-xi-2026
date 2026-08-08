@@ -3,7 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Laboratório — Synthetic XI 2026</title>
+<title>Laboratório de simulação — Synthetic XI 2026</title>
+<meta name="description" content="Escolha duas seleções da Copa 2026, o estádio e as condições, e rode o motor científico de finais — banco real, prorrogação e pênaltis — no seu navegador.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚗️</text></svg>">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Synthetic XI 2026 Lab">
+<meta property="og:title" content="Laboratório de simulação — Copa 2026">
+<meta property="og:description" content="Duas seleções, um estádio, condições reais de jogo. O motor científico de finais roda no seu navegador: banco real, prorrogação e pênaltis.">
+<meta property="og:image" content="og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Laboratório de simulação — Copa 2026">
+<meta name="twitter:description" content="Duas seleções, um estádio, condições reais. O motor científico roda no seu navegador.">
+<meta name="twitter:image" content="og-cover.png">
 <style>
   :root{
     --bg:#0b1220; --panel:#121b2e; --panel2:#0e1626; --line:#233150;
@@ -50,6 +63,11 @@
   details{margin-top:10px}
   summary{cursor:pointer;color:var(--muted)}
   .note{color:var(--muted);font-size:13px;margin-top:16px;max-width:80ch}
+  .offline{display:none;margin-top:14px;padding:14px;border-radius:10px;
+    border:1px solid #6b3d3d;background:rgba(180,80,80,.12);font-size:14px}
+  .offline strong{display:block;margin-bottom:4px;color:#ffb4b4}
+  .offline code{color:var(--accent)}
+  .offline button{width:auto;padding:8px 16px}
 </style>
 </head>
 <body>
@@ -80,8 +98,16 @@
 
   <div class="card" style="margin-top:14px">
     <button id="run">▶ Simular a final</button>
-    <div class="status" id="status">O motor carrega na primeira execução (~15–30 s); depois é rápido.</div>
+    <div class="status" id="status">Primeira execução baixa o motor Python (~15–30 s numa boa conexão);
+      depois fica em cache e é rápido.</div>
     <div class="bar"><i id="progress"></i></div>
+    <div class="offline" id="offline">
+      <strong>Não foi possível carregar o motor Python.</strong>
+      A biblioteca Pyodide vem de uma CDN pública (<code>cdn.jsdelivr.net</code>);
+      algumas redes corporativas e escolares a bloqueiam.
+      Tente outra rede ou use o celular com dados móveis.
+      <button id="retry" style="margin-top:10px">↻ Tentar de novo</button>
+    </div>
   </div>
 
   <div class="results" id="results">
@@ -130,6 +156,8 @@ async function boot(){
     $('away').add(new Option(name, name));
   }
   $('home').value = 'Spain'; $('away').value = 'Argentina';
+  // Em telas pequenas o padrão é menor: o motor roda no próprio aparelho.
+  if(window.innerWidth < 700) $('sims').value = '200';
   for(const v of venues){
     $('venue').add(new Option(`${v.host_city} — ${v.stadium} (${v.altitude_m} m)`, v.host_city));
   }
@@ -137,6 +165,9 @@ async function boot(){
 
 async function ensureEngine(){
   if(runtimeReady) return;
+  if(typeof loadPyodide === 'undefined'){
+    throw new Error('cdn-blocked');
+  }
   $('status').textContent = 'Carregando o motor Python (Pyodide + numpy)…';
   pyodide = await loadPyodide();
   await pyodide.loadPackage('numpy');
@@ -208,7 +239,11 @@ async function run(){
     const result = JSON.parse(pyodide.runPython('lab_runtime.summary()'));
     renderResult(result, seed);
   } catch(error){
-    $('status').textContent = 'Erro: ' + error;
+    const blocked = String(error).includes('cdn-blocked') || typeof loadPyodide === 'undefined';
+    $('offline').style.display = blocked ? 'block' : 'none';
+    $('status').textContent = blocked
+      ? 'Motor indisponível nesta rede.'
+      : 'Erro: ' + error;
   } finally {
     $('run').disabled = false;
   }
@@ -249,6 +284,7 @@ function renderResult(result, seed){
 }
 
 $('run').addEventListener('click', run);
+$('retry').addEventListener('click', () => { $('offline').style.display = 'none'; run(); });
 boot().catch(error => { $('status').textContent = 'Erro ao carregar dados: ' + error; });
 </script>
 </body>

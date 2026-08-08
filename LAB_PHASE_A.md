@@ -69,7 +69,8 @@ duas seleções, o estádio, o horário e a intensidade das condições — e o
 servidor). Os elencos das 44 seleções montáveis, os presets de estádio e a
 calibração são exportados por `scripts/export_lab_app_data.py`; o pacote
 embarcado é validado em CPython por `tests/test_lab_app_package.py` (mesmo
-código nas duas plataformas).
+código nas duas plataformas). Para publicar com link público, ver
+`DEPLOY_LAB_APP.md`.
 
 ## Limitações e próximas fases
 
