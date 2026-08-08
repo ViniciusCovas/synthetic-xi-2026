@@ -44,6 +44,8 @@
 
   function mount(canvas, cfg) {
     S.canvas = canvas; S.ctx = canvas.getContext('2d');
+    if (cfg.kits) S.kit = cfg.kits;
+    else if (window.TeamKits) S.kit = TeamKits.kitsFor(cfg.homeName, cfg.awayName);
     S.players = [];
     for (const side of ['home', 'away']) {
       for (const p of cfg[side + 'XI']) {
@@ -258,23 +260,40 @@
     const X = (u) => (u - ox) * k, Y = (u) => (u - oy) * k;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // relvado
-    for (let i = 0; i < 12; i++) {
-      ctx.fillStyle = i % 2 ? '#DDEBDF' : '#D3E4D6';
-      ctx.fillRect(X(i * PITCH.w / 12), Y(0), (PITCH.w / 12) * k + 1, PITCH.h * k);
+    // relvado de transmissão: verde real, faixas de corte e luz de estádio
+    for (let i = 0; i < 14; i++) {
+      ctx.fillStyle = i % 2 ? '#2E8B4F' : '#278047';
+      ctx.fillRect(X(i * PITCH.w / 14), Y(0), (PITCH.w / 14) * k + 1, PITCH.h * k);
     }
-    ctx.strokeStyle = '#FFFFFF'; ctx.globalAlpha = 0.85;
+    const light = ctx.createRadialGradient(
+      X(52.5), Y(30), 8 * k, X(52.5), Y(34), 74 * k);
+    light.addColorStop(0, 'rgba(255,255,240,.10)');
+    light.addColorStop(0.6, 'rgba(0,0,0,0)');
+    light.addColorStop(1, 'rgba(0,20,8,.30)');
+    ctx.fillStyle = light;
+    ctx.fillRect(X(0), Y(0), PITCH.w * k, PITCH.h * k);
+    ctx.strokeStyle = '#FFFFFF'; ctx.globalAlpha = 0.92;
     ctx.lineWidth = Math.max(1.5, k * 0.18);
     ctx.strokeRect(X(1), Y(1), (PITCH.w - 2) * k, (PITCH.h - 2) * k);
     ctx.beginPath(); ctx.moveTo(X(52.5), Y(1)); ctx.lineTo(X(52.5), Y(PITCH.h - 1)); ctx.stroke();
     ctx.beginPath(); ctx.arc(X(52.5), Y(34), 9 * k, 0, Math.PI * 2); ctx.stroke();
+    ctx.beginPath(); ctx.arc(X(52.5), Y(34), 0.35 * k, 0, Math.PI * 2);
+    ctx.fillStyle = '#FFFFFF'; ctx.fill();
     for (const left of [true, false]) {
-      const bx = left ? 1 : PITCH.w - 17.5;
       ctx.strokeRect(X(left ? 1 : PITCH.w - 17.5), Y(14), 16.5 * k, 40 * k);
       ctx.strokeRect(X(left ? 1 : PITCH.w - 6.5), Y(25), 5.5 * k, 18 * k);
+      const spot = left ? 12 : PITCH.w - 12;
+      ctx.beginPath(); ctx.arc(X(spot), Y(34), 0.3 * k, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath();                                   // meia-lua da área
+      ctx.arc(X(spot), Y(34), 9.15 * k,
+        left ? -0.30 * Math.PI : 0.70 * Math.PI,
+        left ? 0.30 * Math.PI : 1.30 * Math.PI);
+      ctx.stroke();
       ctx.fillStyle = '#FFFFFF';
       ctx.fillRect(X(left ? 0.2 : PITCH.w - 0.9), Y(30.3), 0.7 * k, 7.4 * k);
-      void bx;
+    }
+    for (const cx of [1, PITCH.w - 1]) for (const cy of [1, PITCH.h - 1]) {
+      ctx.beginPath(); ctx.arc(X(cx), Y(cy), 1 * k, 0, Math.PI * 2); ctx.stroke();
     }
     ctx.globalAlpha = 1;
 
@@ -299,7 +318,7 @@
     }
     // sombra
     ctx.beginPath(); ctx.ellipse(x, y + h * 0.05, h * 0.3, h * 0.11, 0, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(21,24,29,.22)'; ctx.fill();
+    ctx.fillStyle = 'rgba(0,25,10,.35)'; ctx.fill();
 
     ctx.save();
     ctx.translate(x, y);
@@ -327,7 +346,9 @@
     // nome
     ctx.textAlign = 'center';
     ctx.font = `600 ${Math.max(9, k * 0.95)}px Inter, sans-serif`;
-    ctx.fillStyle = 'rgba(21,24,29,.78)';
+    ctx.lineWidth = Math.max(2, k * 0.3); ctx.strokeStyle = 'rgba(10,30,16,.75)';
+    ctx.strokeText(p.name, x, y + h * 0.42);
+    ctx.fillStyle = '#FFFFFF';
     ctx.fillText(p.name, x, y + h * 0.42);
     // cartão
     if (p.card) {
