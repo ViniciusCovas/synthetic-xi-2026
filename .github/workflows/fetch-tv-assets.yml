@@ -1,0 +1,29 @@
+name: Fetch TV Assets
+
+# Baixa a cenografia gerada (Recraft V4.1 via Higgsfield) para o modo TV.
+# Um clique em Actions → Fetch TV Assets → Run workflow. Sem secrets.
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download generated scenography
+        run: |
+          B="https://d8j0ntlcm91z4.cloudfront.net/user_2xMwZIKi4TW6RKVC4W3MB8gwilG"
+          cd web/public/lab/tv
+          curl -fsSL -o stadium.png "$B/hf_20260808_204830_95fba131-3195-43da-bb93-9195afe0a782.png"
+          curl -fsSL -o avatar-home.png "$B/hf_20260808_204830_f87ff379-8a30-423f-aa9c-f2d9e4ccbf39.png"
+          curl -fsSL -o avatar-away.png "$B/hf_20260808_204830_ea7dc754-1918-47dd-bc67-c8bed6580189.png"
+          curl -fsSL -o trophy.png "$B/hf_20260808_204830_4e702836-0e09-4ec0-8562-643578dea8c7.png"
+          ls -la *.png
+      - name: Commit assets
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add web/public/lab/tv/*.png
+          git diff --cached --quiet || git commit -m "assets: TV scenography (Recraft via Higgsfield)"
+          git push
