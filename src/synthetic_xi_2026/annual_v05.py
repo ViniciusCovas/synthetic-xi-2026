@@ -225,8 +225,16 @@ def role_score(row: pd.Series, group: str) -> float:
     return float(score)
 
 
-def build_annual_table(scenario: str = "primary") -> pd.DataFrame:
-    """Tabela anual v0.5: identidade única, papéis v2, dims ajustadas por liga."""
+def build_annual_table(
+    scenario: str = "primary",
+    minimum_minutes: float = MINIMUM_ANNUAL_MINUTES,
+) -> pd.DataFrame:
+    """Tabela anual v0.5: identidade única, papéis v2, dims ajustadas por liga.
+
+    ``minimum_minutes`` permite à camada de laboratório usar um piso menor
+    (declarado) para cobrir seleções nacionais com menos jogadores extraídos;
+    a seleção v0.5 principal mantém 900.
+    """
     totals = pd.read_csv(TOTALS_PATH)
     for column in totals.columns:
         if column not in {"player_name", "window"}:
@@ -241,7 +249,7 @@ def build_annual_table(scenario: str = "primary") -> pd.DataFrame:
     }
     aggregation["player_name"] = "first"
     totals = totals.groupby("player_id", as_index=False).agg(aggregation)
-    totals = totals[totals["minutes_num"] >= MINIMUM_ANNUAL_MINUTES].copy()
+    totals = totals[totals["minutes_num"] >= minimum_minutes].copy()
 
     factors = league_factors(scenario)
     totals["league_factor"] = totals["player_id"].map(factors).fillna(

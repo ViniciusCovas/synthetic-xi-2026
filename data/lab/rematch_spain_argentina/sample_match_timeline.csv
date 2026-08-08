@@ -1,0 +1,51 @@
+sequence,clock,minute,period,side,team,acting_team,affected_team,possession_team,benefiting_team,actor,actor_team,actor_membership_valid,zone,xg,home_score_before_context,away_score_before_context,score_state_before,numerical_state_before,score,headline
+1,0.595,1,first_half,home,Spain,Spain,Argentina,Argentina,,Borja Iglesias,Spain,True,3.0,,0,0,tied,equal,0-0,Falta de Borja Iglesias
+2,0.625,1,first_half,away,Argentina,Argentina,Spain,Argentina,,Lionel Messi,Argentina,True,2.0,0.1616,0,0,tied,equal,0-0,Grande chance de Lionel Messi para fora
+3,10.597,11,first_half,home,Spain,Spain,Argentina,Argentina,,Yéremy Pino,Spain,True,2.0,,0,0,tied,equal,0-0,Falta de Yéremy Pino
+4,14.511,15,first_half,away,Argentina,Argentina,Spain,Argentina,,Enzo Fernández,Argentina,True,2.0,0.1514,0,0,tied,equal,0-0,Grande chance de Enzo Fernández para fora
+5,20.426,21,first_half,home,Spain,Spain,Argentina,Spain,,Borja Iglesias,Spain,True,3.0,0.2933,0,0,tied,equal,0-0,Grande chance de Borja Iglesias para fora
+6,21.152,22,first_half,home,Spain,Spain,Argentina,Argentina,,Mikel Oyarzabal,Spain,True,2.0,,0,0,tied,equal,0-0,Falta de Mikel Oyarzabal
+7,21.162,22,first_half,home,Spain,Spain,Spain,Argentina,,Mikel Oyarzabal,Spain,True,2.0,,0,0,tied,equal,0-0,Cartão amarelo para Mikel Oyarzabal
+8,23.745,24,first_half,away,Argentina,Argentina,Spain,Argentina,,Enzo Fernández,Argentina,True,2.0,,0,0,tied,equal,0-0,Enzo Fernández perde sob pressão
+9,35.742,36,first_half,home,Spain,Spain,Argentina,Argentina,,Pau Cubarsí,Spain,True,3.0,,0,0,tied,equal,0-0,Falta de Pau Cubarsí
+10,36.437,37,first_half,away,Argentina,Argentina,Spain,Argentina,,José López,Argentina,True,2.0,0.1608,0,0,tied,equal,0-0,Joan García defende finalização de José López
+11,39.594,40,first_half,home,Spain,Spain,Argentina,Argentina,,Borja Iglesias,Spain,True,2.0,,0,0,tied,equal,0-0,Falta de Borja Iglesias
+12,41.099,42,first_half,away,Argentina,Argentina,Spain,Spain,,Cristian Romero,Argentina,True,1.0,,0,0,tied,equal,0-0,Falta de Cristian Romero
+13,43.199,44,first_half,away,Argentina,Argentina,Spain,Spain,,José López,Argentina,True,2.0,,0,0,tied,equal,0-0,Falta de José López
+14,43.209,44,first_half,away,Argentina,Argentina,Argentina,Spain,,José López,Argentina,True,2.0,,0,0,tied,equal,0-0,Cartão amarelo para José López
+15,43.726,44,first_half,home,Spain,Spain,Argentina,Argentina,,Pau Cubarsí,Spain,True,3.0,,0,0,tied,equal,0-0,Falta de Pau Cubarsí
+16,43.756,44,first_half,away,Argentina,Argentina,Spain,Argentina,,Lionel Messi,Argentina,True,2.0,0.1593,0,0,tied,equal,0-0,Joan García defende finalização de Lionel Messi
+17,45.019,46,first_half,home,Spain,Spain,Argentina,Argentina,,Marc Pubill,Spain,True,3.0,,0,0,tied,equal,0-0,Falta de Marc Pubill
+18,47.0,48,match,system,,,,,,,,,,,0,0,tied,equal,0-0,Intervalo
+19,48.925,49,second_half,home,Spain,Spain,Argentina,Spain,Spain,Lamine Yamal,Spain,True,3.0,0.2747,0,0,tied,equal,1-0,GOL de Lamine Yamal
+20,55.271,56,second_half,home,Spain,Spain,Argentina,Spain,Spain,Yéremy Pino,Spain,True,3.0,0.0795,1,0,leading,equal,2-0,GOL de Yéremy Pino
+21,56.4,57,second_half,away,Argentina,Argentina,Spain,Spain,,José López,Argentina,True,3.0,,2,0,leading,equal,2-0,Falta de José López
+23,56.4,57,second_half,home,Spain,Spain,Argentina,Spain,,Lamine Yamal,Spain,True,2.0,0.1715,2,0,leading,equal,2-0,Grande chance de Lamine Yamal para fora
+22,56.41,57,second_half,away,Argentina,Argentina,Argentina,Spain,,José López,Argentina,True,3.0,,2,0,leading,equal,2-0,Segundo amarelo e expulsão de José López
+24,60.488,61,regulation,home,Spain,Spain,Spain,,,Eric García,Spain,True,,,2,0,trailing,inferior,2-0,"Substituição tática: sai Pedro Porro, entra Eric García"
+26,60.488,61,regulation,away,Argentina,Argentina,Argentina,,,Nahuel Molina,Argentina,True,,,2,0,trailing,inferior,2-0,"Substituição tática: sai Marcos Senesi, entra Nahuel Molina"
+25,60.489,61,regulation,home,Spain,Spain,Spain,,,Marc Cucurella,Spain,True,,,2,0,trailing,inferior,2-0,"Substituição tática: sai Alejandro Grimaldo, entra Marc Cucurella"
+27,60.489,61,regulation,away,Argentina,Argentina,Argentina,,,Facundo Medina,Argentina,True,,,2,0,trailing,inferior,2-0,"Substituição tática: sai Nicolás Tagliafico, entra Facundo Medina"
+28,63.623,64,second_half,away,Argentina,Argentina,Spain,Spain,,Facundo Medina,Argentina,True,2.0,,2,0,leading,superior,2-0,Falta de Facundo Medina
+29,63.623,64,second_half,home,Spain,Spain,Argentina,Spain,,Lamine Yamal,Spain,True,2.0,0.173,2,0,leading,superior,2-0,Grande chance de Lamine Yamal para fora
+30,64.6,65,second_half,away,Argentina,Argentina,Spain,Argentina,,Lionel Messi,Argentina,True,2.0,0.1588,2,0,trailing,inferior,2-0,Grande chance de Lionel Messi para fora
+31,67.225,68,second_half,home,Spain,Spain,Argentina,Argentina,,Pau Cubarsí,Spain,True,2.0,,2,0,trailing,inferior,2-0,Falta de Pau Cubarsí
+32,67.235,68,second_half,home,Spain,Spain,Spain,Argentina,,Pau Cubarsí,Spain,True,2.0,,2,0,trailing,inferior,2-0,Cartão amarelo para Pau Cubarsí
+33,68.825,69,second_half,home,Spain,Spain,Argentina,Argentina,,Dani Olmo,Spain,True,1.0,,2,0,trailing,inferior,2-0,Falta de Dani Olmo
+34,68.825,69,second_half,away,Argentina,Argentina,Spain,Argentina,,Nicolás González,Argentina,True,3.0,,2,0,trailing,inferior,2-0,Nicolás González perde sob pressão
+35,69.506,70,second_half,away,Argentina,Argentina,Spain,Argentina,,Nicolás González,Argentina,True,3.0,,2,0,trailing,inferior,2-0,Nicolás González perde sob pressão
+36,71.665,72,second_half,home,Spain,Spain,Argentina,Argentina,,Eric García,Spain,True,1.0,,2,0,trailing,inferior,2-0,Falta de Eric García
+37,72.281,73,regulation,home,Spain,Spain,Spain,,,Pablo Gavi,Spain,True,,,2,0,trailing,inferior,2-0,"Substituição tática: sai Borja Iglesias, entra Pablo Gavi"
+39,72.281,73,regulation,away,Argentina,Argentina,Argentina,,,Nico Paz,Argentina,True,,,2,0,trailing,inferior,2-0,"Substituição tática: sai Lionel Messi, entra Nico Paz"
+38,72.282,73,regulation,home,Spain,Spain,Spain,,,Nico Williams,Spain,True,,,2,0,trailing,inferior,2-0,"Substituição tática: sai Yéremy Pino, entra Nico Williams"
+40,72.282,73,regulation,away,Argentina,Argentina,Argentina,,,Lautaro Martínez,Argentina,True,,,2,0,trailing,inferior,2-0,"Substituição tática: sai Nicolás González, entra Lautaro Martínez"
+41,72.575,73,second_half,home,Spain,Spain,Argentina,Argentina,,Marc Cucurella,Spain,True,2.0,,2,0,trailing,inferior,2-0,Falta de Marc Cucurella
+42,73.404,74,second_half,away,Argentina,Argentina,Spain,Spain,,Nicolás Otamendi,Argentina,True,2.0,,2,0,leading,superior,2-0,Falta de Nicolás Otamendi
+43,81.523,82,second_half,away,Argentina,Argentina,Spain,Spain,,Nico Paz,Argentina,True,2.0,,2,0,leading,superior,2-0,Falta de Nico Paz
+44,82.179,83,regulation,home,Spain,Spain,Spain,,,Fabián Ruiz,Spain,True,,,2,0,leading,superior,2-0,"Substituição tática: sai Dani Olmo, entra Fabián Ruiz"
+45,82.179,83,regulation,away,Argentina,Argentina,Argentina,,,Thiago Almada,Argentina,True,,,2,0,leading,superior,2-0,"Substituição tática: sai Valentín Barco, entra Thiago Almada"
+46,90.103,91,second_half,home,Spain,Spain,Argentina,Spain,,Pablo Gavi,Spain,True,2.0,,2,0,leading,superior,2-0,Pablo Gavi perde sob pressão
+47,90.412,91,second_half,home,Spain,Spain,Argentina,Spain,Spain,Mikel Oyarzabal,Spain,True,3.0,0.1711,2,0,leading,superior,3-0,GOL de Mikel Oyarzabal
+48,92.746,93,second_half,home,Spain,Spain,Argentina,Argentina,,Nico Williams,Spain,True,1.0,,3,0,trailing,inferior,3-0,Falta de Nico Williams
+49,96.088,97,second_half,away,Argentina,Argentina,Spain,Spain,,Thiago Almada,Argentina,True,2.0,,3,0,leading,superior,3-0,Falta de Thiago Almada
+50,99.0,100,match,system,,,,,,,,,,,3,0,trailing,inferior,3-0,Final: Spain campeão

@@ -38,6 +38,13 @@ sintéticos supera al mejor once real. Detalle: `ANNUAL_SELECTION_V0_5.md`;
 artefactos: `data/annual_v05/`; simulaciones:
 `data/simulations/annual_v05_dose_response/`.
 
+## Laboratorio de simulación — Fase A (rematch)
+
+Simula una final completa entre cualquier par de selecciones del Mundial con
+elencos reales, banquillo real, prórroga y penales, usando el mismo motor del
+experimento oficial. Guía: `LAB_PHASE_A.md`; ejemplo validado:
+España×Argentina en `data/lab/rematch_spain_argentina/`.
+
 ## Estado científico actual
 
 El experimento oficial v1 y su replicación independiente están **completos, validados e integrados**.
