@@ -1,6 +1,6 @@
 {
   "status": "annual_selection_v0_5_built",
-  "generated_at_utc": "2026-08-08T00:55:06.600476+00:00",
+  "generated_at_utc": "2026-08-08T20:31:39.172865+00:00",
   "methodology": {
     "role_resolution": "grid centrado v2 + âncoras públicas; flexíveis mantidos",
     "identity": "uma identidade por player_id",
@@ -59,6 +59,19 @@
       "CM": "Rayan Cherki",
       "AM": "Lamine Yamal",
       "RW": "Michael Olise",
+      "LW": "Martin Baturina",
+      "ST": "Kylian Mbappé"
+    },
+    "estimated": {
+      "GK": "Joan García",
+      "RB": "João Cancelo",
+      "RCB": "Cristian Romero",
+      "LCB": "Çağlar Söyüncü",
+      "LB": "Rayan Aït-Nouri",
+      "DM": "Rodri",
+      "CM": "Rayan Cherki",
+      "AM": "Lamine Yamal",
+      "RW": "Lionel Messi",
       "LW": "Martin Baturina",
       "ST": "Kylian Mbappé"
     }

@@ -1,0 +1,68 @@
+{
+  "status": "league_strength_estimated",
+  "generated_at_utc": "2026-08-08T20:29:48.404492+00:00",
+  "method": "two-way additive backfitting on per-match provider rating, minute-weighted; identified by within-player contrasts",
+  "rows_used": 32774,
+  "players": 1062,
+  "leagues_total": 94,
+  "leagues_estimable": 57,
+  "reference": "minute-weighted Big-5 mean effect",
+  "mapping": "factor = clip(1 - 0.5*(effect - big5), 0.7, 1.05)",
+  "big5_effect": -0.07953131065031893,
+  "extremes": {
+    "hardest": [
+      {
+        "league_name": "Premier League",
+        "league_effect": -0.179,
+        "factor_estimated": 1.05
+      },
+      {
+        "league_name": "World Cup",
+        "league_effect": -0.152,
+        "factor_estimated": 1.036
+      },
+      {
+        "league_name": "UEFA Champions League",
+        "league_effect": -0.129,
+        "factor_estimated": 1.025
+      },
+      {
+        "league_name": "La Liga",
+        "league_effect": -0.102,
+        "factor_estimated": 1.011
+      },
+      {
+        "league_name": "League Cup",
+        "league_effect": -0.088,
+        "factor_estimated": 1.004
+      }
+    ],
+    "easiest": [
+      {
+        "league_name": "Stars League",
+        "league_effect": 0.324,
+        "factor_estimated": 0.798
+      },
+      {
+        "league_name": "World Cup - Qualification Asia",
+        "league_effect": 0.366,
+        "factor_estimated": 0.777
+      },
+      {
+        "league_name": "World Cup - Qualification CONCACAF",
+        "league_effect": 0.382,
+        "factor_estimated": 0.769
+      },
+      {
+        "league_name": "KNVB Beker",
+        "league_effect": 0.409,
+        "factor_estimated": 0.756
+      },
+      {
+        "league_name": "Eliteserien",
+        "league_effect": 0.454,
+        "factor_estimated": 0.733
+      }
+    ]
+  }
+}

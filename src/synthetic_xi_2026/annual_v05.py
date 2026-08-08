@@ -51,8 +51,17 @@ LATERAL_THRESHOLD = 0.28
 MINIMUM_ANNUAL_MINUTES = 900.0
 STABILITY_THRESHOLD = 0.60
 
-LEAGUE_SCENARIOS = {"primary": "factor_primary", "steep": "factor_steep", "none": None}
-DEFAULT_FACTOR = {"primary": 0.85, "steep": 0.72, "none": 1.0}
+LEAGUE_SCENARIOS = {
+    "primary": "factor_primary",
+    "steep": "factor_steep",
+    "none": None,
+    # Estimado por contrastes intra-jogador do próprio lake
+    # (scripts/build_league_strength_estimate.py); ligas sem estimativa
+    # caem no default.
+    "estimated": "factor_estimated",
+}
+DEFAULT_FACTOR = {"primary": 0.85, "steep": 0.72, "none": 1.0, "estimated": 0.85}
+ESTIMATED_TIERS_PATH = Path("data/reference/league_strength_estimated_2026.csv")
 
 
 def normalize_name(value: object) -> str:
@@ -185,7 +194,12 @@ def league_factors(scenario: str = "primary") -> pd.Series:
     if column is None:
         players = exposure["player_id"].unique()
         return pd.Series(1.0, index=pd.Index(players, name="player_id"))
-    tiers = pd.read_csv(LEAGUE_TIERS_PATH)
+    source = (
+        ESTIMATED_TIERS_PATH if scenario == "estimated" else LEAGUE_TIERS_PATH
+    )
+    tiers = pd.read_csv(source)
+    if scenario == "estimated":
+        tiers = tiers.dropna(subset=["factor_estimated"])
     factor_by_league = dict(zip(tiers["league_id"], tiers[column]))
     exposure["factor"] = exposure["league_id"].map(factor_by_league).fillna(
         DEFAULT_FACTOR[scenario]

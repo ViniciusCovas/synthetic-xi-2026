@@ -1,0 +1,24 @@
+name: Wikidata Player Attributes
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Fetch attributes from Wikidata (CC0, no secrets)
+        run: python scripts/enrichment/fetch_wikidata_player_attributes.py
+      - name: Commit results
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data/reference/player_attributes_wikidata.csv \
+                  data/reference/player_attributes_wikidata_status.json
+          git diff --cached --quiet || git commit -m "data: wikidata player attributes refresh"
+          git push

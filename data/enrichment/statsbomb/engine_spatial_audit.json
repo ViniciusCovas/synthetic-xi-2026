@@ -1,0 +1,78 @@
+{
+  "status": "engine_spatial_audit_complete",
+  "generated_at_utc": "2026-08-08T20:31:09.000369+00:00",
+  "sample": "230 partidas internacionais (WC18/22, Euro20/24)",
+  "by_distance_band": {
+    "0-6": {
+      "n": 178,
+      "p_goal": 0.4045,
+      "p_on_target": 0.5112,
+      "p_goal_given_on_target": 0.7912
+    },
+    "6-12": {
+      "n": 1235,
+      "p_goal": 0.1595,
+      "p_on_target": 0.366,
+      "p_goal_given_on_target": 0.4358
+    },
+    "12-18": {
+      "n": 1339,
+      "p_goal": 0.1016,
+      "p_on_target": 0.3383,
+      "p_goal_given_on_target": 0.3002
+    },
+    "18-25": {
+      "n": 1458,
+      "p_goal": 0.0446,
+      "p_on_target": 0.2778,
+      "p_goal_given_on_target": 0.1605
+    },
+    "25-40": {
+      "n": 1358,
+      "p_goal": 0.0265,
+      "p_on_target": 0.2467,
+      "p_goal_given_on_target": 0.1075
+    },
+    "40+": {
+      "n": 38,
+      "p_goal": 0.0263,
+      "p_on_target": 0.1579,
+      "p_goal_given_on_target": 0.1667
+    }
+  },
+  "penalties_in_game": {
+    "n": 81,
+    "p_goal": 0.7037,
+    "p_on_target": 0.9136,
+    "p_goal_given_on_target": 0.7703
+  },
+  "penalties_shootout": {
+    "n": 142,
+    "p_goal": 0.669,
+    "p_on_target": 0.9085,
+    "p_goal_given_on_target": 0.7364
+  },
+  "set_pieces_free_kick": {
+    "n": 212,
+    "p_goal": 0.0425,
+    "p_on_target": 0.2736,
+    "p_goal_given_on_target": 0.1552
+  },
+  "engine_assumptions_audited": {
+    "goal_given_on_target_cap": 0.86,
+    "penalty_goal_probability": 0.91,
+    "penalty_effective_conversion_after_cap": 0.765
+  },
+  "verdicts": {
+    "penalty_conversion": {
+      "engine_effective": 0.765,
+      "empirical": 0.7037,
+      "gap": -0.0613
+    },
+    "goal_given_on_target_cap": {
+      "engine_cap": 0.86,
+      "empirical_max_by_band": 0.7912,
+      "cap_binds_in_close_range": false
+    }
+  }
+}

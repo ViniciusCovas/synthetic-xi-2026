@@ -31,7 +31,7 @@ OUT = ROOT / "data" / "annual_v05"
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     scenario_xis = {}
-    for scenario in ["primary", "none", "steep"]:
+    for scenario in ["primary", "none", "steep", "estimated"]:
         table = build_annual_table(scenario)
         xi = select_real_xi(table)
         scenario_xis[scenario] = xi
