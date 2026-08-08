@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/ui.tsx","./src/data/seed.ts","./src/lib/data.ts","./src/lib/supabase.ts","./src/pages/Competencia.tsx","./src/pages/Informe.tsx","./src/pages/Legislacion.tsx","./src/pages/Radar.tsx","./src/pages/Salarios.tsx","./src/pages/Tendencias.tsx"],"version":"5.9.3"}
