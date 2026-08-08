@@ -49,6 +49,7 @@
     bg.src = cfg.background || 'pitch-bg.png';
     if (cfg.kits) S.kit = cfg.kits;
     else if (window.TeamKits) S.kit = TeamKits.kitsFor(cfg.homeName, cfg.awayName);
+    S.numbers = { home: cfg.homeNumbers || {}, away: cfg.awayNumbers || {} };
     S.players = [];
     for (const side of ['home', 'away']) {
       for (const p of cfg[side + 'XI']) {
@@ -81,15 +82,23 @@
     const h = evt.headline || '';
     const side = evt.side === 'away' ? 'away' : 'home';
     if (/^GOL/i.test(h)) S.pending = { kind: 'goal', side, actor: evt.actor };
-    else if (/defendeu|Grande chance|para fora/i.test(h)) S.pending = { kind: 'shot', side, actor: evt.actor };
+    else if (/defende|Grande chance|para fora/i.test(h)) S.pending = { kind: 'shot', side, actor: evt.actor };
     else if (/amarelo|expuls/i.test(h)) card(side, evt.actor, /expuls/i.test(h) ? 'red' : 'yellow');
-    else if (/Substitui/i.test(h)) card(side, null, 'sub');
+    else if (/Substitui/i.test(h)) substitute(side, h);
     else if (/Intervalo|Final/i.test(h)) kickoff(other(S.possession));
   }
   function setClock() {}
   function card(side, actor, kind) {
     const p = byName(side, actor) || teamOf(side)[Math.floor(rnd(3, 10))];
     p.card = kind; p.cardT = 3.4;
+  }
+  function substitute(side, headline) {
+    const m = headline.match(/sai (.+?), entra (.+)$/i);
+    const leaving = m && byName(side, m[1]);
+    if (!leaving) { card(side, null, 'sub'); return; }
+    leaving.name = short(m[2]);
+    leaving.num = S.numbers[side][m[2]] ?? '';
+    leaving.card = 'sub'; leaving.cardT = 3.4;
   }
 
   // ---------- comportamento ----------

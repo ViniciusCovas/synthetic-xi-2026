@@ -159,10 +159,14 @@ async function boot(){
   const pc = $('pitch2d');
   pc.width = Math.round(pc.clientWidth * 2);
   pc.height = Math.round(pc.clientWidth * 2 * 56 / 105);
+  const numbersOf = t => Object.fromEntries(
+    [...teams[t].starters, ...Object.values(teams[t].bench_by_role).flat()]
+      .filter(p => p.number != null).map(p => [p.name, p.number]));
   Match2D.mount(pc, {
     homeName: HOME, awayName: AWAY,
     homeXI: teams[HOME].starters.map(p => ({role: p.role, name: p.name, number: p.number})),
     awayXI: teams[AWAY].starters.map(p => ({role: p.role, name: p.name, number: p.number})),
+    homeNumbers: numbersOf(HOME), awayNumbers: numbersOf(AWAY),
   });
   const pyodide = await loadPyodide();
   await pyodide.loadPackage('numpy');
