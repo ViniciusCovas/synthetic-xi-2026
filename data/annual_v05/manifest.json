@@ -1,0 +1,67 @@
+{
+  "status": "annual_selection_v0_5_built",
+  "generated_at_utc": "2026-08-08T00:55:06.600476+00:00",
+  "methodology": {
+    "role_resolution": "grid centrado v2 + âncoras públicas; flexíveis mantidos",
+    "identity": "uma identidade por player_id",
+    "eligibility_minutes": 900,
+    "league_adjustment": {
+      "table": "data/reference/league_strength_tiers_2026.csv",
+      "primary": "T1=1.00, T2=0.92, T3/default=0.85 (volumes por-90; taxas não ajustadas)",
+      "sensitivity": [
+        "none (sem ajuste)",
+        "steep (T2=0.85, T3/default=0.72)"
+      ]
+    },
+    "squad_rules": "11 titulares + 2 GK reservas + cobertura por posição + 3 vagas livres = 26, sem repetições",
+    "synthetic_tiers": [
+      "mean20",
+      "top5",
+      "p90",
+      "max20"
+    ],
+    "paired_uncertainty": "avatar herda média aparada das σ dos membros"
+  },
+  "xi_by_league_scenario": {
+    "primary": {
+      "GK": "Joan García",
+      "RB": "João Cancelo",
+      "RCB": "Cristian Romero",
+      "LCB": "Çağlar Söyüncü",
+      "LB": "Nuno Mendes",
+      "DM": "Pedri",
+      "CM": "Rayan Cherki",
+      "AM": "Lamine Yamal",
+      "RW": "Lionel Messi",
+      "LW": "Martin Baturina",
+      "ST": "Kylian Mbappé"
+    },
+    "none": {
+      "GK": "Sipho Chaine",
+      "RB": "João Cancelo",
+      "RCB": "Cristian Romero",
+      "LCB": "Çağlar Söyüncü",
+      "LB": "Jaouen Hadjam",
+      "DM": "Pedri",
+      "CM": "Rayan Cherki",
+      "AM": "Lamine Yamal",
+      "RW": "Lionel Messi",
+      "LW": "Brian Rodríguez",
+      "ST": "Kylian Mbappé"
+    },
+    "steep": {
+      "GK": "Joan García",
+      "RB": "João Cancelo",
+      "RCB": "Cristian Romero",
+      "LCB": "Nicolás Otamendi",
+      "LB": "Nuno Mendes",
+      "DM": "Pedri",
+      "CM": "Rayan Cherki",
+      "AM": "Lamine Yamal",
+      "RW": "Michael Olise",
+      "LW": "Martin Baturina",
+      "ST": "Kylian Mbappé"
+    }
+  },
+  "frozen_official_v1_untouched": true
+}

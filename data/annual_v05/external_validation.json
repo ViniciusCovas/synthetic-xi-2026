@@ -1,0 +1,36 @@
+{
+  "fifa_wc2026_best_xi": {
+    "label": "FIFA World Cup 2026 Best XI (official)",
+    "listed_players": 11,
+    "in_our_xi": 2,
+    "overlap_names": [
+      "kylian mbappe",
+      "lionel messi"
+    ],
+    "present_in_annual_pool": 11,
+    "note": "present_in_annual_pool conta quantos da lista externa existem no nosso universo elegível (convocados à Copa com ≥900 min anuais); a sobreposição só é interpretável sobre esse subconjunto."
+  },
+  "fifpro_world_xi_2025": {
+    "label": "FIFPro Men's World 11 2025",
+    "listed_players": 10,
+    "in_our_xi": 4,
+    "overlap_names": [
+      "kylian mbappe",
+      "lamine yamal",
+      "nuno mendes",
+      "pedri"
+    ],
+    "present_in_annual_pool": 8,
+    "note": "present_in_annual_pool conta quantos da lista externa existem no nosso universo elegível (convocados à Copa com ≥900 min anuais); a sobreposição só é interpretável sobre esse subconjunto."
+  },
+  "uefa_ucl_tots_2025_26": {
+    "label": "UEFA Champions League Team of the Season 2025-26",
+    "listed_players": 11,
+    "in_our_xi": 1,
+    "overlap_names": [
+      "nuno mendes"
+    ],
+    "present_in_annual_pool": 10,
+    "note": "present_in_annual_pool conta quantos da lista externa existem no nosso universo elegível (convocados à Copa com ≥900 min anuais); a sobreposição só é interpretável sobre esse subconjunto."
+  }
+}

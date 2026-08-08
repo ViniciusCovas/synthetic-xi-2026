@@ -1,0 +1,12 @@
+slot,player_id,player_name,world_cup_team,minutes,overall,league_factor,role_stability,flexible,role_source
+GK,182718,Joan García,Spain,4049.0,0.8125410524471025,0.9933316868362558,1.0,False,grid_centered_v2
+RB,855,João Cancelo,Portugal,2230.0,0.7061063545386967,0.9739820627802689,0.5151515151515151,True,grid_centered_v2
+RCB,30776,Cristian Romero,Argentina,3294.0,0.7472008842204096,0.9914845173041894,0.8461538461538461,False,grid_centered_v2
+LCB,18776,Çağlar Söyüncü,Türkiye,1087.0,0.7174869516603453,0.92557497700092,0.4,True,grid_centered_v2
+LB,263482,Nuno Mendes,Portugal,3391.0,0.7342081475578933,0.9861102919492776,1.0,False,public_anchor
+DM,133609,Pedri,Spain,3539.0,0.7408951815737805,0.993133653574456,0.5,True,grid_centered_v2
+CM,156477,Rayan Cherki,France,2970.0,0.7209995237813306,1.0,0.8709677419354839,False,grid_centered_v2
+AM,386828,Lamine Yamal,Spain,4201.0,0.8227051597194196,0.9961794810759342,0.5208333333333334,True,grid_centered_v2
+RW,154,Lionel Messi,Argentina,3834.0,0.8322314692550343,0.9245200834637456,0.8541666666666666,False,grid_centered_v2
+LW,295026,Martin Baturina,Croatia,2182.0,0.7861253044449796,1.0,0.5833333333333334,True,grid_centered_v2
+ST,278,Kylian Mbappé,France,4228.0,0.7893944460969375,0.9995033112582781,0.5625,False,public_anchor

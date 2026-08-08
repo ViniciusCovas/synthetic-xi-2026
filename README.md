@@ -26,6 +26,18 @@ RCB/LCB y RW/LW con evidencia validada de orientación. Detalle completo y
 reproducción en `SELECTION_CORRECTION_V0_4_1.md`. Los artefactos congelados
 del experimento oficial v1 no fueron modificados.
 
+## Selección anual v0.5 (mejores del año + dosis-respuesta)
+
+Nueva capa independiente que corrige la resolución de posiciones anual (bug
+del "9 aislado" que clasificaba a Kane/Mbappé/Haaland como extremos),
+canonicaliza identidades, ajusta por fuerza de liga con tabla versionada de
+fuentes públicas, selecciona el Real Annual XI con plantel realista de 26, y
+construye el equipo sintético en **cuatro niveles** (media, top-5, P90,
+máximo) para estimar el punto de cruce en el que un equipo de agentes
+sintéticos supera al mejor once real. Detalle: `ANNUAL_SELECTION_V0_5.md`;
+artefactos: `data/annual_v05/`; simulaciones:
+`data/simulations/annual_v05_dose_response/`.
+
 ## Estado científico actual
 
 El experimento oficial v1 y su replicación independiente están **completos, validados e integrados**.
