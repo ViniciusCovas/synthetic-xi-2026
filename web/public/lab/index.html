@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Laboratório de simulação — Synthetic XI 2026</title>
 <meta name="description" content="Escolha duas seleções da Copa 2026, o estádio e as condições, e rode o motor científico de finais — banco real, prorrogação e pênaltis — no seu navegador.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚗️</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Synthetic XI 2026 Lab">
 <meta property="og:title" content="Laboratório de simulação — Copa 2026">
-<meta property="og:description" content="Duas seleções, um estádio, condições reais de jogo. O motor científico de finais roda no seu navegador: banco real, prorrogação e pênaltis.">
+<meta property="og:description" content="Duas seleções, um estádio, condições reais de jogo. O motor científico de finais roda no seu navegador.">
 <meta property="og:image" content="og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -17,275 +17,530 @@
 <meta name="twitter:title" content="Laboratório de simulação — Copa 2026">
 <meta name="twitter:description" content="Duas seleções, um estádio, condições reais. O motor científico roda no seu navegador.">
 <meta name="twitter:image" content="og-cover.png">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/fraunces-latin.woff2" crossorigin>
 <style>
-  :root{
-    --bg:#0b1220; --panel:#121b2e; --panel2:#0e1626; --line:#233150;
-    --text:#e8eefc; --muted:#8fa3c8; --home:#3fb68b; --away:#5b8cff;
-    --draw:#8fa3c8; --accent:#ffd166;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);
-    font:15px/1.55 "Segoe UI",system-ui,-apple-system,sans-serif}
-  .wrap{max-width:1060px;margin:0 auto;padding:28px 20px 80px}
-  header h1{margin:0;font-size:26px;letter-spacing:.3px}
-  header p{color:var(--muted);margin:6px 0 0;max-width:70ch}
-  header a{color:var(--accent);text-decoration:none}
-  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:24px}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
-  .card label{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;
-    letter-spacing:.8px;margin-bottom:6px}
-  select,button{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--line);
-    background:var(--panel2);color:var(--text);font-size:15px}
-  button{cursor:pointer;font-weight:600}
-  #run{background:linear-gradient(135deg,#2c7a5b,#3fb68b);border:none;font-size:16px;padding:14px}
-  #run:disabled{opacity:.55;cursor:wait}
-  .status{margin-top:14px;color:var(--muted);min-height:22px}
-  .bar{height:10px;border-radius:6px;background:var(--panel2);border:1px solid var(--line);
-    overflow:hidden;margin-top:8px}
-  .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}
-  .results{display:none;margin-top:26px}
-  .headline{display:flex;gap:10px;align-items:stretch;border-radius:12px;overflow:hidden;
-    border:1px solid var(--line)}
-  .headline div{padding:18px 14px;text-align:center;flex-grow:1}
-  .headline .h{background:rgba(63,182,139,.14)}
-  .headline .a{background:rgba(91,140,255,.14)}
-  .headline b{display:block;font-size:30px}
-  .headline span{color:var(--muted);font-size:13px}
-  .probbar{display:flex;height:14px;border-radius:8px;overflow:hidden;margin:14px 0 4px}
-  .probbar i{display:block;height:100%}
-  .cols{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:18px}
-  h3{margin:0 0 10px;font-size:15px;color:var(--accent)}
-  table{width:100%;border-collapse:collapse;font-size:14px}
-  td,th{padding:5px 8px;border-bottom:1px solid var(--line);text-align:left}
-  th{color:var(--muted);font-weight:500}
-  .tag{display:inline-block;background:var(--panel2);border:1px solid var(--line);
-    border-radius:20px;padding:2px 10px;margin:2px 4px 2px 0;font-size:13px;color:var(--muted)}
-  details{margin-top:10px}
-  summary{cursor:pointer;color:var(--muted)}
-  .note{color:var(--muted);font-size:13px;margin-top:16px;max-width:80ch}
-  .offline{display:none;margin-top:14px;padding:14px;border-radius:10px;
-    border:1px solid #6b3d3d;background:rgba(180,80,80,.12);font-size:14px}
-  .offline strong{display:block;margin-bottom:4px;color:#ffb4b4}
-  .offline code{color:var(--accent)}
-  .offline button{width:auto;padding:8px 16px}
+@font-face{font-family:Inter;font-style:normal;font-weight:100 900;font-display:swap;
+  src:url(/fonts/inter-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Inter;font-style:normal;font-weight:100 900;font-display:swap;
+  src:url(/fonts/inter-latin-ext.woff2) format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Fraunces;font-style:normal;font-weight:600 700;font-display:swap;
+  src:url(/fonts/fraunces-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Fraunces;font-style:normal;font-weight:600 700;font-display:swap;
+  src:url(/fonts/fraunces-latin-ext.woff2) format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+:root{
+  --paper:#FAF8F4; --card:#FFFFFF; --ink:#15181D; --body:#43494F; --muted:#8A9099;
+  --line:#E7E3DB; --line-soft:#F0EDE6;
+  --home:#0F7A57; --home-soft:#E6F3EE;
+  --away:#3D4DBE; --away-soft:#EAECFA;
+  --draw:#B9BDC4; --gold:#C2872C;
+  --shadow:0 1px 2px rgba(21,24,29,.04), 0 8px 24px -12px rgba(21,24,29,.12);
+  --shadow-lg:0 2px 4px rgba(21,24,29,.04), 0 24px 48px -24px rgba(21,24,29,.22);
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--body);
+  font:400 16px/1.6 Inter,system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;font-feature-settings:"cv05","ss03"}
+h1,h2,h3{color:var(--ink);margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;
+  letter-spacing:-.015em;line-height:1.1}
+a{color:inherit}
+.tnum{font-variant-numeric:tabular-nums}
+
+nav{position:sticky;top:0;z-index:20;background:rgba(250,248,244,.82);
+  backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+nav .inner{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:12px}
+.logo{width:30px;height:30px;border-radius:9px;background:var(--ink);color:#fff;
+  display:grid;place-items:center;font-size:15px}
+nav b{font-family:Fraunces,serif;font-weight:600;color:var(--ink);font-size:17px}
+nav .back{margin-left:auto;font-size:14px;color:var(--muted);text-decoration:none}
+nav .back:hover{color:var(--ink)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px 100px}
+.hero{padding:72px 0 56px;max-width:60ch}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--home);margin:0 0 18px}
+.hero h1{font-size:clamp(38px,6.4vw,62px);margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--home)}
+.hero p{font-size:clamp(17px,2vw,19px);color:var(--body);margin:0;max-width:56ch}
+
+.step{border-top:1px solid var(--line);padding:40px 0 8px}
+.step-head{display:flex;align-items:baseline;gap:12px;margin-bottom:22px}
+.step-num{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;
+  font-size:13px;font-weight:600;display:grid;place-items:center;align-self:center}
+.step-head h2{font-size:22px}
+.step-note{color:var(--muted);font-size:14px;margin-left:auto;text-align:right}
+
+.versus{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:stretch}
+.team{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:20px;box-shadow:var(--shadow);transition:border-color .15s,box-shadow .15s}
+.team:focus-within{border-color:var(--ink);box-shadow:var(--shadow-lg)}
+.team .role{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.team.h .role{color:var(--home)} .team.a .role{color:var(--away)}
+.flag{font-size:44px;line-height:1.15;margin:8px 0 2px}
+.team select{width:100%;border:0;background:none;padding:0;color:var(--ink);
+  font:600 20px/1.3 Inter,sans-serif;letter-spacing:-.01em;cursor:pointer;
+  appearance:none;-webkit-appearance:none}
+.team select:focus{outline:none}
+.vs{align-self:center;font-family:Fraunces,serif;font-style:italic;color:var(--muted);font-size:19px}
+
+.controls{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.field{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:14px 16px;box-shadow:var(--shadow)}
+.field label{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.field select{width:100%;border:0;background:none;padding:0;color:var(--ink);
+  font:500 16px Inter,sans-serif;cursor:pointer;appearance:none;-webkit-appearance:none}
+.field select:focus{outline:none}
+.readout{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);
+  background:var(--card);border-radius:999px;padding:6px 13px;font-size:13px;color:var(--body)}
+.chip b{color:var(--ink);font-weight:600}
+
+.launch{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.launch .field{flex:0 0 180px}
+button{font:inherit;cursor:pointer;border-radius:12px;border:1px solid transparent}
+#run{flex:1;min-width:220px;background:var(--ink);color:#fff;padding:17px 26px;
+  font-weight:600;font-size:17px;box-shadow:var(--shadow);transition:transform .12s,opacity .15s}
+#run:hover:not(:disabled){transform:translateY(-1px)}
+#run:disabled{opacity:.5;cursor:progress}
+.status{margin-top:16px;color:var(--muted);font-size:14px;min-height:20px}
+.track{height:3px;border-radius:3px;background:var(--line-soft);overflow:hidden;margin-top:10px}
+.track i{display:block;height:100%;width:0;background:var(--home);transition:width .25s ease}
+
+.alert{display:none;margin-top:16px;border:1px solid #E8D5B0;background:#FDF8EE;
+  border-radius:var(--r);padding:16px 18px;font-size:14.5px}
+.alert b{display:block;color:var(--ink);margin-bottom:4px}
+.alert code{font-size:13px;color:var(--gold)}
+.alert button{margin-top:12px;background:var(--card);border-color:var(--line);
+  padding:9px 16px;font-size:14px;font-weight:500;color:var(--ink)}
+
+#results{display:none}
+.verdict{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:28px;box-shadow:var(--shadow-lg)}
+.odds{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:end}
+.odds .side{min-width:0}
+.odds .side.right{text-align:right}
+.odds .flagname{display:flex;align-items:center;gap:9px;color:var(--body);font-size:15px;
+  margin-bottom:6px;min-width:0}
+.odds .right .flagname{justify-content:flex-end}
+.odds .flagname span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.odds .pct{font-family:Fraunces,serif;font-size:clamp(40px,8vw,58px);line-height:1;
+  font-variant-numeric:tabular-nums}
+.odds .h .pct{color:var(--home)} .odds .a .pct{color:var(--away)}
+.odds .mid{text-align:center;padding-bottom:8px}
+.odds .mid .cup{font-size:26px;line-height:1}
+.odds .mid small{display:block;color:var(--muted);font-size:12px;margin-top:5px}
+.knockout{margin:16px 0 0;color:var(--muted);font-size:13.5px;line-height:1.5}
+.split{display:flex;height:12px;border-radius:999px;overflow:hidden;margin-top:20px;gap:2px}
+.split i{display:block;height:100%;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+
+.cols{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));margin-top:16px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:22px;box-shadow:var(--shadow)}
+.panel h3{font-size:13px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);font-family:Inter,sans-serif;margin-bottom:16px}
+.row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid var(--line-soft)}
+.row:last-child{border:0;padding-bottom:0}
+.row .k{color:var(--body);font-size:14.5px;flex:none;min-width:82px}
+.row .meter{flex:1;height:7px;background:var(--line-soft);border-radius:4px;overflow:hidden}
+.row .meter i{display:block;height:100%;background:var(--ink);opacity:.75;border-radius:4px}
+.row .v{color:var(--ink);font-weight:600;font-size:14.5px;font-variant-numeric:tabular-nums;
+  min-width:52px;text-align:right}
+
+.pitch-wrap{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:22px;box-shadow:var(--shadow);margin-top:16px}
+.pitch-legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:16px;font-size:13.5px}
+.pitch-legend b{display:inline-flex;align-items:center;gap:7px;font-weight:500;color:var(--body)}
+.pitch-legend i{width:9px;height:9px;border-radius:50%}
+svg.pitch{width:100%;max-width:480px;height:auto;display:block;margin:0 auto;border-radius:10px}
+.pitch text{font-family:Inter,sans-serif;font-weight:500}
+
+.foot{margin-top:44px;padding-top:24px;border-top:1px solid var(--line);
+  color:var(--muted);font-size:13.5px;max-width:74ch}
+.foot code{font-size:12.5px}
+details{margin-top:16px}
+summary{cursor:pointer;color:var(--muted);font-size:14px}
+summary::marker{color:var(--line)}
+details .chip{margin-top:10px}
+
+@media(max-width:640px){
+  .versus{grid-template-columns:1fr;gap:10px}
+  .vs{justify-self:center;padding:2px 0}
+  .hero{padding:44px 0 36px}
+  .hero h1{font-size:clamp(32px,7.6vw,44px)}
+  .eyebrow{font-size:11px;letter-spacing:.12em}
+  /* Cartão de equipa em linha: bandeira à esquerda, nome à direita. */
+  .team{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"role role" "flag name";
+    align-items:center;gap:4px 14px;padding:16px 18px}
+  .team .role{grid-area:role}
+  .team .flag{grid-area:flag;font-size:34px;margin:0}
+  .team select{grid-area:name;font-size:19px}
+  .odds{gap:8px}
+  .odds .mid .cup{font-size:22px}
+  .odds .mid small{font-size:11px}
+  .verdict{padding:20px}
+  .launch .field{flex:1 1 120px}
+}
 </style>
 </head>
 <body>
+
+<nav><div class="inner">
+  <div class="logo">⚽</div><b>Synthetic XI Lab</b>
+  <a class="back" href="../">← estudo</a>
+</div></nav>
+
 <div class="wrap">
-  <header>
-    <h1>⚗️ Laboratório de simulação — Copa 2026</h1>
-    <p>Escolha duas seleções reais, o estádio e as condições — e rode o
-    <strong>motor científico de finais do repositório</strong> (banco real,
-    prorrogação, pênaltis, VAR) direto no seu navegador. Elencos derivados dos
-    dados anuais v0.5; condições calibradas na evidência meteorológica da
-    própria Copa. <a href="../">← voltar ao estudo principal</a></p>
+  <header class="hero">
+    <p class="eyebrow">Laboratório · Copa do Mundo 2026</p>
+    <h1>Como terminaria a final <em>se fosse jogada outra vez?</em></h1>
+    <p>Escolha duas seleções, o estádio e as condições. O motor científico do estudo
+       — elencos reais, banco, prorrogação e pênaltis — roda aqui mesmo, no seu navegador.</p>
   </header>
 
-  <div class="grid">
-    <div class="card"><label>Mandante</label><select id="home"></select></div>
-    <div class="card"><label>Visitante</label><select id="away"></select></div>
-    <div class="card"><label>Estádio / condições</label><select id="venue">
-      <option value="">Neutro (sem condições)</option></select></div>
-    <div class="card"><label>Horário</label><select id="kickoff">
-      <option value="night">Noite</option><option value="day">Dia</option></select></div>
-    <div class="card"><label>Intensidade das condições</label><select id="scheme">
-      <option value="primary">Primária (declarada)</option>
-      <option value="strong">Forte (sensibilidade ×2)</option>
-      <option value="off">Desligada</option></select></div>
-    <div class="card"><label>Finais simuladas</label><select id="sims">
-      <option>200</option><option selected>500</option><option>1000</option><option>2000</option></select></div>
-  </div>
-
-  <div class="card" style="margin-top:14px">
-    <button id="run">▶ Simular a final</button>
-    <div class="status" id="status">Primeira execução baixa o motor Python (~15–30 s numa boa conexão);
-      depois fica em cache e é rápido.</div>
-    <div class="bar"><i id="progress"></i></div>
-    <div class="offline" id="offline">
-      <strong>Não foi possível carregar o motor Python.</strong>
-      A biblioteca Pyodide vem de uma CDN pública (<code>cdn.jsdelivr.net</code>);
-      algumas redes corporativas e escolares a bloqueiam.
-      Tente outra rede ou use o celular com dados móveis.
-      <button id="retry" style="margin-top:10px">↻ Tentar de novo</button>
+  <section class="step">
+    <div class="step-head">
+      <span class="step-num">1</span><h2>As duas seleções</h2>
+      <span class="step-note" id="teams-count"></span>
     </div>
-  </div>
-
-  <div class="results" id="results">
-    <div class="headline">
-      <div class="h"><b id="p-home">–</b><span id="n-home">Mandante</span></div>
-      <div class="a"><b id="p-away">–</b><span id="n-away">Visitante</span></div>
+    <div class="versus">
+      <div class="team h">
+        <div class="role">Mandante</div>
+        <div class="flag" id="flag-home">🏳️</div>
+        <select id="home" aria-label="Seleção mandante"></select>
+      </div>
+      <div class="vs">vs</div>
+      <div class="team a">
+        <div class="role">Visitante</div>
+        <div class="flag" id="flag-away">🏳️</div>
+        <select id="away" aria-label="Seleção visitante"></select>
+      </div>
     </div>
-    <div class="probbar" id="probbar"></div>
+  </section>
+
+  <section class="step">
+    <div class="step-head">
+      <span class="step-num">2</span><h2>O palco</h2>
+      <span class="step-note">condições medidas na própria Copa</span>
+    </div>
+    <div class="controls">
+      <div class="field"><label>Estádio</label>
+        <select id="venue"><option value="">Neutro — sem condições</option></select></div>
+      <div class="field"><label>Horário</label>
+        <select id="kickoff"><option value="night">Noite</option><option value="day">Dia</option></select></div>
+      <div class="field"><label>Efeito das condições</label>
+        <select id="scheme">
+          <option value="primary">Calibrado</option>
+          <option value="strong">Acentuado (×2)</option>
+          <option value="off">Sem efeito</option>
+        </select></div>
+    </div>
+    <div class="readout" id="readout"></div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">3</span><h2>Simular</h2></div>
+    <div class="launch">
+      <div class="field"><label>Finais</label>
+        <select id="sims"><option>200</option><option selected>500</option>
+          <option>1000</option><option>2000</option></select></div>
+      <button id="run">Simular a final</button>
+    </div>
+    <div class="status" id="status">Na primeira vez o motor é baixado uma única vez (~15 s). Depois fica instantâneo.</div>
+    <div class="track"><i id="progress"></i></div>
+    <div class="alert" id="alert">
+      <b>O motor não pôde ser carregado nesta rede.</b>
+      A biblioteca Pyodide vem da CDN pública <code>cdn.jsdelivr.net</code>, bloqueada em
+      algumas redes corporativas e escolares. Tente outra rede ou dados móveis.
+      <button id="retry">Tentar de novo</button>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="step-head" style="margin-top:40px">
+      <span class="step-num">✓</span><h2>Resultado</h2>
+      <span class="step-note" id="run-meta"></span>
+    </div>
+
+    <div class="verdict">
+      <div class="odds">
+        <div class="side h">
+          <div class="flagname"><span id="r-flag-home"></span><span id="r-name-home"></span></div>
+          <div class="pct tnum" id="r-pct-home">—</div>
+        </div>
+        <div class="mid"><div class="cup">🏆</div><small>leva o título</small></div>
+        <div class="side a right">
+          <div class="flagname"><span id="r-name-away"></span><span id="r-flag-away"></span></div>
+          <div class="pct tnum" id="r-pct-away">—</div>
+        </div>
+      </div>
+      <div class="split" id="split"></div>
+      <p class="knockout">Final eliminatória: não há empate — se os 90 minutos terminam iguais,
+        a decisão vai para a prorrogação e, se preciso, para os pênaltis.</p>
+    </div>
+
+    <div class="pitch-wrap">
+      <div class="pitch-legend">
+        <b><i style="background:var(--home)"></i><span id="l-home"></span></b>
+        <b><i style="background:var(--away)"></i><span id="l-away"></span></b>
+        <b style="color:var(--muted);margin-left:auto">4-3-3 · titulares</b>
+      </div>
+      <svg class="pitch" id="pitch" viewBox="0 -7 100 146" role="img" aria-label="Escalações"></svg>
+    </div>
+
     <div class="cols">
-      <div class="card"><h3>Como se decidiu</h3><div id="decided"></div>
-        <h3 style="margin-top:14px">Gols médios</h3><div id="goals"></div>
-        <div id="conditions-box"></div></div>
-      <div class="card"><h3>Placares mais prováveis (antes dos pênaltis)</h3>
-        <table id="scorelines"><thead><tr><th>Placar</th><th>Prob.</th></tr></thead><tbody></tbody></table></div>
+      <div class="panel"><h3>Como a final se decidiu</h3><div id="decided"></div></div>
+      <div class="panel"><h3>Placares mais prováveis</h3><div id="scorelines"></div></div>
     </div>
-    <div class="cols">
-      <div class="card"><h3 id="xi-home-title">XI mandante</h3><table id="xi-home"><tbody></tbody></table></div>
-      <div class="card"><h3 id="xi-away-title">XI visitante</h3><table id="xi-away"><tbody></tbody></table></div>
-    </div>
-    <details class="card"><summary>Decisões de construção dos elencos (transparência)</summary>
-      <div id="decisions"></div></details>
-  </div>
 
-  <p class="note">Resultados exploratórios do laboratório: elencos por força
-  anual de clube (piso 450′), motor calibrado nos observáveis do torneio,
-  modificadores de condição declarados com fontes
-  (<code>LAB_PHASE_A.md</code>/<code>ANNUAL_SELECTION_V0_5.md</code> no
-  repositório). Não substituem o experimento oficial congelado.</p>
+    <details class="panel" style="margin-top:16px">
+      <summary>Elencos, condições e decisões de construção</summary>
+      <div id="details-body" style="margin-top:14px"></div>
+    </details>
+  </section>
+
+  <p class="foot">
+    Resultados exploratórios: elencos derivados da força anual de clube (piso 450′),
+    motor calibrado nos observáveis do torneio e modificadores de condição declarados
+    com fontes. Não substituem o experimento oficial congelado do estudo.
+  </p>
 </div>
 
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
 <script>
 const $ = (id) => document.getElementById(id);
-let DATA = {}, pyodide = null, runtimeReady = false;
+const FLAGS = {
+  "Algeria":"🇩🇿","Argentina":"🇦🇷","Australia":"🇦🇺","Austria":"🇦🇹","Belgium":"🇧🇪",
+  "Bosnia & Herzegovina":"🇧🇦","Brazil":"🇧🇷","Canada":"🇨🇦","Cape Verde Islands":"🇨🇻",
+  "Colombia":"🇨🇴","Congo DR":"🇨🇩","Croatia":"🇭🇷","Curaçao":"🇨🇼","Czech Republic":"🇨🇿",
+  "Ecuador":"🇪🇨","Egypt":"🇪🇬","England":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","France":"🇫🇷","Germany":"🇩🇪","Ghana":"🇬🇭",
+  "Haiti":"🇭🇹","Iran":"🇮🇷","Iraq":"🇮🇶","Ivory Coast":"🇨🇮","Japan":"🇯🇵","Mexico":"🇲🇽",
+  "Morocco":"🇲🇦","Netherlands":"🇳🇱","New Zealand":"🇳🇿","Norway":"🇳🇴","Panama":"🇵🇦",
+  "Paraguay":"🇵🇾","Portugal":"🇵🇹","Qatar":"🇶🇦","Saudi Arabia":"🇸🇦","Senegal":"🇸🇳",
+  "South Africa":"🇿🇦","South Korea":"🇰🇷","Spain":"🇪🇸","Sweden":"🇸🇪","Switzerland":"🇨🇭",
+  "Türkiye":"🇹🇷","USA":"🇺🇸","Uruguay":"🇺🇾"
+};
+const PT = {Spain:"Espanha",Argentina:"Argentina",Brazil:"Brasil",France:"França",
+  Germany:"Alemanha",England:"Inglaterra",Portugal:"Portugal",Netherlands:"Holanda",
+  Belgium:"Bélgica",Croatia:"Croácia",Morocco:"Marrocos",Mexico:"México",USA:"EUA",
+  Uruguay:"Uruguai",Colombia:"Colômbia",Japan:"Japão",Switzerland:"Suíça",Norway:"Noruega",
+  Sweden:"Suécia",Denmark:"Dinamarca",Austria:"Áustria",Egypt:"Egito",Senegal:"Senegal",
+  Canada:"Canadá","South Korea":"Coreia do Sul","Ivory Coast":"Costa do Marfim",
+  "South Africa":"África do Sul","Saudi Arabia":"Arábia Saudita","New Zealand":"Nova Zelândia",
+  "Czech Republic":"Chéquia","Bosnia & Herzegovina":"Bósnia","Congo DR":"Congo",
+  "Cape Verde Islands":"Cabo Verde",Algeria:"Argélia",Australia:"Austrália",Ghana:"Gana",
+  Haiti:"Haiti",Iran:"Irã",Iraq:"Iraque",Panama:"Panamá",Paraguay:"Paraguai",Qatar:"Catar",
+  "Türkiye":"Turquia",Ecuador:"Equador","Curaçao":"Curaçao"};
+const label = (t) => PT[t] || t;
+const flag = (t) => FLAGS[t] || "⚽";
+const pct = (x) => (100*x).toFixed(1).replace('.', ',') + '%';
 
-async function fetchJson(path){ const r = await fetch(path); if(!r.ok) throw new Error(path); return r.json(); }
+let DATA = {}, pyodide = null, ready = false;
+const j = async (p) => { const r = await fetch(p); if(!r.ok) throw new Error(p); return r.json(); };
 
 async function boot(){
-  const [teamsMeta, venues, manifest] = await Promise.all([
-    fetchJson('data/teams.json'), fetchJson('data/venues.json'), fetchJson('data/manifest.json'),
-  ]);
-  DATA.teams = teamsMeta; DATA.venues = venues; DATA.manifest = manifest;
-  const names = Object.keys(teamsMeta).sort();
-  for(const name of names){
-    $('home').add(new Option(name, name));
-    $('away').add(new Option(name, name));
+  const [teams, venues, manifest] = await Promise.all([
+    j('data/teams.json'), j('data/venues.json'), j('data/manifest.json')]);
+  DATA = { teams, venues, manifest };
+  const names = Object.keys(teams).sort((a,b) => label(a).localeCompare(label(b),'pt'));
+  for(const n of names){
+    $('home').add(new Option(label(n), n));
+    $('away').add(new Option(label(n), n));
   }
   $('home').value = 'Spain'; $('away').value = 'Argentina';
-  // Em telas pequenas o padrão é menor: o motor roda no próprio aparelho.
+  $('teams-count').textContent = `${names.length} seleções disponíveis`;
+  for(const v of venues) $('venue').add(new Option(`${v.host_city} · ${v.stadium}`, v.host_city));
   if(window.innerWidth < 700) $('sims').value = '200';
-  for(const v of venues){
-    $('venue').add(new Option(`${v.host_city} — ${v.stadium} (${v.altitude_m} m)`, v.host_city));
+  syncFlags(); syncReadout();
+}
+
+function syncFlags(){
+  $('flag-home').textContent = flag($('home').value);
+  $('flag-away').textContent = flag($('away').value);
+}
+
+function syncReadout(){
+  const city = $('venue').value, box = $('readout');
+  if(!city){
+    box.innerHTML = `<span class="chip">Campo neutro — sem efeito de calor ou altitude</span>`;
+    return;
   }
+  const v = DATA.venues.find(x => x.host_city === city);
+  const t = $('kickoff').value === 'day' ? v.day_apparent_c : v.night_apparent_c;
+  const scheme = {primary:'calibrado', strong:'acentuado ×2', off:'desligado'}[$('scheme').value];
+  box.innerHTML =
+    `<span class="chip">🌡️ <b>${t.toFixed(1).replace('.',',')} °C</b> sensação</span>` +
+    `<span class="chip">⛰️ <b>${v.altitude_m} m</b> de altitude</span>` +
+    `<span class="chip">📐 efeito <b>${scheme}</b></span>` +
+    `<span class="chip">📊 ${v.matches_observed} jogos medidos</span>`;
 }
 
 async function ensureEngine(){
-  if(runtimeReady) return;
-  if(typeof loadPyodide === 'undefined'){
-    throw new Error('cdn-blocked');
-  }
-  $('status').textContent = 'Carregando o motor Python (Pyodide + numpy)…';
+  if(ready) return;
+  if(typeof loadPyodide === 'undefined') throw new Error('cdn-blocked');
+  $('status').textContent = 'Baixando o motor Python (uma única vez)…';
   pyodide = await loadPyodide();
   await pyodide.loadPackage('numpy');
   pyodide.FS.mkdirTree('/app/labsim');
-  for(const file of DATA.manifest.package_files){
-    const source = await (await fetch(`py/labsim/${file}`)).text();
-    pyodide.FS.writeFile(`/app/labsim/${file}`, source);
+  for(const f of DATA.manifest.package_files){
+    pyodide.FS.writeFile(`/app/labsim/${f}`, await (await fetch(`py/labsim/${f}`)).text());
   }
   pyodide.runPython("import sys; sys.path.insert(0, '/app')");
-  $('status').textContent = 'Carregando elencos e calibração…';
-  const calibration = await (await fetch('data/calibration.json')).text();
+  $('status').textContent = 'Preparando elencos…';
   pyodide.globals.set('teams_json', JSON.stringify(DATA.teams));
-  pyodide.globals.set('calibration_json', calibration);
+  pyodide.globals.set('calibration_json', await (await fetch('data/calibration.json')).text());
   pyodide.runPython('from labsim import lab_runtime; lab_runtime.load_data(teams_json, calibration_json)');
-  runtimeReady = true;
+  ready = true;
 }
 
-function conditionsPayload(){
+function conditions(){
   const city = $('venue').value;
   if(!city) return '';
-  const venue = DATA.venues.find(v => v.host_city === city);
-  const kickoff = $('kickoff').value;
-  const temperature = kickoff === 'day' ? venue.day_apparent_c : venue.night_apparent_c;
+  const v = DATA.venues.find(x => x.host_city === city), k = $('kickoff').value;
   return JSON.stringify({
-    label: `${city} (${venue.stadium}), kickoff ${kickoff}`,
-    apparent_temperature_c: temperature,
-    altitude_m: venue.altitude_m,
-    scheme: $('scheme').value,
+    label: `${v.host_city} (${v.stadium}), ${k === 'day' ? 'dia' : 'noite'}`,
+    apparent_temperature_c: k === 'day' ? v.day_apparent_c : v.night_apparent_c,
+    altitude_m: v.altitude_m, scheme: $('scheme').value });
+}
+
+// Cada equipa ocupa a sua própria metade (0–66 visitante, 66–132 mandante),
+// para que os nomes das duas linhas ofensivas não se sobreponham no meio.
+const SPOTS = {
+  GK:[50,126], FB2:[15,110], CB2:[36,113], CB1:[64,113], FB1:[85,110],
+  DM:[50,97], AM:[30,90], CM:[70,90], W2:[14,78], ST:[50,74], W1:[86,78],
+};
+const short = (name) => {
+  const parts = String(name).split(' ').filter(Boolean);
+  return parts.length === 1 ? parts[0] : parts[parts.length-1];
+};
+
+function drawPitch(homeRoster, awayRoster, homeName, awayName){
+  const g = ['<rect x="0" y="0" width="100" height="132" rx="3" fill="#F4F7F4"/>'];
+  const line = 'stroke="#D3DED6" stroke-width=".5" fill="none"';
+  g.push(`<rect x="3" y="3" width="94" height="126" ${line}/>`);
+  g.push(`<line x1="3" y1="66" x2="97" y2="66" ${line}/>`);
+  g.push(`<circle cx="50" cy="66" r="9" ${line}/>`);
+  g.push(`<rect x="27" y="3" width="46" height="16" ${line}/>`);
+  g.push(`<rect x="27" y="113" width="46" height="16" ${line}/>`);
+  g.push(`<rect x="39" y="3" width="22" height="6" ${line}/>`);
+  g.push(`<rect x="39" y="123" width="22" height="6" ${line}/>`);
+
+  const place = (roster, colour, mirror) => {
+    for(const row of roster.slice(0, 11)){
+      const spot = SPOTS[row.engine_role];
+      if(!spot) continue;
+      let [x, y] = spot;
+      if(mirror){ x = 100 - x; y = 132 - y; }
+      g.push(`<circle cx="${x}" cy="${y}" r="3.4" fill="${colour}"/>`);
+      g.push(`<text x="${x}" y="${y + 1.3}" text-anchor="middle" font-size="3.1" fill="#fff">${row.slot_label}</text>`);
+      // O nome fica afastado do centro do campo; junto às linhas de fundo
+      // recua para dentro para não sair do desenho.
+      const ty = mirror ? y - 5.6 : y + 8.4;
+      g.push(`<text x="${x}" y="${ty}" text-anchor="middle" font-size="3.4" fill="#40514A">${short(row.player_name)}</text>`);
+    }
+  };
+  place(homeRoster, getComputedStyle(document.body).getPropertyValue('--home').trim(), false);
+  place(awayRoster, getComputedStyle(document.body).getPropertyValue('--away').trim(), true);
+  $('pitch').innerHTML = g.join('');
+  $('l-home').textContent = label(homeName);
+  $('l-away').textContent = label(awayName);
+}
+
+const ENGINE_SLOT = {GK:'GK',FB1:'RB',CB1:'RCB',CB2:'LCB',FB2:'LB',DM:'DM',CM:'CM',AM:'AM',W1:'RW',W2:'LW',ST:'ST'};
+
+function prepRoster(teamName, roster){
+  const starters = DATA.teams[teamName].starters;
+  return starters.map((p) => {
+    const match = roster.find((r) => String(r.player_id) === String(p.player_id));
+    return { engine_role: p.role, slot_label: ENGINE_SLOT[p.role] || p.role,
+             player_name: match ? match.player_name : p.name };
   });
 }
 
-function pct(x){ return (100*x).toFixed(1) + '%'; }
-
-function renderRoster(tableId, roster){
-  const body = $(tableId).querySelector('tbody');
-  body.innerHTML = '';
-  for(const row of roster.slice(0, 11)){
-    body.insertAdjacentHTML('beforeend',
-      `<tr><td>${row.assigned_slot ?? row.resolved_role}</td><td>${row.player_name}</td></tr>`);
-  }
-  body.insertAdjacentHTML('beforeend',
-    `<tr><td colspan="2" style="color:var(--muted)">+ ${Math.max(roster.length-11,0)} no banco</td></tr>`);
+function bars(target, rows, colour){
+  const max = Math.max(...rows.map(r => r.value), 1e-9);
+  $(target).innerHTML = rows.map(r => `
+    <div class="row"><span class="k">${r.key}</span>
+      <span class="meter"><i style="width:${100*r.value/max}%${colour ? ';background:'+colour : ''}"></i></span>
+      <span class="v">${pct(r.value)}</span></div>`).join('');
 }
 
 async function run(){
   const home = $('home').value, away = $('away').value;
   if(home === away){ $('status').textContent = 'Escolha duas seleções diferentes.'; return; }
-  $('run').disabled = true; $('results').style.display = 'none'; $('progress').style.width = '0';
+  $('run').disabled = true; $('results').style.display = 'none';
+  $('alert').style.display = 'none'; $('progress').style.width = '0';
   try{
     await ensureEngine();
     const total = parseInt($('sims').value, 10);
     const seed = Math.floor(Math.random() * 2**31);
-    pyodide.globals.set('cond_json', conditionsPayload());
+    pyodide.globals.set('cond_json', conditions());
     const started = JSON.parse(pyodide.runPython(
       `lab_runtime.start_session(${JSON.stringify(home)}, ${JSON.stringify(away)}, ${total}, ${seed}, cond_json)`));
-    renderRoster('xi-home', started.rosters.home);
-    renderRoster('xi-away', started.rosters.away);
-    $('xi-home-title').textContent = `XI — ${home}`;
-    $('xi-away-title').textContent = `XI — ${away}`;
-
-    let completed = 0;
-    while(completed < total){
-      const progress = JSON.parse(pyodide.runPython('lab_runtime.run_chunk(10)'));
-      completed = progress.completed;
-      $('progress').style.width = (100 * completed / total) + '%';
-      $('status').textContent = `Simulando finais completas… ${completed}/${total}`;
-      await new Promise(resolve => setTimeout(resolve, 0));
+    let done = 0;
+    while(done < total){
+      done = JSON.parse(pyodide.runPython('lab_runtime.run_chunk(10)')).completed;
+      $('progress').style.width = (100*done/total) + '%';
+      $('status').textContent = `Simulando finais completas… ${done} de ${total}`;
+      await new Promise(r => setTimeout(r, 0));
     }
-    const result = JSON.parse(pyodide.runPython('lab_runtime.summary()'));
-    renderResult(result, seed);
-  } catch(error){
-    const blocked = String(error).includes('cdn-blocked') || typeof loadPyodide === 'undefined';
-    $('offline').style.display = blocked ? 'block' : 'none';
-    $('status').textContent = blocked
-      ? 'Motor indisponível nesta rede.'
-      : 'Erro: ' + error;
-  } finally {
-    $('run').disabled = false;
-  }
+    render(JSON.parse(pyodide.runPython('lab_runtime.summary()')), started, seed);
+  }catch(e){
+    const blocked = String(e).includes('cdn-blocked') || typeof loadPyodide === 'undefined';
+    $('alert').style.display = blocked ? 'block' : 'none';
+    $('status').textContent = blocked ? 'Motor indisponível nesta rede.' : 'Erro: ' + e;
+  }finally{ $('run').disabled = false; }
 }
 
-function renderResult(result, seed){
-  const home = result.home, away = result.away;
-  const ph = result.win_probability[home], pa = result.win_probability[away];
-  $('p-home').textContent = pct(ph); $('p-away').textContent = pct(pa);
-  $('n-home').textContent = home; $('n-away').textContent = away;
-  $('probbar').innerHTML =
+function render(r, started, seed){
+  const home = r.home, away = r.away;
+  const ph = r.win_probability[home], pa = r.win_probability[away];
+  $('r-flag-home').textContent = flag(home); $('r-name-home').textContent = label(home);
+  $('r-flag-away').textContent = flag(away); $('r-name-away').textContent = label(away);
+  $('r-pct-home').textContent = pct(ph);
+  $('r-pct-away').textContent = pct(pa);
+  $('split').innerHTML =
     `<i style="width:${100*ph}%;background:var(--home)"></i>` +
     `<i style="width:${100*pa}%;background:var(--away)"></i>`;
-  const labels = {regulation: '90 minutos', extra_time: 'prorrogação', penalties: 'pênaltis'};
-  $('decided').innerHTML = Object.entries(result.decided_by)
-    .map(([k, v]) => `<span class="tag">${labels[k] ?? k}: ${pct(v)}</span>`).join('');
-  $('goals').innerHTML =
-    `<span class="tag">${home}: ${result.mean_goals[home].toFixed(2)}</span>` +
-    `<span class="tag">${away}: ${result.mean_goals[away].toFixed(2)}</span>` +
-    `<span class="tag">seed ${seed}</span>`;
-  const scoreBody = $('scorelines').querySelector('tbody');
-  scoreBody.innerHTML = result.top_scorelines_before_penalties
-    .map(s => `<tr><td>${s.score}</td><td>${pct(s.probability)}</td></tr>`).join('');
-  const conditions = result.conditions;
-  $('conditions-box').innerHTML = conditions
-    ? `<h3 style="margin-top:14px">Condições aplicadas</h3>
-       <span class="tag">${conditions.label}</span>
-       <span class="tag">${conditions.apparent_temperature_c.toFixed(1)} °C aparente</span>
-       <span class="tag">${conditions.altitude_m} m</span>
-       <span class="tag">esquema ${conditions.scheme}</span>`
-    : '<h3 style="margin-top:14px">Condições</h3><span class="tag">neutras</span>';
-  const decisions = []
-    .concat(DATA.teams[home].construction_decisions, DATA.teams[away].construction_decisions)
-    .map(d => `<span class="tag">${d.team} · ${d.slot}: ${d.decision}${d.player ? ' — ' + d.player : ''}</span>`);
-  $('decisions').innerHTML = decisions.join('');
+  $('run-meta').textContent = `${r.simulations} finais · seed ${seed}`;
+
+  const names = {regulation:'Nos 90 minutos', extra_time:'Na prorrogação', penalties:'Nos pênaltis'};
+  bars('decided', Object.entries(r.decided_by)
+    .sort((a,b) => b[1]-a[1])
+    .map(([k,v]) => ({key: names[k] || k, value: v})));
+  bars('scorelines', r.top_scorelines_before_penalties.slice(0,6)
+    .map(s => ({key: s.score, value: s.probability})), 'var(--home)');
+
+  drawPitch(prepRoster(home, started.rosters.home), prepRoster(away, started.rosters.away), home, away);
+
+  const c = r.conditions;
+  const decisions = [].concat(DATA.teams[home].construction_decisions, DATA.teams[away].construction_decisions)
+    .map(d => `<span class="chip">${label(d.team)} · ${d.slot}: ${d.decision}${d.player ? ' — ' + d.player : ''}</span>`)
+    .join(' ');
+  $('details-body').innerHTML =
+    (c ? `<p style="margin:0 0 12px">Condições aplicadas: <b>${c.label}</b>, ${c.apparent_temperature_c.toFixed(1)} °C de sensação,
+          ${c.altitude_m} m de altitude, esquema <b>${c.scheme}</b>.</p>` : '<p style="margin:0 0 12px">Sem modificadores de condição.</p>') +
+    `<p style="margin:0 0 12px">Gols médios: <b>${label(home)}</b> ${r.mean_goals[home].toFixed(2)} ·
+      <b>${label(away)}</b> ${r.mean_goals[away].toFixed(2)}.</p>` + decisions;
+
   $('results').style.display = 'block';
-  $('status').textContent = `Concluído: ${result.simulations} finais completas no navegador.`;
+  $('status').textContent = `${r.simulations} finais completas simuladas no seu navegador.`;
+  $('results').scrollIntoView({behavior:'smooth', block:'start'});
 }
 
+$('home').addEventListener('change', syncFlags);
+$('away').addEventListener('change', syncFlags);
+for(const id of ['venue','kickoff','scheme']) $(id).addEventListener('change', syncReadout);
 $('run').addEventListener('click', run);
-$('retry').addEventListener('click', () => { $('offline').style.display = 'none'; run(); });
-boot().catch(error => { $('status').textContent = 'Erro ao carregar dados: ' + error; });
+$('retry').addEventListener('click', () => { $('alert').style.display='none'; run(); });
+boot().catch(e => { $('status').textContent = 'Erro ao carregar dados: ' + e; });
 </script>
 </body>
 </html>

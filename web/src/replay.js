@@ -113,25 +113,25 @@ function drawPitch(canvas, currentEvent, progress) {
   const {width: w, height: h} = canvas;
   ctx.clearRect(0, 0, w, h);
   const gradient = ctx.createLinearGradient(0, 0, w, 0);
-  gradient.addColorStop(0, '#184b35'); gradient.addColorStop(.5, '#123f2f'); gradient.addColorStop(1, '#184b35');
+  gradient.addColorStop(0, '#CFE0D4'); gradient.addColorStop(.5, '#EDF3EE'); gradient.addColorStop(1, '#CFE0D4');
   ctx.fillStyle = gradient; ctx.fillRect(0, 0, w, h);
-  for (let i = 0; i < 10; i += 1) {ctx.fillStyle = i % 2 ? 'rgba(255,255,255,.012)' : 'rgba(0,0,0,.025)'; ctx.fillRect(i*w/10, 0, w/10, h);}
-  ctx.strokeStyle = 'rgba(255,255,255,.76)'; ctx.lineWidth = 3;
+  for (let i = 0; i < 10; i += 1) {ctx.fillStyle = i % 2 ? 'rgba(21,24,29,.02)' : 'rgba(0,0,0,.025)'; ctx.fillRect(i*w/10, 0, w/10, h);}
+  ctx.strokeStyle = 'rgba(21,24,29,.62)'; ctx.lineWidth = 3;
   ctx.strokeRect(34, 34, w-68, h-68); ctx.beginPath(); ctx.moveTo(w/2, 34); ctx.lineTo(w/2, h-34); ctx.stroke();
   ctx.beginPath(); ctx.arc(w/2, h/2, 82, 0, Math.PI*2); ctx.stroke();
   ctx.strokeRect(34, h*.25, w*.16, h*.5); ctx.strokeRect(w-34-w*.16, h*.25, w*.16, h*.5);
   ctx.strokeRect(34, h*.37, w*.065, h*.26); ctx.strokeRect(w-34-w*.065, h*.37, w*.065, h*.26);
-  [['home','#4ab7ff',HOME_POSITIONS],['away','#ff7654',AWAY_POSITIONS]].forEach(([, color, positions]) => positions.forEach((position, index) => {
+  [['home','#3D4DBE',HOME_POSITIONS],['away','#0F7A57',AWAY_POSITIONS]].forEach(([, color, positions]) => positions.forEach((position, index) => {
     const x = position[0] * w; const y = position[1] * h;
-    ctx.beginPath(); ctx.arc(x, y, 12, 0, Math.PI*2); ctx.fillStyle = color; ctx.fill(); ctx.strokeStyle = '#071018'; ctx.lineWidth = 3; ctx.stroke();
-    ctx.fillStyle = '#fff'; ctx.font = '700 10px sans-serif'; ctx.textAlign = 'center'; ctx.fillText(index + 1, x, y + 4);
+    ctx.beginPath(); ctx.arc(x, y, 12, 0, Math.PI*2); ctx.fillStyle = color; ctx.fill(); ctx.strokeStyle = '#15181D'; ctx.lineWidth = 3; ctx.stroke();
+    ctx.fillStyle = '#fff'; ctx.font = '600 10px Inter, sans-serif'; ctx.textAlign = 'center'; ctx.fillText(index + 1, x, y + 4);
   }));
   if (currentEvent) {
     const start = {x: currentEvent.motion.start.x*w, y: currentEvent.motion.start.y*h};
     const control = {x: currentEvent.motion.control.x*w, y: currentEvent.motion.control.y*h};
     const end = {x: currentEvent.motion.end.x*w, y: currentEvent.motion.end.y*h};
     const ball = bezier(start, control, end, progress);
-    ctx.beginPath(); ctx.arc(ball.x, ball.y, 8, 0, Math.PI*2); ctx.fillStyle = '#fff'; ctx.shadowColor = '#fff'; ctx.shadowBlur = 12; ctx.fill(); ctx.shadowBlur = 0;
+    ctx.beginPath(); ctx.arc(ball.x, ball.y, 8, 0, Math.PI*2); ctx.fillStyle = '#15181D'; ctx.shadowColor = 'rgba(21,24,29,.35)'; ctx.shadowBlur = 12; ctx.fill(); ctx.shadowBlur = 0;
   }
 }
 
