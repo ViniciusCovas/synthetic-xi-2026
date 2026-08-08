@@ -5,6 +5,13 @@ transmissão que roda o motor científico ao vivo no navegador e narra a final
 lance a lance — placar, relógio, ticker de eventos, cartão de golo com avatar
 ilustrado e cartão final com troféu.
 
+E o centro do ecrã é um **campo 2D animado** (`match2d.js`): os 22 titulares
+reais movem-se em formação viva, trocam passes, e a coreografia converge
+sempre para o lance que o motor decidiu — o autor recebe a bola antes do seu
+remate, o goleiro defende, o golo dispara a celebração e o reinício. Como no
+visualizador do Football Manager: os LANCES são do motor científico; o
+movimento entre eles é interpolação plausível, declarada como tal.
+
 ## URL do modo TV
 
 ```

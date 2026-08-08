@@ -37,11 +37,15 @@ body{margin:0;width:100vw;height:100vh;overflow:hidden;background:var(--ink);
 .clockrow{font-size:1.8vh;color:#5b626b;margin-top:.4vh}
 .clockrow b{color:var(--home);font-variant-numeric:tabular-nums}
 
-.centerband{align-self:center;justify-self:center;text-align:center;max-width:70vw}
+.centerband{align-self:center;justify-self:center;text-align:center;position:relative}
+.pitch2d{width:78vw;max-width:118vh;aspect-ratio:105/68;border-radius:16px;
+  box-shadow:0 24px 80px rgba(0,0,0,.5);background:#EDF3EE}
+.goalcard{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2}
 .goalcard{display:none;background:rgba(250,248,244,.97);color:var(--ink);
   border-radius:22px;padding:3.2vh 3.4vw;box-shadow:0 24px 80px rgba(0,0,0,.5)}
 .goalcard.on{display:block;animation:zoom .45s cubic-bezier(.2,1.4,.4,1)}
-@keyframes zoom{from{transform:scale(.86);opacity:0}to{transform:none;opacity:1}}
+@keyframes zoom{from{transform:translate(-50%,-50%) scale(.86);opacity:0}
+  to{transform:translate(-50%,-50%);opacity:1}}
 .goalcard .avatar{height:26vh;margin-bottom:1vh}
 .goalcard h1{margin:0;font-family:Fraunces,serif;font-size:5.6vh;line-height:1.05}
 .goalcard h1.h{color:var(--home)} .goalcard h1.a{color:var(--away)}
@@ -86,6 +90,7 @@ body{margin:0;width:100vw;height:100vh;overflow:hidden;background:var(--ink);
   </div>
 
   <div class="centerband">
+    <canvas id="pitch2d" class="pitch2d"></canvas>
     <div class="goalcard" id="goalcard">
       <img class="avatar" id="goalavatar" alt="" src=""
         onerror="this.style.display='none'">
@@ -114,6 +119,7 @@ body{margin:0;width:100vw;height:100vh;overflow:hidden;background:var(--ink);
   </div>
 </div>
 
+<script src="match2d.js"></script>
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
 <script>
 // Modo TV: ?home=Spain&away=Argentina&venue=Mexico%20City&kickoff=night&sims=200&seed=123&loop=1
@@ -149,6 +155,15 @@ async function boot(){
     fetch('../data/teams.json').then(r=>r.json()),
     fetch('../data/manifest.json').then(r=>r.json()),
     fetch('../data/calibration.json').then(r=>r.text())]);
+  // campo animado: 22 titulares reais em formação viva desde já
+  const pc = $('pitch2d');
+  pc.width = Math.round(pc.clientWidth * 2);
+  pc.height = Math.round(pc.clientWidth * 2 * 68 / 105);
+  Match2D.mount(pc, {
+    homeName: HOME, awayName: AWAY,
+    homeXI: teams[HOME].starters.map(p => ({role: p.role, name: p.name})),
+    awayXI: teams[AWAY].starters.map(p => ({role: p.role, name: p.name})),
+  });
   const pyodide = await loadPyodide();
   await pyodide.loadPackage('numpy');
   pyodide.FS.mkdirTree('/app/labsim');
@@ -181,8 +196,10 @@ function play(rep){
   const iv = setInterval(()=>{
     clock += 1;
     $('clock').textContent = clock + '′';
+    Match2D.setClock(clock);
     while(idx < events.length && events[idx].minute <= clock){
       const e = events[idx++];
+      Match2D.event(e);
       $('t-min').textContent = e.minute + '′';
       $('t-ic').textContent = icon(e.headline);
       $('t-tx').textContent = e.headline;
