@@ -1,3 +1,11 @@
+# Publicación en Cloudflare
+
+> **Actualización:** el panel actual de Cloudflare crea *Workers* por defecto.
+> El repositorio incluye `wrangler.jsonc` en la raíz (Worker de assets
+> estáticos que sirve `web/dist`). La guía operativa vigente, con los comandos
+> de build exactos, está en `DEPLOY_LAB_APP.md`. Lo de abajo describe el
+> formato Pages clásico, que sigue funcionando.
+
 # Publicación en Cloudflare Pages
 
 La interfaz es estática y no expone la clave de la API.

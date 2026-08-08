@@ -1,4 +1,4 @@
-# Cloudflare Pages headers.
+# Cabeçalhos servidos pela Cloudflare (Workers static assets e Pages).
 # Os assets do laboratório (motor Python e dados dos elencos) são regenerados
 # por script e versionados no repositório: cada deploy publica o conteúdo novo
 # numa URL nova de deploy, então podem ser cacheados agressivamente.
