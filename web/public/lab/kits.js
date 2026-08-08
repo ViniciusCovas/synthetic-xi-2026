@@ -6,7 +6,7 @@
 (function () {
   const K = (shirt, shorts) => ({ shirt, shorts });
   const KITS = {
-    "Algeria": K("#FFFFFF", "#FFFFFF"), "Argentina": K("#8EC9EE", "#15181D"),
+    "Algeria": K("#FFFFFF", "#FFFFFF"), "Argentina": { shirt: "#FFFFFF", shorts: "#15181D", stripes: "#8EC9EE" },
     "Australia": K("#FFCD00", "#0B6B44"), "Austria": K("#C8102E", "#FFFFFF"),
     "Belgium": K("#C8102E", "#15181D"), "Bosnia & Herzegovina": K("#002F6C", "#FFFFFF"),
     "Brazil": K("#FFDC00", "#1E4785"), "Canada": K("#C8102E", "#C8102E"),
@@ -21,11 +21,11 @@
     "Japan": K("#001E62", "#FFFFFF"), "Mexico": K("#006847", "#FFFFFF"),
     "Morocco": K("#C1272D", "#006233"), "Netherlands": K("#FF6600", "#FFFFFF"),
     "New Zealand": K("#FFFFFF", "#FFFFFF"), "Norway": K("#C8102E", "#00205B"),
-    "Panama": K("#C8102E", "#FFFFFF"), "Paraguay": K("#D0103A", "#1B4DA1"),
+    "Panama": K("#C8102E", "#FFFFFF"), "Paraguay": { shirt: "#FFFFFF", shorts: "#1B4DA1", stripes: "#D0103A" },
     "Portugal": K("#E42518", "#006437"), "Qatar": K("#8A1538", "#FFFFFF"),
     "Saudi Arabia": K("#FFFFFF", "#0B6B44"), "Senegal": K("#FFFFFF", "#0B6B44"),
     "South Africa": K("#FFB81C", "#0B6B44"), "South Korea": K("#E4002B", "#15181D"),
-    "Spain": K("#C60B1E", "#1F2A6B"), "Sweden": K("#FFCD00", "#004B87"),
+    "Spain": { shirt: "#C60B1E", shorts: "#1F2A6B", num: "#FFC400" }, "Sweden": K("#FFCD00", "#004B87"),
     "Switzerland": K("#DA291C", "#FFFFFF"), "Türkiye": K("#E30A17", "#FFFFFF"),
     "USA": K("#FFFFFF", "#002868"), "Uruguay": K("#7BAFD4", "#15181D"),
   };

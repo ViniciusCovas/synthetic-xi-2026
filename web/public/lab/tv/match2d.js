@@ -51,7 +51,7 @@
       for (const p of cfg[side + 'XI']) {
         const a = side === 'home' ? ANCHOR[p.role] : mirror(ANCHOR[p.role]);
         S.players.push({
-          side, role: p.role, name: short(p.name),
+          side, role: p.role, name: short(p.name), num: p.number ?? '',
           x: a[0], y: a[1], ax: a[0], ay: a[1], tx: a[0], ty: a[1],
           vx: 0, vy: 0, anim: rnd(0, 6), face: side === 'home' ? 1 : -1,
           maxv: p.role === 'GK' ? 6 : 7.4, card: null, cardT: 0, runT: 0,
@@ -238,7 +238,7 @@
   }
   const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
 
-  // ---------- desenho ----------
+  // ---------- desenho: perspectiva de transmissão ----------
   let last = 0;
   function loop(ts) {
     const dt = Math.min(0.05, (ts - last) / 1000 || 0.016); last = ts;
@@ -246,114 +246,229 @@
     requestAnimationFrame(loop);
   }
 
-  function view() {
-    const vw = PITCH.w / S.cam.zoom, vh = PITCH.h / S.cam.zoom;
-    const cx = clamp(S.cam.x, vw / 2, PITCH.w - vw / 2);
-    const cy = clamp(S.cam.y, vh / 2, PITCH.h - vh / 2);
-    const k = S.canvas.width / vw;
-    return { k, ox: cx - vw / 2, oy: cy - vh / 2 };
+  // projeção: campo visto de câmara elevada (trapézio, topo comprimido)
+  function persp(u, v) {
+    const W = S.canvas.width, H = S.canvas.height;
+    const t = v / PITCH.h;
+    const s = 0.64 + 0.44 * t;
+    const y = H * 0.115 + (H * 0.865) * (t * (0.56 + 0.44 * t));
+    const x = W / 2 + (u - 52.5) * (W * 0.00845) * s;
+    return [x, y, s];
   }
+  const metre = (s) => S.canvas.width * 0.00845 * s;   // px por metro na profundidade s
+
+  function sampled(points) {
+    const { ctx } = S;
+    ctx.beginPath();
+    points.forEach(([u, v], i) => {
+      const [x, y] = persp(u, v);
+      i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+    });
+  }
+  function seg(u1, v1, u2, v2, n = 10) {
+    const pts = [];
+    for (let i = 0; i <= n; i++) pts.push([u1 + (u2 - u1) * i / n, v1 + (v2 - v1) * i / n]);
+    return pts;
+  }
+  function circlePts(cu, cv, r, a0 = 0, a1 = Math.PI * 2, n = 48) {
+    const pts = [];
+    for (let i = 0; i <= n; i++) {
+      const a = a0 + (a1 - a0) * i / n;
+      pts.push([cu + Math.cos(a) * r, cv + Math.sin(a) * r]);
+    }
+    return pts;
+  }
+
+  const BOARD_COLOURS = ['#1F2A6B', '#0F7A57', '#C0322B', '#C2872C'];
 
   function draw() {
     const { ctx, canvas } = S;
-    const { k, ox, oy } = view();
-    const X = (u) => (u - ox) * k, Y = (u) => (u - oy) * k;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // relvado de transmissão: verde real, faixas de corte e luz de estádio
-    for (let i = 0; i < 14; i++) {
-      ctx.fillStyle = i % 2 ? '#2E8B4F' : '#278047';
-      ctx.fillRect(X(i * PITCH.w / 14), Y(0), (PITCH.w / 14) * k + 1, PITCH.h * k);
-    }
-    const light = ctx.createRadialGradient(
-      X(52.5), Y(30), 8 * k, X(52.5), Y(34), 74 * k);
-    light.addColorStop(0, 'rgba(255,255,240,.10)');
-    light.addColorStop(0.6, 'rgba(0,0,0,0)');
-    light.addColorStop(1, 'rgba(0,20,8,.30)');
-    ctx.fillStyle = light;
-    ctx.fillRect(X(0), Y(0), PITCH.w * k, PITCH.h * k);
-    ctx.strokeStyle = '#FFFFFF'; ctx.globalAlpha = 0.92;
-    ctx.lineWidth = Math.max(1.5, k * 0.18);
-    ctx.strokeRect(X(1), Y(1), (PITCH.w - 2) * k, (PITCH.h - 2) * k);
-    ctx.beginPath(); ctx.moveTo(X(52.5), Y(1)); ctx.lineTo(X(52.5), Y(PITCH.h - 1)); ctx.stroke();
-    ctx.beginPath(); ctx.arc(X(52.5), Y(34), 9 * k, 0, Math.PI * 2); ctx.stroke();
-    ctx.beginPath(); ctx.arc(X(52.5), Y(34), 0.35 * k, 0, Math.PI * 2);
-    ctx.fillStyle = '#FFFFFF'; ctx.fill();
-    for (const left of [true, false]) {
-      ctx.strokeRect(X(left ? 1 : PITCH.w - 17.5), Y(14), 16.5 * k, 40 * k);
-      ctx.strokeRect(X(left ? 1 : PITCH.w - 6.5), Y(25), 5.5 * k, 18 * k);
-      const spot = left ? 12 : PITCH.w - 12;
-      ctx.beginPath(); ctx.arc(X(spot), Y(34), 0.3 * k, 0, Math.PI * 2); ctx.fill();
-      ctx.beginPath();                                   // meia-lua da área
-      ctx.arc(X(spot), Y(34), 9.15 * k,
-        left ? -0.30 * Math.PI : 0.70 * Math.PI,
-        left ? 0.30 * Math.PI : 1.30 * Math.PI);
-      ctx.stroke();
-      ctx.fillStyle = '#FFFFFF';
-      ctx.fillRect(X(left ? 0.2 : PITCH.w - 0.9), Y(30.3), 0.7 * k, 7.4 * k);
-    }
-    for (const cx of [1, PITCH.w - 1]) for (const cy of [1, PITCH.h - 1]) {
-      ctx.beginPath(); ctx.arc(X(cx), Y(cy), 1 * k, 0, Math.PI * 2); ctx.stroke();
-    }
-    ctx.globalAlpha = 1;
+    // avental de relva escura à volta do campo
+    sampled([...seg(-4, -3, 109, -3, 12), ...seg(109, -3, 109, 71, 8),
+             ...seg(109, 71, -4, 71, 12), ...seg(-4, 71, -4, -3, 8)]);
+    ctx.closePath(); ctx.fillStyle = '#123A22'; ctx.fill();
 
-    // jogadores ordenados por y (profundidade)
-    const sorted = [...S.players].sort((a, b) => a.y - b.y);
-    for (const p of sorted) drawPlayer(p, X, Y, k);
-    drawBall(X, Y, k);
+    // placas de publicidade no fundo (lado distante)
+    for (let i = 0; i < 12; i++) {
+      const u0 = -4 + i * (113 / 12), u1 = u0 + 113 / 12;
+      const [xa, ya, sa] = persp(u0, -3), [xb, yb, sb] = persp(u1, -3);
+      const h = 3.1;
+      ctx.beginPath();
+      ctx.moveTo(xa, ya); ctx.lineTo(xb, yb);
+      ctx.lineTo(xb, yb - h * metre(sb)); ctx.lineTo(xa, ya - h * metre(sa));
+      ctx.closePath();
+      ctx.fillStyle = BOARD_COLOURS[i % BOARD_COLOURS.length]; ctx.fill();
+    }
+    {
+      const [tx, ty, tsc] = persp(52.5, -3);
+      ctx.fillStyle = 'rgba(255,255,255,.92)';
+      ctx.font = `700 ${Math.max(10, 1.5 * metre(tsc))}px Inter, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.fillText('SYNTHETIC XI TV', tx, ty - 1.1 * metre(tsc));
+    }
+
+    // relvado com faixas de corte
+    for (let i = 0; i < 12; i++) {
+      const u0 = i * PITCH.w / 12, u1 = u0 + PITCH.w / 12;
+      sampled([...seg(u0, 0, u1, 0, 2), ...seg(u1, 0, u1, PITCH.h, 8),
+               ...seg(u1, PITCH.h, u0, PITCH.h, 2), ...seg(u0, PITCH.h, u0, 0, 8)]);
+      ctx.closePath();
+      ctx.fillStyle = i % 2 ? '#2F9152' : '#288449'; ctx.fill();
+    }
+    // luz de estádio
+    const [cx, cy] = persp(52.5, 30);
+    const light = ctx.createRadialGradient(cx, cy, canvas.width * 0.06, cx, cy, canvas.width * 0.62);
+    light.addColorStop(0, 'rgba(255,255,240,.10)');
+    light.addColorStop(0.65, 'rgba(0,0,0,0)');
+    light.addColorStop(1, 'rgba(0,16,6,.36)');
+    sampled([...seg(0, 0, 105, 0, 2), ...seg(105, 0, 105, 68, 6),
+             ...seg(105, 68, 0, 68, 2), ...seg(0, 68, 0, 0, 6)]);
+    ctx.closePath(); ctx.fillStyle = light; ctx.fill();
+
+    // marcações
+    ctx.strokeStyle = 'rgba(255,255,255,.92)';
+    ctx.lineWidth = Math.max(1.6, canvas.width * 0.0016);
+    const stroke = (pts) => { sampled(pts); ctx.stroke(); };
+    stroke([...seg(0, 0, 105, 0), ...seg(105, 0, 105, 68, 8),
+            ...seg(105, 68, 0, 68), ...seg(0, 68, 0, 0, 8)]);
+    stroke(seg(52.5, 0, 52.5, 68, 10));
+    stroke(circlePts(52.5, 34, 9.15));
+    spot(52.5, 34); spot(11, 34); spot(94, 34);
+    for (const left of [true, false]) {
+      const u0 = left ? 0 : 105, dir = left ? 1 : -1;
+      stroke([...seg(u0, 13.85, u0 + dir * 16.5, 13.85, 6),
+              ...seg(u0 + dir * 16.5, 13.85, u0 + dir * 16.5, 54.15, 8),
+              ...seg(u0 + dir * 16.5, 54.15, u0, 54.15, 6)]);
+      stroke([...seg(u0, 24.85, u0 + dir * 5.5, 24.85, 4),
+              ...seg(u0 + dir * 5.5, 24.85, u0 + dir * 5.5, 43.15, 5),
+              ...seg(u0 + dir * 5.5, 43.15, u0, 43.15, 4)]);
+      const su = left ? 11 : 94;
+      const arc = circlePts(su, 34, 9.15).filter(([u]) => left ? u > 16.5 : u < 88.5);
+      stroke(arc);
+      const cuArc = left ? 0 : 105;
+      stroke(circlePts(cuArc, 0, 1, left ? 0 : Math.PI / 2, left ? Math.PI / 2 : Math.PI, 8));
+      stroke(circlePts(cuArc, 68, 1, left ? -Math.PI / 2 : Math.PI, left ? 0 : Math.PI * 1.5, 8));
+      goal(left);
+      flag(cuArc, 0); flag(cuArc, 68);
+    }
+
+    // jogadores por profundidade, depois a bola
+    for (const p of [...S.players].sort((a, b) => a.y - b.y)) sprite(p);
+    ball();
   }
 
-  function drawPlayer(p, X, Y, k) {
+  function spot(u, v) {
+    const { ctx } = S; const [x, y, s] = persp(u, v);
+    ctx.beginPath(); ctx.ellipse(x, y, 0.32 * metre(s), 0.2 * metre(s), 0, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255,255,255,.92)'; ctx.fill();
+  }
+
+  function flag(u, v) {
+    const { ctx } = S; const [x, y, s] = persp(u, v); const m = metre(s);
+    ctx.strokeStyle = '#F5F1E6'; ctx.lineWidth = Math.max(1, m * 0.14);
+    ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x, y - 2.4 * m); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x, y - 2.4 * m); ctx.lineTo(x + 1.1 * m, y - 2.05 * m);
+    ctx.lineTo(x, y - 1.7 * m); ctx.closePath();
+    ctx.fillStyle = '#FFB020'; ctx.fill();
+  }
+
+  function goal(left) {
     const { ctx } = S;
-    const x = X(p.x), y = Y(p.y), h = k * 3.1;      // altura do boneco
-    const kit = S.kit[p.side], shirt = p.role === 'GK' ? kit.gk : kit.shirt;
-    const run = Math.sin(p.anim * 6);
-    const speed = Math.hypot(p.vx, p.vy);
-    const legSwing = (speed > 0.8 ? run : 0) * h * 0.16;
-
-    // anel do portador (no chão)
-    if (p === S.carrier && S.celebrating <= 0) {
-      ctx.beginPath(); ctx.ellipse(x, y + h * 0.06, h * 0.42, h * 0.17, 0, 0, Math.PI * 2);
-      ctx.strokeStyle = '#FFD166'; ctx.lineWidth = Math.max(2, k * 0.28); ctx.stroke();
+    const u = left ? 0 : 105, back = left ? -2.1 : 107.1;
+    const [x1, y1, s1] = persp(u, 30.34), [x2, y2, s2] = persp(u, 37.66);
+    const [bx1, by1, bs1] = persp(back, 30.9), [bx2, by2, bs2] = persp(back, 37.1);
+    const h1 = 2.44 * metre(s1) * 1.25, h2 = 2.44 * metre(s2) * 1.25;
+    const bh1 = 2.05 * metre(bs1) * 1.25, bh2 = 2.05 * metre(bs2) * 1.25;
+    // rede
+    ctx.strokeStyle = 'rgba(255,255,255,.34)'; ctx.lineWidth = 1;
+    for (let i = 0; i <= 4; i++) {
+      const f = i / 4;
+      ctx.beginPath();
+      ctx.moveTo(x1 + (x2 - x1) * f, y1 + (y2 - y1) * f - (h1 + (h2 - h1) * f));
+      ctx.lineTo(bx1 + (bx2 - bx1) * f, by1 + (by2 - by1) * f - (bh1 + (bh2 - bh1) * f));
+      ctx.lineTo(bx1 + (bx2 - bx1) * f, by1 + (by2 - by1) * f);
+      ctx.stroke();
     }
-    // sombra
-    ctx.beginPath(); ctx.ellipse(x, y + h * 0.05, h * 0.3, h * 0.11, 0, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(0,25,10,.35)'; ctx.fill();
+    for (const f of [0.33, 0.66, 1]) {
+      ctx.beginPath();
+      ctx.moveTo(bx1, by1 - bh1 * f); ctx.lineTo(bx2, by2 - bh2 * f); ctx.stroke();
+    }
+    // traves
+    ctx.strokeStyle = '#FFFFFF'; ctx.lineWidth = Math.max(2, metre(s1) * 0.22);
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x1, y1 - h1); ctx.lineTo(x2, y2 - h2);
+    ctx.lineTo(x2, y2); ctx.stroke();
+  }
 
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.scale(p.face < 0 ? -1 : 1, 1);
-    // pernas
-    ctx.strokeStyle = '#20242B'; ctx.lineCap = 'round';
-    ctx.lineWidth = h * 0.13;
-    ctx.beginPath(); ctx.moveTo(-h * 0.09, -h * 0.32); ctx.lineTo(-h * 0.10 + legSwing, 0); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(h * 0.09, -h * 0.32); ctx.lineTo(h * 0.10 - legSwing, 0); ctx.stroke();
+  function luminance(hex) {
+    return parseInt(hex.slice(1, 3), 16) * 0.299 +
+           parseInt(hex.slice(3, 5), 16) * 0.587 +
+           parseInt(hex.slice(5, 7), 16) * 0.114;
+  }
+
+  function sprite(p) {
+    const { ctx } = S;
+    const [x, y, s] = persp(p.x, p.y);
+    const m = metre(s), h = 4.9 * m;
+    const kit = S.kit[p.side], shirt = p.role === 'GK' ? kit.gk : kit.shirt;
+    const run = Math.hypot(p.vx, p.vy) > 0.8 ? Math.sin(p.anim * 6) : 0;
+    const swing = run * h * 0.10;
+
+    if (p === S.carrier && S.celebrating <= 0) {
+      ctx.beginPath(); ctx.ellipse(x, y + h * 0.03, h * 0.34, h * 0.13, 0, 0, Math.PI * 2);
+      ctx.strokeStyle = '#FFD166'; ctx.lineWidth = Math.max(2, m * 0.3); ctx.stroke();
+    }
+    ctx.beginPath(); ctx.ellipse(x, y + h * 0.02, h * 0.26, h * 0.09, 0, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(0,22,8,.4)'; ctx.fill();
+
+    ctx.save(); ctx.translate(x, y);
+    // pernas + meias
+    ctx.strokeStyle = '#1A1E24'; ctx.lineCap = 'round'; ctx.lineWidth = h * 0.10;
+    ctx.beginPath(); ctx.moveTo(-h * 0.08, -h * 0.30); ctx.lineTo(-h * 0.09 + swing, 0); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(h * 0.08, -h * 0.30); ctx.lineTo(h * 0.09 - swing, 0); ctx.stroke();
     // calção
     ctx.fillStyle = kit.shorts;
-    rr(ctx, -h * 0.20, -h * 0.46, h * 0.40, h * 0.18, h * 0.05); ctx.fill();
-    // tronco/camisa
+    rr(ctx, -h * 0.17, -h * 0.44, h * 0.34, h * 0.17, h * 0.05); ctx.fill();
+    ctx.strokeStyle = 'rgba(0,0,0,.18)'; ctx.lineWidth = 1; ctx.stroke();
+    // camisa com mangas
     ctx.fillStyle = shirt;
-    rr(ctx, -h * 0.22, -h * 0.78, h * 0.44, h * 0.36, h * 0.10); ctx.fill();
-    // braços (balançam em oposição às pernas)
-    ctx.strokeStyle = shirt; ctx.lineWidth = h * 0.11;
-    ctx.beginPath(); ctx.moveTo(-h * 0.20, -h * 0.70); ctx.lineTo(-h * 0.26 - legSwing * 0.7, -h * 0.44); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(h * 0.20, -h * 0.70); ctx.lineTo(h * 0.26 + legSwing * 0.7, -h * 0.44); ctx.stroke();
+    rr(ctx, -h * 0.30, -h * 0.76, h * 0.60, h * 0.14, h * 0.05); ctx.fill();   // mangas
+    rr(ctx, -h * 0.21, -h * 0.80, h * 0.42, h * 0.40, h * 0.09); ctx.fill();   // tronco
+    if (p.role !== 'GK' && kit.stripes) {                                       // listras
+      ctx.save(); rr(ctx, -h * 0.21, -h * 0.80, h * 0.42, h * 0.40, h * 0.09); ctx.clip();
+      ctx.fillStyle = kit.stripes;
+      for (const off of [-0.155, 0, 0.155])
+        ctx.fillRect(off * h - h * 0.045, -h * 0.82, h * 0.09, h * 0.46);
+      ctx.restore();
+    }
+    ctx.strokeStyle = 'rgba(0,0,0,.16)';
+    rr(ctx, -h * 0.21, -h * 0.80, h * 0.42, h * 0.40, h * 0.09); ctx.stroke();
+    // número no peito
+    const num = p.num ?? '';
+    if (num !== '') {
+      ctx.font = `800 ${h * 0.24}px Inter, sans-serif`; ctx.textAlign = 'center';
+      ctx.fillStyle = kit.num && p.role !== 'GK'
+        ? kit.num : (luminance(shirt) > 150 ? '#15181D' : '#FFFFFF');
+      ctx.fillText(num, 0, -h * 0.50);
+    }
     // cabeça
-    ctx.beginPath(); ctx.arc(0, -h * 0.92, h * 0.17, 0, Math.PI * 2);
+    ctx.beginPath(); ctx.arc(0, -h * 0.90, h * 0.145, 0, Math.PI * 2);
     ctx.fillStyle = '#C99B6F'; ctx.fill();
     ctx.restore();
 
-    // nome
-    ctx.textAlign = 'center';
-    ctx.font = `600 ${Math.max(9, k * 0.95)}px Inter, sans-serif`;
-    ctx.lineWidth = Math.max(2, k * 0.3); ctx.strokeStyle = 'rgba(10,30,16,.75)';
-    ctx.strokeText(p.name, x, y + h * 0.42);
-    ctx.fillStyle = '#FFFFFF';
-    ctx.fillText(p.name, x, y + h * 0.42);
+    // etiqueta de nome
+    const label = p.name.toUpperCase();
+    ctx.font = `700 ${Math.max(9, h * 0.155)}px Inter, sans-serif`;
+    const w = ctx.measureText(label).width + h * 0.24;
+    ctx.fillStyle = 'rgba(12,18,12,.85)';
+    rr(ctx, x - w / 2, y + h * 0.10, w, h * 0.24, h * 0.07); ctx.fill();
+    ctx.fillStyle = '#FFFFFF'; ctx.textAlign = 'center';
+    ctx.fillText(label, x, y + h * 0.275);
     // cartão
     if (p.card) {
       ctx.fillStyle = p.card === 'yellow' ? '#F2C230' : p.card === 'red' ? '#C0322B' : '#8A9099';
-      ctx.fillRect(x - h * 0.09, y - h * 1.28, h * 0.18, h * 0.26);
+      ctx.fillRect(x - h * 0.07, y - h * 1.22, h * 0.14, h * 0.20);
     }
   }
 
@@ -364,14 +479,15 @@
     ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
   }
 
-  function drawBall(X, Y, k) {
+  function ball() {
     const { ctx } = S; const b = S.ball;
-    ctx.beginPath(); ctx.ellipse(X(b.x), Y(b.y) + k * 0.5, k * 0.55, k * 0.22, 0, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(21,24,29,.25)'; ctx.fill();
-    const r = k * 0.42 * (1 + b.z * 0.28);
-    ctx.beginPath(); ctx.arc(X(b.x), Y(b.y) - b.z * k * 1.6, r, 0, Math.PI * 2);
+    const [x, y, s] = persp(b.x, b.y); const m = metre(s);
+    ctx.beginPath(); ctx.ellipse(x, y + 0.25 * m, 0.55 * m, 0.22 * m, 0, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(0,22,8,.4)'; ctx.fill();
+    const r = 0.42 * m * (1 + b.z * 0.30);
+    ctx.beginPath(); ctx.arc(x, y - b.z * m * 1.7, Math.max(3.5, r), 0, Math.PI * 2);
     ctx.fillStyle = '#FFFFFF'; ctx.fill();
-    ctx.lineWidth = Math.max(1, k * 0.1); ctx.strokeStyle = '#15181D'; ctx.stroke();
+    ctx.lineWidth = Math.max(1, m * 0.08); ctx.strokeStyle = '#15181D'; ctx.stroke();
   }
 
   window.Match2D = { mount, event, setClock };

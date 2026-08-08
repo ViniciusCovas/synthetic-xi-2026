@@ -38,8 +38,7 @@ body{margin:0;width:100vw;height:100vh;overflow:hidden;background:var(--ink);
 .clockrow b{color:var(--home);font-variant-numeric:tabular-nums}
 
 .centerband{align-self:center;justify-self:center;text-align:center;position:relative}
-.pitch2d{width:78vw;max-width:118vh;aspect-ratio:105/68;border-radius:16px;
-  box-shadow:0 24px 80px rgba(0,0,0,.5);background:#EDF3EE}
+.pitch2d{width:86vw;max-width:132vh;aspect-ratio:105/62;background:transparent}
 .goalcard{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2}
 .goalcard{display:none;background:rgba(250,248,244,.97);color:var(--ink);
   border-radius:22px;padding:3.2vh 3.4vw;box-shadow:0 24px 80px rgba(0,0,0,.5)}
@@ -162,8 +161,8 @@ async function boot(){
   pc.height = Math.round(pc.clientWidth * 2 * 68 / 105);
   Match2D.mount(pc, {
     homeName: HOME, awayName: AWAY,
-    homeXI: teams[HOME].starters.map(p => ({role: p.role, name: p.name})),
-    awayXI: teams[AWAY].starters.map(p => ({role: p.role, name: p.name})),
+    homeXI: teams[HOME].starters.map(p => ({role: p.role, name: p.name, number: p.number})),
+    awayXI: teams[AWAY].starters.map(p => ({role: p.role, name: p.name, number: p.number})),
   });
   const pyodide = await loadPyodide();
   await pyodide.loadPackage('numpy');

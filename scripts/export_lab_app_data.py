@@ -46,9 +46,17 @@ PACKAGE_SOURCES = {
 }
 
 
+SQUAD_NUMBERS: dict[int, int] = {}
+
+
 def profile_payload(profile) -> dict:
+    try:
+        number = SQUAD_NUMBERS.get(int(profile.player_id))
+    except (TypeError, ValueError):
+        number = None
     return {
         "player_id": profile.player_id,
+        "number": number,
         "name": profile.name,
         "role": profile.role,
         "minutes": profile.minutes,
@@ -64,6 +72,11 @@ def main() -> None:
     package_dir = LAB_DIR / "py" / "labsim"
     package_dir.mkdir(parents=True, exist_ok=True)
 
+    squad = pd.read_csv(ROOT / "data" / "audits" / "world_cup_2026_squad_universe.csv")
+    SQUAD_NUMBERS.update(
+        (int(r.player_id), int(r.number))
+        for r in squad.itertuples() if pd.notna(r.number)
+    )
     table = build_annual_table("primary", minimum_minutes=LAB_MINIMUM_MINUTES)
     teams: dict[str, dict] = {}
     skipped: dict[str, str] = {}
