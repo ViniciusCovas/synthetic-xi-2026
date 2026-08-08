@@ -6,6 +6,9 @@ name: Fetch Cloudflare Agent Setup Prompt
 
 on:
   workflow_dispatch:
+  push:
+    branches: ["claude/audit-synthetic-xi-2026-tunhrh"]
+    paths: [".github/workflows/fetch-cloudflare-prompt.yml"]
 
 permissions: {}
 
