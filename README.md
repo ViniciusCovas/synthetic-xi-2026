@@ -150,6 +150,25 @@ Los workflows one-shot utilizados para validar, autorizar, ejecutar e integrar l
 - `ESTUDIO_1_POSICIONES.md`: manuscrito del estudio posicional.
 - `ESTUDIO_2_ONCE.md`: protocolo/manuscrito del estudio de equipos.
 
+## Estudio 3 — Ventana (observatorio de ventana)
+
+Estudio de observación real, independiente de los estudios de fútbol, que aplica
+la misma disciplina de pre-registro, compuertas y techo de afirmación a un punto
+fijo del mundo: una ventana.
+
+Un teléfono inmóvil ejecuta visión por computadora **en el propio dispositivo** y
+produce un registro numérico por minuto con tres capas —flujo de calle, estado de
+cielo y ocupación aparente de fachada—. No se graba ni se transmite vídeo.
+
+- Guía de operación: `projects/ventana_observatory/README.md`
+- Pre-registro: `projects/ventana_observatory/PROTOCOLO_VENTANA_V1.md`
+- Esquema de datos: `projects/ventana_observatory/SCHEMA_VENTANA_V1.md`
+
+```bash
+python scripts/ventana/validate_session.py data/ventana/raw/*.jsonl
+python scripts/ventana/build_ventana_exhibits.py
+```
+
 ## Aplicación web
 
 La interfaz Vite permanece separada de la autorización científica del experimento:

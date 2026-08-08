@@ -8,3 +8,6 @@ web/node_modules/
 web/dist/
 data/raw/**/*.json
 !data/raw/.gitkeep
+
+# Ventana: el JSONL sintetico se regenera con su semilla
+data/ventana/synthetic/*.jsonl

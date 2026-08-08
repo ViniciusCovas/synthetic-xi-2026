@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ventana — tablero</title>
+    <link rel="stylesheet" href="./dashboard.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Ventana</h1>
+      <p class="sub">
+        Retrato de una ventana. Cada número procede de minutos que superaron las
+        compuertas del protocolo v1; los descartados se cuentan pero no se usan.
+      </p>
+      <p id="ceiling" class="ceiling"></p>
+    </header>
+
+    <section class="loader">
+      <label>
+        Paquete de resultados
+        <input id="file" type="file" accept="application/json" />
+      </label>
+      <p id="status">Cargando el paquete por defecto…</p>
+    </section>
+
+    <section class="cards" id="cards"></section>
+
+    <section class="panel">
+      <h2>El cielo, minuto a minuto</h2>
+      <p class="note">
+        Cada franja vertical es un minuto real de cielo medido desde la ventana.
+        Una fila por fecha local, de medianoche a medianoche.
+      </p>
+      <div id="barcode"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Perfil por hora local</h2>
+      <p class="note">
+        Media por hora con intervalo de confianza del 95% por bootstrap. Las
+        horas sin observación válida aparecen vacías, no en cero.
+      </p>
+      <div class="controls" id="metric-buttons"></div>
+      <div id="profile"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Cobertura y compuertas</h2>
+      <div id="coverage"></div>
+      <div id="gates"></div>
+    </section>
+
+    <footer>
+      <p>
+        Este tablero sólo lee <code>ventana_exhibits.json</code>, construido por
+        <code>scripts/ventana/build_ventana_exhibits.py</code>. No recalcula nada:
+        cualquier cifra mostrada aquí existe ya en ese fichero, con su semilla.
+      </p>
+    </footer>
+
+    <script type="module" src="./dashboard.js"></script>
+  </body>
+</html>

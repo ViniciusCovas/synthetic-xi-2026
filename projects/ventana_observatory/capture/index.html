@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0f14" />
+    <title>Ventana — captura</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Ventana</h1>
+      <p id="status">Pulsa «Abrir cámara» para empezar.</p>
+    </header>
+
+    <div class="stage">
+      <video id="video" playsinline muted autoplay></video>
+      <canvas id="overlay"></canvas>
+    </div>
+
+    <p id="cal-help" class="help"></p>
+
+    <section class="controls">
+      <button id="btn-camera" class="primary">Abrir cámara</button>
+      <button id="btn-start" class="primary" disabled>Iniciar sesión</button>
+      <button id="btn-stop" disabled>Detener</button>
+    </section>
+
+    <section class="controls">
+      <button class="cal-btn" data-mode="sky" disabled>Cielo</button>
+      <button class="cal-btn" data-mode="street" disabled>Calle</button>
+      <button class="cal-btn" data-mode="line" disabled>Línea</button>
+      <button class="cal-btn" data-mode="facade" disabled>Fachada</button>
+      <button id="btn-cal-close" hidden>Cerrar polígono</button>
+      <button id="btn-cal-cancel" hidden>Cancelar</button>
+      <button id="btn-cal-reset">Borrar calibración</button>
+    </section>
+
+    <section class="metrics">
+      <div class="metric"><span>minutos</span><strong id="m-minutes">0</strong></div>
+      <div class="metric"><span>cruces / min</span><strong id="m-cross">—</strong></div>
+      <div class="metric"><span>sentido a / b</span><strong id="m-dir">—</strong></div>
+      <div class="metric"><span>porte s · m · l</span><strong id="m-sizes">—</strong></div>
+      <div class="metric"><span>luz de cielo</span><strong id="m-sky">—</strong></div>
+      <div class="metric"><span>azulidad</span><strong id="m-blue">—</strong></div>
+      <div class="metric"><span>ventanas encendidas</span><strong id="m-facade">—</strong></div>
+      <div class="metric"><span>fps</span><strong id="m-fps">—</strong></div>
+      <div class="metric"><span>estado</span><strong id="m-flags">—</strong></div>
+      <div class="metric"><span>color del cielo</span><strong id="sky-swatch" class="swatch"></strong></div>
+    </section>
+
+    <section class="fields">
+      <label>
+        Etiqueta del sitio
+        <input id="site-label" type="text" placeholder="p. ej. ventana norte, 4º piso" />
+      </label>
+      <label>
+        Ingesta remota (opcional)
+        <input id="ingest-url" type="url" placeholder="https://…  vacío = sólo local" />
+      </label>
+    </section>
+
+    <section class="controls">
+      <button id="btn-export" class="primary">Exportar JSONL</button>
+      <button id="btn-clear" class="danger">Borrar registros</button>
+    </section>
+
+    <footer>
+      <p>
+        Todo el análisis ocurre en este teléfono. No se graba ni se transmite vídeo: la
+        salida es una fila de números por minuto. La ingesta remota, si la configuras,
+        envía solamente esas filas.
+      </p>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
