@@ -44,6 +44,9 @@
 
   function mount(canvas, cfg) {
     S.canvas = canvas; S.ctx = canvas.getContext('2d');
+    const bg = new Image();
+    bg.onload = () => { S.bg = bg; };
+    bg.src = cfg.background || 'pitch-bg.png';
     if (cfg.kits) S.kit = cfg.kits;
     else if (window.TeamKits) S.kit = TeamKits.kitsFor(cfg.homeName, cfg.awayName);
     S.players = [];
@@ -246,16 +249,19 @@
     requestAnimationFrame(loop);
   }
 
-  // projeção: campo visto de câmara elevada (trapézio, topo comprimido)
+  // projeção: câmara elevada suave (topo ~78% da base, como transmissão real)
+  // Calibrável via Match2D.tune({sTop,sBot,yTop,yBot,xScale}) para casar com
+  // um fundo pintado (pitch-bg.png).
+  const PROJ = { sTop: 0.80, sBot: 1.06, yTop: 0.05, yBot: 0.975, xScale: 0.0086, ease: 0.72 };
   function persp(u, v) {
     const W = S.canvas.width, H = S.canvas.height;
     const t = v / PITCH.h;
-    const s = 0.64 + 0.44 * t;
-    const y = H * 0.115 + (H * 0.865) * (t * (0.56 + 0.44 * t));
-    const x = W / 2 + (u - 52.5) * (W * 0.00845) * s;
+    const s = PROJ.sTop + (PROJ.sBot - PROJ.sTop) * t;
+    const y = H * PROJ.yTop + H * (PROJ.yBot - PROJ.yTop) * (t * (PROJ.ease + (1 - PROJ.ease) * t));
+    const x = W / 2 + (u - 52.5) * (W * PROJ.xScale) * s;
     return [x, y, s];
   }
-  const metre = (s) => S.canvas.width * 0.00845 * s;   // px por metro na profundidade s
+  const metre = (s) => S.canvas.width * PROJ.xScale * s;
 
   function sampled(points) {
     const { ctx } = S;
@@ -284,15 +290,21 @@
   function draw() {
     const { ctx, canvas } = S;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (S.bg) {                     // arte pintada: só entidades por cima
+      ctx.drawImage(S.bg, 0, 0, canvas.width, canvas.height);
+      for (const p of [...S.players].sort((a, b) => a.y - b.y)) sprite(p);
+      ball();
+      return;
+    }
 
     // avental de relva escura à volta do campo
-    sampled([...seg(-4, -3, 109, -3, 12), ...seg(109, -3, 109, 71, 8),
-             ...seg(109, 71, -4, 71, 12), ...seg(-4, 71, -4, -3, 8)]);
+    sampled([...seg(-2.5, -3, 107.5, -3, 12), ...seg(107.5, -3, 107.5, 70.5, 8),
+             ...seg(107.5, 70.5, -2.5, 70.5, 12), ...seg(-2.5, 70.5, -2.5, -3, 8)]);
     ctx.closePath(); ctx.fillStyle = '#123A22'; ctx.fill();
 
     // placas de publicidade no fundo (lado distante)
     for (let i = 0; i < 12; i++) {
-      const u0 = -4 + i * (113 / 12), u1 = u0 + 113 / 12;
+      const u0 = -2.5 + i * (110 / 12), u1 = u0 + 110 / 12;
       const [xa, ya, sa] = persp(u0, -3), [xb, yb, sb] = persp(u1, -3);
       const h = 3.1;
       ctx.beginPath();
@@ -301,8 +313,8 @@
       ctx.closePath();
       ctx.fillStyle = BOARD_COLOURS[i % BOARD_COLOURS.length]; ctx.fill();
     }
-    {
-      const [tx, ty, tsc] = persp(52.5, -3);
+    for (const bu of [22, 83]) {
+      const [tx, ty, tsc] = persp(bu, -3);
       ctx.fillStyle = 'rgba(255,255,255,.92)';
       ctx.font = `700 ${Math.max(10, 1.5 * metre(tsc))}px Inter, sans-serif`;
       ctx.textAlign = 'center';
@@ -410,7 +422,7 @@
   function sprite(p) {
     const { ctx } = S;
     const [x, y, s] = persp(p.x, p.y);
-    const m = metre(s), h = 4.9 * m;
+    const m = metre(s), h = 5.3 * m;
     const kit = S.kit[p.side], shirt = p.role === 'GK' ? kit.gk : kit.shirt;
     const run = Math.hypot(p.vx, p.vy) > 0.8 ? Math.sin(p.anim * 6) : 0;
     const swing = run * h * 0.10;
@@ -490,5 +502,5 @@
     ctx.lineWidth = Math.max(1, m * 0.08); ctx.strokeStyle = '#15181D'; ctx.stroke();
   }
 
-  window.Match2D = { mount, event, setClock };
+  window.Match2D = { mount, event, setClock, tune: (o) => Object.assign(PROJ, o) };
 })();
