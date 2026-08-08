@@ -22,7 +22,7 @@ export default function Legislacion() {
         {items.map((l) => (
           <Card key={l.id} className="p-5">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded bg-line px-2 py-0.5 font-mono text-[10.5px] font-bold uppercase tracking-wider text-ink-2">
+              <span className="rounded-full border border-line bg-raise px-2.5 py-[3px] font-mono text-[10px] font-semibold uppercase tracking-[0.08em] text-ink-2">
                 {l.scope}
               </span>
               <Badge kind={l.status} />

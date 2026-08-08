@@ -1,9 +1,36 @@
+@import '@fontsource-variable/instrument-sans';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/600.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html {
+    color-scheme: dark;
+  }
   body {
     @apply bg-paper text-ink antialiased;
+    font-feature-settings: 'ss01';
+    background-image: radial-gradient(
+      ellipse 90% 60% at 50% -10%,
+      rgba(47, 174, 145, 0.07),
+      transparent 60%
+    );
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-brand/30;
+  }
+  h1, h2, h3 {
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .tnum {
+    font-variant-numeric: tabular-nums;
   }
 }

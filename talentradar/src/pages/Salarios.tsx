@@ -7,7 +7,7 @@ const fmt = (n: number) => n.toLocaleString('es-ES') + ' €'
 
 const tensionCls: Record<SalaryBand['tension'], string> = {
   alta: 'text-crit font-bold',
-  media: 'text-[#a06f00] font-semibold',
+  media: 'text-warn font-semibold',
   estable: 'text-ink-2',
 }
 
@@ -71,7 +71,7 @@ export default function Salarios() {
           muestra la desviación exacta de cada equipo frente a mercado — el dato que decide
           renovaciones antes de que lleguen las renuncias. Tus datos nunca salen de tu cuenta.
         </p>
-        <button className="mt-3 rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white opacity-60" disabled>
+        <button className="mt-3 rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-paper opacity-60" disabled>
           Subir bandas internas (plan Growth)
         </button>
       </Card>

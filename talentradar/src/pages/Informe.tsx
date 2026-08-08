@@ -11,7 +11,7 @@ export default function Informe() {
       />
 
       <Card className="p-6">
-        <div className="border-b-2 border-ink pb-4">
+        <div className="border-b border-line pb-4">
           <span className="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
             ● TalentRadar · Radar de Talento
           </span>
@@ -29,7 +29,7 @@ export default function Informe() {
             </p>
           </div>
           <div className="rounded-lg border-l-4 border-warn bg-paper p-4">
-            <span className="font-mono text-[10.5px] font-bold uppercase tracking-wider text-[#a06f00]">Vigilar</span>
+            <span className="font-mono text-[10.5px] font-bold uppercase tracking-wider text-warn">Vigilar</span>
             <p className="mt-1 text-sm leading-relaxed text-ink-2">
               El teletrabajo 100% vuelve como arma salarial encubierta: tu gente puede cambiar de
               empleador sin cambiar de sofá.
