@@ -1,10 +1,10 @@
 {
   "status": "ready",
-  "project_version": "0.4.0",
+  "project_version": "0.4.1",
   "competition": "Copa Mundial de la FIFA 2026",
   "league_id": 1,
   "season": 2026,
-  "generated_at_utc": "2026-07-18T19:32:22.057217+00:00",
+  "generated_at_utc": "2026-08-08T00:13:57.264560+00:00",
   "data_cutoff_utc": "2026-07-18T19:32:22.057217+00:00",
   "completed_matches_included": 102,
   "player_match_rows_included": 2286,
@@ -93,5 +93,44 @@
       "position_group": "ST",
       "ordinal": 1
     }
-  ]
+  ],
+  "corrections_v0_4_1": {
+    "player_identity_canonicalization": {
+      "rule": "player_name canonicalizado por player_id (nombre del partido con más minutos) antes de agregar features",
+      "merged_players": [
+        {
+          "player_id": 2701,
+          "name_variants": [
+            "Bono",
+            "Yassine Bounou"
+          ]
+        },
+        {
+          "player_id": 44362,
+          "name_variants": [
+            "Hassan Altambakti",
+            "Hassan Tambakti"
+          ]
+        },
+        {
+          "player_id": 158433,
+          "name_variants": [
+            "Siphephelo Sithole",
+            "Sphephelo Sithole"
+          ]
+        },
+        {
+          "player_id": 575283,
+          "name_variants": [
+            "Ali Al Azaizah",
+            "Ali Al Azaizeh"
+          ]
+        }
+      ]
+    },
+    "lateral_slot_assignment": {
+      "rule": "RB/LB, RCB/LCB y RW/LW asignados por lado observado (grid validado low_is_left + anclas públicas); la elegibilidad sigue siendo exclusivamente por ranking",
+      "side_evidence_file": "xi_side_evidence.csv"
+    }
+  }
 }

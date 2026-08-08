@@ -17,6 +17,15 @@ Compara distribuciones de finales eliminatorias entre:
 
 El motor es un simulador probabilístico por eventos y estados. No equivale a un partido físico ni permite afirmar que un equipo “ganaría realmente”.
 
+## Corrección de selección v0.4.1
+
+La capa de selección pública (rankings, avatares, onces y web) fue
+reconstruida desde la caché de la API para corregir identidades de jugador
+duplicadas por grafía del proveedor y para asignar los lados de RB/LB,
+RCB/LCB y RW/LW con evidencia validada de orientación. Detalle completo y
+reproducción en `SELECTION_CORRECTION_V0_4_1.md`. Los artefactos congelados
+del experimento oficial v1 no fueron modificados.
+
 ## Estado científico actual
 
 El experimento oficial v1 y su replicación independiente están **completos, validados e integrados**.

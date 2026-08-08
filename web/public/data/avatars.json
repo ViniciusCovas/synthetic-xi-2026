@@ -4,10 +4,10 @@
     "position_group": "GK",
     "requested_top_n": 20,
     "actual_n": 20,
-    "eligible_pool_n": 42,
+    "eligible_pool_n": 41,
     "sample_complete": true,
-    "mean_rank_score": 0.3515997715,
-    "median_minutes": 420.0,
+    "mean_rank_score": 0.3455440778,
+    "median_minutes": 450.0,
     "interpretation_label": "centroide robusto de los 20 mejores GK elegibles en el corte acumulado de la Copa 2026"
   },
   {
@@ -15,9 +15,9 @@
     "position_group": "CB",
     "requested_top_n": 20,
     "actual_n": 20,
-    "eligible_pool_n": 95,
+    "eligible_pool_n": 96,
     "sample_complete": true,
-    "mean_rank_score": 0.5200187422,
+    "mean_rank_score": 0.5255954516,
     "median_minutes": 360.0,
     "interpretation_label": "centroide robusto de los 20 mejores CB elegibles en el corte acumulado de la Copa 2026"
   },
@@ -39,8 +39,8 @@
     "actual_n": 20,
     "eligible_pool_n": 32,
     "sample_complete": true,
-    "mean_rank_score": 0.2544248612,
-    "median_minutes": 319.5,
+    "mean_rank_score": 0.2547993475,
+    "median_minutes": 321.5,
     "interpretation_label": "centroide robusto de los 20 mejores DM elegibles en el corte acumulado de la Copa 2026"
   },
   {

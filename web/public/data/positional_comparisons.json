@@ -8,9 +8,9 @@
     "team_name": "Switzerland",
     "metric": "saves_p90",
     "direction": 1,
-    "avatar_value": 2.8588238806,
+    "avatar_value": 2.8818501964,
     "real_value": 3.0,
-    "direction_adjusted_difference": -0.1411761194,
+    "direction_adjusted_difference": -0.1181498036,
     "descriptive_leader": "jugador_real"
   },
   {
@@ -22,9 +22,9 @@
     "team_name": "Switzerland",
     "metric": "goals_conceded_p90",
     "direction": -1,
-    "avatar_value": 1.0590934091,
+    "avatar_value": 1.0870539354,
     "real_value": 0.9,
-    "direction_adjusted_difference": -0.1590934091,
+    "direction_adjusted_difference": -0.1870539354,
     "descriptive_leader": "jugador_real"
   },
   {
@@ -50,9 +50,9 @@
     "team_name": "Switzerland",
     "metric": "passes_p90",
     "direction": 1,
-    "avatar_value": 29.9247544599,
+    "avatar_value": 29.5750422888,
     "real_value": 33.6,
-    "direction_adjusted_difference": -3.6752455401,
+    "direction_adjusted_difference": -4.0249577112,
     "descriptive_leader": "jugador_real"
   },
   {
@@ -260,9 +260,9 @@
     "team_name": "Spain",
     "metric": "interceptions_p90",
     "direction": 1,
-    "avatar_value": 1.0993259908,
+    "avatar_value": 0.9969477189,
     "real_value": 0.2870813397,
-    "direction_adjusted_difference": 0.8122446511,
+    "direction_adjusted_difference": 0.7098663792,
     "descriptive_leader": "avatar"
   },
   {
@@ -274,9 +274,9 @@
     "team_name": "Spain",
     "metric": "tackles_p90",
     "direction": 1,
-    "avatar_value": 2.2880148002,
+    "avatar_value": 2.2008859048,
     "real_value": 3.1578947368,
-    "direction_adjusted_difference": -0.8698799366,
+    "direction_adjusted_difference": -0.9570088321,
     "descriptive_leader": "jugador_real"
   },
   {
@@ -288,9 +288,9 @@
     "team_name": "Spain",
     "metric": "duel_win_rate",
     "direction": 1,
-    "avatar_value": 0.5749649434,
+    "avatar_value": 0.5710020811,
     "real_value": 0.6507936508,
-    "direction_adjusted_difference": -0.0758287074,
+    "direction_adjusted_difference": -0.0797915697,
     "descriptive_leader": "jugador_real"
   },
   {
@@ -302,9 +302,9 @@
     "team_name": "Spain",
     "metric": "passes_p90",
     "direction": 1,
-    "avatar_value": 67.9580441194,
+    "avatar_value": 68.9444676857,
     "real_value": 101.3397129187,
-    "direction_adjusted_difference": -33.3816687993,
+    "direction_adjusted_difference": -32.395245233,
     "descriptive_leader": "jugador_real"
   },
   {
@@ -316,9 +316,9 @@
     "team_name": "Spain",
     "metric": "pass_accuracy",
     "direction": 1,
-    "avatar_value": 91.0864520932,
+    "avatar_value": 91.3271545935,
     "real_value": 92.9178470255,
-    "direction_adjusted_difference": -1.8313949323,
+    "direction_adjusted_difference": -1.590692432,
     "descriptive_leader": "jugador_real"
   },
   {
@@ -330,9 +330,9 @@
     "team_name": "Spain",
     "metric": "key_passes_p90",
     "direction": 1,
-    "avatar_value": 0.8905992388,
+    "avatar_value": 0.9538714129,
     "real_value": 1.2918660287,
-    "direction_adjusted_difference": -0.4012667899,
+    "direction_adjusted_difference": -0.3379946158,
     "descriptive_leader": "jugador_real"
   },
   {
@@ -344,9 +344,9 @@
     "team_name": "Spain",
     "metric": "cards_p90",
     "direction": -1,
-    "avatar_value": 0.0203925288,
+    "avatar_value": 0.0345256946,
     "real_value": 0.0,
-    "direction_adjusted_difference": -0.0203925288,
+    "direction_adjusted_difference": -0.0345256946,
     "descriptive_leader": "jugador_real"
   },
   {

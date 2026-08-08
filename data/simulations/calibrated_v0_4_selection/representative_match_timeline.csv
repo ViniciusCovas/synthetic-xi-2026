@@ -1,0 +1,20 @@
+minute,team,type,actor,zone,xg,headline
+4,Synthetic XI,shot_off_target,SYN-ST20,2,0.179,Ocasión de SYN-ST20 fuera
+11,Real Best XI,turnover,Michael Olise,3,0.0,Michael Olise pierde el balón bajo presión
+17,Synthetic XI,shot_on_target,SYN-CM20,3,0.272,Remate de SYN-CM20 detenido por el portero
+24,Real Best XI,shot_off_target,Lucas Paquetá,2,0.144,Ocasión de Lucas Paquetá fuera
+25,Synthetic XI,shot_off_target,SYN-ST20,2,0.179,Ocasión de SYN-ST20 fuera
+27,Real Best XI,shot_on_target,Michael Olise,2,0.141,Remate de Michael Olise detenido por el portero
+31,Synthetic XI,goal,SYN-W20,1,0.104,GOL de SYN-W20
+31,Real Best XI,shot_off_target,Lionel Messi,2,0.201,Ocasión de Lionel Messi fuera
+34,Real Best XI,shot_off_target,Lionel Messi,2,0.201,Ocasión de Lionel Messi fuera
+36,Real Best XI,shot_on_target,Lionel Messi,3,0.325,Remate de Lionel Messi detenido por el portero
+37,Synthetic XI,shot_off_target,SYN-W20,2,0.167,Ocasión de SYN-W20 fuera
+40,Synthetic XI,shot_off_target,SYN-W20,2,0.167,Ocasión de SYN-W20 fuera
+44,Real Best XI,shot_on_target,Lionel Messi,2,0.201,Remate de Lionel Messi detenido por el portero
+57,Real Best XI,turnover,Michael Olise,2,0.0,Michael Olise pierde el balón bajo presión
+60,Real Best XI,goal,Rubén Vargas,2,0.18,GOL de Rubén Vargas
+61,Real Best XI,goal,Vinícius Júnior,2,0.201,GOL de Vinícius Júnior
+69,Real Best XI,shot_off_target,Rubén Vargas,3,0.291,Ocasión de Rubén Vargas fuera
+70,Synthetic XI,shot_off_target,SYN-AM20,2,0.134,Ocasión de SYN-AM20 fuera
+85,Real Best XI,shot_off_target,Vinícius Júnior,2,0.201,Ocasión de Vinícius Júnior fuera

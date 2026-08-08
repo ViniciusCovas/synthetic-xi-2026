@@ -1,10 +1,11 @@
 {
-  "version": "broadcast_v1.0",
+  "version": "broadcast_v1.1",
   "title": "Synthetic XI vs Real Best XI",
+  "engine_run": "calibrated_v0.4_selection",
   "probabilities": {
-    "synthetic_win": 0.2789,
-    "draw": 0.2338,
-    "real_win": 0.4873
+    "synthetic_win": 0.261,
+    "draw": 0.2108,
+    "real_win": 0.5282
   },
   "calibration": {
     "matches": 94,
@@ -28,85 +29,125 @@
       "id": "representative",
       "label": "Partido representativo",
       "description": "Timeline directa del partido seleccionado por el motor por cercanía a las medias de 10.000 simulaciones.",
-      "scoreline_probability": 0.0953,
+      "scoreline_probability": 0.096,
       "stats": {
         "home_goals": 1,
         "away_goals": 2,
-        "home_xg": 1.283,
-        "away_xg": 1.211,
-        "home_shots": 9,
-        "away_shots": 9,
-        "home_shots_on_target": 1,
-        "away_shots_on_target": 3,
-        "home_possession": 0.5657
+        "home_xg": 1.314,
+        "away_xg": 2.087,
+        "home_shots": 8,
+        "away_shots": 10,
+        "home_shots_on_target": 2,
+        "away_shots_on_target": 5,
+        "home_possession": 0.475
       },
       "events": [
         {
-          "minute": 11,
-          "team": "away",
-          "type": "shot_off_target",
-          "actor": "Michael Olise",
-          "zone": 2,
-          "xg": 0.179
-        },
-        {
-          "minute": 12,
+          "minute": 4,
           "team": "home",
           "type": "shot_off_target",
           "actor": "SYN-ST20",
           "zone": 2,
-          "xg": 0.178
+          "xg": 0.179
+        },
+        {
+          "minute": 11,
+          "team": "away",
+          "type": "turnover",
+          "actor": "Michael Olise",
+          "zone": 3,
+          "xg": 0.0
         },
         {
           "minute": 17,
           "team": "home",
-          "type": "shot_off_target",
-          "actor": "SYN-W120",
-          "zone": 2,
-          "xg": 0.162
+          "type": "shot_on_target",
+          "actor": "SYN-CM20",
+          "zone": 3,
+          "xg": 0.272
         },
         {
-          "minute": 21,
+          "minute": 24,
           "team": "away",
+          "type": "shot_off_target",
+          "actor": "Lucas Paquetá",
+          "zone": 2,
+          "xg": 0.144
+        },
+        {
+          "minute": 25,
+          "team": "home",
+          "type": "shot_off_target",
+          "actor": "SYN-ST20",
+          "zone": 2,
+          "xg": 0.179
+        },
+        {
+          "minute": 27,
+          "team": "away",
+          "type": "shot_on_target",
+          "actor": "Michael Olise",
+          "zone": 2,
+          "xg": 0.141
+        },
+        {
+          "minute": 31,
+          "team": "home",
           "type": "goal",
-          "actor": "Michael Olise",
-          "zone": 2,
-          "xg": 0.179
+          "actor": "SYN-W20",
+          "zone": 1,
+          "xg": 0.104
         },
         {
-          "minute": 32,
+          "minute": 31,
           "team": "away",
           "type": "shot_off_target",
-          "actor": "Michael Olise",
+          "actor": "Lionel Messi",
           "zone": 2,
-          "xg": 0.179
+          "xg": 0.201
+        },
+        {
+          "minute": 34,
+          "team": "away",
+          "type": "shot_off_target",
+          "actor": "Lionel Messi",
+          "zone": 2,
+          "xg": 0.201
+        },
+        {
+          "minute": 36,
+          "team": "away",
+          "type": "shot_on_target",
+          "actor": "Lionel Messi",
+          "zone": 3,
+          "xg": 0.325
+        },
+        {
+          "minute": 37,
+          "team": "home",
+          "type": "shot_off_target",
+          "actor": "SYN-W20",
+          "zone": 2,
+          "xg": 0.167
         },
         {
           "minute": 40,
           "team": "home",
           "type": "shot_off_target",
-          "actor": "SYN-CM20",
-          "zone": 3,
-          "xg": 0.205
+          "actor": "SYN-W20",
+          "zone": 2,
+          "xg": 0.167
         },
         {
-          "minute": 41,
+          "minute": 44,
           "team": "away",
-          "type": "goal",
-          "actor": "Kylian Mbappé",
-          "zone": 1,
-          "xg": 0.108
+          "type": "shot_on_target",
+          "actor": "Lionel Messi",
+          "zone": 2,
+          "xg": 0.201
         },
         {
-          "minute": 42,
-          "team": "away",
-          "type": "turnover",
-          "actor": "Pedri",
-          "zone": 3,
-          "xg": 0.0
-        },
-        {
-          "minute": 54,
+          "minute": 57,
           "team": "away",
           "type": "turnover",
           "actor": "Michael Olise",
@@ -114,68 +155,44 @@
           "xg": 0.0
         },
         {
-          "minute": 62,
+          "minute": 60,
+          "team": "away",
+          "type": "goal",
+          "actor": "Rubén Vargas",
+          "zone": 2,
+          "xg": 0.18
+        },
+        {
+          "minute": 61,
+          "team": "away",
+          "type": "goal",
+          "actor": "Vinícius Júnior",
+          "zone": 2,
+          "xg": 0.201
+        },
+        {
+          "minute": 69,
+          "team": "away",
+          "type": "shot_off_target",
+          "actor": "Rubén Vargas",
+          "zone": 3,
+          "xg": 0.291
+        },
+        {
+          "minute": 70,
           "team": "home",
           "type": "shot_off_target",
-          "actor": "SYN-W220",
+          "actor": "SYN-AM20",
           "zone": 2,
-          "xg": 0.157
+          "xg": 0.134
         },
         {
-          "minute": 63,
-          "team": "home",
-          "type": "turnover",
-          "actor": "SYN-W120",
-          "zone": 2,
-          "xg": 0.0
-        },
-        {
-          "minute": 74,
-          "team": "home",
-          "type": "turnover",
-          "actor": "SYN-W120",
-          "zone": 2,
-          "xg": 0.0
-        },
-        {
-          "minute": 76,
+          "minute": 85,
           "team": "away",
-          "type": "shot_on_target",
-          "actor": "Yan Diomande",
+          "type": "shot_off_target",
+          "actor": "Vinícius Júnior",
           "zone": 2,
-          "xg": 0.153
-        },
-        {
-          "minute": 78,
-          "team": "away",
-          "type": "turnover",
-          "actor": "Yan Diomande",
-          "zone": 3,
-          "xg": 0.0
-        },
-        {
-          "minute": 79,
-          "team": "home",
-          "type": "goal",
-          "actor": "SYN-ST20",
-          "zone": 2,
-          "xg": 0.178
-        },
-        {
-          "minute": 87,
-          "team": "home",
-          "type": "turnover",
-          "actor": "SYN-W220",
-          "zone": 2,
-          "xg": 0.0
-        },
-        {
-          "minute": 89,
-          "team": "away",
-          "type": "turnover",
-          "actor": "Kylian Mbappé",
-          "zone": 2,
-          "xg": 0.0
+          "xg": 0.201
         }
       ]
     },
@@ -183,7 +200,7 @@
       "id": "synthetic-upset",
       "label": "Sorpresa sintética",
       "description": "Reconstrucción visual coherente con el marcador 2–1 muestreado por Monte Carlo.",
-      "scoreline_probability": 0.0683,
+      "scoreline_probability": 0.0665,
       "stats": {
         "home_goals": 2,
         "away_goals": 1,
@@ -200,7 +217,7 @@
           "minute": 8,
           "team": "away",
           "type": "shot_on_target",
-          "actor": "Michael Olise",
+          "actor": "Rubén Vargas",
           "zone": 2,
           "xg": 0.13
         },
@@ -208,7 +225,7 @@
           "minute": 14,
           "team": "home",
           "type": "shot_off_target",
-          "actor": "SYN-W220",
+          "actor": "SYN-W20",
           "zone": 2,
           "xg": 0.12
         },
@@ -224,7 +241,7 @@
           "minute": 32,
           "team": "away",
           "type": "turnover",
-          "actor": "Frenkie de Jong",
+          "actor": "Lucas Paquetá",
           "zone": 2,
           "xg": 0
         },
@@ -248,7 +265,7 @@
           "minute": 63,
           "team": "away",
           "type": "shot_off_target",
-          "actor": "Désiré Doué",
+          "actor": "Michael Olise",
           "zone": 3,
           "xg": 0.21
         },
@@ -256,7 +273,7 @@
           "minute": 76,
           "team": "home",
           "type": "goal",
-          "actor": "SYN-W120",
+          "actor": "SYN-W20",
           "zone": 2,
           "xg": 0.15
         },
@@ -272,7 +289,7 @@
           "minute": 90,
           "team": "away",
           "type": "turnover",
-          "actor": "Michael Olise",
+          "actor": "Rubén Vargas",
           "zone": 2,
           "xg": 0
         }
@@ -282,7 +299,7 @@
       "id": "high-intensity",
       "label": "Alta intensidad",
       "description": "Reconstrucción visual coherente con el marcador 2–2 muestreado por Monte Carlo.",
-      "scoreline_probability": 0.0537,
+      "scoreline_probability": 0.0623,
       "stats": {
         "home_goals": 2,
         "away_goals": 2,
@@ -299,7 +316,7 @@
           "minute": 6,
           "team": "home",
           "type": "goal",
-          "actor": "SYN-W220",
+          "actor": "SYN-W20",
           "zone": 2,
           "xg": 0.17
         },
@@ -355,7 +372,7 @@
           "minute": 61,
           "team": "away",
           "type": "shot_on_target",
-          "actor": "Désiré Doué",
+          "actor": "Vinícius Júnior",
           "zone": 2,
           "xg": 0.14
         },
@@ -363,7 +380,7 @@
           "minute": 69,
           "team": "home",
           "type": "shot_on_target",
-          "actor": "SYN-W120",
+          "actor": "SYN-W20",
           "zone": 2,
           "xg": 0.12
         },
@@ -386,5 +403,5 @@
       ]
     }
   ],
-  "methodological_note": "El replay representativo usa la timeline directa del motor calibrado. Los otros dos son reconstrucciones visuales coherentes con marcadores muestreados de la distribución. Los perfiles de los onces siguen siendo provisionales."
+  "methodological_note": "El replay representativo usa la timeline directa del motor calibrado sobre los onces publicados (selección v0.4.1). Los otros dos son reconstrucciones visuales coherentes con marcadores muestreados de la distribución. Probabilidades de partido único a 90 minutos; no corresponden al experimento oficial de finales eliminatorias."
 }

@@ -7,8 +7,10 @@
     "entity_id": 25282,
     "entity_name": "Gregor Kobel",
     "team_name": "Switzerland",
-    "rank_score": 0.7789822618,
+    "rank_score": 0.7819911169,
     "minutes": 600.0,
+    "observed_side": "R",
+    "side_assignment_rule": "orden de ranking",
     "available": true
   },
   {
@@ -21,30 +23,36 @@
     "team_name": "Morocco",
     "rank_score": 0.8053319666,
     "minutes": 570.0,
+    "observed_side": "R",
+    "side_assignment_rule": "orden de ranking (evidencia de lado en conflicto: ambos del mismo lado)",
     "available": true
   },
   {
     "slot": "RCB",
-    "position_group": "CB",
-    "source_ordinal": 1,
-    "entity_type": "jugador_real",
-    "entity_id": 2194,
-    "entity_name": "Ramy Bensebaini",
-    "team_name": "Algeria",
-    "rank_score": 0.9068160724,
-    "minutes": 360.0,
-    "available": true
-  },
-  {
-    "slot": "LCB",
     "position_group": "CB",
     "source_ordinal": 2,
     "entity_type": "jugador_real",
     "entity_id": 355994,
     "entity_name": "Alexander Freeman",
     "team_name": "USA",
-    "rank_score": 0.8127676266,
+    "rank_score": 0.8213024442,
     "minutes": 373.0,
+    "observed_side": "R",
+    "side_assignment_rule": "lados por evidencia observada (mapeo de grid validado y anclas)",
+    "available": true
+  },
+  {
+    "slot": "LCB",
+    "position_group": "CB",
+    "source_ordinal": 1,
+    "entity_type": "jugador_real",
+    "entity_id": 2194,
+    "entity_name": "Ramy Bensebaini",
+    "team_name": "Algeria",
+    "rank_score": 0.9146723001,
+    "minutes": 360.0,
+    "observed_side": "L",
+    "side_assignment_rule": "lados por evidencia observada (mapeo de grid validado y anclas)",
     "available": true
   },
   {
@@ -57,6 +65,8 @@
     "team_name": "Spain",
     "rank_score": 0.7735808213,
     "minutes": 193.0,
+    "observed_side": "R",
+    "side_assignment_rule": "orden de ranking (evidencia de lado en conflicto: ambos del mismo lado)",
     "available": true
   },
   {
@@ -67,8 +77,10 @@
     "entity_id": 44,
     "entity_name": "Rodri",
     "team_name": "Spain",
-    "rank_score": 0.8358267007,
+    "rank_score": 0.84519034,
     "minutes": 627.0,
+    "observed_side": "R",
+    "side_assignment_rule": "orden de ranking",
     "available": true
   },
   {
@@ -81,6 +93,8 @@
     "team_name": "Brazil",
     "rank_score": 1.2305362811,
     "minutes": 236.0,
+    "observed_side": "R",
+    "side_assignment_rule": "orden de ranking",
     "available": true
   },
   {
@@ -93,22 +107,12 @@
     "team_name": "France",
     "rank_score": 0.9579278472,
     "minutes": 560.0,
+    "observed_side": "R",
+    "side_assignment_rule": "orden de ranking",
     "available": true
   },
   {
     "slot": "RW",
-    "position_group": "W",
-    "source_ordinal": 1,
-    "entity_type": "jugador_real",
-    "entity_id": 762,
-    "entity_name": "Vinícius Júnior",
-    "team_name": "Brazil",
-    "rank_score": 0.8890043143,
-    "minutes": 441.0,
-    "available": true
-  },
-  {
-    "slot": "LW",
     "position_group": "W",
     "source_ordinal": 2,
     "entity_type": "jugador_real",
@@ -117,6 +121,22 @@
     "team_name": "Switzerland",
     "rank_score": 0.8714280123,
     "minutes": 289.0,
+    "observed_side": "R",
+    "side_assignment_rule": "lados por evidencia observada (mapeo de grid validado y anclas)",
+    "available": true
+  },
+  {
+    "slot": "LW",
+    "position_group": "W",
+    "source_ordinal": 1,
+    "entity_type": "jugador_real",
+    "entity_id": 762,
+    "entity_name": "Vinícius Júnior",
+    "team_name": "Brazil",
+    "rank_score": 0.8890043143,
+    "minutes": 441.0,
+    "observed_side": null,
+    "side_assignment_rule": "lados por evidencia observada (mapeo de grid validado y anclas)",
     "available": true
   },
   {
@@ -129,6 +149,8 @@
     "team_name": "Argentina",
     "rank_score": 1.6991986576,
     "minutes": 620.0,
+    "observed_side": "R",
+    "side_assignment_rule": "orden de ranking",
     "available": true
   }
 ]

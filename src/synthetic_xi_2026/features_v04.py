@@ -109,9 +109,32 @@ def flatten_player_match(
     }
 
 
+def canonicalize_player_identity(player_matches: pd.DataFrame) -> pd.DataFrame:
+    """Una sola identidad textual por player_id.
+
+    El proveedor alterna grafías del mismo jugador entre partidos ("Bono" /
+    "Yassine Bounou"); sin canonicalizar, el groupby lo parte en filas separadas
+    y diluye sus minutos. Se adopta el nombre usado en el partido con más
+    minutos (desempate: fixture_id más reciente).
+    """
+    sort_columns = [
+        column for column in ("minutes", "fixture_id") if column in player_matches
+    ]
+    ordered = player_matches.sort_values(sort_columns, ascending=False)
+    canonical = ordered.drop_duplicates("player_id")[
+        ["player_id", "player_name"]
+    ].rename(columns={"player_name": "__canonical_player_name"})
+    merged = player_matches.merge(canonical, on="player_id", how="left")
+    merged["player_name"] = merged["__canonical_player_name"].fillna(
+        merged["player_name"]
+    )
+    return merged.drop(columns="__canonical_player_name")
+
+
 def aggregate_features(player_matches: pd.DataFrame) -> pd.DataFrame:
     if player_matches.empty:
         return pd.DataFrame()
+    player_matches = canonicalize_player_identity(player_matches)
     count_cols = [
         "minutes", "shots", "shots_on", "goals", "goals_conceded", "assists",
         "saves", "passes", "passes_accurate", "key_passes", "tackles", "blocks",
