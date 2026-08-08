@@ -8,3 +8,4 @@ web/node_modules/
 web/dist/
 data/raw/**/*.json
 !data/raw/.gitkeep
+web/public/lab/py/labsim/__pycache__/

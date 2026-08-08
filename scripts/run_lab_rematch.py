@@ -13,6 +13,7 @@ Uso:
 from __future__ import annotations
 
 import argparse
+import dataclasses
 import json
 import sys
 from collections import Counter
@@ -25,6 +26,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from simulator.calibrated_core import CalibrationTargets
+from simulator.lab_conditions import venue_conditions
 from simulator.lab_teams import LAB_MINIMUM_MINUTES, build_national_bundle
 from simulator.official_complete_final import (
     OfficialCompleteFinalSimulator,
@@ -43,6 +45,15 @@ def main() -> None:
     parser.add_argument("--simulations", type=int, default=2000)
     parser.add_argument("--seed", type=int, default=20260808)
     parser.add_argument("--output", default=None)
+    parser.add_argument(
+        "--venue", default=None,
+        help="Cidade-sede da Copa 2026 (ex.: 'Mexico City'); ativa a Fase B",
+    )
+    parser.add_argument("--kickoff", choices=["day", "night"], default="night")
+    parser.add_argument(
+        "--conditions-scheme", choices=["off", "primary", "strong"],
+        default="primary",
+    )
     args = parser.parse_args()
 
     targets = CalibrationTargets.from_dict(
@@ -61,7 +72,16 @@ def main() -> None:
     goals_home: list[int] = []
     goals_away: list[int] = []
     representative_timeline: list[dict] | None = None
+    conditions_report = None
     base_config = OfficialFinalConfig()
+    if args.venue:
+        conditions = venue_conditions(
+            args.venue, kickoff=args.kickoff, scheme=args.conditions_scheme
+        )
+        conditions_report = conditions.describe()
+        base_config = dataclasses.replace(
+            base_config, **conditions.config_overrides()
+        )
 
     for index, child in enumerate(child_seeds):
         config = official_config_with_seed(base_config, int(child))
@@ -86,6 +106,7 @@ def main() -> None:
         "simulations": n,
         "master_seed": args.seed,
         "eligibility_minutes_floor": LAB_MINIMUM_MINUTES,
+        "conditions": conditions_report,
         "win_probability": {
             args.home: wins.get(args.home, 0) / n,
             args.away: wins.get(args.away, 0) / n,

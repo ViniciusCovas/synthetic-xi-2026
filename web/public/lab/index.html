@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laboratório — Synthetic XI 2026</title>
+<style>
+  :root{
+    --bg:#0b1220; --panel:#121b2e; --panel2:#0e1626; --line:#233150;
+    --text:#e8eefc; --muted:#8fa3c8; --home:#3fb68b; --away:#5b8cff;
+    --draw:#8fa3c8; --accent:#ffd166;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font:15px/1.55 "Segoe UI",system-ui,-apple-system,sans-serif}
+  .wrap{max-width:1060px;margin:0 auto;padding:28px 20px 80px}
+  header h1{margin:0;font-size:26px;letter-spacing:.3px}
+  header p{color:var(--muted);margin:6px 0 0;max-width:70ch}
+  header a{color:var(--accent);text-decoration:none}
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:24px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .card label{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;
+    letter-spacing:.8px;margin-bottom:6px}
+  select,button{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--line);
+    background:var(--panel2);color:var(--text);font-size:15px}
+  button{cursor:pointer;font-weight:600}
+  #run{background:linear-gradient(135deg,#2c7a5b,#3fb68b);border:none;font-size:16px;padding:14px}
+  #run:disabled{opacity:.55;cursor:wait}
+  .status{margin-top:14px;color:var(--muted);min-height:22px}
+  .bar{height:10px;border-radius:6px;background:var(--panel2);border:1px solid var(--line);
+    overflow:hidden;margin-top:8px}
+  .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}
+  .results{display:none;margin-top:26px}
+  .headline{display:flex;gap:10px;align-items:stretch;border-radius:12px;overflow:hidden;
+    border:1px solid var(--line)}
+  .headline div{padding:18px 14px;text-align:center;flex-grow:1}
+  .headline .h{background:rgba(63,182,139,.14)}
+  .headline .a{background:rgba(91,140,255,.14)}
+  .headline b{display:block;font-size:30px}
+  .headline span{color:var(--muted);font-size:13px}
+  .probbar{display:flex;height:14px;border-radius:8px;overflow:hidden;margin:14px 0 4px}
+  .probbar i{display:block;height:100%}
+  .cols{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:18px}
+  h3{margin:0 0 10px;font-size:15px;color:var(--accent)}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  td,th{padding:5px 8px;border-bottom:1px solid var(--line);text-align:left}
+  th{color:var(--muted);font-weight:500}
+  .tag{display:inline-block;background:var(--panel2);border:1px solid var(--line);
+    border-radius:20px;padding:2px 10px;margin:2px 4px 2px 0;font-size:13px;color:var(--muted)}
+  details{margin-top:10px}
+  summary{cursor:pointer;color:var(--muted)}
+  .note{color:var(--muted);font-size:13px;margin-top:16px;max-width:80ch}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>⚗️ Laboratório de simulação — Copa 2026</h1>
+    <p>Escolha duas seleções reais, o estádio e as condições — e rode o
+    <strong>motor científico de finais do repositório</strong> (banco real,
+    prorrogação, pênaltis, VAR) direto no seu navegador. Elencos derivados dos
+    dados anuais v0.5; condições calibradas na evidência meteorológica da
+    própria Copa. <a href="../">← voltar ao estudo principal</a></p>
+  </header>
+
+  <div class="grid">
+    <div class="card"><label>Mandante</label><select id="home"></select></div>
+    <div class="card"><label>Visitante</label><select id="away"></select></div>
+    <div class="card"><label>Estádio / condições</label><select id="venue">
+      <option value="">Neutro (sem condições)</option></select></div>
+    <div class="card"><label>Horário</label><select id="kickoff">
+      <option value="night">Noite</option><option value="day">Dia</option></select></div>
+    <div class="card"><label>Intensidade das condições</label><select id="scheme">
+      <option value="primary">Primária (declarada)</option>
+      <option value="strong">Forte (sensibilidade ×2)</option>
+      <option value="off">Desligada</option></select></div>
+    <div class="card"><label>Finais simuladas</label><select id="sims">
+      <option>200</option><option selected>500</option><option>1000</option><option>2000</option></select></div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <button id="run">▶ Simular a final</button>
+    <div class="status" id="status">O motor carrega na primeira execução (~15–30 s); depois é rápido.</div>
+    <div class="bar"><i id="progress"></i></div>
+  </div>
+
+  <div class="results" id="results">
+    <div class="headline">
+      <div class="h"><b id="p-home">–</b><span id="n-home">Mandante</span></div>
+      <div class="a"><b id="p-away">–</b><span id="n-away">Visitante</span></div>
+    </div>
+    <div class="probbar" id="probbar"></div>
+    <div class="cols">
+      <div class="card"><h3>Como se decidiu</h3><div id="decided"></div>
+        <h3 style="margin-top:14px">Gols médios</h3><div id="goals"></div>
+        <div id="conditions-box"></div></div>
+      <div class="card"><h3>Placares mais prováveis (antes dos pênaltis)</h3>
+        <table id="scorelines"><thead><tr><th>Placar</th><th>Prob.</th></tr></thead><tbody></tbody></table></div>
+    </div>
+    <div class="cols">
+      <div class="card"><h3 id="xi-home-title">XI mandante</h3><table id="xi-home"><tbody></tbody></table></div>
+      <div class="card"><h3 id="xi-away-title">XI visitante</h3><table id="xi-away"><tbody></tbody></table></div>
+    </div>
+    <details class="card"><summary>Decisões de construção dos elencos (transparência)</summary>
+      <div id="decisions"></div></details>
+  </div>
+
+  <p class="note">Resultados exploratórios do laboratório: elencos por força
+  anual de clube (piso 450′), motor calibrado nos observáveis do torneio,
+  modificadores de condição declarados com fontes
+  (<code>LAB_PHASE_A.md</code>/<code>ANNUAL_SELECTION_V0_5.md</code> no
+  repositório). Não substituem o experimento oficial congelado.</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+let DATA = {}, pyodide = null, runtimeReady = false;
+
+async function fetchJson(path){ const r = await fetch(path); if(!r.ok) throw new Error(path); return r.json(); }
+
+async function boot(){
+  const [teamsMeta, venues, manifest] = await Promise.all([
+    fetchJson('data/teams.json'), fetchJson('data/venues.json'), fetchJson('data/manifest.json'),
+  ]);
+  DATA.teams = teamsMeta; DATA.venues = venues; DATA.manifest = manifest;
+  const names = Object.keys(teamsMeta).sort();
+  for(const name of names){
+    $('home').add(new Option(name, name));
+    $('away').add(new Option(name, name));
+  }
+  $('home').value = 'Spain'; $('away').value = 'Argentina';
+  for(const v of venues){
+    $('venue').add(new Option(`${v.host_city} — ${v.stadium} (${v.altitude_m} m)`, v.host_city));
+  }
+}
+
+async function ensureEngine(){
+  if(runtimeReady) return;
+  $('status').textContent = 'Carregando o motor Python (Pyodide + numpy)…';
+  pyodide = await loadPyodide();
+  await pyodide.loadPackage('numpy');
+  pyodide.FS.mkdirTree('/app/labsim');
+  for(const file of DATA.manifest.package_files){
+    const source = await (await fetch(`py/labsim/${file}`)).text();
+    pyodide.FS.writeFile(`/app/labsim/${file}`, source);
+  }
+  pyodide.runPython("import sys; sys.path.insert(0, '/app')");
+  $('status').textContent = 'Carregando elencos e calibração…';
+  const calibration = await (await fetch('data/calibration.json')).text();
+  pyodide.globals.set('teams_json', JSON.stringify(DATA.teams));
+  pyodide.globals.set('calibration_json', calibration);
+  pyodide.runPython('from labsim import lab_runtime; lab_runtime.load_data(teams_json, calibration_json)');
+  runtimeReady = true;
+}
+
+function conditionsPayload(){
+  const city = $('venue').value;
+  if(!city) return '';
+  const venue = DATA.venues.find(v => v.host_city === city);
+  const kickoff = $('kickoff').value;
+  const temperature = kickoff === 'day' ? venue.day_apparent_c : venue.night_apparent_c;
+  return JSON.stringify({
+    label: `${city} (${venue.stadium}), kickoff ${kickoff}`,
+    apparent_temperature_c: temperature,
+    altitude_m: venue.altitude_m,
+    scheme: $('scheme').value,
+  });
+}
+
+function pct(x){ return (100*x).toFixed(1) + '%'; }
+
+function renderRoster(tableId, roster){
+  const body = $(tableId).querySelector('tbody');
+  body.innerHTML = '';
+  for(const row of roster.slice(0, 11)){
+    body.insertAdjacentHTML('beforeend',
+      `<tr><td>${row.assigned_slot ?? row.resolved_role}</td><td>${row.player_name}</td></tr>`);
+  }
+  body.insertAdjacentHTML('beforeend',
+    `<tr><td colspan="2" style="color:var(--muted)">+ ${Math.max(roster.length-11,0)} no banco</td></tr>`);
+}
+
+async function run(){
+  const home = $('home').value, away = $('away').value;
+  if(home === away){ $('status').textContent = 'Escolha duas seleções diferentes.'; return; }
+  $('run').disabled = true; $('results').style.display = 'none'; $('progress').style.width = '0';
+  try{
+    await ensureEngine();
+    const total = parseInt($('sims').value, 10);
+    const seed = Math.floor(Math.random() * 2**31);
+    pyodide.globals.set('cond_json', conditionsPayload());
+    const started = JSON.parse(pyodide.runPython(
+      `lab_runtime.start_session(${JSON.stringify(home)}, ${JSON.stringify(away)}, ${total}, ${seed}, cond_json)`));
+    renderRoster('xi-home', started.rosters.home);
+    renderRoster('xi-away', started.rosters.away);
+    $('xi-home-title').textContent = `XI — ${home}`;
+    $('xi-away-title').textContent = `XI — ${away}`;
+
+    let completed = 0;
+    while(completed < total){
+      const progress = JSON.parse(pyodide.runPython('lab_runtime.run_chunk(10)'));
+      completed = progress.completed;
+      $('progress').style.width = (100 * completed / total) + '%';
+      $('status').textContent = `Simulando finais completas… ${completed}/${total}`;
+      await new Promise(resolve => setTimeout(resolve, 0));
+    }
+    const result = JSON.parse(pyodide.runPython('lab_runtime.summary()'));
+    renderResult(result, seed);
+  } catch(error){
+    $('status').textContent = 'Erro: ' + error;
+  } finally {
+    $('run').disabled = false;
+  }
+}
+
+function renderResult(result, seed){
+  const home = result.home, away = result.away;
+  const ph = result.win_probability[home], pa = result.win_probability[away];
+  $('p-home').textContent = pct(ph); $('p-away').textContent = pct(pa);
+  $('n-home').textContent = home; $('n-away').textContent = away;
+  $('probbar').innerHTML =
+    `<i style="width:${100*ph}%;background:var(--home)"></i>` +
+    `<i style="width:${100*pa}%;background:var(--away)"></i>`;
+  const labels = {regulation: '90 minutos', extra_time: 'prorrogação', penalties: 'pênaltis'};
+  $('decided').innerHTML = Object.entries(result.decided_by)
+    .map(([k, v]) => `<span class="tag">${labels[k] ?? k}: ${pct(v)}</span>`).join('');
+  $('goals').innerHTML =
+    `<span class="tag">${home}: ${result.mean_goals[home].toFixed(2)}</span>` +
+    `<span class="tag">${away}: ${result.mean_goals[away].toFixed(2)}</span>` +
+    `<span class="tag">seed ${seed}</span>`;
+  const scoreBody = $('scorelines').querySelector('tbody');
+  scoreBody.innerHTML = result.top_scorelines_before_penalties
+    .map(s => `<tr><td>${s.score}</td><td>${pct(s.probability)}</td></tr>`).join('');
+  const conditions = result.conditions;
+  $('conditions-box').innerHTML = conditions
+    ? `<h3 style="margin-top:14px">Condições aplicadas</h3>
+       <span class="tag">${conditions.label}</span>
+       <span class="tag">${conditions.apparent_temperature_c.toFixed(1)} °C aparente</span>
+       <span class="tag">${conditions.altitude_m} m</span>
+       <span class="tag">esquema ${conditions.scheme}</span>`
+    : '<h3 style="margin-top:14px">Condições</h3><span class="tag">neutras</span>';
+  const decisions = []
+    .concat(DATA.teams[home].construction_decisions, DATA.teams[away].construction_decisions)
+    .map(d => `<span class="tag">${d.team} · ${d.slot}: ${d.decision}${d.player ? ' — ' + d.player : ''}</span>`);
+  $('decisions').innerHTML = decisions.join('');
+  $('results').style.display = 'block';
+  $('status').textContent = `Concluído: ${result.simulations} finais completas no navegador.`;
+}
+
+$('run').addEventListener('click', run);
+boot().catch(error => { $('status').textContent = 'Erro ao carregar dados: ' + error; });
+</script>
+</body>
+</html>

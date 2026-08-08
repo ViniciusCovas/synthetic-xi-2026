@@ -42,6 +42,7 @@ app.innerHTML = `
     <div class="brandmark">XI</div>
     <div><p class="eyebrow">COPA 2026 · PROTOTIPO CIENTÍFICO</p><h1>Synthetic XI Lab</h1></div>
     <div class="live-badge"><span></span> corte ${snapshot}</div>
+    <a class="live-badge" href="/lab/" style="text-decoration:none">⚗️ Laboratorio de simulación</a>
   </header>
 
   <main>
