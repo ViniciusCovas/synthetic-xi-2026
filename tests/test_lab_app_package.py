@@ -71,3 +71,19 @@ def test_shipped_package_neutral_conditions(runtime):
     result = json.loads(runtime.summary())
     assert result["simulations"] == 3
     assert result["conditions"] is None
+
+
+def test_shipped_package_representative_final(runtime):
+    runtime.start_session("Spain", "Argentina", simulations=8, seed=77)
+    runtime.run_chunk(8)
+    final = json.loads(runtime.representative_final())
+    assert final["winner"] in {"Spain", "Argentina"}
+    assert final["decided_by"] in {"regulation", "extra_time", "penalties"}
+    assert len(final["events"]) > 10
+    # narrativa em português com placar coerente no último evento com placar
+    scored = [e for e in final["events"] if e["score"]]
+    assert scored and scored[-1]["score"] == final["final_score"]
+    kickoff_headlines = " ".join(e["headline"] for e in final["events"][:6])
+    assert kickoff_headlines  # narrado
+    if final["decided_by"] == "penalties":
+        assert final["penalties"] is not None

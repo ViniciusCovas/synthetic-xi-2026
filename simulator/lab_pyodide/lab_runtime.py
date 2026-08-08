@@ -125,6 +125,55 @@ class LabSession:
             self.completed += 1
         return {"completed": self.completed, "total": self.total}
 
+    def representative_final(self, max_attempts: int = 40) -> dict[str, Any]:
+        """Re-simula seeds já usadas até achar uma final com o placar modal.
+
+        Determinístico: mesmas seeds da corrida, ordem fixa. Devolve a
+        timeline narrada completa dessa final (o motor narra em português),
+        para o modo 'assistir' do app.
+        """
+        if not self.scores:
+            raise RuntimeError("Rode as simulações antes de pedir a final")
+        modal_score, _ = self.scores.most_common(1)[0]
+        chosen = None
+        for child in self.child_seeds[: min(self.completed, max_attempts)]:
+            simulator = OfficialCompleteFinalSimulator(
+                self.home, self.away, self.targets,
+                official_config_with_seed(self.base_config, int(child)),
+            )
+            result = simulator.simulate(keep_timeline=True)
+            if f"{result.home_goals}-{result.away_goals}" == modal_score:
+                chosen = result
+                break
+            if chosen is None:
+                chosen = result  # fallback: primeira final re-simulada
+        events = [
+            {
+                "minute": int(event.get("minute", 0)),
+                "period": str(event.get("period", "")),
+                "side": str(event.get("side", "")),
+                "actor": str(event.get("actor", "") or ""),
+                "headline": str(event.get("headline", "")),
+                "score": str(event.get("score", "")),
+                "xg": float(event["xg"]) if event.get("xg") not in (None, "") else None,
+            }
+            for event in chosen.timeline
+        ]
+        return {
+            "home": self.home_name,
+            "away": self.away_name,
+            "seed": int(chosen.seed) if chosen.seed is not None else None,
+            "final_score": f"{chosen.home_goals}-{chosen.away_goals}",
+            "regulation_score": f"{chosen.regulation_home_goals}-{chosen.regulation_away_goals}",
+            "decided_by": chosen.decided_by,
+            "winner": chosen.winner,
+            "penalties": (
+                [chosen.home_penalties, chosen.away_penalties]
+                if chosen.home_penalties is not None else None
+            ),
+            "events": events,
+        }
+
     def summary(self) -> dict[str, Any]:
         n = max(self.completed, 1)
         return {
@@ -193,3 +242,8 @@ def run_chunk(chunk: int = 10) -> str:
 def summary() -> str:
     assert _SESSION is not None
     return json.dumps(_SESSION.summary())
+
+
+def representative_final() -> str:
+    assert _SESSION is not None
+    return json.dumps(_SESSION.representative_final())
