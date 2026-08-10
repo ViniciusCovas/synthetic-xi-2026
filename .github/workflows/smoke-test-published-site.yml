@@ -16,13 +16,14 @@ on:
 
 permissions: {}
 
+env:
+  BASE: ${{ github.event.inputs.base_url || 'https://synthetic-xi-2026.viniciuscovas.workers.dev' }}
+
 jobs:
-  smoke:
+  assets:
     runs-on: ubuntu-latest
     steps:
-      - name: Check published site
-        env:
-          BASE: ${{ github.event.inputs.base_url || 'https://synthetic-xi-2026.viniciuscovas.workers.dev' }}
+      - name: Check served assets and data
         run: |
           set -u
           fail=0
@@ -63,5 +64,66 @@ jobs:
           [ "${xi:-0}" -eq 11 ] || { echo "FALHA  esperava 11 titulares"; fail=1; }
 
           echo
-          if [ "$fail" -eq 0 ]; then echo "✅ Site publicado respondendo corretamente."
+          if [ "$fail" -eq 0 ]; then echo "✅ Assets e dados servidos corretamente."
           else echo "❌ Há falhas acima."; exit 1; fi
+
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Playwright
+        run: npm i -D @playwright/test && npx playwright install --with-deps chromium
+
+      - name: Run the real engine in a real browser against the live site
+        run: |
+          cat > live.mjs <<'JS'
+          import { chromium } from '@playwright/test';
+          const BASE = process.env.BASE;
+          const browser = await chromium.launch();
+          const page = await browser.newPage({ viewport: { width: 1920, height: 1080 } });
+          const errors = [];
+          page.on('pageerror', e => errors.push(String(e).slice(0, 300)));
+          page.on('console', m => { if (m.type() === 'error') errors.push('console: ' + m.text().slice(0, 200)); });
+
+          const url = `${BASE}/lab/tv/?home=Spain&away=Argentina&sims=20&speed=6`;
+          console.log('abrindo', url);
+          await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
+
+          // 1. o campo desenha os 22 jogadores antes mesmo do motor terminar
+          await page.waitForFunction(() => window.Match2D, null, { timeout: 60000 });
+          console.log('OK  animador Match2D carregado');
+
+          // 2. o motor científico roda de verdade no navegador (Pyodide + numpy)
+          const ticker = () => page.textContent('#t-tx');
+          await page.waitForFunction(
+            () => /Simulando finais/.test(document.getElementById('t-tx')?.textContent || ''),
+            null, { timeout: 240000 });
+          console.log('OK  Pyodide + numpy carregados, motor simulando:', (await ticker()).trim());
+
+          // 3. a transmissão começa: relógio anda e o placar existe
+          await page.waitForFunction(
+            () => parseInt(document.getElementById('clock')?.textContent || '0', 10) >= 3,
+            null, { timeout: 240000 });
+          const state = await page.evaluate(() => ({
+            clock: document.getElementById('clock').textContent,
+            score: document.getElementById('score').textContent,
+            phase: document.getElementById('phase').textContent,
+            seed:  document.getElementById('seedtag').textContent,
+            ticker: document.getElementById('t-tx').textContent.trim(),
+            players: window.Match2D ? 'sim' : 'não',
+          }));
+          console.log('OK  transmissão em andamento:', JSON.stringify(state, null, 2));
+
+          await page.screenshot({ path: 'live.png' });
+
+          if (errors.length) { console.log('ERROS DE PÁGINA:'); errors.forEach(e => console.log(' -', e)); }
+          await browser.close();
+          console.log(errors.length ? '⚠️  houve erros de página (acima)' : '✅ site ao vivo: motor real rodando no navegador');
+          JS
+          node live.mjs
+
+      - name: Upload screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-screenshot
+          path: live.png
