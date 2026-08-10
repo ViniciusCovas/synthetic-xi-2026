@@ -136,6 +136,7 @@ class LabSession:
             raise RuntimeError("Rode as simulações antes de pedir a final")
         modal_score, _ = self.scores.most_common(1)[0]
         chosen = None
+        is_modal = False
         for child in self.child_seeds[: min(self.completed, max_attempts)]:
             simulator = OfficialCompleteFinalSimulator(
                 self.home, self.away, self.targets,
@@ -144,6 +145,7 @@ class LabSession:
             result = simulator.simulate(keep_timeline=True)
             if f"{result.home_goals}-{result.away_goals}" == modal_score:
                 chosen = result
+                is_modal = True
                 break
             if chosen is None:
                 chosen = result  # fallback: primeira final re-simulada
@@ -164,6 +166,11 @@ class LabSession:
             "away": self.away_name,
             "seed": int(chosen.seed) if chosen.seed is not None else None,
             "final_score": f"{chosen.home_goals}-{chosen.away_goals}",
+            # O placar modal nem sempre aparece nas primeiras `max_attempts`
+            # seeds; quando não aparece, esta final é apenas uma final típica
+            # e a interface não pode chamá-la de "placar mais provável".
+            "modal_score": modal_score,
+            "is_modal": is_modal,
             "regulation_score": f"{chosen.regulation_home_goals}-{chosen.regulation_away_goals}",
             "decided_by": chosen.decided_by,
             "winner": chosen.winner,

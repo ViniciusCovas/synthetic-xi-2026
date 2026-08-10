@@ -1,0 +1,129 @@
+name: Smoke Test Published Site
+
+# Verifica o site publicado na Cloudflare de fora do ambiente de
+# desenvolvimento (que bloqueia domínios Cloudflare). Sem secrets.
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "URL base do site publicado"
+        required: false
+        default: "https://synthetic-xi-2026.viniciuscovas.workers.dev"
+  push:
+    branches: ["claude/audit-synthetic-xi-2026-tunhrh"]
+    paths: [".github/workflows/smoke-test-published-site.yml"]
+
+permissions: {}
+
+env:
+  BASE: ${{ github.event.inputs.base_url || 'https://synthetic-xi-2026.viniciuscovas.workers.dev' }}
+
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check served assets and data
+        run: |
+          set -u
+          fail=0
+          check() {  # url, descrição, padrão esperado no corpo
+            local url="$1" what="$2" needle="$3"
+            local code body
+            body=$(curl -sSL --max-time 45 -w '\n%{http_code}' "$url" || echo $'\n000')
+            code=$(printf '%s' "$body" | tail -n1)
+            body=$(printf '%s' "$body" | sed '$d')
+            local bytes=${#body}
+            if [ "$code" != "200" ]; then
+              echo "FALHA  $what -> HTTP $code  ($url)"; fail=1; return
+            fi
+            if [ -n "$needle" ] && ! printf '%s' "$body" | grep -qF "$needle"; then
+              echo "FALHA  $what -> HTTP 200 mas sem '$needle' (${bytes} bytes)  ($url)"
+              printf '%s' "$body" | head -c 400; echo; fail=1; return
+            fi
+            echo "OK     $what -> HTTP 200, ${bytes} bytes  ($url)"
+          }
+
+          echo "=== Base: $BASE ==="
+          check "$BASE/"                              "home"                 "<title"
+          check "$BASE/lab/"                          "laboratório"          "Synthetic XI"
+          check "$BASE/lab/tv/"                       "modo TV"              "pitch2d"
+          check "$BASE/lab/kits.js"                   "kits das seleções"    "TeamKits"
+          check "$BASE/lab/tv/match2d.js"             "animador do campo"    "Match2D"
+          check "$BASE/lab/data/manifest.json"        "manifesto de dados"   "teams_exported"
+          check "$BASE/lab/py/labsim/lab_runtime.py"  "motor (Pyodide)"      "representative_final"
+
+          echo "=== Conteúdo dos dados ==="
+          teams=$(curl -sSL --max-time 60 "$BASE/lab/data/teams.json")
+          n=$(printf '%s' "$teams" | python3 -c 'import json,sys; print(len(json.load(sys.stdin)))' 2>/dev/null || echo 0)
+          echo "seleções em teams.json: $n"
+          [ "${n:-0}" -ge 40 ] || { echo "FALHA  esperava >= 40 seleções"; fail=1; }
+
+          xi=$(printf '%s' "$teams" | python3 -c 'import json,sys; d=json.load(sys.stdin); print(len(d["Spain"]["starters"]))' 2>/dev/null || echo 0)
+          echo "titulares da Espanha: $xi"
+          [ "${xi:-0}" -eq 11 ] || { echo "FALHA  esperava 11 titulares"; fail=1; }
+
+          echo
+          if [ "$fail" -eq 0 ]; then echo "✅ Assets e dados servidos corretamente."
+          else echo "❌ Há falhas acima."; exit 1; fi
+
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Playwright
+        run: npm i -D @playwright/test && npx playwright install --with-deps chromium
+
+      - name: Run the real engine in a real browser against the live site
+        run: |
+          cat > live.mjs <<'JS'
+          import { chromium } from '@playwright/test';
+          const BASE = process.env.BASE;
+          const browser = await chromium.launch();
+          const page = await browser.newPage({ viewport: { width: 1920, height: 1080 } });
+          const errors = [];
+          page.on('pageerror', e => errors.push(String(e).slice(0, 300)));
+          page.on('console', m => { if (m.type() === 'error') errors.push('console: ' + m.text().slice(0, 200)); });
+
+          const url = `${BASE}/lab/tv/?home=Spain&away=Argentina&sims=20&speed=6`;
+          console.log('abrindo', url);
+          await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
+
+          // 1. o campo desenha os 22 jogadores antes mesmo do motor terminar
+          await page.waitForFunction(() => window.Match2D, null, { timeout: 60000 });
+          console.log('OK  animador Match2D carregado');
+
+          // 2. o motor científico roda de verdade no navegador (Pyodide + numpy)
+          const ticker = () => page.textContent('#t-tx');
+          await page.waitForFunction(
+            () => /Simulando finais/.test(document.getElementById('t-tx')?.textContent || ''),
+            null, { timeout: 240000 });
+          console.log('OK  Pyodide + numpy carregados, motor simulando:', (await ticker()).trim());
+
+          // 3. a transmissão começa: relógio anda e o placar existe
+          await page.waitForFunction(
+            () => parseInt(document.getElementById('clock')?.textContent || '0', 10) >= 3,
+            null, { timeout: 240000 });
+          const state = await page.evaluate(() => ({
+            clock: document.getElementById('clock').textContent,
+            score: document.getElementById('score').textContent,
+            phase: document.getElementById('phase').textContent,
+            seed:  document.getElementById('seedtag').textContent,
+            ticker: document.getElementById('t-tx').textContent.trim(),
+            players: window.Match2D ? 'sim' : 'não',
+          }));
+          console.log('OK  transmissão em andamento:', JSON.stringify(state, null, 2));
+
+          await page.screenshot({ path: 'live.png' });
+
+          if (errors.length) { console.log('ERROS DE PÁGINA:'); errors.forEach(e => console.log(' -', e)); }
+          await browser.close();
+          console.log(errors.length ? '⚠️  houve erros de página (acima)' : '✅ site ao vivo: motor real rodando no navegador');
+          JS
+          node live.mjs
+
+      - name: Upload screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-screenshot
+          path: live.png
