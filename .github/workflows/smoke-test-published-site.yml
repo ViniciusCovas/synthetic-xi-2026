@@ -74,7 +74,10 @@ jobs:
             if printf '%s' "$1" | grep -qF "$3"; then echo "FALHA  $2 (ainda tem '$3')"; fail=1
             else echo "OK     $2"; fi
           }
-          reject "$lab" "feed sem column-reverse"          "column-reverse"
+          # Casar a declaração, não a palavra: o comentário do CSS cita
+          # "column-reverse" ao explicar por que ele foi removido.
+          reject "$lab" "feed sem column-reverse"          "flex-direction:column-reverse"
+          want   "$lab" "feed em coluna normal"            "flex-direction:column;"
           want   "$lab" "lance novo entra no topo"          "afterbegin"
           want   "$lab" "marcação de improviso no campo"    "stroke-dasharray"
           want   "$lab" "legenda de improvisos"             "l-formation"
