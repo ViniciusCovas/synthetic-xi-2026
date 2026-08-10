@@ -37,7 +37,7 @@ jobs:
             if [ "$code" != "200" ]; then
               echo "FALHA  $what -> HTTP $code  ($url)"; fail=1; return
             fi
-            if [ -n "$needle" ] && ! printf '%s' "$body" | grep -qF "$needle"; then
+            if [ -n "$needle" ] && ! printf '%s' "$body" | grep -qF -- "$needle"; then
               echo "FALHA  $what -> HTTP 200 mas sem '$needle' (${bytes} bytes)  ($url)"
               printf '%s' "$body" | head -c 400; echo; fail=1; return
             fi
@@ -67,11 +67,11 @@ jobs:
           lab=$(curl -sSL --max-time 45 "$BASE/lab/")
           eng=$(curl -sSL --max-time 45 "$BASE/lab/py/labsim/lab_runtime.py")
           want() {  # corpo, descrição, padrão que precisa existir
-            if printf '%s' "$1" | grep -qF "$3"; then echo "OK     $2"
+            if printf '%s' "$1" | grep -qF -- "$3"; then echo "OK     $2"
             else echo "FALHA  $2 (não achei '$3')"; fail=1; fi
           }
           reject() {  # corpo, descrição, padrão que NÃO pode existir
-            if printf '%s' "$1" | grep -qF "$3"; then echo "FALHA  $2 (ainda tem '$3')"; fail=1
+            if printf '%s' "$1" | grep -qF -- "$3"; then echo "FALHA  $2 (ainda tem '$3')"; fail=1
             else echo "OK     $2"; fi
           }
           # Casar a declaração, não a palavra: o comentário do CSS cita
