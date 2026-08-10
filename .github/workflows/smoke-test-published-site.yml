@@ -1,0 +1,67 @@
+name: Smoke Test Published Site
+
+# Verifica o site publicado na Cloudflare de fora do ambiente de
+# desenvolvimento (que bloqueia domínios Cloudflare). Sem secrets.
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "URL base do site publicado"
+        required: false
+        default: "https://synthetic-xi-2026.viniciuscovas.workers.dev"
+  push:
+    branches: ["claude/audit-synthetic-xi-2026-tunhrh"]
+    paths: [".github/workflows/smoke-test-published-site.yml"]
+
+permissions: {}
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check published site
+        env:
+          BASE: ${{ github.event.inputs.base_url || 'https://synthetic-xi-2026.viniciuscovas.workers.dev' }}
+        run: |
+          set -u
+          fail=0
+          check() {  # url, descrição, padrão esperado no corpo
+            local url="$1" what="$2" needle="$3"
+            local code body
+            body=$(curl -sSL --max-time 45 -w '\n%{http_code}' "$url" || echo $'\n000')
+            code=$(printf '%s' "$body" | tail -n1)
+            body=$(printf '%s' "$body" | sed '$d')
+            local bytes=${#body}
+            if [ "$code" != "200" ]; then
+              echo "FALHA  $what -> HTTP $code  ($url)"; fail=1; return
+            fi
+            if [ -n "$needle" ] && ! printf '%s' "$body" | grep -qF "$needle"; then
+              echo "FALHA  $what -> HTTP 200 mas sem '$needle' (${bytes} bytes)  ($url)"
+              printf '%s' "$body" | head -c 400; echo; fail=1; return
+            fi
+            echo "OK     $what -> HTTP 200, ${bytes} bytes  ($url)"
+          }
+
+          echo "=== Base: $BASE ==="
+          check "$BASE/"                              "home"                 "<title"
+          check "$BASE/lab/"                          "laboratório"          "Synthetic XI"
+          check "$BASE/lab/tv/"                       "modo TV"              "pitch2d"
+          check "$BASE/lab/kits.js"                   "kits das seleções"    "TeamKits"
+          check "$BASE/lab/tv/match2d.js"             "animador do campo"    "Match2D"
+          check "$BASE/lab/data/manifest.json"        "manifesto de dados"   "teams_exported"
+          check "$BASE/lab/py/labsim/lab_runtime.py"  "motor (Pyodide)"      "representative_final"
+
+          echo "=== Conteúdo dos dados ==="
+          teams=$(curl -sSL --max-time 60 "$BASE/lab/data/teams.json")
+          n=$(printf '%s' "$teams" | python3 -c 'import json,sys; print(len(json.load(sys.stdin)))' 2>/dev/null || echo 0)
+          echo "seleções em teams.json: $n"
+          [ "${n:-0}" -ge 40 ] || { echo "FALHA  esperava >= 40 seleções"; fail=1; }
+
+          xi=$(printf '%s' "$teams" | python3 -c 'import json,sys; d=json.load(sys.stdin); print(len(d["Spain"]["starters"]))' 2>/dev/null || echo 0)
+          echo "titulares da Espanha: $xi"
+          [ "${xi:-0}" -eq 11 ] || { echo "FALHA  esperava 11 titulares"; fail=1; }
+
+          echo
+          if [ "$fail" -eq 0 ]; then echo "✅ Site publicado respondendo corretamente."
+          else echo "❌ Há falhas acima."; exit 1; fi
