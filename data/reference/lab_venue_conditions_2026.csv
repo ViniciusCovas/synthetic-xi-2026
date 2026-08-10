@@ -1,0 +1,17 @@
+host_city,stadium,altitude_m,day_apparent_c,night_apparent_c,matches_observed,altitude_source,temperature_source
+Atlanta,Mercedes-Benz Stadium,320,32.86,29.47,8,https://en.wikipedia.org/wiki/Atlanta,data/context/world_cup_2026_weather_by_match.csv
+Boston,Gillette Stadium,89,25.3,20.22,7,"https://en.wikipedia.org/wiki/Foxborough,_Massachusetts",data/context/world_cup_2026_weather_by_match.csv
+Dallas,AT&T Stadium,184,35.72,32.37,9,"https://en.wikipedia.org/wiki/Arlington,_Texas",data/context/world_cup_2026_weather_by_match.csv
+Guadalajara,Estadio Akron,1566,20.05,20.05,4,https://en.wikipedia.org/wiki/Guadalajara,data/context/world_cup_2026_weather_by_match.csv
+Houston,NRG Stadium,15,36.65,32.02,7,https://en.wikipedia.org/wiki/Houston,data/context/world_cup_2026_weather_by_match.csv
+Kansas City,Arrowhead Stadium,270,27.4,27.4,6,"https://en.wikipedia.org/wiki/Kansas_City,_Missouri",data/context/world_cup_2026_weather_by_match.csv
+Los Angeles,SoFi Stadium,45,25.23,20.45,8,"https://en.wikipedia.org/wiki/Inglewood,_California",data/context/world_cup_2026_weather_by_match.csv
+Mexico City,Estadio Banorte,2240,23.36,17.14,5,https://en.wikipedia.org/wiki/Mexico_City,data/context/world_cup_2026_weather_by_match.csv
+Miami,Hard Rock Stadium,2,35.2,33.05,7,"https://en.wikipedia.org/wiki/Miami_Gardens,_Florida",data/context/world_cup_2026_weather_by_match.csv
+Monterrey,Estadio BBVA,540,28.89,28.89,4,https://en.wikipedia.org/wiki/Monterrey,data/context/world_cup_2026_weather_by_match.csv
+New York New Jersey,MetLife Stadium,3,26.59,26.38,8,"https://en.wikipedia.org/wiki/East_Rutherford,_New_Jersey",data/context/world_cup_2026_weather_by_match.csv
+Philadelphia,Lincoln Financial Field,12,29.23,24.14,6,https://en.wikipedia.org/wiki/Philadelphia,data/context/world_cup_2026_weather_by_match.csv
+San Francisco Bay Area,Levi's Stadium,25,26.18,16.27,6,"https://en.wikipedia.org/wiki/Santa_Clara,_California",data/context/world_cup_2026_weather_by_match.csv
+Seattle,Lumen Field,54,25.16,13.9,6,https://en.wikipedia.org/wiki/Seattle,data/context/world_cup_2026_weather_by_match.csv
+Toronto,BMO Field,76,22.13,23.01,6,https://en.wikipedia.org/wiki/Toronto,data/context/world_cup_2026_weather_by_match.csv
+Vancouver,BC Place,2,22.61,16.68,7,https://en.wikipedia.org/wiki/Vancouver,data/context/world_cup_2026_weather_by_match.csv

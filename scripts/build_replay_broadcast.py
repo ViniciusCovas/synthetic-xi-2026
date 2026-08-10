@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Genera el paquete web de replay probabilístico a partir del simulador calibrado.
 
-La timeline representativa procede directamente del motor. Dos escenarios visuales
-adicionales se reconstruyen de forma determinista a partir de marcadores presentes
-en la distribución Monte Carlo y se etiquetan explícitamente como reconstrucciones.
+La timeline representativa procede directamente del motor (corrida
+calibrated_v0.4_selection, misma capa de selección que publica la web). Dos
+escenarios visuales adicionales se reconstruyen de forma determinista a partir
+de marcadores presentes en la distribución Monte Carlo, usando únicamente
+jugadores del Real Best XI y avatares del Synthetic XI publicados, y se
+etiquetan explícitamente como reconstrucciones.
 """
 
 from __future__ import annotations
@@ -12,7 +15,11 @@ import json
 from pathlib import Path
 from typing import Any
 
-SUMMARY = Path("data/simulations/calibrated_v0_2/simulation_summary.json")
+import pandas as pd
+
+SUMMARY = Path("data/simulations/calibrated_v0_4_selection/simulation_summary.json")
+REAL_XI = Path("data/processed/real_best_xi.csv")
+SYNTHETIC_XI = Path("data/processed/synthetic_xi.csv")
 OUTPUT = Path("web/public/data/replay_package.json")
 
 
@@ -28,6 +35,15 @@ def choose_probability(summary: dict[str, Any], score: str, fallback: float) -> 
 
 
 def build_package(summary: dict[str, Any]) -> dict[str, Any]:
+    real = {
+        str(row["slot"]): str(row["entity_name"])
+        for _, row in pd.read_csv(REAL_XI).iterrows()
+    }
+    syn = {
+        str(row["slot"]): str(row["entity_id"])
+        for _, row in pd.read_csv(SYNTHETIC_XI).iterrows()
+    }
+
     representative = summary["representative_match"]
     representative_events = [
         compact_event(
@@ -42,35 +58,36 @@ def build_package(summary: dict[str, Any]) -> dict[str, Any]:
     ]
 
     upset = [
-        compact_event(8, "away", "shot_on_target", "Michael Olise", 2, .13),
-        compact_event(14, "home", "shot_off_target", "SYN-W220", 2, .12),
-        compact_event(25, "home", "goal", "SYN-ST20", 2, .18),
-        compact_event(32, "away", "turnover", "Frenkie de Jong", 2, 0),
-        compact_event(44, "away", "goal", "Lionel Messi", 3, .24),
-        compact_event(51, "home", "shot_on_target", "SYN-AM20", 2, .16),
-        compact_event(63, "away", "shot_off_target", "Désiré Doué", 3, .21),
-        compact_event(76, "home", "goal", "SYN-W120", 2, .15),
-        compact_event(84, "away", "shot_on_target", "Lionel Messi", 3, .28),
-        compact_event(90, "away", "turnover", "Michael Olise", 2, 0),
+        compact_event(8, "away", "shot_on_target", real["RW"], 2, .13),
+        compact_event(14, "home", "shot_off_target", syn["LW"], 2, .12),
+        compact_event(25, "home", "goal", syn["ST"], 2, .18),
+        compact_event(32, "away", "turnover", real["CM"], 2, 0),
+        compact_event(44, "away", "goal", real["ST"], 3, .24),
+        compact_event(51, "home", "shot_on_target", syn["AM"], 2, .16),
+        compact_event(63, "away", "shot_off_target", real["AM"], 3, .21),
+        compact_event(76, "home", "goal", syn["RW"], 2, .15),
+        compact_event(84, "away", "shot_on_target", real["ST"], 3, .28),
+        compact_event(90, "away", "turnover", real["RW"], 2, 0),
     ]
     intense = [
-        compact_event(6, "home", "goal", "SYN-W220", 2, .17),
-        compact_event(12, "away", "shot_on_target", "Lionel Messi", 2, .14),
-        compact_event(19, "away", "goal", "Michael Olise", 2, .20),
-        compact_event(27, "home", "shot_off_target", "SYN-ST20", 3, .26),
-        compact_event(34, "away", "goal", "Lionel Messi", 3, .29),
-        compact_event(40, "home", "shot_on_target", "SYN-AM20", 2, .16),
-        compact_event(53, "home", "goal", "SYN-ST20", 2, .18),
-        compact_event(61, "away", "shot_on_target", "Désiré Doué", 2, .14),
-        compact_event(69, "home", "shot_on_target", "SYN-W120", 2, .12),
-        compact_event(78, "away", "shot_off_target", "Michael Olise", 3, .25),
-        compact_event(87, "home", "turnover", "SYN-CM20", 2, 0),
+        compact_event(6, "home", "goal", syn["LW"], 2, .17),
+        compact_event(12, "away", "shot_on_target", real["ST"], 2, .14),
+        compact_event(19, "away", "goal", real["AM"], 2, .20),
+        compact_event(27, "home", "shot_off_target", syn["ST"], 3, .26),
+        compact_event(34, "away", "goal", real["ST"], 3, .29),
+        compact_event(40, "home", "shot_on_target", syn["AM"], 2, .16),
+        compact_event(53, "home", "goal", syn["ST"], 2, .18),
+        compact_event(61, "away", "shot_on_target", real["LW"], 2, .14),
+        compact_event(69, "home", "shot_on_target", syn["RW"], 2, .12),
+        compact_event(78, "away", "shot_off_target", real["AM"], 3, .25),
+        compact_event(87, "home", "turnover", syn["CM"], 2, 0),
     ]
 
     calibration = summary.get("calibration_targets", {})
     return {
-        "version": "broadcast_v1.0",
+        "version": "broadcast_v1.1",
         "title": "Synthetic XI vs Real Best XI",
+        "engine_run": summary.get("version"),
         "probabilities": {
             "synthetic_win": summary["home_win_probability"],
             "draw": summary["draw_probability"],
@@ -123,7 +140,13 @@ def build_package(summary: dict[str, Any]) -> dict[str, Any]:
                 "events": intense,
             },
         ],
-        "methodological_note": "El replay representativo usa la timeline directa del motor calibrado. Los otros dos son reconstrucciones visuales coherentes con marcadores muestreados de la distribución. Los perfiles de los onces siguen siendo provisionales.",
+        "methodological_note": (
+            "El replay representativo usa la timeline directa del motor calibrado "
+            "sobre los onces publicados (selección v0.4.1). Los otros dos son "
+            "reconstrucciones visuales coherentes con marcadores muestreados de "
+            "la distribución. Probabilidades de partido único a 90 minutos; no "
+            "corresponden al experimento oficial de finales eliminatorias."
+        ),
     }
 
 

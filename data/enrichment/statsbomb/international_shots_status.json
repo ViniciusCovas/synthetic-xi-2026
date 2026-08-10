@@ -1,0 +1,16 @@
+{
+  "status": "statsbomb_international_shots_synced",
+  "generated_at_utc": "2026-08-08T20:29:01.124978+00:00",
+  "competitions": [
+    "FIFA World Cup 2018",
+    "FIFA World Cup 2022",
+    "UEFA Euro 2020",
+    "UEFA Euro 2024"
+  ],
+  "matches_ingested": 230,
+  "matches_failed": [],
+  "shots": 5829,
+  "goals": 659,
+  "attribution": "Hudl StatsBomb Open Data",
+  "license_note": "Uso de investigação com atribuição; confirmar termos StatsBomb antes de uso comercial derivado."
+}

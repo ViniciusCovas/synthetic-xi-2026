@@ -1,0 +1,15 @@
+{
+  // Worker de assets estáticos: publica o site compilado do Vite (web/dist),
+  // incluindo o laboratório em /lab/. Não há código de servidor — o motor de
+  // simulação roda no navegador do visitante.
+  //
+  // Cloudflare (Workers & Pages) precisa destes dois comandos no projeto:
+  //   Comando da build:        cd web && npm install && npm run build
+  //   Comando de implantação:  npx wrangler deploy
+  //   Diretório raiz:          /
+  "name": "synthetic-xi-2026",
+  "compatibility_date": "2025-11-01",
+  "assets": {
+    "directory": "./web/dist"
+  }
+}

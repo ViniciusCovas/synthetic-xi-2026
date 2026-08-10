@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Synthetic XI TV — transmissão da final simulada</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>">
+<style>
+:root{
+  --paper:#FAF8F4; --ink:#15181D; --muted:#8A9099; --line:#E7E3DB;
+  --home:#0F7A57; --away:#3D4DBE; --gold:#C2872C;
+}
+*{box-sizing:border-box}
+body{margin:0;width:100vw;height:100vh;overflow:hidden;background:var(--ink);
+  font:400 16px/1.5 Inter,system-ui,sans-serif;color:#fff}
+@font-face{font-family:Inter;font-style:normal;font-weight:100 900;font-display:swap;
+  src:url(/fonts/inter-latin.woff2) format('woff2')}
+@font-face{font-family:Fraunces;font-style:normal;font-weight:600 700;font-display:swap;
+  src:url(/fonts/fraunces-latin.woff2) format('woff2')}
+
+.stage{position:absolute;inset:0;background:#0d1117 center/cover no-repeat}
+.stage::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(13,17,23,.25) 0%,rgba(13,17,23,.55) 62%,rgba(13,17,23,.92) 100%)}
+
+.overlay{position:absolute;inset:0;z-index:2;display:grid;
+  grid-template-rows:auto 1fr auto;padding:1.6vh 2vw}
+
+.scorebar{justify-self:center;display:grid;grid-template-columns:auto auto auto;
+  align-items:center;gap:2.2vw;background:rgba(250,248,244,.97);color:var(--ink);
+  border-radius:18px;padding:1.4vh 2.6vw;box-shadow:0 18px 60px rgba(0,0,0,.45)}
+.tm{display:flex;align-items:center;gap:.8vw;font-weight:600;font-size:2.5vh}
+.tm .fl{font-size:4.2vh;line-height:1}
+.mid{text-align:center}
+.score{font-family:Fraunces,serif;font-size:6.4vh;line-height:1;
+  font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.clockrow{font-size:1.8vh;color:#5b626b;margin-top:.4vh}
+.clockrow b{color:var(--home);font-variant-numeric:tabular-nums}
+
+.centerband{align-self:center;justify-self:center;text-align:center;position:relative}
+.pitch2d{width:95vw;max-width:170vh;aspect-ratio:105/56;background:transparent}
+.goalcard{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2}
+.goalcard{display:none;background:rgba(250,248,244,.97);color:var(--ink);
+  border-radius:22px;padding:3.2vh 3.4vw;box-shadow:0 24px 80px rgba(0,0,0,.5)}
+.goalcard.on{display:block;animation:zoom .45s cubic-bezier(.2,1.4,.4,1)}
+@keyframes zoom{from{transform:translate(-50%,-50%) scale(.86);opacity:0}
+  to{transform:translate(-50%,-50%);opacity:1}}
+.goalcard .avatar{height:26vh;margin-bottom:1vh}
+.goalcard h1{margin:0;font-family:Fraunces,serif;font-size:5.6vh;line-height:1.05}
+.goalcard h1.h{color:var(--home)} .goalcard h1.a{color:var(--away)}
+.goalcard p{margin:.8vh 0 0;color:#5b626b;font-size:2.2vh}
+
+.tickerwrap{display:flex;flex-direction:column;gap:1.2vh}
+.brand{display:flex;align-items:center;gap:.8vw;color:#cfd4da;font-size:1.9vh}
+.brand b{font-family:Fraunces,serif;color:#fff}
+.brand .live{background:#C0322B;color:#fff;font-weight:700;border-radius:6px;
+  padding:.3vh .7vw;font-size:1.6vh;letter-spacing:.08em;animation:blink 2s infinite}
+@keyframes blink{50%{opacity:.55}}
+.ticker{background:rgba(250,248,244,.97);color:var(--ink);border-radius:14px;
+  padding:1.5vh 1.6vw;min-height:6.6vh;display:flex;align-items:center;gap:1.2vw;
+  font-size:2.6vh;box-shadow:0 12px 44px rgba(0,0,0,.4)}
+.ticker .min{color:var(--muted);font-variant-numeric:tabular-nums;flex:none}
+.ticker .ic{flex:none;font-size:3vh}
+.ticker .tx{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.endcard{display:none;position:absolute;inset:0;z-index:3;background:center/cover no-repeat;
+  align-items:center;justify-content:center;text-align:center}
+.endcard::before{content:"";position:absolute;inset:0;background:rgba(13,17,23,.55)}
+.endcard.on{display:flex}
+.endinner{position:relative;background:rgba(250,248,244,.97);color:var(--ink);
+  border-radius:24px;padding:4vh 4vw;max-width:64vw}
+.endinner .fl{font-size:8vh}
+.endinner h1{font-family:Fraunces,serif;font-size:7vh;margin:.6vh 0}
+.endinner p{color:#5b626b;font-size:2.6vh;margin:.4vh 0 0}
+.endinner .sc{font-family:Fraunces,serif;font-size:4.6vh;color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="stage" id="stage"></div>
+
+<div class="overlay">
+  <div class="scorebar">
+    <div class="tm"><span class="fl" id="fh">🏳️</span><span id="nh">—</span></div>
+    <div class="mid">
+      <div class="score tnum" id="score">0–0</div>
+      <div class="clockrow"><b id="clock">0′</b> · <span id="phase">aquecimento</span></div>
+    </div>
+    <div class="tm"><span id="na">—</span><span class="fl" id="fa">🏳️</span></div>
+  </div>
+
+  <div class="centerband">
+    <canvas id="pitch2d" class="pitch2d"></canvas>
+    <div class="goalcard" id="goalcard">
+      <img class="avatar" id="goalavatar" alt="" src=""
+        onerror="this.style.display='none'">
+      <h1 id="goaltitle">GOL</h1>
+      <p id="goalsub"></p>
+    </div>
+  </div>
+
+  <div class="tickerwrap">
+    <div class="brand"><span class="live">● AO VIVO</span>
+      <b>Synthetic XI TV</b><span>· final simulada pelo motor científico · Copa 2026</span>
+      <span style="margin-left:auto" id="seedtag"></span></div>
+    <div class="ticker"><span class="min" id="t-min"></span><span class="ic" id="t-ic">⚽</span>
+      <span class="tx" id="t-tx">A preparar a transmissão…</span></div>
+  </div>
+</div>
+
+<div class="endcard" id="endcard">
+  <div class="endinner">
+    <div class="fl" id="end-fl">🏆</div>
+    <h1 id="end-title">Campeão</h1>
+    <div class="sc" id="end-score"></div>
+    <p id="end-sub"></p>
+    <p style="font-size:1.8vh;margin-top:1.6vh">simulação determinística · seed reproduzível ·
+      synthetic-xi-2026</p>
+  </div>
+</div>
+
+<script src="../kits.js"></script>
+<script src="match2d.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script>
+// Modo TV: ?home=Spain&away=Argentina&venue=Mexico%20City&kickoff=night&sims=200&seed=123&loop=1
+const Q = new URLSearchParams(location.search);
+const FLAGS = {"Algeria":"🇩🇿","Argentina":"🇦🇷","Australia":"🇦🇺","Austria":"🇦🇹","Belgium":"🇧🇪","Bosnia & Herzegovina":"🇧🇦","Brazil":"🇧🇷","Canada":"🇨🇦","Cape Verde Islands":"🇨🇻","Colombia":"🇨🇴","Congo DR":"🇨🇩","Croatia":"🇭🇷","Curaçao":"🇨🇼","Czech Republic":"🇨🇿","Ecuador":"🇪🇨","Egypt":"🇪🇬","England":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","France":"🇫🇷","Germany":"🇩🇪","Ghana":"🇬🇭","Haiti":"🇭🇹","Iran":"🇮🇷","Iraq":"🇮🇶","Ivory Coast":"🇨🇮","Japan":"🇯🇵","Mexico":"🇲🇽","Morocco":"🇲🇦","Netherlands":"🇳🇱","New Zealand":"🇳🇿","Norway":"🇳🇴","Panama":"🇵🇦","Paraguay":"🇵🇾","Portugal":"🇵🇹","Qatar":"🇶🇦","Saudi Arabia":"🇸🇦","Senegal":"🇸🇳","South Africa":"🇿🇦","South Korea":"🇰🇷","Spain":"🇪🇸","Sweden":"🇸🇪","Switzerland":"🇨🇭","Türkiye":"🇹🇷","USA":"🇺🇸","Uruguay":"🇺🇾"};
+const PT = {Spain:"Espanha",Argentina:"Argentina",Brazil:"Brasil",France:"França",Germany:"Alemanha",England:"Inglaterra",Netherlands:"Holanda",Morocco:"Marrocos",Mexico:"México",USA:"EUA",Uruguay:"Uruguai",Colombia:"Colômbia",Japan:"Japão",Switzerland:"Suíça",Norway:"Noruega",Sweden:"Suécia"};
+const label = t => PT[t] || t; const flag = t => FLAGS[t] || "⚽";
+const $ = id => document.getElementById(id);
+const HOME = Q.get('home') || 'Spain', AWAY = Q.get('away') || 'Argentina';
+const SIMS = parseInt(Q.get('sims') || '200', 10);
+const SPEED = parseFloat(Q.get('speed') || '1');       // minutos por ~0,9s
+const ASSETS = { stadium:'stadium.png', trophy:'trophy.png', home:'avatar-home.png', away:'avatar-away.png' };
+
+function icon(h){
+  if(/^GOL/i.test(h)) return '⚽'; if(/expuls|vermelho/i.test(h)) return '🟥';
+  if(/amarelo/i.test(h)) return '🟨'; if(/Substitui/i.test(h)) return '🔁';
+  if(/defen/i.test(h)) return '🧤'; if(/pênalti|penalti/i.test(h)) return '🎯';
+  if(/Intervalo|Final/i.test(h)) return '⏱'; if(/chance/i.test(h)) return '💥';
+  return '·';
+}
+const PHASES = {first_half:'1º tempo', second_half:'2º tempo', match:'jogo',
+  regulation:'90 minutos', extra_time:'prorrogação', shootout:'pênaltis'};
+
+async function boot(){
+  // cenografia: usa a imagem gerada se existir; senão, gradiente noturno
+  fetch(ASSETS.stadium, {method:'HEAD'}).then(r => {
+    if(r.ok) $('stage').style.backgroundImage = `url(${ASSETS.stadium})`;
+  }).catch(()=>{});
+  $('fh').textContent = flag(HOME); $('nh').textContent = label(HOME);
+  $('fa').textContent = flag(AWAY); $('na').textContent = label(AWAY);
+  $('t-tx').textContent = 'Carregando o motor científico…';
+  const [teams, manifest, calibration] = await Promise.all([
+    fetch('../data/teams.json').then(r=>r.json()),
+    fetch('../data/manifest.json').then(r=>r.json()),
+    fetch('../data/calibration.json').then(r=>r.text())]);
+  // campo animado: 22 titulares reais em formação viva desde já
+  const pc = $('pitch2d');
+  pc.width = Math.round(pc.clientWidth * 2);
+  pc.height = Math.round(pc.clientWidth * 2 * 56 / 105);
+  const numbersOf = t => Object.fromEntries(
+    [...teams[t].starters, ...Object.values(teams[t].bench_by_role).flat()]
+      .filter(p => p.number != null).map(p => [p.name, p.number]));
+  Match2D.mount(pc, {
+    homeName: HOME, awayName: AWAY,
+    homeXI: teams[HOME].starters.map(p => ({role: p.role, name: p.name, number: p.number})),
+    awayXI: teams[AWAY].starters.map(p => ({role: p.role, name: p.name, number: p.number})),
+    homeNumbers: numbersOf(HOME), awayNumbers: numbersOf(AWAY),
+  });
+  const pyodide = await loadPyodide();
+  await pyodide.loadPackage('numpy');
+  pyodide.FS.mkdirTree('/app/labsim');
+  for(const f of manifest.package_files)
+    pyodide.FS.writeFile(`/app/labsim/${f}`, await (await fetch(`../py/labsim/${f}`)).text());
+  pyodide.runPython("import sys; sys.path.insert(0,'/app')");
+  pyodide.globals.set('tj', JSON.stringify(teams)); pyodide.globals.set('cj', calibration);
+  pyodide.runPython('from labsim import lab_runtime; lab_runtime.load_data(tj, cj)');
+
+  const seed = parseInt(Q.get('seed') || String(Math.floor(Math.random()*2**31)), 10);
+  $('t-tx').textContent = `Simulando ${SIMS} finais para descobrir o placar mais provável…`;
+  pyodide.runPython(`lab_runtime.start_session(${JSON.stringify(HOME)}, ${JSON.stringify(AWAY)}, ${SIMS}, ${seed}, "")`);
+  let done = 0;
+  while(done < SIMS){
+    done = JSON.parse(pyodide.runPython('lab_runtime.run_chunk(10)')).completed;
+    $('t-min').textContent = ''; $('t-ic').textContent = '🧮';
+    $('t-tx').textContent = `Simulando finais… ${done}/${SIMS}`;
+    await new Promise(r=>setTimeout(r,0));
+  }
+  $('t-tx').textContent = 'Escolhendo a final mais provável…';
+  await new Promise(r=>setTimeout(r,30));
+  const rep = JSON.parse(pyodide.runPython('lab_runtime.representative_final()'));
+  $('seedtag').textContent = `seed ${rep.seed}`;
+  play(rep);
+}
+
+function play(rep){
+  const events = rep.events.filter(e=>!/perdeu/i.test(e.headline));
+  let clock = 0, idx = 0;
+  const iv = setInterval(()=>{
+    clock += 1;
+    $('clock').textContent = clock + '′';
+    Match2D.setClock(clock);
+    while(idx < events.length && events[idx].minute <= clock){
+      const e = events[idx++];
+      Match2D.event(e);
+      $('t-min').textContent = e.minute + '′';
+      $('t-ic').textContent = icon(e.headline);
+      $('t-tx').textContent = e.headline;
+      if(e.score) $('score').textContent = e.score.replace('-','–');
+      if(PHASES[e.period]) $('phase').textContent = PHASES[e.period];
+      if(/^GOL/i.test(e.headline)){
+        const homeSide = e.side === 'home';
+        $('goalavatar').src = homeSide ? ASSETS.home : ASSETS.away;
+        $('goaltitle').textContent = e.headline;
+        $('goaltitle').className = homeSide ? 'h' : 'a';
+        $('goalsub').textContent = `${e.minute}′ · ${e.score.replace('-','–')}`;
+        $('goalcard').classList.add('on');
+        setTimeout(()=>$('goalcard').classList.remove('on'), 5200);
+      }
+    }
+    const lastMin = events.length ? events[events.length-1].minute : 90;
+    if(idx >= events.length && clock >= lastMin){
+      clearInterval(iv); finish(rep);
+    }
+  }, 900 / SPEED);
+}
+
+function finish(rep){
+  const end = $('endcard');
+  end.style.backgroundImage = `url(${ASSETS.trophy})`;
+  $('end-fl').textContent = flag(rep.winner);
+  $('end-title').textContent = `${label(rep.winner)} campeão do mundo simulado`;
+  let sc = rep.final_score.replace('-','–');
+  if(rep.decided_by === 'penalties' && rep.penalties)
+    sc = `${rep.regulation_score.replace('-','–')} · ${rep.penalties[0]}–${rep.penalties[1]} nos pênaltis`;
+  $('end-score').textContent = sc;
+  $('end-sub').textContent = rep.decided_by === 'regulation' ? 'Decidido nos 90 minutos'
+    : rep.decided_by === 'extra_time' ? 'Decidido na prorrogação' : 'Decidido na tanda de pênaltis';
+  end.classList.add('on');
+  if(Q.get('loop') === '1') setTimeout(()=>location.reload(), 20000);
+}
+
+boot().catch(e => { $('t-tx').textContent = 'Erro: ' + e; });
+</script>
+</body>
+</html>

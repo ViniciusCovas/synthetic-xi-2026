@@ -1,0 +1,77 @@
+{
+  "status": "lab_rematch_completed",
+  "engine": "official complete-final engine (bench real, ET, penalties)",
+  "home": "Spain",
+  "away": "Argentina",
+  "simulations": 2000,
+  "master_seed": 20260808,
+  "eligibility_minutes_floor": 450.0,
+  "win_probability": {
+    "Spain": 0.455,
+    "Argentina": 0.545
+  },
+  "decided_by": {
+    "extra_time": 0.1185,
+    "penalties": 0.1415,
+    "regulation": 0.74
+  },
+  "mean_goals": {
+    "Spain": 1.458,
+    "Argentina": 1.62
+  },
+  "top_scorelines_before_penalties": [
+    {
+      "score": "0-1",
+      "probability": 0.1065
+    },
+    {
+      "score": "1-2",
+      "probability": 0.1065
+    },
+    {
+      "score": "2-1",
+      "probability": 0.1035
+    },
+    {
+      "score": "1-0",
+      "probability": 0.0765
+    },
+    {
+      "score": "0-2",
+      "probability": 0.0595
+    },
+    {
+      "score": "1-1",
+      "probability": 0.057
+    },
+    {
+      "score": "2-0",
+      "probability": 0.056
+    },
+    {
+      "score": "2-3",
+      "probability": 0.0545
+    }
+  ],
+  "team_construction_decisions": [
+    {
+      "team": "Spain",
+      "slot": "LCB",
+      "player": "Pau Cubarsí",
+      "decision": "fora de posição (RCB -> LCB), penalizado"
+    },
+    {
+      "team": "Spain",
+      "slot": "coverage",
+      "player": null,
+      "decision": "26 jogadores elegíveis (piso 450'), 15 no banco"
+    },
+    {
+      "team": "Argentina",
+      "slot": "coverage",
+      "player": null,
+      "decision": "26 jogadores elegíveis (piso 450'), 15 no banco"
+    }
+  ],
+  "interpretation": "Resultado exploratório do laboratório: elencos derivados de dados anuais v0.5, motor calibrado no torneio. Não é o experimento oficial congelado."
+}

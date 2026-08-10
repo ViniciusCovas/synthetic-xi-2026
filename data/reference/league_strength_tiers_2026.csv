@@ -1,0 +1,30 @@
+league_id,league_label,tier,factor_primary,factor_steep,rationale,source_basis
+1,FIFA World Cup 2026,1,1.00,1.00,Highest-level international competition,https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026
+2,UEFA Champions League 2025-26,1,1.00,1.00,Top continental club competition,https://www.uefa.com/uefachampionsleague/
+39,Premier League (England),1,1.00,1.00,Top-5 European league per UEFA association coefficients,https://www.uefa.com/nationalassociations/uefarankings/country/
+140,La Liga (Spain),1,1.00,1.00,Top-5 European league per UEFA association coefficients,https://www.uefa.com/nationalassociations/uefarankings/country/
+78,Bundesliga (Germany),1,1.00,1.00,Top-5 European league per UEFA association coefficients,https://www.uefa.com/nationalassociations/uefarankings/country/
+135,Serie A (Italy),1,1.00,1.00,Top-5 European league per UEFA association coefficients,https://www.uefa.com/nationalassociations/uefarankings/country/
+61,Ligue 1 (France),1,1.00,1.00,Top-5 European league per UEFA association coefficients,https://www.uefa.com/nationalassociations/uefarankings/country/
+45,FA Cup (England),1,1.00,1.00,Cup inherits association tier,https://www.uefa.com/nationalassociations/uefarankings/country/
+48,League Cup (England),1,1.00,1.00,Cup inherits association tier,https://www.uefa.com/nationalassociations/uefarankings/country/
+81,DFB Pokal (Germany),1,1.00,1.00,Cup inherits association tier,https://www.uefa.com/nationalassociations/uefarankings/country/
+143,Copa del Rey (Spain),1,1.00,1.00,Cup inherits association tier,https://www.uefa.com/nationalassociations/uefarankings/country/
+137,Coppa Italia (Italy),1,1.00,1.00,Cup inherits association tier,https://www.uefa.com/nationalassociations/uefarankings/country/
+66,Coupe de France (France),1,1.00,1.00,Cup inherits association tier,https://www.uefa.com/nationalassociations/uefarankings/country/
+3,UEFA Europa League,2,0.92,0.85,Secondary continental club competition,https://www.uefa.com/uefaeuropaleague/
+94,Primeira Liga (Portugal),2,0.92,0.85,6th-8th UEFA association band,https://www.uefa.com/nationalassociations/uefarankings/country/
+88,Eredivisie (Netherlands),2,0.92,0.85,6th-8th UEFA association band,https://www.uefa.com/nationalassociations/uefarankings/country/
+144,Jupiler Pro League (Belgium),2,0.92,0.85,6th-8th UEFA association band,https://www.uefa.com/nationalassociations/uefarankings/country/
+203,Süper Lig (Türkiye),2,0.92,0.85,Upper-mid UEFA association band,https://www.uefa.com/nationalassociations/uefarankings/country/
+40,Championship (England),2,0.92,0.85,Strong second division per Opta league Power Rankings,https://theanalyst.com/articles/who-plays-in-the-strongest-league-in-the-world
+71,Serie A (Brazil),2,0.92,0.85,Strongest non-European league per Opta league Power Rankings,https://theanalyst.com/articles/who-plays-in-the-strongest-league-in-the-world
+128,Liga Profesional (Argentina),2,0.92,0.85,Top South American league,https://theanalyst.com/articles/who-plays-in-the-strongest-league-in-the-world
+13,CONMEBOL Libertadores,2,0.92,0.85,Top South American continental competition,https://www.conmebol.com/libertadores/
+253,Major League Soccer (USA),2,0.92,0.85,Upper-mid global band per Opta league Power Rankings,https://theanalyst.com/articles/who-plays-in-the-strongest-league-in-the-world
+262,Liga MX (Mexico),2,0.92,0.85,Upper-mid global band per Opta league Power Rankings,https://theanalyst.com/articles/who-plays-in-the-strongest-league-in-the-world
+307,Pro League (Saudi Arabia),2,0.92,0.85,Upper-mid global band per Opta league Power Rankings,https://theanalyst.com/articles/who-plays-in-the-strongest-league-in-the-world
+6,Africa Cup of Nations,2,0.92,0.85,Continental national-team competition,https://www.cafonline.com/
+9,Copa America,2,0.92,0.85,Continental national-team competition,https://www.conmebol.com/copaamerica/
+4,UEFA European Championship,1,1.00,1.00,Top continental national-team competition,https://www.uefa.com/euro2024/
+848,UEFA Europa Conference League,3,0.85,0.72,Tertiary continental competition,https://www.uefa.com/uefaconferenceleague/

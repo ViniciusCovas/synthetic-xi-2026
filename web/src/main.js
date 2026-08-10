@@ -42,6 +42,7 @@ app.innerHTML = `
     <div class="brandmark">XI</div>
     <div><p class="eyebrow">COPA 2026 · PROTOTIPO CIENTÍFICO</p><h1>Synthetic XI Lab</h1></div>
     <div class="live-badge"><span></span> corte ${snapshot}</div>
+    <a class="live-badge" href="/lab/" style="text-decoration:none">⚗️ Laboratorio de simulación</a>
   </header>
 
   <main>
@@ -100,7 +101,7 @@ const statusPanel = document.querySelector('#status-panel');
 if (!avatars.length) {
   statusPanel.innerHTML = `<div class="setup-panel"><div class="pulse-ring"></div><div><p class="eyebrow">PIPELINE LISTO · SIN DATOS INVENTADOS</p><h3>Falta ejecutar el primer snapshot real.</h3><p>El código ya genera avatares, benchmarks, comparaciones y dos onces. La clave debe guardarse como secret de GitHub, nunca en el navegador.</p><code>API_FOOTBALL_KEY → GitHub → Settings → Secrets and variables → Actions</code></div></div>`;
 } else {
-  statusPanel.innerHTML = `<div class="data-strip"><div><span>FUENTE</span><strong>${manifest.source}</strong></div><div><span>CORTE</span><strong>${snapshot}</strong></div><div><span>JUGADORES-PARTIDO</span><strong>${manifest.starter_player_match_rows}</strong></div><div><span>REGLA</span><strong>Top ${manifest.requested_top_n} por posición</strong></div></div>`;
+  statusPanel.innerHTML = `<div class="data-strip"><div><span>FUENTE</span><strong>${manifest.source}</strong></div><div><span>CORTE</span><strong>${snapshot}</strong></div><div><span>JUGADORES-PARTIDO</span><strong>${fmt(manifest.player_match_rows_included ?? manifest.starter_player_match_rows ?? 0)}</strong></div><div><span>REGLA</span><strong>Top ${manifest.requested_top_n} por posición</strong></div></div>`;
 }
 
 let radarChart;
@@ -125,8 +126,8 @@ function renderAvatar(avatar) {
   if (radarChart) radarChart.destroy();
   radarChart = new Chart(ctx, {
     type: 'radar',
-    data: { labels: subset.map((row) => metricLabel(row.metric)), datasets: [{ data: subset.map((row) => row.position_percentile), borderWidth: 2, pointRadius: 3, borderColor: '#ff5c35', backgroundColor: 'rgba(255, 92, 53, .18)', pointBackgroundColor: '#ff5c35' }] },
-    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { r: { min: 0, max: 100, ticks: { display: false, stepSize: 20 }, grid: { color: 'rgba(255,255,255,.12)' }, angleLines: { color: 'rgba(255,255,255,.1)' }, pointLabels: { color: '#cbd0d8', font: { size: 11 } } } } },
+    data: { labels: subset.map((row) => metricLabel(row.metric)), datasets: [{ data: subset.map((row) => row.position_percentile), borderWidth: 2, pointRadius: 3, borderColor: '#0F7A57', backgroundColor: 'rgba(15, 122, 87, .14)', pointBackgroundColor: '#0F7A57' }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { r: { min: 0, max: 100, ticks: { display: false, stepSize: 20 }, grid: { color: 'rgba(21,24,29,.10)' }, angleLines: { color: 'rgba(21,24,29,.08)' }, pointLabels: { color: '#43494F', font: { size: 11 } } } } },
   });
 
   document.querySelector('#members-body').innerHTML = selectedMembers.slice(0, 20).map((row) => `<tr><td>${row.position_rank}</td><td>${row.player_name}</td><td>${row.team_name}</td><td>${fmt(row.minutes)}</td><td>${fmt(row.rank_score)}</td><td>${Math.round((row.reliability ?? 0) * 100)}%</td></tr>`).join('');

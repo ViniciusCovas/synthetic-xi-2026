@@ -1,0 +1,56 @@
+{
+  "status": "dose_response_grid_completed",
+  "simulations_per_tier": 10000,
+  "seed": 20260718,
+  "engine": "calibrated 90-minute match engine (exploratory)",
+  "real_team": "Real Annual XI v0.5",
+  "real_mean_overall": 0.764535861390539,
+  "paired_uncertainty": true,
+  "curve": [
+    {
+      "tier": "mean20",
+      "synthetic_mean_overall": 0.7036385574602065,
+      "synthetic_win": 0.267,
+      "draw": 0.2244,
+      "real_win": 0.5086,
+      "mean_goals_synthetic": 1.2926,
+      "mean_goals_real": 1.8601
+    },
+    {
+      "tier": "top5",
+      "synthetic_mean_overall": 0.7485523959709061,
+      "synthetic_win": 0.338,
+      "draw": 0.2284,
+      "real_win": 0.4336,
+      "mean_goals_synthetic": 1.4765,
+      "mean_goals_real": 1.6935
+    },
+    {
+      "tier": "p90",
+      "synthetic_mean_overall": 0.8106146186177902,
+      "synthetic_win": 0.4607,
+      "draw": 0.2258,
+      "real_win": 0.3135,
+      "mean_goals_synthetic": 1.8507,
+      "mean_goals_real": 1.4837
+    },
+    {
+      "tier": "max20",
+      "synthetic_mean_overall": 0.8740501953834781,
+      "synthetic_win": 0.5949,
+      "draw": 0.1902,
+      "real_win": 0.2149,
+      "mean_goals_synthetic": 2.2713,
+      "mean_goals_real": 1.2979
+    }
+  ],
+  "crossing_point": {
+    "between_tiers": [
+      "top5",
+      "p90"
+    ],
+    "interpolated_mean_overall": 0.7729887571119362,
+    "interpolation": "linear na margem de vitória entre níveis adjacentes"
+  },
+  "reading": "curve[i] responde: um time de agentes sintéticos construídos no nível i da elite humana vence o melhor XI real do ano com que probabilidade? crossing_point estima o nível mínimo para superá-lo."
+}

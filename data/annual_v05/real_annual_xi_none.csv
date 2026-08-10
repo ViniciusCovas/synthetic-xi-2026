@@ -1,0 +1,12 @@
+slot,player_id,player_name,world_cup_team,minutes,overall,league_factor,role_stability,flexible,role_source
+GK,46417,Sipho Chaine,South Africa,2700.0,0.8095950274677866,1.0,1.0,False,grid_centered_v2
+RB,855,João Cancelo,Portugal,2230.0,0.6878278285508462,1.0,0.5151515151515151,True,grid_centered_v2
+RCB,30776,Cristian Romero,Argentina,3294.0,0.725099582656223,1.0,0.8461538461538461,False,grid_centered_v2
+LCB,18776,Çağlar Söyüncü,Türkiye,1087.0,0.7226073190984456,1.0,0.4,True,grid_centered_v2
+LB,271539,Jaouen Hadjam,Algeria,1934.0,0.7456765869925076,1.0,0.875,False,public_anchor
+DM,133609,Pedri,Spain,3539.0,0.7204908567593866,1.0,0.5,True,grid_centered_v2
+CM,156477,Rayan Cherki,France,2970.0,0.702175089259509,1.0,0.8709677419354839,False,grid_centered_v2
+AM,386828,Lamine Yamal,Spain,4201.0,0.8093726113295047,1.0,0.5208333333333334,True,grid_centered_v2
+RW,154,Lionel Messi,Argentina,3834.0,0.8337722020495155,1.0,0.8541666666666666,False,grid_centered_v2
+LW,51618,Brian Rodríguez,Uruguay,2845.0,0.7691083608446413,1.0,0.5588235294117647,True,grid_centered_v2
+ST,278,Kylian Mbappé,France,4228.0,0.7761984823243762,1.0,0.5625,False,public_anchor

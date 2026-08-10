@@ -93,5 +93,7 @@
     "Jugadores sin rol primario estable o sin titularidad clasificable se excluyen.",
     "Las estadisticas agregadas no observan por completo la inteligencia sin balon.",
     "El Estudio 2 no afirmara causalidad fisica hasta validar el motor de simulacion."
-  ]
+  ],
+  "canonicalizacion_identidad": "Las variantes de grafía del proveedor se unifican por player_id antes de la agregación; los minutos y conteos del jugador se consolidan en una sola fila.",
+  "asignacion_de_lados": "Dentro de cada par de slots (RB/LB, RCB/LCB, RW/LW) el lado se decide con el mapeo de grid validado contra anclas humanas y con las anclas públicas de rol; sin evidencia concluyente se conserva el orden de ranking. La evidencia queda en xi_side_evidence.csv."
 }

@@ -1,0 +1,270 @@
+{
+  "status": "calibrated_exploratory_simulation_completed",
+  "simulations": 10000,
+  "home": "Synthetic XI",
+  "away": "Real Best XI",
+  "home_win_probability": 0.261,
+  "draw_probability": 0.2108,
+  "away_win_probability": 0.5282,
+  "mean_home_goals": 1.3445,
+  "mean_away_goals": 2.0085,
+  "mean_total_goals": 3.353,
+  "mean_home_xg": 1.3367485005255624,
+  "mean_away_xg": 1.9883785566179788,
+  "mean_total_shots": 18.4291,
+  "mean_total_shots_on_target": 9.3213,
+  "zero_zero_probability": 0.0343,
+  "top_scorelines": [
+    {
+      "score": "1-2",
+      "probability": 0.096
+    },
+    {
+      "score": "1-1",
+      "probability": 0.0932
+    },
+    {
+      "score": "0-1",
+      "probability": 0.0723
+    },
+    {
+      "score": "0-2",
+      "probability": 0.0692
+    },
+    {
+      "score": "2-1",
+      "probability": 0.0665
+    },
+    {
+      "score": "2-2",
+      "probability": 0.0623
+    },
+    {
+      "score": "1-3",
+      "probability": 0.0601
+    },
+    {
+      "score": "0-3",
+      "probability": 0.0492
+    },
+    {
+      "score": "1-0",
+      "probability": 0.0454
+    },
+    {
+      "score": "2-3",
+      "probability": 0.0391
+    }
+  ],
+  "calibration_targets": {
+    "source_match_count": 94,
+    "mean_goals_per_match": 2.9148936170212765,
+    "mean_shots_per_match": 18.094871004214205,
+    "mean_shots_on_target_per_match": 8.378558947476618,
+    "zero_zero_rate": 0.07446808510638298,
+    "home_win_rate": 0.48936170212765956,
+    "draw_rate": 0.2127659574468085,
+    "away_win_rate": 0.2978723404255319,
+    "model_possessions_per_match": 104.0
+  },
+  "calibration_error": {
+    "goals_per_match": 0.43810638297872373,
+    "shots_per_match": 0.3342289957857929,
+    "shots_on_target_per_match": 0.9427410525233828,
+    "zero_zero_rate": -0.04016808510638298
+  },
+  "representative_match": {
+    "home": "Synthetic XI",
+    "away": "Real Best XI",
+    "home_goals": 1,
+    "away_goals": 2,
+    "home_xg": 1.314,
+    "away_xg": 2.087,
+    "home_shots": 8,
+    "away_shots": 10,
+    "home_shots_on_target": 2,
+    "away_shots_on_target": 5,
+    "home_possession_share": 0.475,
+    "timeline": [
+      {
+        "minute": 4,
+        "team": "Synthetic XI",
+        "type": "shot_off_target",
+        "actor": "SYN-ST20",
+        "zone": 2,
+        "xg": 0.179,
+        "headline": "Ocasión de SYN-ST20 fuera"
+      },
+      {
+        "minute": 11,
+        "team": "Real Best XI",
+        "type": "turnover",
+        "actor": "Michael Olise",
+        "zone": 3,
+        "xg": 0.0,
+        "headline": "Michael Olise pierde el balón bajo presión"
+      },
+      {
+        "minute": 17,
+        "team": "Synthetic XI",
+        "type": "shot_on_target",
+        "actor": "SYN-CM20",
+        "zone": 3,
+        "xg": 0.272,
+        "headline": "Remate de SYN-CM20 detenido por el portero"
+      },
+      {
+        "minute": 24,
+        "team": "Real Best XI",
+        "type": "shot_off_target",
+        "actor": "Lucas Paquetá",
+        "zone": 2,
+        "xg": 0.144,
+        "headline": "Ocasión de Lucas Paquetá fuera"
+      },
+      {
+        "minute": 25,
+        "team": "Synthetic XI",
+        "type": "shot_off_target",
+        "actor": "SYN-ST20",
+        "zone": 2,
+        "xg": 0.179,
+        "headline": "Ocasión de SYN-ST20 fuera"
+      },
+      {
+        "minute": 27,
+        "team": "Real Best XI",
+        "type": "shot_on_target",
+        "actor": "Michael Olise",
+        "zone": 2,
+        "xg": 0.141,
+        "headline": "Remate de Michael Olise detenido por el portero"
+      },
+      {
+        "minute": 31,
+        "team": "Synthetic XI",
+        "type": "goal",
+        "actor": "SYN-W20",
+        "zone": 1,
+        "xg": 0.104,
+        "headline": "GOL de SYN-W20"
+      },
+      {
+        "minute": 31,
+        "team": "Real Best XI",
+        "type": "shot_off_target",
+        "actor": "Lionel Messi",
+        "zone": 2,
+        "xg": 0.201,
+        "headline": "Ocasión de Lionel Messi fuera"
+      },
+      {
+        "minute": 34,
+        "team": "Real Best XI",
+        "type": "shot_off_target",
+        "actor": "Lionel Messi",
+        "zone": 2,
+        "xg": 0.201,
+        "headline": "Ocasión de Lionel Messi fuera"
+      },
+      {
+        "minute": 36,
+        "team": "Real Best XI",
+        "type": "shot_on_target",
+        "actor": "Lionel Messi",
+        "zone": 3,
+        "xg": 0.325,
+        "headline": "Remate de Lionel Messi detenido por el portero"
+      },
+      {
+        "minute": 37,
+        "team": "Synthetic XI",
+        "type": "shot_off_target",
+        "actor": "SYN-W20",
+        "zone": 2,
+        "xg": 0.167,
+        "headline": "Ocasión de SYN-W20 fuera"
+      },
+      {
+        "minute": 40,
+        "team": "Synthetic XI",
+        "type": "shot_off_target",
+        "actor": "SYN-W20",
+        "zone": 2,
+        "xg": 0.167,
+        "headline": "Ocasión de SYN-W20 fuera"
+      },
+      {
+        "minute": 44,
+        "team": "Real Best XI",
+        "type": "shot_on_target",
+        "actor": "Lionel Messi",
+        "zone": 2,
+        "xg": 0.201,
+        "headline": "Remate de Lionel Messi detenido por el portero"
+      },
+      {
+        "minute": 57,
+        "team": "Real Best XI",
+        "type": "turnover",
+        "actor": "Michael Olise",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "Michael Olise pierde el balón bajo presión"
+      },
+      {
+        "minute": 60,
+        "team": "Real Best XI",
+        "type": "goal",
+        "actor": "Rubén Vargas",
+        "zone": 2,
+        "xg": 0.18,
+        "headline": "GOL de Rubén Vargas"
+      },
+      {
+        "minute": 61,
+        "team": "Real Best XI",
+        "type": "goal",
+        "actor": "Vinícius Júnior",
+        "zone": 2,
+        "xg": 0.201,
+        "headline": "GOL de Vinícius Júnior"
+      },
+      {
+        "minute": 69,
+        "team": "Real Best XI",
+        "type": "shot_off_target",
+        "actor": "Rubén Vargas",
+        "zone": 3,
+        "xg": 0.291,
+        "headline": "Ocasión de Rubén Vargas fuera"
+      },
+      {
+        "minute": 70,
+        "team": "Synthetic XI",
+        "type": "shot_off_target",
+        "actor": "SYN-AM20",
+        "zone": 2,
+        "xg": 0.134,
+        "headline": "Ocasión de SYN-AM20 fuera"
+      },
+      {
+        "minute": 85,
+        "team": "Real Best XI",
+        "type": "shot_off_target",
+        "actor": "Vinícius Júnior",
+        "zone": 2,
+        "xg": 0.201,
+        "headline": "Ocasión de Vinícius Júnior fuera"
+      }
+    ]
+  },
+  "methodological_gate": {
+    "publication_as_final_result_allowed": false,
+    "reason": "The engine is calibrated, but annual coverage and definitive eleven-role resolution remain incomplete."
+  },
+  "version": "calibrated_v0.4_selection",
+  "data_scope": "Calibrado con los partidos completados del Mundial 2026; los perfiles de ambos equipos provienen de la capa de selección corregida v0.4.1 (identidades canonicalizadas y lados asignados por evidencia).",
+  "interpretation": "Resultado exploratorio de partido único a 90 minutos entre los onces publicados en la web. No es la corrida científica oficial de finales eliminatorias (experimento oficial v1).",
+  "team_symmetry_note": "La incertidumbre de muestreo por partido está pareada: cada avatar hereda la media recortada de las incertidumbres de sus miembros."
+}

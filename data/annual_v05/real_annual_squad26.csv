@@ -1,0 +1,27 @@
+slot,player_id,player_name,world_cup_team,minutes,overall,league_factor,role_stability,flexible,role_source,squad_role,cover_slot
+GK,182718,Joan García,Spain,4049.0,0.8125410524471025,0.9933316868362558,1.0,False,grid_centered_v2,starter,GK
+RB,855,João Cancelo,Portugal,2230.0,0.7061063545386967,0.9739820627802689,0.5151515151515151,True,grid_centered_v2,starter,RB
+RCB,30776,Cristian Romero,Argentina,3294.0,0.7472008842204096,0.9914845173041894,0.8461538461538461,False,grid_centered_v2,starter,RCB
+LCB,18776,Çağlar Söyüncü,Türkiye,1087.0,0.7174869516603453,0.92557497700092,0.4,True,grid_centered_v2,starter,LCB
+LB,263482,Nuno Mendes,Portugal,3391.0,0.7342081475578933,0.9861102919492776,1.0,False,public_anchor,starter,LB
+DM,133609,Pedri,Spain,3539.0,0.7408951815737805,0.993133653574456,0.5,True,grid_centered_v2,starter,DM
+CM,156477,Rayan Cherki,France,2970.0,0.7209995237813306,1.0,0.8709677419354839,False,grid_centered_v2,starter,CM
+AM,386828,Lamine Yamal,Spain,4201.0,0.8227051597194196,0.9961794810759342,0.5208333333333334,True,grid_centered_v2,starter,AM
+RW,154,Lionel Messi,Argentina,3834.0,0.8322314692550343,0.9245200834637456,0.8541666666666666,False,grid_centered_v2,starter,RW
+LW,295026,Martin Baturina,Croatia,2182.0,0.7861253044449796,1.0,0.5833333333333334,True,grid_centered_v2,starter,LW
+ST,278,Kylian Mbappé,France,4228.0,0.7893944460969375,0.9995033112582781,0.5625,False,public_anchor,starter,ST
+,46417,Sipho Chaine,South Africa,2700.0,0.8046814071966015,0.85,1.0,False,grid_centered_v2,bench_cover,GK
+,732,Luca Zidane,Algeria,3089.0,0.8043659103548025,0.8763191971511816,1.0,False,grid_centered_v2,bench_cover,GK
+,502,Joshua Kimmich,Germany,4423.0,0.6505603708209606,0.9969477730047479,0.9607843137254902,False,grid_centered_v2,bench_cover,RB
+,31,José María Giménez,Uruguay,1537.0,0.7145529983127544,1.0,0.75,False,grid_centered_v2,bench_cover,RCB
+,624,Nicolás Otamendi,Argentina,4243.0,0.711247171057178,0.9434244638227671,0.8490566037735849,False,grid_centered_v2,bench_cover,LCB
+,21138,Rayan Aït-Nouri,Algeria,2260.0,0.7314593087371993,0.9873982300884958,0.9354838709677419,False,grid_centered_v2,bench_cover,LB
+,44,Rodri,Spain,2811.0,0.7352109233164771,1.0,0.8235294117647058,False,public_anchor,bench_cover,DM
+,538,Frenkie de Jong,Netherlands,2906.0,0.7059027844166171,0.9920509291121817,0.6333333333333333,False,grid_centered_v2,bench_cover,CM
+,6005,Juan Fernando Quintero,Colombia,1988.0,0.7789936724714601,0.9151659959758552,1.0,False,grid_centered_v2,bench_cover,AM
+,19617,Michael Olise,France,4569.0,0.8287826297819757,0.9970781352593564,1.0,False,public_anchor,bench_cover,RW
+,762,Vinícius Júnior,Brazil,4696.0,0.7705517765599295,0.9947934412265756,0.7627118644067796,False,grid_centered_v2,bench_cover,LW
+,184,Harry Kane,England,4702.0,0.7614422425546755,0.9971288813270949,0.9629629629629629,False,public_anchor,bench_cover,ST
+,1422,Jérémy Doku,Belgium,3271.0,0.8154891364532025,1.0,0.9,False,public_anchor,bench_flex,RW
+,129058,Bart Verbruggen,Netherlands,3810.0,0.8042557806630743,1.0,1.0,False,grid_centered_v2,bench_flex,GK
+,1142,Yvon Mvogo,Switzerland,2790.0,0.8038425360219557,1.0,1.0,False,grid_centered_v2,bench_flex,GK

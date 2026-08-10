@@ -1,0 +1,12 @@
+slot,position_group,source_ordinal,entity_type,entity_id,entity_name,team_name,rank_score,minutes,observed_side,side_assignment_rule,available
+GK,GK,1,jugador_real,25282,Gregor Kobel,Switzerland,0.7819911168809642,600.0,R,orden de ranking,True
+RB,FB,1,jugador_real,9,Achraf Hakimi,Morocco,0.8053319665598292,570.0,R,orden de ranking (evidencia de lado en conflicto: ambos del mismo lado),True
+RCB,CB,2,jugador_real,355994,Alexander Freeman,USA,0.8213024442170581,373.0,R,lados por evidencia observada (mapeo de grid validado y anclas),True
+LCB,CB,1,jugador_real,2194,Ramy Bensebaini,Algeria,0.9146723001191256,360.0,L,lados por evidencia observada (mapeo de grid validado y anclas),True
+LB,FB,2,jugador_real,753,Marcos Llorente,Spain,0.7735808213275979,193.0,R,orden de ranking (evidencia de lado en conflicto: ambos del mismo lado),True
+DM,DM,1,jugador_real,44,Rodri,Spain,0.8451903400197572,627.0,R,orden de ranking,True
+CM,CM,1,jugador_real,1646,Lucas Paquetá,Brazil,1.230536281079036,236.0,R,orden de ranking,True
+AM,AM,1,jugador_real,19617,Michael Olise,France,0.957927847151338,560.0,R,orden de ranking,True
+RW,W,2,jugador_real,48471,Rubén Vargas,Switzerland,0.8714280122779309,289.0,R,lados por evidencia observada (mapeo de grid validado y anclas),True
+LW,W,1,jugador_real,762,Vinícius Júnior,Brazil,0.8890043143050322,441.0,,lados por evidencia observada (mapeo de grid validado y anclas),True
+ST,ST,1,jugador_real,154,Lionel Messi,Argentina,1.6991986575831497,620.0,R,orden de ranking,True

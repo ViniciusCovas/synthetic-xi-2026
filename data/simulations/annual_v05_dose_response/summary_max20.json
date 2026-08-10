@@ -1,0 +1,293 @@
+{
+  "status": "calibrated_exploratory_simulation_completed",
+  "simulations": 10000,
+  "home": "Synthetic XI [max20]",
+  "away": "Real Annual XI",
+  "home_win_probability": 0.5949,
+  "draw_probability": 0.1902,
+  "away_win_probability": 0.2149,
+  "mean_home_goals": 2.2713,
+  "mean_away_goals": 1.2979,
+  "mean_total_goals": 3.5692000000000004,
+  "mean_home_xg": 2.2591395484952113,
+  "mean_away_xg": 1.2992985078189534,
+  "mean_total_shots": 18.889400000000002,
+  "mean_total_shots_on_target": 9.8398,
+  "zero_zero_probability": 0.0278,
+  "top_scorelines": [
+    {
+      "score": "2-1",
+      "probability": 0.0944
+    },
+    {
+      "score": "1-1",
+      "probability": 0.0784
+    },
+    {
+      "score": "3-1",
+      "probability": 0.0747
+    },
+    {
+      "score": "2-0",
+      "probability": 0.073
+    },
+    {
+      "score": "1-0",
+      "probability": 0.0645
+    },
+    {
+      "score": "1-2",
+      "probability": 0.0612
+    },
+    {
+      "score": "2-2",
+      "probability": 0.0595
+    },
+    {
+      "score": "3-0",
+      "probability": 0.0562
+    },
+    {
+      "score": "3-2",
+      "probability": 0.0456
+    },
+    {
+      "score": "4-1",
+      "probability": 0.0398
+    }
+  ],
+  "calibration_targets": {
+    "source_match_count": 94,
+    "mean_goals_per_match": 2.9148936170212765,
+    "mean_shots_per_match": 18.094871004214205,
+    "mean_shots_on_target_per_match": 8.378558947476618,
+    "zero_zero_rate": 0.07446808510638298,
+    "home_win_rate": 0.48936170212765956,
+    "draw_rate": 0.2127659574468085,
+    "away_win_rate": 0.2978723404255319,
+    "model_possessions_per_match": 104.0
+  },
+  "calibration_error": {
+    "goals_per_match": 0.6543063829787239,
+    "shots_per_match": 0.7945289957857966,
+    "shots_on_target_per_match": 1.4612410525233823,
+    "zero_zero_rate": -0.04666808510638298
+  },
+  "representative_match": {
+    "home": "Synthetic XI [max20]",
+    "away": "Real Annual XI",
+    "home_goals": 2,
+    "away_goals": 1,
+    "home_xg": 2.026,
+    "away_xg": 1.258,
+    "home_shots": 9,
+    "away_shots": 10,
+    "home_shots_on_target": 5,
+    "away_shots_on_target": 3,
+    "home_possession_share": 0.537,
+    "timeline": [
+      {
+        "minute": 4,
+        "team": "Synthetic XI [max20]",
+        "type": "shot_off_target",
+        "actor": "SYN-ST-MAX20",
+        "zone": 2,
+        "xg": 0.198,
+        "headline": "Ocasión de SYN-ST-MAX20 fuera"
+      },
+      {
+        "minute": 5,
+        "team": "Synthetic XI [max20]",
+        "type": "turnover",
+        "actor": "SYN-ST-MAX20",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "SYN-ST-MAX20 pierde el balón bajo presión"
+      },
+      {
+        "minute": 6,
+        "team": "Synthetic XI [max20]",
+        "type": "turnover",
+        "actor": "SYN-AM-MAX20",
+        "zone": 3,
+        "xg": 0.0,
+        "headline": "SYN-AM-MAX20 pierde el balón bajo presión"
+      },
+      {
+        "minute": 16,
+        "team": "Synthetic XI [max20]",
+        "type": "shot_off_target",
+        "actor": "SYN-ST-MAX20",
+        "zone": 2,
+        "xg": 0.198,
+        "headline": "Ocasión de SYN-ST-MAX20 fuera"
+      },
+      {
+        "minute": 16,
+        "team": "Synthetic XI [max20]",
+        "type": "turnover",
+        "actor": "SYN-ST-MAX20",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "SYN-ST-MAX20 pierde el balón bajo presión"
+      },
+      {
+        "minute": 18,
+        "team": "Real Annual XI",
+        "type": "turnover",
+        "actor": "Lamine Yamal",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "Lamine Yamal pierde el balón bajo presión"
+      },
+      {
+        "minute": 24,
+        "team": "Synthetic XI [max20]",
+        "type": "shot_on_target",
+        "actor": "SYN-W-MAX20",
+        "zone": 1,
+        "xg": 0.117,
+        "headline": "Remate de SYN-W-MAX20 detenido por el portero"
+      },
+      {
+        "minute": 27,
+        "team": "Real Annual XI",
+        "type": "goal",
+        "actor": "Kylian Mbappé",
+        "zone": 1,
+        "xg": 0.115,
+        "headline": "GOL de Kylian Mbappé"
+      },
+      {
+        "minute": 33,
+        "team": "Real Annual XI",
+        "type": "shot_off_target",
+        "actor": "Martin Baturina",
+        "zone": 3,
+        "xg": 0.236,
+        "headline": "Ocasión de Martin Baturina fuera"
+      },
+      {
+        "minute": 39,
+        "team": "Synthetic XI [max20]",
+        "type": "turnover",
+        "actor": "SYN-W-MAX20",
+        "zone": 3,
+        "xg": 0.0,
+        "headline": "SYN-W-MAX20 pierde el balón bajo presión"
+      },
+      {
+        "minute": 42,
+        "team": "Synthetic XI [max20]",
+        "type": "turnover",
+        "actor": "SYN-W-MAX20",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "SYN-W-MAX20 pierde el balón bajo presión"
+      },
+      {
+        "minute": 44,
+        "team": "Real Annual XI",
+        "type": "shot_off_target",
+        "actor": "Rayan Cherki",
+        "zone": 2,
+        "xg": 0.152,
+        "headline": "Ocasión de Rayan Cherki fuera"
+      },
+      {
+        "minute": 47,
+        "team": "Synthetic XI [max20]",
+        "type": "shot_off_target",
+        "actor": "SYN-W-MAX20",
+        "zone": 3,
+        "xg": 0.303,
+        "headline": "Ocasión de SYN-W-MAX20 fuera"
+      },
+      {
+        "minute": 51,
+        "team": "Real Annual XI",
+        "type": "shot_on_target",
+        "actor": "Martin Baturina",
+        "zone": 1,
+        "xg": 0.091,
+        "headline": "Remate de Martin Baturina detenido por el portero"
+      },
+      {
+        "minute": 53,
+        "team": "Synthetic XI [max20]",
+        "type": "shot_on_target",
+        "actor": "SYN-ST-MAX20",
+        "zone": 2,
+        "xg": 0.198,
+        "headline": "Remate de SYN-ST-MAX20 detenido por el portero"
+      },
+      {
+        "minute": 63,
+        "team": "Synthetic XI [max20]",
+        "type": "shot_off_target",
+        "actor": "SYN-AM-MAX20",
+        "zone": 2,
+        "xg": 0.19,
+        "headline": "Ocasión de SYN-AM-MAX20 fuera"
+      },
+      {
+        "minute": 65,
+        "team": "Real Annual XI",
+        "type": "turnover",
+        "actor": "Lamine Yamal",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "Lamine Yamal pierde el balón bajo presión"
+      },
+      {
+        "minute": 70,
+        "team": "Synthetic XI [max20]",
+        "type": "goal",
+        "actor": "SYN-W-MAX20",
+        "zone": 3,
+        "xg": 0.318,
+        "headline": "GOL de SYN-W-MAX20"
+      },
+      {
+        "minute": 71,
+        "team": "Synthetic XI [max20]",
+        "type": "shot_on_target",
+        "actor": "SYN-AM-MAX20",
+        "zone": 3,
+        "xg": 0.307,
+        "headline": "Remate de SYN-AM-MAX20 detenido por el portero"
+      },
+      {
+        "minute": 79,
+        "team": "Real Annual XI",
+        "type": "turnover",
+        "actor": "Lionel Messi",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "Lionel Messi pierde el balón bajo presión"
+      },
+      {
+        "minute": 88,
+        "team": "Synthetic XI [max20]",
+        "type": "goal",
+        "actor": "SYN-ST-MAX20",
+        "zone": 2,
+        "xg": 0.198,
+        "headline": "GOL de SYN-ST-MAX20"
+      },
+      {
+        "minute": 90,
+        "team": "Real Annual XI",
+        "type": "shot_on_target",
+        "actor": "Kylian Mbappé",
+        "zone": 1,
+        "xg": 0.115,
+        "headline": "Remate de Kylian Mbappé detenido por el portero"
+      }
+    ]
+  },
+  "methodological_gate": {
+    "publication_as_final_result_allowed": false,
+    "reason": "The engine is calibrated, but annual coverage and definitive eleven-role resolution remain incomplete."
+  }
+}

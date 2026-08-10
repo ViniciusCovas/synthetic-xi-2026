@@ -1,0 +1,257 @@
+{
+  "status": "calibrated_exploratory_simulation_completed",
+  "simulations": 10000,
+  "home": "Synthetic XI [mean20]",
+  "away": "Real Annual XI",
+  "home_win_probability": 0.267,
+  "draw_probability": 0.2244,
+  "away_win_probability": 0.5086,
+  "mean_home_goals": 1.2926,
+  "mean_away_goals": 1.8601,
+  "mean_total_goals": 3.1527000000000003,
+  "mean_home_xg": 1.295818749589532,
+  "mean_away_xg": 1.8449781944912054,
+  "mean_total_shots": 18.186,
+  "mean_total_shots_on_target": 9.210899999999999,
+  "zero_zero_probability": 0.0407,
+  "top_scorelines": [
+    {
+      "score": "1-1",
+      "probability": 0.1037
+    },
+    {
+      "score": "1-2",
+      "probability": 0.0954
+    },
+    {
+      "score": "0-1",
+      "probability": 0.0829
+    },
+    {
+      "score": "0-2",
+      "probability": 0.0715
+    },
+    {
+      "score": "2-1",
+      "probability": 0.07
+    },
+    {
+      "score": "2-2",
+      "probability": 0.0576
+    },
+    {
+      "score": "1-3",
+      "probability": 0.056
+    },
+    {
+      "score": "1-0",
+      "probability": 0.0537
+    },
+    {
+      "score": "0-3",
+      "probability": 0.047
+    },
+    {
+      "score": "0-0",
+      "probability": 0.0407
+    }
+  ],
+  "calibration_targets": {
+    "source_match_count": 94,
+    "mean_goals_per_match": 2.9148936170212765,
+    "mean_shots_per_match": 18.094871004214205,
+    "mean_shots_on_target_per_match": 8.378558947476618,
+    "zero_zero_rate": 0.07446808510638298,
+    "home_win_rate": 0.48936170212765956,
+    "draw_rate": 0.2127659574468085,
+    "away_win_rate": 0.2978723404255319,
+    "model_possessions_per_match": 104.0
+  },
+  "calibration_error": {
+    "goals_per_match": 0.2378063829787238,
+    "shots_per_match": 0.09112899578579459,
+    "shots_on_target_per_match": 0.8323410525233808,
+    "zero_zero_rate": -0.033768085106382975
+  },
+  "representative_match": {
+    "home": "Synthetic XI [mean20]",
+    "away": "Real Annual XI",
+    "home_goals": 1,
+    "away_goals": 2,
+    "home_xg": 1.218,
+    "away_xg": 1.934,
+    "home_shots": 8,
+    "away_shots": 10,
+    "home_shots_on_target": 2,
+    "away_shots_on_target": 5,
+    "home_possession_share": 0.45,
+    "timeline": [
+      {
+        "minute": 4,
+        "team": "Synthetic XI [mean20]",
+        "type": "shot_off_target",
+        "actor": "SYN-ST-MEAN20",
+        "zone": 2,
+        "xg": 0.164,
+        "headline": "Ocasión de SYN-ST-MEAN20 fuera"
+      },
+      {
+        "minute": 17,
+        "team": "Synthetic XI [mean20]",
+        "type": "shot_on_target",
+        "actor": "SYN-CM-MEAN20",
+        "zone": 3,
+        "xg": 0.23,
+        "headline": "Remate de SYN-CM-MEAN20 detenido por el portero"
+      },
+      {
+        "minute": 24,
+        "team": "Real Annual XI",
+        "type": "shot_off_target",
+        "actor": "Rayan Cherki",
+        "zone": 2,
+        "xg": 0.157,
+        "headline": "Ocasión de Rayan Cherki fuera"
+      },
+      {
+        "minute": 26,
+        "team": "Synthetic XI [mean20]",
+        "type": "shot_off_target",
+        "actor": "SYN-ST-MEAN20",
+        "zone": 2,
+        "xg": 0.164,
+        "headline": "Ocasión de SYN-ST-MEAN20 fuera"
+      },
+      {
+        "minute": 28,
+        "team": "Real Annual XI",
+        "type": "shot_on_target",
+        "actor": "Lamine Yamal",
+        "zone": 2,
+        "xg": 0.172,
+        "headline": "Remate de Lamine Yamal detenido por el portero"
+      },
+      {
+        "minute": 31,
+        "team": "Synthetic XI [mean20]",
+        "type": "goal",
+        "actor": "SYN-W-MEAN20",
+        "zone": 1,
+        "xg": 0.099,
+        "headline": "GOL de SYN-W-MEAN20"
+      },
+      {
+        "minute": 32,
+        "team": "Real Annual XI",
+        "type": "shot_off_target",
+        "actor": "Kylian Mbappé",
+        "zone": 2,
+        "xg": 0.195,
+        "headline": "Ocasión de Kylian Mbappé fuera"
+      },
+      {
+        "minute": 35,
+        "team": "Real Annual XI",
+        "type": "shot_off_target",
+        "actor": "Kylian Mbappé",
+        "zone": 2,
+        "xg": 0.195,
+        "headline": "Ocasión de Kylian Mbappé fuera"
+      },
+      {
+        "minute": 37,
+        "team": "Real Annual XI",
+        "type": "shot_on_target",
+        "actor": "Kylian Mbappé",
+        "zone": 2,
+        "xg": 0.195,
+        "headline": "Remate de Kylian Mbappé detenido por el portero"
+      },
+      {
+        "minute": 37,
+        "team": "Synthetic XI [mean20]",
+        "type": "shot_off_target",
+        "actor": "SYN-W-MEAN20",
+        "zone": 2,
+        "xg": 0.158,
+        "headline": "Ocasión de SYN-W-MEAN20 fuera"
+      },
+      {
+        "minute": 41,
+        "team": "Synthetic XI [mean20]",
+        "type": "shot_off_target",
+        "actor": "SYN-W-MEAN20",
+        "zone": 2,
+        "xg": 0.158,
+        "headline": "Ocasión de SYN-W-MEAN20 fuera"
+      },
+      {
+        "minute": 45,
+        "team": "Real Annual XI",
+        "type": "shot_on_target",
+        "actor": "Kylian Mbappé",
+        "zone": 2,
+        "xg": 0.195,
+        "headline": "Remate de Kylian Mbappé detenido por el portero"
+      },
+      {
+        "minute": 58,
+        "team": "Real Annual XI",
+        "type": "turnover",
+        "actor": "Lamine Yamal",
+        "zone": 2,
+        "xg": 0.0,
+        "headline": "Lamine Yamal pierde el balón bajo presión"
+      },
+      {
+        "minute": 60,
+        "team": "Real Annual XI",
+        "type": "goal",
+        "actor": "Lionel Messi",
+        "zone": 2,
+        "xg": 0.185,
+        "headline": "GOL de Lionel Messi"
+      },
+      {
+        "minute": 61,
+        "team": "Real Annual XI",
+        "type": "goal",
+        "actor": "Lamine Yamal",
+        "zone": 2,
+        "xg": 0.172,
+        "headline": "GOL de Lamine Yamal"
+      },
+      {
+        "minute": 69,
+        "team": "Real Annual XI",
+        "type": "shot_off_target",
+        "actor": "Lionel Messi",
+        "zone": 3,
+        "xg": 0.299,
+        "headline": "Ocasión de Lionel Messi fuera"
+      },
+      {
+        "minute": 71,
+        "team": "Synthetic XI [mean20]",
+        "type": "shot_off_target",
+        "actor": "SYN-AM-MEAN20",
+        "zone": 2,
+        "xg": 0.143,
+        "headline": "Ocasión de SYN-AM-MEAN20 fuera"
+      },
+      {
+        "minute": 85,
+        "team": "Real Annual XI",
+        "type": "shot_off_target",
+        "actor": "Lamine Yamal",
+        "zone": 2,
+        "xg": 0.172,
+        "headline": "Ocasión de Lamine Yamal fuera"
+      }
+    ]
+  },
+  "methodological_gate": {
+    "publication_as_final_result_allowed": false,
+    "reason": "The engine is calibrated, but annual coverage and definitive eleven-role resolution remain incomplete."
+  }
+}

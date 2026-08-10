@@ -223,18 +223,129 @@ def build_positional_comparisons(
     return pd.DataFrame(rows)
 
 
+# Lado que representa cada slot emparejado del 4-3-3 experimental.
+PAIRED_SLOT_SIDE: dict[str, str] = {
+    "RB": "R", "LB": "L", "RCB": "R", "LCB": "L", "RW": "R", "LW": "L",
+}
+
+
+def _order_pair_by_side(
+    first: pd.Series,
+    second: pd.Series,
+    side_by_player: dict[int, str],
+) -> tuple[pd.Series, pd.Series, str]:
+    """Devuelve (jugador_slot_derecho, jugador_slot_izquierdo, regla).
+
+    La selección (quiénes entran) ya está decidida por ranking; aquí solo se
+    decide qué integrante del par ocupa el lado derecho y cuál el izquierdo,
+    según la evidencia de lado observada. Sin evidencia, se mantiene el orden
+    de ranking (mejor clasificado al slot derecho, como en v0.4.0).
+    """
+    side_first = side_by_player.get(int(first["player_id"]))
+    side_second = side_by_player.get(int(second["player_id"]))
+
+    def score(right: str | None, left: str | None) -> int:
+        total = 0
+        total += 1 if right == "R" else -1 if right == "L" else 0
+        total += 1 if left == "L" else -1 if left == "R" else 0
+        return total
+
+    keep = score(side_first, side_second)
+    swap = score(side_second, side_first)
+    evidence_rule = "lados por evidencia observada (mapeo de grid validado y anclas)"
+    if swap > keep:
+        return second, first, evidence_rule
+    if keep > swap:
+        return first, second, evidence_rule
+    if side_first is not None or side_second is not None:
+        return (
+            first,
+            second,
+            "orden de ranking (evidencia de lado en conflicto: ambos del mismo lado)",
+        )
+    return first, second, "orden de ranking (sin evidencia de lado)"
+
+
 def build_experimental_lineups(
     ranked: pd.DataFrame,
     avatars: pd.DataFrame,
+    side_by_player: dict[int, str] | None = None,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Construye Synthetic XI y Real Best XI con exactamente once plazas."""
+    """Construye Synthetic XI y Real Best XI con exactamente once plazas.
+
+    `side_by_player` mapea player_id -> "R"/"L" (lado observado validado). Solo
+    reordena dentro de cada par de slots; nunca altera quiénes son elegidos.
+    """
+    sides = side_by_player or {}
     synthetic_rows: list[dict[str, Any]] = []
-    real_rows: list[dict[str, Any]] = []
+    real_by_slot: dict[str, dict[str, Any]] = {}
+
+    def real_row(slot_spec: dict[str, object], player: pd.Series | None,
+                 ordinal: int, rule: str | None) -> dict[str, Any]:
+        slot = str(slot_spec["slot"])
+        group = str(slot_spec["position_group"])
+        if player is None:
+            return {
+                "slot": slot, "position_group": group, "source_ordinal": ordinal,
+                "entity_type": "jugador_real", "entity_id": None,
+                "entity_name": None, "team_name": None, "rank_score": None,
+                "minutes": None, "observed_side": None,
+                "side_assignment_rule": None, "available": False,
+            }
+        return {
+            "slot": slot,
+            "position_group": group,
+            "source_ordinal": ordinal,
+            "entity_type": "jugador_real",
+            "entity_id": int(player["player_id"]),
+            "entity_name": player["player_name"],
+            "team_name": player["team_name"],
+            "rank_score": float(player["rank_score"]),
+            "minutes": float(player["minutes"]),
+            "observed_side": sides.get(int(player["player_id"])),
+            "side_assignment_rule": rule,
+            "available": True,
+        }
+
+    group_slots: dict[str, list[dict[str, object]]] = {}
+    for slot_spec in XI_SLOTS:
+        group_slots.setdefault(str(slot_spec["position_group"]), []).append(slot_spec)
+
+    for group, slots in group_slots.items():
+        pool = ranked[ranked["position_group"] == group].sort_values(
+            ["position_rank", "minutes"]
+        )
+        players = [pool.iloc[i] if len(pool) > i else None for i in range(len(slots))]
+        if len(slots) == 2 and players[0] is not None and players[1] is not None:
+            right_slot = next(
+                s for s in slots if PAIRED_SLOT_SIDE.get(str(s["slot"])) == "R"
+            )
+            left_slot = next(
+                s for s in slots if PAIRED_SLOT_SIDE.get(str(s["slot"])) == "L"
+            )
+            right_player, left_player, rule = _order_pair_by_side(
+                players[0], players[1], sides
+            )
+            right_ordinal = 1 if right_player is players[0] else 2
+            real_by_slot[str(right_slot["slot"])] = real_row(
+                right_slot, right_player, right_ordinal, rule
+            )
+            real_by_slot[str(left_slot["slot"])] = real_row(
+                left_slot, left_player, 3 - right_ordinal, rule
+            )
+        else:
+            for index, slot_spec in enumerate(slots):
+                real_by_slot[str(slot_spec["slot"])] = real_row(
+                    slot_spec,
+                    players[index],
+                    index + 1,
+                    "orden de ranking" if players[index] is not None else None,
+                )
+
     for slot_spec in XI_SLOTS:
         slot = str(slot_spec["slot"])
         group = str(slot_spec["position_group"])
         ordinal = int(slot_spec["ordinal"])
-
         avatar = avatars[avatars["position_group"] == group]
         synthetic_rows.append(
             {
@@ -249,38 +360,5 @@ def build_experimental_lineups(
             }
         )
 
-        pool = ranked[ranked["position_group"] == group].sort_values(
-            ["position_rank", "minutes"]
-        )
-        if len(pool) >= ordinal:
-            player = pool.iloc[ordinal - 1]
-            real_rows.append(
-                {
-                    "slot": slot,
-                    "position_group": group,
-                    "source_ordinal": ordinal,
-                    "entity_type": "jugador_real",
-                    "entity_id": int(player["player_id"]),
-                    "entity_name": player["player_name"],
-                    "team_name": player["team_name"],
-                    "rank_score": float(player["rank_score"]),
-                    "minutes": float(player["minutes"]),
-                    "available": True,
-                }
-            )
-        else:
-            real_rows.append(
-                {
-                    "slot": slot,
-                    "position_group": group,
-                    "source_ordinal": ordinal,
-                    "entity_type": "jugador_real",
-                    "entity_id": None,
-                    "entity_name": None,
-                    "team_name": None,
-                    "rank_score": None,
-                    "minutes": None,
-                    "available": False,
-                }
-            )
+    real_rows = [real_by_slot[str(slot_spec["slot"])] for slot_spec in XI_SLOTS]
     return pd.DataFrame(synthetic_rows), pd.DataFrame(real_rows)
