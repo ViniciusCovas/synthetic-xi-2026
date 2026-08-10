@@ -167,6 +167,8 @@ async function boot(){
     homeXI: teams[HOME].starters.map(p => ({role: p.role, name: p.name, number: p.number})),
     awayXI: teams[AWAY].starters.map(p => ({role: p.role, name: p.name, number: p.number})),
     homeNumbers: numbersOf(HOME), awayNumbers: numbersOf(AWAY),
+    background: Q.get('bg') || null,
+    brand: 'SYNTHETIC XI TV',
   });
   const pyodide = await loadPyodide();
   await pyodide.loadPackage('numpy');

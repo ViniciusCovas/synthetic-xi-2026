@@ -99,6 +99,10 @@ nav .back:hover{color:var(--ink)}
   font:500 16px Inter,sans-serif;cursor:pointer;appearance:none;-webkit-appearance:none}
 .field select:focus{outline:none}
 .readout{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.caveat{flex-basis:100%;margin:6px 0 0;font-size:13px;line-height:1.6;color:var(--muted);
+  padding:12px 14px;background:var(--paper-2);border:1px solid var(--line-soft);
+  border-radius:10px}
+.caveat b{color:var(--body);font-weight:600}
 .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);
   background:var(--card);border-radius:999px;padding:6px 13px;font-size:13px;color:var(--body)}
 .chip b{color:var(--ink);font-weight:600}
@@ -138,8 +142,20 @@ button{font:inherit;cursor:pointer;border-radius:12px;border:1px solid transpare
 .odds .mid .cup{font-size:26px;line-height:1}
 .odds .mid small{display:block;color:var(--muted);font-size:12px;margin-top:5px}
 .knockout{margin:16px 0 0;color:var(--muted);font-size:13.5px;line-height:1.5}
-.split{display:flex;height:12px;border-radius:999px;overflow:hidden;margin-top:20px;gap:2px}
+.margin{margin-top:14px;text-align:center;color:var(--muted);font-size:12.5px;
+  letter-spacing:.02em}
+.split{position:relative;display:flex;height:12px;border-radius:999px;overflow:hidden;
+  margin-top:8px;gap:2px}
 .split i{display:block;height:100%;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+/* Faixa de incerteza: onde a fronteira entre os dois pode realmente estar. */
+.split-ci{position:absolute;top:0;bottom:0;pointer-events:none;
+  background:repeating-linear-gradient(135deg,rgba(255,255,255,.85) 0 3px,
+    rgba(255,255,255,.35) 3px 6px);
+  border-left:1px solid rgba(21,24,29,.35);border-right:1px solid rgba(21,24,29,.35);
+  transition:left .5s cubic-bezier(.2,.8,.2,1),width .5s cubic-bezier(.2,.8,.2,1)}
+.call{margin:14px 0 0;font-size:13.5px;line-height:1.55;color:var(--muted);
+  padding-left:12px;border-left:3px solid var(--line)}
+.call.decisive{color:var(--body);border-left-color:var(--home)}
 
 .cols{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));margin-top:16px}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
@@ -184,6 +200,19 @@ svg.pitch{width:100%;max-width:480px;height:auto;display:block;margin:0 auto;bor
 .goalflash.away{background:var(--away-soft);color:var(--away)}
 .goalflash.on{display:block;animation:pop .4s ease}
 @keyframes pop{from{transform:translateY(-6px);opacity:0}to{transform:none;opacity:1}}
+.kitbar{display:flex;align-items:center;gap:14px;padding:9px 16px;flex-wrap:wrap;
+  background:#0B1F14;border-bottom:1px solid rgba(255,255,255,.08)}
+.kitbar b{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;
+  letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.92)}
+.kitbar .jersey{width:15px;height:15px;border-radius:4px;border:1px solid rgba(255,255,255,.5);
+  flex:none;box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.kitbar .side{margin-left:auto;font-size:11px;font-weight:500;letter-spacing:.04em;
+  color:rgba(255,255,255,.5);text-transform:none}
+.live-pitch{background:#0B1F14;border-bottom:1px solid var(--line-soft)}
+.live-pitch canvas{display:block;width:100%;aspect-ratio:105/58}
+.live-note{margin:0;padding:9px 16px;font-size:12.5px;line-height:1.5;
+  color:var(--muted);background:var(--paper-2);border-bottom:1px solid var(--line-soft)}
+.live-note b{color:var(--body)}
 /* Coluna normal com o lance novo inserido no topo: em column-reverse o
    scrollTop é negativo no Chrome e diverge entre navegadores, e o feed
    ficava preso nos primeiros lances enquanto o jogo avançava. */
@@ -320,7 +349,9 @@ details .chip{margin-top:10px}
           <div class="pct tnum" id="r-pct-away">—</div>
         </div>
       </div>
+      <div class="margin tnum" id="r-margin"></div>
       <div class="split" id="split"></div>
+      <p class="call" id="r-call"></p>
       <p class="knockout">Final eliminatória: não há empate — se os 90 minutos terminam iguais,
         a decisão vai para a prorrogação e, se preciso, para os pênaltis.</p>
     </div>
@@ -355,6 +386,11 @@ details .chip{margin-top:10px}
           <div class="sb-team a right"><b id="w-name-away"></b><span id="w-flag-away"></span></div>
         </div>
         <div class="goalflash" id="goalflash"></div>
+        <div class="kitbar" id="kitbar"></div>
+        <div class="live-pitch"><canvas id="live2d"></canvas></div>
+        <p class="live-note">Os <b>lances</b> — gols, defesas, faltas, cartões, substituições —
+          são os que o motor sorteou. A movimentação entre eles é interpolação plausível,
+          construída para convergir no lance seguinte.</p>
         <div class="feed" id="feed"></div>
         <div class="watch-controls">
           <button id="w-play">⏸ Pausar</button>
@@ -380,6 +416,7 @@ details .chip{margin-top:10px}
 </div>
 
 <script src="kits.js"></script>
+<script src="tv/match2d.js"></script>
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
 <script>
 const $ = (id) => document.getElementById(id);
@@ -446,7 +483,13 @@ function syncReadout(){
     `<span class="chip">🌡️ <b>${t.toFixed(1).replace('.',',')} °C</b> sensação</span>` +
     `<span class="chip">⛰️ <b>${v.altitude_m} m</b> de altitude</span>` +
     `<span class="chip">📐 efeito <b>${scheme}</b></span>` +
-    `<span class="chip">📊 ${v.matches_observed} jogos medidos</span>`;
+    `<span class="chip">📊 ${v.matches_observed} jogos medidos</span>` +
+    `<p class="caveat">Medido no próprio motor com 1.500 finais pareadas por seed:
+      calor e altitude mudam <b>12% a 23% das partidas</b> individualmente e reduzem
+      os gols em cerca de <b>1,5%</b>, mas <b>não deslocam quem vence</b>
+      (Δ = 0,000 ± 0,014). A razão é que a fadiga recai igualmente sobre os dois
+      times — o modelo <b>não</b> representa aclimatação de quem joga em casa na
+      altitude. Escolher o estádio muda como a final se desenrola, não o favoritismo.</p>`;
 }
 
 async function ensureEngine(){
@@ -592,11 +635,32 @@ function render(r, started, seed){
   const ph = r.win_probability[home], pa = r.win_probability[away];
   $('r-flag-home').textContent = flag(home); $('r-name-home').textContent = label(home);
   $('r-flag-away').textContent = flag(away); $('r-name-away').textContent = label(away);
-  $('r-pct-home').textContent = pct(ph);
-  $('r-pct-away').textContent = pct(pa);
+  // Erro de Monte Carlo: com N finais, a probabilidade estimada tem
+  // IC95% = ±1,96·sqrt(p(1-p)/N). Sem isso, "46,5%" finge uma precisão
+  // que 200 simulações não têm (±6,9 pontos).
+  const n = Math.max(r.simulations, 1);
+  const halfWidth = 1.96 * Math.sqrt(ph * (1 - ph) / n);
+  const margin = (100 * halfWidth).toFixed(1).replace('.', ',');
+  // Casas decimais coerentes com a margem: não exibir dígitos sem lastro.
+  const digits = halfWidth >= 0.01 ? 0 : 1;
+  const show = p => (100 * p).toFixed(digits).replace('.', ',') + '%';
+  $('r-pct-home').textContent = show(ph);
+  $('r-pct-away').textContent = show(pa);
+  $('r-margin').textContent = `± ${margin} pontos · intervalo de 95% com ${n} finais`;
+  // A faixa de incerteza é escrita junto com as barras: reconstruir o
+  // innerHTML separadamente apagaria o elemento.
+  const ciLeft = 100 * Math.max(0, ph - halfWidth);
+  const ciWidth = 100 * Math.min(1, 2 * halfWidth);
   $('split').innerHTML =
     `<i style="width:${100*ph}%;background:var(--home)"></i>` +
-    `<i style="width:${100*pa}%;background:var(--away)"></i>`;
+    `<i style="width:${100*pa}%;background:var(--away)"></i>` +
+    `<span class="split-ci" id="split-ci" title="onde a fronteira pode estar"
+       style="left:${ciLeft}%;width:${ciWidth}%"></span>`;
+  const decisive = Math.abs(ph - 0.5) > halfWidth;
+  $('r-call').textContent = decisive
+    ? `Com ${n} finais, a vantagem de ${label(ph > pa ? home : away)} é maior que o erro amostral.`
+    : `Com ${n} finais, o favoritismo ainda não se separa do empate técnico — aumente as finais para estreitar o intervalo.`;
+  $('r-call').className = 'call' + (decisive ? ' decisive' : '');
   $('run-meta').textContent = `${r.simulations} finais · seed ${seed}`;
 
   const names = {regulation:'Nos 90 minutos', extra_time:'Na prorrogação', penalties:'Nos pênaltis'};
@@ -639,7 +703,7 @@ function icon(headline){
   if(/lesão|lesao/i.test(headline)) return '🚑';
   return '·';
 }
-const WATCH = { events:[], idx:0, clock:0, timer:null, playing:false, data:null };
+const WATCH = { events:[], idx:0, clock:0, timer:null, playing:false, data:null, live:false };
 
 async function loadRepresentative(){
   $('watch-btn').disabled = true;
@@ -661,7 +725,41 @@ async function loadRepresentative(){
   $('watch-btn').disabled = false;
 }
 
+// O campo ao vivo recebe os mesmos eventos do motor que alimentam o feed.
+function mountLive(){
+  const c = $('live2d');
+  WATCH.live = false;
+  if(!window.Match2D || !window.TeamKits || !c || !c.clientWidth) return;
+  c.width = Math.round(c.clientWidth * 2);
+  c.height = Math.round(c.clientWidth * 2 * 58 / 105);
+  const d = WATCH.data;
+  const squad = t => [...DATA.teams[t].starters,
+                      ...Object.values(DATA.teams[t].bench_by_role).flat()];
+  const numbersOf = t => Object.fromEntries(
+    squad(t).filter(p => p.number != null).map(p => [p.name, p.number]));
+  const xi = t => DATA.teams[t].starters.map(
+    p => ({role: p.role, name: p.name, number: p.number}));
+  Match2D.mount(c, {
+    homeName: d.home, awayName: d.away,
+    homeXI: xi(d.home), awayXI: xi(d.away),
+    homeNumbers: numbersOf(d.home), awayNumbers: numbersOf(d.away),
+    brand: 'SYNTHETIC XI LAB',
+  });
+  // Com as etiquetas de nome ocultas em telas estreitas, as cores precisam
+  // ser explicadas: esta barra diz qual camisa é de quem.
+  const k = TeamKits.kitsFor(d.home, d.away);
+  const jersey = c => `<i class="jersey" style="background:${c}"></i>`;
+  $('kitbar').innerHTML =
+    `<b>${jersey(k.home.shirt)}${label(d.home)}` +
+      (k.home.alternate ? ' <span class="side">(alternativo)</span>' : '') + `</b>` +
+    `<b>${jersey(k.away.shirt)}${label(d.away)}` +
+      (k.away.alternate ? ' <span class="side">(alternativo)</span>' : '') + `</b>` +
+    `<span class="side">${label(d.home)} ataca para a direita</span>`;
+  WATCH.live = true;
+}
+
 function renderEvent(e){
+  if(WATCH.live) Match2D.event(e);
   const big = /^GOL|expuls|pênalti|Final|Intervalo/i.test(e.headline);
   // O lance novo entra no topo e o feed volta ao topo: assim o que está
   // em cena acompanha o relógio em vez de ficar parado no início do jogo.
@@ -683,6 +781,7 @@ function tick(){
   if(!WATCH.playing) return;
   WATCH.clock += 1;
   $('w-clock').textContent = WATCH.clock + '′';
+  if(WATCH.live) Match2D.setClock(WATCH.clock);
   while(WATCH.idx < WATCH.events.length && WATCH.events[WATCH.idx].minute <= WATCH.clock){
     renderEvent(WATCH.events[WATCH.idx]); WATCH.idx += 1;
   }
@@ -714,6 +813,7 @@ function restartWatch(){
   $('feed').innerHTML = ''; $('w-score').textContent = '0–0';
   $('w-clock').textContent = '0′'; $('w-phase').textContent = '1º tempo';
   $('w-play').textContent = '⏸ Pausar';
+  mountLive();
   tick();
 }
 

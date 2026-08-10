@@ -44,12 +44,19 @@
 
   function mount(canvas, cfg) {
     S.canvas = canvas; S.ctx = canvas.getContext('2d');
-    const bg = new Image();
-    bg.onload = () => { S.bg = bg; };
-    bg.src = cfg.background || 'pitch-bg.png';
+    // Fundo pintado é opcional e só é buscado quando pedido explicitamente
+    // (?bg=pitch-bg.png), para não gerar um 404 em toda visita.
+    S.bg = null;
+    if (cfg.background) {
+      const bg = new Image();
+      bg.onload = () => { S.bg = bg; };
+      bg.src = cfg.background;
+    }
     if (cfg.kits) S.kit = cfg.kits;
     else if (window.TeamKits) S.kit = TeamKits.kitsFor(cfg.homeName, cfg.awayName);
     S.numbers = { home: cfg.homeNumbers || {}, away: cfg.awayNumbers || {} };
+    S.compact = cfg.compact !== undefined ? cfg.compact : canvas.width < 1100;
+    S.brand = cfg.brand || 'SYNTHETIC XI';
     S.players = [];
     for (const side of ['home', 'away']) {
       for (const p of cfg[side + 'XI']) {
@@ -322,12 +329,12 @@
       ctx.closePath();
       ctx.fillStyle = BOARD_COLOURS[i % BOARD_COLOURS.length]; ctx.fill();
     }
-    for (const bu of [22, 83]) {
+    for (const bu of (S.compact ? [] : [22, 83])) {
       const [tx, ty, tsc] = persp(bu, -3);
       ctx.fillStyle = 'rgba(255,255,255,.92)';
       ctx.font = `700 ${Math.max(10, 1.5 * metre(tsc))}px Inter, sans-serif`;
       ctx.textAlign = 'center';
-      ctx.fillText('SYNTHETIC XI TV', tx, ty - 1.1 * metre(tsc));
+      ctx.fillText(S.brand, tx, ty - 1.1 * metre(tsc));
     }
 
     // relvado com faixas de corte
@@ -477,6 +484,11 @@
     ctx.beginPath(); ctx.arc(0, -h * 0.90, h * 0.145, 0, Math.PI * 2);
     ctx.fillStyle = '#C99B6F'; ctx.fill();
     ctx.restore();
+
+    // Em telas estreitas as etiquetas se sobrepõem e viram ruído: o número
+    // na camisa já identifica o jogador, e a escalação completa fica logo
+    // acima, no desenho do campo.
+    if (S.compact) return;
 
     // etiqueta de nome
     const label = p.name.toUpperCase();
