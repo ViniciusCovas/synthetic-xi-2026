@@ -70,6 +70,40 @@ nav .back:hover{color:var(--ink)}
 .hero h1 em{font-style:italic;color:var(--home)}
 .hero p{font-size:clamp(17px,2vw,19px);color:var(--body);margin:0;max-width:56ch}
 
+/* ---- pegada de esporte -------------------------------------------------
+   O rigor fica no conteúdo; a energia vem da linguagem visual do futebol:
+   números de camisa nos passos, faixas com a cor real do uniforme, e um
+   "vs" de placar. Nada disso altera um número exibido.                    */
+.step-num{border-radius:8px !important;font-family:Fraunces,serif;font-weight:700;
+  box-shadow:inset 0 -2px 0 rgba(255,255,255,.18)}
+.step-head h2{font-family:Fraunces,serif;letter-spacing:-.01em}
+.step-note{font-size:11.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted)}
+/* O rótulo em caixa alta é largo; sem isto ele espremia o título ao lado. */
+.step-head{flex-wrap:wrap}
+.step-head h2{flex:1 1 auto;min-width:0}
+/* faixa da cor da camisa no topo do cartão de cada seleção */
+.team{position:relative;overflow:hidden}
+.team::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;
+  background:var(--kit,var(--line));transition:background .3s ease}
+.team.h{--kit:var(--home)} .team.a{--kit:var(--away)}
+/* O rótulo mantém a cor semântica: camisas claras (Brasil, Inglaterra)
+   não teriam contraste sobre o cartão branco. A cor real fica na faixa. */
+.vs{display:flex;align-items:center;justify-content:center}
+.vs span{display:flex;align-items:center;justify-content:center;width:46px;height:46px;
+  border-radius:50%;background:var(--card);border:1px solid var(--line);
+  font-family:Fraunces,serif;font-style:italic;font-size:17px;color:var(--ink);
+  box-shadow:var(--shadow)}
+.kit-note{margin:12px 0 0;font-size:11.5px;font-weight:600;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--muted);text-align:center}
+/* O botão fica escuro (texto branco legível sobre qualquer confronto) e
+   ganha as cores do jogo numa faixa inferior — camisas claras como a do
+   Brasil não sustentariam texto branco por cima. */
+body #run{position:relative;overflow:hidden;font-weight:650;letter-spacing:.01em;
+  box-shadow:var(--shadow-lg)}
+body #run::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;
+  background:linear-gradient(90deg,var(--kit-h,var(--home)) 0 50%,
+    var(--kit-a,var(--away)) 50% 100%)}
 .step{border-top:1px solid var(--line);padding:40px 0 8px}
 .step-head{display:flex;align-items:baseline;gap:12px;margin-bottom:22px}
 .step-num{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;
@@ -284,13 +318,14 @@ details .chip{margin-top:10px}
         <div class="flag" id="flag-home">🏳️</div>
         <select id="home" aria-label="Seleção mandante"></select>
       </div>
-      <div class="vs">vs</div>
+      <div class="vs"><span>vs</span></div>
       <div class="team a">
         <div class="role">Visitante</div>
         <div class="flag" id="flag-away">🏳️</div>
         <select id="away" aria-label="Seleção visitante"></select>
       </div>
     </div>
+    <p class="kit-note" id="kit-note">uniformes titulares</p>
   </section>
 
   <section class="step">
@@ -466,8 +501,20 @@ async function boot(){
 }
 
 function syncFlags(){
-  $('flag-home').textContent = flag($('home').value);
-  $('flag-away').textContent = flag($('away').value);
+  const h = $('home').value, a = $('away').value;
+  $('flag-home').textContent = flag(h);
+  $('flag-away').textContent = flag(a);
+  // As cores reais das camisas atravessam a página inteira: a faixa do
+  // cartão, o "vs" e o botão passam a falar a língua do confronto.
+  if(!window.TeamKits || h === a) return;
+  const k = TeamKits.kitsFor(h, a);
+  document.querySelector('.team.h').style.setProperty('--kit', k.home.shirt);
+  document.querySelector('.team.a').style.setProperty('--kit', k.away.shirt);
+  document.documentElement.style.setProperty('--kit-h', k.home.shirt);
+  document.documentElement.style.setProperty('--kit-a', k.away.shirt);
+  $('kit-note').textContent = (k.home.alternate || k.away.alternate)
+    ? 'camisas semelhantes — o visitante usa o uniforme alternativo'
+    : 'uniformes titulares';
 }
 
 function syncReadout(){
