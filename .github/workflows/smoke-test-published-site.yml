@@ -63,8 +63,25 @@ jobs:
           echo "titulares da Espanha: $xi"
           [ "${xi:-0}" -eq 11 ] || { echo "FALHA  esperava 11 titulares"; fail=1; }
 
+          echo "=== Correções presentes no que está publicado ==="
+          lab=$(curl -sSL --max-time 45 "$BASE/lab/")
+          eng=$(curl -sSL --max-time 45 "$BASE/lab/py/labsim/lab_runtime.py")
+          want() {  # corpo, descrição, padrão que precisa existir
+            if printf '%s' "$1" | grep -qF "$3"; then echo "OK     $2"
+            else echo "FALHA  $2 (não achei '$3')"; fail=1; fi
+          }
+          reject() {  # corpo, descrição, padrão que NÃO pode existir
+            if printf '%s' "$1" | grep -qF "$3"; then echo "FALHA  $2 (ainda tem '$3')"; fail=1
+            else echo "OK     $2"; fi
+          }
+          reject "$lab" "feed sem column-reverse"          "column-reverse"
+          want   "$lab" "lance novo entra no topo"          "afterbegin"
+          want   "$lab" "marcação de improviso no campo"    "stroke-dasharray"
+          want   "$lab" "legenda de improvisos"             "l-formation"
+          want   "$eng" "motor devolve is_modal"            "is_modal"
+
           echo
-          if [ "$fail" -eq 0 ]; then echo "✅ Assets e dados servidos corretamente."
+          if [ "$fail" -eq 0 ]; then echo "✅ Assets, dados e correções no ar."
           else echo "❌ Há falhas acima."; exit 1; fi
 
   browser:
