@@ -1,14 +1,8 @@
 name: Selection Frontier Coverage Cycle
 
+# Coverage queue completed; run manually when new evidence requires collection.
+# Automatic retries are paused to prevent recurring failure notifications.
 on:
-  push:
-    branches: [main]
-    paths:
-      - "scripts/build_selection_frontier.py"
-      - "scripts/run_frontier_coverage_extraction.py"
-      - ".github/workflows/selection-frontier-cycle.yml"
-  schedule:
-    - cron: "23 3,9,15,21 * * *"
   workflow_dispatch:
 
 permissions:

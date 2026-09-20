@@ -15,6 +15,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from scripts.coverage_queue import read_coverage_queue
+
 from scripts.api_football_batch_client import BatchClient, QuotaStop
 from scripts.run_adaptive_annual_extraction import (
     AUDIT_DIR,
@@ -93,13 +95,14 @@ def load_requery_progress() -> pd.DataFrame:
 
 
 def main() -> None:
+    STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)
     now = datetime.now(timezone.utc)
     run_id = os.getenv("GITHUB_RUN_ID") or now.strftime("%Y%m%dT%H%M%S")
     batch_id = f"batch_bundle_{run_id}"
     if not PRIORITY_PATH.exists():
         STATUS_PATH.write_text(json.dumps({"status": "waiting_for_priority_queue", "network_calls": 0}, indent=2))
         return
-    priority = pd.read_csv(PRIORITY_PATH, low_memory=False)
+    priority = read_coverage_queue(PRIORITY_PATH)
     if priority.empty:
         STATUS_PATH.write_text(json.dumps({"status": "no_missing_coverage_fixtures", "network_calls": 0}, indent=2))
         return

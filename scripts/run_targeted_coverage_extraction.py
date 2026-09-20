@@ -14,6 +14,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from scripts.coverage_queue import read_coverage_queue
+
 from scripts.run_adaptive_annual_extraction import (
     AUDIT_DIR,
     BATCH_DIR,
@@ -32,6 +34,7 @@ STATUS_PATH = AUDIT_DIR / "targeted_coverage_extraction_status.json"
 
 
 def main() -> None:
+    STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)
     generated_at = datetime.now(timezone.utc)
     run_id = os.getenv("GITHUB_RUN_ID") or generated_at.strftime("%Y%m%dT%H%M%S")
     batch_id = f"batch_targeted_{run_id}"
@@ -41,7 +44,7 @@ def main() -> None:
         print(json.dumps(status, indent=2))
         return
 
-    priority = pd.read_csv(PRIORITY_PATH)
+    priority = read_coverage_queue(PRIORITY_PATH)
     if priority.empty:
         status = {"status": "no_missing_coverage_fixtures", "network_calls": 0}
         STATUS_PATH.write_text(json.dumps(status, indent=2), encoding="utf-8")
