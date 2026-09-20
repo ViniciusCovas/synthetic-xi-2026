@@ -8,15 +8,15 @@
     {
       "window": "annual_current",
       "relevant_players": 947,
-      "players_passing_80pct": 586,
-      "pass_rate": 0.6187961985216474,
+      "players_passing_80pct": 946,
+      "pass_rate": 0.9989440337909187,
       "missing_fixture_endpoints": 58
     },
     {
       "window": "pre_world_cup",
       "relevant_players": 947,
-      "players_passing_80pct": 945,
-      "pass_rate": 0.9978880675818373,
+      "players_passing_80pct": 944,
+      "pass_rate": 0.996832101372756,
       "missing_fixture_endpoints": 92
     }
   ],
