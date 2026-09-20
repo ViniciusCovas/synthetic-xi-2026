@@ -4,8 +4,8 @@
   "eligibility_definition": ">=900 exact-window detailed minutes",
   "screening_interval": "90% ability interval; final estimates retain 95% intervals",
   "eligible_candidates": 1019,
-  "fully_covered_both_windows": 651,
-  "unresolved_players": 320,
+  "fully_covered_both_windows": 1019,
+  "unresolved_players": 0,
   "priority_player_fixture_pairs": 0,
   "priority_unique_fixtures": 0,
   "roles": [
@@ -14,102 +14,102 @@
       "eligible_candidates": 104,
       "stable_candidates": 104,
       "required_pool_size": 30,
-      "covered_candidates": 67,
-      "unresolved_challengers": 37,
-      "role_gate_passed": false
+      "covered_candidates": 104,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
     },
     {
       "role": "RB",
       "eligible_candidates": 255,
       "stable_candidates": 233,
       "required_pool_size": 30,
-      "covered_candidates": 145,
-      "unresolved_challengers": 90,
-      "role_gate_passed": false
+      "covered_candidates": 233,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
     },
     {
       "role": "RCB",
       "eligible_candidates": 36,
       "stable_candidates": 29,
       "required_pool_size": 29,
-      "covered_candidates": 18,
-      "unresolved_challengers": 13,
-      "role_gate_passed": false
+      "covered_candidates": 29,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
     },
     {
       "role": "LCB",
       "eligible_candidates": 24,
       "stable_candidates": 11,
       "required_pool_size": 11,
-      "covered_candidates": 6,
-      "unresolved_challengers": 7,
-      "role_gate_passed": false
+      "covered_candidates": 11,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
     },
     {
       "role": "LB",
       "eligible_candidates": 41,
       "stable_candidates": 30,
       "required_pool_size": 30,
-      "covered_candidates": 21,
-      "unresolved_challengers": 13,
-      "role_gate_passed": false
+      "covered_candidates": 30,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
     },
     {
       "role": "DM",
       "eligible_candidates": 22,
       "stable_candidates": 12,
       "required_pool_size": 12,
-      "covered_candidates": 10,
-      "unresolved_challengers": 5,
-      "role_gate_passed": false
+      "covered_candidates": 12,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
     },
     {
       "role": "CM",
       "eligible_candidates": 107,
       "stable_candidates": 62,
       "required_pool_size": 30,
-      "covered_candidates": 39,
-      "unresolved_challengers": 26,
-      "role_gate_passed": false
+      "covered_candidates": 62,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
     },
     {
       "role": "AM",
       "eligible_candidates": 155,
       "stable_candidates": 126,
       "required_pool_size": 30,
-      "covered_candidates": 77,
-      "unresolved_challengers": 51,
-      "role_gate_passed": false
+      "covered_candidates": 126,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
     },
     {
       "role": "RW",
       "eligible_candidates": 250,
       "stable_candidates": 218,
       "required_pool_size": 30,
-      "covered_candidates": 148,
-      "unresolved_challengers": 70,
-      "role_gate_passed": false
+      "covered_candidates": 218,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
     },
     {
       "role": "LW",
       "eligible_candidates": 11,
       "stable_candidates": 8,
       "required_pool_size": 8,
-      "covered_candidates": 7,
-      "unresolved_challengers": 2,
-      "role_gate_passed": false
+      "covered_candidates": 8,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
     },
     {
       "role": "ST",
       "eligible_candidates": 14,
       "stable_candidates": 3,
       "required_pool_size": 3,
-      "covered_candidates": 2,
-      "unresolved_challengers": 6,
-      "role_gate_passed": false
+      "covered_candidates": 3,
+      "unresolved_challengers": 0,
+      "role_gate_passed": true
     }
   ],
-  "selection_sufficiency_gate_passed": false,
-  "rankings_allowed": false,
+  "selection_sufficiency_gate_passed": true,
+  "rankings_allowed": true,
   "policy": "Exclude a sub-covered player only when its 90% upper bound cannot alter the covered Top-30 or best-XI set and it is outside declared guardrails."
 }

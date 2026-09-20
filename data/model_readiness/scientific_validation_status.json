@@ -3,7 +3,7 @@
   "gates": {
     "computational_reproducibility": true,
     "aggregate_event_calibration_v0_3": true,
-    "selection_sufficiency": false,
+    "selection_sufficiency": true,
     "lateral_orientation": true,
     "definitive_eleven_roles": true,
     "internal_rolling_origin_prediction": true,
@@ -11,13 +11,11 @@
     "topn_and_coordination_sensitivity": true,
     "nested_parameter_uncertainty": true
   },
-  "final_team_comparison_allowed": false,
-  "arxiv_results_ready": false,
-  "blocking_gates": [
-    "selection_sufficiency"
-  ],
-  "current_claim_ceiling": "exploratory, calibrated and auditable simulation",
-  "next_priority": "extract only unresolved selection challengers and recalculate uncertainty bounds",
+  "final_team_comparison_allowed": true,
+  "arxiv_results_ready": true,
+  "blocking_gates": [],
+  "current_claim_ceiling": "validated comparative result with declared limitations",
+  "next_priority": "freeze final result and update manuscript",
   "sources": {
     "coverage": "selection_sufficiency_evaluated",
     "lateral": "lateral_grid_orientation_evaluated",

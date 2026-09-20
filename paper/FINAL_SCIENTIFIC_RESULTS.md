@@ -1,18 +1,14 @@
-# Synthetic XI scientific release candidate
+# Synthetic XI scientific release v1.0
 
-Generated: 2026-09-20T14:41:02.538051+00:00
-Scientific status: **BLOCKED**
-Claim ceiling: exploratory, calibrated and auditable simulation
-
-## Remaining blockers
-
-- selection_sufficiency
+Generated: 2026-09-20T14:41:23.348610+00:00
+Scientific status: **READY**
+Claim ceiling: validated comparative result with declared limitations
 
 ## Data-selection sufficiency
 
 - Eligible candidates: 1019
-- Fully covered in both windows: 651
-- Unresolved challengers: 320
+- Fully covered in both windows: 1019
+- Unresolved challengers: 0
 - Remaining priority fixtures: 0
 
 ## Predictive validation
@@ -41,4 +37,4 @@ Claim ceiling: exploratory, calibrated and auditable simulation
 
 ## Interpretation
 
-The system remains exploratory for the final team comparison. Validated components may be reported, but rankings and the definitive comparison remain blocked.
+All declared scientific gates passed. The comparative result may be frozen and reported with the stated limitations.
