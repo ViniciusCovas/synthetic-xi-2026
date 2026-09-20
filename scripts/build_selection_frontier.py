@@ -15,6 +15,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from scripts.coverage_queue import read_coverage_queue
+
 from simulator.profiles import load_feature_table
 
 OUT = Path("data/model_readiness")
@@ -145,7 +147,7 @@ def main() -> None:
     selected_coverage.to_csv(OUT / "selection_frontier_coverage.csv", index=False)
 
     if priority_path.exists():
-        priority = pd.read_csv(priority_path)
+        priority = read_coverage_queue(priority_path)
         priority["player_id"] = pd.to_numeric(priority["player_id"], errors="coerce")
         priority = priority.dropna(subset=["player_id"])
         priority["player_id"] = priority["player_id"].astype(int)

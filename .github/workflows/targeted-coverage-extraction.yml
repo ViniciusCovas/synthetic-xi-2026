@@ -1,23 +1,8 @@
 name: Quota-Efficient Coverage Extraction
 
+# Coverage queue completed; run manually when new evidence requires collection.
+# Automatic retries are paused to prevent recurring failure notifications.
 on:
-  push:
-    branches: [main]
-    paths:
-      - "scripts/api_football_batch_client.py"
-      - "scripts/run_batched_selection_extraction.py"
-      - "scripts/build_selection_sufficiency_gate.py"
-      - "scripts/scientific/build_scope_correct_coverage.py"
-      - "scripts/scientific/shadow_scope_correct_selection.py"
-      - "scripts/scientific/promote_scope_correct_coverage.py"
-      - "data/model_readiness/coverage_priority_fixtures.csv"
-      - ".github/workflows/targeted-coverage-extraction.yml"
-  schedule:
-    # After the 00:00 UTC daily reset, retry every 20 minutes for four hours.
-    # 00:05 UTC corresponds to 18:05 in Mexico City during UTC-6.
-    - cron: "5,25,45 0-3 * * *"
-    # Outside the reset window, keep an hourly recovery check.
-    - cron: "5 4-23 * * *"
   workflow_dispatch:
 
 permissions:

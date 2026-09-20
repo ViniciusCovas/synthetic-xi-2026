@@ -1,13 +1,9 @@
 name: Refresh World Cup 2026 Data
 
+# API-Football currently denies the 2026 season; run manually after restoring access.
+# Automatic retries are paused to prevent recurring failure notifications.
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/bootstrap-project.yml"
   workflow_dispatch:
-  schedule:
-    - cron: "17 */6 * * *"
 
 permissions:
   contents: write

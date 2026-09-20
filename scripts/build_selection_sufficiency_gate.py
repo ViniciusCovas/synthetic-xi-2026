@@ -7,6 +7,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+if __package__ in {None, ""}:
+    from coverage_queue import read_coverage_queue
+else:
+    from scripts.coverage_queue import read_coverage_queue
+
 OUT = Path("data/model_readiness")
 ROLES = ["GK", "RB", "RCB", "LCB", "LB", "DM", "CM", "AM", "RW", "LW", "ST"]
 Z90 = 1.6448536269514722
@@ -164,7 +169,7 @@ def main() -> None:
     unresolved.to_csv(OUT / "selection_sufficiency_unresolved_players.csv", index=False)
 
     if priority_path.exists() and not unresolved.empty:
-        raw = pd.read_csv(priority_path, low_memory=False)
+        raw = read_coverage_queue(priority_path)
         raw.to_csv(OUT / "coverage_priority_fixtures_all.csv", index=False)
         raw["player_id"] = pd.to_numeric(raw.player_id, errors="coerce")
         raw = raw.dropna(subset=["player_id"])

@@ -169,7 +169,11 @@ def main() -> None:
                         "resolved_role": role_map.get(int(row.player_id)),
                     })
 
-    queue = pd.DataFrame(queue_rows).drop_duplicates(["player_id", "fixture_id", "window", "priority_reason"])
+    # Preserve headers even when there are no residual fixtures to collect.
+    queue = pd.DataFrame(queue_rows, columns=[
+        "player_id", "fixture_id", "window", "priority_reason",
+        "selection_resolution_reason", "resolved_role",
+    ]).drop_duplicates(["player_id", "fixture_id", "window", "priority_reason"])
     if not queue.empty:
         reason_weight = {
             "covered_pool_shortage": 6.0,
