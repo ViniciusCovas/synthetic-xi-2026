@@ -1,0 +1,81 @@
+{
+  "status": "definitive_real_vs_ai_gate_evaluated",
+  "generated_at_utc": "2026-07-21T21:10:41.953067+00:00",
+  "estimand": "one deterministic Real XI versus one deterministic AI XI",
+  "partial_identification_allowed": false,
+  "protocol_deviation_recorded": true,
+  "post_result_external_validity_failure_recorded": false,
+  "existing_100000_match_run_classification": "not_yet_external_validity_audited",
+  "formation_slots": [
+    "GK",
+    "RB",
+    "RCB",
+    "LCB",
+    "LB",
+    "DM",
+    "CM",
+    "AM",
+    "RW",
+    "LW",
+    "ST"
+  ],
+  "minimum_role_pool": 20,
+  "current_candidate_counts_by_role": {
+    "GK": 50,
+    "RB": 47,
+    "RCB": 51,
+    "LCB": 47,
+    "LB": 43,
+    "DM": 68,
+    "CM": 60,
+    "AM": 38,
+    "RW": 35,
+    "LW": 40,
+    "ST": 62
+  },
+  "gates": {
+    "protocol_frozen": true,
+    "partial_identification_forbidden": true,
+    "single_real_xi_required": true,
+    "single_ai_xi_required": true,
+    "complete_lineup_family_support_ready": true,
+    "preregistered_reviewer_reliability_gate_passed": false,
+    "explicit_outcome_blind_adjudication_passed": true,
+    "adjudication_protocol_amendment_recorded": true,
+    "independent_review_or_explicit_adjudication_passed": true,
+    "ontology_v3_1_candidate_role_gate_passed": true,
+    "minimum_20_candidates_each_final_role": true,
+    "final_candidate_coverage_gate_passed": true,
+    "global_best_xi_external_validity_passed": false,
+    "goalkeeper_model_discriminates": false,
+    "competition_strength_adjustment_present": false,
+    "ai_generator_implemented": true,
+    "preteam_engine_validation_passed": true,
+    "teams_frozen_and_hashed": true,
+    "independent_final_engine_validation_passed": true
+  },
+  "design_gate_passed": false,
+  "design_blockers": [
+    "global_best_xi_external_validity_passed"
+  ],
+  "final_blockers": [
+    "global_best_xi_external_validity_passed"
+  ],
+  "final_experiment_gate_passed": false,
+  "final_team_files_allowed": false,
+  "final_simulation_allowed": false,
+  "global_best_xi_publication_allowed": false,
+  "next_action": "repair goalkeeper discrimination and add competition/opponent-strength adjustment before rebuilding teams",
+  "source_files": {
+    "complete_lineup_evidence": "data/audits/position_ontology_v3/lineup_completeness_status.json",
+    "blind_packet": "data/audits/position_ontology_v3/blind_review/packet_manifest.json",
+    "ontology": "data/audits/position_ontology_v3/ontology_v3_status.json",
+    "blind_review": "data/audits/position_ontology_v3/blind_review/blind_review_evaluation.json",
+    "coverage": "data/audits/position_ontology_v3/final_candidate_coverage_status.json",
+    "external_validity": "data/audits/external_validity_v2/status.json",
+    "engine_validation": "data/audits/engine_validation_v1/status.json",
+    "team_manifest": "data/definitive_experiment_v1/team_manifest.json",
+    "protocol": "DEFINITIVE_REAL_VS_AI_PROTOCOL.md",
+    "ai_generator": "simulator/ai_xi_generator.py"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "status": "external_validity_v2_validation_completed",
+  "generated_at_utc": "2026-07-21T21:08:05.637668+00:00",
+  "elo_predictive_holdout": {
+    "domains": {
+      "club": {
+        "train_matches": 3674,
+        "holdout_matches": 919,
+        "brier": 0.15842760499482922,
+        "naive_brier": 0.18024285177879923,
+        "skill": 0.12103252122720798
+      },
+      "national": {
+        "train_matches": 160,
+        "holdout_matches": 41,
+        "brier": 0.18725029313185562,
+        "naive_brier": 0.20769817073170732,
+        "skill": 0.09844996481102908
+      }
+    },
+    "holdout_matches": 960,
+    "brier": 0.15965857396734803,
+    "naive_brier": 0.18141542269241304,
+    "skill": 0.11992833024981231,
+    "passed": true
+  },
+  "context_gamma_sensitivity": {
+    "gammas": [
+      0.0,
+      0.09,
+      0.18,
+      0.27,
+      0.36
+    ],
+    "mean_xi_overlap_of_11": 9.4,
+    "minimum_xi_overlap_of_11": 8,
+    "frozen_slot_top3_rate": 0.9636363636363636,
+    "passed": true
+  },
+  "goalkeeper_weight_sensitivity": {
+    "variants": [
+      "base",
+      "shot_stopping_heavy",
+      "balanced",
+      "distribution_heavy"
+    ],
+    "frozen_goalkeeper_ranks": [
+      1,
+      1,
+      2,
+      3
+    ],
+    "maximum_rank": 3,
+    "passed": true
+  },
+  "selected_player_plausibility": {
+    "selected_players": 11,
+    "all_selected_passed": true,
+    "passed_count": 11,
+    "passed": true
+  },
+  "external_validity_v2_validation_passed": true,
+  "simulation_authorized": false,
+  "next_action": "run independent post-freeze directional validation"
+}

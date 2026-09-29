@@ -1,0 +1,48 @@
+name: Ontology v3 Complete Lineups Audit
+
+on:
+  push:
+    branches: [definitive-real-vs-ai]
+    paths:
+      - scripts/scientific/recover_full_lineups_from_raw.py
+      - scripts/scientific/audit_complete_lineups_v3.py
+      - .github/workflows/ontology-v3-complete-lineups.yml
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || 'definitive-real-vs-ai' }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Recover full raw lineups and audit
+        run: |
+          python -m py_compile scripts/scientific/recover_full_lineups_from_raw.py
+          python -m py_compile scripts/scientific/audit_complete_lineups_v3.py
+          python scripts/scientific/recover_full_lineups_from_raw.py
+          python scripts/scientific/audit_complete_lineups_v3.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ontology-v3-complete-lineups-${{ github.run_id }}
+          path: data/audits/position_ontology_v3/
+          if-no-files-found: error
+          retention-days: 90
