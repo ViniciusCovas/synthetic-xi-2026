@@ -1,0 +1,209 @@
+{
+  "status": "definitive_100000_match_simulation_completed",
+  "generated_at_utc": "2026-07-21T02:00:07.929256+00:00",
+  "matches": 100000,
+  "paired_orientations": 50000,
+  "matches_per_orientation": 50000,
+  "neutral_home_advantage": 0.0,
+  "master_seed": 20260720,
+  "common_random_seed_within_orientation_pairs": true,
+  "real_xi_sha256": "24368ba1b8b71c12b21e239d2fcf8d2dc34b38c9174030e9b59e0133ecdf6d33",
+  "ai_xi_sha256": "a220090b5d1fa8c008086f50a8a091f667f955f14ea1b6a6d34d59a720fee117",
+  "team_manifest_sha256": "ac71eef5a693e5da5761bbb1449dbba5e984e9cd79911ac58ab176b3d11cfab5",
+  "calibrated_core_sha256": "03221cf9ed6f2909a2a699b975dff67926f92d0f737977af58469f4787ca32a9",
+  "profile_engine_sha256": "c0c2b7db48db4cfdc1eaf1b90f997856e5f4a928d8762065509062c66a8f4099",
+  "raw_match_log_sha256": "d47711f43a8b936d746a0d6b1beaf353dfb09247607dd6c519fb923d977c56e7",
+  "outcome_counts": {
+    "draw": 24815,
+    "ai_win": 37351,
+    "real_win": 37834
+  },
+  "outcome_probabilities": {
+    "real_win": 0.37834,
+    "draw": 0.24815,
+    "ai_win": 0.37351
+  },
+  "outcome_probability_ci95": {
+    "real_win": [
+      0.3753388886614535,
+      0.3813504580171003
+    ],
+    "draw": [
+      0.2454825698236742,
+      0.25083677886113387
+    ],
+    "ai_win": [
+      0.3705167423483689,
+      0.37651297540085243
+    ]
+  },
+  "orientation_probabilities": {
+    "real_nominal_home": {
+      "real_win": 0.3755,
+      "draw": 0.24762,
+      "ai_win": 0.37688
+    },
+    "ai_nominal_home": {
+      "real_win": 0.38118,
+      "draw": 0.24868,
+      "ai_win": 0.37014
+    }
+  },
+  "means_per_match": {
+    "real_goals": 1.43869,
+    "ai_goals": 1.42666,
+    "real_xg": 1.4408101223728715,
+    "ai_xg": 1.428020259981232,
+    "real_shots": 8.79881,
+    "ai_shots": 8.737,
+    "real_sot": 4.36704,
+    "ai_sot": 4.33504,
+    "real_possessions": 52.0949,
+    "ai_possessions": 51.8232
+  },
+  "goal_margin_real_minus_ai": {
+    "mean": 0.01203,
+    "standard_error": 0.005378414456363571,
+    "ci95_low": 0.0014885013715978286,
+    "ci95_high": 0.022571498628402173
+  },
+  "xg_margin_real_minus_ai": {
+    "mean": 0.01278986239162595,
+    "standard_error": 0.0023473679399056498,
+    "ci95_low": 0.008189105770946895,
+    "ci95_high": 0.017390619012305004
+  },
+  "paired_orientation_goal_effect": {
+    "mean": -0.02006,
+    "standard_error": 0.015134494804474305,
+    "ci95_low": -0.04972306474097821,
+    "ci95_high": 0.009603064740978204
+  },
+  "most_common_scorelines_real_ai": [
+    {
+      "real_goals": 1,
+      "ai_goals": 1,
+      "count": 11531,
+      "probability": 0.11531
+    },
+    {
+      "real_goals": 2,
+      "ai_goals": 1,
+      "count": 8415,
+      "probability": 0.08415
+    },
+    {
+      "real_goals": 1,
+      "ai_goals": 2,
+      "count": 8350,
+      "probability": 0.0835
+    },
+    {
+      "real_goals": 1,
+      "ai_goals": 0,
+      "count": 8146,
+      "probability": 0.08146
+    },
+    {
+      "real_goals": 0,
+      "ai_goals": 1,
+      "count": 8112,
+      "probability": 0.08112
+    },
+    {
+      "real_goals": 2,
+      "ai_goals": 2,
+      "count": 6050,
+      "probability": 0.0605
+    },
+    {
+      "real_goals": 2,
+      "ai_goals": 0,
+      "count": 5913,
+      "probability": 0.05913
+    },
+    {
+      "real_goals": 0,
+      "ai_goals": 2,
+      "count": 5846,
+      "probability": 0.05846
+    },
+    {
+      "real_goals": 0,
+      "ai_goals": 0,
+      "count": 5706,
+      "probability": 0.05706
+    },
+    {
+      "real_goals": 3,
+      "ai_goals": 1,
+      "count": 4017,
+      "probability": 0.04017
+    },
+    {
+      "real_goals": 1,
+      "ai_goals": 3,
+      "count": 3943,
+      "probability": 0.03943
+    },
+    {
+      "real_goals": 3,
+      "ai_goals": 0,
+      "count": 2953,
+      "probability": 0.02953
+    },
+    {
+      "real_goals": 0,
+      "ai_goals": 3,
+      "count": 2874,
+      "probability": 0.02874
+    },
+    {
+      "real_goals": 3,
+      "ai_goals": 2,
+      "count": 2798,
+      "probability": 0.02798
+    },
+    {
+      "real_goals": 2,
+      "ai_goals": 3,
+      "count": 2786,
+      "probability": 0.02786
+    },
+    {
+      "real_goals": 4,
+      "ai_goals": 1,
+      "count": 1398,
+      "probability": 0.01398
+    },
+    {
+      "real_goals": 1,
+      "ai_goals": 4,
+      "count": 1373,
+      "probability": 0.01373
+    },
+    {
+      "real_goals": 3,
+      "ai_goals": 3,
+      "count": 1362,
+      "probability": 0.01362
+    },
+    {
+      "real_goals": 4,
+      "ai_goals": 2,
+      "count": 1057,
+      "probability": 0.01057
+    },
+    {
+      "real_goals": 4,
+      "ai_goals": 0,
+      "count": 1053,
+      "probability": 0.01053
+    }
+  ],
+  "independent_directional_prior": "REAL_XI",
+  "final_event_simulation_direction": "REAL_XI",
+  "direction_consistent_with_independent_model": true,
+  "claim_boundary": "A probabilistic comparison under the frozen model and profiles; not a physical match prediction.",
+  "raw_match_log": "data/definitive_experiment_v1/final_simulation/matches.csv.gz"
+}

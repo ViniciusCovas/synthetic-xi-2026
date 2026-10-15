@@ -1,0 +1,59 @@
+{
+  "status": "blind_position_review_v3_1_packet_ready",
+  "generated_at_utc": "2026-07-20T16:48:16.799223+00:00",
+  "network_calls": 0,
+  "protocol": "non-circular family-support gate followed by independent exact-slot review",
+  "source_role_minutes": "data/audits/position_ontology_v3/complete_lineup_player_role_minutes.csv",
+  "source_role_minutes_sha256": "9f9dcce43f2d0f3d10cd39ac668abdc03ead57304756adc86f7547f555fd05d5",
+  "review_cases": 664,
+  "family_supported_cases": 560,
+  "near_family_threshold_cases": 53,
+  "high_impact_cases": 244,
+  "family_support_candidates": {
+    "CB": 101,
+    "FB": 95,
+    "GK": 51,
+    "MID": 181,
+    "ST": 69,
+    "WING": 95
+  },
+  "slot_support_candidates": {
+    "GK": 51,
+    "RB": 95,
+    "RCB": 101,
+    "LCB": 101,
+    "LB": 95,
+    "DM": 181,
+    "CM": 181,
+    "AM": 181,
+    "RW": 95,
+    "LW": 95,
+    "ST": 69
+  },
+  "public_anchor_cases_hidden_from_reviewers": 0,
+  "selection_rule": ">=1800 annual minutes and >=900 minutes/3 observations in one positional family; plus preregistered high-impact and 600-899-minute near-threshold challengers",
+  "blinded_fields": [
+    "automatic exact roles and role families",
+    "scores and rankings",
+    "public anchors",
+    "simulation membership and outcomes"
+  ],
+  "reviewers_required": 2,
+  "allowed_primary_roles": [
+    "GK",
+    "RB",
+    "RCB",
+    "LCB",
+    "LB",
+    "DM",
+    "CM",
+    "AM",
+    "RW",
+    "LW",
+    "ST",
+    "UNRESOLVED"
+  ],
+  "secondary_role_policy": "optional; at most one secondary slot",
+  "review_packet_ready": true,
+  "next_action": "two independent football experts complete the forms; then run evaluate_blind_position_review_v3.py"
+}

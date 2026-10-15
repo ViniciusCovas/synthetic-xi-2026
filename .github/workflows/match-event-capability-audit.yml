@@ -1,0 +1,77 @@
+name: Match Event Capability Audit
+
+on:
+  push:
+    branches: [definitive-real-vs-ai]
+    paths:
+      - scripts/scientific/audit_match_event_capabilities.py
+      - .github/workflows/match-event-capability-audit.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - scripts/scientific/audit_match_event_capabilities.py
+      - .github/workflows/match-event-capability-audit.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: match-event-capability-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: definitive-real-vs-ai
+          fetch-depth: 1
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install and compile
+        run: |
+          pip install -r requirements.txt
+          python -m py_compile scripts/scientific/audit_match_event_capabilities.py
+
+      - name: Audit all cached event capabilities
+        run: python scripts/scientific/audit_match_event_capabilities.py
+
+      - name: Upload complete audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: match-event-capability-audit-${{ github.run_id }}
+          path: data/audits/match_event_capability_v1/
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Publish audit state
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          git config user.name 'synthetic-xi-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -f data/audits/match_event_capability_v1/
+          if git diff --cached --quiet; then
+            echo 'No audit changes to publish.'
+            exit 0
+          fi
+          git commit -m 'science: publish match-event capability audit'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin definitive-real-vs-ai
+            if git rebase -X theirs origin/definitive-real-vs-ai && git push origin HEAD:definitive-real-vs-ai; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          exit 1
