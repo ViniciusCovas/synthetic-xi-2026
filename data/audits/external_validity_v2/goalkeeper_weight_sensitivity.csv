@@ -1,0 +1,5 @@
+variant,winner_player_id,winner_player_name,frozen_gk_id,frozen_rank,frozen_score,winner_score
+base,369,D. Costa,369,1,0.7426244807301814,0.7426244807301814
+shot_stopping_heavy,369,D. Costa,369,1,0.7504798093269842,0.7504798093269842
+balanced,22221,M. Maignan,369,2,0.7352312302861317,0.7383609179471591
+distribution_heavy,22221,M. Maignan,369,3,0.7158239478705013,0.7388155605979008

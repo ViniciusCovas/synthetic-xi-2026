@@ -1,0 +1,238 @@
+{
+  "status": "v2_independent_post_freeze_direction_evaluated",
+  "generated_at_utc": "2026-07-21T21:08:06.138665+00:00",
+  "model": "transparent role-balanced neutral-site Poisson model, separate from team selection and event simulator",
+  "event_simulation_results_used": false,
+  "external_validity_validation_passed": true,
+  "teams_frozen_and_hashed": true,
+  "real_xi_sha256": "cb5fce1cc56b7f5dbf22b41c76a59848fa9d1f5b61a25c3eacec2fba9a0cd585",
+  "ai_xi_sha256": "badd74b15a7bd601241dea8f8e97d89e9d9f63aa78433336ede28f2328c655fb",
+  "parameters": {
+    "base_goals_per_team": 1.35,
+    "beta": 2.0
+  },
+  "team_scores": {
+    "real_attack": 0.8247534994681798,
+    "real_defence": 0.7590444089898497,
+    "ai_attack": 0.8180763722584775,
+    "ai_defence": 0.753165323725832
+  },
+  "expected_goals": {
+    "real_xi": 1.5578099301207637,
+    "ai_xi": 1.519176662945385,
+    "margin_real_minus_ai": 0.03863326717537885
+  },
+  "result_probabilities": {
+    "real_win": 0.3886617224421079,
+    "draw": 0.2394756026655682,
+    "ai_win": 0.37186267489232394
+  },
+  "directional_prior": "REAL_XI",
+  "jackknife": [
+    {
+      "excluded_slot": "GK",
+      "real_expected_goals": 1.6096993872688696,
+      "ai_expected_goals": 1.573040507558436,
+      "expected_goal_margin": 0.03665887971043369,
+      "direction": "REAL_XI"
+    },
+    {
+      "excluded_slot": "RB",
+      "real_expected_goals": 1.564978982104692,
+      "ai_expected_goals": 1.525015055303159,
+      "expected_goal_margin": 0.039963926801533045,
+      "direction": "REAL_XI"
+    },
+    {
+      "excluded_slot": "RCB",
+      "real_expected_goals": 1.5840710579924364,
+      "ai_expected_goals": 1.5449354325705749,
+      "expected_goal_margin": 0.03913562542186155,
+      "direction": "REAL_XI"
+    },
+    {
+      "excluded_slot": "LCB",
+      "real_expected_goals": 1.542646733735917,
+      "ai_expected_goals": 1.5005093739486242,
+      "expected_goal_margin": 0.04213735978729294,
+      "direction": "REAL_XI"
+    },
+    {
+      "excluded_slot": "LB",
+      "real_expected_goals": 1.5637932018507146,
+      "ai_expected_goals": 1.5245395245583941,
+      "expected_goal_margin": 0.03925367729232043,
+      "direction": "REAL_XI"
+    },
+    {
+      "excluded_slot": "DM",
+      "real_expected_goals": 1.5976779380502684,
+      "ai_expected_goals": 1.5550451475089286,
+      "expected_goal_margin": 0.04263279054133973,
+      "direction": "REAL_XI"
+    },
+    {
+      "excluded_slot": "CM",
+      "real_expected_goals": 1.567426034823284,
+      "ai_expected_goals": 1.5316388706966402,
+      "expected_goal_margin": 0.035787164126643844,
+      "direction": "REAL_XI"
+    },
+    {
+      "excluded_slot": "AM",
+      "real_expected_goals": 1.5482546228523955,
+      "ai_expected_goals": 1.508611107474853,
+      "expected_goal_margin": 0.039643515377542515,
+      "direction": "REAL_XI"
+    },
+    {
+      "excluded_slot": "RW",
+      "real_expected_goals": 1.5123684654308607,
+      "ai_expected_goals": 1.4749116667379392,
+      "expected_goal_margin": 0.03745679869292151,
+      "direction": "REAL_XI"
+    },
+    {
+      "excluded_slot": "LW",
+      "real_expected_goals": 1.5349557622217973,
+      "ai_expected_goals": 1.4991508169433951,
+      "expected_goal_margin": 0.03580494527840217,
+      "direction": "REAL_XI"
+    },
+    {
+      "excluded_slot": "ST",
+      "real_expected_goals": 1.506775937200171,
+      "ai_expected_goals": 1.47113501977853,
+      "expected_goal_margin": 0.035640917421640994,
+      "direction": "REAL_XI"
+    }
+  ],
+  "jackknife_direction_agreement": 1.0,
+  "parameter_sensitivity": [
+    {
+      "beta": 1.0,
+      "base_goals_per_team": 1.2,
+      "real_expected_goals": 1.289055439250829,
+      "ai_expected_goals": 1.2729709765512107,
+      "expected_goal_margin": 0.016084462699618385,
+      "direction": "REAL_XI"
+    },
+    {
+      "beta": 1.0,
+      "base_goals_per_team": 1.35,
+      "real_expected_goals": 1.4501873691571827,
+      "ai_expected_goals": 1.4320923486201123,
+      "expected_goal_margin": 0.01809502053707046,
+      "direction": "REAL_XI"
+    },
+    {
+      "beta": 1.0,
+      "base_goals_per_team": 1.5,
+      "real_expected_goals": 1.6113192990635363,
+      "ai_expected_goals": 1.5912137206890136,
+      "expected_goal_margin": 0.02010557837452276,
+      "direction": "REAL_XI"
+    },
+    {
+      "beta": 1.5,
+      "base_goals_per_team": 1.2,
+      "real_expected_goals": 1.3360317240881252,
+      "ai_expected_goals": 1.3111039623778957,
+      "expected_goal_margin": 0.02492776171022948,
+      "direction": "REAL_XI"
+    },
+    {
+      "beta": 1.5,
+      "base_goals_per_team": 1.35,
+      "real_expected_goals": 1.503035689599141,
+      "ai_expected_goals": 1.474991957675133,
+      "expected_goal_margin": 0.02804373192400811,
+      "direction": "REAL_XI"
+    },
+    {
+      "beta": 1.5,
+      "base_goals_per_team": 1.5,
+      "real_expected_goals": 1.6700396551101564,
+      "ai_expected_goals": 1.6388799529723697,
+      "expected_goal_margin": 0.031159702137786738,
+      "direction": "REAL_XI"
+    },
+    {
+      "beta": 2.0,
+      "base_goals_per_team": 1.2,
+      "real_expected_goals": 1.3847199378851232,
+      "ai_expected_goals": 1.350379255951453,
+      "expected_goal_margin": 0.034340681933670236,
+      "direction": "REAL_XI"
+    },
+    {
+      "beta": 2.0,
+      "base_goals_per_team": 1.35,
+      "real_expected_goals": 1.5578099301207637,
+      "ai_expected_goals": 1.519176662945385,
+      "expected_goal_margin": 0.03863326717537885,
+      "direction": "REAL_XI"
+    },
+    {
+      "beta": 2.0,
+      "base_goals_per_team": 1.5,
+      "real_expected_goals": 1.730899922356404,
+      "ai_expected_goals": 1.6879740699393162,
+      "expected_goal_margin": 0.042925852417087906,
+      "direction": "REAL_XI"
+    },
+    {
+      "beta": 2.5,
+      "base_goals_per_team": 1.2,
+      "real_expected_goals": 1.4351824674562172,
+      "ai_expected_goals": 1.3908310761236267,
+      "expected_goal_margin": 0.044351391332590584,
+      "direction": "REAL_XI"
+    },
+    {
+      "beta": 2.5,
+      "base_goals_per_team": 1.35,
+      "real_expected_goals": 1.6145802758882446,
+      "ai_expected_goals": 1.5646849606390802,
+      "expected_goal_margin": 0.04989531524916435,
+      "direction": "REAL_XI"
+    },
+    {
+      "beta": 2.5,
+      "base_goals_per_team": 1.5,
+      "real_expected_goals": 1.7939780843202717,
+      "ai_expected_goals": 1.7385388451545334,
+      "expected_goal_margin": 0.05543923916573834,
+      "direction": "REAL_XI"
+    },
+    {
+      "beta": 3.0,
+      "base_goals_per_team": 1.2,
+      "real_expected_goals": 1.4874839731415737,
+      "ai_expected_goals": 1.4324946668025156,
+      "expected_goal_margin": 0.054989306339058075,
+      "direction": "REAL_XI"
+    },
+    {
+      "beta": 3.0,
+      "base_goals_per_team": 1.35,
+      "real_expected_goals": 1.6734194697842704,
+      "ai_expected_goals": 1.6115565001528303,
+      "expected_goal_margin": 0.06186296963144011,
+      "direction": "REAL_XI"
+    },
+    {
+      "beta": 3.0,
+      "base_goals_per_team": 1.5,
+      "real_expected_goals": 1.859354966426967,
+      "ai_expected_goals": 1.7906183335031445,
+      "expected_goal_margin": 0.0687366329238226,
+      "direction": "REAL_XI"
+    }
+  ],
+  "parameter_sensitivity_direction_agreement": 1.0,
+  "plausible_goal_rates": true,
+  "nondegenerate_direction": true,
+  "independent_direction_check_passed": true,
+  "next_action": "open the v2 final simulation gate"
+}

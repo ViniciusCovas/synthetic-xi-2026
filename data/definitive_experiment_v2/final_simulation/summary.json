@@ -1,0 +1,233 @@
+{
+  "status": "v2_definitive_100000_match_simulation_completed",
+  "generated_at_utc": "2026-07-21T21:17:18.497603+00:00",
+  "experiment_version": "v2_external_validity",
+  "matches": 100000,
+  "paired_orientations": 50000,
+  "matches_per_orientation": 50000,
+  "neutral_home_advantage": 0.0,
+  "master_seed": 20260721,
+  "common_random_seed_within_orientation_pairs": true,
+  "real_xi_sha256": "cb5fce1cc56b7f5dbf22b41c76a59848fa9d1f5b61a25c3eacec2fba9a0cd585",
+  "ai_xi_sha256": "badd74b15a7bd601241dea8f8e97d89e9d9f63aa78433336ede28f2328c655fb",
+  "team_manifest_sha256": "e8e23cc48f32ab3dc0ba32f77436ee2d007ea1179396448f1b952b9fa461f900",
+  "final_gate_sha256": "eba8ef332c11832ab02fa48d0111e2c5413b9a75ad531f71327365aef2da0f77",
+  "validation_sha256": "09de40e4fe6eb8820420022de2e3b8882adf5948ce03f8ef6007b83a6ae90c8f",
+  "direction_check_sha256": "3b52ea3a886e7b7e5d316ef372af76071d4526f1887417a594c6866f1a5b446a",
+  "calibrated_core_sha256": "03221cf9ed6f2909a2a699b975dff67926f92d0f737977af58469f4787ca32a9",
+  "profile_engine_sha256": "c0c2b7db48db4cfdc1eaf1b90f997856e5f4a928d8762065509062c66a8f4099",
+  "raw_match_log_sha256": "6a7a824ed302ef95375d8234e98284edc2ef6afb6d082f290baf35f06488fa79",
+  "outcome_counts": {
+    "real_win": 39879,
+    "ai_win": 37652,
+    "draw": 22469
+  },
+  "outcome_probabilities": {
+    "real_win": 0.39879,
+    "draw": 0.22469,
+    "ai_win": 0.37652
+  },
+  "paired_cluster_inference": {
+    "real_win_probability": {
+      "mean": 0.39879,
+      "standard_error": 0.0009532307648087212,
+      "ci95_low": 0.3969217020320193,
+      "ci95_high": 0.40065829796798064,
+      "clusters": 50000
+    },
+    "draw_probability": {
+      "mean": 0.22469,
+      "standard_error": 0.0017417372795502253,
+      "ci95_low": 0.2212762576615508,
+      "ci95_high": 0.2281037423384492,
+      "clusters": 50000
+    },
+    "ai_win_probability": {
+      "mean": 0.37652,
+      "standard_error": 0.0009832970708095236,
+      "ci95_low": 0.37459277315510964,
+      "ci95_high": 0.3784472268448904,
+      "clusters": 50000
+    },
+    "real_minus_ai_win_probability": {
+      "mean": 0.02227,
+      "standard_error": 0.0008469919066353575,
+      "ci95_low": 0.02060992636779779,
+      "ci95_high": 0.023930073632202214,
+      "clusters": 50000
+    },
+    "real_minus_ai_goal_margin": {
+      "mean": 0.05574,
+      "standard_error": 0.0014717691293431188,
+      "ci95_low": 0.05285538551292961,
+      "ci95_high": 0.05862461448707038,
+      "clusters": 50000
+    },
+    "real_minus_ai_xg_margin": {
+      "mean": 0.05369455093986218,
+      "standard_error": 0.000634195985584871,
+      "ci95_low": 0.05245154964897595,
+      "ci95_high": 0.054937552230748414,
+      "clusters": 50000
+    },
+    "orientation_goal_effect": {
+      "mean": -0.00708,
+      "standard_error": 0.016544838231467907,
+      "ci95_low": -0.03950728706371846,
+      "ci95_high": 0.02534728706371846,
+      "clusters": 50000
+    }
+  },
+  "orientation_probabilities": {
+    "real_nominal_home": {
+      "real_win": 0.39758,
+      "draw": 0.22404,
+      "ai_win": 0.37838
+    },
+    "ai_nominal_home": {
+      "real_win": 0.4,
+      "draw": 0.22534,
+      "ai_win": 0.37466
+    }
+  },
+  "means_per_match": {
+    "real_goals": 1.75693,
+    "ai_goals": 1.70119,
+    "real_xg": 1.7502239449356571,
+    "ai_xg": 1.6965293939957942,
+    "real_shots": 9.46295,
+    "ai_shots": 9.27478,
+    "real_sot": 4.78186,
+    "ai_sot": 4.68897,
+    "real_possessions": 52.19586,
+    "ai_possessions": 51.73232
+  },
+  "most_common_scorelines_real_ai": [
+    {
+      "real_goals": 1,
+      "ai_goals": 1,
+      "count": 9382,
+      "probability": 0.09382
+    },
+    {
+      "real_goals": 2,
+      "ai_goals": 1,
+      "count": 8119,
+      "probability": 0.08119
+    },
+    {
+      "real_goals": 1,
+      "ai_goals": 2,
+      "count": 7957,
+      "probability": 0.07957
+    },
+    {
+      "real_goals": 2,
+      "ai_goals": 2,
+      "count": 6980,
+      "probability": 0.0698
+    },
+    {
+      "real_goals": 1,
+      "ai_goals": 0,
+      "count": 5567,
+      "probability": 0.05567
+    },
+    {
+      "real_goals": 0,
+      "ai_goals": 1,
+      "count": 5296,
+      "probability": 0.05296
+    },
+    {
+      "real_goals": 3,
+      "ai_goals": 1,
+      "count": 4888,
+      "probability": 0.04888
+    },
+    {
+      "real_goals": 2,
+      "ai_goals": 0,
+      "count": 4818,
+      "probability": 0.04818
+    },
+    {
+      "real_goals": 0,
+      "ai_goals": 2,
+      "count": 4585,
+      "probability": 0.04585
+    },
+    {
+      "real_goals": 1,
+      "ai_goals": 3,
+      "count": 4560,
+      "probability": 0.0456
+    },
+    {
+      "real_goals": 3,
+      "ai_goals": 2,
+      "count": 3969,
+      "probability": 0.03969
+    },
+    {
+      "real_goals": 2,
+      "ai_goals": 3,
+      "count": 3883,
+      "probability": 0.03883
+    },
+    {
+      "real_goals": 0,
+      "ai_goals": 0,
+      "count": 3324,
+      "probability": 0.03324
+    },
+    {
+      "real_goals": 3,
+      "ai_goals": 0,
+      "count": 2848,
+      "probability": 0.02848
+    },
+    {
+      "real_goals": 0,
+      "ai_goals": 3,
+      "count": 2615,
+      "probability": 0.02615
+    },
+    {
+      "real_goals": 3,
+      "ai_goals": 3,
+      "count": 2267,
+      "probability": 0.02267
+    },
+    {
+      "real_goals": 4,
+      "ai_goals": 1,
+      "count": 2156,
+      "probability": 0.02156
+    },
+    {
+      "real_goals": 1,
+      "ai_goals": 4,
+      "count": 1947,
+      "probability": 0.01947
+    },
+    {
+      "real_goals": 4,
+      "ai_goals": 2,
+      "count": 1845,
+      "probability": 0.01845
+    },
+    {
+      "real_goals": 2,
+      "ai_goals": 4,
+      "count": 1715,
+      "probability": 0.01715
+    }
+  ],
+  "independent_directional_prior": "REAL_XI",
+  "final_event_simulation_direction": "REAL_XI",
+  "direction_consistent_with_independent_model": true,
+  "v1_result_status": "preserved diagnostic; invalidated for global-best-XI claim",
+  "claim_boundary": "Conditional on the frozen 2025-2026 data, reviewed slots, goalkeeper proxy, results-based Elo context model, synthetic generator and calibrated event engine; not an absolute physical-match prediction.",
+  "raw_match_log": "data/definitive_experiment_v2/final_simulation/matches.csv.gz"
+}

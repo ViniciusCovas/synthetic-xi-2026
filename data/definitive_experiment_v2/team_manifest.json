@@ -1,0 +1,29 @@
+{
+  "ai_agents": 11,
+  "ai_xi_sha256": "badd74b15a7bd601241dea8f8e97d89e9d9f63aa78433336ede28f2328c655fb",
+  "candidate_role_table_sha256": "81fed77dc4993225f10aae0ce0b45e6d8390cce1e34240a0fd5e3dfae5a43bf0",
+  "experiment_version": "v2_external_validity",
+  "external_context_required": true,
+  "generated_at_utc": "2026-07-21T21:08:05.079165+00:00",
+  "goalkeeper_model_discriminative": true,
+  "master_seed": 20260721,
+  "next_action": "audit selected-player plausibility, run independent post-freeze validation, then authorize a new simulation",
+  "old_v1_result_status": "preserved_diagnostic_invalidated_for_global_best_xi_claim",
+  "real_players": 11,
+  "real_xi_sha256": "cb5fce1cc56b7f5dbf22b41c76a59848fa9d1f5b61a25c3eacec2fba9a0cd585",
+  "slots": [
+    "GK",
+    "RB",
+    "RCB",
+    "LCB",
+    "LB",
+    "DM",
+    "CM",
+    "AM",
+    "RW",
+    "LW",
+    "ST"
+  ],
+  "status": "v2_teams_frozen_pending_independent_validation",
+  "strength_model_status_sha256": "c642db81a22c8eb54980c9c788ad704d60459ed232a78bbdf98988f7ac8ed9ee"
+}

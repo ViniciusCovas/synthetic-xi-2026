@@ -1,0 +1,30 @@
+{
+  "status": "final_candidate_role_coverage_evaluated",
+  "generated_at_utc": "2026-07-21T15:04:50.660326+00:00",
+  "coverage_definition": ">=90% fixture endpoint coverage and >=90% known-minute lower bound in annual_current and pre_world_cup windows",
+  "promoted_candidate_role_pairs_before_coverage": 548,
+  "fully_covered_candidate_role_pairs": 541,
+  "fully_covered_unique_players": 541,
+  "unresolved_coverage_candidate_role_pairs": 7,
+  "covered_candidates_by_role": {
+    "GK": 50,
+    "RB": 47,
+    "RCB": 51,
+    "LCB": 47,
+    "LB": 43,
+    "DM": 68,
+    "CM": 60,
+    "AM": 38,
+    "RW": 35,
+    "LW": 40,
+    "ST": 62
+  },
+  "minimum_20_covered_candidates_each_role": true,
+  "uncovered_high_impact_players": 0,
+  "uncovered_high_impact_player_ids": [],
+  "final_candidate_coverage_gate_passed": true,
+  "final_team_construction_allowed": true,
+  "final_candidate_role_table": "data/audits/position_ontology_v3/final_candidate_roles.csv",
+  "unresolved_table": "data/audits/position_ontology_v3/final_candidate_coverage_unresolved.csv",
+  "next_action": "build and hash exactly one Real XI and one AI XI"
+}
